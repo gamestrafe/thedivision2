@@ -39,6 +39,10 @@ Starting at Specialized gear, it can also have talents. Higher quality gear can 
 - Capacitive: +20% skill duration
 - Terminate: Depleting an enemies armor grants +35% skill damage for 15s
 - Self Adjusting: +20% armor regeneration
+- Hardened: +10% Armor
+- Insulated: +10% hazard protection
+- To Order: Grenades can now be "cooked" by holding the fire button, making them explode earlier
+- Destructive: +20% explosive damage
 
 ## Gear Brands
 
@@ -46,14 +50,16 @@ Many gear items can also be of a specific brand, which gives you extra bonuses t
 
 So far, these brands have been spotted in the game:
 
-- Providence Defense
-- Sokolov Concern
-- Richter & Kaiser GmbH
-- Wyvern Wear
-- Badger Tuff
-- Gila Guard
-- Airaldi Holdings
-- Overlord Armaments
-- Alps Summit Armament
-- Douglas & Harding
-
+- Providence Defense: +10% Skill Power, +8% Health, +5% Weapon Damage
+- Sokolov Concern: +10% SMG Damage, +8% Critical Hit Damage, +15 Seeker Skill Power
+- Richter & Kaiser GmbH: +10% Hazard Protection, +20% Pistol Damage, +15 Shield Skill Power
+- Wyvern Wear: +7% Critical Hit Damage, +15% Drone Skill Power, +10% Critical Hit Chance
+- Badger Tuff: +7% Damage to Elites, +15% Armor % on Kill, +15 Chem Launcher Skill Power 
+- Gila Guard: +5% Total Armor, +20% Hazard Protection, +15 Pulse Skill Power
+- Airaldi Holdings: +10% Accuracy, +10% Headshot Damage, +10% Marksman Rifle Damage
+- Overlord Armaments: +10% Rifle Damage, +7.5% Total Armor, +7% Damage to Elites
+- Alps Summit Armament: +10% Cooldown Reduction, +5% Skill Power, +15 Hive Skill Power
+- Douglas & Harding: +5% Accuracy, +10% Chritical Hit Damage, +7% Critical Hit Chance
+- China Light Industries Corporation: +10% Explosive Damage, +10% Shotgun Damage, +10% Cooldown Reduction
+- Petrov Devense Group: +10% LMG Damage, +15 Turret Skill Power, +10% Cooldown Reduction
+- Fenris Group AB: +10% Assault Rifle Damage, +10% Protection from Elites, +20% Health on Kill

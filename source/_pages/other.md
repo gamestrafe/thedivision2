@@ -4,6 +4,38 @@ title: Everything else
 
 Any tidbit that doesn't fit into another page goes here.
 
+## Currencies
+
+Target Intel (max 50)
+:   Information gathered on Bounties across the city
+
+ E-Credits (max 1'000'000'000)
+:   Standard JTF currency used to purchase equipment from vendors and for other JTF services.
+
+## Supplies
+
+You can find components, food and water throughout the [map](/map.html). These are then used to supply settlements or controlpoints to complete projects or boost some perks. There are places where you can find large quantities and where it respawns regularly.
+
+## Trinkets
+
+Random loot items you can find that can be sold for money.
+
+- Stuffed Animal
+- Crayon
+- Battery
+- Tape
+- Sewing Kit
+- Kid's Jacket
+- Kid's shoe
+- Kid's sock
+- Magazine
+- Soda
+- Rope
+- Antibiotics
+- Small Diamond
+- Silver Bracelet
+
+
 ## Weakpoints
 
 Enemies can have weak points. They usually look like a rad pouch or the likes. Hitting those will give you a yellow indicator anmd if you hit it often enough the weakpoint will detonate. This can result in an instant kill or other effects, depending on the enemies. 
@@ -14,11 +46,11 @@ You can find people in the world who will join you in the Base of Operations to 
 
 ### Coop Dennison
 
-Skills and perk unlocks.
+[Skills](/skills.html) and [perk](/perks.html) unlocks.
 
 ### Inaya al-Khaliq
 
-Allows for crafting.
+Allows for [crafting](/crafting.html).
 
 ### Grace Larson
 
@@ -26,7 +58,7 @@ Unknown. Has a shield icon, perhaps some weekly/daily missions, or PVP activitie
 
 ### Senait Ezera
 
-Access to the Darkzones.
+Access to the [Dark Zones](/dark-zone.html).
 
 ### Charles Douglas
 
