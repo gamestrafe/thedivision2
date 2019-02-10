@@ -2,6 +2,8 @@
 title: Gear
 ---
 
+WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.
+
 Gear is split into these gear slots:
 
 - Mask
@@ -23,7 +25,7 @@ Gear can present in different qualities. The higher the quality the more attribu
 
 The quality is the same as for [weapons](/weapons.html), from worst to best:
 
-- ? (White)
+- Worn (White)
 - Standard (Green)
 - Specialized (Blue)
 - Superior (Purple)

@@ -2,6 +2,8 @@
 title: Weapon Mods
 ---
 
+WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.
+
 Weapon mods can be crafted in the Base of Operations or rewarded through [perks](/perks.html) and [projects](/projects.html). Once you have them, you can use them in as many weapons as you want. Each mod has a positive and a negative effect. Mods fit on guns depending on slots they have, calibers and rail lengths.
 
 This list is incomplete and subject to change.

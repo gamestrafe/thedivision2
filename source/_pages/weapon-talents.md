@@ -2,6 +2,8 @@
 title: Weapon Talents
 ---
 
+WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.
+
 Talents are split into active, passive and holster. Active ones sometimes have a requirement, and are activated through some kind of action. Passive are just always active on this weapon. Holster ones are like active but they are active while the weapon is in the holster or equipped.
 
 There might be some way to re-roll talents, but this is not clear yet. It's also not certain if only certain types of weapons get certain talents. 

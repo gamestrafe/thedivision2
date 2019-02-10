@@ -2,9 +2,11 @@
 title: Weapons
 ---
 
+WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.
+
 There are different quality of weapons. Here a list from worst to best.
 
-- ? (White)
+- Worn (White)
 - Standard (Green)
 - Specialized (Blue)
 - Superior (Purple)
@@ -56,6 +58,8 @@ The values below for damage are taken from weapons found at the moment, and then
 | Black Market AK-M | ~11.0k | 600 | 30 | 2.3s | 10-45m | long | 7.62 | short | 7.62 |
 | Military Market AK-M | ~13.7k | 600 | 40 | 2.3s | 10-45m | long | 7.62 | long | 7.62 |
 | G36 C | ~11.2k | 750 | 30 | 2.3s | 10-45m | long | 5.56 | short | 5.56 |
+| Military P416 | ~8.3k | 750 | 30 | 2.3s | 10-45m | long | 5.56 | long | 5.56 |
+| AUG A3-CQC | ~7.9k | 680 | 30 | 2.1s | 10-45m | long | 5.56 | short | 5.56 |
 
 ## Marksman Rifle
 
@@ -99,6 +103,9 @@ The values below for damage are taken from weapons found at the moment, and then
 | Custom PF45 | ~14.8k | 600 | 25 | 1.9s | 0-30m | short | .45 | gadget | pistol |
 | Police 686 Magnum | ~23.3k | 350 | 6 | 1.5s | 0-30m | short | - | - | revolver drum |
 | D50 | ~36.8k | 400 | 8 | 1.9s | 0-30m | short | - | - | - |
+| Military M9 | ~13.3k | 450 | 15 | 1.7s | 0-30m | - | 9mm | - | pistol |
+| M1911 | ~19.3k | 310 | 7 | 1.9s | 0-30m | - | - | - | pistol |
+| Px4 Storm Type F | ~10.4k | 450 | 17 | 1.9s | 0-30m | - | 9mm | gadget | pistol |
 
 ## Signature weapons
 | Name | Damage | RPM | Mag | Reload | CS Range | Scopes | Muzzles | Underbarrels | Magazines |

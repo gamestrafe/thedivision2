@@ -2,7 +2,7 @@
 title: Crafting
 ---
 
-Before you can start to craft, you need to find and recruit Inaya al-Khaliq to the base of operations. Then she will be in the crafting room clsoe to where you can upgrade your skills.
+Before you can start to craft, you need to find and recruit Inaya al-Khaliq to the base of operations. You can do so by finishing the Wahsington Hotel Mission and return to Odessa in The Theater. After that you can simply talk to her on the same level that the door with Odessa is, near the western ramp. Then she will be in the crafting room close to where you can upgrade your skills.
 
 Secondly you need blueprints. Those can be gained by completing certain tasks like projects.
 

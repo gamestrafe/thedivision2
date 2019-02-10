@@ -2,6 +2,8 @@
 title: Perks
 ---
 
+WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.
+
 You can unlock Perks in the Base of Operations with Coop Dennison, the Quartermaster of the White House. You can find him at the southern main entrance just inside on your left.
 
 Some perks have multiple stages where one has to be unlocked before the next one can be unlocked. They are shown here with a large common header and then smaller sub headers for each sub stage of the perk.
@@ -10,13 +12,13 @@ Some perks have multiple stages where one has to be unlocked before the next one
 
 A second weapon can be equipped, for a total of 2 primary weapons and 1 secondary weapon equipped at all times.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ## Skill Slot
 
 Another skill can be equipped, for a total of 2 skills equipped at all times.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ## Restock
 
@@ -24,7 +26,7 @@ Cost: X SHD Tech
 
 Restocking when entering a safe space refills all Armor Kits.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Restock 2: Grenades
 
@@ -36,7 +38,7 @@ Cost: X SHD Tech
 
 50% cache for a bonus item to drop when opening a Field Proficiency Cache.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ## Armor Kit
 
@@ -44,7 +46,7 @@ Cost: X SHD Tech
 
 You can now carry 1 more armor kit, for a total of 4.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Armor Kit 2
 
@@ -84,7 +86,7 @@ Cost: X SHD Tech
 
 Inventory capacity increased by 10 slots.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Inventory 2
 
@@ -128,7 +130,7 @@ Cost: X SHD Tech
 
 Headshot kills award an XP bonus.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Multi-kill Accolade
 
@@ -160,7 +162,7 @@ Cost: X SHD Tech
 
 Donating enough resources to the control points activates better detection of loot containers in a 20 m radius, for 10 min.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Detection 2
 
@@ -174,7 +176,7 @@ Cost: X SHD Tech
 
 Material storage capacity is increased to 50 materials.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Crafting Materials 2
 
@@ -194,7 +196,7 @@ Cost: 3 SHD Tech
 
 Awards: Tactical Small Pouch magazine, a compact pouch that fits on any belt-fed weapon.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Magazine 2
 
@@ -220,7 +222,7 @@ Cost: X SHD Tech
 
 Awards: Loud Vent Brake 5.56 Muzzle; it fits on 5.56 caliber muzzles.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Muzzle 2
 
@@ -246,7 +248,7 @@ Cost: X SHD Tech
 
 Awards a T2 Micro Red Dot Sight, a red dot sight for short and long top rails.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Optics 2
 
@@ -260,7 +262,7 @@ Cost: X SHD Tech
 
 Awards a Short Grip Underbarrel attachment for longer rails.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Grip 2
 
@@ -288,7 +290,7 @@ Cost: X SHD Tech
 
 The resource inventory can now carry 50 more food, water and components.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Resources 2
 

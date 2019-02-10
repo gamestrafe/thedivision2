@@ -8,6 +8,25 @@ The image below is the map as it appeared in the private beta at the beginning o
 
 <img src="/images/map-private-beta.jpg" alt="Tom Clancy's The Division 2 Map from Private Beta" width="600">
 
+## Districts
+
+Each District is geared towards a certain level bracket. If you try going there before you reach the levels mentioned, you'll not have a good time. It's recommended to tackle them in this order.
+
+- White House (1 - 3): Where the base of operations is located.
+- Downtown East (2 - 7): Home to the Theater Settlement.
+- Federal Triangle (4 - 8)
+- East Mall (7 - 11)
+- Southwest (11 - 15)
+- Downtown West (15 - 18)
+- Constitution Hall (17 - 21)
+- West Potomac Park (19 - 23)
+- Foggy Bottom (21 - 25)
+- West End (23 - 27)
+- Roosevelt Island (27 - 30)
+- Capitol Hill (30)
+
+There are three [Dark Zones](/dark-zone.html), West, East and South, which have their own leveling for players.
+
 ## Settlements
 
 You can fast travel to settlements.
