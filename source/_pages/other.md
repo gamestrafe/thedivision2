@@ -12,6 +12,10 @@ Target Intel (max 50)
  E-Credits (max 1'000'000'000)
 :   Standard JTF currency used to purchase equipment from vendors and for other JTF services.
 
+## Keys
+
+There are keys for the general world and keys for the DZ. They both work the same, as in they allow you to unlock certain special loot boxes. The normal keys are split into factions and can be found in various locations across the map. Look for small boxes mounted against the wall, often in places where you find other loot as well. DZ keys you can get from enemy kills.
+
 ## Supplies
 
 You can find components, food and water throughout the [map](/map.html). These are then used to supply settlements or controlpoints to complete projects or boost some perks. There are places where you can find large quantities and where it respawns regularly.
