@@ -1,0 +1,40 @@
+{
+    "name": "gamestrafe/thedivision2",
+    "description": "The Division 2 GameStrafe.com portal site",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Christian Riesen",
+            "email": "chris.riesen@gmail.com",
+            "homepage": "http://christianriesen.com"
+        }
+    ],
+    "require": {
+      "php": ">7.2",
+      "sculpin/sculpin": "dev-master",
+      "kriswallsmith/assetic": "1.4.0",
+      "components/bootstrap": "^3.3",
+      "components/jquery": "^3.1"
+    },
+    "config": {
+        "component-dir": "source/components",
+        "components": [
+            "components/bootstrap",
+            "components/jquery"
+        ]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "ComponentManager\\ComponentManager::postComposerInstall"
+        ],
+        "post-update-cmd": [
+            "ComponentManager\\ComponentManager::postComposerInstall"
+        ],
+        "watch": [
+            "./vendor/bin/sculpin generate --watch --server"
+        ]
+    },
+    "autoload": {
+        "classmap": ["./component-manager.php"]
+    }
+}

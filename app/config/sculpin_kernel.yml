@@ -1,0 +1,18 @@
+sculpin_content_types:
+    # Not using posts
+    posts:
+        enabled: false
+        #permalink: blog/:year/:month/:day/:filename/
+    pages:
+        enabled: true
+        type: path
+        path: _pages
+        singular_name: page
+        # The default layout to use for this type. Defaults to the singularized name of the type.
+        #layout: page
+        # The default permalink to use for this type.
+        permalink: :basename.html
+        # If a page is deemd a draft it can be still added but wont be published
+        publish_drafts: false
+        #taxonomies:
+        #    - tags

@@ -1,0 +1,30 @@
+language: php
+
+php:
+    - '7.3'
+
+install:
+    - composer install
+
+script:
+    - vendor/sculpin/sculpin/bin/sculpin --env=prod generate
+
+# Will deploy pushes to master branch on the S3 bucket
+deploy:
+    provider: s3
+    # To store these securely, here is how to encrypt: https://docs.travis-ci.com/user/encryption-keys/
+    access_key_id:
+        secure: "ripnRNQSSsvN+L4zEXmurHy6GXdpQtt56NpWOvKc9qy0r+FQWw4Mk/TEYOzMWoH9+R7leRnowWVTCECE/yIb4z5fAC+nhhX2o35vEXVZR4+LD1YP2Ac1JUZ2sdCbBhlCjKti+G0fjnrzLw/4yggcMmMNo1L9XS7nl3K5LGPvMbzGTyBq5Y2yXGZ2OHUOSgMsFjp18Qgf2vg6mnbpCUFU4BvEjZqDZ+wEuExrLgd0Uy9AW8mjNpXK1J/uMYa5T9ZU7qRX4YR+p7GcUYyAhdslxvsbRz2LTwdwnMhMGyMuCuvnu5FbraMGSHeudSQnDgjQzfAZnmJQEf+gMQXmjHvBsdFCOas7Osy/tOIXkezeLE6W8pMKvh2aoC/9JSeNtWczIss8MHqSECJv+j1Imi9ATIqY7S+0UpWSbVo13Il4Y/7E16igkWf7YVkaO+0OlY/71s6+5qNtF6uEnIyn1U9Z8/FlyOsAjSNf/IWVUnB6XHFdzu75Is1EnASPVk5aJKsUPkHMTJogfc+hDljsH1NkAJQTshHPmVxHV+u6jVYWeOobblPFuV2M9gaoGDBVpDkcsrga7scRiDFYAQs2hbfA1xodTlttimNYjIlauShwiKyNWwX8nSRrvqD0DPywV9WezbTWE4AYNzPxAFusmzOgE+ahShRpdZGrNjt5KDQoknk="
+    secret_access_key:
+        secure: "fihUF45UaujnEAfES0qm6K7bAhMkjMUC92FEAKCgIqTvkk/h+CDA+3eoaONUW+eVtqQiKGmrvh4m8WrDYy9c34wyyUqCYfMkyWZv/Q7mvgI3BqaKJ1lECa6QPhMWjFf17dTK+Q/TgZ+sUQ8F1QWElIOHT2h6QJeheVYNLsgXhRhrKCYDCfqCwgfmkarhC0aJMEgYAh1EG7jNh8gBHlHqarHuxx87K0YLQIwbhGj5yNLt6kZ14NWV3B0S7bAGN3vFmPyMtNfk0Ghta85U0wsXhVOA+9uDIH+9NX6HQtr+yvWytM/uIeRvs4/EbXTeW/f99HYGivpYDoAs1/g+gAOMZQzVBKH2fGgRQTEFWAgMSZ4a8sP8BammltvCGKvm2IMv9/9/jNhzcxN2bjue9o4LRz7RGndQZRl7NEoS3R4f3IYiEg+vCHhq9A9X3U5ownLi0mqd+BSzaeUe0tITmCM7UUglePw7fiY9r7onzD3ms+0lUJ+gxLzj/KnbwvvHfPQuMBtfVr/dOcDXWskZz9/7KhLmzXuvkL6zMivjPm//1UzOM9JUpqDoNXqyElu0miV9ZAcsGGV+WLW+3+U5dReiFJ+kt6mX+A61/cXI+y56zj6Zcgmrj9+a69NfM0ylIGTgy/o4biOnqks9MzqyeHUq0yhKtgwkTP9fpITMG3wUOyM="
+    bucket:
+        secure: "RZRMPl7PB6ck9wzHN1SeMjNW0vNViB+Sh+rxZC+32NRcVdURxe2mTJiJp0sz8bpkglenryiw0H6punClhwTq27keAuTJywRzcDiW+bm5OmJNaR6RNvh3WyjYiJh4jbTZDGbKDwbjgUM8gynXr3+/35eltTvKt/8hwIFTzdFbtKGOYlh88pUHEIJXnBsov5RlYRupvy6Ed8i311FRFd/pwuDhxNfZdDnHQh/eZkxfyBlmS9om308tOCDobTa6MChmBUA5zkX/0Q4YPpec4oSzTd7kHoNqe5M1qld/RBbO2H+ZAmZb1UXM4I6uboNENIVQRWV6Sf+xjD8QwdPz19e24fprJ3LLB3kpOc5jIFYG6qCJvk0ovn4W4aOpjaRyjWXu/uPPlcubAYlTsUf2DQ3dZY2cXLbCyUI3fRDBdki/k1SuIoFZIbsAOrjLKuNVJ/4P05nQYI0gFm8UeQjy0RsBgCu/h4u8+OySI69uIJ2CsJiVIUpceA0Rwn1i5wOcz21vQXrt6M0TixHF7yaHVgm/fhIfHZSxtCvTA62b5KZy+AHSynmLQkBPM99mREUjxdjey5S0vxkn4yHeYdz8mE1mwcJWF2Xp6smY/JUcPhnPY20VSKJufcx6C25aNSXIWK7uhhLtkVqJuJbz6/JTwcqVrFJwK7+uQDcr7fx+sLH+4kY="
+    # AWS Region for the bucket
+    region: "us-east-1"
+    # IMPORTANT! If you don't do this then the above generated content will be wiped and you deploy nothing
+    skip_cleanup: true
+    # The folder that is deployed, so everything inside this folder is deployed to the root of the bucket
+    local_dir: output_prod
+    on:
+        # Only deploys on merges to master branch
+        branch: master
