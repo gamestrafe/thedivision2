@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% if site.google_tag_manager_id %}
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','{{ site.google_tag_manager_id }}');</script>
+        <!-- End Google Tag Manager -->
+        {% endif %}
+
         <title>{% block title %}{{ page.title }}{% endblock %} - {{ site.title }} - {{ site.subtitle }}</title>
         <meta charset="utf-8">
         <meta name="theme-color" content="#ffffff">
@@ -33,6 +43,12 @@
         {% endblock %}
     </head>
     <body>
+        {% if site.google_tag_manager_id %}
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        {% endif %}
+
         <header>
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
@@ -62,7 +78,7 @@
         </div>
 
         <footer class="container">
-            This content has been compiled by GameStrafe and its contributers
+            This content has been compiled by GameStrafe and its contributors
             <br/>
             <a href="{{ site.github_link }}">You can edit this page on Github</a>
         </footer>
