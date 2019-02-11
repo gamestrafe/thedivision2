@@ -12,16 +12,11 @@
     "require": {
       "php": ">7.2",
       "sculpin/sculpin": "dev-master",
-      "kriswallsmith/assetic": "1.4.0",
-      "components/bootstrap": "^3.3",
-      "components/jquery": "^3.1"
+      "kriswallsmith/assetic": "1.4.0"
     },
     "config": {
         "component-dir": "source/components",
-        "components": [
-            "components/bootstrap",
-            "components/jquery"
-        ]
+        "components": []
     },
     "scripts": {
         "post-install-cmd": [
