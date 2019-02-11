@@ -1,13 +1,13 @@
-# GameStrafe.com
+# TheDivision2.GameStrafe.com
 
-This is the overview portal site for the GameStrafe network.
+This is network site for The Division 2 on the GameStrafe network.
 
 Contributions are always welcome!
 
 ## Contributions
 
 Clone the project locally:
-`git clone --recurse-submodules git@github.com:gamestrafe/gamestrafe.com.git`
+`git clone --recurse-submodules git@github.com:gamestrafe/thedivision2.git`
 
 Optionally: You can run a virtual box with all requirements in it, by bringing it up using `vagrant up`
 
