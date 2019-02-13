@@ -11,6 +11,7 @@ sculpin_content_types:
         # The default layout to use for this type. Defaults to the singularized name of the type.
         #layout: page
         # The default permalink to use for this type.
+        #permalink: :folder:basename.html
         permalink: :basename.html
         # If a page is deemd a draft it can be still added but wont be published
         publish_drafts: false
