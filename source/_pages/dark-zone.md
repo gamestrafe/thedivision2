@@ -12,59 +12,59 @@ Once you found something in a dark zone, you need to extract it by bringing it t
 
 A player may choose to go rogue (button press, hijacking loot, or hacking) and is then attackable by other players.
 
-# Dark Zone Perks
+## Dark Zone Perks
 
 These perks are very different than the standard ones. You can unlock them for free once you reached the needed tier. But you can only unlock one per tier. If you want to change it, you can respec though and pay a small fee to choose another perk.
 
 
-## Tier 1, DZ level 1
+### Tier 1, DZ level 1
 
 - Bag Space: Grants 1 additional contaminated item inventory slot
 
-## Tier 2, DZ level 5
+### Tier 2, DZ level 5
 
 - Terminator: 25% increased Dark Zone XP for eliminating other players
 - Sight Seeing: 25% increased Dark Zone XP from clearing landmarks
 - Breakin'the Law: 25% increased Dark Zone XP for surviving a rogue timer
 
-## Tier 3, DZ level 10
+### Tier 3, DZ level 10
 
 - Daily Winner: Daily reward(s) from the DZ Safe house
 
-## Tier 4, DZ level 15
+### Tier 4, DZ level 15
 
 - Sleight of Hand: 10% reduction in time to complete rogue actions
 - Bounceback: Rogue cooldown reduced by 10%
 
-## Tier 5, DZ level 20
+### Tier 5, DZ level 20
 
 - Keeper: 50% chance to automatically secure 1 dropped contaminated item on death
 
-## Tier 6, DZ level 25
+### Tier 6, DZ level 25
 
 - Keymaster: 25% chance to acquire DZ keys from loot crates in a DZ
 - Explosions!: 25% chance to acquire grenades from loot crates in a DZ
 - Medic: 25% chance to acquire armor kits from loot crates in a DZ
 
-## Tier 7, DZ level 30
+### Tier 7, DZ level 30
 
 - Vanish: Nameplate visibility to other agents is reduced while rogue
 - X-Ray Eyes: Rogue nameplate detection range increased
 
-## Tier 8, DZ level 35
+### Tier 8, DZ level 35
 
 - More Loot: Additional rewards for completing DZ alerts and clearing landmarks
 
-## Tier 9, DZ level 40
+### Tier 9, DZ level 40
 
 - Double Daily Winner: Additional daily rewards from the DZ safe house
 - Daily rewards available in the Thieves' Den
 
-## Tier 10, DZ level 45
+### Tier 10, DZ level 45
 
 - Keep It Clean: 10% increased chance for contaminated item to drop
 
-## Tier 11, DZ level 50
+### Tier 11, DZ level 50
 
 - Get to the chopper: 25% faster extraction arrival time
 - Can't Catch Me!: 25% faster manhunt bounty clearing

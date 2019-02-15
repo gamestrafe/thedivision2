@@ -18,8 +18,6 @@ Additionally there is a signature weapons tier that is exclusive to the weapons 
 
 You might also be interested in [Weapon Talents](/weapon-talents.html) and [Weapon Mods](/weapon-mods.html).
 
-# Weapons List
-
 The values below for damage are taken from weapons found at the moment, and then normalization toggled on. They will be replaced with better values later, but give a good general indication for now. RPM is rounds per minute fire rate and Mag is Magazine size without mods. The last columns are mod slots and what type it takes, where "-" denotes no such slot. Each weapon also has a skin slot starting at the Specialized quality. Reload notes the time a reload takes. CS Range is the critical strike range noted on the weapon. 
 
 ## Sub Machine Gun
