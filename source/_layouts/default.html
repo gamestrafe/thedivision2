@@ -13,7 +13,7 @@
         {% endif %}
 
         <title>{% block title %}{{ page.title }}{% endblock %}</title>
-        {% if page.meta.description %}<meta name="description" content="{{page.meta.description}}">{% endif %}
+        <meta name="description" content="{% if page.meta.description %}{{page.meta.description}}{% else %}{{ site.meta.description }}{% endif %}">
 
         {% block head_meta %}
         {% endblock %}
@@ -36,9 +36,9 @@
         <meta property="og:image" content="/og-image.jpg">
         <meta property="og:image:height" content="1257">
         <meta property="og:image:width" content="2400">
-        <meta property="og:description" content="All info about Tom Clancy's The Division 2 that you could ever need.">
-        <meta property="og:title" content="The Division 2 at GameStrafe">
-        <meta property="og:url" content="https://thedivision2.gamestrafe.com/">
+        <meta property="og:description" content="{% if page.meta.description %}{{page.meta.description}}{% else %}{{ site.meta.description }}{% endif %}">
+        <meta property="og:title" content="{{ page.title }}">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 
         {% block head_styles %}
         {% endblock %}
