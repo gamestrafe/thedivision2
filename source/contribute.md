@@ -2,6 +2,8 @@
 layout: default
 title: Contribute to {{ site.title }}
 permalink: contribute.html
+meta:
+    description: Want to contribute to this page about The Division 2? Here is how.
 ---
 
 # How to contribute

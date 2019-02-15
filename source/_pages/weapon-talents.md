@@ -1,5 +1,7 @@
 ---
-title: Weapon Talents
+title: Weapon Talents in The Division 2
+meta:
+    description: Higher end weapons have weapon talents in The Division 2. These change the way you use the weapons and can give you advantages.
 ---
 
 WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.

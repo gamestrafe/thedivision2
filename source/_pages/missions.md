@@ -1,5 +1,7 @@
 ---
-title: Missions
+title: Missions in The Division 2
+meta:
+    description: Main missions you have to complete to get through the story of The Division 2, where to find and how to complete them.
 ---
 
 Main missions are visible on the [map](/map.html) as hexagons. They lead you through the main story. The stationary ones remain as a grey hexagon after completion so you can experience them again in different difficult settings.

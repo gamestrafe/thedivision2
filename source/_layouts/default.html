@@ -5,16 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         {% if site.google_tag_manager_id %}
-        <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','{{ site.google_tag_manager_id }}');</script>
-        <!-- End Google Tag Manager -->
         {% endif %}
 
-        <title>{% block title %}{{ page.title }}{% endblock %} - {{ site.title }} - {{ site.subtitle }}</title>
+        <title>{% block title %}{{ page.title }}{% endblock %}</title>
+        {% if page.meta.description %}<meta name="description" content="{{page.meta.description}}">{% endif %}
 
         {% block head_meta %}
         {% endblock %}
@@ -34,7 +33,6 @@
         <meta name="application-name" content="The Division 2">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-
         <meta property="og:image" content="/og-image.jpg">
         <meta property="og:image:height" content="1257">
         <meta property="og:image:width" content="2400">
@@ -48,12 +46,7 @@
         {% endblock %}
     </head>
     <body>
-        {% if site.google_tag_manager_id %}
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-        {% endif %}
-
+        {% if site.google_tag_manager_id %}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{% endif %}
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="/">

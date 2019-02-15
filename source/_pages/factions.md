@@ -1,5 +1,7 @@
 ---
-title: Factions
+title: Factions in The Division 2
+meta:
+    description: Various factions inhabit the world of The Division 2. Meet them here and know why you should or shouldn't aim at them.
 ---
 
 The world is split into multiple factions. Knowing them will heighten your chance to survive in the world of The Division 2.

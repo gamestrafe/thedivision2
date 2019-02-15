@@ -1,5 +1,7 @@
 ---
-title: Skills
+title: Skills in The Division 2
+meta:
+    description: All about the skills in The Division 2. These abilities allow you to control the fights in different interesting ways.
 ---
 
 You can unlock Skills in the Base of Operations with Coop Dennison, the Quartermaster of the White House. You can find him at the southern main entrance just inside on your left.

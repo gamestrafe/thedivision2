@@ -1,5 +1,7 @@
 ---
-title: Weapon Mods
+title: Weapon Mods in The Division 2
+meta:
+    description: You can unlock weapon mods in The Division 2, which alter the way your weapons behave. All stats and how to get the mods.
 ---
 
 WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.

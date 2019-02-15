@@ -1,5 +1,7 @@
 ---
-title: Everything else
+title: Everything else in The Division 2
+meta:
+    description: Everything about The Division 2 that is not covered in other places on this site.
 ---
 
 Any tidbit that doesn't fit into another page goes here.

@@ -1,5 +1,7 @@
 ---
-title: Map
+title: Map of The Division 2
+meta:
+    description: Interactive, zoomable map of The Division 2. Contains all information and all locations.
 ---
 
 The map of The Division 2 spans the downtown metro area of Washington DC, from the west of Roosevelt Island to the east of the capitol.

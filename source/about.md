@@ -1,10 +1,12 @@
 ---
 layout: default
-title: About {{ site.title }}
+title: About
 permalink: about.html
+meta:
+    description: About The Division 2 site at GameStrafe.
 ---
 
-# About The Division 2 at GameStrafe
+# About {{ site.title }} at GameStrafe
 
 This site is part of the [GameStrafe network](https://gamestrafe.com). As you can see there are not ads or other annoying things, just content. That's because every page is publicly available, each in it's own [github repo]({{ site.github_link }}). That means not only can you see how all this is made, you can also edit and add things (by submitting merge requests).
 

@@ -1,5 +1,7 @@
 ---
-title: Locations
+title: Locations in The Division 2
+meta:
+    description: Many locations wait for you to discover them in The Division 2. You'll find descriptions of all of them here.
 ---
 
 This page contains info about all locations in the Division 2, that are not already described on other pages. For [Dark Zones](/dark-zone.html), [Missions](/missions.html), [Side Missions](/side-missions.html) and [Collectibles](/collectibles.html) see their respective pages.  

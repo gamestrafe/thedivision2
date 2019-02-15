@@ -1,5 +1,7 @@
 ---
-title: Dark Zone
+title: The Dark Zone in The Division 2
+meta:
+    description: Enter the dark zone in The Division 2. Everything you need to know to get the most out of the Dark Zone.
 ---
 
 The dark zones are walled off areas where you can encounter other players who may attack you. It's also where dangerous enemies are and high value loot is very common.

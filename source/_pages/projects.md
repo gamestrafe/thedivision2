@@ -1,5 +1,7 @@
 ---
-title: Projects 
+title: Projects in The Division 2
+meta:
+    description: The Division 2 gives you projects which unlocks more rewards. All you need to know about them can be found here.
 ---
 
 Projects are tasks to complete that will give you rewards, depending on the task.

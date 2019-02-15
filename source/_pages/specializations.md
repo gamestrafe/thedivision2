@@ -1,5 +1,7 @@
 ---
-title: Specializations
+title: Specializations in The Division 2
+meta:
+    description: After reaching level 30 in The Division 2, the specializations get unlocked. Everything you need to know about them, you'll find here.
 ---
 
 There are currently 3 Specializations available. They start coming into play once you reach level 30, little else is known about them.

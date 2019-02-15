@@ -1,5 +1,7 @@
 ---
-title: Gear
+title: Gear in The Division 2
+meta:
+    description: The Division 2 has a huge selection of gear with talents and stats that make your character stronger. Here you find everything you need.
 ---
 
 WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.

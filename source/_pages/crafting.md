@@ -1,5 +1,7 @@
 ---
-title: Crafting
+title: Crafting in The Division 2
+meta:
+    description: Crafting is an important aspect of The Division 2. All you need to know about crafting.
 ---
 
 Before you can start to craft, you need to find and recruit Inaya al-Khaliq to the base of operations. You can do so by finishing the Wahsington Hotel Mission and return to Odessa in The Theater. After that you can simply talk to her on the same level that the door with Odessa is, near the western ramp. Then she will be in the crafting room close to where you can upgrade your skills.

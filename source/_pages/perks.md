@@ -1,5 +1,7 @@
 ---
-title: Perks
+title: Perks in The Division 2
+meta:
+    description: Unlock perks that permanently make your life easier in The Division 2. How to get them and what they do can be found here.
 ---
 
 WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.
