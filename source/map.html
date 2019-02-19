@@ -1,0 +1,48 @@
+---
+layout: map
+title: The Division 2 Map
+meta:
+    description: Interactive, zoomable map of The Division 2. All locations of interest are marked and can be filtered.
+    og:
+        image: map.jpg
+permalink: map.html
+---
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    html, body {
+        height: 100%;
+    }
+    #thedivision2map {
+        padding-top: 82px;
+        width: 100%;
+        height: 100%;
+        margin-bottom: -82px;
+        background-color: #736963;
+    }
+</style>
+
+<div id="thedivision2map"></div>
+
+<script>
+    var mymap = L.map('thedivision2map', {
+        center: [0, 0],
+        attributionControl: false,
+        maxBounds: [[-1000, -1000], [1000, 1000]],
+        maxZoom: 9,
+        minZoom: 1
+    });
+    var imageUrl = '/images/the-division-2-map-v3.svg',
+        imageBounds = [[-1000, -1000], [1000, 1000]];
+
+    L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
+    mymap.fitWorld();
+
+    // Debug
+    mymap.on('click', function(e) {
+        console.log(e.latlng);
+    } );
+</script>

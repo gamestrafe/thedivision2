@@ -11,6 +11,8 @@ google_tag_manager_id: GTM-MKS5N2K
 # Default value, if no other is defined
 meta:
     description: All info about Tom Clancy's The Division 2 that you could ever need.
+    og:
+        image: the-division-2.jpg
 
 # Insert your disqus shortname
 #disqus:
