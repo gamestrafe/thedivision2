@@ -1,7 +1,7 @@
 ---
 title: Story of The Division 2
 meta:
-    description: Spoiler alert: The whole story of The Division 2.
+    description: "Spoiler alert: The whole story of The Division 2."
 ---
 
 After the events in New York of the first Division, the dollar flu
