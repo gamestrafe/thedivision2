@@ -120,11 +120,11 @@
             </nav>
         </header>
 
-        {% block content_wrapper %}
+        {% block page_body %}
         <div class="mainContent container">
             <div class="row">
                 <div class="col">
-                    {% block content %}{% endblock %}
+                    {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
                 </div>
             </div>
         </div>

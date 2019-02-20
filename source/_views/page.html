@@ -6,12 +6,9 @@
 
 {% block content_wrapper %}
     <article>
-        <header>
-            <h2>{{ page.title }}</h2>
-        </header>
+        <h2>{{ page.title }}</h2>
         <div>
             {{ page.blocks.content|raw }}
         </div>
-
     </article>
 {% endblock %}
