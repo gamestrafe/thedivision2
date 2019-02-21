@@ -86,7 +86,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | SIG 716 CQB | ~23.3k | 300 | 20 | 2.2s | 10-60m | long | - | short | 7.62 |
 | LVOA-C | ~17.2k | 450 | 40 | 2.4s | 10-60m | long | 5.56 | long | 5.56 |
 | M16A2 | ~8.8k | 300 | 30 | 2.2s | 10-60m | short | 5.56 | - | 5.56 |
-| Classic M1A | ~23.2k | 180 | 10 | 3.0s | 10-60m | long | 7.62 | long | - |
+| Classic M1A | ~23.2k | 180 | 10 | 3.0s | 10-60m | long | - | long | 7.62 |
 
 ## Shotgun
 
