@@ -1,7 +1,9 @@
 ---
 title: Weapons of The Division 2
 meta:
-    description: All the weapons available to your Agent in The Division 2, with precise data about their stats. 
+    description: All the weapons available to your Agent in The Division 2, with precise data about their stats.
+    og:
+        image: weapons.jpg 
 ---
 
 WARNING: This information is from the beta version of The Division 2 and is subject to change. Take it with a grain of salt, thank you.
