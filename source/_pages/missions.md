@@ -17,3 +17,13 @@ Theater Settlement Mission
 Reactivate the ISAC node beneath the center and rescue the missing Division agent.
 
 SHD Mission
+
+## ViewPoint Museum
+
+Seize the ViewPoint building from the True Sons.
+
+- Rewards: 1 Skill Unlock, Theater Settlement Upgrade, 9750 XP
+- Boss: Staff Sergeant Carl Wade
+- Loot Drop: 2 green quality equipment items
+
+Theater Settlement Mission
