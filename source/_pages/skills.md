@@ -38,7 +38,23 @@ No details known yet.
 
 ## Chem Launcher
 
-No details known yet.
+Mod slots: Agitator slot, pneumatics slot, FX slot.
+
+### Reinforcer
+
+The reinforcer cannister disperses a cloud of gas that repairs the agent's allies armor.
+
+### Firestarter
+
+The firestarter cannister creates a cloud of explosive gas that can be ignited trhough explosives, weapon fire, etc.
+
+### Riot Foam
+
+The riot foam gas canister fires a payload of sticky foam that immobilizes targets.
+ 
+### Oxidizer
+
+The oxidizer cannister relases a cloud of corrosive gas that damages enemy armor, skill proxies and causes damage over time. 
 
 ## Firefly
 

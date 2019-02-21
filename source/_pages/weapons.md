@@ -34,6 +34,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Enhanced PP-19 | ~6.6k | (770-10%) | 53 | 2.2s | 0-30m | long | 9mm | - | - |
 | MP7 | ~6.5k | 950 | 20 | 1.8s | 0-30m | long | - | short | - |
 | Tactical AUG A3P | ~9.2k | 725 | 25 | 1.9s | 0-30m | long | 9mm | short | 9mm |
+| MP5A2 | ~7.5k | 800 | 32 | 2.1s | 0-21m | long | 9mm | short | 9mm |
 
 ## Light Machine Gun
 
@@ -85,6 +86,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | SIG 716 CQB | ~23.3k | 300 | 20 | 2.2s | 10-60m | long | - | short | 7.62 |
 | LVOA-C | ~17.2k | 450 | 40 | 2.4s | 10-60m | long | 5.56 | long | 5.56 |
 | M16A2 | ~8.8k | 300 | 30 | 2.2s | 10-60m | short | 5.56 | - | 5.56 |
+| Classic M1A | ~23.2k | 180 | 10 | 3.0s | 10-60m | long | 7.62 | long | - |
 
 ## Shotgun
 

@@ -34,7 +34,7 @@ Cost: 1 SHD Tech
 
 Restocking when entering a safe space refills all Grenades.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ## Field Proficiency Cache
 
@@ -54,13 +54,13 @@ Cost: 1 SHD Tech
 
 You can now carry 1 more armor kit, for a total of 5.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ### Armor Kit 3
 
 You can now carry 1 more armor kit, for a total of 6.
 
-Cost: X SHD Tech
+Cost: 3 SHD Tech
 
 ## Grenades
 
@@ -74,13 +74,13 @@ Cost: 1 SHD Tech
 
 You can now carry 1 more grenade.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ### Grenades 3
 
 You can now carry 1 more grenade.
 
-Cost: X SHD Tech
+Cost: 3 SHD Tech
 
 ## Inventory
 
@@ -94,7 +94,7 @@ Cost: 1 SHD Tech
 
 Inventory capacity increased by 20 slots.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ### Inventory 3
 
@@ -116,7 +116,7 @@ Cost: 1 SHD Tech
 
 Increase stash storage capacity by 30 slots.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ### Stash 3
 
@@ -138,7 +138,7 @@ Cost: 1 SHD Tech
 
 Killing Multiple enemies at the same time award an XP bonus.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Weakpoints Accolade
 
@@ -170,27 +170,29 @@ Cost: 1 SHD Tech
 
 Donating enough resources to the control points activates better detection of loot hostiles on a 20 m radius, for 10 min.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ## Crafting Materials
 
 ### Crafting Materials 1
 
-Material storage capacity is increased to 50 materials.
+Material storage capacity is increased to 100 materials.
 
 Cost: 1 SHD Tech
 
 ### Crafting Materials 2
 
-Material storage capacity is increased to 150 materials.
+Material storage capacity is increased to 250 materials.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ### Crafting Materials 3
 
-Material storage capacity is increased to 250 materials.
+Material storage capacity is increased to 500 materials.
 
 Cost: 3 SHD Tech
+
+Requires LEvel 30
 
 ## Magazine
 
@@ -298,7 +300,7 @@ Cost: 1 SHD Tech
 
 The resource inventory can now carry 50 more food, water and components.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ### Resources 3
 
@@ -326,13 +328,6 @@ Cost: X SHD Tech
 
 ### Loadouts 1
 
-Cost: X SHD Tech
-
-
-## Loadouts
-
-### Loadouts 1
-
 A new equipment loadout can now be created in the inventory, for a total of 4.
 
 Cost: 1 SHD Tech
@@ -341,7 +336,7 @@ Cost: 1 SHD Tech
 
 A new equipment loadout can now be created in the inventory, for a total of 5.
 
-Cost: X SHD Tech
+Cost: 2 SHD Tech
 
 ### Loadouts 3
 
@@ -349,7 +344,7 @@ A new equipment loadout can now be created in the inventory, for a total of 6.
 
 Requires Level 30
 
-Cost: X SHD Tech
+Cost: 3 SHD Tech
 
 ## Signature Weapon Ammo
 
