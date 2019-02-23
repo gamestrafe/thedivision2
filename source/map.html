@@ -28,21 +28,91 @@ permalink: map.html
 <div id="thedivision2map"></div>
 
 <script>
-    var mymap = L.map('thedivision2map', {
+    // Icons
+    // Temporary using the default for all, but already configuring the different needed ones below
+    var iconMission = iconSidemisson = iconArtifact = iconComm = iconUnderground = iconControlpoint = iconWhitehouse = iconSettlement = iconShdtech = new L.Icon.Default();
+
+    //var iconUnderground = new L.Icon({ iconUrl: '/images/map/icons/underground.png', iconSize: [44, 44], iconAnchor: [22, 22], tooltipAnchor:  [0, -22]});
+
+
+    // var locations = [
+    //     {latlng: , title: 'Side Mission: Medical Camp Attack', icon: iconSidemisson, popup: '<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.<br/>Level 9<br/>Rewards: <a href="/weapon-mods.html">Blueprint of Loud Vent Brake .45</a></a></p>' },
+    // ];
+
+    //-------------------------------------------------------------
+    // Markers
+    var missionMarkers = [
+        L.marker([45.43265863794225, 92.85644531250001], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
+        L.marker([-8.805880735848378, 75.29296785593034], {title: 'Jefferson Trade Center', icon: iconMission}).bindPopup('<h5>Jefferson Trade Center</h5><p>Reactivate the ISAC node beneath the center and rescue the missing Division agent.</p>'),
+        L.marker([-21.77399803257131, 168.44238281250003], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>')
+    ];
+    var missions = L.layerGroup(missionMarkers);
+
+    var sideMissionMarkers = [
+        L.marker([-37.93093775225246, -8.203123211860659], {title: 'Medical Camp Attack', icon: iconSidemisson}).bindPopup('<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.</p><p><b>Rewards:</b> Blueprint: Loud Vent Brake .45</p>'),
+        L.marker([43.143747578021895, 120.84961339831355], {title: 'MLK Library Community', icon: iconSidemisson}).bindPopup('<h5>MLK Library Community</h5><p>Help the MLK Library community.</p><p><b>Rewards:</b> Blueprint: Improvised Kneepads, Theater Upgrade: Game Corner, 1935 XP, Boss loot: 1 green equipment item</p>'),
+        L.marker([-15.2559268724626, 138.09081941843036], {title: 'National Archives', icon: iconSidemisson}).bindPopup('<h5>National Archives</h5><p>Recover important documents from the archives</p><p><b>Rewards:</b> Blueprint: Compensator 9mm, Theater Upgrade: Rescued Art, 2970 XP</p>'),
+        L.marker([-13.838079936422462, 107.22656250000001], {title: 'Department of Justice', icon: iconSidemisson}).bindPopup('<h5>Department of Justice</h5><p>Destroy an important stockpile of True Sons Munitions.</p>'),
+        L.marker([9.33344411968287, 125.47851607203486], {title: 'Bureau Headquarters', icon: iconSidemisson}).bindPopup('<h5>Bureau Headquarters</h5><p>A SHD tech cache was taken to the bureau laboratory for decontamination. Find and retrieve the SHD tech cache.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Mended Marksman Mag, 2970 XP</p>'),
+        L.marker([22.749165581070766, 32.93701104819775], {title: 'Empire Autumn Hotel', icon: iconSidemisson}).bindPopup('<h5>Empire Autumn Hotel</h5><p>Recover a SHD tech cache from the Empire Autumn hotel.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Flash Hider 7.62, 1935 XP</p>')
+    ];
+    var sideMissions = L.layerGroup(sideMissionMarkers);
+
+    var controlpointMarkers = [
+        L.marker([51.921683837547796, 42.3266600444913], {title: 'Fallen Cranes', icon: iconSidemisson}).bindPopup('<h5>Fallen Cranes</h5><p>Sits on what was previously an important supply route. A gang of opportunistic thugs - later part of the Hyenas - used explosives to topple the cranes and ambush a convoy.</p>'),
+        L.marker([0.7177510878572698, 138.09081941843036], {title: 'Navy Plaza', icon: iconSidemisson}).bindPopup('<h5>Navy Plaza</h5><p>A bloodsoaked no man\'s land created during a long engagement between Hyanes and True Sons as they jostled for dominance, neither one managing to get the edge</p>'),
+        L.marker([24.233606014641623, 62.153319418430335], {title: 'Demolition Site', icon: iconSidemisson}).bindPopup('<h5>Demolition Site</h5><p>A half-destroyed office block, moments from the main Unite DC protest site, that was briefly used by Hyenas for wild debauchery and violent excess.</p>')
+    ];
+    var controlpoints = L.layerGroup(controlpointMarkers);
+
+    var undergroundMarkers = [
+        L.marker([53.78334370004729, 29.626464731991295], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-5.163896834177888, 149.9267587065697], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-25.178434784672206, 149.9267587065697], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-22.162945406365704, -8.76892112195492], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>')
+    ];
+    var underground = L.layerGroup(undergroundMarkers);
+
+    var shdtechMarkers = [
+        L.marker([-25.430049414542452, 135.0292991101742], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([-14.491418794398871, 68.46679888665678], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([24.166802697086595, 87.27539263665678], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([17.50437353249076, 51.59179888665676], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([26.378746223194042, 52.119142636656775], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([51.09662210280433, 72.1728526800871], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([52.35770936904925, 30.131835825741295], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>')
+    ];
+    var shdtech = L.layerGroup(shdtechMarkers);
+    //-------------------------------------------------------------
+
+    var division2map = L.map('thedivision2map', {
         center: [0, 0],
         attributionControl: false,
         maxBounds: [[-1000, -1000], [1000, 1000]],
+        // Layers given here are enabled by default
+        //layers: [missions, sideMissions, controlpoints, underground, shdtech]
         maxZoom: 9,
         minZoom: 1
+
     });
     var imageUrl = '/images/map/the-division-2-map-v3.svg',
         imageBounds = [[-1000, -1000], [1000, 1000]];
 
-    L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
-    mymap.fitWorld();
+    L.imageOverlay(imageUrl, imageBounds).addTo(division2map);
+    division2map.fitWorld();
 
-    // Debug
-    mymap.on('click', function(e) {
-        console.log(e.latlng);
-    } );
+    // Debug, to easy add a marker
+    //division2map.on('click', function(e) { console.log(e.latlng); var marker = L.marker(e.latlng).addTo(division2map).bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']'); } );
+
+    // Contents of the layer control on the righthand side
+    var overlays = {
+        "Missions": missions,
+        "Side Missions": sideMissions,
+        "Control Points": controlpoints,
+        "Underground": underground,
+        "SHD Tech": shdtech
+    };
+
+    L.control.layers(null, overlays).addTo(division2map);
+
 </script>

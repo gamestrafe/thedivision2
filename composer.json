@@ -30,6 +30,7 @@
         ]
     },
     "autoload": {
-        "classmap": ["./component-manager.php"]
+        "classmap": ["./component-manager.php"],
+        "psr-4": {"App\\": "src/"}
     }
 }

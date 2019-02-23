@@ -15,4 +15,5 @@
 {# Used to blank the content for the map, while keeping the header intact #}
 
 {% block page_body %}
+{% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
 {% endblock %}
