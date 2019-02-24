@@ -30,10 +30,9 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconMission = iconSidemisson = iconArtifact = iconComm = iconUnderground = iconControlpoint = iconWhitehouse = iconSettlement = iconShdtech = new L.Icon.Default();
+    var iconMission = iconSidemisson = iconArtifact = iconComm = iconSafehouse = iconUnderground = iconControlpoint = iconWhitehouse = iconSettlement = iconShdtech = new L.Icon.Default();
 
     //var iconUnderground = new L.Icon({ iconUrl: '/images/map/icons/underground.png', iconSize: [44, 44], iconAnchor: [22, 22], tooltipAnchor:  [0, -22]});
-
 
     // var locations = [
     //     {latlng: , title: 'Side Mission: Medical Camp Attack', icon: iconSidemisson, popup: '<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.<br/>Level 9<br/>Rewards: <a href="/weapon-mods.html">Blueprint of Loud Vent Brake .45</a></a></p>' },
@@ -66,10 +65,12 @@ permalink: map.html
     var controlpoints = L.layerGroup(controlpointMarkers);
 
     var undergroundMarkers = [
+
         L.marker([53.78334370004729, 29.626464731991295], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-5.163896834177888, 149.9267587065697], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-25.178434784672206, 149.9267587065697], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
-        L.marker([-22.162945406365704, -8.76892112195492], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>')
+        L.marker([-21.983801417384697, 7.459716796875001], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-22.284013600962453, -8.662719726562502], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>')
     ];
     var underground = L.layerGroup(undergroundMarkers);
 
@@ -83,6 +84,17 @@ permalink: map.html
         L.marker([52.35770936904925, 30.131835825741295], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>')
     ];
     var shdtech = L.layerGroup(shdtechMarkers);
+
+    var safehouseMarkers = [
+        L.marker([46.694667307773116, 57.530283007371615], {title: 'Safehouse: Final Epiphany', icon: iconSafehouse }).bindPopup('<h5>Final Epiphany</h5><p>Safe house in Downtown East</p>'),
+        L.marker([-9.79567758282973, 95.0903154519538], {title: 'Safehouse: The 1040', icon: iconSafehouse }).bindPopup('<h5>The 1040</h5><p>Safe house in Federal Triangle</p>')
+    ];
+    var safehouses = L.layerGroup(safehouseMarkers);
+
+    var settlementMarkers = [
+        L.marker([26.329524974946562, 105.89900132859125], {title: 'The Theater', icon: iconSafehouse }).bindPopup('<h5>The Theater</h5><p>Settlement in Downtown East</p>')
+    ];
+    var settlements = L.layerGroup(settlementMarkers);
     //-------------------------------------------------------------
 
     var division2map = L.map('thedivision2map', {
@@ -90,12 +102,12 @@ permalink: map.html
         attributionControl: false,
         maxBounds: [[-1000, -1000], [1000, 1000]],
         // Layers given here are enabled by default
-        //layers: [missions, sideMissions, controlpoints, underground, shdtech]
+        //layers: [missions, sideMissions, safehouses, settlements, controlpoints, underground, shdtech]
         maxZoom: 9,
         minZoom: 1
 
     });
-    var imageUrl = '/images/map/the-division-2-map-v3.svg',
+    var imageUrl = '/images/map/the-division-2-map-v4.svg',
         imageBounds = [[-1000, -1000], [1000, 1000]];
 
     L.imageOverlay(imageUrl, imageBounds).addTo(division2map);
@@ -108,11 +120,12 @@ permalink: map.html
     var overlays = {
         "Missions": missions,
         "Side Missions": sideMissions,
+        "Safe Houses": safehouses,
+        "Settlements": settlements,
         "Control Points": controlpoints,
         "Underground": underground,
         "SHD Tech": shdtech
     };
 
     L.control.layers(null, overlays).addTo(division2map);
-
 </script>
