@@ -6,6 +6,10 @@ meta:
 
 Any tidbit that doesn't fit into another page goes here.
 
+## Clans
+
+You can create clans with up to 50 accounts (each having up to 4 characters). Clans can talk over 2 voice channels, each with a maximum of 25 people in it. There is a progression system and rewards for clans that complete certain objectives. Players can create or search for clans and specify things like what activities they favor (PvP, or PvE or both) and what times they are usually on etc. 
+
 ## Currencies
 
 Target Intel (max 50)

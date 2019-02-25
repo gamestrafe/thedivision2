@@ -10,7 +10,7 @@ To unlock the Dark Zone you need first to find and recruit Senait Ezera to the b
 
 Once you found something in a dark zone, you need to extract it by bringing it to an extraction zone, shoot a flare and then wait for the helo to arrive. Once it did, you need to attach your loot (maximum 4 loot drops can be attached) and then wait for the loot to be pulled back on board. The loot can be cut down by another player until it's pulled back on board, so guard it carefully.
 
-A player may choose to go rogue (button press, hijacking loot, or hacking) and is then attackable by other players.
+A player may choose to go rogue (button press, hijacking loot, or hacking) and is then attackable by other players. There are rewards for surviving going rogue, but more details are yet to come. There is a "rogue-light" variant that involves hacking and a special place called the thieves den which players can get access to. 
 
 ## Dark Zone Perks
 
