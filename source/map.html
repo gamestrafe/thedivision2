@@ -17,10 +17,8 @@ permalink: map.html
         height: 100%;
     }
     #thedivision2map {
-        padding-top: 82px;
         width: 100%;
-        height: 100%;
-        margin-bottom: -82px;
+        height: calc(100vh - 82px);
         background-color: #736963;
     }
 </style>
@@ -30,77 +28,173 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconMission = iconSidemisson = iconArtifact = iconComm = iconSafehouse = iconUnderground = iconControlpoint = iconWhitehouse = iconSettlement = iconShdtech = new L.Icon.Default();
-
+    var iconMission = iconSidemisson = iconArtifact = iconComm = iconSafehouse = iconUnderground = iconControlpoint = iconWhitehouse = iconSettlement = iconShdtech = iconCheckpoint = iconExtractionarea = iconWeapon = iconGear = iconComponent = iconFood = iconWater = iconEcho = iconKey = iconLockedbox = new L.Icon.Default();
     //var iconUnderground = new L.Icon({ iconUrl: '/images/map/icons/underground.png', iconSize: [44, 44], iconAnchor: [22, 22], tooltipAnchor:  [0, -22]});
-
-    // var locations = [
-    //     {latlng: , title: 'Side Mission: Medical Camp Attack', icon: iconSidemisson, popup: '<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.<br/>Level 9<br/>Rewards: <a href="/weapon-mods.html">Blueprint of Loud Vent Brake .45</a></a></p>' },
-    // ];
 
     //-------------------------------------------------------------
     // Markers
     var missionMarkers = [
-        L.marker([45.43265863794225, 92.85644531250001], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
-        L.marker([-8.805880735848378, 75.29296785593034], {title: 'Jefferson Trade Center', icon: iconMission}).bindPopup('<h5>Jefferson Trade Center</h5><p>Reactivate the ISAC node beneath the center and rescue the missing Division agent.</p>'),
-        L.marker([-21.77399803257131, 168.44238281250003], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>')
+        L.marker([42.22851834925639, 71.71875536441804], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
+        L.marker([-7.819846429717617, 55.05981534719468], {title: 'Jefferson Trade Center', icon: iconMission}).bindPopup('<h5>Jefferson Trade Center</h5><p>Reactivate the ISAC node beneath the center and rescue the missing Division agent.</p>'),
+        L.marker([-20.19347256143793, 142.14843571186069], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>')
     ];
     var missions = L.layerGroup(missionMarkers);
 
     var sideMissionMarkers = [
-        L.marker([-37.93093775225246, -8.203123211860659], {title: 'Medical Camp Attack', icon: iconSidemisson}).bindPopup('<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.</p><p><b>Rewards:</b> Blueprint: Loud Vent Brake .45</p>'),
-        L.marker([43.143747578021895, 120.84961339831355], {title: 'MLK Library Community', icon: iconSidemisson}).bindPopup('<h5>MLK Library Community</h5><p>Help the MLK Library community.</p><p><b>Rewards:</b> Blueprint: Improvised Kneepads, Theater Upgrade: Game Corner, 1935 XP, Boss loot: 1 green equipment item</p>'),
-        L.marker([-15.2559268724626, 138.09081941843036], {title: 'National Archives', icon: iconSidemisson}).bindPopup('<h5>National Archives</h5><p>Recover important documents from the archives</p><p><b>Rewards:</b> Blueprint: Compensator 9mm, Theater Upgrade: Rescued Art, 2970 XP</p>'),
-        L.marker([-13.838079936422462, 107.22656250000001], {title: 'Department of Justice', icon: iconSidemisson}).bindPopup('<h5>Department of Justice</h5><p>Destroy an important stockpile of True Sons Munitions.</p>'),
-        L.marker([9.33344411968287, 125.47851607203486], {title: 'Bureau Headquarters', icon: iconSidemisson}).bindPopup('<h5>Bureau Headquarters</h5><p>A SHD tech cache was taken to the bureau laboratory for decontamination. Find and retrieve the SHD tech cache.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Mended Marksman Mag, 2970 XP</p>'),
-        L.marker([22.749165581070766, 32.93701104819775], {title: 'Empire Autumn Hotel', icon: iconSidemisson}).bindPopup('<h5>Empire Autumn Hotel</h5><p>Recover a SHD tech cache from the Empire Autumn hotel.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Flash Hider 7.62, 1935 XP</p>')
+        L.marker([-34.58498328591662, -22.917479127645496], {title: 'Medical Camp Attack', icon: iconSidemisson}).bindPopup('<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.</p><p><b>Rewards:</b> Blueprint: Loud Vent Brake .45</p>'),
+        L.marker([40.83597917676427, 97.25097924470903], {title: 'MLK Library Community', icon: iconSidemisson}).bindPopup('<h5>MLK Library Community</h5><p>Help the MLK Library community.</p><p><b>Rewards:</b> Blueprint: Improvised Kneepads, Theater Upgrade: Game Corner, 1935 XP, Boss loot: 1 green equipment item</p>'),
+        L.marker([-14.916477539564463, 113.65722566843036], {title: 'National Archives', icon: iconSidemisson}).bindPopup('<h5>National Archives</h5><p>Recover important documents from the archives</p><p><b>Rewards:</b> Blueprint: Compensator 9mm, Theater Upgrade: Rescued Art, 2970 XP</p>'),
+        L.marker([-15.072124193296435, 84.06738281250001], {title: 'Department of Justice', icon: iconSidemisson}).bindPopup('<h5>Department of Justice</h5><p>Destroy an important stockpile of True Sons Munitions.</p>'),
+        L.marker([7.02820696814731, 101.87988191843036], {title: 'Bureau Headquarters', icon: iconSidemisson}).bindPopup('<h5>Bureau Headquarters</h5><p>A SHD tech cache was taken to the bureau laboratory for decontamination. Find and retrieve the SHD tech cache.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Mended Marksman Mag, 2970 XP</p>'),
+        L.marker([22.63429269379353, 13.798828125000002], {title: 'Empire Autumn Hotel', icon: iconSidemisson}).bindPopup('<h5>Empire Autumn Hotel</h5><p>Recover a SHD tech cache from the Empire Autumn hotel.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Flash Hider 7.62, 1935 XP</p>')
     ];
     var sideMissions = L.layerGroup(sideMissionMarkers);
 
     var controlpointMarkers = [
-        L.marker([51.921683837547796, 42.3266600444913], {title: 'Fallen Cranes', icon: iconSidemisson}).bindPopup('<h5>Fallen Cranes</h5><p>Sits on what was previously an important supply route. A gang of opportunistic thugs - later part of the Hyenas - used explosives to topple the cranes and ambush a convoy.</p>'),
-        L.marker([0.7177510878572698, 138.09081941843036], {title: 'Navy Plaza', icon: iconSidemisson}).bindPopup('<h5>Navy Plaza</h5><p>A bloodsoaked no man\'s land created during a long engagement between Hyanes and True Sons as they jostled for dominance, neither one managing to get the edge</p>'),
-        L.marker([24.233606014641623, 62.153319418430335], {title: 'Demolition Site', icon: iconSidemisson}).bindPopup('<h5>Demolition Site</h5><p>A half-destroyed office block, moments from the main Unite DC protest site, that was briefly used by Hyenas for wild debauchery and violent excess.</p>')
+        L.marker([-14.732386081418454, 0.13183593750000003], {title: 'Ellipse Fuel Depot', icon: iconSidemisson}).bindPopup('<h5>Ellipse Fuel Depot</h5><p>In a post-crisis world, fuel is nearly as important as water.</p>'),
+        L.marker([49.64391983300744, 23.774419426918033], {title: 'Fallen Cranes', icon: iconSidemisson}).bindPopup('<h5>Fallen Cranes</h5><p>Sits on what was previously an important supply route. A gang of opportunistic thugs - later part of the Hyenas - used explosives to topple the cranes and ambush a convoy.</p>'),
+        L.marker([-2.108898659243126, 113.90625268220903], {title: 'Navy Plaza', icon: iconSidemisson}).bindPopup('<h5>Navy Plaza</h5><p>A bloodsoaked no man\'s land created during a long engagement between Hyanes and True Sons as they jostled for dominance, neither one managing to get the edge</p>'),
+        L.marker([22.221310745585214, 43.447267860174186], {title: 'Demolition Site', icon: iconSidemisson}).bindPopup('<h5>Demolition Site</h5><p>A half-destroyed office block, moments from the main Unite DC protest site, that was briefly used by Hyenas for wild debauchery and violent excess.</p>')
     ];
     var controlpoints = L.layerGroup(controlpointMarkers);
 
     var undergroundMarkers = [
-
-        L.marker([53.78334370004729, 29.626464731991295], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
-        L.marker([-5.163896834177888, 149.9267587065697], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
-        L.marker([-25.178434784672206, 149.9267587065697], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
-        L.marker([-21.983801417384697, 7.459716796875001], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
-        L.marker([-22.284013600962453, -8.662719726562502], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>')
+        L.marker([-3.951938849284128, 124.73144710063936], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-24.567106523024577, 124.8120152950287], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([50.881088136642546, 12.438354380428795], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-20.999051467816, -9.807128123939039], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-20.869077732018464, -24.279785156250004], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>')
     ];
     var underground = L.layerGroup(undergroundMarkers);
 
     var shdtechMarkers = [
-        L.marker([-25.430049414542452, 135.0292991101742], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([-14.491418794398871, 68.46679888665678], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([24.166802697086595, 87.27539263665678], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([17.50437353249076, 51.59179888665676], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([26.378746223194042, 52.119142636656775], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([51.09662210280433, 72.1728526800871], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([52.35770936904925, 30.131835825741295], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>')
+        L.marker([11.537438138020034, 78.27407604910101], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([15.989496011992996, 32.17299190152809], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([23.322081858670515, 32.84666774747427], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([23.140361837694822, 65.60782745874144], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([48.99944285548159, 52.324222326278694], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([49.32750884414313, 12.473144978284836], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([10.386970379955455, 87.94686832249805], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([-14.079750117035106, 45.76172053813935], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([-23.711601410205486, 110.2880868315697], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>')
     ];
     var shdtech = L.layerGroup(shdtechMarkers);
 
     var safehouseMarkers = [
-        L.marker([46.694667307773116, 57.530283007371615], {title: 'Safehouse: Final Epiphany', icon: iconSafehouse }).bindPopup('<h5>Final Epiphany</h5><p>Safe house in Downtown East</p>'),
-        L.marker([-9.79567758282973, 95.0903154519538], {title: 'Safehouse: The 1040', icon: iconSafehouse }).bindPopup('<h5>The 1040</h5><p>Safe house in Federal Triangle</p>')
+        L.marker([44.600898821045675, 37.77831584215165], {title: 'Safehouse: Final Epiphany', icon: iconSafehouse }).bindPopup('<h5>Final Epiphany</h5><p>Safe house in Downtown East</p>'),
+        L.marker([-10.862077594462036, 71.73320220383796], {title: 'Safehouse: The 1040', icon: iconSafehouse }).bindPopup('<h5>The 1040</h5><p>Safe house in Federal Triangle</p>'),
+        L.marker([11.401059893847355, 243.7963027095392], {title: 'Safehouse: DZ East', icon: iconSafehouse }).bindPopup('<h5>DZ East</h5><p>Safe house in Dark Zone East</p>')
     ];
     var safehouses = L.layerGroup(safehouseMarkers);
 
     var settlementMarkers = [
-        L.marker([26.329524974946562, 105.89900132859125], {title: 'The Theater', icon: iconSafehouse }).bindPopup('<h5>The Theater</h5><p>Settlement in Downtown East</p>')
+        L.marker([24.650345994540757, 83.36059458553791], {title: 'The Theater', icon: iconSettlement }).bindPopup('<h5>The Theater</h5><p>Settlement in Downtown East</p>')
     ];
     var settlements = L.layerGroup(settlementMarkers);
+
+    var checkpointMarkers = [
+        L.marker([2.9869206969221, 192.4951243400574], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([31.027829239466882, 192.3046955466271], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([49.97006497538167, 217.0898517966271], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([39.673368327279064, 253.16895335912704], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([3.177077985960374, 290.27344465255743], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([-28.985719808139287, 261.5185600519181], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([-29.471486483429143, 203.89160782098773], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>')
+    ];
+    var checkpoints = L.layerGroup(checkpointMarkers);
+
+    var extractionareaMarkers = [
+        L.marker([21.26889909508791, 277.90283381938934], {title: 'Extraction Area', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>'),
+        L.marker([-19.959581667865596, 234.46289241313937], {title: 'Extraction Area', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>')
+    ];
+    var extractionareas = L.layerGroup(extractionareaMarkers);
+
+    var weaponMarkers = [
+        L.marker([-16.263900076247165, 79.69490309119901], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Behind some elevator doors you have to pry open, look south to see those doors.</p>'),
+        L.marker([11.372337477367223, 101.84512446026461], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([-13.596159703601247, 45.75791251372831], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([-12.26844378126742, 53.08439907554862], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([-9.774024565864734, 79.22166835922202], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([50.64829953519071, 15.497834632678735], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([47.249407868241384, 55.26093363908976], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([23.905928153368606, 77.27330440158454], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([22.971882402354716, 33.28153070236458], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>')
+    ];
+    var weapons = L.layerGroup(weaponMarkers);
+
+    var gearMarkers = [
+        L.marker([52.18740515670237, 14.461860773492978], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5>'),
+        L.marker([22.97862520507353, 78.96481714108933], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5>')
+    ];
+    var gear = L.layerGroup(gearMarkers);
+
+    var lockedboxMarkers = [
+        L.marker([2.5333493673422147, 96.93196461985545], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open.</p>')
+    ];
+    var lockedboxes = L.layerGroup(lockedboxMarkers);
+
+    var echoMarkers = [
+        L.marker([38.696943597232405, 8.355241372424388], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>A clandestine meeting between an unknown person and someone called Brandon Schaeffer, a BTSU operative, about a special opportunity.</p>')
+    ];
+    var echos = L.layerGroup(echoMarkers);
+
+    var commMarkers = [
+        //L.marker(Somewhere in the round camp in ellipse road, {title: 'True Sons Debrief', icon: iconComm }).bindPopup('<h5>True Sons Debrief</h5><p>Manny Ortega calls over radio, giving offsite leadership an update on the True Sons situation, in early spring. JTF Comms 1/8</p>'),
+        //L.marker(Inside large building just east of WH, {title: 'SITREP', icon: iconComm }).bindPopup('<h5>SITREP</h5><p>Manny Ortega gives his superior officer an update on the situation in DC, in early summer. JTF Comms 2/8</p>'),
+        L.marker([23.214425573101767, 68.65904837091976], {title: 'Settling Down', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>A small group of survivors decide to make the Theater their home. Theater Comms 1/8</p>'),
+        L.marker([-14.455959529838914, 126.8990796286861], {title: 'Strategy', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>Odessa Sawyer and Agent Kelso talk shop and make a plan for keeping the Theater settlement safe. Theater Comms 2/8</p>'),
+        //L.marker(West of Theater somewhere, {title: 'Peter Problems', icon: iconComm }).bindPopup('<h5>Peter Problems</h5><p>Odessa scolds her daughter to being careless and spending time with Peter. Theater Comms 3/8</p>'),
+        //L.marker(West of Theater behind a white van with blue adn red stripe on the bottom, {title: 'Addiction', icon: iconComm }).bindPopup('<h5>Addiction</h5><p>A concerned civilian tries to get Peter to stop taking spice. Theater Comms 4/8</p>'),
+        L.marker([23.120154855087215, 8.345017957388851], {title: 'Piñata Party', icon: iconComm }).bindPopup('<h5>Piñata Party</h5><p>Two Hyenas prepare an attack on unsuspecting civilians. Hyenas Comms 1/10</p>'),
+        L.marker([31.87133824316455, 75.45806045728065], {title: 'Missing Prisoners', icon: iconComm }).bindPopup('<h5>Missing Prisoners</h5><p>A Hyena gets rid of some prisoners. Hyenas Comms 2/10</p>'),
+        //L.marker(On some scaffolding beside a windowwasher rig, NW corner of 13th st and F, {title: 'Runners', icon: iconComm }).bindPopup('<h5>Runners</h5><p>Hyenas deal with victims running away. Hyenas Comms 3/10</p>'),
+        L.marker([23.905928153368606, 77.58085217240358], {title: 'Recordings', icon: iconComm }).bindPopup('<h5>Recordings</h5><p>Aaron Keener takes a moment to explain why he is making these recordings. Dead Drop Comms 1/8</p>'),
+        L.marker([49.23912083246701, 12.192513634941356], {title: 'Simple Math', icon: iconComm }).bindPopup('<h5>Simple Math</h5><p>Aaron Keener talks about compartmentalizing his kills. Dead Drop Comms 2/8</p>'),
+        L.marker([36.29151546818265, -23.411550122836278], {title: '25th Amendment', icon: iconComm }).bindPopup('<h5>25th Amendment</h5><p>White House staff members learn that POTUS has died. Government Comms 1/13</p>')
+    ];
+    var comms = L.layerGroup(commMarkers);
+
+    var artifactMarkers = [
+        //L.marker(Not certain of the position anymore, {title: 'The Constitution of the United States', icon: iconArtifact }).bindPopup('<h5>The Constitution of the United States</h5><p>A historical document of great value.</p>'),
+        L.marker([-13.702922740532099, 0.9033125266161868], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Portrait of Ginevra de\'Benci</h5><p>Painting by Leonardo da Vinci. Found in the supply room of Ellipse Fuel Depot, in the shelve behind the loot crates.</p>'),
+        L.marker([-11.178401873711772, 79.22166835922202], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Judith Leyster - Self-Portrait</h5><p>Painting by Judith Leyster.</p>')
+    ];
+    var artifacts = L.layerGroup(artifactMarkers);
+
+    var keyMarkers = [
+        L.marker([23.335532542925343, 67.20918030848705], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world.</p>')
+    ];
+    var keys = L.layerGroup(keyMarkers);
+
+    var componentMarkers = [
+        L.marker([5.295181309651799, 92.98479460502092], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([35.669198936279045, 14.254522742138553], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([35.972080335886936, 58.144099680947406], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([7.0500140104532605, -6.741957475467869], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>')
+    ];
+    var components = L.layerGroup(componentMarkers);
+
+    var foodMarkers = [
+        L.marker([11.83867258662464, 119.03603089340179], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-20.028407750587128, 74.87458300577545], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([37.7185924472827, 29.571448152530806], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([16.71687795741415, 13.093332705978655], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>')
+    ];
+    var food = L.layerGroup(foodMarkers);
+
+    var waterMarkers = [
+        L.marker([-0.11719099456653617, 13.210303892287987], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-15.100408978516375, 93.20447024337551], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([24.413808225041397, 118.74544987233875], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([52.102007559256485, 50.247231096613255], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>')
+    ];
+    var water = L.layerGroup(waterMarkers);
     //-------------------------------------------------------------
 
     var division2map = L.map('thedivision2map', {
         center: [0, 0],
         attributionControl: false,
-        maxBounds: [[-1000, -1000], [1000, 1000]],
+        maxBounds: [[84, -369], [-84, 337]],
         // Layers given here are enabled by default
         //layers: [missions, sideMissions, safehouses, settlements, controlpoints, underground, shdtech]
         maxZoom: 9,
@@ -108,13 +202,13 @@ permalink: map.html
 
     });
     var imageUrl = '/images/map/the-division-2-map-v4.svg',
-        imageBounds = [[-1000, -1000], [1000, 1000]];
+        imageBounds = [[84, -369], [-84, 337]];
 
     L.imageOverlay(imageUrl, imageBounds).addTo(division2map);
     division2map.fitWorld();
 
     // Debug, to easy add a marker
-    //division2map.on('click', function(e) { console.log(e.latlng); var marker = L.marker(e.latlng).addTo(division2map).bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']'); } );
+    division2map.on('click', function(e) { console.log(e.latlng); var marker = L.marker(e.latlng).addTo(division2map).bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']'); } );
 
     // Contents of the layer control on the righthand side
     var overlays = {
@@ -124,7 +218,19 @@ permalink: map.html
         "Settlements": settlements,
         "Control Points": controlpoints,
         "Underground": underground,
-        "SHD Tech": shdtech
+        "SHD Tech": shdtech,
+        "Dark Zone Checkpoints": checkpoints,
+        "Extraction Area": extractionareas,
+        "Weapons": weapons,
+        "Gear": gear,
+        "Locked Boxes": lockedboxes,
+        "Echos": echos,
+        "Comms": comms,
+        "Artifacts": artifacts,
+        "Keys": keys,
+        "Components": components,
+        "Food": food,
+        "Water": water
     };
 
     L.control.layers(null, overlays).addTo(division2map);
