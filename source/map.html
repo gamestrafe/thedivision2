@@ -21,6 +21,10 @@ permalink: map.html
         height: calc(100vh - 82px);
         background-color: #736963;
     }
+
+    .icon {
+        filter: drop-shadow(5px -5px 7px black);
+    }
 </style>
 
 <div id="thedivision2map"></div>
@@ -28,35 +32,74 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconMission = iconSidemisson = iconArtifact = iconComm = iconSafehouse = iconUnderground = iconControlpoint = iconWhitehouse = iconSettlement = iconShdtech = iconCheckpoint = iconExtractionarea = iconWeapon = iconGear = iconComponent = iconFood = iconWater = iconEcho = iconKey = iconLockedbox = new L.Icon.Default();
+    var iconWhitehouse = iconEcho = iconKey = iconLockedbox = new L.Icon.Default();
     //var iconUnderground = new L.Icon({ iconUrl: '/images/map/icons/underground.png', iconSize: [44, 44], iconAnchor: [22, 22], tooltipAnchor:  [0, -22]});
+
+    // Icon classes
+    // Round is for really round ones and other "general location" markers
+    var RoundIcon = L.DivIcon.extend({options: {
+        className: 'round-icon',
+        iconAnchor  : [21, 21],
+        iconSize    : [42, 42],
+        popupAnchor : [0, -21]
+    }});
+    // Drops show with the tip at the bottom a very exact location (pickup items etc)
+    var DropIcon = L.DivIcon.extend({options: {
+        className: 'drop-icon',
+        iconAnchor  : [21, 42],
+        iconSize    : [42, 42],
+        popupAnchor : [0, -42]
+    }});
+
+    iconMission = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path style="fill:#74FEED;" d="M50,1.8L8.3,25.9v48.2L50,98.2l41.7-24.1V25.9L50,1.8z M80.1,67.4L50,84.8L19.9,67.4V32.6L50,15.2l30.1,17.4V67.4z"/><path style="fill:#74FEED;" d="M50,24.4L27.8,37.2v25.6L50,75.6l22.2-12.8V37.2L50,24.4z M68,60.4L50,70.8L32,60.4V39.6l18-10.4l18,10.4V60.4z"/></svg>'});
+    iconSidemission = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path style="fill:#74FEED;" d="M50,4.9L5.8,36.9l16.9,51.9h54.6l16.9-51.9L50,4.9z M68,76H32L20.9,41.8L50,20.7l29.1,21.1L68,76z"/><polygon style="fill:#74FEED;opacity:0.5;" points="50,20.7 20.9,41.8 32,76 68,76 79.1,41.8 "/></svg>'});
+    iconSafehouse = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path style="fill:#FF7E00;" d="M49.4,15.6L14.8,38.9v42.6h68.3V38.8L49.4,15.6z M43.2,58.6H26V46.9h17.2V58.6z M71.2,77H52.4V46.9h18.7V77z"/></svg>'});
+    iconSettlement = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#6E9734;" d="M16.3,34.8v27.8h65.9V34.8H16.3z M29.1,57.6h-6.3v-6.3h6.3V57.6z M29.1,46h-6.3v-6.3h6.3V46z M40.7,57.6h-6.3v-6.3h6.3V57.6z M40.7,45.8h-6.3v-6.3h6.3V45.8z M52.2,57.6h-6.3v-6.3h6.3V57.6z M52.2,46h-6.3v-6.3h6.3V46z M63.9,57.6h-6.3v-6.3h6.3V57.6z M63.9,46h-6.3v-6.3h6.3V46z M76.1,57.6h-6.3v-6.3h6.3V57.6z M76.1,45.8h-6.3v-6.3h6.3V45.8z"/><path style="fill:#6E9734;" d="M16.3,64.4v18h65.9v-18H16.3z M29.3,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z M40.9,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z M52.5,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z M64,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z M76.2,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z"/><path style="fill:#6E9734;" d="M72.3,26.4L49.8,11L27.6,26.2L7.7,26.4l3.2,8.2h1.8v-4.1l72.9,0.4v3.7h1.6l3.3-8.2H72.3z M37.6,26.2L50,18.1l12.4,8.1H37.6z"/></svg>'});
+    iconUnderground = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#E6B86E;" d="M50,1C22.9,1,1,22.9,1,50s21.9,49,49,49s49-21.9,49-49S77.1,1,50,1z M50,86.7L23.1,59.8h12.2V20.6h29.4v39.2H77L50,86.7z"/></svg>'});
+    iconControlpoint = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><polygon style="fill:#FFFFFF;" points="26.5,13.6 26.5,87.1 33.1,87.1 33.1,58.1 57.7,49.5 57.3,23.9 "/><polygon style="fill:#FFFFFF;" points="66.1,30.7 64.1,44 59.9,50 68.8,51.7 88.6,42.3 "/></svg>'});
+    iconExtractionarea = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><polygon style="fill:#ff7e00;" points="50.8,6.2 18,45.5 35.5,45.5 35.4,59.7 64.3,59.7 64.3,45.6 82.1,45.5 "/><path style="fill:#ff7e00;" d="M35.6,65.2v28.6h28.6V65.2H35.6z M60.3,89.9H39.5V69.1h20.8V89.9z"/></svg>'});
+    iconCheckpoint = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><polygon style="fill:#B178F1;" points="63.3,12 63.3,17.6 69.9,17.6 71.4,19.6 71.4,81.1 67,83.8 67,88.3 75.4,85.7 75.4,15.9 72.2,12.3 "/><path style="fill:#B178F1;" d="M25.7,14.8V85l31.2,8.2l1.7-0.8V7.2L25.7,14.8z M52.1,56.3c-1.9,0-3.5-2-3.5-4.5s1.6-4.5,3.5-4.5c1.9,0,3.5,2,3.5,4.5S54,56.3,52.1,56.3z"/></svg>'});
+    iconWater = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#FFFFFF;" d="M75.8,15.2l-7-4.1l-5.4,8.3L52,22.7l-4.6,4.6L19.8,75.2v5l18.1,11.6l4.2-0.7l28.9-48.6l1.7-5.8l-1.7-13.5L75.8,15.2z M40.6,87.2L23.5,76.6l12.4-21.2l4.6-2.1l12.7-0.2L64,48.6L40.6,87.2z"/></svg>'});
+    iconFood = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><g><path style="fill:#FFFFFF;" d="M52,30.3c0.3,0.3,26.4-13.2,22.5-18.8C61,11.7,47.2,27.1,47.2,27.1l-7.6,13l30.9,17.7l8-12.6L52,30.3z"/><polygon style="fill:#FFFFFF;" points="16.8,76.2 47.1,94.4 55.2,81.8 24.8,64"/><polygon style="fill:#FFFFFF;" points="26,61.8 56.6,79.6 60,74.3 29,56.9"/><polygon style="fill:#FFFFFF;" points="30.4,54.6 61.1,72.4 64.4,67.1 33.4,49.7"/><polygon style="fill:#FFFFFF;" points="35.1,47.4 65.7,65.2 69.1,59.9 38.1,42.5"/></svg>'});
+    iconComponent = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#FFFFFF;" d="M34.8,23.1H16.9L7.9,38.6l8.9,15.5h17.9l8.9-15.5L34.8,23.1z M25.8,48.1c-5.2,0-9.5-4.2-9.5-9.5c0-5.2,4.2-9.5,9.5-9.5c5.2,0,9.5,4.2,9.5,9.5C35.3,43.8,31.1,48.1,25.8,48.1z"/><polygon style="fill:#FFFFFF;" points="80.7,30.1 75.7,37.3 66.8,31.6 71.7,24.5 58.7,16.1 50,28.2 85.1,51.1 93.5,38.3 "/><polygon style="fill:#FFFFFF;" points="57.5,39 51.6,47.9 72,51.6 73.4,49.5 "/><polygon style="fill:#FFFFFF;" points="49.2,51.6 44.8,57.9 65.6,61.4 69.3,55.9 "/><polygon style="fill:#FFFFFF;" points="42.8,61.7 38.4,68 59.2,71.5 62.9,65.9 "/><polygon style="fill:#FFFFFF;" points="36.1,72.2 31.8,78.5 52.6,82 56.2,76.4 "/><polygon style="fill:#FFFFFF;" points="44.6,94.1 50.5,85.3 30.1,81.5 28.7,83.7 "/></svg>'});
+
+    iconComm = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M46.3,28.6l-0.1-4h-6.3l-9.1,14.7v5.4l-7.7,14.4L34,68.9l22.2-32.2L46.3,28.6z M44.3,50.6L31.9,41l1-1.3l12.4,9.4L44.3,50.6z M46,48.1l-12.4-9.6l1-1.3L47,46.6L46,48.1z M47.8,45.5l-12.4-9.6l1-1.3L48.8,44L47.8,45.5z M37.5,32.8l3.1-4.6L53,38.3l-3,4.5L37.5,32.8z M35.1,69.8H43L52.2,56l-7.5-0.2L35.1,69.8z M59.3,39.7c-0.9,0-1.7,0.7-1.7,1.6s0.8,1.6,1.7,1.6c0.9,0,1.7-0.7,1.7-1.6S60.2,39.7,59.3,39.7z M59.9,34.4c0,0-6.4,0.9-7.1-5.9c-5-0.3-5.5-4-5.5-4l0.1,3l10.4,8.9l-9.4,16.3h8.2l10-16.2l-4.9-4L59.9,34.4z M59.3,43.7c-1.4,0-2.4-1-2.4-2.3c0-1.3,1.1-2.4,2.4-2.4s2.4,1,2.4,2.3S60.7,43.7,59.3,43.7z M50.8,25.9c1.4,0.8,2.8,0.8,3.3,0l1.5-2.3l-0.1-0.1c-0.6,0.6-1.8,0.5-2.9-0.2c-1.2-0.7-1.9-1.7-1.8-2.5l-1.7,2.3C48.7,23.9,49.4,25.1,50.8,25.9z M55,29.3c-0.2,0.1-0.4,0.2-0.5,0.4c-0.4,0.8,0.3,2,1.7,2.8c1.4,0.8,2.8,0.8,3.3,0l3.4-4.4c-0.6,0.6-1.9,0.5-3.1-0.2c-1.2-0.7-1.9-1.7-1.8-2.5L55,29.3z M71.6,9.9c-1.2-0.7-2.6-0.7-3,0l-5.8,9.4c-0.4,0.7,0.3,1.9,1.5,2.6c1.2,0.7,2.6,0.7,3,0l5.8-9.4C73.6,11.8,72.9,10.6,71.6,9.9z M61,26.4c1.4,0.8,2.8,0.8,3.3,0l0.2-0.2c-0.6,0.4-1.8,0.3-3-0.3c-1.4-0.8-2.1-2.1-1.7-2.8l-0.2,0.2c-0.1,0.1-0.2,0.2-0.3,0.3C58.9,24.4,59.6,25.6,61,26.4zM62.5,24.3\t\t\tc1.4,0.8,2.8,0.8,3.3,0l0.2-0.2c-0.6,0.5-1.8,0.4-3-0.3c-1.4-0.8-2.1-2.1-1.7-2.8l-0.2,0.2c-0.1,0.1-0.2,0.2-0.3,0.3C60.4,22.3,61.1,23.5,62.5,24.3z"/></svg>'});
+    iconArtifact = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><g><circle style="fill:#FFFFFF;" cx="57.1" cy="26.8" r="5.8"/><path style="fill:#FFFFFF;" d="M64.3,44.3c0,0-4.3,2.4-5.7,2c-1.3-0.4-3.5-2.6-7.3-2.9c-3.8,0-12.3,2.5-14.7,3.8c0,1.6,0,9.6,0,9.6h27.7V44.3z"/><path style="fill:#FFFFFF;" d="M58.6,41.9c1.9,0,5.8-1.1,5.8-1.1v-1.6c0,0-3.8,1.3-5.7,1.3S53.9,38,51.3,38c-2.6,0-14.7,2.9-14.7,2.9v1.8c0,0,11.8-2.8,14.7-2.8C54.3,40,56.7,41.9,58.6,41.9z"/><path style="fill:#FFFFFF;" d="M74.8,34.8c-1.2-4-3.8-5.8-2.9-10.5c0.8-4.4,3.6-5.8,2.7-9.2c-0.7-2.5-3-4.7-5.5-5.2c-0.1,0-0.2,0-0.3,0h-1.3c-1.7,0.3-3.1,1.4-5.4,2.1c-2.5,0.7-6.3,0.8-11.7-2c-5.4,2.8-9.2,2.7-11.7,2c-2.3-0.6-3.7-1.8-5.4-2.1h-1.3c-0.1,0-0.2,0-0.3,0c-2.5,0.5-4.8,2.7-5.5,5.2c0,0.1-0.1,0.3-0.1,0.4v1.8c0.4,2.1,2.1,3.7,2.8,7c0.8,4.6-1.5,6.4-2.8,10v9.2c1.1,3.2,2.9,5,2,9.1c-0.5,2.2-1.3,3.6-2,4.9v5.7c0.9,1.7,2.5,3.2,4.3,3.9h3.5c1.4-0.5,2.7-1.3,4.8-1.9c2.5-0.6,6.3-0.8,11.7,1.8l0,0.1c0,0,0.1,0,0.1-0.1c0,0,0.1,0,0.1,0.1l0-0.1c5.3-2.5,9.1-2.4,11.7-1.8c2.1,0.5,3.4,1.4,4.8,1.9h3.5c1.9-0.7,3.5-2.3,4.4-4.2v-5.1c-0.7-1.4-1.6-2.9-2.1-5.2c-0.9-4.4,1.1-6.2,2.1-9.6V34.8z M71.4,12.4c0.5,0,0.9,0.4,0.9,0.9s-0.4,0.9-0.9,0.9c-0.5,0-0.9-0.4-0.9-0.9S70.9,12.4,71.4,12.4z M50.4,11.4c0.5,0,0.9,0.4,0.9,0.9c0,0.5-0.4,0.9-0.9,0.9s-0.9-0.4-0.9-0.9C49.6,11.8,50,11.4,50.4,11.4z M69,14.2l-3.4,3.4H35.7l-3.4-3.4H69z M66.1,18.5v40H35.7v-40H66.1z M27.7,38.6c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9c0,0.5-0.4,0.9-0.9,0.9C28.1,39.4,27.7,39,27.7,38.6z M29.5,64.7c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9C30.3,64.3,29.9,64.7,29.5,64.7z M29.5,14.1c-0.5,0-0.9-0.4-0.9-0.9s0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9S29.9,14.1,29.5,14.1z M30.4,15.2l3.9,3.9v39.1l-3.8,3.8L30.4,15.2zM50.4,65.7c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9s0.9,0.4,0.9,0.9C51.3,65.3,50.9,65.7,50.4,65.7z M32.3,63l3.4-3.4h29.9L69,63H32.3z M67.1,58.1V19l3.9-3.9l0,46.8L67.1,58.1z M71.4,64.7c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9C72.3,64.3,71.9,64.7,71.4,64.7z M72.3,39.4c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9C73.1,39,72.8,39.4,72.3,39.4z"/></g></svg>'});
+    iconWeapon = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M76.8,15.5l-4,2.7l-3.4-4.6l-1.3,0.9l2.2,3.7l-2.2,1.5h-3.7L34.8,39.5l-2.4-2.6L30.3,39l1.6,1.9l-5.3,3.7V48l-5.6-0.7l6.6,16.4l2-1.9l-2.8-9.4l9.8-1.7l0.3,11.8l7.3,0.1l-0.4-15l3.4,5.6l5.6-3.9l-0.9-6.4l15.6,13.5l3.8-5.5L56.4,39.6l1.6-6.3l15.1-9.9l0.2-2.9l4.7-3.3L76.8,15.5z M47.4,50.6l-2.2-3.2l5.4-3.9l0.4,4.7L47.4,50.6z"/></svg>'});
+    iconGear = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><polygon style="fill:#FFFFFF;" points="39.6,31.5 35.1,37.4 33.1,52.4 33.1,61.1 36.6,66.1 39.3,66.1 43.4,56.2 43.4,40.3 "/><polygon style="fill:#FFFFFF;" points="62.2,31.5 57.4,39.7 57.4,56.5 60.8,65.1 63.7,65.1 67.9,58.4 67.7,50.7 66.3,37.4 "/><polygon style="fill:#FFFFFF;" points="50.8,27.7 47.1,28.1 42.3,29.8 45.5,38.8 45.6,57.5 41.2,65.9 59.1,65.9 54.2,57 54.3,38.5 59.9,29.7 56.4,28.2 "/><polygon style="fill:#FFFFFF;" points="38,18.5 34.6,21.7 33.1,27.5 32.8,33.7 37.3,30 40.8,27.2 "/><polygon style="fill:#FFFFFF;" points="62.9,17.4 66.6,22.5 67.3,26.8 67.9,32.2 59,26.1 "/><polygon style="fill:#FFFFFF;" points="31.6,42.9 28.2,44.5 26.1,47.7 25,52.4 24.3,59.4 25.1,63.1 29,65.1 31.6,63.9 31.3,61.5 29.8,60.1 29.1,56.8 30.1,52.9 30.8,48.8 32.1,46.8 "/><polygon style="fill:#FFFFFF;" points="69,49.1 69.7,52.7 71.9,53.8 73.9,49.7 75.6,43.4 76.4,37.8 75.3,31.1 73.9,22.1 72,15 69.5,10.6 66.3,8.4 62.8,8.4 59.7,9.9 59.7,12.3 62.6,13.8 65.8,14.8 68.2,12.8 69.6,15.6 70.2,20.5 71.4,28.4 72.6,37.2 72,42.9 70.7,45.3"/><path style="fill:#FFFFFF;" d="M57.1,14l-3.3-1.2H48l-3.2,1.2l-4.6,3.5l2.7,8.7h14.5l3.6-8.7L57.1,14z M45.6,20.2l2.2-2.5l2.7-0.7l2.1,0.5l1.7,2.9L45.6,20.2z"/></svg>'});
+    iconShdtech = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#ff7e00;" d="M83.1,35.2c0-0.5,0-1-0.1-1.5c0,0,0-0.1,0-0.1c0-0.5-0.1-1-0.1-1.4c0,0,0-0.1,0-0.1c-0.1-0.5-0.1-0.9-0.2-1.4c0,0,0,0,0-0.1C82,27.2,80.9,24,79.3,21c0,0,0-0.1-0.1-0.1c-0.2-0.4-0.4-0.7-0.6-1.1c0-0.1-0.1-0.2-0.1-0.2c-0.2-0.3-0.4-0.7-0.6-1c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.4-0.6-0.6-0.9c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.4-0.6-0.7-0.9c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.5-0.6-0.7-0.9c-0.1-0.1-0.1-0.1-0.2-0.2c-0.3-0.3-0.5-0.6-0.8-0.9c0,0,0,0,0,0C68.3,7.3,59.6,3.2,50,3.2c-9.5,0-18,4-24,10.4l0,0c-0.3,0.3-0.6,0.7-1,1.1c0,0,0,0,0,0c-0.3,0.4-0.6,0.7-0.9,1.1c0,0,0,0,0,0c-1.7,2.2-3.2,4.6-4.4,7.2c0,0.1-0.1,0.2-0.1,0.2c-0.1,0.3-0.3,0.7-0.4,1c-0.1,0.1-0.1,0.3-0.2,0.4c-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.2-0.1,0.4-0.2,0.5c-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.2-0.1,0.4-0.2,0.6c-0.1,0.3-0.2,0.6-0.2,0.8c-0.1,0.2-0.1,0.5-0.2,0.7c-0.1,0.3-0.1,0.5-0.2,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.3-0.1,0.6-0.1,0.9c0,0.2-0.1,0.5-0.1,0.7C17,33.5,17,34,17,34.6c0,0.6,0,1.2,0,1.7c0,2,0.2,4,0.5,6c0,0,0,0,0,0c2.3,12.3,11.4,22.3,23.2,25.8l4.2-9.4c0-0.8,0.2-1.5,0.9-1.9l4.1-9.2l5.3,12.3c0.2-0.4,0.3-0.8,0.5-1.3c0.5,1.1,0.6,2.4,0.5,3.7l2.6,6C70.2,65,79.1,56,82.1,44.6c0,0,0,0,0,0c0.1-0.5,0.3-1.1,0.4-1.6c0,0,0-0.1,0-0.1c0.3-1.6,0.5-3.3,0.6-5c0,0,0,0,0,0c0-0.5,0-1,0-1.6C83.1,35.9,83.1,35.5,83.1,35.2z M22.4,37.6c0-0.3,0-0.6,0-0.8c0.6,0.3,1,0.7,1.4,1C23.4,37.9,23,37.8,22.4,37.6z M39.7,58.4c-2-0.8-0.8-4.6-2.7-5.3c1.1,1-2.2,2.4-0.6,6c0.1,0.5,0.3,1.1,0.6,1.8c-6-3.1-10.6-8.4-13-14.8c3,0.5,6,0.5,8.6,0.1c1-0.1,3.7-1,4,0.4c-0.5,0.6-4.3,1.3-4,4.4c0.4-1.4,6.2-0.5,8.6-1.3c0.1,0.9,0.4,1.4,0.4,2.5C41.8,53.9,41.8,57.3,39.7,58.4z M54.7,34.5c0,0-1.5-3.9-1.1-5c-1.2-1.2,0.5-2.9,2.2-1.3c-0.9-2-3.5-5.2-5.5-5.9c-1.3,0.1-2.9-0.8-4.2-1.5c-1.1-0.2-2.6,0.4-2.8,1.6c0.3-0.3,1.2-0.2,1.6,0.3c4.7,1.1,0.4,11.2,0.3,11.2c-2.8-3.1-8.8-9.2-15.6-16.3C34.8,12.1,42,8.7,50,8.7c8.2,0,15.5,3.5,20.6,9.2C63.6,25.1,57.6,31.3,54.7,34.5z M61.6,61.4c0.2-1.2,0.7-2.7,1.3-3.9c1.1-1.8-1.6-2.4-1.6-4.7c-1.2,2-0.1,4.6-2.2,4.7c-2.5,0-1.9-6.6-1.3-7.9c1,1.7,9,0.3,9.5,1.9c0.3-3.1-3.5-3.8-4-4.4c0.3-1.4,3-0.5,4-0.4c2.5,0.4,5.4,0.4,8.3,0C73,53.2,68,58.5,61.6,61.4z M77.6,38.2c-0.6,0.2-1,0.3-1.3,0.2c0.3-0.4,0.8-0.7,1.3-1C77.6,37.6,77.6,37.9,77.6,38.2z"/></svg>'});
 
     //-------------------------------------------------------------
     // Markers
+    var mapLayers = [];
+
     var missionMarkers = [
         L.marker([42.22851834925639, 71.71875536441804], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
         L.marker([-7.819846429717617, 55.05981534719468], {title: 'Jefferson Trade Center', icon: iconMission}).bindPopup('<h5>Jefferson Trade Center</h5><p>Reactivate the ISAC node beneath the center and rescue the missing Division agent.</p>'),
         L.marker([-20.19347256143793, 142.14843571186069], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>')
     ];
     var missions = L.layerGroup(missionMarkers);
+    mapLayers.push(missions);
 
     var sideMissionMarkers = [
-        L.marker([-34.58498328591662, -22.917479127645496], {title: 'Medical Camp Attack', icon: iconSidemisson}).bindPopup('<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.</p><p><b>Rewards:</b> Blueprint: Loud Vent Brake .45</p>'),
-        L.marker([40.83597917676427, 97.25097924470903], {title: 'MLK Library Community', icon: iconSidemisson}).bindPopup('<h5>MLK Library Community</h5><p>Help the MLK Library community.</p><p><b>Rewards:</b> Blueprint: Improvised Kneepads, Theater Upgrade: Game Corner, 1935 XP, Boss loot: 1 green equipment item</p>'),
-        L.marker([-14.916477539564463, 113.65722566843036], {title: 'National Archives', icon: iconSidemisson}).bindPopup('<h5>National Archives</h5><p>Recover important documents from the archives</p><p><b>Rewards:</b> Blueprint: Compensator 9mm, Theater Upgrade: Rescued Art, 2970 XP</p>'),
-        L.marker([-15.072124193296435, 84.06738281250001], {title: 'Department of Justice', icon: iconSidemisson}).bindPopup('<h5>Department of Justice</h5><p>Destroy an important stockpile of True Sons Munitions.</p>'),
-        L.marker([7.02820696814731, 101.87988191843036], {title: 'Bureau Headquarters', icon: iconSidemisson}).bindPopup('<h5>Bureau Headquarters</h5><p>A SHD tech cache was taken to the bureau laboratory for decontamination. Find and retrieve the SHD tech cache.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Mended Marksman Mag, 2970 XP</p>'),
-        L.marker([22.63429269379353, 13.798828125000002], {title: 'Empire Autumn Hotel', icon: iconSidemisson}).bindPopup('<h5>Empire Autumn Hotel</h5><p>Recover a SHD tech cache from the Empire Autumn hotel.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Flash Hider 7.62, 1935 XP</p>')
+        L.marker([-34.58498328591662, -22.917479127645496], {title: 'Medical Camp Attack', icon: iconSidemission}).bindPopup('<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.</p><p><b>Rewards:</b> Blueprint: Loud Vent Brake .45</p>'),
+        L.marker([40.83597917676427, 97.25097924470903], {title: 'MLK Library Community', icon: iconSidemission}).bindPopup('<h5>MLK Library Community</h5><p>Help the MLK Library community.</p><p><b>Rewards:</b> Blueprint: Improvised Kneepads, Theater Upgrade: Game Corner, 1935 XP, Boss loot: 1 green equipment item</p>'),
+        L.marker([-14.916477539564463, 113.65722566843036], {title: 'National Archives', icon: iconSidemission}).bindPopup('<h5>National Archives</h5><p>Recover important documents from the archives</p><p><b>Rewards:</b> Blueprint: Compensator 9mm, Theater Upgrade: Rescued Art, 2970 XP</p>'),
+        L.marker([-15.072124193296435, 84.06738281250001], {title: 'Department of Justice', icon: iconSidemission}).bindPopup('<h5>Department of Justice</h5><p>Destroy an important stockpile of True Sons Munitions.</p>'),
+        L.marker([7.02820696814731, 101.87988191843036], {title: 'Bureau Headquarters', icon: iconSidemission}).bindPopup('<h5>Bureau Headquarters</h5><p>A SHD tech cache was taken to the bureau laboratory for decontamination. Find and retrieve the SHD tech cache.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Mended Marksman Mag, 2970 XP</p>'),
+        L.marker([22.63429269379353, 13.798828125000002], {title: 'Empire Autumn Hotel', icon: iconSidemission}).bindPopup('<h5>Empire Autumn Hotel</h5><p>Recover a SHD tech cache from the Empire Autumn hotel.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Flash Hider 7.62, 1935 XP</p>')
     ];
     var sideMissions = L.layerGroup(sideMissionMarkers);
+    mapLayers.push(sideMissions);
 
     var controlpointMarkers = [
-        L.marker([-14.732386081418454, 0.13183593750000003], {title: 'Ellipse Fuel Depot', icon: iconSidemisson}).bindPopup('<h5>Ellipse Fuel Depot</h5><p>In a post-crisis world, fuel is nearly as important as water.</p>'),
-        L.marker([49.64391983300744, 23.774419426918033], {title: 'Fallen Cranes', icon: iconSidemisson}).bindPopup('<h5>Fallen Cranes</h5><p>Sits on what was previously an important supply route. A gang of opportunistic thugs - later part of the Hyenas - used explosives to topple the cranes and ambush a convoy.</p>'),
-        L.marker([-2.108898659243126, 113.90625268220903], {title: 'Navy Plaza', icon: iconSidemisson}).bindPopup('<h5>Navy Plaza</h5><p>A bloodsoaked no man\'s land created during a long engagement between Hyanes and True Sons as they jostled for dominance, neither one managing to get the edge</p>'),
-        L.marker([22.221310745585214, 43.447267860174186], {title: 'Demolition Site', icon: iconSidemisson}).bindPopup('<h5>Demolition Site</h5><p>A half-destroyed office block, moments from the main Unite DC protest site, that was briefly used by Hyenas for wild debauchery and violent excess.</p>')
+        L.marker([-14.732386081418454, 0.13183593750000003], {title: 'Ellipse Fuel Depot', icon: iconControlpoint}).bindPopup('<h5>Ellipse Fuel Depot</h5><p>In a post-crisis world, fuel is nearly as important as water.</p>'),
+        L.marker([49.64391983300744, 23.774419426918033], {title: 'Fallen Cranes', icon: iconControlpoint}).bindPopup('<h5>Fallen Cranes</h5><p>Sits on what was previously an important supply route. A gang of opportunistic thugs - later part of the Hyenas - used explosives to topple the cranes and ambush a convoy.</p>'),
+        L.marker([-2.108898659243126, 113.90625268220903], {title: 'Navy Plaza', icon: iconControlpoint}).bindPopup('<h5>Navy Plaza</h5><p>A bloodsoaked no man\'s land created during a long engagement between Hyanes and True Sons as they jostled for dominance, neither one managing to get the edge</p>'),
+        L.marker([22.221310745585214, 43.447267860174186], {title: 'Demolition Site', icon: iconControlpoint}).bindPopup('<h5>Demolition Site</h5><p>A half-destroyed office block, moments from the main Unite DC protest site, that was briefly used by Hyenas for wild debauchery and violent excess.</p>')
     ];
     var controlpoints = L.layerGroup(controlpointMarkers);
+    mapLayers.push(controlpoints);
 
     var undergroundMarkers = [
         L.marker([-3.951938849284128, 124.73144710063936], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
@@ -66,6 +109,7 @@ permalink: map.html
         L.marker([-20.869077732018464, -24.279785156250004], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>')
     ];
     var underground = L.layerGroup(undergroundMarkers);
+    mapLayers.push(underground);
 
     var shdtechMarkers = [
         L.marker([11.537438138020034, 78.27407604910101], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
@@ -79,6 +123,7 @@ permalink: map.html
         L.marker([-23.711601410205486, 110.2880868315697], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>')
     ];
     var shdtech = L.layerGroup(shdtechMarkers);
+    mapLayers.push(shdtech);
 
     var safehouseMarkers = [
         L.marker([44.600898821045675, 37.77831584215165], {title: 'Safehouse: Final Epiphany', icon: iconSafehouse }).bindPopup('<h5>Final Epiphany</h5><p>Safe house in Downtown East</p>'),
@@ -86,11 +131,13 @@ permalink: map.html
         L.marker([11.401059893847355, 243.7963027095392], {title: 'Safehouse: DZ East', icon: iconSafehouse }).bindPopup('<h5>DZ East</h5><p>Safe house in Dark Zone East</p>')
     ];
     var safehouses = L.layerGroup(safehouseMarkers);
+    mapLayers.push(safehouses);
 
     var settlementMarkers = [
         L.marker([24.650345994540757, 83.36059458553791], {title: 'The Theater', icon: iconSettlement }).bindPopup('<h5>The Theater</h5><p>Settlement in Downtown East</p>')
     ];
     var settlements = L.layerGroup(settlementMarkers);
+    mapLayers.push(settlements);
 
     var checkpointMarkers = [
         L.marker([2.9869206969221, 192.4951243400574], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
@@ -102,12 +149,14 @@ permalink: map.html
         L.marker([-29.471486483429143, 203.89160782098773], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>')
     ];
     var checkpoints = L.layerGroup(checkpointMarkers);
+    mapLayers.push(checkpoints);
 
     var extractionareaMarkers = [
         L.marker([21.26889909508791, 277.90283381938934], {title: 'Extraction Area', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>'),
         L.marker([-19.959581667865596, 234.46289241313937], {title: 'Extraction Area', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>')
     ];
     var extractionareas = L.layerGroup(extractionareaMarkers);
+    mapLayers.push(extractionareas);
 
     var weaponMarkers = [
         L.marker([-16.263900076247165, 79.69490309119901], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Behind some elevator doors you have to pry open, look south to see those doors.</p>'),
@@ -121,22 +170,27 @@ permalink: map.html
         L.marker([22.971882402354716, 33.28153070236458], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>')
     ];
     var weapons = L.layerGroup(weaponMarkers);
+    mapLayers.push(weapons);
 
     var gearMarkers = [
         L.marker([52.18740515670237, 14.461860773492978], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5>'),
         L.marker([22.97862520507353, 78.96481714108933], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5>')
     ];
     var gear = L.layerGroup(gearMarkers);
+    mapLayers.push(gear);
 
     var lockedboxMarkers = [
         L.marker([2.5333493673422147, 96.93196461985545], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open.</p>')
     ];
     var lockedboxes = L.layerGroup(lockedboxMarkers);
+    mapLayers.push(lockedboxes);
 
     var echoMarkers = [
-        L.marker([38.696943597232405, 8.355241372424388], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>A clandestine meeting between an unknown person and someone called Brandon Schaeffer, a BTSU operative, about a special opportunity.</p>')
+        L.marker([-11.171216299516859, 133.2552302150348], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Hyenas squabbling over loot.</p>'),
+        L.marker([37.65043282789439, 9.400883379346665], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>A clandestine meeting between an unknown person and someone called Brandon Schaeffer, a BTSU operative, about a special opportunity.</p>')
     ];
     var echos = L.layerGroup(echoMarkers);
+    mapLayers.push(echos);
 
     var commMarkers = [
         //L.marker(Somewhere in the round camp in ellipse road, {title: 'True Sons Debrief', icon: iconComm }).bindPopup('<h5>True Sons Debrief</h5><p>Manny Ortega calls over radio, giving offsite leadership an update on the True Sons situation, in early spring. JTF Comms 1/8</p>'),
@@ -153,6 +207,7 @@ permalink: map.html
         L.marker([36.29151546818265, -23.411550122836278], {title: '25th Amendment', icon: iconComm }).bindPopup('<h5>25th Amendment</h5><p>White House staff members learn that POTUS has died. Government Comms 1/13</p>')
     ];
     var comms = L.layerGroup(commMarkers);
+    mapLayers.push(comms);
 
     var artifactMarkers = [
         //L.marker(Not certain of the position anymore, {title: 'The Constitution of the United States', icon: iconArtifact }).bindPopup('<h5>The Constitution of the United States</h5><p>A historical document of great value.</p>'),
@@ -160,11 +215,13 @@ permalink: map.html
         L.marker([-11.178401873711772, 79.22166835922202], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Judith Leyster - Self-Portrait</h5><p>Painting by Judith Leyster.</p>')
     ];
     var artifacts = L.layerGroup(artifactMarkers);
+    mapLayers.push(artifacts);
 
     var keyMarkers = [
         L.marker([23.335532542925343, 67.20918030848705], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world.</p>')
     ];
     var keys = L.layerGroup(keyMarkers);
+    mapLayers.push(keys);
 
     var componentMarkers = [
         L.marker([5.295181309651799, 92.98479460502092], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
@@ -173,6 +230,7 @@ permalink: map.html
         L.marker([7.0500140104532605, -6.741957475467869], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>')
     ];
     var components = L.layerGroup(componentMarkers);
+    mapLayers.push(components);
 
     var foodMarkers = [
         L.marker([11.83867258662464, 119.03603089340179], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
@@ -181,6 +239,7 @@ permalink: map.html
         L.marker([16.71687795741415, 13.093332705978655], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>')
     ];
     var food = L.layerGroup(foodMarkers);
+    mapLayers.push(food);
 
     var waterMarkers = [
         L.marker([-0.11719099456653617, 13.210303892287987], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
@@ -189,6 +248,7 @@ permalink: map.html
         L.marker([52.102007559256485, 50.247231096613255], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>')
     ];
     var water = L.layerGroup(waterMarkers);
+    mapLayers.push(water);
     //-------------------------------------------------------------
 
     var division2map = L.map('thedivision2map', {
@@ -196,19 +256,17 @@ permalink: map.html
         attributionControl: false,
         maxBounds: [[84, -369], [-84, 337]],
         // Layers given here are enabled by default
-        //layers: [missions, sideMissions, safehouses, settlements, controlpoints, underground, shdtech]
+        layers: mapLayers,
         maxZoom: 9,
         minZoom: 1
-
     });
-    var imageUrl = '/images/map/the-division-2-map-v4.svg',
+    var imageUrl = '/images/map/the-division-2-map-v5.svg',
         imageBounds = [[84, -369], [-84, 337]];
-
     L.imageOverlay(imageUrl, imageBounds).addTo(division2map);
     division2map.fitWorld();
 
     // Debug, to easy add a marker
-    //division2map.on('click', function(e) { console.log(e.latlng); var marker = L.marker(e.latlng).addTo(division2map).bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']'); } );
+    division2map.on('click', function(e) { if (e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']').on('move', function(e) {e.target.bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']');}); }} );
 
     // Contents of the layer control on the righthand side
     var overlays = {
@@ -232,6 +290,5 @@ permalink: map.html
         "Food": food,
         "Water": water
     };
-
     L.control.layers(null, overlays).addTo(division2map);
 </script>
