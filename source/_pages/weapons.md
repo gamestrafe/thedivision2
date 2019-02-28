@@ -16,7 +16,7 @@ There are different quality of weapons. Here a list from worst to best.
 - Superior (Purple)
 - High-End (Yellow)
 
-Additionally there is a signature weapons tier that is exclusive to the weapons you use as part of [specializations](/specializations.html).
+Additionally there is a signature weapons tier that is exclusive to the weapons you use as part of [specializations](/specializations.html). There is also an exotic weapons tier, but not much is known about them yet.
 
 You might also be interested in [Weapon Talents](/weapon-talents.html) and [Weapon Mods](/weapon-mods.html).
 

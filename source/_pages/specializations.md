@@ -6,6 +6,8 @@ meta:
 
 There are currently 3 Specializations available. They start coming into play once you reach level 30, little else is known about them.
 
+During year 1 there will be three more specializations released.
+
 ## Sharpshooter
 
 Signature weapon: TAC-20 C Rifle

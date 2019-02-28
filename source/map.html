@@ -32,10 +32,9 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconWhitehouse = iconEcho = iconKey = iconLockedbox = new L.Icon.Default();
-    //var iconUnderground = new L.Icon({ iconUrl: '/images/map/icons/underground.png', iconSize: [44, 44], iconAnchor: [22, 22], tooltipAnchor:  [0, -22]});
+    var iconEcho = iconKey = iconLockedbox = iconEvents = iconLoot = iconMaterial = iconResupply = iconGrenaderesupply = iconAirdrop = new L.Icon.Default();
 
-    // Icon classes
+    // Icon base classes
     // Round is for really round ones and other "general location" markers
     var RoundIcon = L.DivIcon.extend({options: {
         className: 'round-icon',
@@ -54,6 +53,7 @@ permalink: map.html
     iconMission = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path style="fill:#74FEED;" d="M50,1.8L8.3,25.9v48.2L50,98.2l41.7-24.1V25.9L50,1.8z M80.1,67.4L50,84.8L19.9,67.4V32.6L50,15.2l30.1,17.4V67.4z"/><path style="fill:#74FEED;" d="M50,24.4L27.8,37.2v25.6L50,75.6l22.2-12.8V37.2L50,24.4z M68,60.4L50,70.8L32,60.4V39.6l18-10.4l18,10.4V60.4z"/></svg>'});
     iconSidemission = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path style="fill:#74FEED;" d="M50,4.9L5.8,36.9l16.9,51.9h54.6l16.9-51.9L50,4.9z M68,76H32L20.9,41.8L50,20.7l29.1,21.1L68,76z"/><polygon style="fill:#74FEED;opacity:0.5;" points="50,20.7 20.9,41.8 32,76 68,76 79.1,41.8 "/></svg>'});
     iconSafehouse = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path style="fill:#FF7E00;" d="M49.4,15.6L14.8,38.9v42.6h68.3V38.8L49.4,15.6z M43.2,58.6H26V46.9h17.2V58.6z M71.2,77H52.4V46.9h18.7V77z"/></svg>'});
+    iconWhitehouse = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><polygon style="fill:#FF7E00;" points="10.2,41.8 10.2,39.8 17.7,39.8 21.4,35.7 24.6,39.8 28.9,39.7 28.9,42 "/><polygon style="fill:#FF7E00;" points="71.4,39.9 71.4,42 90,42 90,40.1 81.6,40.1 77.3,36.2 74,39.9 "/><rect x="10.2" y="69.2" style="fill:#FF7E00;" width="18.7" height="2.3"/><rect x="71.4" y="69.2" style="fill:#FF7E00;" width="18.5" height="2.3"/><polygon style="fill:#FF7E00;" points="31.2,40 31.2,73.3 66.8,73.3 66.8,40 62.6,40 62.7,69.2 56.5,69.2 56.4,40 52.1,40 52,69.2 47.7,69.2 47.6,40 42.9,40 43,69.2 36.5,69.2 36.4,40 "/><polygon style="fill:#FF7E00;" points="31.2,37.4 66.8,37.4 66.8,29.5 65,29.5 65,22.9 59.4,26.6 50,21.1 50,18.8 58.6,18.8 58.6,12.6 48.1,12.6 48,21.3 40.3,26.4 34.8,23 34.7,29.4 31.2,29.5 "/><path style="fill:#FF7E00;" d="M10.2,44.1v22.8h18.7V44.1H10.2z M18.4,62h-4v-6.1h4V62z M18.4,52.5h-4v-6.1h4V52.5z M26.8,62h-4v-6.1h4V62zM26.8,52.5h-4v-6.1h4V52.5z"/><path style="fill:#FF7E00;" d="M71.4,44.1v22.8H90V44.1H71.4z M76.7,62h-4v-6.1h4V62z M76.7,52.5h-4v-6.1h4V52.5z M85.1,62h-4v-6.1h4V62zM85.1,52.5h-4v-6.1h4V52.5z"/></svg>'});
     iconSettlement = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#6E9734;" d="M16.3,34.8v27.8h65.9V34.8H16.3z M29.1,57.6h-6.3v-6.3h6.3V57.6z M29.1,46h-6.3v-6.3h6.3V46z M40.7,57.6h-6.3v-6.3h6.3V57.6z M40.7,45.8h-6.3v-6.3h6.3V45.8z M52.2,57.6h-6.3v-6.3h6.3V57.6z M52.2,46h-6.3v-6.3h6.3V46z M63.9,57.6h-6.3v-6.3h6.3V57.6z M63.9,46h-6.3v-6.3h6.3V46z M76.1,57.6h-6.3v-6.3h6.3V57.6z M76.1,45.8h-6.3v-6.3h6.3V45.8z"/><path style="fill:#6E9734;" d="M16.3,64.4v18h65.9v-18H16.3z M29.3,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z M40.9,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z M52.5,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z M64,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z M76.2,77.6h-6.6v-8.2l1.6-1.6h3.2l1.7,1.6V77.6z"/><path style="fill:#6E9734;" d="M72.3,26.4L49.8,11L27.6,26.2L7.7,26.4l3.2,8.2h1.8v-4.1l72.9,0.4v3.7h1.6l3.3-8.2H72.3z M37.6,26.2L50,18.1l12.4,8.1H37.6z"/></svg>'});
     iconUnderground = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#E6B86E;" d="M50,1C22.9,1,1,22.9,1,50s21.9,49,49,49s49-21.9,49-49S77.1,1,50,1z M50,86.7L23.1,59.8h12.2V20.6h29.4v39.2H77L50,86.7z"/></svg>'});
     iconControlpoint = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><polygon style="fill:#FFFFFF;" points="26.5,13.6 26.5,87.1 33.1,87.1 33.1,58.1 57.7,49.5 57.3,23.9 "/><polygon style="fill:#FFFFFF;" points="66.1,30.7 64.1,44 59.9,50 68.8,51.7 88.6,42.3 "/></svg>'});
@@ -76,7 +76,10 @@ permalink: map.html
     var missionMarkers = [
         L.marker([42.22851834925639, 71.71875536441804], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
         L.marker([-7.819846429717617, 55.05981534719468], {title: 'Jefferson Trade Center', icon: iconMission}).bindPopup('<h5>Jefferson Trade Center</h5><p>Reactivate the ISAC node beneath the center and rescue the missing Division agent.</p>'),
-        L.marker([-20.19347256143793, 142.14843571186069], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>')
+        L.marker([-20.19347256143793, 142.14843571186069], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>'),
+        L.marker([-74.0678691945724, 100.06252762746311], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        L.marker([-61.9389554736344, 125.4264145884105], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        L.marker([-42.13082130188811, 42.209435198288034], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>')
     ];
     var missions = L.layerGroup(missionMarkers);
     mapLayers.push(missions);
@@ -126,9 +129,10 @@ permalink: map.html
     mapLayers.push(shdtech);
 
     var safehouseMarkers = [
-        L.marker([44.600898821045675, 37.77831584215165], {title: 'Safehouse: Final Epiphany', icon: iconSafehouse }).bindPopup('<h5>Final Epiphany</h5><p>Safe house in Downtown East</p>'),
-        L.marker([-10.862077594462036, 71.73320220383796], {title: 'Safehouse: The 1040', icon: iconSafehouse }).bindPopup('<h5>The 1040</h5><p>Safe house in Federal Triangle</p>'),
-        L.marker([11.401059893847355, 243.7963027095392], {title: 'Safehouse: DZ East', icon: iconSafehouse }).bindPopup('<h5>DZ East</h5><p>Safe house in Dark Zone East</p>')
+        L.marker([44.600898821045675, 37.77831584215165], {title: 'Final Epiphany', icon: iconSafehouse }).bindPopup('<h5>Final Epiphany</h5><p>Safe house in Downtown East</p>'),
+        L.marker([-10.862077594462036, 71.73320220383796], {title: 'The 1040', icon: iconSafehouse }).bindPopup('<h5>The 1040</h5><p>Safe house in Federal Triangle</p>'),
+        L.marker([11.401059893847355, 243.7963027095392], {title: 'Safehouse: DZ East', icon: iconSafehouse }).bindPopup('<h5>DZ East</h5><p>Safe house in Dark Zone East</p>'),
+        L.marker([31.67831515583315, -23.45551490534952], {title: 'Base of Operations', icon: iconWhitehouse }).bindPopup('<h5>White House</h5><p>Your base of operations is situated in the white house. You can upgrade skills here and participate in other activities.</p>')
     ];
     var safehouses = L.layerGroup(safehouseMarkers);
     mapLayers.push(safehouses);
@@ -260,7 +264,7 @@ permalink: map.html
         maxZoom: 9,
         minZoom: 1
     });
-    var imageUrl = '/images/map/the-division-2-map-v5.svg',
+    var imageUrl = '/images/map/the-division-2-map-v6.svg',
         imageBounds = [[84, -369], [-84, 337]];
     L.imageOverlay(imageUrl, imageBounds).addTo(division2map);
     division2map.fitWorld();
