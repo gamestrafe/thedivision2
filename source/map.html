@@ -32,7 +32,7 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconEcho = iconKey = iconLockedbox = iconEvents = iconLoot = iconMaterial = iconResupply = iconGrenaderesupply = iconAirdrop = new L.Icon.Default();
+    var iconEcho = iconKey = iconLockedbox = iconRandomevents = iconLoot = iconMaterial = iconSpecialammo = iconResupply = iconGrenaderesupply = iconAirdrop = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
@@ -107,7 +107,7 @@ permalink: map.html
     var undergroundMarkers = [
         L.marker([-3.951938849284128, 124.73144710063936], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-24.567106523024577, 124.8120152950287], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
-        L.marker([50.881088136642546, 12.438354380428795], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([50.758487455409266, 12.293701171875002], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-20.999051467816, -9.807128123939039], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-20.869077732018464, -24.279785156250004], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>')
     ];
@@ -115,14 +115,18 @@ permalink: map.html
     mapLayers.push(underground);
 
     var shdtechMarkers = [
+        //L.marker(, {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p></p>'),
+        L.marker([6.759088770195253, 92.03430181369185], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>In underground lab of Bureau sidemission</p>'),
+        L.marker([26.719502100545558, 15.369873046875002], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Part of the Empire Autunum Hotel Sidemission.</p>'),
+        L.marker([-19.670136315895327, -19.248046875000004], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Underground in a locked side room (branches off to the north from tunnel).</p>'),
         L.marker([11.537438138020034, 78.27407604910101], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
         L.marker([15.989496011992996, 32.17299190152809], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([23.322081858670515, 32.84666774747427], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([23.140361837694822, 65.60782745874144], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([48.99944285548159, 52.324222326278694], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([49.32750884414313, 12.473144978284836], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([22.549763476119622, 33.29223610460759], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([22.718877968842868, 66.77856456488372], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([48.767058744747125, 52.89550786837936], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([49.16584563767611, 12.271728515625002], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
         L.marker([10.386970379955455, 87.94686832249805], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([-14.079750117035106, 45.76172053813935], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
+        L.marker([-13.214968704580537, 47.00317427515984], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
         L.marker([-23.711601410205486, 110.2880868315697], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>')
     ];
     var shdtech = L.layerGroup(shdtechMarkers);
@@ -163,33 +167,464 @@ permalink: map.html
     mapLayers.push(extractionareas);
 
     var weaponMarkers = [
+        //L.marker(, {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([3.871676926083913, 89.23095703125001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In locked room in building, shoot lock through the view window outside.</p>'),
+        L.marker([43.88206723439044, 90.74707031250001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In supply room</p>'),
+        L.marker([-13.061529400792844, 149.67773437500003], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In Viewpoint Museum, on prime time level, in the left studio you see in there.</p>'),
+        L.marker([-15.756869815282075, 158.32763582468036], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In ViewPoint Museum, after first exhibit room, in fanced off area under the stairs.</p>'),
+        L.marker([-0.35529329337720505, 118.5717772319913], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Just outside supply room.</p>'),
+        L.marker([0.3230072054048649, 117.10693370550872], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In supply room.</p>'),
+        L.marker([14.766050755434524, 116.28845209255816], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In apartement, accessible over scaffolding in the west.</p>'),
+        L.marker([9.694711155132099, 120.68847667425872], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside building, accessible from in between buildings.</p>'),
+        L.marker([14.803239813242111, 118.95263683050872], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside building on a table.</p>'),
+        L.marker([34.5307392411686, 93.55224620550872], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside building.</p>'),
+        L.marker([36.784377386463966, 96.07635496649893], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Against west wall, up a few metal stairs.</p>'),
+        L.marker([-1.8746148242349936, 10.618286132812502], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On ground, still under the roof.</p>'),
+        L.marker([30.587501123043392, -5.551757588982582], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On top of scaffolding platform. Needs to be accessed from above (north) using the large stairs.</p>'),
+        L.marker([-7.841546941166602, 43.62304709851742], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In Jefferson Trade Center, in the ISAC node room, left of the consolem you approach.</p>'),
+        L.marker([-17.070743447174912, 16.40625044703484], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On the bed of a truck parked here.</p>'),
+        L.marker([-15.77110917357528, 9.667968750000002], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In the ground on the ramp downwards.</p>'),
+        L.marker([-11.46923090081636, 1.4575194194912913], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside Elipse Fueal Depot Supply room.</p>'),
+        L.marker([18.260659898663874, -26.89086936414242], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside the locked off tennis court.</p>'),
+        L.marker([-23.90588914025294, -20.02441428601742], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Underground, bottom level, behind a locked gate.</p>'),
+        L.marker([26.437762745354963, 41.59973144531251], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Resuply room.</p>'),
+        L.marker([25.862645370925467, 62.77221634984017], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Below ground in a subway station. Access trhough escalators in the building northwest.</p>'),
+        L.marker([48.67525509538022, 53.07128911837937], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In fenced off area with SHD tech.</p>'),
+        L.marker([53.29368974714568, 26.97509760037065], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In supply room.</p>'),
+        L.marker([46.72003155080433, 68.81835937500001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In Grand Washington Hotel Mission. After passing the first destroyed room, in the corridor with the broken walls, this one is on your right in a small room.</p>'),
+        L.marker([49.19611802056059, 70.09277343750001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In Grand Washington Hotel Mission. After clearing the lobby, you go up the stairs, trhough a door and another set of stairs. On the landing look in the bathroom just to your left.</p>'),
+        L.marker([35.86543101023699, -0.07324241101741792], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside building in a room off to the south, east wall.</p>'),
+        L.marker([26.73907201823525, -0.7250976562500001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Behind a locked door in the trench, below the stairs.</p>'),
         L.marker([-16.263900076247165, 79.69490309119901], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Behind some elevator doors you have to pry open, look south to see those doors.</p>'),
         L.marker([11.372337477367223, 101.84512446026461], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
-        L.marker([-13.596159703601247, 45.75791251372831], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
-        L.marker([-12.26844378126742, 53.08439907554862], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
-        L.marker([-9.774024565864734, 79.22166835922202], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([-12.836785218394441, 46.95556640625001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In locked of fence area with an SHD tech.</p>'),
+        L.marker([-11.688055283515437, 53.34228526800871], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In the corner of the building.</p>'),
+        L.marker([-10.066192995644581, 79.09240728244185], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
         L.marker([50.64829953519071, 15.497834632678735], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
-        L.marker([47.249407868241384, 55.26093363908976], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
-        L.marker([23.905928153368606, 77.27330440158454], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
-        L.marker([22.971882402354716, 33.28153070236458], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>')
+        L.marker([47.22828524347167, 54.90234369412065], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Down some stairs.</p>'),
+        L.marker([23.269962838559838, 77.3648071428761], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([22.1908041917787, 33.35815407335758], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>High above ground, access through ladders in the west.</p>')
     ];
     var weapons = L.layerGroup(weaponMarkers);
     mapLayers.push(weapons);
 
     var gearMarkers = [
+        //L.marker(, {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([43.9152963929061, 91.58935569226742], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In supply room.</p>'),
+        L.marker([-13.4536702156277, 152.7246091514826], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In ViewPoint Museum, in a lcoked room after the room with all the sparking.</p>'),
+        L.marker([-12.66166996970569, 156.62109375000003], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In Viewpoint museum, underground</p>'),
+        L.marker([-0.13194604200370497, 118.0737302452326], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In supply room.</p>'),
+        L.marker([6.580956857002342, 118.8244627788663], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On the roof.</p>'),
+        L.marker([7.8706548461723465, 118.85742142796518], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In small building.</p>'),
+        L.marker([35.459187356905794, 96.20178222656251], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In fenced off area.</p>'),
+        L.marker([35.98838023869061, 97.27935785427691], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Near wall, in front of a door.</p>'),
+        L.marker([32.43020935435456, 41.93298342637718], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In fecned off area under some scaffolding.</p>'),
+        L.marker([16.285871240782022, 54.72473145928234], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside the building, an elevator you have to pry open contains this crate.</p>'),
+        L.marker([15.478402643441488, 57.517089955508716], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Lower level, inside the Kerman Coffee shop.</p>'),
+        L.marker([14.445373495142091, 54.77050758898259], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Ground level, next to the railing.</p>'),
+        L.marker([1.4610163940417136, 14.745483286678793], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On ground against north wall.</p>'),
+        L.marker([-19.81489041820919, 91.83471679687501], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside the building, after the garage potion of the sidemission.</p>'),
+        L.marker([-13.699301562865507, 93.49365234375001], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside the room where you can open the door for the side mission here.</p>'),
+        L.marker([-11.680716215060334, 28.26416037976742], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In JEfferson Trade Center, in the cafeteria, far southeast corner, behind the counter.</p>'),
+        L.marker([-1.3618870979474564, 42.5830078125], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside Jefferson Trade Center. After reactivating the node, go up, trhough the door and then instead of left, straight into the fenced off area with machines. The crate is in the back right corner.</p>'),
+        L.marker([-8.863351823713959, 74.6649168804288], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In fenced opff area on the roof.</p>'),
+        L.marker([-10.127475864308378, 73.25683593750001], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Just outside east exit of the safehouse.</p>'),
+        L.marker([-14.122386460910725, 14.399413615465166], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On the ground against the wall.</p>'),
+        L.marker([-12.581366185692856, 1.504211397841573], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside Ellipse Fuel Depot supply room.</p>'),
+        L.marker([17.90911447873054, -31.464843750000004], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On the ground.</p>'),
+        L.marker([-20.16595167645893, -18.885497711598873], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground in a locked sideroom, off to the north from the main tunnel.</p>'),
+        L.marker([-22.153317900056805, -12.612304687500002], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground.</p>'),
+        L.marker([-23.16037330016842, -20.478515625000004], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, bottom level, in a corner behind some flood lights.</p>'),
+        L.marker([-26.088955755550543, -15.56396506726742], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, bottom level, behind a locked gate.</p>'),
+        L.marker([-24.86645252565191, -19.98046897351742], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, bottom level, behind a locked gate.</p>'),
+        L.marker([-27.033126075043448, -21.29882834851742], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground.</p>'),
+        L.marker([-27.30660562471285, -23.320312388241295], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, at end of tunnel.</p>'),
+        L.marker([-5.189423479732417, -14.76196311414242], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On top of some containers.</p>'),
+        L.marker([22.19760296641424, 28.747558649629358], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside fenced off area.</p>'),
+        L.marker([20.502580913356322, 40.7006834819913], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On the ground next to a ramp.</p>'),
+        L.marker([26.523004952246037, 41.98059087619186], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Resupply room.</p>'),
+        L.marker([25.809639338437044, 57.35961914062501], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On the inside of this building. Getting to the area through a door or escalartors in the northeast corner. This crate is on an upper level once you are inside.</p>'),
+        L.marker([27.319608754681948, 53.18481445312501], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In the middle of the building, access trhough a door or escalators in the northeast corner.</p>'),
+        L.marker([24.656797993655687, 56.77093498874456], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In alley going west east.</p>'),
+        L.marker([45.42423242224295, 57.91259743273259], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Corner of a loading dock.</p>'),
+        L.marker([53.48802094335256, 17.34008800238371], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In a recessed loading dock next to a truck.</p>'),
+        L.marker([48.936934954094035, 11.347045884467663], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In fenced off area.</p>'),
+        L.marker([53.15765454448484, 26.1639404296875], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In supply room.</p>'),
+        L.marker([46.65287869457374, 30.007323827594522], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Next to a passage between buildings.</p>'),
+        L.marker([45.71137369161817, 67.67578125000001], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside Grand Washington Hotel. After going downstairs at the beginning, in that room just straight ahead (vault through broken window).</p>'),
+        L.marker([45.52180084403297, 41.53930664062501], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Next to box truck in recess.</p>'),
+        L.marker([45.552185339150924, 36.015014672884725], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside the broken fence area.</p>'),
+        L.marker([39.85636318049293, 0.7434080913662912], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Atop the stairs on the left.</p>'),
+        L.marker([33.64816353910517, -6.43066417425871], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In an underpass style tunnel, on the west wall, on the road going north south.</p>'),
+        L.marker([26.711282297680732, -0.20141612738370898], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Behind a locked door in the trench, below the stairs.</p>'),
+        L.marker([26.185049159309138, 0.5053710937500001], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>At the top of the stairs on the outcrop on the east side.</p>'),
+        L.marker([-1.6769632091793678, -23.254394419491295], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Behind some of the stalls.</p>'),
         L.marker([52.18740515670237, 14.461860773492978], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5>'),
         L.marker([22.97862520507353, 78.96481714108933], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5>')
     ];
     var gear = L.layerGroup(gearMarkers);
     mapLayers.push(gear);
 
+    // Crates that have been airdropped and now hang above somewhere. Shoot them to get to the loot
+    var airdropMarkers = [
+        //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([26.544308558627424, -4.010009681805968], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the southern wall. Contains crafting materials.</p>'),
+        L.marker([-2.064954958478901, -33.61083962023259], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree, soutside.</p>'),
+        L.marker([-11.31126020931928, 73.25683593750001], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging over the west entrance on the roof. Use the east exit and go up the ladder to reach it.</p>'),
+        L.marker([25.254638850140893, 56.41479492187501], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging from the roof in the atrium of this building. You have to access this area through escalators or a door in the northeast corner.</p>')
+    ];
+    var airdrops = L.layerGroup(airdropMarkers);
+    mapLayers.push(airdrops);
+
+    // Random small loot, mostly trinkets but can also randomly be materials
+    var lootMarkers = [
+        //L.marker(, {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. </p>'),
+        L.marker([2.972324207365114, 87.81005881726742], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Vending Machine</p>'),
+        L.marker([3.667030861679233, 88.9379880577326], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack in lcoked room, shoot lock trhough window</p>'),
+        L.marker([3.4732697714190097, 90.59326171875], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack, in underground lab.</p>'),
+        L.marker([7.838029277881845, 93.29589843750001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack, in the locked room on ground level.</p>'),
+        L.marker([7.93591940090814, 92.31079112738372], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, just inside the armored door.</p>'),
+        L.marker([-10.804566379350511, 154.04296919703486], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Green box, in view point museum.</p>'),
+        L.marker([-13.288959495421537, 161.56494211871177], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Garbage can in ViewPoint Museum, underground.</p>'),
+        L.marker([-0.5053645409602877, 117.7551267296076], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack</p>'),
+        L.marker([-0.4576671773996696, 119.04418900609018], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase.</p>'),
+        L.marker([15.280667116605986, 115.70617670193316], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Fridge, in apartement above ground, use scaffolding in the west to gain entrance.</p>'),
+        L.marker([12.963157379470857, 114.86938465386632], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([16.7992923085445, 115.96801763400438], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([4.251476866350666, 118.71826171875001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([14.838624547561963, 118.16894514486194], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Locker.</p>'),
+        L.marker([8.291245863613906, 118.35205100476742], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Barrel, inside small building.</p>'),
+        L.marker([35.089969148203885, 93.71337890625], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Garbage can.</p>'),
+        L.marker([41.20064177471035, 95.1159666851163], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack at entrance to library.</p>'),
+        L.marker([41.99218071346114, 98.69018554687501], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, in room with hostages on roof.</p>'),
+        L.marker([41.035161061138346, 89.62646484375001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack, on roof in corner.</p>'),
+        L.marker([24.215238661334702, 78.67126476019621], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Drawers, in alley.</p>'),
+        L.marker([16.86763526491567, 55.00396731309594], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, next to door.</p>'),
+        L.marker([16.15138673249748, 55.24291994981468], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Filing cabinet</p>'),
+        L.marker([16.039655500547152, 56.57592779025436], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Garbage can, inside building.</p>'),
+        L.marker([15.94203044965621, 56.96044927462936], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase, inside building next to door.</p>'),
+        L.marker([13.503518917024872, 57.23876953125], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, lower level.</p>'),
+        L.marker([14.813854249400986, 56.37084960937501], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack</p>'),
+        L.marker([12.804735256386206, 54.7082518413663], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack</p>'),
+        L.marker([11.755327010275128, 55.92590332031251], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack</p>'),
+        L.marker([12.191481115547868, 53.7030028179288], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase.</p>'),
+        L.marker([-7.609365602528076, 7.844238281250001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack.</p>'),
+        L.marker([45.53484777206815, -23.410034249536697], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack.</p>'),
+        L.marker([1.2487128031100765, -4.815673604607583], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack, next to two benches.</p>'),
+        L.marker([16.204070414714902, 0.17395022325217727], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, east side of statue.</p>'),
+        L.marker([20.654192037786235, 4.671936035156251], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack.</p>'),
+        L.marker([25.430199241396892, 4.013671651482583], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack.</p>'),
+        L.marker([32.34902209472982, 3.9770507812500004], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([35.37120243011866, -5.610351786017419], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack, atop stairs.</p>'),
+        L.marker([33.35196311419531, -9.667968750000002], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack.</p>'),
+        L.marker([22.275583911976934, 0.3442380577325821], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack.</p>'),
+        L.marker([17.61780695790055, 9.406127985566856], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase.</p>'),
+        L.marker([17.013032091432006, 10.997314453125002], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack at the bottom of stairs.</p>'),
+        L.marker([16.76252048677522, 18.072509765625004], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([14.108186274735985, 33.87451216578484], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, between tents.</p>'),
+        L.marker([27.362102320725295, 120.16845703125001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase in lobby.</p>'),
+        L.marker([26.980847007561163, 119.98168945312501], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Filing cabinet in lobby.</p>'),
+        L.marker([25.52593069194942, 17.869262695312504], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, just before exiting Empire Autunum Hotel.</p>'),
+        L.marker([22.11282050813514, 17.48107932507992], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase, upper level southwest corner.</p>'),
+        L.marker([26.879994552245417, 20.752258272841576], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack inside Empire Autunum Hotel, in front of the bar against a column after getting the SHD tech.</p>'),
+        L.marker([27.38148648956151, 20.954589620232586], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase inside Empire Autunum Hotel, behind the bar after getting the SHD tech.</p>'),
+        L.marker([26.879587626473096, 13.124999972060325], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Vending Machine before you go down the elevators.</p>'),
+        L.marker([29.34695559767521, 17.413330078125004], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase inside the lobby of the Empire Autunum Hotel.</p>'),
+        L.marker([-13.720708401412056, 45.40649414062501], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack next to a bench.</p>'),
+        L.marker([-13.460884792184164, 52.62817360460759], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack on a bench.</p>'),
+        L.marker([-15.294716141965546, 52.25097656250001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Flightcase.</p>'),
+        L.marker([-16.874554918207103, 50.3466795757413], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Filing cabinet.</p>'),
+        L.marker([-16.47470255570857, 58.172607421875], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([-8.29117636876206, 30.000000223517425], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Green box behind the JEfferson Trade center counter, when you leave the cafeteria.</p>'),
+        L.marker([-9.954427097090035, 25.744629018008716], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Blue box, behind counter in the cafeteria west side of JEferson Trade Center.</p>'),
+        L.marker([-1.5635968789747712, 29.94140602648259], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Yellow box inside Jefferson Trade Center, far back of the garage.</p>'),
+        L.marker([-0.9373989216771874, 43.90869230031967], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Yellow box, inside parking garage of Jefferson TRade Center.</p>'),
+        L.marker([-11.35438921259673, 76.58935558050872], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack against the wall on the roof next to the safehouse.</p>'),
+        L.marker([-7.605076834063271, 76.12426929641515], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack right outside east exit of safehouse.</p>'),
+        L.marker([-8.558885177356604, -35.17822265625001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack, west side of a large bush.</p>'),
+        L.marker([18.705514002204254, -33.71704101562501], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack at the foot of one of the struts holding the tent roof up.</p>'),
+        L.marker([15.94372583274809, -31.07666012831033], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([16.772960548002064, -30.194091908633716], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack, on a bench.</p>'),
+        L.marker([21.275684467764084, -30.120849497616295], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack.</p>'),
+        L.marker([-21.60968233280606, -11.524658203125002], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack, underground.</p>'),
+        L.marker([-24.89952030132345, -12.612304687500002], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, in the corner, next to a door.</p>'),
+        L.marker([-25.898737148735812, -14.582519307732582], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, underground, upper area, eastern most wall.</p>'),
+        L.marker([-25.958044673317843, -16.88232444226742], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, underground, upper area, south wall.</p>'),
+        L.marker([-21.070618277634704, -23.210449274629358], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, underground.</p>'),
+        L.marker([26.083108956003805, 51.06445312500001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack, inside corner of a building part.</p>'),
+        L.marker([27.31980460868488, 57.297363393008716], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, ground level near escalators.</p>'),
+        L.marker([22.705268187117937, 68.86230468750001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Garbage can.</p>'),
+        L.marker([23.09491039519392, 66.14959719590844], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Garbage can inside building.</p>'),
+        L.marker([46.557583946865776, 59.33715820312501], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack against the wall.</p>'),
+        L.marker([47.075101687101224, 54.792480580508716], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack, down some stairs, next to a weapons crate.</p>'),
+        L.marker([49.13920721597428, 52.73986816406251], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack in corner.</p>'),
+        L.marker([47.137436361459386, 26.187744028866295], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large suitcase, in locked room with comms.</p>'),
+        L.marker([52.515672845311975, 22.299499595537785], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack on sidewalk next to a small tree.</p>'),
+        L.marker([53.75521088872245, 20.002440959215164], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase in an entrance.</p>'),
+        L.marker([51.70213076469503, 13.732910323888065], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase, inside building north wall.</p>'),
+        L.marker([51.190827383583425, 14.888305719941858], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack.</p>'),
+        L.marker([48.097555568212286, 29.300537109375004], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase in passage.</p>'),
+        L.marker([46.27864074400424, 27.202148437500004], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, next to lamppost.</p>'),
+        L.marker([46.62007958635323, 32.45361328125001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack next to chainlink fence.</p>'),
+        L.marker([41.77678778628041, 38.64624012261629], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack, in the corner.</p>'),
+        L.marker([45.871097195670785, 43.27148409560324], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack against southern wall.</p>'),
+        L.marker([42.53422198869814, 44.61181629449129], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase against wall.</p>'),
+        L.marker([42.775106344497146, 36.72271732357331], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, in corner next to a table.</p>'),
+        L.marker([41.5921979785282, 35.91247553005815], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack in the corner of paved area..</p>'),
+        L.marker([40.75419442587327, 29.59350608289242], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase next to lamppost.</p>'),
+        L.marker([39.65646135172625, 26.28295909613371], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase at bus station.</p>'),
+        L.marker([28.600700794234932, 26.66015647351742], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack against a wall.</p>'),
+        L.marker([36.87390171486832, 4.064941406250001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Backpack in corner behind a railing, next to a door that can be opened.</p>'),
+        L.marker([26.634406079654894, 0.9008789062500001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack in the trench next to the building.</p>'),
+        L.marker([24.726887384904156, -0.952148661017418], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack at foot of statue facing south.</p>'),
+        L.marker([4.401189806784908, -20.002441294491295], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Backpack behind small podium next to the tree.</p>')
+    ];
+    var loot = L.layerGroup(lootMarkers);
+    //mapLayers.push(loot);
+
+    // Special ammo like shock, exploding or fire ammo
+    var specialammoMarkers = [
+        L.marker([8.385437830742903, 93.2904052734375], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. Before the elevators down.</p>'),
+        L.marker([-15.446510448082533, 152.4169919639826], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. On roof level.</p>'),
+        L.marker([-8.863293967961718, 148.0224610492587], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. At far back, in an area with stairs leading up.</p>'),
+        L.marker([-8.68160414519652, 154.26269575953486], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum behind REception counter.</p>'),
+        L.marker([44.07969327425713, 99.23950195312501], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside library, level above ground floor, under a desk.</p>'),
+        L.marker([44.72600630800573, 94.77539017796518], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. On roof of MLK library.</p>'),
+        L.marker([-3.367796250732865, 28.791503794491295], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside Jefferson Trade Center, in an elevator that is open, after the garage section.</p>'),
+        L.marker([27.323055106114907, 51.06811568140984], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. On the inside of the building, accessible through escalators and door in the northeast corner.</p>')
+    ];
+    var specialammo = L.layerGroup(specialammoMarkers);
+    mapLayers.push(specialammo);
+
+    // Ammo resupply box, fills up all normal ammo
+    var resupplyMarkers = [
+        //L.marker(, {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
+        L.marker([-16.68515595260793, 154.80468772351742], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. After using teh elevator.</p>'),
+        L.marker([-11.72382906048309, 149.32617187500003], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. BEfore prime time exhibit.</p>'),
+        L.marker([-12.7759725383432, 155.04638694226745], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. After the room with all the sparking.</p>'),
+        L.marker([-17.73449078609149, 158.04931640625003], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. After first exhibit room.</p>'),
+        L.marker([-14.973052985357002, 161.6784665733576], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. Underground.</p>'),
+        L.marker([-0.5273363048115043, 115.93505864962935], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside the building.</p>'),
+        L.marker([41.327284935114825, 93.31054698675874], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Just outside elevators.</p>'),
+        L.marker([-19.804580781192215, 90.64819335937501], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. After garage portion of the sidemission.</p>'),
+        L.marker([-17.518219370702997, 93.27392578125001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In the parkoing garage below.</p>'),
+        L.marker([26.058442824820553, 20.875854548066858], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Empire Autunum Hotel, before taking the rapell rope up the elevator shaft.</p>'),
+        L.marker([25.390387658095644, 14.809570312500002], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Just outside the Empire Autunum Hotel when you do that sidemission.</p>'),
+        L.marker([-7.776294852835753, 39.895018637180335], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. After the large open room where you meet Coyote for the first time.</p>'),
+        L.marker([-9.731739550567564, 29.318847209215164], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. After the locked gate from the cafeteria.</p>'),
+        L.marker([-2.9137506328485427, 29.58984419703484], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. After the garage, before the cafeteria.</p>'),
+        L.marker([-4.536251173749258, 42.50244095921517], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. Inside the ISAC node room, next to the door.</p>'),
+        L.marker([6.781157569335222, 37.95410111546517], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. Just before you jump down the elevator shaft.</p>'),
+        L.marker([-5.251342910010795, 37.382812723517425], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. After the first indoor area where you go right at the end of it.</p>'),
+        L.marker([-15.100401890905589, 1.9143676757812502], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In building of resupply room.</p>'),
+        L.marker([-18.49351010473945, -18.369140625000004], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside tent.</p>'),
+        L.marker([24.383821401388612, 42.30102550238371], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In the construction site corner.</p>'),
+        L.marker([51.26766441430681, 25.896606333553795], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Just inside the building at Fall Cranes ccontrol point.</p>'),
+        L.marker([48.04041485950625, 66.79687500000001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. On the roof of Grand Washington Hotel, the room with the elevator that unlocks after the bossfight.</p>'),
+        L.marker([50.27296998553086, 67.03857421875001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. On the roof of Grand Washington Hotel, inside boss fight area.</p>'),
+        L.marker([49.77654964223246, 64.13085948675872], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission, after you rode the elevator up.</p>'),
+        L.marker([43.665326182809906, 63.72070312500001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission, after you cleared the conference center.</p>'),
+        L.marker([44.06648553425571, 69.33837935328484], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel mission, Before the conference center.</p>'),
+        L.marker([41.563435980035365, 63.80126964300871], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission. </p>'),
+        L.marker([41.563435980035365, 63.80126964300871], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission. </p>'),
+        L.marker([41.563435980035365, 63.80126964300871], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission. Just after you cleared the Workshop on the bottom level.</p>'),
+        L.marker([44.394986637412735, 70.10742165148258], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. At entrance to Grand Washington Hotel Mission, just inside the first door.</p>'),
+        L.marker([0.051315673307338196, -23.635254018008716], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>')
+    ];
+    var resupply = L.layerGroup(resupplyMarkers);
+    //mapLayers.push(resupply);
+
+    // Resupplies grenades
+    var grenaderesupplyMarkers = [
+        //L.marker(, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        L.marker([-11.608599592478024, 147.1655271202326], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In ViewPoint Museum</p>'),
+        L.marker([15.054464119749472, 55.16967779025436], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. On lower level inside the KErman Coffee shop behind the counter on the left.</p>'),
+        L.marker([-3.8816018359137328, 8.497009333223106], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In the corner.</p>'),
+        L.marker([-17.25968290083734, 47.51220725476743], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In the far corner.</p>'),
+        L.marker([-7.764712534081738, 77.77221851516516], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Outside the east exit of the safehouse.</p>'),
+        L.marker([-18.555967545576507, -19.694824106991295], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside tent.</p>'),
+        L.marker([47.087599503698435, 69.6826170757413], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In Grand Washington Hotel Bossfight area.</p>')
+    ];
+    var grenaderesupply = L.layerGroup(grenaderesupplyMarkers);
+    //mapLayers.push(grenaderesupply);
+
+    var armorresupplyMarkers = [
+        //L.marker(, {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([-18.569842162577338, 154.68017622828486], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In ViewPoint Museum, Studio room.</p>'),
+        L.marker([-4.696879026871413, 41.98242165148258], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In Jefferson TRade Center boss area.</p>'),
+        L.marker([-14.767782366168436, 44.5019530132413], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In the corner of the building here.</p>'),
+        L.marker([47.4331570691554, 70.29418956488372], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In Grand Washington hotel, in the lobby on the eastern most side, upper area.</p>'),
+        L.marker([44.95961162839859, 69.06738236546518], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In Grand Washington hotel, outside the Conference center room, look north west before entering.</p>')
+    ];
+    var armorresupply = L.layerGroup(armorresupplyMarkers);
+    //mapLayers.push(armorresupply);
+
+    // Boxes locked with keys you have to find. Keys and boxes are assigned to factions
     var lockedboxMarkers = [
+        //L.marker(, {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. </p>'),
+        L.marker([42.814220304383234, 99.25781272351743], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Groundlevel of library, under the stairs in the eastern part.</p>'),
+        L.marker([-4.0832328893671646, 29.626464396715164], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Inside Jefferson Trade Center, back of the garage, as you leave it.</p>'),
+        L.marker([50.33615413054519, 64.6728514507413], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. On the roof of Grand Washington Hotel, just as you get into open air, around the corner to your right.</p>'),
+        L.marker([46.62941304764099, 69.16259743273258], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. In Grand Washington Hotel mission. After you go upstairs after clearing the lobby, in the wallway where you encounter the next enemies, there are broken walls on your left. Go there and circle around to your right to get to the bathroom of that suite where this box is.</p>'),
+        L.marker([26.68345993311305, -1.1059570871293547], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Under the stairs of the big building, behind a locked fenced area you can accesss from the trench around the building.</p>'),
         L.marker([2.5333493673422147, 96.93196461985545], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open.</p>')
     ];
     var lockedboxes = L.layerGroup(lockedboxMarkers);
     mapLayers.push(lockedboxes);
 
+    // Keys for locked boxes
+    var keyMarkers = [
+        //L.marker(, {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. </p>'),
+        L.marker([26.81754923006788, 117.49511707574132], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. In staircase off the lobby, on a wall facing south.</p>'),
+        L.marker([23.694853646459283, 17.86743208765984], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. In Empire Autunum Hotel, room after going up the elevator shaft. Bottom level against the western wall.</p>'),
+        L.marker([-21.68474141861156, -13.853759430348877], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. Underground, in a room where tunnel gets wider, southeast corner.</p>'),
+        L.marker([-25.98425047145087, -18.559570088982586], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. Underground. Top level in that room, south wall.</p>'),
+        L.marker([-24.260202010998896, -23.408203013241295], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. Underground.</p>'),
+        L.marker([23.105853825001702, 66.48010259494185], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world.</p>'),
+        L.marker([23.11343554431633, 65.80627444200218], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world.</p>')
+    ];
+    var keys = L.layerGroup(keyMarkers);
+    mapLayers.push(keys);
+
+    // Random crafting material
+    var materialMarkers = [
+        //L.marker(, {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. </p>'),
+        L.marker([3.4732498120285835, 88.65234419703484], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, inside locked room, shoot lock trhough window</p>'),
+        L.marker([5.244299081116936, 87.07763671875001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in elevator shaft of underground lab.</p>'),
+        L.marker([7.0645489678952815, 86.8176267296076], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in underground lab level.</p>'),
+        L.marker([6.879176130521228, 95.00610373914243], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in underground lab back area, between a sign saying Office 101 and 102.</p>'),
+        L.marker([7.053700610472606, 95.96923872828484], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in interrogation room in underground lab.</p>'),
+        L.marker([3.4732697714190097, 90.59326171875], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, underground, next to the power switch.</p>'),
+        L.marker([7.647507833297652, 93.40576171875001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in lcoked room on groundlevel</p>'),
+        L.marker([43.07960412913487, 91.66992187500001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag in supply room.</p>'),
+        L.marker([43.14388790054491, 90.66650412976743], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case in supply room.</p>'),
+        L.marker([-15.399074086952051, 154.14550803601745], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag in ViewPoint Museum, on TV level, upper area.</p>'),
+        L.marker([-15.686469779050928, 153.66943404078486], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, in ViewPoint Museum, on level with tv studio.</p>'),
+        L.marker([-13.38240990128844, 154.53369140625003], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, in View Point Museum, in a room that is locked. Comes right after the room where everything seems to be under shock.</p>'),
+        L.marker([-16.418478453241164, 157.47070357203484], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in ViewPoint Museum, under stairs.</p>'),
+        L.marker([-13.452382550495347, 156.67236425913873], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox. In ViewPoint Museum, underground</p>'),
+        L.marker([-19.4185451900724, 156.72363401390615], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, just inside the building.</p>'),
+        L.marker([0.3662249645659866, 117.83935546875001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag in supply room</p>'),
+        L.marker([0.10254796939664455, 116.70410178601743], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case in supply room.</p>'),
+        L.marker([14.542836632718624, 116.31408696994188], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in apartement, accessible over scaffolding to the west.</p>'),
+        L.marker([14.699605763967522, 115.85083007812501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, in apartement, accessible over scaffolding to the west.</p>'),
+        L.marker([14.677484929171802, 115.58349614962938], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in apartement, accessible over scaffolding to the west.</p>'),
+        L.marker([14.645612165970638, 114.85290532931685], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase on ground.</p>'),
+        L.marker([5.816426230336085, 119.74731450900438], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on ground.</p>'),
+        L.marker([36.22652514043198, 93.42590343207122], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. flight case.</p>'),
+        L.marker([35.44725026449381, 95.95825189724566], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in fenced off area.</p>'),
+        L.marker([36.292895039204716, 97.1685791015625], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag.</p>'),
+        L.marker([37.51846209455072, 96.6833493858576], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase</p>'),
+        L.marker([43.646832116086074, 92.99560569226743], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, on the floor against the north wall, next to a Book returns sign.</p>'),
+        L.marker([41.46742315052838, 91.8420409038663], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase on floor inside side room that is locked at the beginning.</p>'),
+        L.marker([41.12092722322004, 97.020263671875], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in room with hostages on roof.</p>'),
+        L.marker([41.046279159430554, 93.98437455296518], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, roof level, go to the roight from the elevators when you come up.</p>'),
+        L.marker([32.42787059227767, 42.57385259494186], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in fenced off are under scaffolding.</p>'),
+        L.marker([32.429404470107, 42.88330055773259], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, on top of scaffolding.</p>'),
+        L.marker([24.328752528857088, 77.25402843207121], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag.</p>'),
+        L.marker([23.2750155401787, 76.96289040148258], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case.</p>'),
+        L.marker([15.323077123288712, 56.99707031250001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, lower level inside the Kerman Coffee shop.</p>'),
+        L.marker([13.48933997422121, 55.14770530164243], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, on lower level.</p>'),
+        L.marker([15.443084183361051, 58.18359375], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, next to large plant in the corner.</p>'),
+        L.marker([0.4617790005750272, 20.332031138241295], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, on some pallets.</p>'),
+        L.marker([-0.26913271449484016, 8.481445312500002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on the back of the Humvee</p>'),
+        L.marker([-2.548835911486776, 7.897338895127179], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case.</p>'),
+        L.marker([-10.626455740966257, 7.69409190863371], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, next to a woodenwall, in front of a white truck.</p>'),
+        L.marker([-2.4967225811174663, -7.141113281250001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, on the inner side of the fence, away from Ellipse Rd</p>'),
+        L.marker([7.5059089862785, -6.958007756620646], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, outside.</p>'),
+        L.marker([7.090000730578402, -6.531372070312501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case.</p>'),
+        L.marker([33.80959923141375, -5.427246093750001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, atop stairs in entrance niche.</p>'),
+        L.marker([32.460299433462026, -5.833740234375001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, atop the stairs.</p>'),
+        L.marker([29.455552691254166, -9.07104514539242], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case.</p>'),
+        L.marker([17.579467205516735, 15.421142634004358], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag.</p>'),
+        L.marker([14.937750221811129, 27.96386729925871], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox under Tent roof.</p>'),
+        L.marker([15.964898331341603, 33.555908314883716], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag.</p>'),
+        L.marker([15.834582133123396, 32.724609598517425], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase.</p>'),
+        L.marker([20.828035517561226, 39.807129018008716], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox. On top of small building.</p>'),
+        L.marker([27.062394963355406, 119.20166015625001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, in lobby, you have to access trhough the roof in the center of the building.</p>'),
+        L.marker([-14.700501657968978, 53.03833030164243], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case in front of the fountain.</p>'),
+        L.marker([-17.217744582683924, 50.32104469835759], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, lightly submerged in the watey trench against the south wall.</p>'),
+        L.marker([-17.25272387444542, 56.0302734375], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, lightly submerged in the watey trench against the south wall.</p>'),
+        L.marker([-1.3713417529849863, 59.68872070312501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag on streetlevel.</p>'),
+        L.marker([-5.681282064273052, 31.01074241101742], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in Jefferson Trade CEnter, on stairs as you come up from the garage.</p>'),
+        L.marker([5.273580327728856, 38.71582031250001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag in Jefferson Trade Center. Just after you jump down the elevator shaft to parking, in the room left before you get to the park deck.</p>'),
+        L.marker([-10.223236434149618, 74.33166592614727], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on roof near safehouse.</p>'),
+        L.marker([-9.54120018461731, 74.30786138400435], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on roof, inside a locked and fenced area.</p>'),
+        L.marker([-9.109381026730565, 74.29321300238372], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase on roof, inside a locked and fenced area.</p>'),
+        L.marker([-11.77054321976586, 79.41284190863372], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, Inside the building off the roof behind the east exit of the safehouse.</p>'),
+        L.marker([-8.790956024206109, 75.97045898437501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox outside east exit of the safehouse.</p>'),
+        L.marker([-10.156332608565416, 76.7102048546076], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox outside east exit of the safehouse.</p>'),
+        L.marker([-15.123401723262653, 2.5442506000399594], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in building of supply room.</p>'),
+        L.marker([-14.573654060670842, 1.246032686904073], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in building of supply room.</p>'),
+        L.marker([-12.451789315589929, 1.8072509765625002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, inside Elipse Fuel Depot.</p>'),
+        L.marker([-12.271984149045025, 0.45043945312500006], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, inside Elipse Fuel Depot.</p>'),
+        L.marker([-24.23356117134146, -22.741699218750004], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, next to police SUV.</p>'),
+        L.marker([-20.81770238525007, -33.82324174046517], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox.</p>'),
+        L.marker([15.751734320042805, -30.181274302303795], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase against northwall of this building.</p>'),
+        L.marker([-21.316679715186392, -16.105957031250004], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, underground.</p>'),
+        L.marker([-20.88620282111105, -11.381835937500002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, underground.</p>'),
+        L.marker([-21.623508654983986, -10.656738281250002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, underground.</p>'),
+        L.marker([-23.27504942159081, -23.122558481991295], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, underground.</p>'),
+        L.marker([-19.594303303890737, -15.05859397351742], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on ground.</p>'),
+        L.marker([-4.99605955117319, -12.894287165254358], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox inside container above ground.</p>'),
+        L.marker([-6.489955953972025, -11.140136718750002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, on top of containers.</p>'),
+        L.marker([25.486265357039205, 27.56835931912065], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, north wall on the ground.</p>'),
+        L.marker([22.333148669873864, 28.26049799099565], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag in fenced off area.</p>'),
+        L.marker([21.497436980016936, 30.53833030164242], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, western side.</p>'),
+        L.marker([20.272542022698932, 30.999755747616295], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, eastern wall.</p>'),
+        L.marker([24.00297262967249, 41.60522460937501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox at the bototm of the construction pit.</p>'),
+        L.marker([26.523017279860543, 42.16003417968751], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag in resupply room.</p>'),
+        L.marker([26.254043679862598, 41.7608641460538], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case in resupply room.</p>'),
+        L.marker([26.109451659493377, 43.10119634494186], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase.</p>'),
+        L.marker([25.105516087074932, 39.4262694194913], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. In the corner upper area.</p>'),
+        L.marker([24.77339486563243, 49.70947287976743], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in corner next top elevators.</p>'),
+        L.marker([24.686946152793823, 59.747314564883716], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, behind van.</p>'),
+        L.marker([23.627726376529175, 54.21752929687501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox atop stairs in a loading dock.</p>'),
+        L.marker([23.597545839079594, 63.8488768413663], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, inside building.</p>'),
+        L.marker([23.972860273145688, 69.73754838109016], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, inside building.</p>'),
+        L.marker([45.40749134296145, 54.19189458712936], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in the corner of a loading dock.</p>'),
+        L.marker([47.32714118357436, 25.47729508951307], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in above ground, locked room, with comms. Shoot lock through ornamental wall.</p>'),
+        L.marker([47.22952596880715, 25.24658194743097], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in above ground, locked room, with comms. Shoot lock through ornamental wall.</p>'),
+        L.marker([52.63206572396952, 21.295165792107586], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox against the wall.</p>'),
+        L.marker([52.897830002469064, 13.787841796875002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag at the bottom of a ramp among garbage.</p>'),
+        L.marker([53.30462519158942, 13.520507700741293], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox at the top of the ramp.</p>'),
+        L.marker([51.99724632797032, 14.800414927303795], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox close to a doorway and gear crate.</p>'),
+        L.marker([49.090383544770226, 9.640502929687502], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox at southern wall.</p>'),
+        L.marker([48.926709313515694, 11.902770968154075], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in fenced off area.</p>'),
+        L.marker([51.05751718652002, 12.475891057401897], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox next to underground entrance.</p>'),
+        L.marker([48.9839374099407, 16.915282923728228], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox just inisde the passage on east wall.</p>'),
+        L.marker([53.194500276560454, 26.673889132216576], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in supply room.</p>'),
+        L.marker([53.44881504057406, 26.982421875000004], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag in supply room.</p>'),
+        L.marker([53.58599183318408, 25.806884765625004], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox outside supply room.</p>'),
+        L.marker([46.60793629307667, 42.60864235460759], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox against the north facing wall, slightly higher than the ground of the alley.</p>'),
+        L.marker([44.53400335393557, 40.22918701171875], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in the alley near the van.</p>'),
+        L.marker([43.85631630786513, 35.84655760321766], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox at a fence opening.</p>'),
+        L.marker([34.79579547696566, 28.432617187500004], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox next to toppled over dumpster.</p>'),
+        L.marker([28.09145136360915, 26.257324218750004], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, recessed away from the street in the corner.</p>'),
+        L.marker([29.827917705694258, 15.615234151482584], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on sidewalk.</p>'),
+        L.marker([36.65079252503471, -3.156738057732582], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, inside building.</p>'),
+        L.marker([35.74067609613753, -2.4829101562500004], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag inside building.</p>'),
+        L.marker([36.83279564690287, 1.1352536827325823], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase inside building.</p>'),
+        L.marker([39.84511522940129, 4.112548604607583], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag next to broken fence.</p>'),
+        L.marker([39.81978417760994, -2.0178221538662915], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag atop the stairs.</p>'),
+        L.marker([39.66205034364345, -0.6005859933793546], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in underpass style tunnel, of the path going west to east.</p>'),
+        L.marker([38.32011354735766, -6.013183537870646], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in the corner behind a car.</p>'),
+        L.marker([36.87392926870131, -6.020509153604508], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in front of stairs.</p>'),
+        L.marker([31.23159167205059, -5.650634877383709], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in the corner of the building.</p>'),
+        L.marker([27.780821587870157, -5.742187723517418], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase against wall of building, in front of some junk.</p>'),
+        L.marker([26.581984737046586, -6.694335713982582], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox against wall.</p>'),
+        L.marker([26.630295023721004, -0.6445313058793546], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case locked fenced area below the stairs of the building.</p>'),
+        L.marker([26.98093909296125, -0.7177738845348358], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox at the top of the stairs, right side.</p>'),
+        L.marker([26.967803204341138, -1.5234377235174181], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag at the top of the stairs, left side.</p>'),
+        L.marker([18.98602092726497, -1.1791983246803286], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox next to low wall.</p>'),
+        L.marker([-6.060367214278058, -23.8623046875], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox outside a tent.</p>')
+    ];
+    var materials = L.layerGroup(materialMarkers);
+    //mapLayers.push(materials);
+
     var echoMarkers = [
+        L.marker([12.107283093513898, 55.44799804687501], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Hyena council members having some disagreements between each other and solve it in their way.</p>'),
+        L.marker([43.55929101892889, -22.39746116101742], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Two JFT and two True Sons soldiers are in a tense situation.</p>'),
         L.marker([-11.171216299516859, 133.2552302150348], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Hyenas squabbling over loot.</p>'),
         L.marker([37.65043282789439, 9.400883379346665], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>A clandestine meeting between an unknown person and someone called Brandon Schaeffer, a BTSU operative, about a special opportunity.</p>')
     ];
@@ -197,35 +632,53 @@ permalink: map.html
     mapLayers.push(echos);
 
     var commMarkers = [
-        //L.marker(Somewhere in the round camp in ellipse road, {title: 'True Sons Debrief', icon: iconComm }).bindPopup('<h5>True Sons Debrief</h5><p>Manny Ortega calls over radio, giving offsite leadership an update on the True Sons situation, in early spring. JTF Comms 1/8</p>'),
-        //L.marker(Inside large building just east of WH, {title: 'SITREP', icon: iconComm }).bindPopup('<h5>SITREP</h5><p>Manny Ortega gives his superior officer an update on the situation in DC, in early summer. JTF Comms 2/8</p>'),
-        L.marker([23.214425573101767, 68.65904837091976], {title: 'Settling Down', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>A small group of survivors decide to make the Theater their home. Theater Comms 1/8</p>'),
+        // JTF
+        L.marker([-2.5369504197829738, -14.154052846133713], {title: 'True Sons Debrief', icon: iconComm }).bindPopup('<h5>True Sons Debrief</h5><p>Manny Ortega calls over radio, giving offsite leadership an update on the True Sons situation, in early spring. (Inside one of the containers, stairs lead up from the south) JTF Comms 1/8</p>'),
+        L.marker([36.18539982838856, -1.003418415784836], {title: 'SITREP', icon: iconComm }).bindPopup('<h5>SITREP</h5><p>Manny Ortega gives his superior officer an update on the situation in DC, in early summer. JTF Comms 2/8</p>'),
+        // Theater
+        L.marker([23.015779809926133, 68.96118164062501], {title: 'Settling Down', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>A small group of survivors decide to make the Theater their home. Theater Comms 1/8</p>'),
         L.marker([-14.455959529838914, 126.8990796286861], {title: 'Strategy', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>Odessa Sawyer and Agent Kelso talk shop and make a plan for keeping the Theater settlement safe. Theater Comms 2/8</p>'),
+        L.marker([25.11447948917854, 62.48657265678049], {title: 'New Crew', icon: iconComm }).bindPopup('<h5>New Crew</h5><p>Two civilizans contemplate joining the Hyenas, Odessa sets them straight. (In subway station, access through escalators at northeast corner of building to the northwest.) Theater Comms 2/8</p>'),
+        L.marker([8.812723055313041, 117.94921875000001], {title: 'Firearms Training', icon: iconComm }).bindPopup('<h5>Firearms Training</h5><p>Odessa Sawyer trains civilians in how to properly handle firearms. Theater Comms 2/8</p>'),
         //L.marker(West of Theater somewhere, {title: 'Peter Problems', icon: iconComm }).bindPopup('<h5>Peter Problems</h5><p>Odessa scolds her daughter to being careless and spending time with Peter. Theater Comms 3/8</p>'),
         //L.marker(West of Theater behind a white van with blue adn red stripe on the bottom, {title: 'Addiction', icon: iconComm }).bindPopup('<h5>Addiction</h5><p>A concerned civilian tries to get Peter to stop taking spice. Theater Comms 4/8</p>'),
+        // Hyenas
         L.marker([23.120154855087215, 8.345017957388851], {title: 'Piñata Party', icon: iconComm }).bindPopup('<h5>Piñata Party</h5><p>Two Hyenas prepare an attack on unsuspecting civilians. Hyenas Comms 1/10</p>'),
         L.marker([31.87133824316455, 75.45806045728065], {title: 'Missing Prisoners', icon: iconComm }).bindPopup('<h5>Missing Prisoners</h5><p>A Hyena gets rid of some prisoners. Hyenas Comms 2/10</p>'),
-        //L.marker(On some scaffolding beside a windowwasher rig, NW corner of 13th st and F, {title: 'Runners', icon: iconComm }).bindPopup('<h5>Runners</h5><p>Hyenas deal with victims running away. Hyenas Comms 3/10</p>'),
-        L.marker([23.905928153368606, 77.58085217240358], {title: 'Recordings', icon: iconComm }).bindPopup('<h5>Recordings</h5><p>Aaron Keener takes a moment to explain why he is making these recordings. Dead Drop Comms 1/8</p>'),
-        L.marker([49.23912083246701, 12.192513634941356], {title: 'Simple Math', icon: iconComm }).bindPopup('<h5>Simple Math</h5><p>Aaron Keener talks about compartmentalizing his kills. Dead Drop Comms 2/8</p>'),
-        L.marker([36.29151546818265, -23.411550122836278], {title: '25th Amendment', icon: iconComm }).bindPopup('<h5>25th Amendment</h5><p>White House staff members learn that POTUS has died. Government Comms 1/13</p>')
+        L.marker([32.50345370021894, 43.68896439671517], {title: 'Runners', icon: iconComm }).bindPopup('<h5>Runners</h5><p>Hyenas deal with victims running away. Hyenas Comms 3/10</p>'),
+        L.marker([-0.8641809689860198, 117.64892566949132], {title: 'First Council Meeting', icon: iconComm }).bindPopup('<h5>First Council Meeting</h5><p>Hyenas meet to discuss the True Sons threat and form the Council. Hyenas Comms 3/10</p>'),
+        // Dead drop
+        L.marker([23.28341472913859, 77.73284913506359], {title: 'Recordings', icon: iconComm }).bindPopup('<h5>Recordings</h5><p>Aaron Keener takes a moment to explain why he is making these recordings. Dead Drop Comms 1/8</p>'),
+        L.marker([49.09965212357462, 12.150878906250002], {title: 'Simple Math', icon: iconComm }).bindPopup('<h5>Simple Math</h5><p>Aaron Keener talks about compartmentalizing his kills. Dead Drop Comms 2/8</p>'),
+        L.marker([15.259486817041568, 56.572265736758716], {title: 'Greener Poison', icon: iconComm }).bindPopup('<h5>Greener Poison</h5><p>Aaron Keener waxes philosophical, about his plans for the future. Dead Drop Comms 2/8</p>'),
+        // Gov
+        L.marker([26.069973904227396, -2.7832029014825825], {title: 'Aides Assemble', icon: iconComm }).bindPopup('<h5>Aides Assemble</h5><p>A group of underpaid, overcaffeinated aides work trhough the night on last minute amendments to a bill, despite all the horror around them. Their blinkers are on, their phones are off.. Government Comms 2/13</p>'),
+        L.marker([30.30643189123285, -30.395507700741295], {title: 'Border Control', icon: iconComm }).bindPopup('<h5>Border Control</h5><p>POTUS discusses border policies with the president of Mexico. Government Comms 2/13</p>'),
+        L.marker([32.01431393962964, -26.389160156250004], {title: 'Possible Subterfuge', icon: iconComm }).bindPopup('<h5>Possible Subterfuge</h5><p>Former Vice President Mendez, after being sworn in as POTUS shares his suspicions with Andrew Ellis. Government Comms 2/13</p>'),
+        L.marker([36.29151546818265, -23.411550122836278], {title: '25th Amendment', icon: iconComm }).bindPopup('<h5>25th Amendment</h5><p>White House staff members learn that POTUS has died. Government Comms 1/13</p>'),
+        L.marker([17.83941669124139, -28.75488325953484], {title: 'Black Friday Briefing', icon: iconComm }).bindPopup('<h5>Black Friday Briefing</h5><p>First POTUS briefing on the outbreak where he receives privileged information, hinting at the scope of the disaster. Government Comms 1/13</p>'),
+        // Unknown
+        L.marker([-1.7992300533726577, 16.00341835990548], {title: 'Encrypted intel file', icon: iconComm }).bindPopup('<h5>Encrypted intel file</h5><p>Complete all story missions to decrypt. (On table) Unknown Comms 1/10</p>'),
+        // Division
+        L.marker([14.861634528785908, 115.09094232693316], {title: 'Odessa Recruited', icon: iconComm }).bindPopup('<h5>Odessa Recruited</h5><p>Odessa Sawyer, a former SHD agent, is recruited to be the leader of the Theater settlement. (In apartement above ground, use scaffolding on the west side of the building, ladder is in the south of scaffolding.) Division Comms 1/10</p>'),
+        L.marker([37.38761202629987, 97.28393554687501], {title: 'Sawyer\'s Reunited', icon: iconComm }).bindPopup('<h5>Sawyer\'s Reunited</h5><p>Agent Odessa Sawyer is reunited with her daughter after being discharged from active duty. Division Comms 1/10</p>'),
+        L.marker([-10.487933809236177, -33.85253883898258], {title: 'Kelso\'s Apartment', icon: iconComm }).bindPopup('<h5>Kelso\'s Apartment</h5><p>Agent Kelso watches the news reporting on the outbreak. (On the hood of a SUV) Division Comms 1/10</p>'),
+        L.marker([46.970209096734656, 26.03759757243097], {title: 'Priority Target: Amherst (Update)', icon: iconComm }).bindPopup('<h5>Priority Target: Amherst (Update)</h5><p>Message to all agents regarding Amherst, Green Poison, and Black Friday. (Upper area of bank, use stairs or truck outside, then shoot the lock on the door through the ornamental wall) Division Comms 1/10</p>')
     ];
     var comms = L.layerGroup(commMarkers);
     mapLayers.push(comms);
 
     var artifactMarkers = [
-        //L.marker(Not certain of the position anymore, {title: 'The Constitution of the United States', icon: iconArtifact }).bindPopup('<h5>The Constitution of the United States</h5><p>A historical document of great value.</p>'),
-        L.marker([-13.702922740532099, 0.9033125266161868], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Portrait of Ginevra de\'Benci</h5><p>Painting by Leonardo da Vinci. Found in the supply room of Ellipse Fuel Depot, in the shelve behind the loot crates.</p>'),
+        //L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5></h5><p></p>'),
+        L.marker([26.050544575613806, -12.751464396715166], {title: 'Artifact Relic', icon: iconArtifact }).bindPopup('<h5>George Washington\'s Battle Sword and Scabbard</h5><p>A relic from one of the museums in DC. Can be found laing on the ground next to a tree and a corpse very close to where the fence makes a sharp corner..</p>'),
+        L.marker([26.09623016077023, 53.98315452039243], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>St George and the Dragon</h5><p>Painting by Raphael. Propped against a nutcracker statue. Access to this area is through an entrance or escalators in the northeast of the building.</p>'),
+        L.marker([41.17247942512074, 35.74218765366823], {title: 'Artifact Relics', icon: iconArtifact }).bindPopup('<h5>Crystal Skull</h5><p>A relic from one of the museums in DC.</p>'),
+        L.marker([27.15045435377201, 119.7583006694913], {title: 'The Constitution of the United States', icon: iconArtifact }).bindPopup('<h5>The Constitution of the United States</h5><p>A historical document of great value. In the lobby of this building. You need to access the area in between teh building from teh west first, then rapell up and use the window to get into the building. Then head downstairs. This is behind the lobby desk.</p>'),
+        L.marker([-11.149776977672495, 0.8569335937500001], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Portrait of Ginevra de\'Benci</h5><p>Painting by Leonardo da Vinci. Found in the supply room of Ellipse Fuel Depot, in the shelve behind the loot crates.</p>'),
         L.marker([-11.178401873711772, 79.22166835922202], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Judith Leyster - Self-Portrait</h5><p>Painting by Judith Leyster.</p>')
     ];
     var artifacts = L.layerGroup(artifactMarkers);
     mapLayers.push(artifacts);
-
-    var keyMarkers = [
-        L.marker([23.335532542925343, 67.20918030848705], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world.</p>')
-    ];
-    var keys = L.layerGroup(keyMarkers);
-    mapLayers.push(keys);
 
     var componentMarkers = [
         L.marker([5.295181309651799, 92.98479460502092], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
@@ -253,6 +706,13 @@ permalink: map.html
     ];
     var water = L.layerGroup(waterMarkers);
     mapLayers.push(water);
+
+    // Random events can happen here
+    // var randomeventMarkers = [
+    //     //L.marker(, {title: 'Random Events', icon: iconRandomevents }).bindPopup('<h5>Random Events</h5><p>Several Random events can happen in this location.</p>')
+    // ];
+    // var randomevents = L.layerGroup(randomeventMarkers);
+    // mapLayers.push(randomevents);
     //-------------------------------------------------------------
 
     var division2map = L.map('thedivision2map', {
@@ -285,14 +745,22 @@ permalink: map.html
         "Extraction Area": extractionareas,
         "Weapons": weapons,
         "Gear": gear,
+        "Airdrops": airdrops,
+        "Small Loot": loot,
         "Locked Boxes": lockedboxes,
+        "Special Ammo": specialammo,
+        "Ammo Resupply": resupply,
+        "Armor Resupply": armorresupply,
+        "Grenade Resupply": grenaderesupply,
         "Echos": echos,
         "Comms": comms,
         "Artifacts": artifacts,
         "Keys": keys,
+        "Crafting Materials": materials,
         "Components": components,
         "Food": food,
         "Water": water
+        //"Random Events": randomevents
     };
     L.control.layers(null, overlays).addTo(division2map);
 </script>

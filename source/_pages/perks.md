@@ -124,7 +124,7 @@ Adds 50 more slots to your stash storage capacity.
 
 Requires Level 30
 
-Cost: X SHD Tech
+Cost: 3 SHD Tech
 
 ## Accolades
 
@@ -144,19 +144,19 @@ Cost: 1 SHD Tech
 
 Kills triggered by destroying weakpoints award an XP bonus.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Tactical Kill Accolade
 
 Kills triggered by destroying environment objects award an XP bonus.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Survivor Accolade
 
 Not dying for a long ammount of time, solo or in a group, will award increasing XP bonuses.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ## Detection
 
@@ -192,7 +192,7 @@ Material storage capacity is increased to 500 materials.
 
 Cost: 3 SHD Tech
 
-Requires LEvel 30
+Requires Level 30
 
 ## Magazine
 
@@ -212,13 +212,13 @@ Cost: 1 SHD Tech
 
 Awards Precicion 7.62 Mag, a custom magazine for 7.62 assault style weapons
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Magazine 4
 
 Awards: Field Pistol Mag, a custom magazine for sidearms.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ## Muzzle
 
@@ -232,19 +232,19 @@ Cost: 1 SHD Tech
 
 Awards Compensator 7.62; it fits on 7.62 caliber muzzles
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Muzzle 3
 
 Awards a small suppressor muzzle. This fits on 9mm caliber firearms.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ### Muzzle 4
 
 Awards Osprey 45 Suppressor; it fits on .45 caliber muzzles
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ## Optics
 
@@ -258,7 +258,7 @@ Cost: 1 SHD Tech
 
 Awards an Acog Scope (4x), a magnifying scope for long top rails.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ## Grip
 
@@ -272,7 +272,7 @@ Cost: 1 SHD Tech
 
 Awards a Compact Coupled Small Laser Pointer, a laser pointer for non-rail couplings.
 
-Cost: X SHD Tech
+Cost: 1 SHD Tech
 
 ## Deconstruction
 
@@ -286,7 +286,7 @@ Cost: 2 SHD Tech
 
 Chance for a rare material to be awarded when deconstructiong.
 
-Cost: X SHD Tech
+Cost: 3 SHD Tech
 
 ## Resources
 

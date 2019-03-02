@@ -10,7 +10,7 @@ Weapon mods can be crafted in the Base of Operations or rewarded through [perks]
 
 This list is incomplete and subject to change.
 
-## Top rail mods
+## Optics mods (12)
 
 - 552 Holo Sight (long), +10% Accuracy, -15% Optimal range
 - Acog Scope (4x) (long), +25% Optimal Range, -15% Critical Hit Damage
@@ -20,6 +20,7 @@ This list is incomplete and subject to change.
 - PRO Red Dot Sight (short and long), +20% Stability, -30% Optimal Range
 - Reflex Sight (short and long), +20% Critical Hit Damage, -15% Accuracy
 - VX1 Scope (long), +20% Headshot Damage, -20% Reload Speed
+- Streamlined Iron Sights, +25% Reload speed, -8% Critical hit Chance. Cost: 35 Credits, 3 Titanium, 3 Steel
 
 ## Underbarrel mods
 
@@ -27,8 +28,7 @@ This list is incomplete and subject to change.
 - Laser Pointer (short and long), +15% Critical Hit Chance, -10% Stability
 - Short Grip (long), +15% Critical Hit Damage, -15% Reload Speed
 
-
-## Magazines
+## Magazine Mods (32)
 
 - Counter-Clockwise Tubular Spring (tubular), +20% Damage to Elites, -15% Optimal Range
 - Extended .45 ACP Mag, +12 Extra round, -15% Stability
@@ -37,8 +37,9 @@ This list is incomplete and subject to change.
 - Flexible Tubular Spring (tubular), +30% Reload Speed, +20% Critical Hit Chance
 - Force Feed .45 ACP Mag, +10% Damage to Elites, -10% Optimal Range
 - Heavy Spring 9mm Mag (9mm smg), +20% Critical Hit Damage, -15% Stability
+- Light Extended 5.56 Mag, +30 Rounds, -10% Rate of Fire, Blueprint from side mission "Department of Justice". Cost: 32 Credits, 3 Titanium, 3 Steel
 - Light Extended 7.62 Mag, +30 Extra round, -5% Weapon Damage
-- Mended Marksman Mag (7.62), +20% Optimal Range, -10% Reload Speed
+- Mended Marksman Mag (7.62), +20% Optimal Range, -10% Reload Speed. Cost: 35 Credits, 3 Titanium, 3 Steel
 - Nimble Link Belt (belt-fed), +10% Rate of Fire, -20% Stability
 - Oversized 9mm Mag (9mm smg), +15 Extra round, -20% Reload speed
 - Precision 7.62 Mag, +15% Headshot Damage, -10% Damage to Elites
@@ -48,10 +49,11 @@ This list is incomplete and subject to change.
 - Tactical 5.56 Mag, +15% Critical Hit Damage, -10% Optimal Range
 - Tactical Small Pouch (belt-fed), +25% Reload speed, -15 Extra rounds
 
-## Muzzle Devices
+## Muzzle Mods (19)
 
 - Compensator 5.56, +20% Stability, -10% Accuracy
 - Flash Hider 9mm, +20% Critical Hit Damage, -10% Stability
+- Flash Hider 7.62, +30% Critical Hit Damage, -10% Stability. Cost: 32 Credits, 3 Titanium, 3 Steel
 - Large Suppressor 7.62, +20% Accuracy, -5% Damage to Elites
 - Loud Vent Brake 7.62, +20% Optimal Range, -10% Stability
 - Muzzle brake .45, +10 Damage to Elites, -15% Stability

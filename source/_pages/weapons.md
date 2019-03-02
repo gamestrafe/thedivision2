@@ -45,6 +45,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Military L86 LSW | ~10.7k | 610 | 30 | 3.0s | 10-50m | long | 5.56 | short | 5.56 |
 | Black Market M60 E6 | ~13.6k | 550 | 100 | 5.3s | 10-50m | long | 7.62 | long | belt |
 | Military M60 E4 | ~14.1k | 500 | 100 | 5.8s | 10-50m | long | 7.62 | long | belt |
+| Classic M60 | ~12.1k | 500 | 100 | 5.8s | 10-50m | long | - | long | belt |
 | Infantry MG5 | ~8.0k | 800 | 60 | 5.6s | 10-50m | long | 7.62 | short | belt |
 
 ## Assault Rifle
@@ -57,6 +58,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | FAMAS 2010 | ~10.7k | 900 | 30 | 2.2s | 10-45m | long | 5.56 | short | - |
 | Mk16 | ~8.7k | 625 | 30 | 2.3s | 10-45m | yes (not sure length) | 5.56 | long | 5.56 |
 | Police M4 | ~10.1k | 850 | 40 | 2.4s | 10-45m | long | 5.56 | long | 5.56 |
+| Police M4 Replica | ~6.9k | 850 | 30 | 2.4s | 10-45m | long | 5.56 | long | 5.56 |
 | AK-M | ~11.0k | 600 | 30 | 2.3s | 10-45m | long | - | short | 7.62 |
 | Black Market AK-M | ~11.0k | 600 | 30 | 2.3s | 10-45m | long | 7.62 | short | 7.62 |
 | Military Market AK-M | ~13.7k | 600 | 40 | 2.3s | 10-45m | long | 7.62 | long | 7.62 |
@@ -87,6 +89,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | LVOA-C | ~17.2k | 450 | 40 | 2.4s | 10-60m | long | 5.56 | long | 5.56 |
 | M16A2 | ~8.8k | 300 | 30 | 2.2s | 10-60m | short | 5.56 | - | 5.56 |
 | Classic M1A | ~23.2k | 180 | 10 | 3.0s | 10-60m | long | - | long | 7.62 |
+| Urban MDR | ~16.6k | 280 | 20 | 1.9s | 10-60m | long | 7.62 | long | 7.62 |
 
 ## Shotgun
 
@@ -98,6 +101,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Super 90 | ~54.2k | 160 | 8 | 4.4s | 0-20m | long | - | long | tubular |
 | Marine Super 90 | ~54.2k | 160 | 8 | 4.4s | 0-20m | long | - | long | tubular |
 | SPAS-12 | ~126.0k | 70 | 8 | 5.4s | 0-20m | - | - | - | tubular |
+| SASG-12 | ~41.3k | 180 | 7 | 3.0s | 0-20m | short | - | long | - |
 
 ## Pistol
 
@@ -110,6 +114,8 @@ The values below for damage are taken from weapons found at the moment, and then
 | Military M9 | ~13.3k | 450 | 15 | 1.7s | 0-30m | - | 9mm | - | pistol |
 | M1911 | ~19.3k | 310 | 7 | 1.9s | 0-30m | - | - | - | pistol |
 | Px4 Storm Type F | ~10.4k | 450 | 17 | 1.9s | 0-30m | - | 9mm | gadget | pistol |
+| Snubnosed Diceros | ~28.3k | 180 | 6 | 1.8s | 0-30m | - | - | - | revolver drum |
+| 93R | ~5.4k | 1100 | 20 | 1.9s | 0-30m | - | 9mm | - | pistol |
 
 ## Signature weapons
 | Name | Damage | RPM | Mag | Reload | CS Range | Scopes | Muzzles | Underbarrels | Magazines |

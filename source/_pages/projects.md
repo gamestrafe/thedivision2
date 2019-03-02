@@ -37,3 +37,18 @@ Disrupt Public Execution: 1
 Rewards: Blueprint: Vertical Grip, 645 XP
 
  
+### Water Pipeline Construction
+
+Ceramics: 10
+Backpacks: 1
+Disrupt Propaganda: 1
+
+Rewards: Blueprint: Reflex Sight, 3270 XP
+
+### Cold Storage Construction
+
+Steel: 10
+Kneepads: 3
+Neutralize veteran Hyenas: 5
+
+Rewards: Blueprint: Police M4 Replica, 3270 XP
