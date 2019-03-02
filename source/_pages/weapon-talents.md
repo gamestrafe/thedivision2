@@ -27,6 +27,8 @@ There might be some way to re-roll talents, but this is not clear yet. It's also
 - Spike: (5 or more batteries): Headshot kills grant +25% skill damage for 10s
 - Breadbasket (5 or more crosshairs): Landing body shots adds a stack of bonus +5% headshot damage to the next headshot for 10s. Max stack is 10
 - Strained (5 or less crosshairs): +10% critical hit damage is gained for every 5% of your armor that is depleted
+- Close & Personal (5 or more crosshairs): Killing a target within 7m grants +35% weapon damage for 5s.
+- Lucky Shot: Magazine capacity is increased by 1%. Missed shots from cover have a 25% chance to return to the magazine.
 
 ## Passive
 
@@ -35,7 +37,7 @@ There might be some way to re-roll talents, but this is not clear yet. It's also
 - Accurate: +15% accuracy
 - Allegro: +10% rate of fire
 - Fast Hands: Critical hits add a stack of 3% reload speed bonus. Max stack is 20.
-- Extra: +10% magazine capacity
+- Extra: +20% magazine capacity
 - Jazz Hands: +10% reload speed
 - Sadist: Deal +10% weapon damage to bleeding enemies
 - Optimized +15% weapon handling
@@ -47,5 +49,5 @@ There might be some way to re-roll talents, but this is not clear yet. It's also
 - Cannon: While equipped, this weapon increases throwing distance by 10%
 - Overlap: While holstered, this weapon's handling talent is applied to the currently active weapon
 - Greased: While holstered, this weapon increases weapon swap speed by 10%
-- Rooted: While equipped skills deployed from cover are buffed
+- Rooted: While equipped and in cover, all skill damage and healing is increased by 25% for 25s. Buff is lost when exiting cover. Can occur once per 60s.
 - Everlasting: While holstered, this weapon regenerates ammo while in cover

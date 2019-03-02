@@ -4,9 +4,13 @@ meta:
     description: After reaching level 30 in The Division 2, the specializations get unlocked. Everything you need to know about them, you'll find here.
 ---
 
-There are currently 3 Specializations available. They start coming into play once you reach level 30, little else is known about them.
+There are currently 3 Specializations available. They start coming into play once you reach level 30 and finish the last mission, little else is known about them.
 
 During year 1 there will be three more specializations released.
+
+Each specialization has it's own skill tree you can unlock with points. A total of 160 points are possible to distribute among a specialization. These points are specific per specialization and do not transfer. You can respec those points at any time without cost.
+
+Changing specializations can be done at the quartermaster only. One character can have all specializations.
 
 ## Sharpshooter
 

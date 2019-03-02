@@ -43,10 +43,11 @@ The values below for damage are taken from weapons found at the moment, and then
 | Classic RPK-74 | ~8.3k | 650 | 45 | 2.8s | 10-50m | long | 7.62 | long | 7.62 |
 | M249 B | ~10.4k | 550 | 100 | 5.6s | 10-50m | long | 5.56 | long | belt |
 | Military L86 LSW | ~10.7k | 610 | 30 | 3.0s | 10-50m | long | 5.56 | short | 5.56 |
-| Black Market M60 E6 | ~13.6k | 550 | 100 | 5.3s | 10-50m | long | 7.62 | long | belt |
+| Black Market M60 E6 | ~14.1k | 500 | 100 | 5.3s | 10-50m | long | 7.62 | long | belt |
 | Military M60 E4 | ~14.1k | 500 | 100 | 5.8s | 10-50m | long | 7.62 | long | belt |
 | Classic M60 | ~12.1k | 500 | 100 | 5.8s | 10-50m | long | - | long | belt |
 | Infantry MG5 | ~8.0k | 800 | 60 | 5.6s | 10-50m | long | 7.62 | short | belt |
+| MG5 | ~6.7k | 800 | 60 | 5.6s | 10-50m | long | - | short | belt |
 
 ## Assault Rifle
 
@@ -71,12 +72,14 @@ The values below for damage are taken from weapons found at the moment, and then
 | Name | Damage | RPM | Mag | Reload | CS Range | Scopes | Muzzles | Underbarrels | Magazines |
 | ---- | ------ | --- | --- | ------ | ---------| ------ | ------- | ------------ | --------- |
 | Surplus SVD | ~29.1k | 260 | 10 | 2.6s | 10-70m | long | 7.62 | short | 7.62 |
-| Paratrooper SVD | ~32.3k | 260 | 20 | 2.6s | 10-70m | long | 7.62 | short | 7.62 |
+| Paratrooper SVD | ~38.6k | 260 | 10 | 2.9s | 10-70m | long | 7.62 | short | 7.62 |
 | Model 700 | ~70.7k | 54 | 7 | 9.0s | 10-70m | long | 7.62 | - | integrated (? 7.62) |
+| M700 Carbon | ~93.7k | 54 | 7 | 4.1s | 10-70m | long | 7.62 | long | 7.62 |
 | SR-1 | ~95.4k | 60 | 5 | 2.9s | 10-70m | long | 7.62 | short | 7.62 |
 | Classic M44 Carbine | ~97.5k | 55 | 5 | 3.9s | 10-70m | long | - | short | integrated |
 | Covert SRS | ~64.3k | 60 | 17-10% | 3.0s | 10-70m | long | 7.62 | short | 7.62 |
 | Custom M44 | ~77.5k | 55 | 5 | 3.2s | 10-70m | long | 7.62 | long | 7.62 |
+| SOCOM Mk20 SSR | ~30.9k | 275 | 20 | 2.8s | 10-70m | long | 7.62 | long | 7.62 |
 
 ## Rifle
 
@@ -90,6 +93,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | M16A2 | ~8.8k | 300 | 30 | 2.2s | 10-60m | short | 5.56 | - | 5.56 |
 | Classic M1A | ~23.2k | 180 | 10 | 3.0s | 10-60m | long | - | long | 7.62 |
 | Urban MDR | ~16.6k | 280 | 20 | 1.9s | 10-60m | long | 7.62 | long | 7.62 |
+| USC .45 ACP | ~17.5k | 240 | 20 | 2.3s | 10-60m | long | - | long | .45 ACP |
 
 ## Shotgun
 
@@ -97,6 +101,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | ---- | ------ | --- | --- | ------ | ---------| ------ | ------- | ------------ | --------- |
 | Custom M870 MCS | ~88.2k | 75 | 5 | 3.7s | 0-20m |  long | - | long | tubular |
 | M870 Express | ~79.8k | 75 | 5 | 3.7s | 0-20m |  long | - | long | tubular |
+| Military M870 | ~89.0k | 75 | 6 | 3.7s | 0-20m |  long | - | long | tubular |
 | ACS-12 | ~20.0k | 300 | 20 | 2.3s | 0-20m | short | - | long | - |
 | Super 90 | ~54.2k | 160 | 8 | 4.4s | 0-20m | long | - | long | tubular |
 | Marine Super 90 | ~54.2k | 160 | 8 | 4.4s | 0-20m | long | - | long | tubular |
@@ -116,6 +121,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Px4 Storm Type F | ~10.4k | 450 | 17 | 1.9s | 0-30m | - | 9mm | gadget | pistol |
 | Snubnosed Diceros | ~28.3k | 180 | 6 | 1.8s | 0-30m | - | - | - | revolver drum |
 | 93R | ~5.4k | 1100 | 20 | 1.9s | 0-30m | - | 9mm | - | pistol |
+| 586 Magnum | ~21.1k | 160 | 6 | 1.8s | 0-30m | short | - | - | revolver drum |
 
 ## Signature weapons
 | Name | Damage | RPM | Mag | Reload | CS Range | Scopes | Muzzles | Underbarrels | Magazines |

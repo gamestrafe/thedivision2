@@ -18,7 +18,7 @@ This list is incomplete and subject to change.
 - M5Xi 15x Scope (long) for Sharpshooter Rifle only
 - Open Iron Sights (?), +25% Accuracy, -20% Stability
 - PRO Red Dot Sight (short and long), +20% Stability, -30% Optimal Range
-- Reflex Sight (short and long), +20% Critical Hit Damage, -15% Accuracy
+- Reflex Sight (short and long), +10% Critical Hit Damage, -15% Accuracy, Blueprint from Water Pipeline Construction Project for Theater. Cost: 35 Credits, 3 Electronics, 3 Steel
 - VX1 Scope (long), +20% Headshot Damage, -20% Reload Speed
 - Streamlined Iron Sights, +25% Reload speed, -8% Critical hit Chance. Cost: 35 Credits, 3 Titanium, 3 Steel
 
@@ -27,6 +27,7 @@ This list is incomplete and subject to change.
 - Angled Grip (short and long), +10% Stability, -8% Accuracy
 - Laser Pointer (short and long), +15% Critical Hit Chance, -10% Stability
 - Short Grip (long), +15% Critical Hit Damage, -15% Reload Speed
+- Vertical Grip (short and long), +10% Accuracy, -8% Stability. Cost: 35 Credits, 3 Carbon Fiber, 3 Steel
 
 ## Magazine Mods (32)
 
@@ -52,6 +53,7 @@ This list is incomplete and subject to change.
 ## Muzzle Mods (19)
 
 - Compensator 5.56, +20% Stability, -10% Accuracy
+- Compensator 9mm, +20% Stability, -10% Accuracy. Cost: 35 Credits, 3 Titanium, 3 Steel
 - Flash Hider 9mm, +20% Critical Hit Damage, -10% Stability
 - Flash Hider 7.62, +30% Critical Hit Damage, -10% Stability. Cost: 32 Credits, 3 Titanium, 3 Steel
 - Large Suppressor 7.62, +20% Accuracy, -5% Damage to Elites

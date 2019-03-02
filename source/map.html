@@ -2,9 +2,9 @@
 layout: map
 title: The Division 2 Map
 meta:
-    description: Interactive, zoomable map of The Division 2. All locations of interest are marked and can be filtered.
-    og:
-        image: map.jpg
+description: Interactive, zoomable map of The Division 2. All locations of interest are marked and can be filtered.
+og:
+image: map.jpg
 permalink: map.html
 ---
 
@@ -32,23 +32,23 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconEcho = iconKey = iconLockedbox = iconRandomevents = iconLoot = iconMaterial = iconSpecialammo = iconResupply = iconGrenaderesupply = iconAirdrop = new L.Icon.Default();
+    var iconRandomevents = iconLoot = iconMaterial = iconSpecialammo = iconResupply = iconGrenaderesupply = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
     var RoundIcon = L.DivIcon.extend({options: {
-        className: 'round-icon',
-        iconAnchor  : [21, 21],
-        iconSize    : [42, 42],
-        popupAnchor : [0, -21]
-    }});
+            className: 'round-icon',
+            iconAnchor  : [21, 21],
+            iconSize    : [42, 42],
+            popupAnchor : [0, -21]
+        }});
     // Drops show with the tip at the bottom a very exact location (pickup items etc)
     var DropIcon = L.DivIcon.extend({options: {
-        className: 'drop-icon',
-        iconAnchor  : [21, 42],
-        iconSize    : [42, 42],
-        popupAnchor : [0, -42]
-    }});
+            className: 'drop-icon',
+            iconAnchor  : [21, 42],
+            iconSize    : [42, 42],
+            popupAnchor : [0, -42]
+        }});
 
     iconMission = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path style="fill:#74FEED;" d="M50,1.8L8.3,25.9v48.2L50,98.2l41.7-24.1V25.9L50,1.8z M80.1,67.4L50,84.8L19.9,67.4V32.6L50,15.2l30.1,17.4V67.4z"/><path style="fill:#74FEED;" d="M50,24.4L27.8,37.2v25.6L50,75.6l22.2-12.8V37.2L50,24.4z M68,60.4L50,70.8L32,60.4V39.6l18-10.4l18,10.4V60.4z"/></svg>'});
     iconSidemission = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path style="fill:#74FEED;" d="M50,4.9L5.8,36.9l16.9,51.9h54.6l16.9-51.9L50,4.9z M68,76H32L20.9,41.8L50,20.7l29.1,21.1L68,76z"/><polygon style="fill:#74FEED;opacity:0.5;" points="50,20.7 20.9,41.8 32,76 68,76 79.1,41.8 "/></svg>'});
@@ -59,15 +59,23 @@ permalink: map.html
     iconControlpoint = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><polygon style="fill:#FFFFFF;" points="26.5,13.6 26.5,87.1 33.1,87.1 33.1,58.1 57.7,49.5 57.3,23.9 "/><polygon style="fill:#FFFFFF;" points="66.1,30.7 64.1,44 59.9,50 68.8,51.7 88.6,42.3 "/></svg>'});
     iconExtractionarea = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><polygon style="fill:#ff7e00;" points="50.8,6.2 18,45.5 35.5,45.5 35.4,59.7 64.3,59.7 64.3,45.6 82.1,45.5 "/><path style="fill:#ff7e00;" d="M35.6,65.2v28.6h28.6V65.2H35.6z M60.3,89.9H39.5V69.1h20.8V89.9z"/></svg>'});
     iconCheckpoint = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><polygon style="fill:#B178F1;" points="63.3,12 63.3,17.6 69.9,17.6 71.4,19.6 71.4,81.1 67,83.8 67,88.3 75.4,85.7 75.4,15.9 72.2,12.3 "/><path style="fill:#B178F1;" d="M25.7,14.8V85l31.2,8.2l1.7-0.8V7.2L25.7,14.8z M52.1,56.3c-1.9,0-3.5-2-3.5-4.5s1.6-4.5,3.5-4.5c1.9,0,3.5,2,3.5,4.5S54,56.3,52.1,56.3z"/></svg>'});
-    iconWater = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#FFFFFF;" d="M75.8,15.2l-7-4.1l-5.4,8.3L52,22.7l-4.6,4.6L19.8,75.2v5l18.1,11.6l4.2-0.7l28.9-48.6l1.7-5.8l-1.7-13.5L75.8,15.2z M40.6,87.2L23.5,76.6l12.4-21.2l4.6-2.1l12.7-0.2L64,48.6L40.6,87.2z"/></svg>'});
-    iconFood = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><g><path style="fill:#FFFFFF;" d="M52,30.3c0.3,0.3,26.4-13.2,22.5-18.8C61,11.7,47.2,27.1,47.2,27.1l-7.6,13l30.9,17.7l8-12.6L52,30.3z"/><polygon style="fill:#FFFFFF;" points="16.8,76.2 47.1,94.4 55.2,81.8 24.8,64"/><polygon style="fill:#FFFFFF;" points="26,61.8 56.6,79.6 60,74.3 29,56.9"/><polygon style="fill:#FFFFFF;" points="30.4,54.6 61.1,72.4 64.4,67.1 33.4,49.7"/><polygon style="fill:#FFFFFF;" points="35.1,47.4 65.7,65.2 69.1,59.9 38.1,42.5"/></svg>'});
-    iconComponent = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#FFFFFF;" d="M34.8,23.1H16.9L7.9,38.6l8.9,15.5h17.9l8.9-15.5L34.8,23.1z M25.8,48.1c-5.2,0-9.5-4.2-9.5-9.5c0-5.2,4.2-9.5,9.5-9.5c5.2,0,9.5,4.2,9.5,9.5C35.3,43.8,31.1,48.1,25.8,48.1z"/><polygon style="fill:#FFFFFF;" points="80.7,30.1 75.7,37.3 66.8,31.6 71.7,24.5 58.7,16.1 50,28.2 85.1,51.1 93.5,38.3 "/><polygon style="fill:#FFFFFF;" points="57.5,39 51.6,47.9 72,51.6 73.4,49.5 "/><polygon style="fill:#FFFFFF;" points="49.2,51.6 44.8,57.9 65.6,61.4 69.3,55.9 "/><polygon style="fill:#FFFFFF;" points="42.8,61.7 38.4,68 59.2,71.5 62.9,65.9 "/><polygon style="fill:#FFFFFF;" points="36.1,72.2 31.8,78.5 52.6,82 56.2,76.4 "/><polygon style="fill:#FFFFFF;" points="44.6,94.1 50.5,85.3 30.1,81.5 28.7,83.7 "/></svg>'});
+
+    iconWaterRound = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#FFFFFF;" d="M75.8,15.2l-7-4.1l-5.4,8.3L52,22.7l-4.6,4.6L19.8,75.2v5l18.1,11.6l4.2-0.7l28.9-48.6l1.7-5.8l-1.7-13.5L75.8,15.2z M40.6,87.2L23.5,76.6l12.4-21.2l4.6-2.1l12.7-0.2L64,48.6L40.6,87.2z"/></svg>'});
+    iconFoodRound = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><g><path style="fill:#FFFFFF;" d="M52,30.3c0.3,0.3,26.4-13.2,22.5-18.8C61,11.7,47.2,27.1,47.2,27.1l-7.6,13l30.9,17.7l8-12.6L52,30.3z"/><polygon style="fill:#FFFFFF;" points="16.8,76.2 47.1,94.4 55.2,81.8 24.8,64"/><polygon style="fill:#FFFFFF;" points="26,61.8 56.6,79.6 60,74.3 29,56.9"/><polygon style="fill:#FFFFFF;" points="30.4,54.6 61.1,72.4 64.4,67.1 33.4,49.7"/><polygon style="fill:#FFFFFF;" points="35.1,47.4 65.7,65.2 69.1,59.9 38.1,42.5"/></svg>'});
+    iconComponentRound = new RoundIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/><path style="fill:#FFFFFF;" d="M34.8,23.1H16.9L7.9,38.6l8.9,15.5h17.9l8.9-15.5L34.8,23.1z M25.8,48.1c-5.2,0-9.5-4.2-9.5-9.5c0-5.2,4.2-9.5,9.5-9.5c5.2,0,9.5,4.2,9.5,9.5C35.3,43.8,31.1,48.1,25.8,48.1z"/><polygon style="fill:#FFFFFF;" points="80.7,30.1 75.7,37.3 66.8,31.6 71.7,24.5 58.7,16.1 50,28.2 85.1,51.1 93.5,38.3 "/><polygon style="fill:#FFFFFF;" points="57.5,39 51.6,47.9 72,51.6 73.4,49.5 "/><polygon style="fill:#FFFFFF;" points="49.2,51.6 44.8,57.9 65.6,61.4 69.3,55.9 "/><polygon style="fill:#FFFFFF;" points="42.8,61.7 38.4,68 59.2,71.5 62.9,65.9 "/><polygon style="fill:#FFFFFF;" points="36.1,72.2 31.8,78.5 52.6,82 56.2,76.4 "/><polygon style="fill:#FFFFFF;" points="44.6,94.1 50.5,85.3 30.1,81.5 28.7,83.7 "/></svg>'});
 
     iconComm = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M46.3,28.6l-0.1-4h-6.3l-9.1,14.7v5.4l-7.7,14.4L34,68.9l22.2-32.2L46.3,28.6z M44.3,50.6L31.9,41l1-1.3l12.4,9.4L44.3,50.6z M46,48.1l-12.4-9.6l1-1.3L47,46.6L46,48.1z M47.8,45.5l-12.4-9.6l1-1.3L48.8,44L47.8,45.5z M37.5,32.8l3.1-4.6L53,38.3l-3,4.5L37.5,32.8z M35.1,69.8H43L52.2,56l-7.5-0.2L35.1,69.8z M59.3,39.7c-0.9,0-1.7,0.7-1.7,1.6s0.8,1.6,1.7,1.6c0.9,0,1.7-0.7,1.7-1.6S60.2,39.7,59.3,39.7z M59.9,34.4c0,0-6.4,0.9-7.1-5.9c-5-0.3-5.5-4-5.5-4l0.1,3l10.4,8.9l-9.4,16.3h8.2l10-16.2l-4.9-4L59.9,34.4z M59.3,43.7c-1.4,0-2.4-1-2.4-2.3c0-1.3,1.1-2.4,2.4-2.4s2.4,1,2.4,2.3S60.7,43.7,59.3,43.7z M50.8,25.9c1.4,0.8,2.8,0.8,3.3,0l1.5-2.3l-0.1-0.1c-0.6,0.6-1.8,0.5-2.9-0.2c-1.2-0.7-1.9-1.7-1.8-2.5l-1.7,2.3C48.7,23.9,49.4,25.1,50.8,25.9z M55,29.3c-0.2,0.1-0.4,0.2-0.5,0.4c-0.4,0.8,0.3,2,1.7,2.8c1.4,0.8,2.8,0.8,3.3,0l3.4-4.4c-0.6,0.6-1.9,0.5-3.1-0.2c-1.2-0.7-1.9-1.7-1.8-2.5L55,29.3z M71.6,9.9c-1.2-0.7-2.6-0.7-3,0l-5.8,9.4c-0.4,0.7,0.3,1.9,1.5,2.6c1.2,0.7,2.6,0.7,3,0l5.8-9.4C73.6,11.8,72.9,10.6,71.6,9.9z M61,26.4c1.4,0.8,2.8,0.8,3.3,0l0.2-0.2c-0.6,0.4-1.8,0.3-3-0.3c-1.4-0.8-2.1-2.1-1.7-2.8l-0.2,0.2c-0.1,0.1-0.2,0.2-0.3,0.3C58.9,24.4,59.6,25.6,61,26.4zM62.5,24.3\t\t\tc1.4,0.8,2.8,0.8,3.3,0l0.2-0.2c-0.6,0.5-1.8,0.4-3-0.3c-1.4-0.8-2.1-2.1-1.7-2.8l-0.2,0.2c-0.1,0.1-0.2,0.2-0.3,0.3C60.4,22.3,61.1,23.5,62.5,24.3z"/></svg>'});
     iconArtifact = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><g><circle style="fill:#FFFFFF;" cx="57.1" cy="26.8" r="5.8"/><path style="fill:#FFFFFF;" d="M64.3,44.3c0,0-4.3,2.4-5.7,2c-1.3-0.4-3.5-2.6-7.3-2.9c-3.8,0-12.3,2.5-14.7,3.8c0,1.6,0,9.6,0,9.6h27.7V44.3z"/><path style="fill:#FFFFFF;" d="M58.6,41.9c1.9,0,5.8-1.1,5.8-1.1v-1.6c0,0-3.8,1.3-5.7,1.3S53.9,38,51.3,38c-2.6,0-14.7,2.9-14.7,2.9v1.8c0,0,11.8-2.8,14.7-2.8C54.3,40,56.7,41.9,58.6,41.9z"/><path style="fill:#FFFFFF;" d="M74.8,34.8c-1.2-4-3.8-5.8-2.9-10.5c0.8-4.4,3.6-5.8,2.7-9.2c-0.7-2.5-3-4.7-5.5-5.2c-0.1,0-0.2,0-0.3,0h-1.3c-1.7,0.3-3.1,1.4-5.4,2.1c-2.5,0.7-6.3,0.8-11.7-2c-5.4,2.8-9.2,2.7-11.7,2c-2.3-0.6-3.7-1.8-5.4-2.1h-1.3c-0.1,0-0.2,0-0.3,0c-2.5,0.5-4.8,2.7-5.5,5.2c0,0.1-0.1,0.3-0.1,0.4v1.8c0.4,2.1,2.1,3.7,2.8,7c0.8,4.6-1.5,6.4-2.8,10v9.2c1.1,3.2,2.9,5,2,9.1c-0.5,2.2-1.3,3.6-2,4.9v5.7c0.9,1.7,2.5,3.2,4.3,3.9h3.5c1.4-0.5,2.7-1.3,4.8-1.9c2.5-0.6,6.3-0.8,11.7,1.8l0,0.1c0,0,0.1,0,0.1-0.1c0,0,0.1,0,0.1,0.1l0-0.1c5.3-2.5,9.1-2.4,11.7-1.8c2.1,0.5,3.4,1.4,4.8,1.9h3.5c1.9-0.7,3.5-2.3,4.4-4.2v-5.1c-0.7-1.4-1.6-2.9-2.1-5.2c-0.9-4.4,1.1-6.2,2.1-9.6V34.8z M71.4,12.4c0.5,0,0.9,0.4,0.9,0.9s-0.4,0.9-0.9,0.9c-0.5,0-0.9-0.4-0.9-0.9S70.9,12.4,71.4,12.4z M50.4,11.4c0.5,0,0.9,0.4,0.9,0.9c0,0.5-0.4,0.9-0.9,0.9s-0.9-0.4-0.9-0.9C49.6,11.8,50,11.4,50.4,11.4z M69,14.2l-3.4,3.4H35.7l-3.4-3.4H69z M66.1,18.5v40H35.7v-40H66.1z M27.7,38.6c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9c0,0.5-0.4,0.9-0.9,0.9C28.1,39.4,27.7,39,27.7,38.6z M29.5,64.7c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9C30.3,64.3,29.9,64.7,29.5,64.7z M29.5,14.1c-0.5,0-0.9-0.4-0.9-0.9s0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9S29.9,14.1,29.5,14.1z M30.4,15.2l3.9,3.9v39.1l-3.8,3.8L30.4,15.2zM50.4,65.7c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9s0.9,0.4,0.9,0.9C51.3,65.3,50.9,65.7,50.4,65.7z M32.3,63l3.4-3.4h29.9L69,63H32.3z M67.1,58.1V19l3.9-3.9l0,46.8L67.1,58.1z M71.4,64.7c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9C72.3,64.3,71.9,64.7,71.4,64.7z M72.3,39.4c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9C73.1,39,72.8,39.4,72.3,39.4z"/></g></svg>'});
     iconWeapon = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M76.8,15.5l-4,2.7l-3.4-4.6l-1.3,0.9l2.2,3.7l-2.2,1.5h-3.7L34.8,39.5l-2.4-2.6L30.3,39l1.6,1.9l-5.3,3.7V48l-5.6-0.7l6.6,16.4l2-1.9l-2.8-9.4l9.8-1.7l0.3,11.8l7.3,0.1l-0.4-15l3.4,5.6l5.6-3.9l-0.9-6.4l15.6,13.5l3.8-5.5L56.4,39.6l1.6-6.3l15.1-9.9l0.2-2.9l4.7-3.3L76.8,15.5z M47.4,50.6l-2.2-3.2l5.4-3.9l0.4,4.7L47.4,50.6z"/></svg>'});
     iconGear = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><polygon style="fill:#FFFFFF;" points="39.6,31.5 35.1,37.4 33.1,52.4 33.1,61.1 36.6,66.1 39.3,66.1 43.4,56.2 43.4,40.3 "/><polygon style="fill:#FFFFFF;" points="62.2,31.5 57.4,39.7 57.4,56.5 60.8,65.1 63.7,65.1 67.9,58.4 67.7,50.7 66.3,37.4 "/><polygon style="fill:#FFFFFF;" points="50.8,27.7 47.1,28.1 42.3,29.8 45.5,38.8 45.6,57.5 41.2,65.9 59.1,65.9 54.2,57 54.3,38.5 59.9,29.7 56.4,28.2 "/><polygon style="fill:#FFFFFF;" points="38,18.5 34.6,21.7 33.1,27.5 32.8,33.7 37.3,30 40.8,27.2 "/><polygon style="fill:#FFFFFF;" points="62.9,17.4 66.6,22.5 67.3,26.8 67.9,32.2 59,26.1 "/><polygon style="fill:#FFFFFF;" points="31.6,42.9 28.2,44.5 26.1,47.7 25,52.4 24.3,59.4 25.1,63.1 29,65.1 31.6,63.9 31.3,61.5 29.8,60.1 29.1,56.8 30.1,52.9 30.8,48.8 32.1,46.8 "/><polygon style="fill:#FFFFFF;" points="69,49.1 69.7,52.7 71.9,53.8 73.9,49.7 75.6,43.4 76.4,37.8 75.3,31.1 73.9,22.1 72,15 69.5,10.6 66.3,8.4 62.8,8.4 59.7,9.9 59.7,12.3 62.6,13.8 65.8,14.8 68.2,12.8 69.6,15.6 70.2,20.5 71.4,28.4 72.6,37.2 72,42.9 70.7,45.3"/><path style="fill:#FFFFFF;" d="M57.1,14l-3.3-1.2H48l-3.2,1.2l-4.6,3.5l2.7,8.7h14.5l3.6-8.7L57.1,14z M45.6,20.2l2.2-2.5l2.7-0.7l2.1,0.5l1.7,2.9L45.6,20.2z"/></svg>'});
     iconShdtech = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#ff7e00;" d="M83.1,35.2c0-0.5,0-1-0.1-1.5c0,0,0-0.1,0-0.1c0-0.5-0.1-1-0.1-1.4c0,0,0-0.1,0-0.1c-0.1-0.5-0.1-0.9-0.2-1.4c0,0,0,0,0-0.1C82,27.2,80.9,24,79.3,21c0,0,0-0.1-0.1-0.1c-0.2-0.4-0.4-0.7-0.6-1.1c0-0.1-0.1-0.2-0.1-0.2c-0.2-0.3-0.4-0.7-0.6-1c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.4-0.6-0.6-0.9c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.4-0.6-0.7-0.9c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.5-0.6-0.7-0.9c-0.1-0.1-0.1-0.1-0.2-0.2c-0.3-0.3-0.5-0.6-0.8-0.9c0,0,0,0,0,0C68.3,7.3,59.6,3.2,50,3.2c-9.5,0-18,4-24,10.4l0,0c-0.3,0.3-0.6,0.7-1,1.1c0,0,0,0,0,0c-0.3,0.4-0.6,0.7-0.9,1.1c0,0,0,0,0,0c-1.7,2.2-3.2,4.6-4.4,7.2c0,0.1-0.1,0.2-0.1,0.2c-0.1,0.3-0.3,0.7-0.4,1c-0.1,0.1-0.1,0.3-0.2,0.4c-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.2-0.1,0.4-0.2,0.5c-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.2-0.1,0.4-0.2,0.6c-0.1,0.3-0.2,0.6-0.2,0.8c-0.1,0.2-0.1,0.5-0.2,0.7c-0.1,0.3-0.1,0.5-0.2,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.3-0.1,0.6-0.1,0.9c0,0.2-0.1,0.5-0.1,0.7C17,33.5,17,34,17,34.6c0,0.6,0,1.2,0,1.7c0,2,0.2,4,0.5,6c0,0,0,0,0,0c2.3,12.3,11.4,22.3,23.2,25.8l4.2-9.4c0-0.8,0.2-1.5,0.9-1.9l4.1-9.2l5.3,12.3c0.2-0.4,0.3-0.8,0.5-1.3c0.5,1.1,0.6,2.4,0.5,3.7l2.6,6C70.2,65,79.1,56,82.1,44.6c0,0,0,0,0,0c0.1-0.5,0.3-1.1,0.4-1.6c0,0,0-0.1,0-0.1c0.3-1.6,0.5-3.3,0.6-5c0,0,0,0,0,0c0-0.5,0-1,0-1.6C83.1,35.9,83.1,35.5,83.1,35.2z M22.4,37.6c0-0.3,0-0.6,0-0.8c0.6,0.3,1,0.7,1.4,1C23.4,37.9,23,37.8,22.4,37.6z M39.7,58.4c-2-0.8-0.8-4.6-2.7-5.3c1.1,1-2.2,2.4-0.6,6c0.1,0.5,0.3,1.1,0.6,1.8c-6-3.1-10.6-8.4-13-14.8c3,0.5,6,0.5,8.6,0.1c1-0.1,3.7-1,4,0.4c-0.5,0.6-4.3,1.3-4,4.4c0.4-1.4,6.2-0.5,8.6-1.3c0.1,0.9,0.4,1.4,0.4,2.5C41.8,53.9,41.8,57.3,39.7,58.4z M54.7,34.5c0,0-1.5-3.9-1.1-5c-1.2-1.2,0.5-2.9,2.2-1.3c-0.9-2-3.5-5.2-5.5-5.9c-1.3,0.1-2.9-0.8-4.2-1.5c-1.1-0.2-2.6,0.4-2.8,1.6c0.3-0.3,1.2-0.2,1.6,0.3c4.7,1.1,0.4,11.2,0.3,11.2c-2.8-3.1-8.8-9.2-15.6-16.3C34.8,12.1,42,8.7,50,8.7c8.2,0,15.5,3.5,20.6,9.2C63.6,25.1,57.6,31.3,54.7,34.5z M61.6,61.4c0.2-1.2,0.7-2.7,1.3-3.9c1.1-1.8-1.6-2.4-1.6-4.7c-1.2,2-0.1,4.6-2.2,4.7c-2.5,0-1.9-6.6-1.3-7.9c1,1.7,9,0.3,9.5,1.9c0.3-3.1-3.5-3.8-4-4.4c0.3-1.4,3-0.5,4-0.4c2.5,0.4,5.4,0.4,8.3,0C73,53.2,68,58.5,61.6,61.4z M77.6,38.2c-0.6,0.2-1,0.3-1.3,0.2c0.3-0.4,0.8-0.7,1.3-1C77.6,37.6,77.6,37.9,77.6,38.2z"/></svg>'});
+    iconKey = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M61.9,9c-9.3,0-16.8,7.5-16.8,16.8c0,1.4,0.2,2.7,0.5,3.9l0,0l-4.5,3.4l2.3,2.4L24,52.7v3.5l20.7-18.8l1,1.1L24,58.6v2.1l11.6-2.4v-4.9l4.7,0.2L40.2,50h1.3l0-1.4l4.6,0v-4.5l3.8-1.4l2.7,2.3l3.4-3.6l0,0c1.8,0.7,3.8,1.1,5.8,1.1c9.3,0,16.8-7.5,16.8-16.8C78.7,16.5,71.2,9,61.9,9z M61.9,39.8c-7.7,0-14-6.3-14-14s6.3-14,14-14s14,6.3,14,14S69.7,39.8,61.9,39.8z"/><path style="fill:#FFFFFF;" d="M61.9,13.7c-6.7,0-12.1,5.4-12.1,12.1c0,6.7,5.4,12.1,12.1,12.1c6.7,0,12.1-5.4,12.1-12.1C74,19.1,68.6,13.7,61.9,13.7z M65,27.2c-2.4,0-4.4-2-4.4-4.4s2-4.4,4.4-4.4c2.4,0,4.4,2,4.4,4.4S67.5,27.2,65,27.2z"/></svg>'});
+    iconLockedbox = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M27.2,28.7v34.2l1.2,1.2h43.3l1.2-1.2V28.7H27.2z M56.7,52.7l-2.2,2.2h-9.1l-2.2-2.1v-14l2.2-2.1h9.1l2.2,2.2V52.7z"/><polygon style="fill:#FFFFFF;" points="31.8,25.1 39.7,25.1 39.7,16.1 40.9,15 59,15 60.2,16.2 60.2,25.1 69.4,25.1 69.4,11.5 65.3,7.6 36.4,7.6 31.8,11.7 "/></svg>'});
+    iconAirdrop = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M78.8,33.5C78.8,18.4,65.9,6.2,50,6.2c-15.9,0-28.8,12.2-28.8,27.2l20.2,17.2l-5.6,2.6l-4.2,2.4l0.1,16l3.3,3.2h30l2.8-2.8V55.4l-3.9-2.5l-5.4-2L78.8,34c0-0.1,0-0.1,0-0.2l0,0h0C78.8,33.7,78.8,33.6,78.8,33.5z M24.9,32.9l0.5-3.3l2-3.2l3.4-0.9l3.1,0.9l2.8,3.3l7.3,18.5L24.9,32.9z M42.1,34l1.8-2.8l6.1-1.8l6.4,1.5l2.5,1.9l-8.6,20L42.1,34z M75.2,33.4L55.8,49.3l8.5-20.6l2.3-2.2l3.5-1.1l4.1,2.6l1.4,3.8L75.2,33.4z"/></svg>'});
+    iconEcho = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M68.6,47.5l4.1-0.3l2.1-0.9l0.5-2.7l-0.5-2.3l-1.5-1.6l-4-1.5l1.4-2l3-5.4l0.1-3.7l-4.5-5.6l-28.2-7.3l-3-2.7l-3.5-0.8h-6.1L26,12.7l-2.8,2.5l-1.9,3.4l-0.9,5.2l1,5.3l3.2,3.5l1.7,0.5l1.6,4.7L31,42l2.8,2.2l2.4,1.1l11.1,0.4l4.7-3.7l-2.6,5.4l-3.9,3.4l-2.9,6l0.5,4l1.9,1.6h10.1l4.8,0.5l6.9,3.2l0.4,2.2h-8.2l3.6,4.1l2.9,0.6l3.7-1l5.6-5.3V50l-7.1,0l0.1-1.6L68.6,47.5zM50,36.1l-2,2.5l-2.1,1.9h-3.3l-2.5-1.5l-4.2-3.9l-1.3-4.3l0.8-4l1.1-2.7l2.3-1.9l-7-4.6l-2.6,0.9l-1.4,2.7l-0.5,3.2l-0.5,2.1l-1.6,1.6l-1.6-3.7l0.3-4.6l1.9-3l3.2-3.2h3.8l1.6,1l3.8,2.4l3.2,2.5l2.4,3.9l2.6,3.7l1.2,3.4l2.7,1.9L50,36.1z M55.2,50l3.6-4.1l4.4-0.4l4.1-4.5l0.8-1.1l2.8,1.3l1.9,1.1l0.6,1.6l-0.9,1.4l-2.8-0.1l-1.7,0.4l-1.9,2.2L65.7,50L55.2,50z"/></svg>'});
+    iconWater = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M72.3,12.3L66.7,9l-4.3,6.7l-9.2,2.7L49.5,22L27.3,60.5v4l14.6,9.3l3.4-0.6l23.2-39.1l1.4-4.7l-1.4-10.9L72.3,12.3z M44,70.2l-13.7-8.5l10-17l3.7-1.7l10.2-0.2l8.7-3.6L44,70.2z"/></svg>'});
+    iconFood = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M52.5,24c0.2,0.2,21.1-10.5,18-15C59.7,9.2,48.6,21.5,48.6,21.5l-6.1,10.4L67.2,46l6.4-10.1L52.5,24z"/><polygon style="fill:#FFFFFF;" points="24.4,60.7 48.6,75.2 55,65.1 30.8,50.9 "/><polygon style="fill:#FFFFFF;" points="31.7,49.2 56.1,63.4 58.9,59.1 34.1,45.3 "/><polygon style="fill:#FFFFFF;" points="35.2,43.4 59.7,57.6 62.4,53.4 37.6,39.5 "/><polygon style="fill:#FFFFFF;" points="39,37.7 63.4,51.9 66.1,47.7 41.4,33.8 "/></svg>'});
+    iconComponent = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M37.7,16H23.9L17,27.9l6.9,11.9h13.8l6.9-11.9L37.7,16z M30.8,35.3c-4,0-7.3-3.2-7.3-7.3c0-4,3.2-7.3,7.3-7.3c4,0,7.3,3.2,7.3,7.3C38.1,32,34.9,35.3,30.8,35.3z"/><polygon style="fill:#FFFFFF;" points="73.1,21.4 69.3,26.9 62.4,22.5 66.2,17.1 56.2,10.6 49.5,19.9 76.5,37.6 83,27.7 "/><polygon style="fill:#FFFFFF;" points="55.2,28.3 50.7,35.1 66.4,38 67.5,36.3 "/><polygon style="fill:#FFFFFF;" points="48.8,38 45.5,42.8 61.5,45.5 64.3,41.3 "/><polygon style="fill:#FFFFFF;" points="43.9,45.8 40.5,50.6 56.6,53.3 59.4,49 "/><polygon style="fill:#FFFFFF;" points="38.7,53.8 35.4,58.7 51.5,61.4 54.2,57.1 "/><polygon style="fill:#FFFFFF;" points="45.3,70.7 49.8,63.9 34.1,61 33,62.7 "/></svg>'});
 
     //-------------------------------------------------------------
     // Markers
@@ -127,7 +135,7 @@ permalink: map.html
         L.marker([49.16584563767611, 12.271728515625002], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
         L.marker([10.386970379955455, 87.94686832249805], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
         L.marker([-13.214968704580537, 47.00317427515984], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>'),
-        L.marker([-23.711601410205486, 110.2880868315697], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5>')
+        L.marker([-23.684666921134276, 111.35009776800872], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Besides the south entrance of the NAtional archives, in a fenced off area with a shootable lock. Easiest to get to from the south and hop over the wall.</p>')
     ];
     var shdtech = L.layerGroup(shdtechMarkers);
     mapLayers.push(shdtech);
@@ -135,7 +143,7 @@ permalink: map.html
     var safehouseMarkers = [
         L.marker([44.600898821045675, 37.77831584215165], {title: 'Final Epiphany', icon: iconSafehouse }).bindPopup('<h5>Final Epiphany</h5><p>Safe house in Downtown East</p>'),
         L.marker([-10.862077594462036, 71.73320220383796], {title: 'The 1040', icon: iconSafehouse }).bindPopup('<h5>The 1040</h5><p>Safe house in Federal Triangle</p>'),
-        L.marker([11.401059893847355, 243.7963027095392], {title: 'Safehouse: DZ East', icon: iconSafehouse }).bindPopup('<h5>DZ East</h5><p>Safe house in Dark Zone East</p>'),
+        L.marker([11.401059893847355, 243.7963027095392], {title: 'DZ East Saferoom', icon: iconSafehouse }).bindPopup('<h5>DZ East</h5><p>Safe house in Dark Zone East</p>'),
         L.marker([31.67831515583315, -23.45551490534952], {title: 'Base of Operations', icon: iconWhitehouse }).bindPopup('<h5>White House</h5><p>Your base of operations is situated in the white house. You can upgrade skills here and participate in other activities.</p>')
     ];
     var safehouses = L.layerGroup(safehouseMarkers);
@@ -148,26 +156,41 @@ permalink: map.html
     mapLayers.push(settlements);
 
     var checkpointMarkers = [
-        L.marker([2.9869206969221, 192.4951243400574], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
-        L.marker([31.027829239466882, 192.3046955466271], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
-        L.marker([49.97006497538167, 217.0898517966271], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
-        L.marker([39.673368327279064, 253.16895335912704], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
-        L.marker([3.177077985960374, 290.27344465255743], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
-        L.marker([-28.985719808139287, 261.5185600519181], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>'),
-        L.marker([-29.471486483429143, 203.89160782098773], {title: 'Checkpoint', icon: iconCheckpoint }).bindPopup('<h5>Checkpoint</h5><p>Prepare to enter the dark zone.</p>')
+        L.marker([-29.471486483429143, 203.89160782098773], {title: 'Dark Zone East - Alpha CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Alpha CP</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([2.9869206969221, 192.4951243400574], {title: 'Dark Zone East - Bravo CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Bravo CP</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([31.027829239466882, 192.3046955466271], {title: 'Dark Zone East - Charlie CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Charlie CP</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([49.97006497538167, 217.0898517966271], {title: 'Dark Zone East - Delta CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Delta CP</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([39.673368327279064, 253.16895335912704], {title: 'Dark Zone East - Echo CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Echo CP</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([3.177077985960374, 290.27344465255743], {title: 'Dark Zone East - Foxtrot CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Foxtrot CP</h5><p>Prepare to enter the dark zone.</p>'),
+        L.marker([-28.985719808139287, 261.5185600519181], {title: 'Dark Zone East - Golf CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Golf CP</h5><p>Prepare to enter the dark zone.</p>')
     ];
     var checkpoints = L.layerGroup(checkpointMarkers);
     mapLayers.push(checkpoints);
 
     var extractionareaMarkers = [
-        L.marker([21.26889909508791, 277.90283381938934], {title: 'Extraction Area', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>'),
-        L.marker([-19.959581667865596, 234.46289241313937], {title: 'Extraction Area', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>')
+        L.marker([21.26889909508791, 277.90283381938934], {title: 'Northern Extraction', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>'),
+        L.marker([-19.959581667865596, 234.46289241313937], {title: 'Southern Extraction', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>')
     ];
     var extractionareas = L.layerGroup(extractionareaMarkers);
     mapLayers.push(extractionareas);
 
     var weaponMarkers = [
         //L.marker(, {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([46.00211072687627, 63.2226561382413], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Top floor before roof, Suite 3, needs key from dead guy in corner of the workshop</p>'),
+        L.marker([11.774443172711553, 111.65039218962194], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On roof, access trhough alley in the north.</p>'),
+        L.marker([12.876056528752716, 105.53466796875001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In this building, behind an unmarked door you can open.</p>'),
+        L.marker([55.998342431930865, 34.98779319226742], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In locked alley, accessible from south.</p>'),
+        L.marker([-5.820074963053237, -8.532714396715166], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On top of containers, climb on containers and roof just south for access.</p>'),
+        L.marker([-9.939882131456189, -18.314208984375004], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On ground level, in a shack with an entrance hidden by some foliage.</p>'),
+        L.marker([-10.65686416428999, -22.5], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Behind lcoked fence, access from east.</p>'),
+        L.marker([-24.25701899959883, -5.800781250000001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Medium level, under some stairs.</p>'),
+        L.marker([-21.9193598109841, 111.4160154014826], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In National archive, bottom of libnrary behind the counter, a bit under it on the east side.</p>'),
+        L.marker([33.56583045373167, 55.24658158421518], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In elevated area, can be accessed by ladder through the north.</p>'),
+        L.marker([36.80041094091776, 17.82714866101742], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In fenced off area in underground parking.</p>'),
+        L.marker([-17.322655337625363, 69.90600585937501], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On elevated portion in fenced in area.</p>'),
+        L.marker([-16.57652804564682, 70.26489280164243], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In loading dock on groundlevel</p>'),
+        L.marker([-18.391050298382968, 77.37854026257992], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside building on ground.</p>'),
+        L.marker([-23.480001387791845, 110.93627952039243], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In fenced off area next to some SHD tech</p>'),
         L.marker([3.871676926083913, 89.23095703125001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In locked room in building, shoot lock through the view window outside.</p>'),
         L.marker([43.88206723439044, 90.74707031250001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In supply room</p>'),
         L.marker([-13.061529400792844, 149.67773437500003], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In Viewpoint Museum, on prime time level, in the left studio you see in there.</p>'),
@@ -210,6 +233,21 @@ permalink: map.html
 
     var gearMarkers = [
         //L.marker(, {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([45.33166556681746, 63.88915993273259], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Top floor before roof, Suite 3, needs key from dead guy in corner of the workshop</p>'),
+        L.marker([14.750218503592968, 105.11718733236196], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside building, upper floor</p>'),
+        L.marker([-14.877552499054568, -10.931396484375002], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In tent.</p>'),
+        L.marker([-2.2404193356499564, -18.03222700953484], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In niche between some hospital beds.</p>'),
+        L.marker([-9.867760601140033, -19.130859151482586], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In elevated office room.</p>'),
+        L.marker([-10.912617501828592, -18.29589888453484], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In elevated office room.</p>'),
+        L.marker([-13.503485425106884, -23.228759542107586], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In fenced and locked area, next to some transformers, accessible form north.</p>'),
+        L.marker([-24.330409053761947, -6.569824218750001], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>At the top of the samll tower here</p>'),
+        L.marker([3.111341223624438, 89.96337912976743], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inner yard, upper level.</p>'),
+        L.marker([26.20801562452327, 119.40307628363374], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On Roof</p>'),
+        L.marker([36.05207258125013, 54.53613281250001], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On ground in alley</p>'),
+        L.marker([36.13200563952584, 12.22045909613371], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In underground parking against western wall.</p>'),
+        L.marker([-20.4681375913916, 72.04467795789243], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In buildong on groundlevel, below south stairs.</p>'),
+        L.marker([-12.163938064736431, 79.51538057997824], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In elevator you have to pry open.</p>'),
+        L.marker([-17.1303049099628, 115.55053733289243], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>NAtional Archives downstairs. Behind a locked door with a sign "Storage Unit B" above it.</p>'),
         L.marker([43.9152963929061, 91.58935569226742], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In supply room.</p>'),
         L.marker([-13.4536702156277, 152.7246091514826], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In ViewPoint Museum, in a lcoked room after the room with all the sparking.</p>'),
         L.marker([-12.66166996970569, 156.62109375000003], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In Viewpoint museum, underground</p>'),
@@ -268,6 +306,8 @@ permalink: map.html
     // Crates that have been airdropped and now hang above somewhere. Shoot them to get to the loot
     var airdropMarkers = [
         //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([-1.5963305303332007, 0.8166501671075822], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the south side of a tree, crafting ressources.</p>'),
+        L.marker([-33.5901101244216, 17.211914956569675], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the north edge of the building.</p>'),
         L.marker([26.544308558627424, -4.010009681805968], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the southern wall. Contains crafting materials.</p>'),
         L.marker([-2.064954958478901, -33.61083962023259], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree, soutside.</p>'),
         L.marker([-11.31126020931928, 73.25683593750001], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging over the west entrance on the roof. Use the east exit and go up the ladder to reach it.</p>'),
@@ -279,6 +319,61 @@ permalink: map.html
     // Random small loot, mostly trinkets but can also randomly be materials
     var lootMarkers = [
         //L.marker(, {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. </p>'),
+        L.marker([13.621058949841272, 110.06469771265986], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack in alley</p>'),
+        L.marker([14.640317740053561, 105.34423833712938], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, upper floor</p>'),
+        L.marker([14.548150723211467, 105.62255859375001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Filing cabinet, upper floor</p>'),
+        L.marker([22.19079781320454, -8.668212890625002], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack</p>'),
+        L.marker([26.9710683040723, -7.540282979607582], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack.</p>'),
+        L.marker([3.7071873663536614, -34.43847645074129], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack on bench</p>'),
+        L.marker([3.107757432507508, -30.728759765625004], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack on bench</p>'),
+        L.marker([5.7545758906565005, -28.685302734375004], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack</p>'),
+        L.marker([1.2560531912496553, -16.527099721133713], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack next to shop sign</p>'),
+        L.marker([-3.6705300854275333, -7.67211925238371], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack</p>'),
+        L.marker([-7.137199320546257, -10.667724609375002], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack</p>'),
+        L.marker([-10.27877749467094, -15.380859375000002], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack</p>'),
+        L.marker([-13.720748229226919, -13.480224274098875], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack</p>'),
+        L.marker([-16.372853906527187, -10.894775278866293], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, on a bench</p>'),
+        L.marker([-11.390266652740085, -9.11132823675871], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge BAckpack</p>'),
+        L.marker([-1.625758360412755, -13.732910156250002], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack</p>'),
+        L.marker([-3.0453670408540234, -18.02490256726742], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack, left of a wheelchair</p>'),
+        L.marker([-8.334756707690788, -16.31835982203484], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack</p>'),
+        L.marker([-8.559198533954, -17.72460982203484], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack</p>'),
+        L.marker([-11.415539587735815, -18.12377918511629], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack</p>'),
+        L.marker([-25.489405940266316, -18.79394553601742], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack</p>'),
+        L.marker([-22.65458423470878, -21.489257812500004], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack</p>'),
+        L.marker([-20.646603391859454, -14.22363303601742], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large BAckpack.</p>'),
+        L.marker([-24.766671929399212, -11.411132365465164], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack.</p>'),
+        L.marker([1.032755359000405, 90.4980466514826], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small Backpack, inside building.</p>'),
+        L.marker([0.6520287953789691, 91.70654341578484], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack, inside office on the right when entering building.</p>'),
+        L.marker([27.3587804421837, 119.8022459819913], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling Suitcase, upper floor.</p>'),
+        L.marker([27.2742039780089, 118.9855954796076], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Filing Cabinet upper floor.</p>'),
+        L.marker([27.231701548740382, 117.79174793511632], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Garbage Can, upper floor.</p>'),
+        L.marker([20.097238573916695, 120.32959006726743], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large BAckpack, just inside door.</p>'),
+        L.marker([19.63909049339912, 120.06958007812501], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, near door.</p>'),
+        L.marker([35.89495347471005, 60.16845658421518], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack</p>'),
+        L.marker([35.157081965835665, 12.28637706488371], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack, up a flight of stairs in underground garage.</p>'),
+        L.marker([34.167847636270295, 16.21215842664242], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase in underground garage.</p>'),
+        L.marker([-15.832736712407913, 64.69116205349565], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack between buildings</p>'),
+        L.marker([-17.632806661137664, 69.04174614697696], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Rolling suitcase, between buildings</p>'),
+        L.marker([-19.77703571973255, 70.44433593750001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack</p>'),
+        L.marker([-21.10330102014241, 74.90844720974565], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([-17.861986601338085, 77.51953125000001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([-17.441509009004694, 76.49047862738371], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack inside building.</p>'),
+        L.marker([-16.01237318349498, 74.52850341796876], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Toolbox on ground.</p>'),
+        L.marker([-14.244867718429582, 76.04919422417879], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large Backpack</p>'),
+        L.marker([-15.499251369498058, 79.29382324218751], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Filing cabinet, next to the elevator.</p>'),
+        L.marker([-13.935815592732537, 77.9608153179288], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large backpack against the west wall.</p>'),
+        L.marker([-13.411680556941924, 79.82299776747824], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Filing cabinet thats part of the baricades.</p>'),
+        L.marker([-12.52236033981567, 78.5687255859375], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, Groundlevel inside building.</p>'),
+        L.marker([-9.98685841693022, 78.19519042968751], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Filing cabinet, groundlevel inside building.</p>'),
+        L.marker([-10.022948394510141, 76.4886473491788], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack, groundlevel inside building.</p>'),
+        L.marker([-19.06550297304858, 105.8056639507413], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack.</p>'),
+        L.marker([-22.965109925369962, 108.70239268988372], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack in corner of building, inside the trench around it.</p>'),
+        L.marker([-24.8764074142749, 111.36840820312501], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack.</p>'),
+        L.marker([-18.965249480981157, 116.65283203125001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack, in research room of NAtional Archives.</p>'),
+        L.marker([-18.77104983817173, 113.07128906250001], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge Backpack, national archives entrance.</p>'),
+        L.marker([-17.23871758185294, 114.92431595921518], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Large BAckpack, national archives entrance, left side next to a metal detector.</p>'),
+        L.marker([-17.182634266604786, 113.45947310328486], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack inside national archives entrance.</p>'),
         L.marker([2.972324207365114, 87.81005881726742], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Vending Machine</p>'),
         L.marker([3.667030861679233, 88.9379880577326], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. Small backpack in lcoked room, shoot lock trhough window</p>'),
         L.marker([3.4732697714190097, 90.59326171875], {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. LArge backpack, in underground lab.</p>'),
@@ -384,6 +479,8 @@ permalink: map.html
 
     // Special ammo like shock, exploding or fire ammo
     var specialammoMarkers = [
+        //L.marker(, {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
+        L.marker([-18.722496322289704, 114.94628861546518], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In NAtional Archives entrance, just after lobby.</p>'),
         L.marker([8.385437830742903, 93.2904052734375], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. Before the elevators down.</p>'),
         L.marker([-15.446510448082533, 152.4169919639826], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. On roof level.</p>'),
         L.marker([-8.863293967961718, 148.0224610492587], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. At far back, in an area with stairs leading up.</p>'),
@@ -399,6 +496,7 @@ permalink: map.html
     // Ammo resupply box, fills up all normal ammo
     var resupplyMarkers = [
         //L.marker(, {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
+        L.marker([-18.77104983817173, 111.37207075953484], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. National Archives entrance.</p>'),
         L.marker([-16.68515595260793, 154.80468772351742], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. After using teh elevator.</p>'),
         L.marker([-11.72382906048309, 149.32617187500003], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. BEfore prime time exhibit.</p>'),
         L.marker([-12.7759725383432, 155.04638694226745], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. After the room with all the sparking.</p>'),
@@ -437,6 +535,8 @@ permalink: map.html
     // Resupplies grenades
     var grenaderesupplyMarkers = [
         //L.marker(, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        L.marker([11.142519257363507, 111.76025480031969], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. On roof, access trhough alley in the north.</p>'),
+        L.marker([-22.024672701702464, 114.5141599327326], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In NAtional Archives, after library, before research.</p>'),
         L.marker([-11.608599592478024, 147.1655271202326], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In ViewPoint Museum</p>'),
         L.marker([15.054464119749472, 55.16967779025436], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. On lower level inside the KErman Coffee shop behind the counter on the left.</p>'),
         L.marker([-3.8816018359137328, 8.497009333223106], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In the corner.</p>'),
@@ -450,6 +550,9 @@ permalink: map.html
 
     var armorresupplyMarkers = [
         //L.marker(, {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([-3.473229183526969, -6.558837890625001], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In tent.</p>'),
+        L.marker([-3.1404060483807, -15.681152120232584], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In tent.</p>'),
+        L.marker([-15.51370115412788, 69.37133800238372], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Down the ramp here.</p>'),
         L.marker([-18.569842162577338, 154.68017622828486], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In ViewPoint Museum, Studio room.</p>'),
         L.marker([-4.696879026871413, 41.98242165148258], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In Jefferson TRade Center boss area.</p>'),
         L.marker([-14.767782366168436, 44.5019530132413], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In the corner of the building here.</p>'),
@@ -462,12 +565,15 @@ permalink: map.html
     // Boxes locked with keys you have to find. Keys and boxes are assigned to factions
     var lockedboxMarkers = [
         //L.marker(, {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. </p>'),
+        L.marker([11.616425745163633, 111.84082031250001], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. On roof, access trhough alley in the north.</p>'),
+        L.marker([-17.41690429960896, 95.32836914062501], {title: 'True Sons Locked Box', icon: iconLockedbox }).bindPopup('<h5>True Sons Locked Box</h5><p>Requires a True Sons key to open. On the ground in front of some stacked U.S. Army containers.</p>'),
+        L.marker([-18.34061261052319, 109.79003950953486], {title: 'True Sons Locked Box', icon: iconLockedbox }).bindPopup('<h5>True Sons Locked Box</h5><p>Requires a True Sons key to open. In National archives, in the corridor with the resupply, just go a bit more west, against the north wall.</p>'),
         L.marker([42.814220304383234, 99.25781272351743], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Groundlevel of library, under the stairs in the eastern part.</p>'),
         L.marker([-4.0832328893671646, 29.626464396715164], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Inside Jefferson Trade Center, back of the garage, as you leave it.</p>'),
         L.marker([50.33615413054519, 64.6728514507413], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. On the roof of Grand Washington Hotel, just as you get into open air, around the corner to your right.</p>'),
         L.marker([46.62941304764099, 69.16259743273258], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. In Grand Washington Hotel mission. After you go upstairs after clearing the lobby, in the wallway where you encounter the next enemies, there are broken walls on your left. Go there and circle around to your right to get to the bathroom of that suite where this box is.</p>'),
         L.marker([26.68345993311305, -1.1059570871293547], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Under the stairs of the big building, behind a locked fenced area you can accesss from the trench around the building.</p>'),
-        L.marker([2.5333493673422147, 96.93196461985545], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open.</p>')
+        L.marker([1.5454073338820984, 95.25146350264552], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open.</p>')
     ];
     var lockedboxes = L.layerGroup(lockedboxMarkers);
     mapLayers.push(lockedboxes);
@@ -489,6 +595,75 @@ permalink: map.html
     // Random crafting material
     var materialMarkers = [
         //L.marker(, {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. </p>'),
+        L.marker([11.401144115900275, 108.67675781250001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox up on roof</p>'),
+        L.marker([12.754745841718904, 109.34326127171518], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase</p>'),
+        L.marker([14.46311514856052, 106.21582031250001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, upper floor</p>'),
+        L.marker([14.480735325578747, 107.61474620550872], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, upper floor</p>'),
+        L.marker([13.418203519983425, 106.09863292425872], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, behind an unmarked door you can open.</p>'),
+        L.marker([12.915375403417197, 106.17187500000001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, behind an unmarked door you can open.</p>'),
+        L.marker([13.514321534857736, 105.62988303601742], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, behind an unmarked door you can open.</p>'),
+        L.marker([55.88301417578358, 34.70855712890626], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox</p>'),
+        L.marker([55.778629030531384, 35.05371090956033], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag</p>'),
+        L.marker([20.55737782795612, -9.371337890625002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag</p>'),
+        L.marker([-7.355089547409766, -32.16064497828484], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, northside of Helicopter</p>'),
+        L.marker([2.6394701885916687, -32.25219681859017], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox</p>'),
+        L.marker([7.892400135296411, -15.992431696504358], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase</p>'),
+        L.marker([-11.39739689710962, -14.384765736758713], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox</p>'),
+        L.marker([-17.731269084185094, -14.937744028866293], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox</p>'),
+        L.marker([-15.772902120701119, -12.114257700741293], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase</p>'),
+        L.marker([-9.094842912316443, -8.712158203125002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, pretty obscured by foliage</p>'),
+        L.marker([-7.543892731207177, -8.79638694226742], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox.</p>'),
+        L.marker([-3.9664539856543564, -13.952636718750002], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, under stairs.</p>'),
+        L.marker([-7.747221328277331, -14.252930134534838], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase</p>'),
+        L.marker([0.04404175165090457, -21.306152120232586], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase</p>'),
+        L.marker([-10.78292090898166, -17.834472432732586], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag</p>'),
+        L.marker([-14.223424657005802, -22.09716791287065], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in corner behind a truck</p>'),
+        L.marker([-16.73088679813734, -23.880615122616295], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, northwest side of helicopter.</p>'),
+        L.marker([-18.493262483281764, -20.690917745232586], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, behind yellow container.</p>'),
+        L.marker([-23.281681208306264, -20.522460937500004], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag.</p>'),
+        L.marker([-23.005497057105305, -13.146973550319673], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase west of white boxtruck</p>'),
+        L.marker([-24.74343474697822, -9.23217784613371], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in open yellow container.</p>'),
+        L.marker([-24.497058558710506, -7.463378850370646], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox under tent roof.</p>'),
+        L.marker([3.243002003304026, 93.36914084851742], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on lower level of scaffolding</p>'),
+        L.marker([0.7690198781221326, 94.93652388453486], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag on floor, upper are in inner yard.</p>'),
+        L.marker([1.4576157606826734, 91.39160178601742], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flight case, inside building, on ground.</p>'),
+        L.marker([23.875823412647673, 115.58715820312501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on ground in passage.</p>'),
+        L.marker([27.903838223077344, 118.68530273437501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase on scaffolding high above ground, access trhough hotel interior.</p>'),
+        L.marker([27.852024130114366, 117.97119140625001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on scaffolding high above ground, access trhough hotel interior.</p>'),
+        L.marker([24.903056286706267, 117.98950184136632], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, on roof</p>'),
+        L.marker([20.913545062981008, 120.6555173546076], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on ground inside building.</p>'),
+        L.marker([33.180469480939145, 54.4226073101163], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in elevated area, accessible by ladder in the north.</p>'),
+        L.marker([35.98988897633494, 57.06665050238371], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox on ground.</p>'),
+        L.marker([34.651267646705136, 12.026367075741293], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightacse in staircase of underground garage.</p>'),
+        L.marker([34.04963492227043, 14.007568359375], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in undeground garage</p>'),
+        L.marker([-14.696954060355852, 63.44604492187501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in passage.</p>'),
+        L.marker([-16.9902014968365, 63.89648437500001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in small guardpost.</p>'),
+        L.marker([-16.99722667220407, 70.07080078125001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag on elevated position in fenced in area.</p>'),
+        L.marker([-14.487884774451853, 69.55078147351743], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, on ground.</p>'),
+        L.marker([-18.323233920899447, 68.0676268413663], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, between buildings.</p>'),
+        L.marker([-21.657402587294914, 66.78222661837935], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase on ground.</p>'),
+        L.marker([-19.103658015823303, 72.7148436382413], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, in between buildings.</p>'),
+        L.marker([-19.33357472211955, 77.70446788519622], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase.</p>'),
+        L.marker([-18.013538352123287, 75.49438498914243], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, on ground in building.</p>'),
+        L.marker([-17.313006552233063, 73.59466552734376], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag in the corner.</p>'),
+        L.marker([-14.802317701321032, 78.50463872775435], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase on ground.</p>'),
+        L.marker([-15.883838510993147, 79.18029807507992], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in elevator you have to pry open.</p>'),
+        L.marker([-12.316746025413222, 79.31030306965114], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, in elevator you have to pry open.</p>'),
+        L.marker([-12.663531761373896, 79.78454612195493], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, on ground inside building</p>'),
+        L.marker([-19.248850787718837, 107.48291026800872], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag against the building, where you can enter the trench around national archives.</p>'),
+        L.marker([-21.429160515963755, 107.62207031250001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in trench around teh building.</p>'),
+        L.marker([-23.51020954023454, 111.19628917425872], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in fenced off area next to SHD tech.</p>'),
+        L.marker([-24.03977083848263, 111.19262695312501], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase on ground.</p>'),
+        L.marker([-22.73558060966067, 114.64965842664243], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, outside national archives.</p>'),
+        L.marker([-22.102757115172462, 114.1699215397239], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, as you leave the national archives rotunda section on the left path.</p>'),
+        L.marker([-21.55208209821172, 113.565673828125], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox inside NAtional archives, rotunda section. On the perch the elite enemy was fighting from.</p>'),
+        L.marker([-20.124591354870205, 111.89208939671518], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, in a side room at the rotunda in NAtional archives.</p>'),
+        L.marker([-15.096883668296375, 114.90234397351743], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox, in NAtional archives underground vault.</p>'),
+        L.marker([-15.121594999765717, 112.4853514507413], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, in NAtional archives underground vault.</p>'),
+        L.marker([-17.13376700783017, 116.619873046875], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Dufflebag, After armored door in NAtional archives research lab.</p>'),
+        L.marker([-19.69773224936949, 113.68652343750001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase in NAtional Archives, after the library, go left.</p>'),
+        L.marker([-16.495686110566496, 113.38623002171518], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox behind counter at national archives entrance.</p>'),
+        L.marker([-17.950899932214238, 112.39013604819776], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in the back right corner inside nationl archives entrance.</p>'),
         L.marker([3.4732498120285835, 88.65234419703484], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Flightcase, inside locked room, shoot lock trhough window</p>'),
         L.marker([5.244299081116936, 87.07763671875001], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in elevator shaft of underground lab.</p>'),
         L.marker([7.0645489678952815, 86.8176267296076], {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. Toolbox in underground lab level.</p>'),
@@ -640,13 +815,15 @@ permalink: map.html
         L.marker([-14.455959529838914, 126.8990796286861], {title: 'Strategy', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>Odessa Sawyer and Agent Kelso talk shop and make a plan for keeping the Theater settlement safe. Theater Comms 2/8</p>'),
         L.marker([25.11447948917854, 62.48657265678049], {title: 'New Crew', icon: iconComm }).bindPopup('<h5>New Crew</h5><p>Two civilizans contemplate joining the Hyenas, Odessa sets them straight. (In subway station, access through escalators at northeast corner of building to the northwest.) Theater Comms 2/8</p>'),
         L.marker([8.812723055313041, 117.94921875000001], {title: 'Firearms Training', icon: iconComm }).bindPopup('<h5>Firearms Training</h5><p>Odessa Sawyer trains civilians in how to properly handle firearms. Theater Comms 2/8</p>'),
-        //L.marker(West of Theater somewhere, {title: 'Peter Problems', icon: iconComm }).bindPopup('<h5>Peter Problems</h5><p>Odessa scolds her daughter to being careless and spending time with Peter. Theater Comms 3/8</p>'),
-        //L.marker(West of Theater behind a white van with blue adn red stripe on the bottom, {title: 'Addiction', icon: iconComm }).bindPopup('<h5>Addiction</h5><p>A concerned civilian tries to get Peter to stop taking spice. Theater Comms 4/8</p>'),
+        L.marker([34.5035711180493, 16.461181417107586], {title: 'Peter Problems', icon: iconComm }).bindPopup('<h5>Peter Problems</h5><p>Odessa scolds her daughter to being careless and spending time with Peter. (In underground garage) Theater Comms 3/8</p>'),
+        L.marker([34.394878291864416, 38.0200194194913], {title: 'Addiction', icon: iconComm }).bindPopup('<h5>Addiction</h5><p>A concerned civilian tries to get Peter to stop taking spice. (In the alley next to a van on the ground) Theater Comms 4/8</p>'),
         // Hyenas
         L.marker([23.120154855087215, 8.345017957388851], {title: 'Piñata Party', icon: iconComm }).bindPopup('<h5>Piñata Party</h5><p>Two Hyenas prepare an attack on unsuspecting civilians. Hyenas Comms 1/10</p>'),
         L.marker([31.87133824316455, 75.45806045728065], {title: 'Missing Prisoners', icon: iconComm }).bindPopup('<h5>Missing Prisoners</h5><p>A Hyena gets rid of some prisoners. Hyenas Comms 2/10</p>'),
         L.marker([32.50345370021894, 43.68896439671517], {title: 'Runners', icon: iconComm }).bindPopup('<h5>Runners</h5><p>Hyenas deal with victims running away. Hyenas Comms 3/10</p>'),
         L.marker([-0.8641809689860198, 117.64892566949132], {title: 'First Council Meeting', icon: iconComm }).bindPopup('<h5>First Council Meeting</h5><p>Hyenas meet to discuss the True Sons threat and form the Council. Hyenas Comms 3/10</p>'),
+        // True Sons
+        L.marker([-20.062802132544014, 68.49243141710758], {title: 'Negotiations', icon: iconComm }).bindPopup('<h5>Negotiations</h5><p>Antwon Ridgeway refuses to negotiate. True Sons Comms 1/10</p>'),
         // Dead drop
         L.marker([23.28341472913859, 77.73284913506359], {title: 'Recordings', icon: iconComm }).bindPopup('<h5>Recordings</h5><p>Aaron Keener takes a moment to explain why he is making these recordings. Dead Drop Comms 1/8</p>'),
         L.marker([49.09965212357462, 12.150878906250002], {title: 'Simple Math', icon: iconComm }).bindPopup('<h5>Simple Math</h5><p>Aaron Keener talks about compartmentalizing his kills. Dead Drop Comms 2/8</p>'),
@@ -681,28 +858,101 @@ permalink: map.html
     mapLayers.push(artifacts);
 
     var componentMarkers = [
-        L.marker([5.295181309651799, 92.98479460502092], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
-        L.marker([35.669198936279045, 14.254522742138553], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
-        L.marker([35.972080335886936, 58.144099680947406], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
-        L.marker([7.0500140104532605, -6.741957475467869], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>')
+        //L.marker(, {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([4.043259154008578, -17.841796875000004], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([-13.976795613026415, -24.056396372616295], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([4.452373004230974, 93.79394542425872], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([5.360914398754014, 91.9042966514826], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([7.057364392519394, 90.13916037976742], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([19.746050174640146, -0.30761718750000006], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([26.61472362642846, -5.22216808050871], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([35.847554379300284, -5.874023661017419], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([-4.477561170411576, -17.025146372616295], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([6.548200609981032, -4.478759821504355], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([7.767235105512086, -5.764160128310324], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([6.910098116111285, -4.229736328125001], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([-3.688903264981603, -21.727294810116295], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([36.75053538973146, 15.955810323357584], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([35.74495960751875, 12.533569280058147], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([34.12850357169689, 15.743408203125002], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([35.155817541145225, 59.7070311382413], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([34.81079492576355, 59.16137695312501], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([36.60380059782299, 57.85034202039243], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
+        L.marker([-24.44706179300724, -16.201171427965168], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p>Underground</p>'),
+        // Old round ones
+        L.marker([5.295181309651799, 92.98479460502092], {title: 'Components', icon: iconComponentRound }).bindPopup('<h5>Components</h5>'),
+        L.marker([35.669198936279045, 14.254522742138553], {title: 'Components', icon: iconComponentRound }).bindPopup('<h5>Components</h5>'),
+        L.marker([35.972080335886936, 58.144099680947406], {title: 'Components', icon: iconComponentRound }).bindPopup('<h5>Components</h5>'),
+        L.marker([7.0500140104532605, -6.741957475467869], {title: 'Components', icon: iconComponentRound }).bindPopup('<h5>Components</h5>')
     ];
     var components = L.layerGroup(componentMarkers);
     mapLayers.push(components);
 
     var foodMarkers = [
-        L.marker([11.83867258662464, 119.03603089340179], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
-        L.marker([-20.028407750587128, 74.87458300577545], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
-        L.marker([37.7185924472827, 29.571448152530806], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
-        L.marker([16.71687795741415, 13.093332705978655], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>')
+        //L.marker(, {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([1.7905281964069657, -24.44824229925871], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-6.424305561586362, -17.329101338982586], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([36.74152839513605, 28.740236051380638], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([37.28720629399543, 30.682983510196216], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([38.08845789360399, 29.729003906250004], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([15.876822316199661, 15.318603459745647], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([16.790654172303793, 14.655761718750002], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([15.587816135371417, 13.967284932732582], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([16.383401037266214, 11.832275390625002], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([17.94562430250107, 12.182006780058147], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([9.05833546158164, 118.74389659613374], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([10.901660530782653, 117.78808604925874], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([9.604376358632376, 119.98168945312501], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([11.892465933305667, 118.30078125000001], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([11.96773609143214, 119.17602527886632], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-18.80928851309597, 75.52917491644622], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-18.826591968469746, 77.57995605468751], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-20.016360090558152, 77.59643554687501], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-20.771522706127787, 75.29296869412066], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-20.000865886280607, 73.33740245550872], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-25.244596256845707, -16.149902343750004], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p>Underground</p>'),
+        L.marker([44.684355738151716, 91.845703125], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p>On Roof</p>'),
+        // Old round ones
+        L.marker([11.83867258662464, 119.03603089340179], {title: 'Food', icon: iconFoodRound }).bindPopup('<h5>Food</h5>'),
+        L.marker([-20.028407750587128, 74.87458300577545], {title: 'Food', icon: iconFoodRound }).bindPopup('<h5>Food</h5>'),
+        L.marker([37.7185924472827, 29.571448152530806], {title: 'Food', icon: iconFoodRound }).bindPopup('<h5>Food</h5>'),
+        L.marker([16.71687795741415, 13.093332705978655], {title: 'Food', icon: iconFoodRound }).bindPopup('<h5>Food</h5>')
     ];
     var food = L.layerGroup(foodMarkers);
     mapLayers.push(food);
 
     var waterMarkers = [
-        L.marker([-0.11719099456653617, 13.210303892287987], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
-        L.marker([-15.100408978516375, 93.20447024337551], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
-        L.marker([24.413808225041397, 118.74544987233875], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
-        L.marker([52.102007559256485, 50.247231096613255], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>')
+        //L.marker(, {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-13.738379329999775, -9.514160156250002], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-11.949757572335956, 92.28515625000001], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-12.175409827621149, 96.7272946983576], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([24.549174736402364, 118.38867053389549], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Inside building</p>'),
+        L.marker([25.19503159153916, 120.52001953125001], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([22.73493254630484, 120.53466640412807], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([23.34225583513053, 120.1611325889826], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([22.79643932091949, 119.78759810328484], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([22.451667919113135, 117.55004905164242], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-2.150493687387835, -25.133057534694675], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-24.460367349455257, -14.655761718750002], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground</p>'),
+        L.marker([-23.992809475589368, -15.065918415784838], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground</p>'),
+        L.marker([17.17228278169308, -28.645019643008716], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-13.990034657362566, 2.1286010742187504], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-16.986720585595847, 2.871094197034836], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-1.8490256109316798, 11.330566350370647], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([1.5134679392860921, 13.84826710447669], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([1.409786355007809, 11.103515513241293], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-0.4430722285740177, 13.60839866101742], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-0.1867741361536612, -14.5458984375], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([44.73641963770572, 93.13476607203486], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>On Roof</p>'),
+        L.marker([42.03313806783642, 93.17871138453486], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>On Roof</p>'),
+        L.marker([51.7157076456718, 48.7097166851163], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([52.82709429682323, 50.3466795757413], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([52.838180043755884, 53.29101584851743], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        // Old round ones
+        L.marker([-0.11719099456653617, 13.210303892287987], {title: 'Water', icon: iconWaterRound }).bindPopup('<h5>Water</h5>'),
+        L.marker([-15.100408978516375, 93.20447024337551], {title: 'Water', icon: iconWaterRound }).bindPopup('<h5>Water</h5>'),
+        L.marker([24.413808225041397, 118.74544987233875], {title: 'Water', icon: iconWaterRound }).bindPopup('<h5>Water</h5>'),
+        L.marker([52.102007559256485, 50.247231096613255], {title: 'Water', icon: iconWaterRound }).bindPopup('<h5>Water</h5>')
     ];
     var water = L.layerGroup(waterMarkers);
     mapLayers.push(water);
