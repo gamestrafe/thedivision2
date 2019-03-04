@@ -34,6 +34,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Enhanced PP-19 | ~6.6k | (770-10%) | 53 | 2.2s | 0-30m | long | 9mm | - | - |
 | MP7 | ~6.5k | 950 | 20 | 1.8s | 0-30m | long | - | short | - |
 | Tactical AUG A3P | ~9.2k | 725 | 25 | 1.9s | 0-30m | long | 9mm | short | 9mm |
+| AUG A3 Para XS | ~9.6k | 725 | 25 | 2.1s | 0-30m | long | 9mm | long | 9mm |
 | MP5A2 | ~7.5k | 800 | 32 | 2.1s | 0-21m | long | 9mm | short | 9mm |
 
 ## Light Machine Gun
@@ -64,8 +65,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Military Market AK-M | ~13.7k | 600 | 40 | 2.3s | 10-45m | long | 7.62 | long | 7.62 |
 | G36 C | ~11.2k | 750 | 30 | 2.3s | 10-45m | long | 5.56 | short | 5.56 |
 | Military G36 | ~8.6k | 750 | 30 | 2.3s | 10-45m | long | 5.56 | long | 5.56 |
-
-| Military P416 | ~8.3k | 750 | 30 | 2.3s | 10-45m | long | 5.56 | long | 5.56 |
+| Military P416 | ~9.6k | 750 | 30 | 2.3s | 10-45m | long | 5.56 | long | 5.56 |
 | AUG A3-CQC | ~7.9k | 680 | 30 | 2.1s | 10-45m | long | 5.56 | short | 5.56 |
 
 ## Marksman Rifle
@@ -90,6 +90,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | ACR SS | ~13.7k | 420 | 30 | 2.3s | 10-60m | long | 7.62 | long | 7.62 |
 | Military Mk17 | ~24.0k | 275 | 20 | 2.2s | 10-60m | long | 7.62 | long | 7.62 |
 | SIG 716 CQB | ~23.3k | 300 | 20 | 2.2s | 10-60m | long | - | short | 7.62 |
+| SIG 716 | ~21.1k | 300 | 20 | 2.4s | 10-60m | long | 7.62 | long | 7.62 |
 | LVOA-C | ~17.2k | 450 | 40 | 2.4s | 10-60m | long | 5.56 | long | 5.56 |
 | M16A2 | ~8.8k | 300 | 30 | 2.2s | 10-60m | short | 5.56 | - | 5.56 |
 | Classic M1A | ~23.2k | 180 | 10 | 3.0s | 10-60m | long | - | long | 7.62 |
@@ -107,6 +108,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Super 90 | ~54.2k | 160 | 8 | 4.4s | 0-20m | long | - | long | tubular |
 | Marine Super 90 | ~54.2k | 160 | 8 | 4.4s | 0-20m | long | - | long | tubular |
 | SPAS-12 | ~126.0k | 70 | 8 | 5.4s | 0-20m | - | - | - | tubular |
+| Double Barrel Shotgun | ~9132k | 200 | 2 | 2.2s | 0-20m | - | - | - | - |
 | SASG-12 | ~41.3k | 180 | 7 | 3.0s | 0-20m | short | - | long | - |
 
 ## Pistol
