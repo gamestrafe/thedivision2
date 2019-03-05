@@ -77,6 +77,12 @@ permalink: map.html
     iconFood = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M52.5,24c0.2,0.2,21.1-10.5,18-15C59.7,9.2,48.6,21.5,48.6,21.5l-6.1,10.4L67.2,46l6.4-10.1L52.5,24z"/><polygon style="fill:#FFFFFF;" points="24.4,60.7 48.6,75.2 55,65.1 30.8,50.9 "/><polygon style="fill:#FFFFFF;" points="31.7,49.2 56.1,63.4 58.9,59.1 34.1,45.3 "/><polygon style="fill:#FFFFFF;" points="35.2,43.4 59.7,57.6 62.4,53.4 37.6,39.5 "/><polygon style="fill:#FFFFFF;" points="39,37.7 63.4,51.9 66.1,47.7 41.4,33.8 "/></svg>'});
     iconComponent = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M37.7,16H23.9L17,27.9l6.9,11.9h13.8l6.9-11.9L37.7,16z M30.8,35.3c-4,0-7.3-3.2-7.3-7.3c0-4,3.2-7.3,7.3-7.3c4,0,7.3,3.2,7.3,7.3C38.1,32,34.9,35.3,30.8,35.3z"/><polygon style="fill:#FFFFFF;" points="73.1,21.4 69.3,26.9 62.4,22.5 66.2,17.1 56.2,10.6 49.5,19.9 76.5,37.6 83,27.7 "/><polygon style="fill:#FFFFFF;" points="55.2,28.3 50.7,35.1 66.4,38 67.5,36.3 "/><polygon style="fill:#FFFFFF;" points="48.8,38 45.5,42.8 61.5,45.5 64.3,41.3 "/><polygon style="fill:#FFFFFF;" points="43.9,45.8 40.5,50.6 56.6,53.3 59.4,49 "/><polygon style="fill:#FFFFFF;" points="38.7,53.8 35.4,58.7 51.5,61.4 54.2,57.1 "/><polygon style="fill:#FFFFFF;" points="45.3,70.7 49.8,63.9 34.1,61 33,62.7 "/></svg>'});
 
+
+    // var debugMarkers = [
+    //     //L.marker([38.21516681056549, 230.50781294703486], {title: 'Debug', icon: iconComponent}).bindPopup('')
+    // ];
+    // var debuglayer = L.layerGroup(debugMarkers);
+
     //-------------------------------------------------------------
     // Markers
     var mapLayers = [];
@@ -97,16 +103,17 @@ permalink: map.html
         L.marker([40.83597917676427, 97.25097924470903], {title: 'MLK Library Community', icon: iconSidemission}).bindPopup('<h5>MLK Library Community</h5><p>Help the MLK Library community.</p><p><b>Rewards:</b> Blueprint: Improvised Kneepads, Theater Upgrade: Game Corner, 1935 XP, Boss loot: 1 green equipment item</p>'),
         L.marker([-14.916477539564463, 113.65722566843036], {title: 'National Archives', icon: iconSidemission}).bindPopup('<h5>National Archives</h5><p>Recover important documents from the archives</p><p><b>Rewards:</b> Blueprint: Compensator 9mm, Theater Upgrade: Rescued Art, 2970 XP</p>'),
         L.marker([-15.072124193296435, 84.06738281250001], {title: 'Department of Justice', icon: iconSidemission}).bindPopup('<h5>Department of Justice</h5><p>Destroy an important stockpile of True Sons Munitions.</p>'),
-        L.marker([7.02820696814731, 101.87988191843036], {title: 'Bureau Headquarters', icon: iconSidemission}).bindPopup('<h5>Bureau Headquarters</h5><p>A SHD tech cache was taken to the bureau laboratory for decontamination. Find and retrieve the SHD tech cache.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Mended Marksman Mag, 2970 XP</p>'),
+        L.marker([7.431467005852903, 100.03784185275438], {title: 'Bureau Headquarters', icon: iconSidemission}).bindPopup('<h5>Bureau Headquarters</h5><p>A SHD tech cache was taken to the bureau laboratory for decontamination. Find and retrieve the SHD tech cache.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Mended Marksman Mag, 2970 XP</p>'),
         L.marker([22.63429269379353, 13.798828125000002], {title: 'Empire Autumn Hotel', icon: iconSidemission}).bindPopup('<h5>Empire Autumn Hotel</h5><p>Recover a SHD tech cache from the Empire Autumn hotel.</p><p><b>Rewards:</b> 5 SHD Tech, Blueprint: Flash Hider 7.62, 1935 XP</p>')
     ];
     var sideMissions = L.layerGroup(sideMissionMarkers);
     mapLayers.push(sideMissions);
 
     var controlpointMarkers = [
+        L.marker([40.37444816289319, 88.65234369412066], {title: 'MLK Memorial Library', icon: iconControlpoint}).bindPopup('<h5>MLK Memorial Library</h5><p>A small church community sought refuge here but the Hyenas rammed the building with a purning car then laid siege to the survivors.</p>'),
         L.marker([-14.732386081418454, 0.13183593750000003], {title: 'Ellipse Fuel Depot', icon: iconControlpoint}).bindPopup('<h5>Ellipse Fuel Depot</h5><p>In a post-crisis world, fuel is nearly as important as water.</p>'),
         L.marker([49.64391983300744, 23.774419426918033], {title: 'Fallen Cranes', icon: iconControlpoint}).bindPopup('<h5>Fallen Cranes</h5><p>Sits on what was previously an important supply route. A gang of opportunistic thugs - later part of the Hyenas - used explosives to topple the cranes and ambush a convoy.</p>'),
-        L.marker([-2.108898659243126, 113.90625268220903], {title: 'Navy Plaza', icon: iconControlpoint}).bindPopup('<h5>Navy Plaza</h5><p>A bloodsoaked no man\'s land created during a long engagement between Hyanes and True Sons as they jostled for dominance, neither one managing to get the edge</p>'),
+        L.marker([0.14648332135390946, 113.7670896202326], {title: 'Navy Plaza', icon: iconControlpoint}).bindPopup('<h5>Navy Plaza</h5><p>A bloodsoaked no man\'s land created during a long engagement between Hyanes and True Sons as they jostled for dominance, neither one managing to get the edge</p>'),
         L.marker([22.221310745585214, 43.447267860174186], {title: 'Demolition Site', icon: iconControlpoint}).bindPopup('<h5>Demolition Site</h5><p>A half-destroyed office block, moments from the main Unite DC protest site, that was briefly used by Hyenas for wild debauchery and violent excess.</p>')
     ];
     var controlpoints = L.layerGroup(controlpointMarkers);
@@ -114,7 +121,7 @@ permalink: map.html
 
     var undergroundMarkers = [
         L.marker([-3.951938849284128, 124.73144710063936], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
-        L.marker([-24.567106523024577, 124.8120152950287], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-23.634459770994653, 124.96032737195493], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([50.758487455409266, 12.293701171875002], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-20.999051467816, -9.807128123939039], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-20.869077732018464, -24.279785156250004], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>')
@@ -150,12 +157,16 @@ permalink: map.html
     mapLayers.push(safehouses);
 
     var settlementMarkers = [
+        L.marker([53.83341734557944, -115.90057604490669], {title: 'Unknown Settlement', icon: iconSettlement }).bindPopup('<h5>Unknown Settlement</h5><p></p>'),
+        L.marker([-48.88388234177659, 83.43709900193092], {title: 'Unknown Settlement', icon: iconSettlement }).bindPopup('<h5>Unknown Settlement</h5><p></p>'),
         L.marker([24.650345994540757, 83.36059458553791], {title: 'The Theater', icon: iconSettlement }).bindPopup('<h5>The Theater</h5><p>Settlement in Downtown East</p>')
     ];
     var settlements = L.layerGroup(settlementMarkers);
     mapLayers.push(settlements);
 
     var checkpointMarkers = [
+        // DZ West
+        // DZ South
         // DZ East
         L.marker([-29.471486483429143, 203.89160782098773], {title: 'Dark Zone East - Alpha CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Alpha CP</h5><p>Prepare to enter the dark zone.</p>'),
         L.marker([2.9869206969221, 192.4951243400574], {title: 'Dark Zone East - Bravo CP', icon: iconCheckpoint }).bindPopup('<h5>Dark Zone East - Bravo CP</h5><p>Prepare to enter the dark zone.</p>'),
@@ -169,6 +180,8 @@ permalink: map.html
     mapLayers.push(checkpoints);
 
     var extractionareaMarkers = [
+        // DZ West
+        // DZ South
         // DZ East
         L.marker([21.26889909508791, 277.90283381938934], {title: 'Northern Extraction', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>'),
         L.marker([-19.959581667865596, 234.46289241313937], {title: 'Southern Extraction', icon: iconExtractionarea }).bindPopup('<h5>Extraction Area</h5><p>Call in an extraction and protect your contaminated gear until it\'s full extracted.</p>')
@@ -177,7 +190,11 @@ permalink: map.html
     mapLayers.push(extractionareas);
 
     var dzlandmarkMarkers = [
+        // DZ West
+        // DZ South
         // DZ East
+        L.marker([16.566001785656574, 259.5117191970349], {title: 'DC-62 Storage', icon: iconDzlandmark }).bindPopup('<h5>Morgue</h5><p>DZ Landmark</p>'),
+        L.marker([-4.434044005032582, 277.7197274565697], {title: 'Cera Camp', icon: iconDzlandmark }).bindPopup('<h5>Morgue</h5><p>DZ Landmark</p>'),
         L.marker([7.885147283424331, 264.7119136154652], {title: 'Morgue', icon: iconDzlandmark }).bindPopup('<h5>Morgue</h5><p>DZ Landmark</p>'),
         L.marker([-20.440741185059384, 251.33788973093039], {title: 'Catacombs', icon: iconDzlandmark }).bindPopup('<h5>Catacombs</h5><p>DZ Landmark</p>'),
         L.marker([-2.6065241375662533, 253.50585758686069], {title: 'Pool', icon: iconDzlandmark }).bindPopup('<h5>Pool</h5><p>DZ Landmark</p>'),
@@ -201,8 +218,23 @@ permalink: map.html
 
     var shdterminalMarkers = [
         // DZ East
-        //Seems inactive? L.marker([38.21516681056549, 230.50781294703486], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
         //L.marker(, {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([-14.186286679779473, 204.15527366101745], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([5.3681048317823175, 240.43945223093036], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([1.7868205667822985, 216.826171875], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([-17.8742034396575, 219.41894531250003], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([29.75166024847715, 238.52050803601745], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([10.764957727681407, 255.43945334851747], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([37.82280243352759, 230.2294921875], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([5.185775925188924, 263.7451167404652], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([-8.798225459016345, 256.7358393967152], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([-1.7575368113083125, 231.4013667404652], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([-6.955509897917852, 223.21289107203484], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([13.32548488559795, 223.56445357203486], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([22.499024955127794, 215.58105558156973], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([27.9361805667694, 208.44726473093036], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([6.970049417296232, 215.9765607118607], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
+        L.marker([10.933999745546119, 210.45410156250003], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5><p>Inside building</p>'),
         L.marker([45.879810108561195, 234.79980468750003], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
         L.marker([37.1486401701196, 245.08300781250003], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
         L.marker([14.03711973317481, 284.3847647309304], {title: 'SHD Terminal', icon: iconShdterminal }).bindPopup('<h5>SHD Terminal</h5>'),
@@ -220,6 +252,19 @@ permalink: map.html
     var dzcrateMarkers = [
         // DZ East
         //L.marker(, {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([10.244654445228337, 263.69384765625006], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([33.149815611390245, 235.42968660593036], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([24.926294766395593, 256.04003883898264], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action. Inside building</p>'),
+        L.marker([17.67891679923998, 258.4936518967152], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([7.943182730539113, 282.61230468750006], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([-8.312965534947859, 276.7309565842152], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action. Inside tent</p>'),
+        // In parking garage possibly? L.marker([-17.06728740376787, 248.26904296875003], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([-20.34119345403015, 252.04467762261635], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action. Under bridge</p>'),
+        L.marker([-1.911266535096585, 254.11376953125], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action. Under bridge</p>'),
+        L.marker([37.89219554724437, 201.63574397563937], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([40.608392131868186, 216.73095613718036], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([31.628440952437717, 214.2333984375], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([-22.44487876888649, 199.6875], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
         L.marker([36.914764288955936, 283.6376944184303], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action. Inside the wrecked train here</p>'),
         L.marker([31.05920913777476, 280.9057612717152], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
         L.marker([-18.535171645930205, 273.95507812500006], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
@@ -231,9 +276,22 @@ permalink: map.html
     var weaponMarkers = [
         // DZ East
         //L.marker(, {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([-16.53791935008568, 211.39160200953486], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([35.57840568056935, 273.016662709415], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([21.90227796666864, 239.58251930773264], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On roof</p>'),
+        //possibly L.marker([-0.8495773468437293, 280.6420907378197], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([-6.35897532723566, 230.52246183156973], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([20.523073083074355, 209.88281250000003], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Northeast corner of the playground</p>'),
+        L.marker([12.740372919672758, 218.39355558156973], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside building</p>'),
         L.marker([44.11782707930348, 236.44683826714757], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Lower level in a corner</p>'),
         // General overworld
         //L.marker(, {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([-0.366208891119804, 44.01830593571893], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([11.14606637590688, 78.26568600721657], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In building</p>'),
+        L.marker([11.605606410314895, 79.22607433050871], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In building</p>'),
+        L.marker([15.933160124560002, 99.1845703125], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Below ground, in trench accessible from the west</p>'),
+        L.marker([5.12012570410202, 108.56689453125001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In loading dock</p>'),
+        L.marker([-32.91033653147998, 193.27880881726745], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>On elevated platform</p>'),
         L.marker([45.1510532655634, 90.36621071398258], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In fenced off area</p>'),
         L.marker([48.46082289322098, 86.6857907921076], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In fenced off area</p>'),
         L.marker([46.98535620354859, 79.13818337023258], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In fenced off area</p>'),
@@ -281,7 +339,7 @@ permalink: map.html
         L.marker([35.86543101023699, -0.07324241101741792], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside building in a room off to the south, east wall.</p>'),
         L.marker([26.73907201823525, -0.7250976562500001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Behind a locked door in the trench, below the stairs.</p>'),
         L.marker([-16.263900076247165, 79.69490309119901], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Behind some elevator doors you have to pry open, look south to see those doors.</p>'),
-        L.marker([11.372337477367223, 101.84512446026461], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
+        L.marker([13.68157061284088, 100.83251953125001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In trench</p>'),
         L.marker([-12.836785218394441, 46.95556640625001], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In locked of fence area with an SHD tech.</p>'),
         L.marker([-11.688055283515437, 53.34228526800871], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>In the corner of the building.</p>'),
         L.marker([-10.066192995644581, 79.09240728244185], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5>'),
@@ -296,11 +354,24 @@ permalink: map.html
     var gearMarkers = [
         // DZ east
         //L.marker(, {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        //possibly L.marker([26.208020346495054, 245.19287109375003], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([36.27970720524017, 288.88183683156973], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        //possibly L.marker([-1.0253349996504966, 230.77148482203484], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        //possibly L.marker([7.928674801364048, 230.11230379343036], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In front of the roofed over entrance</p>'),
+        //possibly L.marker([21.807109138308352, 215.0537104904652], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-0.8788717828324148, 275.41259855031973], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         L.marker([33.14981785705253, 243.55957075953486], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         L.marker([22.735656852206496, 194.01123091578486], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Behind building in corner</p>'),
         L.marker([32.30570601389429, 262.5146486610175], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-9.340672181980947, 207.59765625000003], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         // General overworld
         //L.marker(, {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([12.00350278967217, 85.48095658421518], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Under stairs</p>'),
+        L.marker([-31.790443297760913, 200.53710982203486], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-22.735656852206496, 120.49072176218034], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In trench</p>'),
+        L.marker([-20.42014942619703, 44.6484375], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-17.182779056431826, 33.940428793430335], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Behind locked fence</p>'),
+        L.marker([3.827716217935785, 1.8457031250000002], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>North of a bush</p>'),
         L.marker([55.858871432561315, 16.047362834215168], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Close to building, next to entrance</p>'),
         L.marker([49.2008500915203, 95.21118208765984], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In alley</p>'),
         L.marker([45.137492653711924, 96.46545410156251], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In fenced in area</p>'),
@@ -381,6 +452,7 @@ permalink: map.html
     // Crates that have been airdropped and now hang above somewhere. Shoot them to get to the loot
     var airdropMarkers = [
         //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([-39.40224434029276, 195.06591841578486], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>On tree, west of the airplane tail</p>'),
         L.marker([-1.5963305303332007, 0.8166501671075822], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the south side of a tree, crafting ressources.</p>'),
         L.marker([-33.5901101244216, 17.211914956569675], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the north edge of the building.</p>'),
         L.marker([26.544308558627424, -4.010009681805968], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the southern wall. Contains crafting materials.</p>'),
@@ -395,10 +467,110 @@ permalink: map.html
     var markersRandomloot = [
         //{latlng: , info: ''},
         // DZ East
+        {latlng: [24.082410231491448, 242.97637931071225], info: 'MRE box, on roof'},
+        {latlng: [-1.6989679302322551, 224.39941450953484], info: 'MRE box'},
+        {latlng: [14.00869637063467, 225.14648482203486], info: 'MRE box'},
+        {latlng: [20.44073867173861, 225.77636808156973], info: 'MRE box'},
         {latlng: [38.765505100191234, 240.20507812500003], info: 'MRE box'},
         {latlng: [51.608923457016814, 193.57910558581352], info: 'MRE box'},
+        {latlng: [-10.890849067130894, 205.18066406250003], info: 'MRE box'},
+        {latlng: [23.11341666767855, 197.25585959851745], info: 'MRE box'},
         // Overworld
         //{latlng: , info: ''},
+        //{latlng: , info: ''},
+        {latlng: [-2.1967272417616583, 44.60453149937344], info: 'Rolling suitcase'},
+        {latlng: [-1.0912430615374356, 46.86759715750309], info: 'Rolling suitcase'},
+        {latlng: [-0.029296426688586195, 47.6366401262531], info: 'Large backpack'},
+        {latlng: [14.051330743518175, 47.98789795923384], info: 'Small backpack'},
+        {latlng: [15.149904271143445, 42.30099929441808], info: 'Small backpack'},
+        {latlng: [14.32825967774278, 74.32250976562501], info: 'Large backpack'},
+        {latlng: [11.165827495467793, 79.51354980468751], info: 'Locker'},
+        {latlng: [11.708720214830388, 77.97180181369185], info: 'Small backpack'},
+        {latlng: [11.675548796939923, 80.013427734375], info: 'Large backpack'},
+        {latlng: [13.724265111330489, 81.81152299046518], info: 'Large backpack'},
+        {latlng: [11.269999503022248, 79.70947260037066], info: 'Small backpack'},
+        {latlng: [10.876464994816295, 81.22558571398258], info: 'Small backpack'},
+        {latlng: [16.22873994821098, 100.53771969862284], info: 'Small backpack'},
+        {latlng: [16.186541500532286, 99.66796875000001], info: 'Rolling suitcase'},
+        {latlng: [15.848626972929278, 97.80029430985452], info: 'Large backpack, in trench'},
+        {latlng: [15.869764555660295, 94.64355491101742], info: 'Small backpack, in trench'},
+        {latlng: [13.218555949175482, 85.3124997764826], info: 'Large backpack'},
+        {latlng: [1.0692743106822697, 100.04150390625001], info: 'Large backpack'},
+        {latlng: [7.841615185204699, 85.25390625000001], info: 'Small backpack'},
+        {latlng: [4.54357027937176, 100.1806639507413], info: 'Small backpack'},
+        {latlng: [10.033766870069249, 100.45165976509453], info: 'Small backpack'},
+        {latlng: [4.82096058820664, 109.56298816949132], info: 'Large backpack'},
+        {latlng: [14.71821833078853, 100.92041015625001], info: 'Small backpack'},
+        {latlng: [4.623879442515547, 110.23681640625], info: 'Small backpack'},
+        {latlng: [5.492059549413622, 112.30224609375001], info: 'Small backpack'},
+        {latlng: [2.2113652890549598, 111.40869095921518], info: 'Small backpack'},
+        {latlng: [-2.4235928950791608, 104.80224654078486], info: 'Small backpack'},
+        {latlng: [-4.485157865620041, 104.42138694226742], info: 'Large backpack'},
+        {latlng: [-4.915832801313164, 107.23388660699132], info: 'Small backpack'},
+        {latlng: [-1.9625063257198323, 111.57714843750001], info: 'Large backpack'},
+        {latlng: [-17.476432197195518, 158.7890622764826], info: 'Large backpack'},
+        {latlng: [-19.80116353170995, 156.01318381726745], info: 'Small backpack'},
+        {latlng: [-13.075910712404706, 162.04101473093039], info: 'Small backpack'},
+        {latlng: [-13.546321458184007, 164.73632767796516], info: 'Large backpack'},
+        {latlng: [-21.34395954639343, 176.46240234375003], info: 'Small backpack'},
+        {latlng: [-23.025817250227092, 174.7521970421076], info: 'Small backpack'},
+        {latlng: [-22.010965404083777, 172.51831088215116], info: 'Large backpack'},
+        {latlng: [-23.771940385281297, 171.41601551324132], info: 'Small backpack'},
+        {latlng: [-26.709631052049136, 175.8288575336337], info: 'Small backpack'},
+        {latlng: [-30.530723011171283, 172.59521484375003], info: 'Large backpack'},
+        {latlng: [-33.08233672856375, 183.71337890625003], info: 'Small backpack'},
+        {latlng: [-27.209041852647132, 162.3852534592152], info: 'Small backpack'},
+        {latlng: [-23.160563309048314, 147.35595658421516], info: 'Small backpack'},
+        {latlng: [-23.187495919415564, 140.63232444226745], info: 'Small backpack'},
+        {latlng: [-14.385023389010499, 133.8171384483576], info: 'Large backpack'},
+        {latlng: [-16.829079990098805, 140.62500000000003], info: 'Small backpack'},
+        {latlng: [-21.739091217718574, 139.90356490015986], info: 'Small backpack'},
+        {latlng: [-16.193574826697834, 138.2556150108576], info: 'Small backpack'},
+        {latlng: [-14.700508321287561, 134.56054687500003], info: 'Small backpack'},
+        {latlng: [-18.60460138845525, 129.12231445312503], info: 'Small backpack'},
+        {latlng: [-24.387127324604506, 136.25244140625003], info: 'Large backpack'},
+        {latlng: [-24.547123179730765, 134.46533247828486], info: 'Small backpack'},
+        {latlng: [-25.60190226111574, 132.67089843750003], info: 'Large backpack'},
+        {latlng: [-25.15191293830773, 129.43359553813937], info: 'Small backpack'},
+        {latlng: [-24.15009533026533, 125.59753406792882], info: 'Rolling suitcase'},
+        {latlng: [-9.709057068618208, 122.67333984375001], info: 'Rolling suitcase'},
+        {latlng: [-7.1517656992040015, 119.50195223093034], info: 'Rolling suitcase, at bottom of escalators'},
+        {latlng: [-9.25393615681445, 115.69335892796518], info: 'Large backpack'},
+        {latlng: [-10.437395217745943, 118.88671919703486], info: 'Rolling suitcase'},
+        {latlng: [-14.434680215297268, 120.02929732203486], info: 'Large backpack'},
+        {latlng: [-19.746024239625427, 121.48681640625001], info: 'Large backpack'},
+        {latlng: [-22.735656852206496, 119.83886718750001], info: 'Small backpack'},
+        {latlng: [-23.832251997719702, 114.19921830296518], info: 'Small backpack, inside building on table'},
+        {latlng: [-23.905926927314724, 115.32714888453486], info: 'Large backpack, inside building behind counter'},
+        {latlng: [-25.416816708646326, 115.36376908421518], info: 'Large backpack'},
+        {latlng: [-25.79329665973433, 108.75366210937501], info: 'Large backpack'},
+        {latlng: [-17.922992473290126, 101.67480424046518], info: 'Small backpack'},
+        {latlng: [-24.10664717920179, 99.73388671875], info: 'Small backpack'},
+        {latlng: [-24.693606637595376, 89.67773459851742], info: 'Large backpack'},
+        {latlng: [-23.32880644742216, 85.27587890625001], info: 'Large backpack'},
+        {latlng: [-17.30169563401302, 82.91015580296518], info: 'Large backpack'},
+        {latlng: [-13.289847356549014, 80.53710892796518], info: 'Small backpack'},
+        {latlng: [-23.617683186641596, 81.59912019968034], info: 'Small backpack'},
+        {latlng: [-24.380456829786812, 73.59375022351743], info: 'Small backpack'},
+        {latlng: [-23.30862734962399, 63.64013761281968], info: 'Large backpack'},
+        {latlng: [-19.518375478601556, 60.09521484375001], info: 'Large backpack'},
+        {latlng: [-24.567108352575975, 51.53320401906968], info: 'Rolling suitcase'},
+        {latlng: [-23.254805562881206, 45.43945312500001], info: 'Large backpack'},
+        {latlng: [-18.33540760189081, 45.13366704806686], info: 'Rolling suitcase'},
+        {latlng: [-16.0141360020859, 43.09570267796517], info: 'Small backpack'},
+        {latlng: [-16.177748524399526, 27.87780744954944], info: 'Small backpack'},
+        {latlng: [-15.707662769583505, 26.95312410593033], info: 'Large backpack'},
+        {latlng: [-15.693559160592597, 32.929686605930335], info: 'Small backpack'},
+        {latlng: [-16.1724728083975, 37.25097745656968], info: 'Large backpack'},
+        {latlng: [-24.726874870506972, 27.260741293430332], info: 'Rolling Suitcase'},
+        {latlng: [-24.07321393399296, 19.409179240465168], info: 'Small backpack'},
+        {latlng: [14.129472259279108, 16.948241740465168], info: 'Small backpack'},
+        {latlng: [17.35763004538838, 5.903319418430329], info: 'Rolling suitcase'},
+        {latlng: [4.682279182839649, -1.2597665190696719], info: 'Small backpack'},
+        {latlng: [2.730898559903367, -2.431640401482582], info: 'Small backpack'},
+        {latlng: [1.3402098002785028, 0.12451216578483583], info: 'Rolling suitcase'},
+        {latlng: [-5.885617322506234, -0.46142578125000006], info: 'Large backpack'},
+        {latlng: [11.322013330821404, -3.0541992187500004], info: 'Large backpack'},
         {latlng: [41.683852912035576, 21.511230468750004], info: 'Small backpack'},
         {latlng: [41.321826307222445, 15.959470868110659], info: 'Small backpack'},
         {latlng: [40.87475722681882, 10.275878682732584], info: 'Rolling suitcase'},
@@ -444,7 +616,7 @@ permalink: map.html
         {latlng: [8.754767468205088, 29.216308370232586], info: 'Small backpack'},
         {latlng: [0.336847379477442, 28.17627042531967], info: 'Small backpack, on bench'},
         {latlng: [9.26837463977363, 11.601562500000002], info: 'Rolling suitcase'},
-        {latlng: [8.160642957239567, 4.226074442267419], info: 'Large backpack'},
+        {latlng: [8.160642957239567, 4.226074442267419], info: 'Rolling suitcase'},
         {latlng: [3.652272062053783, 7.866210937500001], info: 'Large backpack'},
         {latlng: [-5.142329158460027, 4.804687276482583], info: 'Large backpack'},
         {latlng: [-4.758961506080622, 7.470703125000001], info: 'Large backpack'},
@@ -682,6 +854,9 @@ permalink: map.html
     // Resupplies grenades
     var grenaderesupplyMarkers = [
         //L.marker(, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        L.marker([-2.4162756547063857, 45.7104756500831], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        L.marker([6.700978950502446, 85.78857377171518], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        L.marker([-7.696476313948966, 163.6596675217152], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
         L.marker([8.733213600273196, 31.706542968750004], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Behind low wall</p>'),
         L.marker([11.142519257363507, 111.76025480031969], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. On roof, access trhough alley in the north.</p>'),
         L.marker([-22.024672701702464, 114.5141599327326], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In NAtional Archives, after library, before research.</p>'),
@@ -698,6 +873,11 @@ permalink: map.html
 
     var armorresupplyMarkers = [
         //L.marker(, {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([0.7580345254974181, 43.776842253083466], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([15.679458126914906, 42.55016676374536], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([-28.562009304768353, 187.44506824761632], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([-7.01366792756663, 122.46826082468034], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside elevator</p>'),
+        L.marker([-24.280351098131593, 94.34326216578486], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
         L.marker([6.388054836644247, 8.137207925319673], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
         L.marker([-18.361370420496467, -6.643066629767419], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside tent</p>'),
         L.marker([-3.473229183526969, -6.558837890625001], {title: 'Armor Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In tent.</p>'),
@@ -745,6 +925,83 @@ permalink: map.html
     // Random crafting material
     var markersMaterial = [
         //{latlng: , info: ''},
+        {latlng: [3.429347529347289, 44.805999707412305], info: 'Flightcase'},
+        {latlng: [5.04717073691972, 47.7173176927271], info: 'Toolbox'},
+        {latlng: [15.662709604193058, 48.00660823267661], info: 'Flightcase'},
+        {latlng: [11.298730232422214, 75.01831049099566], info: 'Flightcase'},
+        {latlng: [11.33374132093465, 77.51861569471659], info: 'Flightcase'},
+        {latlng: [11.696169197431955, 78.32153320312501], info: 'Dufflebag'},
+        {latlng: [11.023877900885614, 79.23156732693317], info: 'Toolbox'},
+        {latlng: [15.12869420411645, 101.16210937500001], info: 'Toolbox, on ramp'},
+        {latlng: [12.13421520314649, 79.57580571994187], info: 'Toolbox'},
+        {latlng: [15.404258827795767, 97.05322265625001], info: 'Toolbox'},
+        {latlng: [14.71821833078853, 84.76318370550872], info: 'Toolbox'},
+        {latlng: [0.8056379607458148, 85.0268552452326], info: 'Dufflebag, on elevated platform'},
+        {latlng: [3.0381256254870364, 86.8432616069913], info: 'Flightcase'},
+        {latlng: [6.780988833648978, 100.52490234375001], info: 'Toolbox'},
+        {latlng: [11.97842692796314, 100.79223643988372], info: 'Toolbox'},
+        {latlng: [4.4924605096698755, 109.67285145074132], info: 'Toolbox'},
+        {latlng: [5.5941182188847876, 111.06445323675874], info: 'Flightcase'},
+        {latlng: [5.608695820303893, 110.13427739962938], info: 'Flightcase'},
+        {latlng: [-4.485157865620041, 105.66650390625001], info: 'Flightcase'},
+        {latlng: [-6.35897532723566, 111.38671830296518], info: 'Flightcase'},
+        {latlng: [-0.4907162098863954, 104.82421919703486], info: 'Dufflebag'},
+        {latlng: [-5.4993483216038666, 109.5556640625], info: 'Dufflebag'},
+        {latlng: [-20.08344932396673, 160.40038660168648], info: 'Dufflebag'},
+        {latlng: [-20.5230743390604, 161.54296875000003], info: 'Flightcase'},
+        {latlng: [-9.535748998133615, 157.03857421875003], info: 'Toolbox, under scaffolding'},
+        {latlng: [-8.660677809913697, 157.01660156250003], info: 'Toolbox, on top of scaffolding'},
+        {latlng: [-9.145486056167277, 163.38134810328486], info: 'Toolbox'},
+        {latlng: [-22.938159639316396, 164.41406294703486], info: 'Dufflebag'},
+        {latlng: [-20.72186529051019, 167.9150390625], info: 'Flightcase'},
+        {latlng: [-21.29619865318314, 185.28991699218753], info: 'Dufflebag'},
+        {latlng: [-21.83770552041948, 185.59478759765625], info: 'Flightcase'},
+        {latlng: [-23.547202144599712, 181.3549802452326], info: 'Toolbox'},
+        {latlng: [-21.79010705980786, 173.56201171875003], info: 'Toolbox'},
+        {latlng: [-26.621269851355052, 179.12109307944775], info: 'Dufflebag'},
+        {latlng: [-27.741884632507087, 180.56030273437503], info: 'Dufflebag, on elevated platform'},
+        {latlng: [-26.6801851229304, 189.8254392296076], info: 'Flightcase'},
+        {latlng: [-36.48902947746665, 190.63110373914245], info: 'Toolbox'},
+        {latlng: [-15.079195904288019, 132.2131345421076], info: 'Dufflebag, on top of truckbed'},
+        {latlng: [-17.07778960654537, 129.16259787976745], info: 'Dufflebag, on top of container'},
+        {latlng: [-19.26966529650232, 130.63476517796516], info: 'Toolbox'},
+        {latlng: [-20.83143293960962, 135.68115234375003], info: 'Flightcase'},
+        {latlng: [-24.246964554300924, 127.52929687500001], info: 'Flightcase'},
+        {latlng: [-21.111833877808316, 126.07177644968034], info: 'Dufflebag'},
+        {latlng: [-21.711875773169545, 127.17773437500001], info: 'Toolbox, in loading dock'},
+        {latlng: [-20.571081893508183, 127.24365234375001], info: 'Toolbox, in loading dock'},
+        {latlng: [-14.930631025567845, 126.65039062500001], info: 'Dufflebag, on raised platform'},
+        {latlng: [-9.029769963367572, 121.11328125000001], info: 'Dufflebag'},
+        {latlng: [-8.051978122521664, 119.75097656250001], info: 'Dufflebag'},
+        {latlng: [-6.5409212829845895, 119.17236372828484], info: 'Flightcase, at bottom of escalators'},
+        {latlng: [-4.638480499679096, 121.42822355031969], info: 'Flightcase'},
+        {latlng: [-16.13729734059714, 122.26318314671518], info: 'Flightcase'},
+        {latlng: [-23.443088931121775, 115.92773437500001], info: 'Flightcase, in trench'},
+        {latlng: [-23.792046344654672, 116.00097611546518], info: 'Flightcase, in trench'},
+        {latlng: [-15.31244342810722, 102.11425736546518], info: 'Toolbox'},
+        {latlng: [-24.146753594703064, 99.1918954253197], info: 'Dufflebag'},
+        {latlng: [-7.856126834849035, 80.32470613718034], info: 'Toolbox'},
+        {latlng: [-14.72530232119489, 80.41992187500001], info: 'Dufflebag'},
+        {latlng: [-21.90227796666864, 80.36132767796516], info: 'Flightcase'},
+        {latlng: [-24.23360846049307, 59.077147543430335], info: 'Flightcase'},
+        {latlng: [-24.380456829786812, 55.93505904078484], info: 'Dufflebag'},
+        {latlng: [-25.903703303407667, 47.50305170193315], info: 'Toolbox'},
+        {latlng: [-25.05242717625401, 41.56860373914242], info: 'Flightcase'},
+        {latlng: [-19.59429401910876, 45.83129838109017], info: 'Flightcase'},
+        {latlng: [-15.591293080633214, 40.48461914062501], info: 'Dufflebag'},
+        {latlng: [-15.647723446894812, 40.092773549258716], info: 'Flightcase'},
+        {latlng: [-17.26672782352052, 31.669922769069675], info: 'Toolbox'},
+        {latlng: [-15.76405969095303, 33.80859553813935], info: 'Dufflebag'},
+        {latlng: [-21.180142577206816, 39.799802899360664], info: 'Dufflebag'},
+        {latlng: [-24.89972320210466, 32.65136450529099], info: 'Dufflebag'},
+        {latlng: [-24.153435142898218, 9.755859375000002], info: 'Flightcase'},
+        {latlng: [7.6892164632132705, -2.211912497878075], info: 'Flightcase'},
+        {latlng: [-4.974208900639063, -2.2851562500000004], info: 'Toolbox'},
+        {latlng: [-9.514079262770892, -2.4096684157848363], info: 'Dufflebag'},
+        {latlng: [-12.654630436950608, -3.9257816970348363], info: 'Toolbox'},
+        {latlng: [12.389965008432192, 0.7104487717151643], info: 'Flightcase'},
+        {latlng: [11.896119836821896, -2.4609375000000004], info: 'Dufflebag'},
+        {latlng: [12.669318687665362, -9.741211831569673], info: 'Dufflebag'},
         {latlng: [38.21516575686884, 11.843261718750002], info: 'Flightcase, in restaurant with echo'},
         {latlng: [38.49659456855653, 10.070800334215166], info: 'Flightcase, in restaurant with echo'},
         {latlng: [42.17154633452754, 15.97045920789242], info: 'Toolbox'},
@@ -1010,6 +1267,7 @@ permalink: map.html
 
 
     var echoMarkers = [
+        L.marker([18.46571622797032, 76.62579072025035], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Manny Ortega and Mateo Ortega have a conversation on the street.</p>'),
         L.marker([12.107283093513898, 55.44799804687501], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Hyena council members having some disagreements between each other and solve it in their way.</p>'),
         L.marker([43.55929101892889, -22.39746116101742], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Two JFT and two True Sons soldiers are in a tense situation.</p>'),
         L.marker([-11.171216299516859, 133.2552302150348], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Hyenas squabbling over loot.</p>'),
@@ -1048,7 +1306,8 @@ permalink: map.html
         L.marker([17.83941669124139, -28.75488325953484], {title: 'Black Friday Briefing', icon: iconComm }).bindPopup('<h5>Black Friday Briefing</h5><p>First POTUS briefing on the outbreak where he receives privileged information, hinting at the scope of the disaster. Government Comms 1/13</p>'),
 
         // Dark Zone
-        //L.marker([36.1733569352216, 283.53515625000006], {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Dark Zone Comms 1/10</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Dark Zone Comms 1/10</p>'),
+        L.marker([11.207139757579501, 212.28515714406973], {title: 'DC-62', icon: iconComm }).bindPopup('<h5>DC-62</h5><p>A worker goes over the manifest and is concerned about the supplies coming into Capital Station. Dark Zone Comms 1/10</p>'),
         L.marker([36.1733569352216, 283.53515625000006], {title: 'Evacuate', icon: iconComm }).bindPopup('<h5>Evacuate</h5><p>A doctor calls for help to organize an evacuation of Capital Station. Dark Zone Comms 1/10</p>'),
         L.marker([51.34433866059924, 195.0146479904652], {title: 'Guard Duty', icon: iconComm }).bindPopup('<h5>Guard Duty</h5><p>Soldier reminds his squad of their mission. Dark Zone Comms 1/10</p>'),
         // Unknown
@@ -1108,6 +1367,8 @@ permalink: map.html
 
     var foodMarkers = [
         //L.marker(, {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-23.20769212759396, 182.18261741101745], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
+        L.marker([-21.204044800093737, 181.3586421310902], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
         L.marker([55.93279246584735, 11.54296897351742], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p>Inside building</p>'),
         L.marker([-21.343826005560498, -35.185547098517425], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
         L.marker([1.7905281964069657, -24.44824229925871], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
@@ -1143,6 +1404,8 @@ permalink: map.html
 
     var waterMarkers = [
         //L.marker(, {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-0.9154881628827342, -2.3437504470348363], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
+        L.marker([-13.432366575813761, -3.251953125], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
         L.marker([-13.738379329999775, -9.514160156250002], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
         L.marker([-11.949757572335956, 92.28515625000001], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
         L.marker([-12.175409827621149, 96.7272946983576], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
@@ -1204,6 +1467,7 @@ permalink: map.html
 
     // Contents of the layer control on the righthand side
     var overlays = {
+        //"Debug": debuglayer,
         "Missions": missions,
         "Side Missions": sideMissions,
         "Safe Houses": safehouses,
