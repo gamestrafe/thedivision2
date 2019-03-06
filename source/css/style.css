@@ -31,3 +31,9 @@ footer {
     margin-top: 0.7rem;
     padding-top: 0.8rem;
 }
+
+.leaflet-control-layers-group-label {
+    border-bottom: #1d2124 1px solid;
+    font-weight: bold;
+    font-size: 1.1em;
+}
