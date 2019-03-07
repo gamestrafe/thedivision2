@@ -32,7 +32,7 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconRandomevents = iconSpecialammo = iconDzcrate = new L.Icon.Default();
+    var iconRandomevents = iconSpecialammo = iconDzcrate = iconThievesden = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
@@ -89,14 +89,15 @@ permalink: map.html
     // iconDzcrate = new DropIcon({html:''});
     iconShdterminal = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><polygon style="fill:#FFFFFF;" points="79.5,24.3 70.2,24.3 70.2,14.6 65.6,14.6 65.6,24.3 56.3,24.3 56.3,28.9 65.6,28.9 65.6,37.8 70.2,37.8 70.2,28.9 79.5,28.9 "/><path style="fill:#FFFFFF;" d="M67.5,45.7l-3.4-3.6l-1.2-2.4l0.1-5.4l-5.5,0.1L53.5,31l0.3-9.2l1.5-1.2l6.7-0.1l0.1-3.8l-5.2-2.8l-6.3-2.2l-7.1-0.5L36.2,12L32,13.9l-3.1,1.8l-3.8,3.1l3,13.3l1.2,5.2l-0.5,3l-3.3,3h-4.1V46l1.3,4l1.7,3.8l3.5,5.6l4.5,2.3l4.3,1.1l2,2.3l1.5,4.5h12.9l1.2-4.5l2.8-1.6l5.5-1.2l2.6-2l6.1-11.7v-3.6L67.5,45.7z M38.3,56.1l-3.7,0.5l-4.5-2.1l-2.6-1.4l-3.3-6.3l13.9,2.5l5.7,0.7l-1.8,3.9L38.3,56.1z M50.6,63.2h-8.2L41,60.1l5.3-4.8l5.6,4.6L50.6,63.2z M64.9,53.5l-2.6,1.4L57.8,57l-3.7-0.5l-3.6-2.1l-1.8-3.9l5.7-0.7l13.9-2.5L64.9,53.5z"/></svg>'});
 
-    // var debugMarkers = [
-    //     //L.marker([38.21516681056549, 230.50781294703486], {title: 'Debug', icon: iconShdtech}).bindPopup('')
-    // ];
-    // var debuglayer = L.layerGroup(debugMarkers);
-
     //-------------------------------------------------------------
     // Markers
     var mapLayers = [];
+
+    // var debugMarkers = [
+    //     L.marker(, {title: 'Debug', icon: iconShdtech}).bindPopup('Debug'),
+    // ];
+    // var debuglayer = L.layerGroup(debugMarkers);
+    //mapLayers.push(debuglayer);
 
     var missionMarkers = [
         L.marker([42.22851834925639, 71.71875536441804], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
@@ -259,6 +260,17 @@ permalink: map.html
     ];
     var shdterminals = L.layerGroup(shdterminalMarkers);
     mapLayers.push(shdterminals);
+
+    var thievesdenMarkers = [
+        // DZ East
+        //L.marker(, {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>'),
+        L.marker([41.672911819602085, 199.07226562500003], {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>'),
+        L.marker([14.136575651477944, 236.16210937500003], {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>'),
+        L.marker([-12.747516274952714, 246.90673828125003], {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>'),
+        L.marker([23.0999442125314, 216.47460937500003], {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>')
+    ];
+    var thievesdens = L.layerGroup(thievesdenMarkers);
+    mapLayers.push(thievesdens);
 
     var dzcrateMarkers = [
         // DZ East
@@ -1520,6 +1532,7 @@ permalink: map.html
             "Extraction Area": extractionareas,
             "DZ Landmarks": dzlandmarks,
             "SHD Terminals": shdterminals,
+            "Thieves Dens": thievesdens,
             "DZ Crates": dzcrates
         }
     };
