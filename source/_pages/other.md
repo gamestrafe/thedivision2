@@ -6,9 +6,9 @@ meta:
 
 Any tidbit that doesn't fit into another page goes here.
 
-## Clans
+## Bounties
 
-You can create clans with up to 50 accounts (each having up to 4 characters). Clans can talk over 2 voice channels, each with a maximum of 25 people in it. There is a progression system and rewards for clans that complete certain objectives. Players can create or search for clans and specify things like what activities they favor (PvP, or PvE or both) and what times they are usually on etc. 
+Once you unlock Otis Sykes in the base of operations, you can do daily and weekly bounties. There are [perks](/perks.html) to unlock more bounties and bounties of large difficulty. Year one pass holders will get an extra weekly bounty.
 
 ## Currencies
 
@@ -45,10 +45,19 @@ Random loot items you can find that can be sold for money.
 - Small Diamond
 - Silver Bracelet
 
-
 ## Weakpoints
 
-Enemies can have weak points. They usually look like a rad pouch or the likes. Hitting those will give you a yellow indicator anmd if you hit it often enough the weakpoint will detonate. This can result in an instant kill or other effects, depending on the enemies. 
+Enemies can have weak points. They usually look like a rad pouch or the likes. Hitting those will give you a yellow indicator and if you hit it often enough the weakpoint will detonate. This can result in an instant kill or other effects, depending on the enemies. 
+
+## Apparel caches
+
+You can get apparel caches in The Division 2, of which there are two types. The standard and event apparel caches.
+
+Standard apparel caches can't be bought and only gotten through gameplay. However the items that drop in those aches individually can be bought in the store. There also can be duplicate items in those apparel caches.
+
+The event apparel caches are different. They are only around for a specific time frame. You can get them the same way as standard ones, except there will never be a duplicate item in them and on top of that, you can buy them with real world currency. Once the event is over, the items that were available in it, become part of the standard apparel caches, so they can be gotten from standard caches or bought individually.
+
+All apparel caches contain only cosmetic items.
 
 ## Staff Roster
 

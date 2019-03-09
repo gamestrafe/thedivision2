@@ -54,3 +54,12 @@ Safe houses are safe locations where you have access to sell items and a stash. 
 
 - Final Epiphany (Downtown East)
 - The 1040 (Federal Triangle)
+
+## Strongholds
+
+Strongholds are the places where the factions are at their strongest. You can go in and take it over to severely weaken that faction.
+
+### Tidal Basin
+
+Final Stronghold, held by the Black Tusk faction. It's impressive and big.
+ 

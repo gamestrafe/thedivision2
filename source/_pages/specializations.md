@@ -6,9 +6,9 @@ meta:
 
 There are currently 3 Specializations available. They start coming into play once you reach level 30 and finish the last mission, little else is known about them.
 
-During year 1 there will be three more specializations released.
+During year 1 there will be 3 more specializations released.
 
-Each specialization has it's own skill tree you can unlock with points. A total of 160 points are possible to distribute among a specialization. These points are specific per specialization and do not transfer. You can respec those points at any time without cost.
+Each specialization has it's own skill tree you can unlock with points. A total of 160 points are possible to distribute among a specialization. These points are specific per specialization and do not transfer. You can respec those points at any time without cost. Points are awarded by doing certain missions and other activities.
 
 Changing specializations can be done at the quartermaster only. One character can have all specializations.
 
@@ -16,7 +16,7 @@ Changing specializations can be done at the quartermaster only. One character ca
 
 Signature weapon: TAC-20 C Rifle
 
-.50 BMG Rounds: Shots penetrate trhough all but the heaviest armored targets. Capable of detonating Weakpoints even on the way through targets. A decompression shockwave from any hit target damages other nearby hostiles for up to 400 Damage.
+.50 BMG Rounds: Shots penetrate through all but the heaviest armored targets. Capable of detonating Weakpoints even on the way through targets. A decompression shockwave from any hit target damages other nearby hostiles for up to 400 Damage.
 
 Unlocks the Drone [skill](/skills.html) "Tactician"
 
