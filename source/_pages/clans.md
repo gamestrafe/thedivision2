@@ -4,7 +4,9 @@ meta:
     description: You can form player clans in The Division 2 with up to 50 accounts. All details about clans can be found here.
 ---
 
-You can create clans with up to 50 accounts (each having up to 4 characters).
+You can create in-game clans, in the White House, after recruiting Grace Larson to your Base of Operations. Creation can be done alone, but for the progression system to kick in, you need at least 4 players in your clan.
+
+Clans can have up to 50 accounts (each having up to 4 characters) in them.
 
 Clans can talk over 2 voice channels, each with a maximum of 25 people in it. There is a clan feed available to keep everyone in the clan informed about activity and progression.
 

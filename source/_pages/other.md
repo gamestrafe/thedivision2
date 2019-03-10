@@ -73,7 +73,7 @@ Allows for [crafting](/crafting.html).
 
 ### Grace Larson
 
-Unknown. Has a shield icon, perhaps some weekly/daily missions, or PVP activities.
+Access to [Clans](/clans.html).
 
 ### Senait Ezera
 
