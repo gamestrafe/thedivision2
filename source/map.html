@@ -32,7 +32,7 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconRandomevents = iconSpecialammo = iconDzcrate = iconThievesden = new L.Icon.Default();
+    var iconRandomevents = iconSpecialammo = iconDzcrate = iconThievesden = iconStronghold = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
@@ -87,6 +87,8 @@ permalink: map.html
     // iconSpecialammo = new DropIcon({html:''});
 
     // iconDzcrate = new DropIcon({html:''});
+    // iconStronghold = new DropIcon({html:''});
+    // iconThievesden = new DropIcon({html:''});
     iconShdterminal = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><polygon style="fill:#FFFFFF;" points="79.5,24.3 70.2,24.3 70.2,14.6 65.6,14.6 65.6,24.3 56.3,24.3 56.3,28.9 65.6,28.9 65.6,37.8 70.2,37.8 70.2,28.9 79.5,28.9 "/><path style="fill:#FFFFFF;" d="M67.5,45.7l-3.4-3.6l-1.2-2.4l0.1-5.4l-5.5,0.1L53.5,31l0.3-9.2l1.5-1.2l6.7-0.1l0.1-3.8l-5.2-2.8l-6.3-2.2l-7.1-0.5L36.2,12L32,13.9l-3.1,1.8l-3.8,3.1l3,13.3l1.2,5.2l-0.5,3l-3.3,3h-4.1V46l1.3,4l1.7,3.8l3.5,5.6l4.5,2.3l4.3,1.1l2,2.3l1.5,4.5h12.9l1.2-4.5l2.8-1.6l5.5-1.2l2.6-2l6.1-11.7v-3.6L67.5,45.7z M38.3,56.1l-3.7,0.5l-4.5-2.1l-2.6-1.4l-3.3-6.3l13.9,2.5l5.7,0.7l-1.8,3.9L38.3,56.1z M50.6,63.2h-8.2L41,60.1l5.3-4.8l5.6,4.6L50.6,63.2z M64.9,53.5l-2.6,1.4L57.8,57l-3.7-0.5l-3.6-2.1l-1.8-3.9l5.7-0.7l13.9-2.5L64.9,53.5z"/></svg>'});
 
     //-------------------------------------------------------------
@@ -104,6 +106,12 @@ permalink: map.html
         L.marker([-7.819846429717617, 55.05981534719468], {title: 'Jefferson Trade Center', icon: iconMission}).bindPopup('<h5>Jefferson Trade Center</h5><p>Reactivate the ISAC node beneath the center and rescue the missing Division agent.</p>'),
         L.marker([-20.19347256143793, 142.14843571186069], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>'),
         L.marker([-74.0678691945724, 100.06252762746311], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        L.marker([3.966720021360875, -44.45794350233136], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        L.marker([-73.97097571891668, 167.57914859944967], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        L.marker([49.57693516648854, -76.08784350191729], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        L.marker([-52.16045455774705, -151.6406743028355], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        L.marker([31.690310691444743, -207.74376293806085], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        L.marker([67.93895668681523, -151.4358151005713], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
         L.marker([-61.9389554736344, 125.4264145884105], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
         L.marker([-42.13082130188811, 42.209435198288034], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>')
     ];
@@ -120,6 +128,15 @@ permalink: map.html
     ];
     var sideMissions = L.layerGroup(sideMissionMarkers);
     mapLayers.push(sideMissions);
+
+    var strongholdMarkers = [
+        L.marker([-48.16594474003922, 249.28715867783544], {title: 'Capitol Hill', icon: iconStronghold}).bindPopup('<h5>Capitol Hill</h5><p>Stronghold of the True Sons.</p>'),
+        L.marker([42.993775728757555, 138.74976888075503], {title: 'Unknown', icon: iconStronghold}).bindPopup('<h5>Unknown</h5><p>Stronghold of the Hyenas.</p>'),
+        L.marker([21.12308748175657, -287.37169208062267], {title: 'Unknown', icon: iconStronghold}).bindPopup('<h5>Unknown</h5><p>Stronghold of the Outcasts.</p>'),
+        L.marker([-62.15857036483768, -60.673532566386676], {title: 'Tidal Bassin', icon: iconStronghold}).bindPopup('<h5>Tidal Bassin</h5><p>Stronghold of the Black Tusk.</p>')
+    ];
+    var strongholds = L.layerGroup(strongholdMarkers);
+    mapLayers.push(strongholds);
 
     var controlpointMarkers = [
         L.marker([40.37444816289319, 88.65234369412066], {title: 'MLK Memorial Library', icon: iconControlpoint}).bindPopup('<h5>MLK Memorial Library</h5><p>A small church community sought refuge here but the Hyenas rammed the building with a purning car then laid siege to the survivors.</p>'),
@@ -163,13 +180,19 @@ permalink: map.html
         L.marker([44.600898821045675, 37.77831584215165], {title: 'Final Epiphany', icon: iconSafehouse }).bindPopup('<h5>Final Epiphany</h5><p>Safe house in Downtown East</p>'),
         L.marker([-10.862077594462036, 71.73320220383796], {title: 'The 1040', icon: iconSafehouse }).bindPopup('<h5>The 1040</h5><p>Safe house in Federal Triangle</p>'),
         L.marker([11.401059893847355, 243.7963027095392], {title: 'DZ East Saferoom', icon: iconSafehouse }).bindPopup('<h5>DZ East</h5><p>Safe house in Dark Zone East</p>'),
+        L.marker([-8.34921535728129, -155.62429661058144], {title: 'Unknown', icon: iconSafehouse }).bindPopup('<h5>Unknown</h5><p>Unknown Safehouse</p>'),
+        L.marker([3.648499263252229, -101.3610702963207], {title: 'Unknown', icon: iconSafehouse }).bindPopup('<h5>Unknown</h5><p>Unknown Safehouse</p>'),
+        L.marker([52.17814183489137, -186.29885545804208], {title: 'Unknown', icon: iconSafehouse }).bindPopup('<h5>Unknown</h5><p>Unknown Safehouse</p>'),
+        L.marker([-59.17584719162836, 108.51572896891959], {title: 'Unknown', icon: iconSafehouse }).bindPopup('<h5>Unknown</h5><p>Unknown Safehouse</p>'),
+        L.marker([-67.2606333444091, 173.67179836412254], {title: 'Unknown', icon: iconSafehouse }).bindPopup('<h5>Unknown</h5><p>Unknown Safehouse</p>'),
+        L.marker([15.112506262036893, 135.53225112778472], {title: 'Unknown', icon: iconSafehouse }).bindPopup('<h5>Unknown</h5><p>Unknown Safehouse</p>'),
         L.marker([31.67831515583315, -23.45551490534952], {title: 'Base of Operations', icon: iconWhitehouse }).bindPopup('<h5>White House</h5><p>Your base of operations is situated in the white house. You can upgrade skills here and participate in other activities.</p>')
     ];
     var safehouses = L.layerGroup(safehouseMarkers);
     mapLayers.push(safehouses);
 
     var settlementMarkers = [
-        L.marker([53.83341734557944, -115.90057604490669], {title: 'Unknown Settlement', icon: iconSettlement }).bindPopup('<h5>Unknown Settlement</h5><p></p>'),
+        L.marker([50.29584096827134, -115.92773437500001], {title: 'Unknown Settlement', icon: iconSettlement }).bindPopup('<h5>Unknown Settlement</h5><p></p>'),
         L.marker([-48.88388234177659, 83.43709900193092], {title: 'Unknown Settlement', icon: iconSettlement }).bindPopup('<h5>Unknown Settlement</h5><p></p>'),
         L.marker([24.650345994540757, 83.36059458553791], {title: 'The Theater', icon: iconSettlement }).bindPopup('<h5>The Theater</h5><p>Settlement in Downtown East</p>')
     ];
@@ -1499,6 +1522,7 @@ permalink: map.html
             //"Debug": debuglayer,
             "Missions": missions,
             "Side Missions": sideMissions,
+            "Strongholds": strongholds,
             "Safe Houses": safehouses,
             "Settlements": settlements,
             "Control Points": controlpoints,
