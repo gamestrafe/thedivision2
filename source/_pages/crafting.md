@@ -16,11 +16,23 @@ A total of 177 blueprints are available. 58 are weapons, 77 are mods and misc, a
 
 You craft items according to your level, so if you are level 7, your weapons and gear will also be level 7.
 
-There is a way to upgrade the workbench for higher tier items, but nothing more is known about that.
+After you progress through the game for a while, you will be awarded a blueprint for upgrading the work bench. Until you do, the workbench will only keep producing specialized items. You will also get upgrade blueprints once you reach the [endgame content](/end-game.html), for each worldtier.
+
+## Upgrade costs
+
+* Superior: ?
+* High-end: ?
+* World Tier 1: ?
+* World Tier 2: ?
+* World Tier 3: ?
+* World Tier 4: ?
+* World Tier 5: ?
 
 ## Materials
 
-You have white, green and blue materials.
+There are different types of materials. The higher the quality level the more rare it is.
+
+Quality above the blue category, can only be obtained by deconstruction of gear. Printer filament is only gained by deconstruction mods (gear mods and skill mods).
 
 White: Receiver Components, Protective Fabric
 
@@ -28,4 +40,8 @@ Green: Steel, Ceramics, Polycarbonate
 
 Blue: Carbon Fiber, Electronics, Titanium 
 
-These materials can be found in the world or gained be deconstructing items. There are no fixed locations to gain materials.
+Purple: Printer Filament
+
+Yellow: 
+
+Orange:
