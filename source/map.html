@@ -32,7 +32,7 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconRandomevents = iconSpecialammo = iconDzcrate = iconThievesden = iconStronghold = new L.Icon.Default();
+    var iconSpecialammo = iconDzcrate = iconThievesden = iconStronghold = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
@@ -130,9 +130,9 @@ permalink: map.html
     mapLayers.push(sideMissions);
 
     var strongholdMarkers = [
-        L.marker([-48.16594474003922, 249.28715867783544], {title: 'Capitol Hill', icon: iconStronghold}).bindPopup('<h5>Capitol Hill</h5><p>Stronghold of the True Sons.</p>'),
-        L.marker([42.993775728757555, 138.74976888075503], {title: 'Unknown', icon: iconStronghold}).bindPopup('<h5>Unknown</h5><p>Stronghold of the Hyenas.</p>'),
-        L.marker([21.12308748175657, -287.37169208062267], {title: 'Unknown', icon: iconStronghold}).bindPopup('<h5>Unknown</h5><p>Stronghold of the Outcasts.</p>'),
+        L.marker([-47.86222348092537, 217.9101558029652], {title: 'Capitol Hill', icon: iconStronghold}).bindPopup('<h5>Capitol Hill</h5><p>Stronghold of the True Sons.</p>'),
+        L.marker([41.24920477866789, 123.31054687500001], {title: 'District Union Arena', icon: iconStronghold}).bindPopup('<h5>District Union Arena</h5><p>Stronghold of the Hyenas. Eliminate the remaining Hyena council members in the District Union Arena. </p>'),
+        L.marker([-21.23478368572658, -252.12890267372134], {title: 'Unknown', icon: iconStronghold}).bindPopup('<h5>Unknown</h5><p>Stronghold of the Outcasts.</p>'),
         L.marker([-62.15857036483768, -60.673532566386676], {title: 'Tidal Bassin', icon: iconStronghold}).bindPopup('<h5>Tidal Bassin</h5><p>Stronghold of the Black Tusk.</p>')
     ];
     var strongholds = L.layerGroup(strongholdMarkers);
@@ -298,6 +298,7 @@ permalink: map.html
     var dzcrateMarkers = [
         // DZ East
         //L.marker(, {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
+        L.marker([-2.152813583128846, 213.88183593750003], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action. In underground parking garage</p>'),
         L.marker([10.244654445228337, 263.69384765625006], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
         L.marker([33.149815611390245, 235.42968660593036], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
         L.marker([24.926294766395593, 256.04003883898264], {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action. Inside building</p>'),
@@ -843,7 +844,8 @@ permalink: map.html
         return L.marker(data.latlng, {title: 'Small Loot', icon: iconLoot }).bindPopup('<h5>Small Loot</h5><p>Loot container, mostly containing trinkets with a chance of crafting materials and apparel. ' + data.info + '</p>');
     });
     var loot = L.layerGroup(lootMarkers);
-    mapLayers.push(loot);
+    //Way too many markers, so not enabled by default
+    // mapLayers.push(loot);
 
     // Special ammo like shock, exploding or fire ammo
     var specialammoMarkers = [
@@ -1313,7 +1315,8 @@ permalink: map.html
         return L.marker(data.latlng, {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. ' + data.info + '</p>');
     });
     var materials = L.layerGroup(materialMarkers);
-    mapLayers.push(materials);
+    // Too many markers, disabled by default
+    // mapLayers.push(materials);
 
 
     var echoMarkers = [
@@ -1405,12 +1408,7 @@ permalink: map.html
         L.marker([35.155817541145225, 59.7070311382413], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
         L.marker([34.81079492576355, 59.16137695312501], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
         L.marker([36.60380059782299, 57.85034202039243], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5>'),
-        L.marker([-24.44706179300724, -16.201171427965168], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p>Underground</p>'),
-        // Old round ones
-        L.marker([5.295181309651799, 92.98479460502092], {title: 'Components', icon: iconComponentRound }).bindPopup('<h5>Components</h5>'),
-        L.marker([35.669198936279045, 14.254522742138553], {title: 'Components', icon: iconComponentRound }).bindPopup('<h5>Components</h5>'),
-        L.marker([35.972080335886936, 58.144099680947406], {title: 'Components', icon: iconComponentRound }).bindPopup('<h5>Components</h5>'),
-        L.marker([7.0500140104532605, -6.741957475467869], {title: 'Components', icon: iconComponentRound }).bindPopup('<h5>Components</h5>')
+        L.marker([-24.44706179300724, -16.201171427965168], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p>Underground</p>')
     ];
     var components = L.layerGroup(componentMarkers);
     mapLayers.push(components);
@@ -1442,12 +1440,7 @@ permalink: map.html
         L.marker([-20.771522706127787, 75.29296869412066], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
         L.marker([-20.000865886280607, 73.33740245550872], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5>'),
         L.marker([-25.244596256845707, -16.149902343750004], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p>Underground</p>'),
-        L.marker([44.684355738151716, 91.845703125], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p>On Roof</p>'),
-        // Old round ones
-        L.marker([11.83867258662464, 119.03603089340179], {title: 'Food', icon: iconFoodRound }).bindPopup('<h5>Food</h5>'),
-        L.marker([-20.028407750587128, 74.87458300577545], {title: 'Food', icon: iconFoodRound }).bindPopup('<h5>Food</h5>'),
-        L.marker([37.7185924472827, 29.571448152530806], {title: 'Food', icon: iconFoodRound }).bindPopup('<h5>Food</h5>'),
-        L.marker([16.71687795741415, 13.093332705978655], {title: 'Food', icon: iconFoodRound }).bindPopup('<h5>Food</h5>')
+        L.marker([44.684355738151716, 91.845703125], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p>On Roof</p>')
     ];
     var food = L.layerGroup(foodMarkers);
     mapLayers.push(food);
@@ -1480,22 +1473,11 @@ permalink: map.html
         L.marker([42.03313806783642, 93.17871138453486], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>On Roof</p>'),
         L.marker([51.7157076456718, 48.7097166851163], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
         L.marker([52.82709429682323, 50.3466795757413], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
-        L.marker([52.838180043755884, 53.29101584851743], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>'),
-        // Old round ones
-        L.marker([-0.11719099456653617, 13.210303892287987], {title: 'Water', icon: iconWaterRound }).bindPopup('<h5>Water</h5>'),
-        L.marker([-15.100408978516375, 93.20447024337551], {title: 'Water', icon: iconWaterRound }).bindPopup('<h5>Water</h5>'),
-        L.marker([24.413808225041397, 118.74544987233875], {title: 'Water', icon: iconWaterRound }).bindPopup('<h5>Water</h5>'),
-        L.marker([52.102007559256485, 50.247231096613255], {title: 'Water', icon: iconWaterRound }).bindPopup('<h5>Water</h5>')
+        L.marker([52.838180043755884, 53.29101584851743], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5>')
     ];
     var water = L.layerGroup(waterMarkers);
     mapLayers.push(water);
 
-    // Random events can happen here
-    // var randomeventMarkers = [
-    //     //L.marker(, {title: 'Random Events', icon: iconRandomevents }).bindPopup('<h5>Random Events</h5><p>Several Random events can happen in this location.</p>')
-    // ];
-    // var randomevents = L.layerGroup(randomeventMarkers);
-    // mapLayers.push(randomevents);
     //-------------------------------------------------------------
 
     var division2map = L.map('thedivision2map', {
@@ -1532,7 +1514,6 @@ permalink: map.html
             "Ammo Resupply": resupply,
             "Armor Resupply": armorresupply,
             "Grenade Resupply": grenaderesupply
-            //"Random Events": randomevents
         },
         "Loot": {
             "Weapons": weapons,
