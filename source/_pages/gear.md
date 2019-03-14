@@ -66,7 +66,7 @@ These are the brands present in the game. The bonus behind each brand is tier 1 
 - Airaldi Holdings: +10% Accuracy, +10% Headshot Damage, +10% Marksman Rifle Damage
 - Alps Summit Armament: +10% Cooldown Reduction, +5% Skill Power, +15 Hive Skill Power
 - Badger Tuff: +7% Damage to Elites, +15% Armor % on Kill, +15 Chem Launcher Skill Power
-- China Light Industries Corporation (Not yet confirmed): +10% Explosive Damage, +10% Shotgun Damage, +10% Cooldown Reduction
+- China Light Industries Corporation: +10% Explosive Damage, +10% Shotgun Damage, +10% Cooldown Reduction
 - Douglas & Harding: +5% Accuracy, +10% Critical Hit Damage, +7% Critical Hit Chance
 - Fenris Group AB: +10% Assault Rifle Damage, +10% Protection from Elites, +20% Health on Kill
 - Gila Guard: +5% Total Armor, +20% Hazard Protection, +15 Pulse Skill Power

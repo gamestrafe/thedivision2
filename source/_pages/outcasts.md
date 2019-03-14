@@ -52,9 +52,14 @@ Weapon: Sub Machine Gun
 
 Unknown
 
-### Heavy
+### Heavy Weapons
 
-Unknown
+Weapon: Light Machine Gun
+
+> Came up against a few of these a while back. Can't say I'm a huge fan of theirs. Though I'd guess they're not a huge fan of mine at this point, either. Keep your head down and get your flank on. That ammo pouch makes a great target. -Agent Kelso 
+
+* the Outcasts Heavy Weapons archetype uses a light machinegun to suppress enemies and prevent them from repositioning safelty.
+- Destroying the Heavy Weapons'ammo backpack causes an ammo explosion and chaos as he tries to get things under control.
 
 ## Named Enemies
 

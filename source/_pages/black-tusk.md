@@ -14,7 +14,13 @@ Unknown.
 
 ### Rusher
 
-Unknown
+Weapon: Drone
+
+> Every time they release those drones, just think about how much it costs them. It's way more involved than a bullet. They're telling you that your death is worth a pretty significat capital outlay. - Coop Dennison
+
+The Black tusk Rusher archetype deploys suicide drones and uses a targeting laser to pick targets.
+- Destroying the Rusher's drone causes an explosion.
+- The Rusher's equipment is vulnerable to EMP.
 
 ### Assault
 
@@ -36,11 +42,23 @@ Weapon: Marksman Rifle
 
 ### Controller
 
-Unknown
+Weapon: Mini Tank
+
+> Oh, man, you know those cite little bomb disposal robots? Remember how you used to think that some day those guys would come for us? Turns out the real monsters aren't the robots. No, in fact, we're the real monsters.
+
+- he Black Tusk Controller archetype controls a minitank while staying in cover.
+- Distracting the Controller will cause the minitank to stop functioning temporarily.
+- Eliminating the Controller will disable the minitank.
+- If the mini tank is damaged, the Controller will attepmt to repair it.
 
 ### Thrower
 
-Unknown
+Weapon: Assault Rifle
+
+> I remember when I was growing up, I used to see all these segments on the military channel about air-burst grenade launchers, and thinking about how cool they were. As an adult, I'm significantly less impressed, and more than a little pissed off when they're used against me. - Agent Kelso
+
+- The Black Tusk Thrower archetype uses an airburst grenade launcher to hit targets behind cover.
+- Destroying the grenade pouch causes an explosion that kill the Thrower.
 
 ### Engineer
 
