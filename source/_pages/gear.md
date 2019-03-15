@@ -76,4 +76,18 @@ These are the brands present in the game. The bonus behind each brand is tier 1 
 - Providence Defense: +10% Skill Power, +8% Health, +5% Weapon Damage
 - Richter & Kaiser GmbH: +10% Hazard Protection, +20% Pistol Damage, +15 Shield Skill Power
 - Sokolov Concern: +10% SMG Damage, +8% Critical Hit Damage, +15 Seeker Skill Power
+- Yaahl Gear: +10% Weapon Handling, +8% Hazard Protection, +5% Weapon Damage
 - Wyvern Wear: +7% Critical Hit Damage, +15% Drone Skill Power, +10% Critical Hit Chance
+
+
+## Gear Sets
+
+The most powerful buffs, you can get from gear sets. These are never branded and ahave bonuses for 5 and 6 pieces.
+
+The following gear sets are known:
+
+- Ongoing Directive
+- Hard Wired
+- True Patriot
+
+Gamespot has a video about the True Patriot on their site.

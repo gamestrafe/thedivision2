@@ -64,9 +64,30 @@ Weapon: Assault Rifle
 
 Unknown
 
+### Medic
+
+Weapon: Submachine gun
+
+> A friend of mine at college was working on some top secret project for the Defense Departement. Said it would revolutionize battlefield triage. Make it possible to get to downed soldiers in remote or exposed locations. I guess he was working on what these guys use. - Coop Dennison
+
+- The Black Tusk Medic archetype throws EMP jammers and attempts to revive downed allies via a medical drone.
+- Destroying the drone on the Medic's backpack prevents ranged revival, and forces the Medic to run to downed allies to revive them.
+- Destroying the EMP jammer pouch sets off and EMP that disrupts the Medic.
+
 ### Heavy
 
 Unknown
+
+### Tank
+
+Weapon: Minigun
+
+> The worst. Literally. See them coming, be like 'nope nope nope' and head the other way. If you have no other option, then you gotta aim for the belt and get that support station they're carrying around. Still though. Not worth it. - Agent Kelso
+
+- The Black Tusk Tank Archetype attempts to stay at range, using his minigun to  suppress enemy targets.
+- The Tank has a support station mounted on his back which feeds a constant supply of health recovery. Destroying the support station stops his health regenerarion.
+- The Tank's minigun ammo belt never requires a reload. Breaking the belt forces a reload.
+
 
 ## Named Enemies
 

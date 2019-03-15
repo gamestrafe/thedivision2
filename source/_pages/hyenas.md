@@ -58,6 +58,17 @@ Weapon: Shotgun
 
 Unknown
 
+### Shield
+
+Weapon: Pistol
+
+> Of all the annoying sons of bitches I've come across, these have to be the worst. Had a merry time with one of these jerks just outside Doko, and I can't say I loved it. Just kept circling each other for ages looking for an opening. Of course I could have just dropped a present through their mail slot, but I must have been off my game that day. - Agent Kelso
+
+- The Hyenas Shield archetype takes cover behind a massive riot shield while facing down his enemies with a sidearm.
+- Destroying the shield is quite difficult but can be accomplished.
+- Aiming for the feet can cause the Shield to stagger.
+- A Small window allows for visibility, but is also a vulnerability.
+
 ## Named Enemies
 
 * Misty (Controller)

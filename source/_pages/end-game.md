@@ -14,12 +14,12 @@ As soon as the Black Tusk invasion starts, the Theater settlement will be under 
 
 Besides the [specializations](/specializations.html) progression, you can rank up in world tiers. This is done by completing the 4 stronghold missions (one additional one, Tidal Bassin). To do so, you must first complete 2 linked missions that were invaded by the Black Tusk before attacking the actual stronghold.
 
-Each tier has a required Gear Score to attack a strong hold. It will rise with each completed strong hold. You can find gear and weapons, as well as craft them to up your gear score.
+Each tier has a required Gear Score to attack a strong hold. It will rise with each completed strong hold. You can find gear and weapons, as well as craft them to up your gear score. These are the gear scores you need to advance to that world tier.
 
 - World Tier 2: 275 Gear Score
-- World Tier 3: ? Gear Score
-- World Tier 4: ? Gear Score
-- World Tier 5: ? Gear Score
+- World Tier 3: 325 Gear Score
+- World Tier 4: 375 Gear Score
+- World Tier 5: 425 Gear Score
 
 These are the strong holds and their linked missions:
 

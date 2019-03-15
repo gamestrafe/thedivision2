@@ -38,6 +38,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Enhanced AUG A3P | ~6.2k | 725 | 25 | 2.0s | 0-30m | long | 9mm | long | 9mm |
 | MP5A2 | ~7.5k | 800 | 32 | 2.1s | 0-21m | long | 9mm | short | 9mm |
 | MP5-N | ~5.6k | 800 | 32 | 2.0s | 0-21m | short | 9mm | short | 9mm |
+| MP5 ST | ~10.0k | 800 | 32 | 1.0s | 0-21m | short | 9mm | long | 9mm |
 | Police UMP-45 | ~7.2k | 600 | 30 | 2.2s | 0-30m | long | .45 ACP | long | .45 |
 | Tactical UMP-45 | ~7.9k | 600 | 30 | 2.2s | 0-30m | long | .45 ACP | long | .45 |
 | Emeline's Guard - P90 | ~4.8k | 900 | 50 | 2.2s | 0-30m | short | 5.56 | - | - |
@@ -68,7 +69,8 @@ The values below for damage are taken from weapons found at the moment, and then
 | FAL SA-58 | ~9.7k | 650 | 20 | 2.1s | 10-45m | long | 7.62 | long | 7.62 |
 | FAL SA-58  Para| ~6.6k | 650 | 20 | 2.2s | 10-45m | long | 7.62 | long | 7.62 |
 | FAMAS 2010 | ~10.7k | 900 | 30 | 2.2s | 10-45m | long | 5.56 | short | - |
-| Mk16 | ~8.7k | 625 | 30 | 2.3s | 10-45m | yes (not sure length) | 5.56 | long | 5.56 |
+| Mk16 | ~8.7k | 625 | 30 | 2.3s | 10-45m | long | 5.56 | long | 5.56 |
+| Tactical Mk16 | ~10.0k | 625 | 30 | 2.0s | 10-45m | long | 5.56 | long | 5.56 |
 | Police M4 | ~5.7k | 850 | 30 | 2.1s | 10-45m | long | 5.56 | long | 5.56 |
 | AK-M | ~11.0k | 600 | 30 | 2.3s | 10-45m | long | - | short | 7.62 |
 | Black Market AK-M | ~11.0k | 600 | 30 | 2.3s | 10-45m | long | 7.62 | short | 7.62 |
@@ -151,8 +153,9 @@ The values below for damage are taken from weapons found at the moment, and then
 | Police 686 Magnum | ~23.3k | 350 | 6 | 1.5s | 0-30m | short | - | - | revolver drum |
 | D50 | ~26.2.8k | 150 | 9 | 1.9s | 0-30m | short | - | - | - |
 | Military M9 | ~13.3k | 450 | 15 | 1.7s | 0-30m | - | 9mm | - | pistol |
-| Officer's M9 A1 | ~10.5k | 385 | 20 | 1.7s | 0-30m | micro | 9mm | gdget | pistol |
+| Officer's M9 A1 | ~10.5k | 385 | 20 | 1.7s | 0-30m | micro | 9mm | gadget | pistol |
 | M1911 | ~19.3k | 310 | 7 | 1.9s | 0-30m | - | - | - | pistol |
+| Tactical M1911 | ~19.8k | 310 | 7 | 1.5s | 0-30m | micro | .45 | gadget | pistol |
 | Px4 Storm Type F | ~10.4k | 450 | 17 | 1.9s | 0-30m | - | 9mm | gadget | pistol |
 | Px4 Storm Type T | ~11.1k | 380 | 17 | 1.9s | 0-30m | - | .45 | gadget | pistol |
 | Snubnosed Diceros | ~28.3k | 180 | 6 | 1.8s | 0-30m | - | - | - | revolver drum |

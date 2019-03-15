@@ -24,8 +24,8 @@ After you progress through the game for a while, you will be awarded a blueprint
 * High-end: ? (Upgrades to 250 Gear Score)
 * World Tier 1: 2509 Credits, 75 Polycarbonate, 75 Titanium, 10 Printer Filament
 * World Tier 2: 2794 Credits, 90 Steel, 80 Electronics, 15 Printer Filament (Upgrades to 300-330 Gear Score)
-* World Tier 3: ?
-* World Tier 4: ?
+* World Tier 3: 3577 Credits, 100 Ceramics, 90 Titanium, 20 Printer Filament (Upgrades to 350-385 Gear Score)
+* World Tier 4: 4672 Credits, 120 Polycarbonate, 120 Electronics, 25 Printer Filament (Upgrades to 400-440 Gear Score)
 * World Tier 5: ?
 
 ## Materials
