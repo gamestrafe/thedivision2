@@ -6,6 +6,18 @@ meta:
 
 This page contains all the patch notes that were published since the release of the game. Newest patch notes are always at the top.
 
+## Patch from 16. March 2019
+
+* Bug fixes
+** Implemented a fix that should reduce occurrences of client crashes when using skills
+** Fixed an issue where players could be stuck in the wrong World Tier if they completed Strongholds without meeting the required Gear Score while in a group
+** Fixed an issue where players wouldn't be able to talk to agent Kelso at the Castle Settlement
+** Fixed an issue where players could obtain multiple Ivory Keys from the same source
+** Fixed an issue where map progress would not be saved when completing Open World activities and Side missions in another players’ instance.
+** Fixed an exploit that allowed players to loot Supply Drops multiple times
+** Fixed a bug where players could buy blueprints repeatedly at the vendors by logging out and back in
+** Fixed an issue where combining the Dialed in talent with the Emet Mask could lead to greatly increased Accuracy and Stability
+
 ## Patch from 14. March 2019
 
 * Weapons

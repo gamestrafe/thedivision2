@@ -42,6 +42,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Police UMP-45 | ~7.2k | 600 | 30 | 2.2s | 0-30m | long | .45 ACP | long | .45 |
 | Tactical UMP-45 | ~7.9k | 600 | 30 | 2.2s | 0-30m | long | .45 ACP | long | .45 |
 | Emeline's Guard - P90 | ~4.8k | 900 | 50 | 2.2s | 0-30m | short | 5.56 | - | - |
+| P90 | ~4.8k | 900 | 50 | 2.2s | 0-30m | short | 5.56 | - | - |
 
 ## Light Machine Gun
 
