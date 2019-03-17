@@ -32,7 +32,7 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconSpecialammo = iconDzcrate = iconThievesden = iconStronghold = new L.Icon.Default();
+    var iconSpecialammo = iconSecret = iconDzcrate = iconThievesden = iconStronghold = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
@@ -172,6 +172,8 @@ permalink: map.html
     mapLayers.push(controlpoints);
 
     var undergroundMarkers = [
+        //L.marker(, {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
+        L.marker([-58.091428725969706, -111.44164397601963], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-3.951938849284128, 124.73144710063936], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([-23.634459770994653, 124.96032737195493], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
         L.marker([50.758487455409266, 12.293701171875002], {title: 'Underground Entrance', icon: iconUnderground}).bindPopup('<h5>Underground Entrance</h5>'),
@@ -423,6 +425,7 @@ permalink: map.html
         L.marker([63.10635619630118, -246.07538114652692], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
         // General overworld
         //L.marker(, {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
+        L.marker([34.35855337478354, 109.04299275714489], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p></p>'),
         L.marker([-54.76267040025495, 8.159242302251878], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside locked fence area</p>'),
         L.marker([60.18159093443633, -142.74533643535446], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Inside building</p>'),
         L.marker([57.75498408243655, -138.6327612784076], {title: 'Weapon', icon: iconWeapon }).bindPopup('<h5>Weapon crate</h5><p>Rapell down through the large hole in the block north of here</p>'),
@@ -538,6 +541,12 @@ permalink: map.html
         L.marker([64.56260051925477, -261.5259023629693], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         // General overworld
         //L.marker(, {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-67.91137337883974, 187.22899394914174], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-52.79829892418792, -134.267376110733], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([34.36611072883117, 117.86131567861473], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-43.79224530011801, -38.11521024788039], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-42.29356419217008, -171.7309285959766], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Just below the treehouse</p>'),
+        L.marker([-42.350425122434565, -172.5549330766763], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In treehouse</p>'),
         L.marker([33.04550781490999, -109.84507668881263], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside building</p>'),
         L.marker([33.04243794952696, -111.03331274892723], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inside building</p>'),
         L.marker([51.686178717113954, -69.7998111021054], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Inisde building, next to SHD cache</p>'),
@@ -656,6 +665,10 @@ permalink: map.html
     // Crates that have been airdropped and now hang above somewhere. Shoot them to get to the loot
     var airdropMarkers = [
         //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([-68.04319983388645, 186.2768625537557], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging of a structure that is part of a building.</p>'),
+        L.marker([-57.645400667406605, -118.93779909619376], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging from a tree</p>'),
+        L.marker([-33.59936909989475, -154.2728028781989], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree over a pond</p>'),
+        L.marker([-11.278978534619197, -47.90048023897403], {title: 'Airdrop Crate: Material', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree next to some roofed picnic places</p>'),
         L.marker([60.88057255390123, -138.12743465644448], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging from the crane inside the large hole here, you need to rapell down to get it</p>'),
         L.marker([-44.99588261816546, -68.30559014983926], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging from a column</p>'),
         L.marker([68.31550166238712, -157.51098632812503], {title: 'Airdrop Crate (Gear)', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>In a tree in Washington Circle</p>'),
@@ -663,7 +676,7 @@ permalink: map.html
         L.marker([-1.5963305303332007, 0.8166501671075822], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the south side of a tree, crafting ressources.</p>'),
         L.marker([-33.5901101244216, 17.211914956569675], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the north edge of the building.</p>'),
         L.marker([26.544308558627424, -4.010009681805968], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the southern wall. Contains crafting materials.</p>'),
-        L.marker([-2.064954958478901, -33.61083962023259], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree, soutside.</p>'),
+        L.marker([-2.064954958478901, -33.61083962023259], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree, soutside.</p>'),
         L.marker([-11.31126020931928, 73.25683593750001], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging over the west entrance on the roof. Use the east exit and go up the ladder to reach it.</p>'),
         L.marker([25.254638850140893, 56.41479492187501], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging from the roof in the atrium of this building. You have to access this area through escalators or a door in the northeast corner.</p>')
     ];
@@ -1157,6 +1170,7 @@ permalink: map.html
     // Keys for locked boxes
     var keyMarkers = [
         //L.marker(, {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. </p>'),
+        L.marker([5.0690578267840465, -120.79832701453924], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. Underground, against a wall, in a room besides the large one here</p>'),
         L.marker([-0.6445172097942051, -119.5056134631236], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. Underground, bottom of stairs right at the wall next to it</p>'),
         L.marker([-5.353522022964616, -121.9226059690118], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. Underground</p>'),
         L.marker([-50.82675848236328, -60.76171830296518], {title: 'Keys', icon: iconKey }).bindPopup('<h5>Keys</h5><p>A box that contains keys which allow you to unlock special boxes in the world. Underground</p>'),
@@ -1174,6 +1188,13 @@ permalink: map.html
     // Random crafting material
     var markersMaterial = [
         //{latlng: , info: ''},
+        {latlng: [-57.99451369567817, -110.80078268605128], info: 'Toolbox'},
+        {latlng: [-53.21041902248468, -121.21955001518101], info: 'Dufflebag'},
+        {latlng: [-55.090943622278544, -122.48654737285446], info: 'Flightcase'},
+        {latlng: [-50.39232394237833, -120.48267309990153], info: 'Toolbox'},
+        {latlng: [-51.66567997698883, -126.56248506433768], info: 'Toolbox'},
+        {latlng: [-53.282726617879334, -131.03002738189696], info: 'Toolbox'},
+        {latlng: [-54.12800770791496, -135.673715724707], info: 'Flightcase'},
         {latlng: [33.343531176772515, -111.2028641764562], info: 'Dufflebag, inside building'},
         {latlng: [51.30772406111006, -70.4004030713853], info: 'Toolbox'},
         {latlng: [50.971111725557826, -69.7155548216073], info: 'Flightcase'},
@@ -1556,6 +1577,7 @@ permalink: map.html
         // JTF
         L.marker([-2.5369504197829738, -14.154052846133713], {title: 'True Sons Debrief', icon: iconComm }).bindPopup('<h5>True Sons Debrief</h5><p>Manny Ortega calls over radio, giving offsite leadership an update on the True Sons situation, in early spring. (Inside one of the containers, stairs lead up from the south) JTF Comms 1/8</p>'),
         L.marker([36.18539982838856, -1.003418415784836], {title: 'SITREP', icon: iconComm }).bindPopup('<h5>SITREP</h5><p>Manny Ortega gives his superior officer an update on the situation in DC, in early summer. JTF Comms 2/8</p>'),
+        L.marker([-41.831371070892, -35.89610274983795], {title: 'Ortega Deployed', icon: iconComm }).bindPopup('<h5>Ortega Deployed</h5><p>Manny Ortega\'s last phone call with his mother, before being deployed. JTF Comms 2/8</p>'),
         // Theater
         L.marker([23.015779809926133, 68.96118164062501], {title: 'Settling Down', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>A small group of survivors decide to make the Theater their home. Theater Comms 1/8</p>'),
         L.marker([-14.455959529838914, 126.8990796286861], {title: 'Strategy', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>Odessa Sawyer and Agent Kelso talk shop and make a plan for keeping the Theater settlement safe. Theater Comms 2/8</p>'),
@@ -1602,8 +1624,10 @@ permalink: map.html
         L.marker([-1.7992300533726577, 16.00341835990548], {title: 'Encrypted intel file', icon: iconComm }).bindPopup('<h5>Encrypted intel file</h5><p>Complete all story missions to decrypt. (On table) Unknown Comms 1/10</p>'),
         L.marker([-65.98671451107464, 235.7849116623402], {title: 'Secret Service', icon: iconComm }).bindPopup('<h5>Secret Service</h5><p>Two Secret Service agents tend to President Mendez. Top floor of the Rayburn building, take the stairs in the south of this area and follow them to the second floor. Unknown Comms 1/10</p>'),
         // New York
+        L.marker([36.4566360115962, 116.00338735543515], {title: 'Turning Point', icon: iconComm }).bindPopup('<h5>Turning Point</h5><p>Captain Benitez considers the death of Bliss and the rise of Keener. New York Comms 1/8</p>'),
         L.marker([51.66403781658121, -69.64505069508158], {title: 'NYC Crew', icon: iconComm }).bindPopup('<h5>NYC Crew</h5><p>Captain Benitez gives a status report on the Division staff in Manhattan. Inside building, next to SHD cache. New York Comms 1/8</p>'),
         // Division
+        L.marker([-0.4101518529065752, -43.432415173233], {title: 'Broad-Spectrum Antiviral', icon: iconComm }).bindPopup('<h5>Broad-Spectrum Antiviral</h5><p>Kelso briefs Manny on the DCD broad-spectrum antiviral. Division Comms 1/10</p>'),
         L.marker([14.861634528785908, 115.09094232693316], {title: 'Odessa Recruited', icon: iconComm }).bindPopup('<h5>Odessa Recruited</h5><p>Odessa Sawyer, a former SHD agent, is recruited to be the leader of the Theater settlement. (In apartement above ground, use scaffolding on the west side of the building, ladder is in the south of scaffolding.) Division Comms 1/10</p>'),
         L.marker([37.38761202629987, 97.28393554687501], {title: 'Sawyer\'s Reunited', icon: iconComm }).bindPopup('<h5>Sawyer\'s Reunited</h5><p>Agent Odessa Sawyer is reunited with her daughter after being discharged from active duty. Division Comms 1/10</p>'),
         L.marker([-10.487933809236177, -33.85253883898258], {title: 'Kelso\'s Apartment', icon: iconComm }).bindPopup('<h5>Kelso\'s Apartment</h5><p>Agent Kelso watches the news reporting on the outbreak. (On the hood of a SUV) Division Comms 1/10</p>'),
@@ -1629,6 +1653,7 @@ permalink: map.html
 
     var componentMarkers = [
         //L.marker(, {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
+        L.marker([-51.65671505306768, -125.28075884664747], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
         L.marker([59.91281195625767, -59.12110447275918], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
         L.marker([57.42523844263191, -66.06443033868105], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p>Inside building, access west in the alley</p>'),
         L.marker([43.234532101947885, 107.27783158421518], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p>Underground</p>'),
@@ -1668,6 +1693,8 @@ permalink: map.html
 
     var foodMarkers = [
         //L.marker(, {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
+        L.marker([-57.0367451800622, -121.10591433071458], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
+        L.marker([-57.19580862317618, -119.95595932932093], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
         L.marker([33.32134852669881, -109.84130485983444], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p>Inside building</p>'),
         L.marker([55.70029121720161, -59.00024624707659], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
         L.marker([-50.59951062284123, -59.76013183593751], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
@@ -1718,6 +1745,19 @@ permalink: map.html
 
     var waterMarkers = [
         //L.marker(, {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-53.02139221293761, -129.5287886795336], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-57.36998956588136, -119.18703584586963], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-52.935408598106434, -131.71507295496266], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-52.58963658392546, -130.79229109222027], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-51.885546849450634, -130.94236146223233], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-51.72887661835203, -130.1502150350485], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-53.07199440908711, -125.23725662546347], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-53.92373927596351, -132.39622529871266], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-53.80612890541936, -131.6733075787635], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-53.67498225222198, -129.98290594334685], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-53.70103012418081, -129.46291053921647], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-53.87399564378844, -128.2176880364292], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([-54.21812363058421, -127.19244964015506], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
         L.marker([-52.034471318987904, -64.92919921875001], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground</p>'),
         L.marker([-52.009682599150494, -61.65527343750001], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground</p>'),
         L.marker([-50.52856095930519, -59.0203856304288], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground</p>'),
@@ -1756,8 +1796,26 @@ permalink: map.html
     var water = L.layerGroup(waterMarkers);
     mapLayers.push(water);
 
-    // Secrets
-    //L.marker([-35.22767235493584, 108.0981443077326], {title: 'Call of the hunter', icon: iconSecret }).bindPopup('<h5>Call of the hunter</h5><p>In this spot is a small cafe. Look at the counter in the center. On the side of the counter opening in the south, there is a lever below the green espresso machine, facing west. Pull it when it's pitch dark outside and you'll meet three hunters.</p>')
+    var secretMarkers = [
+        //L.marker(, {title: '', icon: iconSecret }).bindPopup('<h5></h5><p></p>'),
+        L.marker([-50.137011694768404, -8.65354808141141], {title: 'Hydden Hotel: Conclusion', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: Conclusion</h5><p>After pressing the buttons on all 6 hotels, go to the Washington Monument, clear the controlpoint if you have not yet, then go to the supply room (down the elevator shaft inside the monument). Straight ahead and a bit to your right is a ladder. Take it to the upper platform and there is a button active now. Press it and a door will open that is inside the elevator shaft so you can claim your prize.</p>'),
+        L.marker([-42.239363486339634, -172.18148820480064], {title: 'Hydden Hotel: Mista Treehouse', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: Mista Treehouse</h5><p>In this area are a few parked trucks side by side, from there look west and you see trees and some brushes. Go just left of the tree you see there and you\'ll walk up to the tree house. Sign says: "Take a treemendous nap - M&F Hydden"</p>'),
+        L.marker([-49.73394823978759, 55.58342352188991], {title: 'Hydden Hotel: The Rockin\' Pete', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: The Rockin\' Pete</h5><p>Underground in the Metro Ruins control point. While in there, go to the eastern end but stay on the lower level. Go inside the train that is on the southern rail and the switch as at the end of the train. Sign say: "Don\'t touch my bike -P.Hydden"</p>'),
+        L.marker([-34.125447565116126, -151.04737180230697], {title: 'Hydden Hotel: Zi BBQ Joint', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: Zi BBQ Joint</h5><p>To the east is a building and an underground access marker. Just west of that is a wall with some crates stacked against. Vault over that (There is also a plush parrot sitting there) and you found it. Sign says: "Take a sausage, NOT my gear. - M.Hydden"</p>'),
+        L.marker([-39.362615985707826, -44.06250287210254], {title: 'Hydden Hotel: Poopy Town', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: Poopy Town</h5><p>In the middle of a camp here, entrance is a container above, look southwest and you\'ll see a baloon with an H also flying above there. Sign says: "Enjoy the fluffys :) - R&S Hydden"</p>'),
+        L.marker([-22.16027399761364, -35.86658260555384], {title: 'Hydden Hotel: Vosberg', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: Vosberg</h5><p>entrace is facing south, a tan colored 2 high stack of containers. Sign says: "We ain\'t here right now, but feel free to grab a beer, put on sum tunes, anything you like! But do NOT touch the big weapon crate behind the bed! Love Max & Sam"</p>'),
+        L.marker([-10.073431408789888, -18.594362840839565], {title: 'Hydden Hotel: The McMilicamp', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: The McMilicamp</h5><p>Entrance is facing south below the command post here, on it\'s eastern side. Sign says "Thee is on the table, no loot in the crate! - Mx. Hydden"</p>'),
+        // Hunters
+        L.marker([-67.8092445060001, 211.999534505069], {title: 'Hunter: Wraith', icon: iconSecret }).bindPopup('<h5>Hunter: Wraith</h5><p>Go to this small pool in front of a memorial at night. Stand in the pool, then look east. Shoot the light shining at the memorial to your right. Get out of the pool and stand in front of the memorial looking west, just behind where you shot out the light. Use the salute emote and the hunter will spawn right in the middle of the pool. Uses assault drone and firefly. Drops the Wraith Mask</p>'),
+        L.marker([-52.382305628707854, -128.9893639899042], {title: 'Hunter: Ghoul Part 2', icon: iconSecret }).bindPopup('<h5>Hunter: Ghoul Part 2</h5><p>Go here at night. You will see the light bulb from far away hanging here from a small platform, turning on and off. Shoot that lightbulb and the hunter will spawn in right there in that spot, so don\'t stand on the platform. Drops the Ghoul Mask.</p>'),
+        L.marker([-37.78229277893652, -147.85389935661368], {title: 'Hunter: Ghoul Part 1', icon: iconSecret }).bindPopup('<h5>Hunter: Ghoul Part 1</h5><p>This is underground. Just a bit southeast is an underground access or you can also go through the building just northwest. If you take the tunnel, go north once you are down the ladder. In the room you will find an echo and besides that a table with a Laptop on it you can interact with. It will turn on a lamp above the laptop and you can see a map illuminated. That\'s the clue for the next hunter. You\'ll have to wait for night and then go there, see part 2 marker.</p>'),
+        L.marker([24.800033178851, 56.147433938277835], {title: 'Hunter: Demon', icon: iconSecret }).bindPopup('<h5>Hunter: Demon</h5><p>Go to this building. You need to reach the atrium. In the northeast of this block you find escalators which you can use or a door that also leads to the atrium. Inside, there is a raised area with some greenery and two large boulders, stand between those boulders. Look west and up. There are man shaped silhouette targets in 4 windows, forming a diagonal from left top to botom right. Shoot them in that order and the Hunter spawns. He uses an assault turret and airburst seeker mines. Drops the Demon mask.</p>'),
+        L.marker([43.718180920237856, -218.46676547237348], {title: 'Hunter: Revenant and Midas', icon: iconSecret }).bindPopup('<h5>Hunter: Revenant and Midas</h5><p>At this spot there is a pool. The shape of the pool has two rounded areas that overlap and create a narrow spot. Stand in that narrow spot, there is a rectangular drain there. Face north and start doing jumping jacks. Two hunters will spawn almost immediately. If they don\'t, try a bit different position. Time of day doesn\'t matter. One is using a flame turret, the other a blinding firefly and a healing seeker mine. They drop the Revenant and Midas masks.</p>'),
+        L.marker([33.23409295522519, 113.89894497744083], {title: 'Hunter: Crimson', icon: iconSecret }).bindPopup('<h5>Hunter: Crimson</h5><p>Here inside the building is a counter. Stand inside it, look south and there is a screen and to the right of it something that looks like a military radio. You get an interact prompt when you are in front of it, no highlighting. Once you did, you have to run trhough the courtyard north and to the other building part where there is another counter with a phone on the left side of the counter. Interact with that, within a short enough time and the hunter spawns. He is using bomber drones and foam against you. Killing him wil lgive you a Crimson Mask and potentially an ivory key.</p>'),
+        L.marker([-35.22767235493584, 108.0981443077326], {title: 'Hunter: ?', icon: iconSecret }).bindPopup('<h5>Hunter: ?</h5><p>In this spot is a small cafe. Look at the counter in the center. On the side of the counter opening in the south, there is a lever below the green espresso machine, facing west. Pull it when it\'s pitch dark outside and you\'ll meet three hunters.</p>')
+    ];
+    var secrets = L.layerGroup(secretMarkers);
+    mapLayers.push(secrets);
 
     //-------------------------------------------------------------
 
@@ -1779,7 +1837,6 @@ permalink: map.html
     division2map.on('click', function(e) { if (e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']').on('move', function(e) {e.target.bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']');}); }} );
 
     // Contents of the layer control on the righthand side
-    var captionDzlandmarks = ' ('+dzlandmarks.getLayers().length+')';
     var overlays = {
         "General": {
             //"Debug": debuglayer,
@@ -1811,7 +1868,8 @@ permalink: map.html
         "Collectibles": {
             "Echos": echos,
             "Comms": comms,
-            "Artifacts": artifacts
+            "Artifacts": artifacts,
+            "Secrets": secrets
         },
         "Dark Zone": {
             "Dark Zone Checkpoints": checkpoints,
