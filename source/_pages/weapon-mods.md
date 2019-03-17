@@ -2,6 +2,8 @@
 title: Weapon Mods in The Division 2
 meta:
     description: You can unlock weapon mods in The Division 2, which alter the way your weapons behave. All stats and how to get the mods.
+    og:
+        image: weapon-mods.jpg
 ---
 
 Weapon mods can be crafted in the Base of Operations or rewarded through [perks](/perks.html) and [projects](/projects.html). Once you have them, you can use them in as many weapons as you want. Each mod has a positive and a negative effect. Mods fit on guns depending on slots they have, calibers and rail lengths.
