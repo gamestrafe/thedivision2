@@ -29,6 +29,8 @@ permalink: map.html
 
 <div id="thedivision2map"></div>
 
+
+
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
@@ -96,7 +98,16 @@ permalink: map.html
     var mapLayers = [];
 
     // var debugMarkers = [
-    //     L.marker(, {title: 'Debug', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([60.95177680956699, 89.60449218750001], {title: 'Water', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([55.55349545845371, 95.22949218750001], {title: 'Food', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([57.326521225217064, 49.79003906250001], {title: 'Food 2', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([58.238717823301876, 15.086975097656252], {title: 'Echo', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([58.332567131957916, 16.083984375000004], {title: 'key underground', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([59.147769484619786, 15.358886718750002], {title: 'Weapon 1', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([62.08331486294795, 66.66503906250001], {title: 'Weapon 2', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([59.734253447591364, 96.85546875000001], {title: 'SHD Tech 1', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([33.760882000869195, 111.53320312500001], {title: 'SHD Tech 2', icon: iconShdtech}).bindPopup('Debug'),
+    //     L.marker([-30.334953881988564, 156.66503906250003], {title: 'SHD Tech 3', icon: iconShdtech}).bindPopup('Debug')
     // ];
     // var debuglayer = L.layerGroup(debugMarkers);
     //mapLayers.push(debuglayer);
@@ -1202,20 +1213,27 @@ permalink: map.html
     //mapLayers.push(armorresupply);
 
     // Boxes locked with keys you have to find. Keys and boxes are assigned to factions
-    var lockedboxMarkers = [
-        //L.marker(, {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. </p>'),
-        L.marker([-55.912273305882394, -64.85009785741569], {title: 'Black Tusk Locked Box', icon: iconLockedbox }).bindPopup('<h5>Black Tusk Locked Box</h5><p>Requires a Black Tusk key to open. In a locked, fenced off area here.</p>'),
-        L.marker([0.615222552406841, 176.90625026822093], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Underground in police station (Access through notrth) at the very bottom where the riot gear is stored, during the side mission here you get from Odessa</p>'),
-        L.marker([11.616425745163633, 111.84082031250001], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. On roof, access through alley in the north.</p>'),
-        L.marker([-17.41690429960896, 95.32836914062501], {title: 'True Sons Locked Box', icon: iconLockedbox }).bindPopup('<h5>True Sons Locked Box</h5><p>Requires a True Sons key to open. On the ground in front of some stacked U.S. Army containers.</p>'),
-        L.marker([-18.34061261052319, 109.79003950953486], {title: 'True Sons Locked Box', icon: iconLockedbox }).bindPopup('<h5>True Sons Locked Box</h5><p>Requires a True Sons key to open. In National archives, in the corridor with the resupply, just go a bit more west, against the north wall.</p>'),
-        L.marker([42.814220304383234, 99.25781272351743], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Groundlevel of library, under the stairs in the eastern part.</p>'),
-        L.marker([-4.0832328893671646, 29.626464396715164], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Inside Jefferson Trade Center, back of the garage, as you leave it.</p>'),
-        L.marker([50.33615413054519, 64.6728514507413], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. On the roof of Grand Washington Hotel, just as you get into open air, around the corner to your right.</p>'),
-        L.marker([46.62941304764099, 69.16259743273258], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. In Grand Washington Hotel mission. After you go upstairs after clearing the lobby, in the wallway where you encounter the next enemies, there are broken walls on your left. Go there and circle around to your right to get to the bathroom of that suite where this box is.</p>'),
-        L.marker([26.68345993311305, -1.1059570871293547], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open. Under the stairs of the big building, behind a locked fenced area you can accesss from the trench around the building.</p>'),
-        L.marker([1.5454073338820984, 95.25146350264552], {title: 'Hyenas Locked Box', icon: iconLockedbox }).bindPopup('<h5>Hyenas Locked Box</h5><p>Requires a Hyenas key to open.</p>')
+    var markersLockedbox = [
+        //{latlng: , faction: 'Black Tusk', info:''},
+        {latlng: [-55.912273305882394, -64.85009785741569], faction: 'Black Tusk', info:'In a locked, fenced off area here.'},
+        //{latlng: , faction: 'Hyenas', info: ''},
+        //{latlng: , faction: 'Hyenas', info: 'In Hyenas strong hold, in the mall section, when you enter on the right side behind the doors, far back right corner.'},
+        {latlng: [0.615222552406841, 176.90625026822093], faction: 'Hyenas', info: 'Underground in police station. Access through north side. Box is in a room at the very bottom where the riot gear is stored next to the garage, during the side mission here you get from Odessa, but stays open after you completed it.'},
+        {latlng: [11.616425745163633, 111.84082031250001], faction: 'Hyenas', info: 'On roof, access through alley in the north.'},
+        {latlng: [42.814220304383234, 99.25781272351743], faction: 'Hyenas', info: 'Ground level of library, under the stairs in the eastern part.'},
+        {latlng: [-4.0832328893671646, 29.626464396715164], faction: 'Hyenas', info: 'Inside Jefferson Trade Center, back of the garage, to the right of the door in the corner, as you leave the garage.'},
+        {latlng: [50.33615413054519, 64.6728514507413], faction: 'Hyenas', info: 'On the roof of Grand Washington Hotel, just as you get into open air, around the corner to your right.'},
+        {latlng: [46.62941304764099, 69.16259743273258], faction: 'Hyenas', info: 'In Grand Washington Hotel mission. After you go upstairs after clearing the lobby, in the hallway where you encounter the next enemies, there are broken walls on your left. Go there and circle around to your right to get to the bathroom of that suite where this box is.'},
+        {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
+        {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
+        //{latlng: , faction: 'Outcasts', info:''},'},
+        //{latlng: , faction: 'True Sons', info:''},
+        {latlng: [-17.41690429960896, 95.32836914062501], faction: 'True Sons', info:'On the ground in front of some stacked U.S. Army containers.'},
+        {latlng: [-18.34061261052319, 109.79003950953486], faction: 'True Sons', info:'In National Archives entrance, in the corridor with the resupply, just go a bit more west, against the north wall.'}
     ];
+    var lockedboxMarkers = markersLockedbox.map(function(data) {
+        return L.marker(data.latlng, {title: data.faction + ' Locked Box', icon: iconLockedbox }).bindPopup('<h5>' + data.faction + ' Locked Box</h5><p>Requires a ' + data.faction + ' key to open. ' + data.info + '</p>');
+    });
     var lockedboxes = L.layerGroup(lockedboxMarkers);
     mapLayers.push(lockedboxes);
 
@@ -1244,9 +1262,7 @@ permalink: map.html
         {latlng: [26.81754923006788, 117.49511707574132], info:'In staircase off the lobby, on a wall facing south.'},
         {latlng: [-21.68474141861156, -13.853759430348877], info:'Underground, in a room where tunnel gets wider, southeast corner.'},
         {latlng: [-25.98425047145087, -18.559570088982586], info:'Underground. Top level in that room, south wall.'},
-        {latlng: [-24.260202010998896, -23.408203013241295], info:'Underground.'},
-        {latlng: [23.105853825001702, 66.48010259494185], info:'?'},
-        {latlng: [23.11343554431633, 65.80627444200218], info:'?'}
+        {latlng: [-24.260202010998896, -23.408203013241295], info:'Underground.'}
     ];
     var keyMarkers = markersKey.map(function(data) {
         return L.marker(data.latlng, {title: 'Key box', icon: iconKey }).bindPopup('<h5>Key box</h5><p>' + data.info + '</p>');
