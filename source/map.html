@@ -192,7 +192,7 @@ permalink: map.html
         {latlng: [-33.819300395192364, -138.09377524595118]},
         {latlng: [-39.09604316592321, -145.02386864270542]},
         {latlng: [-35.29588658329289, -149.02279573211624]},
-        {latlng: [-22.948300655659686, -187.49482853130598]},
+        {latlng: [-23.712941645317752, -184.03857462108138]},
         {latlng: [-29.753054009519307, -203.5238493730876]},
         {latlng: [58.12896635492072, -231.35886677882323]},
         {latlng: [60.53290463101747, -217.40626329328452]},
@@ -240,12 +240,20 @@ permalink: map.html
 
     var shdtechMarkers = [
         //L.marker(, {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p></p>'),
+
         // Downtown West
         L.marker([53.90865262501197, -128.11523482203486], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building. Door is in the alley to the north and is locked from outside.</p>'),
         L.marker([57.36998956588136, -64.49000564896416], {title: 'SHD Tech (Unmarked)', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building. Door is in the alley to the north and is locked from outside.</p>'),
         L.marker([51.54861245864871, -69.53979563990065], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building. Access through the alley and over fence.</p>'),
         L.marker([33.26701541121317, -110.8263223087226], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building.</p>'),
 
+        // Judiciary Square
+        L.marker([23.277682480290775, 186.48193359375003], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>On roof, access through locked alley in the east.</p>'),
+
+        // West End
+        L.marker([67.16910236698808, -235.97534179687503], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Under bridge</p>'),
+
+        // Not assigned to area
         L.marker([6.759088770195253, 92.03430181369185], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>In underground lab of Bureau sidemission</p>'),
         L.marker([26.719502100545558, 15.369873046875002], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Part of the Empire Autunum Hotel Sidemission.</p>'),
         L.marker([-19.670136315895327, -19.248046875000004], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Underground in a locked side room (branches off to the north from tunnel).</p>'),
@@ -480,8 +488,13 @@ permalink: map.html
         {latlng: [77.86438708667778, -244.55107931696296], info: ''},
         {latlng: [70.73985419314374, -241.37101543357025], info: ''},
         {latlng: [63.10635619630118, -246.07538114652692], info: ''},
-        // General overworld
+        // General overworld (XWEP)
         //{latlng: , info: ''},
+        {latlng: [64.61445899874353, -80.04199191927911], info: 'Underground, upper area, north wall'},
+        {latlng: [-31.653381399663985, -186.361083984375], info: 'Underground, in locked sideroom'},
+        {latlng: [60.109765533377434, -228.3991698548198], info: 'Underground, lowest level'},
+        {latlng: [67.23040923325578, -236.73339860513812], info: 'Under bridge'},
+        {latlng: [22.267747280449505, 186.22265635058287], info: 'In room after first ladder'},
         {latlng: [34.35855337478354, 109.04299275714489], info: ''},
         {latlng: [-54.76267040025495, 8.159242302251878], info: 'Inside locked fence area'},
         {latlng: [60.18159093443633, -142.74533643535446], info: 'Inside building'},
@@ -599,8 +612,23 @@ permalink: map.html
         L.marker([69.60354921683603, -242.32175034452786], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         L.marker([63.872940222457785, -258.5923863072317], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         L.marker([64.56260051925477, -261.5259023629693], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
-        // General overworld
+        // General overworld (XGEAR)
         //L.marker(, {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        //L.marker([63.6560114418332, -81.65478542447092], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, middle of big room</p>'),
+        L.marker([61.59385542227488, -79.12353515625001], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground in tunnel</p>'),
+        L.marker([63.34621599679805, -78.45996133983137], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, eastern wall</p>'),
+        L.marker([64.33800470573111, -77.60302841663362], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, northeast corner of this complex</p>'),
+        L.marker([-27.95850244710208, -192.20800761133432], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, northwall upper platforms</p>'),
+        L.marker([-29.321846390062213, -191.64770504459742], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, in large room behind console near center raised platform</p>'),
+        L.marker([-32.160733015407935, -199.62158203125003], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, in corner of sideroom off large room</p>'),
+        L.marker([-33.36540226062787, -193.6164550110698], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground</p>'),
+        L.marker([-31.913002824781707, -186.78295925259593], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, in locked side room</p>'),
+        L.marker([-8.513662381686313, -149.8688964173198], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([60.09552761436385, -224.94506835937503], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, lowest level</p>'),
+        L.marker([59.942906591992596, -231.24462917447093], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground, below stairs</p>'),
+        L.marker([62.42497228956528, -234.31201145052913], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground in side room</p>'),
+        L.marker([63.95667333648766, -223.67285236716273], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([67.43701362980661, -236.32250983268025], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Under bridge</p>'),
         L.marker([-67.91137337883974, 187.22899394914174], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         L.marker([-52.79829892418792, -134.267376110733], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         L.marker([34.36611072883117, 117.86131567861473], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
@@ -772,8 +800,20 @@ permalink: map.html
         {latlng: [77.60749633363197, -246.40133233762126], info: 'Integrated Circuit Box'},
         {latlng: [70.94774661463039, -241.34393296192442], info: 'Integrated Circuit Box'},
         {latlng: [77.26659212172264, -231.18896695020163], info: 'Integrated Circuit Box, at the bottom of some stairs here'},
-        // Overworld
+        // Overworld (XSMA)
         //{latlng: , info: ''},
+        //{latlng: , info: ', Underground'},
+        {latlng: [61.86650904378642, -67.49999865889549], info: 'Large Backpack, Underground'},
+        {latlng: [61.381988213931685, -75.54199218750001], info: 'Large Backpack, Underground'},
+        {latlng: [61.825040379926115, -86.75244100391868], info: 'Small Backpack, Underground'},
+        {latlng: [-28.78788099983434, -191.47412119433287], info: 'LArge backpack, underground'},
+        {latlng: [-30.30650325984881, -203.1635741516948], info: 'Small Backpack, underground'},
+        {latlng: [-31.889685177073364, -188.1859129853547], info: 'Locker, underground in locked sidreoom'},
+        {latlng: [60.48862151331216, -224.90991197526458], info: 'Large BAckpack, underground'},
+        {latlng: [60.66564431620051, -229.46704074740413], info: 'Small Backpack, Underground'},
+        {latlng: [59.31637471031642, -230.526123046875], info: 'LArge Backpack, Underground'},
+        {latlng: [60.56321869574685, -222.04248100519183], info: 'Small BNackpack, underground'},
+        {latlng: [63.32649484701057, -233.23535129427913], info: 'Small BNackpack, underground'},
         {latlng: [32.68870195447088, -110.52520751953126], info: 'Rolling suitcase, inside building'},
         {latlng: [32.78265637602964, -110.86853774126867], info: 'Small backpack, inside building'},
         {latlng: [-64.82401350146715, 233.30566406250003], info: 'Garbage can'},
@@ -1108,6 +1148,12 @@ permalink: map.html
     // Special ammo like shock, exploding or fire ammo
     var specialammoMarkers = [
         //L.marker(, {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
+        L.marker([62.333289944668444, -83.81689466536045], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground, lower level</p>'),
+        L.marker([62.52651311952011, -78.02490234375001], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground, upper level</p>'),
+        L.marker([64.66903906071602, -82.11621053516865], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground, upper level</p>'),
+        L.marker([61.86443733761866, -84.12451118230821], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
+        L.marker([61.86443733761866, -84.12451118230821], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
+        L.marker([22.629222364728207, 186.22265651822093], {title: 'Special Ammo: High Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In room after first ladder</p>'),
         L.marker([53.969012350740314, -129.71191361546516], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside building</p>'),
         L.marker([13.539200668930816, -71.15478537976743], {title: 'Special Ammo (Shock)', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
         L.marker([-65.59321574578482, 226.0949702560902], {title: 'Special Ammo (Explosive)', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground Parking Garage</p>'),
@@ -1131,6 +1177,7 @@ permalink: map.html
     // Ammo resupply box, fills up all normal ammo
     var resupplyMarkers = [
         //L.marker(, {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
+        L.marker([61.14323525084058, -222.09081977605825], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Underground</p>'),
         L.marker([-64.83024534914233, 234.01245094835764], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
         L.marker([-28.80612521794869, -22.866211049258716], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
         L.marker([-18.77104983817173, 111.37207075953484], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. National Archives entrance.</p>'),
@@ -1172,6 +1219,7 @@ permalink: map.html
     // Resupplies grenades
     var grenaderesupplyMarkers = [
         //L.marker(, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        L.marker([-24.81465966705302, -184.06054727733138], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Underground</p>'),
         L.marker([-54.673830965931145, -60.29296875000001], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
         L.marker([-2.4162756547063857, 45.7104756500831], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
         L.marker([6.700978950502446, 85.78857377171518], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
@@ -1192,6 +1240,7 @@ permalink: map.html
 
     var armorresupplyMarkers = [
         //L.marker(, {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([62.41683391149385, -85.3154294192791], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Underground</p>'),
         L.marker([-53.479329491560314, -60.30029386281968], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
         L.marker([0.7580345254974181, 43.776842253083466], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
         L.marker([15.679458126914906, 42.55016676374536], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
@@ -1217,7 +1266,9 @@ permalink: map.html
         //{latlng: , faction: 'Black Tusk', info:''},
         {latlng: [-55.912273305882394, -64.85009785741569], faction: 'Black Tusk', info:'In a locked, fenced off area here.'},
         //{latlng: , faction: 'Hyenas', info: ''},
-        //{latlng: , faction: 'Hyenas', info: 'In Hyenas strong hold, in the mall section, when you enter on the right side behind the doors, far back right corner.'},
+        {latlng: [56.472200705473945, -84.15087997913362], faction: 'Hyenas', info: 'In southwest corner of the supply room of the Toxic Alley Controlpoint'},
+        {latlng: [22.362269228953778, 186.85107462108138], faction: 'Hyenas', info: 'On top of building. Enter trhough alley east here, between concrete and brick building, trhough the locked gate. Go up the ladders, then open the door in the south wall and go up the second ladder.'},
+        {latlng: [43.513501457245034, 135.9711916744709], faction: 'Hyenas', info: 'In Hyenas strong hold, in the mall section, when you enter on the right side behind the doors, far back right hand corner.'},
         {latlng: [0.615222552406841, 176.90625026822093], faction: 'Hyenas', info: 'Underground in police station. Access through north side. Box is in a room at the very bottom where the riot gear is stored next to the garage, during the side mission here you get from Odessa, but stays open after you completed it.'},
         {latlng: [11.616425745163633, 111.84082031250001], faction: 'Hyenas', info: 'On roof, access through alley in the north.'},
         {latlng: [42.814220304383234, 99.25781272351743], faction: 'Hyenas', info: 'Ground level of library, under the stairs in the eastern part.'},
@@ -1237,9 +1288,15 @@ permalink: map.html
     var lockedboxes = L.layerGroup(lockedboxMarkers);
     mapLayers.push(lockedboxes);
 
-    // Keys for locked boxes
+    // Keys for locked boxes (XKEY)
     var markersKey = [
         //{latlng: , info:'Underground'},
+        {latlng: [61.556202743030404, -70.84863267838956], info:'Underground, on a wall facing east'},
+        {latlng: [-30.319781187144685, -201.35302741080523], info:'Underground'},
+        {latlng: [-34.394218566129936, -194.0009761601687], info:'Underground'},
+        {latlng: [-29.726222319395504, -190.73144517838958], info:'Underground, in large room, eastern wall between a console and a white water storage container'},
+        {latlng: [-25.16517336866393, -188.36718756705525], info:'Underground'},
+        {latlng: [-24.347096633808512, -186.07324205338955], info:'Underground'},
         {latlng: [-41.92026341806905, 20.056640356779102], info:'Underground'},
         {latlng: [-46.905245546429214, 22.855956964194775], info:'Underground, after going down the stairs, just through the door way on your left, a wall facing south.'},
         {latlng: [-55.68501544906398, -22.491211071610454], info:'Underground'},
@@ -1270,9 +1327,77 @@ permalink: map.html
     var keys = L.layerGroup(keyMarkers);
     mapLayers.push(keys);
 
-    // Random crafting material
+    // Random crafting material (XMAT)
     var markersMaterial = [
         //{latlng: , info: ''},
+        {latlng: [61.47656322978603, -64.4282229244709], info: 'Toolbox'},
+        {latlng: [61.49963731889532, -65.10058633983137], info: 'Dufflebag, Underground'},
+        {latlng: [61.8830842868911, -72.47021511197092], info: 'Toolbox, Underground'},
+        {latlng: [59.45400987014288, -75.30468776822092], info: 'Toolbox, Underground'},
+        {latlng: [62.48187744898419, -79.93652343750001], info: 'Toolbox, Underground'},
+        {latlng: [61.97820262548382, -79.75195325911046], info: 'Flightcase, Underground, upper level of big room'},
+        {latlng: [63.99138116376246, -77.01416015625001], info: 'Flightcase, Underground'},
+        {latlng: [64.2312244059255, -85.46484388411046], info: 'Flightcase, Underground'},
+        {latlng: [61.99058773620413, -83.56201171875001], info: 'Flightcase, big room, Underground'},
+        {latlng: [62.76277259676003, -85.76367147266865], info: 'Dufflebag, Underground'},
+        {latlng: [61.5854909052027, -92.53564305603504], info: 'Toolbox, Underground'},
+        {latlng: [62.05449683701792, -100.05908176302913], info: 'Flightcase, Underground'},
+        {latlng: [-29.850173125689896, -191.6685790009797], info: 'Dufflebag, Underground'},
+        {latlng: [-30.55090807988473, -191.90148929134014], info: 'Toolbox, Underground'},
+        {latlng: [-28.527587726775085, -190.7720947265625], info: 'Dufflebag, Underground'},
+        {latlng: [-28.871615796795343, -195.11279270052913], info: 'Dufflebag, Underground'},
+        {latlng: [-28.902397228558485, -194.16357435286045], info: 'Toolbox, Underground'},
+        {latlng: [-29.179023342294077, -192.77270514518025], info: 'Flightcase, Underground'},
+        {latlng: [-27.55113803736003, -192.59033203125003], info: 'Toolbox, Underground'},
+        {latlng: [-27.12954608573721, -194.59863334894183], info: 'Toolbox, Underground, may be partially obscured by a card board box'},
+        {latlng: [-27.87404349938584, -195.15673801302913], info: 'Toolbox, Underground'},
+        {latlng: [-29.92827799354741, -196.66406236588958], info: 'Toolbox, Underground'},
+        {latlng: [-29.634591224263353, -197.77148477733138], info: 'Flightcase, Underground'},
+        {latlng: [-29.22505472246101, -198.64599622786048], info: 'Flightcase, Underground'},
+        {latlng: [-30.641693261923134, -199.7050778567791], info: 'Toolbox, Underground'},
+        {latlng: [-29.519934452146625, -203.7700192630291], info: 'Yoolbox, Underground'},
+        {latlng: [-31.858895905386653, -199.2744139954448], info: 'Flightcase, Underground'},
+        {latlng: [-29.481686998276242, -203.4426271542907], info: 'Flightcase, Underground'},
+        {latlng: [-30.486550842588485, -204.39184550195932], info: 'Flightcase, Underground'},
+        {latlng: [-30.977609668259074, -199.31396484375003], info: 'Flightcase, Underground'},
+        {latlng: [-34.39059313536814, -198.69873046875003], info: 'Toolbox, Underground'},
+        {latlng: [-34.444971376362034, -196.46630845963955], info: 'Dufflebag, Underground'},
+        {latlng: [-33.72616725996139, -193.062744140625], info: 'Flightcase, Underground'},
+        {latlng: [-31.531726144517158, -187.51684583723548], info: 'Toolbox, Underground'},
+        {latlng: [-30.964421462908433, -188.8857423886657], info: 'Flightcase, Underground'},
+        {latlng: [-28.619245773158255, -188.80664069205525], info: 'Dufflebag, Underground'},
+        {latlng: [-24.559115397542808, -187.05322265625003], info: 'Flightcase, underground'},
+        {latlng: [-24.58709033920962, -183.29589843750003], info: 'Toolbox, Underground'},
+        {latlng: [60.436626490906626, -225.66577155143023], info: 'Flightcase, Underground'},
+        {latlng: [59.81389472751936, -224.63964840397242], info: 'Flightcase, Underground'},
+        {latlng: [61.027434726675274, -224.36499036848545], info: 'Flightcase, Underground'},
+        {latlng: [60.45505076712376, -223.31030253320932], info: 'Toolbox, Underground'},
+        {latlng: [59.71542158390285, -224.48144517838958], info: 'Toolbox, Underground'},
+        {latlng: [60.1666553664983, -230.06689433008435], info: 'Toolbox, Underground'},
+        {latlng: [59.69214411155145, -226.72045905143025], info: 'Flightcase, Underground'},
+        {latlng: [60.046194922935896, -231.73461914062503], info: 'Flightcase, Underground'},
+        {latlng: [59.998986120604464, -230.53491197526455], info: 'Toolbox, underground'},
+        {latlng: [58.13650099688629, -231.1567382980138], info: 'Flightcase, underground'},
+        {latlng: [57.685358975551196, -232.14990220963955], info: 'Flightcase, underground'},
+        {latlng: [58.69749315638164, -232.59375013411048], info: 'Flightcase, underground'},
+        {latlng: [61.244874631943794, -231.89941406250003], info: 'Flightcase, underground'},
+        {latlng: [60.3617375310987, -233.01562540233138], info: 'Toolbox, underground'},
+        {latlng: [61.94515189741439, -231.92138671875003], info: 'Toolbox, underground'},
+        {latlng: [60.031929699115615, -217.58642591536048], info: 'Toolbox, underground'},
+        {latlng: [61.49544295314055, -219.41015638411048], info: 'Toolbox, underground'},
+        {latlng: [61.2343018854426, -222.50390678644183], info: 'Flightcase, Underground'},
+        {latlng: [61.40303016260308, -221.89306586980825], info: 'Flightcase, Underground'},
+        {latlng: [62.298581128718226, -233.89013685286048], info: 'Flightcase, Underground'},
+        {latlng: [62.82104135851521, -233.82421888411048], info: 'Flightcase, Underground'},
+        {latlng: [62.81200720277133, -234.33618150651458], info: 'Toolbox, underground'},
+        {latlng: [64.00871952355872, -235.64355455338958], info: 'Toolbox, underground'},
+        {latlng: [63.683299789961666, -237.4189449101687], info: 'Toolbox, underground'},
+        {latlng: [62.186013857194226, -221.63818359375003], info: 'Flightcase'},
+        {latlng: [64.02219676072858, -221.9721675664187], info: 'Flightcase'},
+        {latlng: [67.16569191044009, -236.41040045768025], info: 'Dufflebag'},
+        {latlng: [21.99908185836153, 187.9420165345073], info: 'Dufflebag'},
+        {latlng: [22.2941790516604, 187.2191161103547], info: 'Toolbox, in room after first ladder'},
+        {latlng: [21.926740156519532, 186.94335937500003], info: 'Flightcase, on top of the roof'},
         {latlng: [-57.99451369567817, -110.80078268605128], info: 'Toolbox'},
         {latlng: [-53.21041902248468, -121.21955001518101], info: 'Dufflebag'},
         {latlng: [-55.090943622278544, -122.48654737285446], info: 'Flightcase'},
@@ -1639,7 +1764,6 @@ permalink: map.html
         {latlng: [18.98602092726497, -1.1791983246803286], info: 'Toolbox next to low wall'},
         {latlng: [-6.060367214278058, -23.8623046875], info: 'Toolbox outside a tent'}
     ];
-
     var materialMarkers = markersMaterial.map(function(data) {
         return L.marker(data.latlng, {title: 'Crafting Material', icon: iconMaterial }).bindPopup('<h5>Crafting Material</h5><p>Random crafting material loot. ' + data.info + '</p>');
     });
@@ -1692,6 +1816,7 @@ permalink: map.html
         // Campus
         L.marker([53.66412432842649, -111.785888671875], {title: 'Food Scarcity', icon: iconComm }).bindPopup('<h5>Food Scarcity</h5><p>Henry Hayes, the leader of the Campus settlement, laments the food scarcity and is reassured that they will find a way to feed the community. Campus Comms 1/8</p>'),
         L.marker([56.54731402263233, -120.85693314671518], {title: 'Building Community', icon: iconComm }).bindPopup('<h5>Building Community</h5><p>Henry Hayes, the leader of the Campus settlement, announces the community and lays out a new plan of action. Campus Comms 1/8</p>'),
+        L.marker([64.14128631522323, -79.2509762942791], {title: 'Help Wanted', icon: iconComm }).bindPopup('<h5>Help Wanted</h5><p>Henry Hayes, the leader of the Campus settlement, confides in another civilian that they need help. Campus Comms 1/8</p>'),
         // Dark Zone
         //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Dark Zone Comms 1/10</p>'),
         //DZ West
@@ -1739,6 +1864,9 @@ permalink: map.html
 
     var componentMarkers = [
         //L.marker(, {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
+        L.marker([62.30062404328347, -223.80468763411048], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
+        L.marker([63.30083816132726, -224.89013604819775], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
+        L.marker([63.37183226679281, -223.99804674088958], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
         L.marker([-51.65671505306768, -125.28075884664747], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
         L.marker([59.91281195625767, -59.12110447275918], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p></p>'),
         L.marker([57.42523844263191, -66.06443033868105], {title: 'Components', icon: iconComponent }).bindPopup('<h5>Components</h5><p>Inside building, access west in the alley</p>'),
@@ -1779,6 +1907,7 @@ permalink: map.html
 
     var foodMarkers = [
         //L.marker(, {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
+        L.marker([67.4319545112495, -235.83251953125003], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
         L.marker([-57.0367451800622, -121.10591433071458], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
         L.marker([-57.19580862317618, -119.95595932932093], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p></p>'),
         L.marker([33.32134852669881, -109.84130485983444], {title: 'Food', icon: iconFood }).bindPopup('<h5>Food</h5><p>Inside building</p>'),
@@ -1831,6 +1960,10 @@ permalink: map.html
 
     var waterMarkers = [
         //L.marker(, {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
+        L.marker([63.32452192826963, -80.59570312500001], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground, middle of big room</p>'),
+        L.marker([-29.678508091033635, -191.35546864941722], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground, in large room</p>'),
+        L.marker([-34.53913566969573, -194.52831907197836], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground</p>'),
+        L.marker([-27.566721430409707, -188.02661139518025], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p>Underground</p>'),
         L.marker([-53.02139221293761, -129.5287886795336], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
         L.marker([-57.36998956588136, -119.18703584586963], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
         L.marker([-52.935408598106434, -131.71507295496266], {title: 'Water', icon: iconWater }).bindPopup('<h5>Water</h5><p></p>'),
