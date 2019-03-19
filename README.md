@@ -11,7 +11,10 @@ Clone the project locally:
 
 Optionally: You can run a virtual box with all requirements in it, by bringing it up using `vagrant up`
 
-Under windows you will need the NFS plugin, it will prompt you and tell you how to install it. Also don't worry about getting the message file not found when starting, that's normal under windows.
+Under windows you will need the NFS plugin, it will prompt you and tell you how to install it. Also don't worry about getting the message file not found when starting, that's normal under windows. You probably want these two plugins under windows:
+
+- `vagrant plugin install vagrant-hostmanager`
+- `vagrant plugin install vagrant-winnfsd`
 
 Edit the MD files in source/_pages and that's it. This project uses [Sculpin](https://sculpin.io/) as a generator if you want to look up some more on that. If you add a page you also have to add a link to it in the place you think works best. All pages are automatically added to the sitemap.
 
