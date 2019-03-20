@@ -150,8 +150,26 @@
 
         <script src="/js/jquery-3.3.1.min.js"></script>
         <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/magnific.min.js"></script>
 
         {% block scripts %}
+        <script>
+            $(document).ready(function() {
+                $('.image-link').magnificPopup(
+                    {
+                        type:'image',
+                        mainClass: 'mfp-with-zoom',
+                        closeOnContentClick: true,
+                        zoom: {
+                            enabled: true
+                        }
+                    }
+                );
+                console.log('ready');
+            });
+
+        </script>
+
         {% endblock %}
 
         {% block scripts_after %}
