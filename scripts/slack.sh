@@ -47,4 +47,6 @@ WEBHOOK_DATA='[
 	}
 ]'
 
+echo -e "$WEBHOOK_DATA"
+
 (curl --fail --progress-bar -X POST -H 'Content-type: application/json' --data "$WEBHOOK_DATA" "$1" && echo -e "Webhook sent successfully to slack") || echo -e "Webhook to slack failed"
