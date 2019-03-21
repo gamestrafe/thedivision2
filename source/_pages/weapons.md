@@ -42,7 +42,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | Police UMP-45 | ~7.2k | 600 | 30 | 2.2s | 0-30m | long | .45 ACP | long | .45 |
 | Tactical UMP-45 | ~7.9k | 600 | 30 | 2.2s | 0-30m | long | .45 ACP | long | .45 |
 | Emeline's Guard - P90 | ~4.8k | 900 | 50 | 2.2s | 0-30m | short | 5.56 | - | - |
-| P90 | ~4.8k | 900 | 50 | 2.2s | 0-30m | short | 5.56 | - | - |
+| P90 | ~5.6k | 900 | 50 | 2.2s | 0-30m | short | 5.56 | - | - |
 
 ## Light Machine Gun
 
@@ -68,7 +68,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | CTAR-21 | ~5.4k | 900 | 30 | 2.0s | 10-45m | short | 5.56 | side | 5.56 |
 | FAL | ~8.3k | 650 | 20 | 2.3s | 10-45m | long | 7.62 | long | 7.62 |
 | FAL SA-58 | ~9.7k | 650 | 20 | 2.1s | 10-45m | long | 7.62 | long | 7.62 |
-| FAL SA-58  Para| ~6.6k | 650 | 20 | 2.2s | 10-45m | long | 7.62 | long | 7.62 |
+| FAL SA-58 Para | ~6.6k | 650 | 20 | 2.2s | 10-45m | long | 7.62 | long | 7.62 |
 | FAMAS 2010 | ~10.7k | 900 | 30 | 2.2s | 10-45m | long | 5.56 | short | - |
 | Mk16 | ~8.7k | 625 | 30 | 2.3s | 10-45m | long | 5.56 | long | 5.56 |
 | Tactical Mk16 | ~10.0k | 625 | 30 | 2.0s | 10-45m | long | 5.56 | long | 5.56 |
@@ -84,6 +84,7 @@ The values below for damage are taken from weapons found at the moment, and then
 | AUG A3-CQC | ~6.8k | 680 | 30 | 2.0s | 10-45m | long | 5.56 | short | 5.56 |
 | ACR-E | ~6.2k | 650 | 30 | 2.2s | 10-45m | long | 5.56 | long | 5.56 |
 | ACR | ~6.6k | 650 | 30 | 2.2s | 10-45m | long | 5.56 | long | 5.56 |
+| F2000 | ~5.4k | 850 | 30 | 2.0s | 10-45m | long | 5.56 | - | 5.56 |
 
 ## Marksman Rifle
 

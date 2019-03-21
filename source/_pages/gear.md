@@ -41,6 +41,7 @@ Starting at Specialized gear, it can also have talents. Higher quality gear can 
 - Clutch: Critical hits restore 15% health and repair 2% armor (Requires: While using an AR/SMG/LMG)
 - Destructive: +20% explosive damage
 - Devastating: +5% weapon damage
+- Efficient: Using an armor kit has a 50% chance to not consume the armor kit. Requires no other active talents affecting armor kits.
 - Entrench: Headshots from cover repair 5% of your armor. (Requires using a rifle/marksman weapon)
 - Hard Hitting: +15% damage to elites
 - Hardened: +10% Armor
@@ -51,6 +52,7 @@ Starting at Specialized gear, it can also have talents. Higher quality gear can 
 - Self Adjusting: +20% armor regeneration
 - Spotter: +10% weapon damage to pulsed enemies
 - Surgical +8% critical hit chance
+- Tech support: Kills by active skills grant +25% Skill Damage for 10s (Requires: 6 or more batteries)
 - Terminate: Depleting an enemies armor grants +35% skill damage for 15s
 - To Order: Grenades can now be "cooked" by holding the fire button, making them explode earlier
 - Unbreakable: 25% of max armor is repaired when your armor is depleted. Armor kits used within the next 5s are not consumed. (Requirement: No other active talents affecting armor kits)
@@ -76,9 +78,8 @@ These are the brands present in the game. The bonus behind each brand is tier 1 
 - Providence Defense: +10% Skill Power, +8% Health, +5% Weapon Damage
 - Richter & Kaiser GmbH: +10% Hazard Protection, +20% Pistol Damage, +15 Shield Skill Power
 - Sokolov Concern: +10% SMG Damage, +8% Critical Hit Damage, +15 Seeker Skill Power
-- Yaahl Gear: +10% Weapon Handling, +8% Hazard Protection, +5% Weapon Damage
 - Wyvern Wear: +7% Critical Hit Damage, +15% Drone Skill Power, +10% Critical Hit Chance
-
+- Yaahl Gear: +10% Weapon Handling, +8% Hazard Protection, +5% Weapon Damage
 
 ## Gear Sets
 
