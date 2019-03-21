@@ -30,7 +30,6 @@ permalink: map.html
 <div id="thedivision2map"></div>
 
 
-
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
@@ -113,7 +112,7 @@ permalink: map.html
     //mapLayers.push(debuglayer);
 
     var missionMarkers = [
-        L.marker([42.22851834925639, 71.71875536441804], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
+        L.marker([42.22851834925639, 71.71875536441804], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><a href="/images/missions/grand-washington-hotel-exterior.png" class="image-link"><img src="/images/missions/grand-washington-hotel-exterior.thumb.jpg" alt="Grand Washington Hotel Exterior"></a><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
         L.marker([-7.819846429717617, 55.05981534719468], {title: 'Jefferson Trade Center', icon: iconMission}).bindPopup('<h5>Jefferson Trade Center</h5><p>Reactivate the ISAC node beneath the center and rescue the missing Division agent.</p>'),
         L.marker([-20.19347256143793, 142.14843571186069], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>'),
         L.marker([-74.0678691945724, 100.06252762746311], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
@@ -132,7 +131,7 @@ permalink: map.html
     var sideMissionMarkers = [
         //L.marker(, {title: '', icon: iconSidemission}).bindPopup('<h5></h5><p></p><p><b>Rewards:</b>  XP, Blueprint: </p>'),
         L.marker([16.41851134440335, 168.0432127788663], {title: 'Judiciary Square Metro Station', icon: iconSidemission}).bindPopup('<h5>Judiciary Square Metro Station</h5><p>Marcela discovered a Black Tusk operation in the metro station and requested reinforcements.</p><p><b>Rewards:</b> 5 SHD Tech, 124650 XP, Blueprint: Defensive System: Reisistance</p>'),
-        L.marker([-66.34339243671715, 223.0957026779652], {title: 'Rayburn House', icon: iconSidemission}).bindPopup('<h5>Rayburn House</h5><p>Investigate the reason for the True Sons presence. Given by Drone Crontoller after REaching World Tier 1.</p><p><b>Rewards:</b> 5 SHD Tech, 124650 XP, Blueprint: Defensive Protocol: Resilience</p>'),
+        L.marker([-66.34339243671715, 223.0957026779652], {title: 'Rayburn House', icon: iconSidemission}).bindPopup('<h5>Rayburn House</h5><p>Investigate the reason for the True Sons presence. Given by Drone Crontoller after Reaching World Tier 1.</p><p><b>Rewards:</b> 5 SHD Tech, 124650 XP, Blueprint: Defensive Protocol: Resilience</p>'),
         L.marker([-34.58498328591662, -22.917479127645496], {title: 'Medical Camp Attack', icon: iconSidemission}).bindPopup('<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.</p><p><b>Rewards:</b> Blueprint: Loud Vent Brake .45</p>'),
         L.marker([40.83597917676427, 97.25097924470903], {title: 'MLK Library Community', icon: iconSidemission}).bindPopup('<h5>MLK Library Community</h5><p>Help the MLK Library community.</p><p><b>Rewards:</b> Blueprint: Improvised Kneepads, Theater Upgrade: Game Corner, 1935 XP, Boss loot: 1 green equipment item</p>'),
         L.marker([-14.916477539564463, 113.65722566843036], {title: 'National Archives', icon: iconSidemission}).bindPopup('<h5>National Archives</h5><p>Recover important documents from the archives</p><p><b>Rewards:</b> Blueprint: Compensator 9mm, Theater Upgrade: Rescued Art, 2970 XP</p>'),
@@ -1922,6 +1921,19 @@ permalink: map.html
 
     // Debug, to easy add a marker
     division2map.on('click', function(e) { if (e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']').on('move', function(e) {e.target.bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']');}); }} );
+
+    division2map.on('popupopen', function() {
+        $('.image-link').magnificPopup(
+            {
+                type:'image',
+                mainClass: 'mfp-with-zoom',
+                closeOnContentClick: true,
+                zoom: {
+                    enabled: true
+                }
+            }
+        );
+    });
 
     // Contents of the layer control on the righthand side
     var overlays = {
