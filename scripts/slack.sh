@@ -29,7 +29,7 @@ WEBHOOK_DATA='[
 		"type": "section",
 		"text": {
 			"type": "mrkdwn",
-			"text": "*<'"$TRAVIS_BUILD_WEB_URL"'|Job #'"$TRAVIS_JOB_NUMBER"' (Build #'"$TRAVIS_BUILD_NUMBER"') '"$STATUS_MESSAGE"' - '"$TRAVIS_REPO_SLUG"'>*\\n'"$COMMIT_SUBJECT"'\\n'"${COMMIT_MESSAGE//$'\\n'/ }"\\n\\n"$CREDITS"'"
+			"text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*'\\n"$COMMIT_SUBJECT"\\n"${COMMIT_MESSAGE//$'\n'/ }"'"
 		}
 	},
     {
@@ -38,6 +38,10 @@ WEBHOOK_DATA='[
 			{
 				"type": "mrkdwn",
 				"text": "Deployed at '"$TIMESTAMP"'"
+			},
+			{
+				"type": "mrkdwn",
+				"text": "'"$CREDITS"'"
 			},
 			{
 				"type": "mrkdwn",
