@@ -29,7 +29,7 @@ WEBHOOK_DATA='[
 		"type": "section",
 		"text": {
 			"type": "mrkdwn",
-			"text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*'\\n"$COMMIT_SUBJECT"\\n"${COMMIT_MESSAGE//$'\n'/ }"'"
+			"text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*'"$COMMIT_SUBJECT"'\n'"${COMMIT_MESSAGE//$'\n'/ }"'"
 		}
 	},
     {
@@ -45,7 +45,7 @@ WEBHOOK_DATA='[
 			},
 			{
 				"type": "mrkdwn",
-				"text": "Branch: '"$TRAVIS_BRANCH"'"
+				"text": "Branch: '"[\`$TRAVIS_BRANCH\`](https://github.com/$TRAVIS_REPO_SLUG/tree/$TRAVIS_BRANCH)"'"
 			}
 		]
 	}
