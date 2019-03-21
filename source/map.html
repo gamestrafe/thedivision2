@@ -239,6 +239,8 @@ permalink: map.html
 
     var shdtechMarkers = [
         //L.marker(, {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p></p>'),
+        // Whitehouse
+        L.marker([56.305561831968745, -15.4709499186372], {title: 'SHD Tech (Unmarked)', icon: iconShdtech }).bindPopup('<h5>SHD Tech (Unmarked)</h5><p>Upper floor of this building, access trhough the alley in the northwest corner</p>'),
 
         // Downtown West
         L.marker([53.90865262501197, -128.11523482203486], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building. Door is in the alley to the north and is locked from outside.</p>'),
@@ -489,6 +491,8 @@ permalink: map.html
         {latlng: [63.10635619630118, -246.07538114652692], info: ''},
         // General overworld (XWEP)
         //{latlng: , info: ''},
+        {latlng: [61.55414726547606, -11.65437395347136], info: 'Underground, behind a locked double door'},
+        {latlng: [56.8801868186966, -15.277550021698252], info: 'Upper level of building, access trhough alley in northwest'},
         {latlng: [-68.6116454029095, 63.36035169661046], info: 'Inside locked in fence area'},
         {latlng: [-62.67813054104949, 42.49951198697091], info: 'On south side of a fence'},
         {latlng: [-62.48185909719526, -4.196777343750001], info: 'On scaffolding against stone wall, outside DZ'},
@@ -619,6 +623,10 @@ permalink: map.html
         L.marker([64.56260051925477, -261.5259023629693], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         // General overworld (XGEAR)
         //L.marker(, {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([45.40308375053936, 147.49579247083042], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On roof, climb ladder and fire escape on north side of the building.</p>'),
+        L.marker([61.07318625549731, -10.261421824310538], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground</p>'),
+        L.marker([60.37699370257781, -14.396427236455423], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground</p>'),
+        L.marker([63.55839696259511, -9.109786202778643], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground</p>'),
         L.marker([-73.07260830527689, 72.32519544661045], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>In corner of walls</p>'),
         L.marker([-65.06096146258882, 63.593261986970916], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         L.marker([-62.384210079953476, 55.96435546875001], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On top of some green containers</p>'),
@@ -768,8 +776,12 @@ permalink: map.html
     mapLayers.push(gear);
 
     // Crates that have been airdropped and now hang above somewhere. Shoot them to get to the loot
+    // XAIR
     var airdropMarkers = [
         //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([-22.423182350699552, -206.50345650798567], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>In a tree, easier to stop from the west, box hangs on the east side</p>'),
+        L.marker([-22.37848382791094, -215.86811290028876], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a cranes hook next to the water front</p>'),
+        L.marker([57.947510268570525, 49.47580449701938], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the building just south of the marker</p>'),
         L.marker([-65.22720661708556, 63.29003892838956], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the eastern wall of the DZ</p>'),
         L.marker([-57.984829076540855, 16.514648571610454], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging in betwen the canopy of the parachute here, up in a tree</p>'),
         L.marker([-60.17221520972933, -30.2431632578373], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree</p>'),
@@ -825,6 +837,13 @@ permalink: map.html
         // Overworld (XSMA)
         //{latlng: , info: ''},
         //{latlng: , info: ', Underground'},
+        {latlng: [60.70542248078988, -11.917853802601892], info: 'Large Backpack, Underground'},
+        {latlng: [61.81463889287337, -9.272524722686855], info: 'Locker, Underground'},
+        {latlng: [62.091554012283346, -9.64149923807747], info: 'Small backpack, Underground'},
+        {latlng: [61.60639637138628, -19.687500000000004], info: 'Small backpack, Underground'},
+        {latlng: [61.52900694758266, -8.58722634179197], info: 'Rolling suitcase, Underground'},
+        {latlng: [62.32705435745765, -14.119680068461257], info: 'Large Backpack, Underground'},
+        {latlng: [61.430377617154406, -7.6152635369664985], info: 'Large Backpack, Underground'},
         {latlng: [-53.15795517724361, -126.26916507259013], info: 'Small backpack, Underground'},
         {latlng: [-53.452739673194515, -126.1845700442791], info: 'Locker, Underground'},
         {latlng: [-53.25989922313772, -112.72851549088955], info: 'Locker, Underground'},
@@ -1307,7 +1326,9 @@ permalink: map.html
         {latlng: [46.62941304764099, 69.16259743273258], faction: 'Hyenas', info: 'In Grand Washington Hotel mission. After you go upstairs after clearing the lobby, in the hallway where you encounter the next enemies, there are broken walls on your left. Go there and circle around to your right to get to the bathroom of that suite where this box is.'},
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
-        //{latlng: , faction: 'Outcasts', info:''},'},
+        //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [-54.526203414731576, -180.11423256654888], faction: 'Outcasts', info:'Behind the corner of a tent, to the south'},
+        {latlng: [-54.70166907053579, -171.84364834588644], faction: 'Outcasts', info:'On top of some containers here'},
         //{latlng: , faction: 'True Sons', info:''},
         {latlng: [-17.41690429960896, 95.32836914062501], faction: 'True Sons', info:'On the ground in front of some stacked U.S. Army containers.'},
         {latlng: [-18.34061261052319, 109.79003950953486], faction: 'True Sons', info:'In National Archives entrance, in the corridor with the resupply, just go a bit more west, against the north wall.'}
@@ -1368,6 +1389,7 @@ permalink: map.html
     // Random crafting material (XMAT)
     var markersMaterial = [
         //{latlng: , info: ''},
+        {latlng: [60.91547770689561, -13.306564216837572], info: 'Flightcase, underground'},
         {latlng: [-47.07759059236655, -130.25390625000003], info: 'Toolbox, Underground in locked sideroom'},
         {latlng: [-46.263360291285096, -129.57275390625003], info: 'Flightcase, Underground'},
         {latlng: [-48.83539853743585, -129.2695315182209], info: 'Toolbox, Underground'},
@@ -1844,6 +1866,14 @@ permalink: map.html
     // mapLayers.push(materials);
 
     var echoMarkers = [
+        //L.marker(, {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p></p>'),
+        L.marker([-58.699720731168426, -161.08588036145545], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p></p>'),
+        L.marker([-53.362053413369786, -108.27844395451055], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Three friends pose with their costumes.</p>'),
+        L.marker([-51.37453537556768, -142.27294921875003], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>The Colson family about to go to the Lincoln memorial.</p>'),
+        L.marker([-66.40399447942241, 87.8527228312218], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Cassie Castillo and David Masters, two Rogue agents share loot with an unexpected outcome. Very bottom level small plaza, accessible over stairs in the southwest.</p>'),
+        L.marker([-54.21572119949018, 222.72338962441933], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Sabrina Kensington, a senator, is hording some md kits.</p>'),
+        L.marker([19.758472128385296, 136.5732451756667], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>April Kelleher runs into some BTSU operatives. It\'s above ground, approach from the south and shoot the charge below the rope anchor you see hanging of the building.</p>'),
+        L.marker([58.71801658310733, 16.6200985881911], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Alani Kelso and Odessa SAwyer being in a bit of a bind and Kelso using Odessa as a shield.</p>'),
         L.marker([18.46571622797032, 76.62579072025035], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Manny Ortega and Mateo Ortega have a conversation on the street.</p>'),
         L.marker([12.107283093513898, 55.44799804687501], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Hyena council members having some disagreements between each other and solve it in their way.</p>'),
         L.marker([43.55929101892889, -22.39746116101742], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Two JFT and two True Sons soldiers are in a tense situation.</p>'),
@@ -1859,6 +1889,8 @@ permalink: map.html
         L.marker([36.18539982838856, -1.003418415784836], {title: 'SITREP', icon: iconComm }).bindPopup('<h5>SITREP</h5><p>Manny Ortega gives his superior officer an update on the situation in DC, in early summer. JTF Comms 2/8</p>'),
         L.marker([-41.831371070892, -35.89610274983795], {title: 'Ortega Deployed', icon: iconComm }).bindPopup('<h5>Ortega Deployed</h5><p>Manny Ortega\'s last phone call with his mother, before being deployed. JTF Comms 2/8</p>'),
         // Theater
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Theater Comms 1/8</p>'),
+        L.marker([59.16690925174393, 52.040051685475575], {title: 'Hyena Interrogation', icon: iconComm }).bindPopup('<h5>Hyena Interrogation</h5><p>Odessa Sawyer interrogates a Hyena. Theater Comms 1/8</p>'),
         L.marker([23.015779809926133, 68.96118164062501], {title: 'Settling Down', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>A small group of survivors decide to make the Theater their home. Theater Comms 1/8</p>'),
         L.marker([-14.455959529838914, 126.8990796286861], {title: 'Strategy', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>Odessa Sawyer and Agent Kelso talk shop and make a plan for keeping the Theater settlement safe. Theater Comms 2/8</p>'),
         L.marker([25.11447948917854, 62.48657265678049], {title: 'New Crew', icon: iconComm }).bindPopup('<h5>New Crew</h5><p>Two civilizans contemplate joining the Hyenas, Odessa sets them straight. (In subway station, access through escalators at northeast corner of building to the northwest.) Theater Comms 2/8</p>'),
@@ -1872,7 +1904,17 @@ permalink: map.html
         L.marker([-0.8641809689860198, 117.64892566949132], {title: 'First Council Meeting', icon: iconComm }).bindPopup('<h5>First Council Meeting</h5><p>Hyenas meet to discuss the True Sons threat and form the Council. Hyenas Comms 3/10</p>'),
         // True Sons
         L.marker([-20.062802132544014, 68.49243141710758], {title: 'Negotiations', icon: iconComm }).bindPopup('<h5>Negotiations</h5><p>Antwon Ridgeway refuses to negotiate. True Sons Comms 1/10</p>'),
+        // Outcasts
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Outcasts Comms 1/13</p>'),
+        L.marker([-18.145751169871602, -213.16557252962798], {title: 'Plotting', icon: iconComm }).bindPopup('<h5>Plotting</h5><p>Emeline plots with other people in quarantine to take over the island. Under bridge, accessible from the south. Outcasts Comms 1/13</p>'),
+        L.marker([-54.39842930182128, -172.18659984566244], {title: 'Emeline\'s End', icon: iconComm }).bindPopup('<h5>Emeline\'s End</h5><p>An Outcast asks Emeline when it will end. On top of some containers here. Outcasts Comms 1/13</p>'),
         // Shay
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Shay Montgomery . Shay Comms 1/8</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Shay Montgomery . Shay Comms 1/8</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Shay Montgomery . Shay Comms 1/8</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Shay Montgomery . Shay Comms 1/8</p>'),
+        L.marker([-76.95437591328064, 116.45055004704304], {title: 'Orphans', icon: iconComm }).bindPopup('<h5>Orphans</h5><p>Shay Montgomery talks about a little boy she plans on resettling at the Theater. Shay Comms 1/8</p>'),
+        L.marker([-7.789372746999458, 171.6021560938392], {title: 'Making a Difference', icon: iconComm }).bindPopup('<h5>Making a Difference</h5><p>Shay Montgomery talks about a family she helped after escaping the camps. Shay Comms 1/8</p>'),
         L.marker([-62.73460087706358, 36.415968711561405], {title: 'Reflective', icon: iconComm }).bindPopup('<h5>Reflective</h5><p>Shay Montgomery reflects on her life before the lockdown and how far she has come. Shay Comms 1/8</p>'),
         L.marker([-62.58924955626794, -4.605468884110452], {title: 'Capital Station', icon: iconComm }).bindPopup('<h5>Capital Station</h5><p>Shay Montgomery talks about the events that led to Capital Station being abandoned. On top of scaffolding against outside wall of DZ. Shay Comms 1/8</p>'),
         // Dead drop
@@ -1881,6 +1923,9 @@ permalink: map.html
         L.marker([15.259486817041568, 56.572265736758716], {title: 'Greener Poison', icon: iconComm }).bindPopup('<h5>Greener Poison</h5><p>Aaron Keener waxes philosophical, about his plans for the future. Dead Drop Comms 2/8</p>'),
         L.marker([32.9364656266093, -111.24572150728261], {title: 'Warning', icon: iconComm }).bindPopup('<h5>Warning</h5><p>Aaron Keener broadcasts a warning to any who would dare to pursue him. In building, access trhoug alley in the north.Dead Drop Comms 2/8</p>'),
         // Gov
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Government Comms 2/13</p>'),
+        L.marker([-66.7572393968907, 91.03708345873991], {title: 'Keener Briefing', icon: iconComm }).bindPopup('<h5>Keener Briefing</h5><p>Meeting to discuss Keener, the Rogue Agents in NYC, and activating the second wave. Upper walk way, inside locked and fenced off area. Government Comms 2/13</p>'),
+        L.marker([57.31584505464288, -18.177956257840492], {title: 'Raven Rock', icon: iconComm }).bindPopup('<h5>Raven Rock</h5><p>Politicians talking about evacuating to a secure location. Government Comms 2/13</p>'),
         L.marker([-64.32661114598748, 62.23095729947091], {title: 'UN Briefing', icon: iconComm }).bindPopup('<h5>UN Briefing</h5><p>President Mendez meets with the UN to ascertain the effects of GReen Poison around the globe. Government Comms 2/13</p>'),
         L.marker([26.069973904227396, -2.7832029014825825], {title: 'Aides Assemble', icon: iconComm }).bindPopup('<h5>Aides Assemble</h5><p>A group of underpaid, overcaffeinated aides work through the night on last minute amendments to a bill, despite all the horror around them. Their blinkers are on, their phones are off.. Government Comms 2/13</p>'),
         L.marker([30.30643189123285, -30.395507700741295], {title: 'Border Control', icon: iconComm }).bindPopup('<h5>Border Control</h5><p>POTUS discusses border policies with the president of Mexico. Government Comms 2/13</p>'),
@@ -1907,6 +1952,8 @@ permalink: map.html
         L.marker([-1.7992300533726577, 16.00341835990548], {title: 'Encrypted intel file', icon: iconComm }).bindPopup('<h5>Encrypted intel file</h5><p>Complete all story missions to decrypt. (On table) Unknown Comms 1/10</p>'),
         L.marker([-65.98671451107464, 235.7849116623402], {title: 'Secret Service', icon: iconComm }).bindPopup('<h5>Secret Service</h5><p>Two Secret Service agents tend to President Mendez. Top floor of the Rayburn building, take the stairs in the south of this area and follow them to the second floor. Unknown Comms 1/10</p>'),
         L.marker([-58.936406977571465, -33.38964857161045], {title: '?', icon: iconComm }).bindPopup('<h5>?</h5><p>Bardon Schaeffer gives a progress report on his unit and determines if they are ready to be deployed. On a table in the basement of a building here. Unknown Comms 1/10</p>'),
+        // Contaminated Areas
+        L.marker([-75.80229372912325, 127.61712438512212], {title: 'Faith', icon: iconComm }).bindPopup('<h5>Faith</h5><p>A woman calls her family after being separated from them. Inside building, a bit tricky to get to. Contaminated Areas Comms 1/15</p>'),
         // New York
         L.marker([36.4566360115962, 116.00338735543515], {title: 'Turning Point', icon: iconComm }).bindPopup('<h5>Turning Point</h5><p>Captain Benitez considers the death of Bliss and the rise of Keener. New York Comms 1/8</p>'),
         L.marker([51.66403781658121, -69.64505069508158], {title: 'NYC Crew', icon: iconComm }).bindPopup('<h5>NYC Crew</h5><p>Captain Benitez gives a status report on the Division staff in Manhattan. Inside building, next to SHD cache. New York Comms 1/8</p>'),
@@ -1923,6 +1970,8 @@ permalink: map.html
 
     var artifactMarkers = [
         //L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5></h5><p></p>'),
+        L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Bazille and Camille</h5><p>Painting by Claude Monet. Upper floors. Access this building over the scaffolding in the center on the west or the fireescape on the east..</p>'),
+        L.marker([56.32625231964513, -14.146005393404453], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>George Wahsington</h5><p>Painting by Gilbert Stuart. Upper level of this building, access through the alley and the northwest corner.</p>'),
         L.marker([32.52056988940947, -110.06201842068715], {title: 'Artifact Relic', icon: iconArtifact }).bindPopup('<h5>Greffuhle Stradivarius</h5><p>A relic from one of the museums in DC.</p>'),
         L.marker([59.658492286337086, -56.4404367725057], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>John Adams</h5><p></p>'),
         L.marker([22.370434371139936, 171.65588378906253], {title: 'Artifact Relic', icon: iconArtifact }).bindPopup('<h5>Plymouth Rock Fragment</h5><p>A relic from one of the museums in DC. Underground in metro station.</p>'),
