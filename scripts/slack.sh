@@ -29,7 +29,7 @@ WEBHOOK_DATA='[
 		"type": "section",
 		"text": {
 			"type": "mrkdwn",
-			"text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*'"$COMMIT_SUBJECT"'\n'"${COMMIT_MESSAGE//$'\n'/ }"'"
+			"text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*'"$COMMIT_SUBJECT"'\\n'"${COMMIT_MESSAGE//$'\\n'/ }"'"
 		}
 	},
     {
