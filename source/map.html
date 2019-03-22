@@ -142,28 +142,34 @@ permalink: map.html
     var sideMissions = L.layerGroup(sideMissionMarkers);
     mapLayers.push(sideMissions);
 
+    // Completed
     var strongholdMarkers = [
-        L.marker([-47.86222348092537, 217.9101558029652], {title: 'Capitol Hill', icon: iconStronghold}).bindPopup('<h5>Capitol Hill</h5><p>Stronghold of the True Sons.</p>'),
+        L.marker([-47.86222348092537, 217.9101558029652], {title: 'Capitol Hill', icon: iconStronghold}).bindPopup('<h5>Capitol Hill</h5><p>Stronghold of the True Sons. Assault the Capitol Building to recover President Ellis\'s briefcase from the True Sons.</p>'),
         L.marker([41.24920477866789, 123.31054687500001], {title: 'District Union Arena', icon: iconStronghold}).bindPopup('<h5>District Union Arena</h5><p>Stronghold of the Hyenas. Eliminate the remaining Hyena council members in the District Union Arena. </p>'),
-        L.marker([-21.23478368572658, -252.12890267372134], {title: 'Unknown', icon: iconStronghold}).bindPopup('<h5>Unknown</h5><p>Stronghold of the Outcasts.</p>'),
-        L.marker([-50.52188529016723, -57.454413841791975], {title: 'Tidal Bassin', icon: iconStronghold}).bindPopup('<h5>Tidal Bassin</h5><p>Stronghold of the Black Tusk.</p>')
+        L.marker([-21.23478368572658, -252.12890267372134], {title: 'Roosevelt Island', icon: iconStronghold}).bindPopup('<h5>Unknown</h5><p>Stronghold of the Outcasts. Breach the Outcast stronghold and apprehend or eliminate their leader Emeline Shaw.</p>'),
+        L.marker([-50.52188529016723, -57.454413841791975], {title: 'Tidal Bassin', icon: iconStronghold}).bindPopup('<h5>Tidal Basin</h5><p>Stronghold of the Black Tusk. Breach the Black Tusk Compound and Prevent Missile Launch.</p>')
     ];
     var strongholds = L.layerGroup(strongholdMarkers);
     mapLayers.push(strongholds);
 
+    // Completed
     var controlpointMarkers = [
-        //L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
-        // L.marker(, {title: '', icon: iconControlpoint}).bindPopup('<h5></h5><p></p>'),
+        L.marker([4.8282597468669755, 146.61474622786048], {title: 'The Cinderblock', icon: iconControlpoint}).bindPopup('<h5>The Cinderblock</h5><p>With emergency services stretched beyond breaking point, this was the last line of defense against raging fires. It failed.</p>'),
+        L.marker([-46.71576258878096, 204.6181632578373], {title: 'Crash Site', icon: iconControlpoint}).bindPopup('<h5>Crash Site</h5><p>The final resting place of the presidental plane, having been taken down by unknown forces.</p>'),
+        L.marker([-47.96933002227941, 110.01708984375001], {title: 'Sinkhole', icon: iconControlpoint}).bindPopup('<h5>Sinkhole</h5><p>A natural disaster hit the JTF hard at this location on the famous East Mall, just as they were struggeling to contain an unnatural one.</p>'),
+        L.marker([-48.89361536148019, 157.8779299557209], {title: 'Solar Farm', icon: iconControlpoint}).bindPopup('<h5>Solar Farm</h5><p>Forward-thinking JTF engineers established large solar panels here. Most did not live to reap the rewards of their labor, and now multiple hostile forces jostle to take the advantage.</p>'),
+        L.marker([-65.35767693905089, 84.30029243230821], {title: 'The Choke', icon: iconControlpoint}).bindPopup('<h5>The Choke</h5><p>A repidly-built JTF checkpoint which, at best, struggled to deal with the massive volume of traffic trying to flee DC and the Green Poison. Later used by True sons to besige the Castle.</p>'),
+        L.marker([-49.95404761350947, 48.836425580084324], {title: 'Metro Ruins', icon: iconControlpoint}).bindPopup('<h5>Metro Ruins</h5><p>Theceiling of Manning Station collapsed while JTF were digging mass graves for victims of Green Poison.</p>'),
+        L.marker([-51.237158170480726, -10.335936695337297], {title: 'Washington Monument', icon: iconControlpoint}).bindPopup('<h5>Washington Monument</h5><p>An iconic beacon of hope that still stands tall despite constant threat from hostile forces.</p>'),
+        L.marker([-35.27791299759717, -52.562988549470916], {title: 'Flooded Levee', icon: iconControlpoint}).bindPopup('<h5>Flooded Levee</h5><p>Washington saw severe floods at the best of times, and after federal oversight was just a memory, improvised levees such as this one were all that could be maanged.</p>'),
+        L.marker([-36.41244133299258, -115.04223592579365], {title: 'The Mast', icon: iconControlpoint}).bindPopup('<h5>The Mast</h5><p>The comms relay is beyond repair but this abandoned military site still holds significant tactical value.</p>'),
+        L.marker([58.53959476664049, -83.14453125000001], {title: 'Toxic Alley', icon: iconControlpoint}).bindPopup('<h5>Toxic Alley</h5><p>The sewage water here is nearly toxic as the Hyenas who ravaged this abandoned construction site.</p>'),
+        L.marker([53.35710874569601, -141.87744140625003], {title: 'The World\'s End', icon: iconControlpoint}).bindPopup('<h5>The World\'s End</h5><p>Hundreds of Washington University students gathered here, on campus, to laugh in the face of chaos and death for one final druken night. If you remember the End of the World party, you weren\'t there.</p>'),
+        L.marker([-16.497192398795256, -100.15576165169479], {title: 'The Nest', icon: iconControlpoint}).bindPopup('<h5>The Nest</h5><p>Federal employees established sniper nests on top of this building and held out as long as they could, but were overwhlemed by JTF traitors who would eventually join Ridgeway\'s True Sons.</p>'),
+        L.marker([22.761999615255593, -70.38281243294479], {title: 'Haunted House', icon: iconControlpoint}).bindPopup('<h5>Haunted House</h5><p>Reputedly one of the most haunted buildings in America before Green Poison changed the world forever. Who knows how many tormented souls wander these halls now.</p>'),
+        L.marker([13.524246513531258, -123.34790032356979], {title: 'Ivy Tunnel', icon: iconControlpoint}).bindPopup('<h5>Ivy Tunnel</h5><p>Nature has already started to reclaim our world, piece by piece, and this eerily quiet underpass is no exception.</p>'),
+        L.marker([-15.813395760460573, -204.69726562500003], {title: 'Taxi Graveyard', icon: iconControlpoint}).bindPopup('<h5>Taxi Graveyard</h5><p>Hostiles have established a defensive perimeter here in an attempt to expand their territory.</p>'),
+        L.marker([2.846484063709237, -185.99853515625003], {title: 'Navy Hill', icon: iconControlpoint}).bindPopup('<h5>Navy Hill</h5><p>Boasts strong defensive qualities such as an elevated position and protection on all sides.</p>'),
         L.marker([44.964872413896195, -186.54785156250003], {title: 'Sleeping Giant', icon: iconControlpoint}).bindPopup('<h5>Sleeping Giant</h5><p>A stack of empty shipping containers, arranged as improvised high ground by Outcasts seeking to control the border of their territory.</p>'),
         L.marker([55.96552941253055, -41.27197220921517], {title: 'The Vault', icon: iconControlpoint}).bindPopup('<h5>The Vault</h5><p>A Unite DC protest spilled into violence near this bank, marking a turning point in civil unrest as Green Poison swept unchecked through poorer parts of the city.</p>'),
         L.marker([56.50494049731493, -217.29492209851747], {title: 'Riverside Gas Station', icon: iconControlpoint}).bindPopup('<h5>Riverside Gas Station</h5><p>An abandoned gas station with crucial access to the Potomac. The pumps here are long since drained by desperate civilians trying to flee the city, then Outcasts looking to fuel their flames of vengeance.</p>'),
@@ -779,6 +785,9 @@ permalink: map.html
     // XAIR
     var airdropMarkers = [
         //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([-58.571689573307204, 128.62353555858135], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>First area of air and space museum mission, in a tree</p>'),
+        L.marker([-37.10426052906367, 10.998413152992729], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging in between the scaffolding here. To get to it, you have to enter the structure on groundlevel in the center on the west, go to the southeast and in there you can use some containers to climb up and reach the rest of this area, including the airdrop.</p>'),
+        L.marker([-36.056204059100835, -2.2719725221395497], {title: 'Airdrop Crate: MAterials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Up in a tree</p>'),
         L.marker([21.665369279775327, -58.801873155468584], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>In tree, low, over the middle of the road</p>'),
         L.marker([-22.423182350699552, -206.50345650798567], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>In a tree, easier to stop from the west, box hangs on the east side</p>'),
         L.marker([-22.37848382791094, -215.86811290028876], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a cranes hook next to the water front</p>'),
@@ -1316,7 +1325,7 @@ permalink: map.html
         {latlng: [56.61753225207041, 32.54150457680226], faction: 'Hyenas', info: 'Inside Odea Store mission, in the large room on the center level, after you free the character locked in, there is one on the table there'},
         {latlng: [56.810562720128885, 98.62207084894182], faction: 'Hyenas', info: 'At the end of Rooftop Garden mission, last area on top of the roof, in the northeast corner of the upper platform where the enemies spawned.'},
         {latlng: [53.636830919806854, 99.62841756641868], faction: 'Hyenas', info: 'Inside the corner here, in a store. Access during and after Rooftop Gardens side mission.'},
-        {latlng: [56.472200705473945, -84.15087997913362], faction: 'Hyenas', info: 'In southwest corner of the supply room of the Toxic Alley Controlpoint'},
+        {latlng: [56.472200705473945, -84.15087997913362], faction: 'Hyenas', info: 'In southwest corner of the supply room of the Toxic Alley Control point'},
         {latlng: [22.362269228953778, 186.85107462108138], faction: 'Hyenas', info: 'On top of building. Enter through alley east here, between concrete and brick building, trhough the locked gate. Go up the ladders, then open the door in the south wall and go up the second ladder.'},
         {latlng: [43.513501457245034, 135.9711916744709], faction: 'Hyenas', info: 'In Hyenas strong hold, in the mall section, when you enter on the right side behind the doors, far back right hand corner.'},
         {latlng: [0.615222552406841, 176.90625026822093], faction: 'Hyenas', info: 'Underground in police station. Access through north side. Box is in a room at the very bottom where the riot gear is stored next to the garage, during the side mission here you get from Odessa, but stays open after you completed it.'},
@@ -1328,6 +1337,8 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [-0.7316696333171644, -121.69116217643024], faction: 'Outcasts', info:'Underground, off the large room, through a locked door in the upper level.'},
+        {latlng: [10.211142252439277, -298.07226508855825], faction: 'Outcasts', info:'During Roosevelt Island mission, when you walk along the western shore, there is a spot where you can go trhough the wall to the east, there are some loose wooden boards you can just walk through.'},
         {latlng: [-18.75657803501746, -118.00526629624032], faction: 'Outcasts', info:'Inside the building between some shelves, just west of where the contaminated area ends'},
         {latlng: [-54.526203414731576, -180.11423256654888], faction: 'Outcasts', info:'Behind the corner of a tent, to the south'},
         {latlng: [-54.70166907053579, -171.84364834588644], faction: 'Outcasts', info:'On top of some containers here'},
@@ -1905,6 +1916,7 @@ permalink: map.html
         L.marker([32.50345370021894, 43.68896439671517], {title: 'Runners', icon: iconComm }).bindPopup('<h5>Runners</h5><p>Hyenas deal with victims running away. Hyenas Comms 3/10</p>'),
         L.marker([-0.8641809689860198, 117.64892566949132], {title: 'First Council Meeting', icon: iconComm }).bindPopup('<h5>First Council Meeting</h5><p>Hyenas meet to discuss the True Sons threat and form the Council. Hyenas Comms 3/10</p>'),
         // True Sons
+        L.marker([-70.03709635042001, 133.16748127341273], {title: 'Acceptable Losses', icon: iconComm }).bindPopup('<h5>Acceptable Losses</h5><p>Ridgeway meets with an advisor to formulate a plan to maintain control of DC, after losing several battles to Division agents. Inside building. True Sons Comms 1/10</p>'),
         L.marker([-20.062802132544014, 68.49243141710758], {title: 'Negotiations', icon: iconComm }).bindPopup('<h5>Negotiations</h5><p>Antwon Ridgeway refuses to negotiate. True Sons Comms 1/10</p>'),
         // Outcasts
         //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Outcasts Comms 1/13</p>'),
