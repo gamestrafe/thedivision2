@@ -779,6 +779,7 @@ permalink: map.html
     // XAIR
     var airdropMarkers = [
         //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([21.665369279775327, -58.801873155468584], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>In tree, low, over the middle of the road</p>'),
         L.marker([-22.423182350699552, -206.50345650798567], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>In a tree, easier to stop from the west, box hangs on the east side</p>'),
         L.marker([-22.37848382791094, -215.86811290028876], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a cranes hook next to the water front</p>'),
         L.marker([57.947510268570525, 49.47580449701938], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the building just south of the marker</p>'),
@@ -1327,6 +1328,7 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [-18.75657803501746, -118.00526629624032], faction: 'Outcasts', info:'Inside the building between some shelves, just west of where the contaminated area ends'},
         {latlng: [-54.526203414731576, -180.11423256654888], faction: 'Outcasts', info:'Behind the corner of a tent, to the south'},
         {latlng: [-54.70166907053579, -171.84364834588644], faction: 'Outcasts', info:'On top of some containers here'},
         //{latlng: , faction: 'True Sons', info:''},
@@ -1953,6 +1955,10 @@ permalink: map.html
         L.marker([-65.98671451107464, 235.7849116623402], {title: 'Secret Service', icon: iconComm }).bindPopup('<h5>Secret Service</h5><p>Two Secret Service agents tend to President Mendez. Top floor of the Rayburn building, take the stairs in the south of this area and follow them to the second floor. Unknown Comms 1/10</p>'),
         L.marker([-58.936406977571465, -33.38964857161045], {title: '?', icon: iconComm }).bindPopup('<h5>?</h5><p>Bardon Schaeffer gives a progress report on his unit and determines if they are ready to be deployed. On a table in the basement of a building here. Unknown Comms 1/10</p>'),
         // Contaminated Areas
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
+        L.marker([-16.476063326249275, -121.40111025632221], {title: 'Shots Fired', icon: iconComm }).bindPopup('<h5>Shots Fired</h5><p>Unarmed civilians are shot in the streets. Just outside the building, in front of a van, after traversing trhough the contaminated building from the east.. Contaminated Areas Comms 1/15</p>'),
+        L.marker([-16.654082352742563, -117.08007113085549], {title: 'Water', icon: iconComm }).bindPopup('<h5>Water</h5><p>Civilians argue over bottled water. In building, accesible over scaffolding to the east. Contaminated Areas Comms 1/15</p>'),
+        L.marker([-16.988944380352148, -112.61488177067235], {title: 'Isolated', icon: iconComm }).bindPopup('<h5>Isolated</h5><p>Civilians suspected of carrying the infection are forced into an isolated area. Accessible by jumping over some scaffolding on the south eastern area. Contaminated Areas Comms 1/15</p>'),
         L.marker([-75.80229372912325, 127.61712438512212], {title: 'Faith', icon: iconComm }).bindPopup('<h5>Faith</h5><p>A woman calls her family after being separated from them. Inside building, a bit tricky to get to. Contaminated Areas Comms 1/15</p>'),
         // New York
         L.marker([36.4566360115962, 116.00338735543515], {title: 'Turning Point', icon: iconComm }).bindPopup('<h5>Turning Point</h5><p>Captain Benitez considers the death of Bliss and the rise of Keener. New York Comms 1/8</p>'),
@@ -1970,7 +1976,8 @@ permalink: map.html
 
     var artifactMarkers = [
         //L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5></h5><p></p>'),
-        L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Bazille and Camille</h5><p>Painting by Claude Monet. Upper floors. Access this building over the scaffolding in the center on the west or the fireescape on the east..</p>'),
+        L.marker([16.04729636074405, -62.78407043640484], {title: 'Artifact Founding Fathers', icon: iconArtifact }).bindPopup('<h5>Thomas Jefferson</h5><p>PAinting by Gilbert Stuart (1/7</p>'),
+        //L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Bazille and Camille</h5><p>Painting by Claude Monet. Upper floors. Access this building over the scaffolding in the center on the west or the fire escape on the east.</p>'),
         L.marker([56.32625231964513, -14.146005393404453], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>George Wahsington</h5><p>Painting by Gilbert Stuart. Upper level of this building, access through the alley and the northwest corner.</p>'),
         L.marker([32.52056988940947, -110.06201842068715], {title: 'Artifact Relic', icon: iconArtifact }).bindPopup('<h5>Greffuhle Stradivarius</h5><p>A relic from one of the museums in DC.</p>'),
         L.marker([59.658492286337086, -56.4404367725057], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>John Adams</h5><p></p>'),
