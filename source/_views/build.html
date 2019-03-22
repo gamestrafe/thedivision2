@@ -1,0 +1,118 @@
+{% extends "default" %}
+
+
+{% block page_body %}
+{% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+{% endblock %}
+
+
+
+{% block scripts_after %}
+<script>
+    // c = crosshair
+    // s = shield
+    // b = battery
+    // u = unknown
+    var attributes = {
+        1: {name: 'Accuracy', type: 'u'},
+        2: {name: 'Armor % on Kill', type: 'u'},
+        3: {name: 'Assault Rifle Damage', type: 'c'},
+        4: {name: 'Bonus Armor', type: 's'},
+        5: {name: 'Chem Launcher Skill Power', type: 'u'},
+        6: {name: 'Cooldown Reduction', type: 'b'},
+        7: {name: 'Critical Hit Chance', type: 'c'},
+        8: {name: 'Critical Hit Damage', type: 'c'},
+        9: {name: 'Damage to Elites', type: 'c'},
+        10: {name: 'Drone Skill Power', type: 'u'},
+        11: {name: 'Explosive Damage', type: 'u'},
+        12: {name: 'Extra Incoming Healing', type: 'u'},
+        13: {name: 'Hazard Protection', type: 's'},
+        14: {name: 'Headshot Damage', type: 'c'},
+        15: {name: 'Health on Kill', type: 's'},
+        16: {name: 'Health', type: 's'},
+        17: {name: 'Hive Skill Power', type: 'u'},
+        18: {name: 'LMG Damage', type: 'c'},
+        19: {name: 'Marksman Rifle Damage', type: 'c'},
+        20: {name: 'Pistol Damage', type: 'c'},
+        21: {name: 'Protection from Elites', type: 'u'},
+        22: {name: 'Rifle Damage', type: 'c'},
+        23: {name: 'Seeker Skill Power', type: 'u'},
+        24: {name: 'Shield Skill Power', type: 'u'},
+        25: {name: 'Shotgun Damage', type: 'c'},
+        26: {name: 'Skill Power', type: 'b'},
+        27: {name: 'SMG Damage', type: 'c'},
+        28: {name: 'Total Armor', type: 'u'},
+        29: {name: 'Turret Skill Power', type: 'u'},
+        30: {name: 'Weapon Damage', type: 'c'},
+        31: {name: 'Weapon Handling', type: 'u'}
+    };
+
+    // - 5.11 Tactical: +5% Protection from Elites, +10% Extra Incoming Healing, +10% Weapon Handling
+    // - Airaldi Holdings: +10% Accuracy, +10% Headshot Damage, +10% Marksman Rifle Damage
+    // - Alps Summit Armament: +10% Cooldown Reduction, +5% Skill Power, +15 Hive Skill Power
+    // - Badger Tuff: +7% Damage to Elites, +15% Armor % on Kill, +15 Chem Launcher Skill Power
+    // - China Light Industries Corporation: +10% Explosive Damage, +10% Shotgun Damage, +10% Cooldown Reduction
+    // - Douglas & Harding: +5% Accuracy, +10% Critical Hit Damage, +7% Critical Hit Chance
+    // - Fenris Group AB: +10% Assault Rifle Damage, +10% Protection from Elites, +20% Health on Kill
+    // - Gila Guard: +5% Total Armor, +20% Hazard Protection, +15 Pulse Skill Power
+    // - Murakami Industries: +8% Health, +10% Hazard Protection, +15% Firefly Skill Power
+    // - Overlord Armaments: +10% Rifle Damage, +7.5% Total Armor, +7% Damage to Elites
+    // - Petrov Devense Group: +10% LMG Damage, +15 Turret Skill Power, +10% Cooldown Reduction
+    // - Providence Defense: +10% Skill Power, +8% Health, +5% Weapon Damage
+    // - Richter & Kaiser GmbH: +10% Hazard Protection, +20% Pistol Damage, +15 Shield Skill Power
+    // - Sokolov Concern: +10% SMG Damage, +8% Critical Hit Damage, +15 Seeker Skill Power
+    // - Wyvern Wear: +7% Critical Hit Damage, +15% Drone Skill Power, +10% Critical Hit Chance
+    // - Yaahl Gear: +10% Weapon Handling, +8% Hazard Protection, +5% Weapon Damage
+
+
+    var brands = {
+        1: {name: '5.11 Tactical', tiers: { 1: {attribute: 1, value: 5}, 2: '', 3: ''}},
+        2: {name: 'Airaldi Holdings', tiers: { 1: '', 2: '', 3: ''}},
+        3: {name: 'Alps Summit Armament', tiers: { 1: '', 2: '', 3: ''}},
+        4: {name: 'Badger Tuff', tiers: { 1: '', 2: '', 3: ''}},
+        5: {name: 'China Light Industries Corporation', tiers: { 1: '', 2: '', 3: ''}},
+        6: {name: 'Douglas & Harding', tiers: { 1: '', 2: '', 3: ''}},
+        7: {name: 'Fenris Group AB', tiers: { 1: '', 2: '', 3: ''}},
+        8: {name: 'Gila Guard', tiers: { 1: '', 2: '', 3: ''}},
+        9: {name: 'Murakami Industries', tiers: { 1: '', 2: '', 3: ''}},
+        10: {name: 'Overlord Armaments', tiers: { 1: '', 2: '', 3: ''}},
+        11: {name: 'Petrov Devense Group', tiers: { 1: '', 2: '', 3: ''}},
+        12: {name: 'Providence Defense', tiers: { 1: '', 2: '', 3: ''}},
+        13: {name: 'Richter & Kaiser GmbH', tiers: { 1: '', 2: '', 3: ''}},
+        14: {name: 'Sokolov Concern', tiers: { 1: '', 2: '', 3: ''}},
+        15: {name: 'Wyvern Wear', tiers: { 1: '', 2: '', 3: ''}},
+        16: {name: 'Yaahl Gear', tiers: { 1: '', 2: '', 3: ''}}
+    };
+
+    var strings = {
+        'none': 'None'
+    };
+
+    function addOption(inputName, name, value) {
+        var option = new Option(name, value);
+        $(option).html(name);
+        $(inputName).append(option);
+    }
+
+    // Add the none options
+    addOption("select[name='mask[type]']", strings['none'], 0);
+    addOption("select[name='backpack[type]']", strings['none'], 0);
+    addOption("select[name='chest[type]']", strings['none'], 0);
+    addOption("select[name='gloves[type]']", strings['none'], 0);
+    addOption("select[name='holster[type]']", strings['none'], 0);
+    addOption("select[name='kneepads[type]']", strings['none'], 0);
+
+    Object.keys(brands).forEach(function(key,index) {
+        addOption("select[name='mask[type]']", brands[key].name, brands[key].id);
+        addOption("select[name='backpack[type]']", brands[key].name, brands[key].id);
+        addOption("select[name='chest[type]']", brands[key].name, brands[key].id);
+        addOption("select[name='gloves[type]']", brands[key].name, brands[key].id);
+        addOption("select[name='holster[type]']", brands[key].name, brands[key].id);
+        addOption("select[name='kneepads[type]']", brands[key].name, brands[key].id);
+    });
+
+
+
+</script>
+
+{% endblock %}
