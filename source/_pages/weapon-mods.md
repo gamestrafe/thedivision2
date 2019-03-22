@@ -59,9 +59,11 @@ All magazine mods require Titanium and Steel to craft.
 - Precision 7.62 Mag: +15% Headshot Damage, -10% Damage to Elites
 - Segmented 9mm Mag: +30% Reload Speed, -5 Rounds
 - Short Spring .45 ACP Mag: +15% Reload Speed, -10% Critical Hit chance
+- Stiff Integrated Spring: +5% Weapon Damage, -15% Headshot Damage
 - Sturdy Marksman Mag: +20% Stability, -10% Critical Hit Damage
 - Tactical 5.56 Mag: +10% Critical Hit Damage, -15% Optimal Range
 - Tactical Small Pouch: +25% Reload speed, -15 Rounds
+- Thin 7.62 Mag: +15% Reload Speed, -8% Critical Hit Chance
 - Weighted 7.62 Mag: +20% Stability, -20% Optimal Range
 
 ## Muzzle Mods
@@ -73,6 +75,7 @@ All muzzle mods require Titanium and Steel to craft.
 - Compensator 9mm: +20% Stability, -10% Accuracy
 - Flash Hider .45: +20% Critical Hit Damage, -10% Stability
 - Flash Hider 7.62: +20% Critical Hit Damage, -10% Stability
+- Flash Hider 9mm: +20% Critical Hit Damage, -10% Stability
 - Large Suppressor 7.62: +20% Accuracy, -5% Damage to Elites
 - Loud Vent Brake .45: +20% Optimal Range, -10% Stability
 - Loud Vent Brake 5.56: +20% Optimal Range, -10% Stability
@@ -104,6 +107,5 @@ These mods were present in the beta, and have not yet been verified in the full 
 
 ### Muzzle Mods
 
-- Flash Hider 9mm, +20% Critical Hit Damage, -10% Stability
 - Loud Vent Brake 7.62, +20% Optimal Range, -10% Stability
 - Small Suppressor .45, +20% Accuracy, -15% Optimal Range
