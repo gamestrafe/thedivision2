@@ -6,6 +6,13 @@ meta:
 
 This page contains all the patch notes that were published since the release of the game. Newest patch notes are always at the top.
 
+## Patch from 22. March 2019
+
+* Fixed an issue where players were not being granted Clan XP
+* Fixed an issue where daily and weekly resets would not apply to players who were offline during the time of reset
+* Fixed an issue where players could lose guiding missions and access to guiding mission NPCs, making them unable to further progress
+* Improved survivability of low level players against enemy NPCs when playing co-op with a player of higher level
+
 ## Patch from 16. March 2019
 
 * Bug fixes

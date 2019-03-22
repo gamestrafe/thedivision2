@@ -92,3 +92,33 @@ Access to bounties. There is also a [perk](/perks.html) that allows for harder b
 ### Emma Richards
 
 Probably access to upgrading/rerolling equipment.
+
+## Underground Faction
+
+If you had the unfortunate luck to run into these guys, then you know what they can do.
+
+### Assault
+
+Weapon: Assault Rifle
+
+> They mostly come out at night... mostly. No, but seriously, they really do mostly come out at knight. Hide your kidneys. - Agent Kelso
+
+* The Underground Assault archetype prefers to fight from behind cover, and move cover-to-cover to avoid enemy fire.
+
+### Thrower
+
+Weapon: Shotgun
+
+> Analysis of the toxic gas these guys use has been mostly inconclusive, but whatever it is, I don't really think our masks are up to the challenge of filterin it out. Maybe don't get caught up in it? - Coop Dennison
+
+* The Underground Thrower archetype prefers to fight from cover while tossing toxic gas grenades.
+* Shooting the Thrower while they prepare a grenade causes it to drop and light themselves on fire.
+* Destroying their grenade pouch causes it to explode.
+
+### Tank
+
+Weapon: Chainsaw
+
+> Medieval motherfuckers. See, this is why our decision to live above the ground floor was such a good idea. Nobody wants to be beaten with a flail. - Odessa Sawyer
+
+* The Underground Tank archetype is a heavily armored behemoth who swings his chainsaw at anything in his path. 

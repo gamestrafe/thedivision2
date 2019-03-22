@@ -17,13 +17,13 @@ This list is still incomplete, please send screenshots of the mods you may have 
 All (except one) optics mods require Electronics and Steel to craft.
 
 - 552 Holo Sight: +10% Accuracy, -15% Optimal range
+- Acog Scope (4x): +25% Optimal Range, -5% Critical Hit Damage
 - CQBSS Scope (8x): +35% Headshot Damage, -20% Accuracy
+- Digital Scope: +45% Headshot Damage, -20% Stability (Requires Sharpshooter Specialization)
 - PRO Red Dot Sight: +20% Stability, -30% Optimal Range
 - Reflex Sight: +10% Critical Hit Damage, -15% Accuracy (Blueprint from "Water Pipeline Construction" Project for Theater)
 - Small RDS Scope: +20% Accuracy, -10% Stability
 - Streamlined Iron Sights, +25% Reload speed, -8% Critical hit Chance. (Requires Titanium and Steel)
-- Acog Scope (4x): +25% Optimal Range, -5% Critical Hit Damage
-- Digital Scope: +45% Headshot Damage, -20% Stability (Requires Sharpshooter Specialization)
 - T2 Micro Red Dot Sight: +20% Accuracy, -10% Critical Hit Chance
 - VX1 Scope: +30% Headshot Damage, -20% Reload Speed
 
@@ -53,6 +53,7 @@ All magazine mods require Titanium and Steel to craft.
 - Heavy Spring 9mm Mag: +20% Critical Hit Damage, -15% Stability
 - Light Extended 5.56 Mag: +30 Rounds, -10% Rate of Fire (Blueprint from side mission "Department of Justice")
 - Light Extended 7.62 Mag: +30 Extra round, -5% Weapon Damage
+- Lightweight Marksman Mag: +25% Reload Speed, -15% Optimal Range
 - Mended Marksman Mag: +20% Optimal Range, -10% Reload Speed
 - Nimble Link Belt: +10% Rate of Fire, -20% Stability
 - Precision 7.62 Mag: +15% Headshot Damage, -10% Damage to Elites
@@ -75,6 +76,7 @@ All muzzle mods require Titanium and Steel to craft.
 - Large Suppressor 7.62: +20% Accuracy, -5% Damage to Elites
 - Loud Vent Brake .45: +20% Optimal Range, -10% Stability
 - Loud Vent Brake 5.56: +20% Optimal Range, -10% Stability
+- Loud Vent Brake 9mm +20% Optimal Range, -10% Stability
 - Muzzle brake .45: +10 Damage to Elites, -15% Stability
 - Muzzle brake 5.56: +10 Damage to Elites, -15% Stability
 - Omega 5.56 Rifle Suppressor: +20% Stability, -20% Optimal Range
