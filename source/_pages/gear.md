@@ -38,10 +38,13 @@ Starting at Specialized gear, it can also have talents. Higher quality gear can 
 
 ### Active Talents
 
-- Braced: While in cover weapon handling is increased by 25%
 - Berserk: +10% weapon damage for every 10% of max armor depleted. Requires a shotgun, SMG or Assault Rifle equipped.
 - Bloodlust: Swapping weapons within 3s of a kill grants +25% weapon damage for 10s. Requires 4 or less shields.
+- Bloodsucker: Depleting an enemy's armor adds a stack of +20% bonus armor for 20s. Max stack is 5. Requires 7 or more shields.
+- Braced: While in cover weapon handling is increased by 25%
+- Calculated: Kills from cover reduce skill cooldowns by 20%. Requires 7 batteries or more.
 - Centered: Headshot kills grant status effect immunity for 10x. Requires 4 shields or more.
+- Cloaked: When your armor is depleted, nearby enemy skills are distrupted for 10 s. Can occur once every 30s. Requires 5 or less batteries.
 - Clutch: Critical hits restore 15% health and repair 2% armor. Requires: While using an AR/SMG/LMG
 - Compensated: Weapon damage is increased when you have low critical hit chance. Requires 3 crosshairs or less
 - Creeping Death: Status effects spread to the nearest enemy within 10m. Can occur once every 15s. Requires 4 or less crosshairs.
@@ -51,6 +54,7 @@ Starting at Specialized gear, it can also have talents. Higher quality gear can 
 - Fill'er Up: Reloading from empty reloads all weapons.
 - Knee Cap: Shooting an enemy in the legs has a 10% chance to apply bleed. Requires 4 or less batteries.
 - Mad Bomber: Grenade radius is increased by 150%. Grenades that kill an enemy are refunded. Requires 4 or less batteries.
+- Obliterate: Depleting an enemy's armor grants +25% critical hit damage for 5s. Requires 4 crosshairs or more.
 - On the Ropes: Weapon damage is increased by 25% while all skills are on cooldown or reach zero charges. (Requires 7 batteries or more)
 - Opportunistic: Destroying an enemy's weakpoint or breaking an enemy's armor adds +10% damage from all sources to the enemy for 20s. Requires using Marksman or Shotgun weapons only
 - Patience: After being in cover for 3s, armor repairs by 5% every 1s. Requires 7 or more shields.

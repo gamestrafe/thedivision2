@@ -20,8 +20,10 @@ All (except one) optics mods require Electronics and Steel to craft.
 - Acog Scope (4x): +25% Optimal Range, -5% Critical Hit Damage
 - CQBSS Scope (8x): +35% Headshot Damage, -20% Accuracy
 - Digital Scope: +45% Headshot Damage, -20% Stability (Requires Sharpshooter Specialization)
+- EXPS3 Holo sight: +12% Critical Hit Chance, -10% Headshot Damage
 - PRO Red Dot Sight: +20% Stability, -30% Optimal Range
 - Reflex Sight: +10% Critical Hit Damage, -15% Accuracy (Blueprint from "Water Pipeline Construction" Project for Theater)
+- Russian Red Dot Sight: +10% Critical Hit Damage: -10% Damage to Elites
 - Small RDS Scope: +20% Accuracy, -10% Stability
 - Streamlined Iron Sights, +25% Reload speed, -8% Critical hit Chance. (Requires Titanium and Steel)
 - T2 Micro Red Dot Sight: +20% Accuracy, -10% Critical Hit Chance
@@ -32,11 +34,12 @@ All (except one) optics mods require Electronics and Steel to craft.
 All underbarrel mods require Carbon Fiber and Steel to craft.
 
 - Angled Grip: +15% Stability, -8% Accuracy
+- Compact Coupled Laser Pointer: +5% Critical Hit Chance, -10% Stability
+- Compact Coupled Small Laser Pointer: +5% Critical Hit Chance, -5% Accuracy
 - Handstop: +10% Reload Speed, -10% Stability
 - Laser Pointer: +10% Critical Hit Chance, -10% Stability
-- Vertical Grip: +10% Accuracy, -8% Stability
 - Short Grip: +10% Critical Hit Damage, -15% Reload Speed
-- Compact Coupled Small Laser Pointer: +5% Critical Hit Chance, -5% Accuracy
+- Vertical Grip: +10% Accuracy, -8% Stability
 
 ## Magazine Mods
 
@@ -56,6 +59,7 @@ All magazine mods require Titanium and Steel to craft.
 - Lightweight Marksman Mag: +25% Reload Speed, -15% Optimal Range
 - Mended Marksman Mag: +20% Optimal Range, -10% Reload Speed
 - Nimble Link Belt: +10% Rate of Fire, -20% Stability
+- Non-disruptive Link: +10% Critical Hit Damage, -10% Accuracy
 - Precision 7.62 Mag: +15% Headshot Damage, -10% Damage to Elites
 - Segmented 9mm Mag: +30% Reload Speed, -5 Rounds
 - Short Spring .45 ACP Mag: +15% Reload Speed, -10% Critical Hit chance
@@ -76,15 +80,18 @@ All muzzle mods require Titanium and Steel to craft.
 - Flash Hider .45: +20% Critical Hit Damage, -10% Stability
 - Flash Hider 7.62: +20% Critical Hit Damage, -10% Stability
 - Flash Hider 9mm: +20% Critical Hit Damage, -10% Stability
+- Large Suppressor 5.56: +20% Accuracy, -5% Damage to Elites
 - Large Suppressor 7.62: +20% Accuracy, -5% Damage to Elites
 - Loud Vent Brake .45: +20% Optimal Range, -10% Stability
 - Loud Vent Brake 5.56: +20% Optimal Range, -10% Stability
 - Loud Vent Brake 9mm +20% Optimal Range, -10% Stability
 - Muzzle brake .45: +10 Damage to Elites, -15% Stability
 - Muzzle brake 5.56: +10 Damage to Elites, -15% Stability
+- Muzzle brake 7.62: +10 Damage to Elites, -15% Stability
 - Omega 5.56 Rifle Suppressor: +20% Stability, -20% Optimal Range
 - Osprey .45 Suppressor: +20% Critical Hit Chance, -10% Rate of Fire
 - Osprey 9 Suppressor: +20% Critical Hit Chance, -10% Rate of Fire
+- Small Suppressor .45: +20% Accuracy, -15% Optimal Range
 - Small Suppressor .9mm: +20% Accuracy, -15% Optimal Range
 
 ## Unverified from beta
@@ -93,7 +100,6 @@ These mods were present in the beta, and have not yet been verified in the full 
 
 ### Optics mods
 
-- EXPS3 Holo sight: +20% Damage to Elites, -50% Headshot Damage
 - Open Iron Sights: +25% Accuracy, -20% Stability
 
 ### Magazine Mods
