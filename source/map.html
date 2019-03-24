@@ -785,6 +785,8 @@ permalink: map.html
     // XAIR
     var airdropMarkers = [
         //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([53.55597715706869, 139.92850906962656], {title: 'Airdrop Crate: MAterials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging between two buildings. You need to climb up some scaffolding to the south to gain access.</p>'),
+        L.marker([-63.786404658790715, 189.02636826038363], {title: 'Airdrop Crate: GEar', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Entangled into an antenna at the roof of this building, facing north</p>'),
         L.marker([-1.5963305303332007, 0.8166501671075822], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the south side of a tree, crafting ressources.</p>'),
         L.marker([-11.278978534619197, -47.90048023897403], {title: 'Airdrop Crate: Material', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree next to some roofed picnic places</p>'),
         L.marker([-11.31126020931928, 73.25683593750001], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging over the west entrance on the roof. Use the east exit and go up the ladder to reach it.</p>'),
@@ -796,7 +798,7 @@ permalink: map.html
         L.marker([-33.59936909989475, -154.2728028781989], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree over a pond</p>'),
         L.marker([-36.056204059100835, -2.2719725221395497], {title: 'Airdrop Crate: MAterials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Up in a tree</p>'),
         L.marker([-37.10426052906367, 10.998413152992729], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging in between the scaffolding here. To get to it, you have to enter the structure on groundlevel in the center on the west, go to the southeast and in there you can use some containers to climb up and reach the rest of this area, including the airdrop.</p>'),
-        L.marker([-39.40224434029276, 195.06591841578486], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>On tree, west of the airplane tail</p>'),
+        L.marker([-40.52381156334825, 196.46630845963955], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>On tree, west of the airplane tail</p>'),
         L.marker([-44.13175968395794, 8.162874064125873], {title: 'Airdrop Crate: Material', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Ina  tree</p>'),
         L.marker([-44.99588261816546, -68.30559014983926], {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging from a column</p>'),
         L.marker([-53.17311920264063, 3.278320580720902], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>On a tree in the middle of a park</p>'),
@@ -1360,6 +1362,9 @@ permalink: map.html
     // Keys for locked boxes (XKEY)
     var markersKey = [
         //{latlng: , info:'Underground'},
+        {latlng: [58.286395482881034, 140.57199020927382], info:'Underground, on an east tunnel wall, just near a room entrance'},
+        {latlng: [8.798192063503222, -121.44726555794479], info:'Underground'},
+        {latlng: [2.9326274160518326, -123.74999932944776], info:'Underground, In side room off large room'},
         {latlng: [-47.070067717043884, -129.83203131705525], info:'Underground, southwall of locked sideroom'},
         {latlng: [-50.92798810600849, -126.56030260026456], info:'Underground, east wall of large room, upper level'},
         {latlng: [-52.358186907430266, -126.51416055858138], info:'Underground, east wall of large room, upper level'},
@@ -1885,6 +1890,8 @@ permalink: map.html
 
     var echoMarkers = [
         //L.marker(, {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p></p>'),
+        L.marker([61.480807904049286, -164.09179687500003], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>People arriving at the hospital with complications. Upper level of the contaminated area.</p>'),
+        L.marker([56.23910033260711, 128.19500461509645], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Someone tries to break through a braicaded door. Inside building.</p>'),
         L.marker([-58.699720731168426, -161.08588036145545], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p></p>'),
         L.marker([-53.362053413369786, -108.27844395451055], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Three friends pose with their costumes.</p>'),
         L.marker([-51.37453537556768, -142.27294921875003], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>The Colson family about to go to the Lincoln memorial.</p>'),
@@ -1916,6 +1923,12 @@ permalink: map.html
         L.marker([34.5035711180493, 16.461181417107586], {title: 'Peter Problems', icon: iconComm }).bindPopup('<h5>Peter Problems</h5><p>Odessa scolds her daughter to being careless and spending time with Peter. (In underground garage) Theater Comms 3/8</p>'),
         L.marker([34.394878291864416, 38.0200194194913], {title: 'Addiction', icon: iconComm }).bindPopup('<h5>Addiction</h5><p>A concerned civilian tries to get Peter to stop taking spice. (In the alley next to a van on the ground) Theater Comms 4/8</p>'),
         // Hyenas
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
+        L.marker([54.630601979198104, 134.6923500887519], {title: 'Spice Instructions', icon: iconComm }).bindPopup('<h5>Spice Instructions</h5><p>Hyena member give a quick briefind on how to make the drug, spice. On top of the building. You can get there using the truck on the eastern side of the building. Hyenas Comms 1/10</p>'),
         L.marker([23.120154855087215, 8.345017957388851], {title: 'Piñata Party', icon: iconComm }).bindPopup('<h5>Piñata Party</h5><p>Two Hyenas prepare an attack on unsuspecting civilians. Hyenas Comms 1/10</p>'),
         L.marker([31.87133824316455, 75.45806045728065], {title: 'Missing Prisoners', icon: iconComm }).bindPopup('<h5>Missing Prisoners</h5><p>A Hyena gets rid of some prisoners. Hyenas Comms 2/10</p>'),
         L.marker([32.50345370021894, 43.68896439671517], {title: 'Runners', icon: iconComm }).bindPopup('<h5>Runners</h5><p>Hyenas deal with victims running away. Hyenas Comms 3/10</p>'),
@@ -1973,6 +1986,15 @@ permalink: map.html
         L.marker([-58.936406977571465, -33.38964857161045], {title: '?', icon: iconComm }).bindPopup('<h5>?</h5><p>Bardon Schaeffer gives a progress report on his unit and determines if they are ready to be deployed. On a table in the basement of a building here. Unknown Comms 1/10</p>'),
         // Contaminated Areas
         //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
+        L.marker([58.80695587977277, -170.34083326793873], {title: 'Committed', icon: iconComm }).bindPopup('<h5>Committed</h5><p>A man takes care of his dying wife. Outside on the roof, next to a corpse. Contaminated Areas Comms 1/15</p>'),
+        L.marker([58.943231644864, -168.4115747442606], {title: 'Delirious', icon: iconComm }).bindPopup('<h5>Delirious</h5><p>A man takes care of his sick wife. Top level of the contaminated area. Contaminated Areas Comms 1/15</p>'),
+        L.marker([61.29130058437782, -163.52054053624815], {title: 'Fever', icon: iconComm }).bindPopup('<h5>Fever</h5><p>A man takes care of his sick wife and daughter. Inside the contaminated area, upper floor on the counter. Contaminated Areas Comms 1/15</p>'),
+        L.marker([-32.07135827257348, 83.24129001073756], {title: 'Firestarter', icon: iconComm }).bindPopup('<h5>Firestarter</h5><p>A paranoid civilian tries to set an area with infected people on fire. Just before leaving the contaminated building on a counter.. Contaminated Areas Comms 1/15</p>'),        L.marker([-34.85754268903128, 80.88630530408851], {title: 'Fear', icon: iconComm }).bindPopup('<h5>Fear</h5><p>Civilians discuss how fear breeds hatred. On a bench in the prehistoric section, west wall. Contaminated Areas Comms 1/15</p>'),
+        L.marker([-38.932077246461255, 84.15520799000379], {title: 'Signs', icon: iconComm }).bindPopup('<h5>Signs</h5><p>Civilians argue about what to do with infected people. Just inside the contimanted building here. Contaminated Areas Comms 1/15</p>'),
         L.marker([-16.476063326249275, -121.40111025632221], {title: 'Shots Fired', icon: iconComm }).bindPopup('<h5>Shots Fired</h5><p>Unarmed civilians are shot in the streets. Just outside the building, in front of a van, after traversing trhough the contaminated building from the east.. Contaminated Areas Comms 1/15</p>'),
         L.marker([-16.654082352742563, -117.08007113085549], {title: 'Water', icon: iconComm }).bindPopup('<h5>Water</h5><p>Civilians argue over bottled water. In building, accesible over scaffolding to the east. Contaminated Areas Comms 1/15</p>'),
         L.marker([-16.988944380352148, -112.61488177067235], {title: 'Isolated', icon: iconComm }).bindPopup('<h5>Isolated</h5><p>Civilians suspected of carrying the infection are forced into an isolated area. Accessible by jumping over some scaffolding on the south eastern area. Contaminated Areas Comms 1/15</p>'),
@@ -1981,6 +2003,10 @@ permalink: map.html
         L.marker([36.4566360115962, 116.00338735543515], {title: 'Turning Point', icon: iconComm }).bindPopup('<h5>Turning Point</h5><p>Captain Benitez considers the death of Bliss and the rise of Keener. New York Comms 1/8</p>'),
         L.marker([51.66403781658121, -69.64505069508158], {title: 'NYC Crew', icon: iconComm }).bindPopup('<h5>NYC Crew</h5><p>Captain Benitez gives a status report on the Division staff in Manhattan. Inside building, next to SHD cache. New York Comms 1/8</p>'),
         // Division
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Division Comms 1/10</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Division Comms 1/10</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Division Comms 1/10</p>'),
+        //L.marker(, {title: 'Sawyer\'s Separated', icon: iconComm }).bindPopup('<h5>Sawyer\'s Separated</h5><p>Agent Odessa Sawyer has to leave her husband and daughter when she is activated. In a locked in fence area. Division Comms 1/10</p>'),
         L.marker([-53.6967096513578, -102.79687553644182], {title: 'Priority Target: Keener', icon: iconComm }).bindPopup('<h5>Priority Target: Keener</h5><p>Update to all agents regarding Keener\'s status and Rogue Agents in Manhattan. At the front of the boat. Division Comms 1/10</p>'),
         L.marker([-0.4101518529065752, -43.432415173233], {title: 'Broad-Spectrum Antiviral', icon: iconComm }).bindPopup('<h5>Broad-Spectrum Antiviral</h5><p>Kelso briefs Manny on the DCD broad-spectrum antiviral. Division Comms 1/10</p>'),
         L.marker([14.861634528785908, 115.09094232693316], {title: 'Odessa Recruited', icon: iconComm }).bindPopup('<h5>Odessa Recruited</h5><p>Odessa Sawyer, a former SHD agent, is recruited to be the leader of the Theater settlement. (In apartement above ground, use scaffolding on the west side of the building, ladder is in the south of scaffolding.) Division Comms 1/10</p>'),
