@@ -18,6 +18,7 @@ All (except one) optics mods require Electronics and Steel to craft.
 
 - 552 Holo Sight: +10% Accuracy, -15% Optimal range
 - Acog Scope (4x): +25% Optimal Range, -5% Critical Hit Damage
+- C79 Scope (3.4x): +15% Damage to Elites, -20% Reload Speed
 - CQBSS Scope (8x): +35% Headshot Damage, -20% Accuracy
 - Digital Scope: +45% Headshot Damage, -20% Stability (Requires Sharpshooter Specialization)
 - EXPS3 Holo sight: +12% Critical Hit Chance, -10% Headshot Damage

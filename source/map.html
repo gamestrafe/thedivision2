@@ -1321,6 +1321,7 @@ permalink: map.html
     //mapLayers.push(armorresupply);
 
     // Boxes locked with keys you have to find. Keys and boxes are assigned to factions
+    // XLOCK
     var markersLockedbox = [
         //{latlng: , faction: 'Black Tusk', info:''},
         {latlng: [-55.912273305882394, -64.85009785741569], faction: 'Black Tusk', info:'In a locked, fenced off area here.'},
@@ -1341,6 +1342,7 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [26.48237400788676, -124.60693359375001], faction: 'Outcasts', info:'Inside a blue container on top of a truck, south end is open.'},
         {latlng: [-19.078731026890768, -70.37404609165547], faction: 'Outcasts', info:'On a small wall next to a red statue.'},
         {latlng: [-0.7316696333171644, -121.69116217643024], faction: 'Outcasts', info:'Underground, off the large room, through a locked door in the upper level.'},
         {latlng: [10.211142252439277, -298.07226508855825], faction: 'Outcasts', info:'During Roosevelt Island mission, when you walk along the western shore, there is a spot where you can go trhough the wall to the east, there are some loose wooden boards you can just walk through.'},
@@ -1890,6 +1892,8 @@ permalink: map.html
 
     var echoMarkers = [
         //L.marker(, {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p></p>'),
+        L.marker([27.98663997322997, -119.34228502213956], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>What happened to Mary Hayes, Henry Hayes wife. In an apartement on the upper floor. Enter the building to the north.</p>'),
+        L.marker([24.08658925822804, -136.16015598177913], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>An Outcast seeks entrance to a community.</p>'),
         L.marker([61.480807904049286, -164.09179687500003], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>People arriving at the hospital with complications. Upper level of the contaminated area.</p>'),
         L.marker([56.23910033260711, 128.19500461509645], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p>Someone tries to break through a braicaded door. Inside building.</p>'),
         L.marker([-58.699720731168426, -161.08588036145545], {title: 'Echo', icon: iconEcho }).bindPopup('<h5>Echo</h5><p></p>'),
@@ -1938,6 +1942,7 @@ permalink: map.html
         L.marker([-20.062802132544014, 68.49243141710758], {title: 'Negotiations', icon: iconComm }).bindPopup('<h5>Negotiations</h5><p>Antwon Ridgeway refuses to negotiate. True Sons Comms 1/10</p>'),
         // Outcasts
         //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Outcasts Comms 1/13</p>'),
+        L.marker([20.1302203810778, -150.8203125], {title: 'Rations', icon: iconComm }).bindPopup('<h5>Rations</h5><p>An infected civilian argues with one of Ridgeway\'s True Sons about distribution of rations. Outcasts Comms 1/13</p>'),
         L.marker([-18.145751169871602, -213.16557252962798], {title: 'Plotting', icon: iconComm }).bindPopup('<h5>Plotting</h5><p>Emeline plots with other people in quarantine to take over the island. Under bridge, accessible from the south. Outcasts Comms 1/13</p>'),
         L.marker([-54.39842930182128, -172.18659984566244], {title: 'Emeline\'s End', icon: iconComm }).bindPopup('<h5>Emeline\'s End</h5><p>An Outcast asks Emeline when it will end. On top of some containers here. Outcasts Comms 1/13</p>'),
         // Shay
@@ -1950,6 +1955,8 @@ permalink: map.html
         L.marker([-62.73460087706358, 36.415968711561405], {title: 'Reflective', icon: iconComm }).bindPopup('<h5>Reflective</h5><p>Shay Montgomery reflects on her life before the lockdown and how far she has come. Shay Comms 1/8</p>'),
         L.marker([-62.58924955626794, -4.605468884110452], {title: 'Capital Station', icon: iconComm }).bindPopup('<h5>Capital Station</h5><p>Shay Montgomery talks about the events that led to Capital Station being abandoned. On top of scaffolding against outside wall of DZ. Shay Comms 1/8</p>'),
         // Dead drop
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Aaron Keener. Dead Drop Comms 1/8</p>'),
+        L.marker([1.0458398199115102, -103.17480549216273], {title: 'Patience', icon: iconComm }).bindPopup('<h5>Patience</h5><p>Aaron Keener sens out a broadcast to potential rogue agents. From the safe house The Archive, take the west exit and immediately turn left (south. That door you see, you can open and find the comms in that room. Dead Drop Comms 1/8</p>'),
         L.marker([23.28341472913859, 77.73284913506359], {title: 'Recordings', icon: iconComm }).bindPopup('<h5>Recordings</h5><p>Aaron Keener takes a moment to explain why he is making these recordings. Dead Drop Comms 1/8</p>'),
         L.marker([49.09965212357462, 12.150878906250002], {title: 'Simple Math', icon: iconComm }).bindPopup('<h5>Simple Math</h5><p>Aaron Keener talks about compartmentalizing his kills. Dead Drop Comms 2/8</p>'),
         L.marker([15.259486817041568, 56.572265736758716], {title: 'Greener Poison', icon: iconComm }).bindPopup('<h5>Greener Poison</h5><p>Aaron Keener waxes philosophical, about his plans for the future. Dead Drop Comms 2/8</p>'),
