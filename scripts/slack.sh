@@ -24,32 +24,7 @@ else
 fi
 
 TIMESTAMP=$(date --utc +%FT%TZ)
-WEBHOOK_DATA='[
-	{
-		"type": "section",
-		"text": {
-			"type": "mrkdwn",
-			"text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*"
-		}
-	},
-    {
-		"type": "context",
-		"elements": [
-			{
-				"type": "mrkdwn",
-				"text": "Deployed at '"$TIMESTAMP"'"
-			},
-			{
-				"type": "mrkdwn",
-				"text": "'"$CREDITS"'"
-			},
-			{
-				"type": "mrkdwn",
-				"text": "Branch: '"[$TRAVIS_BRANCH](https://github.com/$TRAVIS_REPO_SLUG/tree/$TRAVIS_BRANCH)"'"
-			}
-		]
-	}
-]'
+WEBHOOK_DATA='[{"type": "section","text": {"type": "mrkdwn","text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*"}},{"type": "context","elements": [{"type": "mrkdwn","text": "Deployed at '"$TIMESTAMP"'"},{"type": "mrkdwn","text": "'"$CREDITS"'"},{"type": "mrkdwn","text": "Branch: '"[$TRAVIS_BRANCH](https://github.com/$TRAVIS_REPO_SLUG/tree/$TRAVIS_BRANCH)"'"}]}]'
 
 echo -e "$WEBHOOK_DATA"
 

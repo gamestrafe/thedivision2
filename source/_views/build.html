@@ -14,11 +14,11 @@
     // b = battery
     // u = unknown
     var attributes = {
-        // Puls  skill power?
 {name: 'Accuracy', type: 'u'},
 {name: 'Armor % on Kill', type: 'u'},
 {name: 'Armor / s Regeneration', type: 's'},
 {name: 'Armor On Kill', type: 's'},
+{name: 'Assault Rifle Critical Hit Chance', type: 'c'},
 {name: 'Assault Rifle Critical Hit Damage', type: 'c'},
 {name: 'Assault Rifle Damage', type: 'c'},
 {name: 'Bleed Damage', type: 'b'},
@@ -61,11 +61,13 @@
 {name: 'Increased Shock Duration', type: 'b'},
 {name: 'LMG Damage', type: 'c'},
 {name: 'Marksman Rifle Critical Hit Chance', type: 'c'},
+{name: 'Marksman Rifle Critical Hit Damage', type: 'c'},
 {name: 'Marksman Rifle Damage', type: 'c'},
 {name: 'Optimal Range', type: 'c'},
 {name: 'Pistol Damage', type: 'c'},
 {name: 'Poison Resistance', type: 's'},
 {name: 'Protection from Elites', type: 's'},
+{name: 'Pulse Skill Power', type: 'b'},
 {name: 'Reload Speed', type: 'b'},
 {name: 'Rifle Damage', type: 'c'},
 {name: 'Seeker Skill Power', type: 'b'},
@@ -75,15 +77,54 @@
 {name: 'Skill Health', type: 's'},
 {name: 'Skill Power', type: 'b'},
 {name: 'SMG Critical Hit Chance', type: 'c'},
+{name: 'SMG Critical Hit Damage', type: 'c'},
 {name: 'SMG Damage', type: 'c'},
 {name: 'Total Armor', type: 's'},
 {name: 'Turret Skill Power', type: 'b'},
 {name: 'Weapon Damage', type: 'c'},
 {name: 'Weapon Handling', type: 'b'},
-{name: 'XP Weakpoint Kills', type: 'b'}
+{name: 'XP Weakpoint Kills', type: 'b'},
     };
 
-    // - 5.11 Tactical: +5% Protection from Elites, +10% Extra Incoming Healing, +10% Weapon Handling
+    var gear = {
+        m: {
+            name: 'Mask',
+            attributes: { min: 2, max: 3, available: []},
+            talents: { min: 0, max: 1, available: []},
+            modslots: { min: 0, max: 1}
+        },
+        c: {
+            name: 'Chest',
+            attributes: { min: 3, max: 4, available: []},
+            talents: { min: 0, max: 2, available: []},
+            modslots: { min: 1, max: 3}
+        },
+        h: {
+            name: 'Holster',
+            attributes: { min: 1, max: 3, available: []},
+            talents: { min: 0, max: 1, available: []},
+            modslots: { min: 0, max: 2}
+            },
+        b: {
+            name: 'Backpack',
+            attributes: { min: 2, max: 4, available: []},
+            talents: { min: 0, max: 2, available: []},
+            modslots: { min: 0, max: 2}
+        },
+        g: {
+            name: 'Gloves',
+            attributes: { min: 1, max: 3, available: []},
+            talents: { min: 0, max: 1, available: []},
+            modslots: { min: 0, max: 1}
+        },
+        k: {
+            name: 'Holster',
+            attributes: { min: 1, max: 2, available: []},
+            talents: { min: 0, max: 2, available: []},
+            modslots: { min: 0, max: 2}
+        }
+    };
+
     // - Airaldi Holdings: +10% Accuracy, +10% Headshot Damage, +10% Marksman Rifle Damage
     // - Alps Summit Armament: +10% Cooldown Reduction, +5% Skill Power, +15 Hive Skill Power
     // - Badger Tuff: +7% Damage to Elites, +15% Armor % on Kill, +15 Chem Launcher Skill Power
@@ -102,22 +143,22 @@
 
 
     var brands = {
-        1: {name: '5.11 Tactical', tiers: { 1: {attribute: 1, value: 5}, 2: '', 3: ''}},
-        2: {name: 'Airaldi Holdings', tiers: { 1: '', 2: '', 3: ''}},
-        3: {name: 'Alps Summit Armament', tiers: { 1: '', 2: '', 3: ''}},
-        4: {name: 'Badger Tuff', tiers: { 1: '', 2: '', 3: ''}},
-        5: {name: 'China Light Industries Corporation', tiers: { 1: '', 2: '', 3: ''}},
-        6: {name: 'Douglas & Harding', tiers: { 1: '', 2: '', 3: ''}},
-        7: {name: 'Fenris Group AB', tiers: { 1: '', 2: '', 3: ''}},
-        8: {name: 'Gila Guard', tiers: { 1: '', 2: '', 3: ''}},
-        9: {name: 'Murakami Industries', tiers: { 1: '', 2: '', 3: ''}},
-        10: {name: 'Overlord Armaments', tiers: { 1: '', 2: '', 3: ''}},
-        11: {name: 'Petrov Devense Group', tiers: { 1: '', 2: '', 3: ''}},
-        12: {name: 'Providence Defense', tiers: { 1: '', 2: '', 3: ''}},
-        13: {name: 'Richter & Kaiser GmbH', tiers: { 1: '', 2: '', 3: ''}},
-        14: {name: 'Sokolov Concern', tiers: { 1: '', 2: '', 3: ''}},
-        15: {name: 'Wyvern Wear', tiers: { 1: '', 2: '', 3: ''}},
-        16: {name: 'Yaahl Gear', tiers: { 1: '', 2: '', 3: ''}}
+        1: {name: '5.11 Tactical', tiers: { 1: {attribute: 0, value: 5}, 2: {attribute: 0, value: 10}, 3: {attribute: 0, value: 10}}},
+        2: {name: 'Airaldi Holdings', tiers: { 1: {attribute: 0, value: 10}, 2: {attribute: 0, value: 10}, 3: {attribute: 0, value: 10}}},
+        3: {name: 'Alps Summit Armament',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        4: {name: 'Badger Tuff',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        5: {name: 'China Light Industries Corporation',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        6: {name: 'Douglas & Harding',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        7: {name: 'Fenris Group AB',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        8: {name: 'Gila Guard',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        9: {name: 'Murakami Industries',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        10: {name: 'Overlord Armaments',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        11: {name: 'Petrov Devense Group',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        12: {name: 'Providence Defense',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        13: {name: 'Richter & Kaiser GmbH',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        14: {name: 'Sokolov Concern',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        15: {name: 'Wyvern Wear',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}},
+        16: {name: 'Yaahl Gear',tiers: { 1: {attribute: 0, value: 0}, 2: {attribute: 0, value: 0}, 3: {attribute: 0, value: 0}}}
     };
 
     var strings = {
