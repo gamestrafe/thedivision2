@@ -2085,19 +2085,31 @@ permalink: map.html
     ];
     var comms = L.layerGroup(commMarkers);
     mapLayers.push(comms);
-
+/*
+    var markersArtifacts = [
+        // Founding Fathers
+        //{latlng: , type: 'Founding Fathers', title: '', description: '', info: ''},
+        {latlng: [16.04729636074405, -62.78407043640484], type: 'Founding Fathers', title: 'Thomas Jefferson', description: 'Painting by Gilbert Stuart', info: ''},
+        // Artwork
+        //{latlng: , type: 'Artwork', title: '', description: '', info: ''},
+        {latlng: , type: 'Artwork', title: '', description: '', info: ''},
+        // Relic
+        //{latlng: , type: 'Relic', title: '', description: '', info: ''},
+        {latlng: [27.15045435377201, 119.7583006694913], type: 'Relic', title: 'The Constitution of the United States', description: 'A historical document of great value.', info: 'In the lobby of this building. You need to access the area in between teh building from teh west first, then rapell up and use the window to get into the building. Then head downstairs. This is behind the lobby desk.'},
+        {latlng: [22.370434371139936, 171.65588378906253], type: 'Relic', title: 'Plymouth Rock Fragment', description: 'A relic from one of the museums in DC.', info: 'Underground in a side room of a metro station.'},
+        {latlng: [32.52056988940947, -110.06201842068715], type: 'Relic', title: 'Greffuhle Stradivarius', description: 'A relic from one of the museums in DC.', info: 'Hanging on the wall here.'},
+        {latlng: [26.050544575613806, -12.751464396715166], type: 'Relic', title: 'George Washington\'s Battle Sword and Scabbard', description: 'A relic from one of the museums in DC.', info: 'Can be found laying on the ground next to a tree and a corpse very close to where the fence makes a sharp corner.'},
+        {latlng: [41.17247942512074, 35.74218765366823], type: 'Relic', title: 'Crystal Skull', description: 'A relic from one of the museums in DC.', info: 'Laying on the sidewalk.'},
+    ];
+    var artifactMarkers = markersArtifacts.map(function(data) {
+        return L.marker(data.latlng, {title: 'Artifact ' + data.type, icon: iconArtifact }).bindPopup('<h5>' + data.title + '</h5><p>' + data.description + ' ' + data.info + '</p>');
+    });
+*/
     var artifactMarkers = [
-        //L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5></h5><p></p>'),
-        L.marker([16.04729636074405, -62.78407043640484], {title: 'Artifact Founding Fathers', icon: iconArtifact }).bindPopup('<h5>Thomas Jefferson</h5><p>PAinting by Gilbert Stuart (1/7</p>'),
-        //L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Bazille and Camille</h5><p>Painting by Claude Monet. Upper floors. Access this building over the scaffolding in the center on the west or the fire escape on the east.</p>'),
         L.marker([56.32625231964513, -14.146005393404453], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>George Wahsington</h5><p>Painting by Gilbert Stuart. Upper level of this building, access through the alley and the northwest corner.</p>'),
-        L.marker([32.52056988940947, -110.06201842068715], {title: 'Artifact Relic', icon: iconArtifact }).bindPopup('<h5>Greffuhle Stradivarius</h5><p>A relic from one of the museums in DC.</p>'),
+        //L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Bazille and Camille</h5><p>Painting by Claude Monet. Upper floors. Access this building over the scaffolding in the center on the west or the fire escape on the east.</p>'),
         L.marker([59.658492286337086, -56.4404367725057], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>John Adams</h5><p></p>'),
-        L.marker([22.370434371139936, 171.65588378906253], {title: 'Artifact Relic', icon: iconArtifact }).bindPopup('<h5>Plymouth Rock Fragment</h5><p>A relic from one of the museums in DC. Underground in metro station.</p>'),
-        L.marker([26.050544575613806, -12.751464396715166], {title: 'Artifact Relic', icon: iconArtifact }).bindPopup('<h5>George Washington\'s Battle Sword and Scabbard</h5><p>A relic from one of the museums in DC. Can be found laing on the ground next to a tree and a corpse very close to where the fence makes a sharp corner..</p>'),
         L.marker([26.09623016077023, 53.98315452039243], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>St George and the Dragon</h5><p>Painting by Raphael. Propped against a nutcracker statue. Access to this area is through an entrance or escalators in the northeast of the building.</p>'),
-        L.marker([41.17247942512074, 35.74218765366823], {title: 'Artifact Relics', icon: iconArtifact }).bindPopup('<h5>Crystal Skull</h5><p>A relic from one of the museums in DC.</p>'),
-        L.marker([27.15045435377201, 119.7583006694913], {title: 'The Constitution of the United States', icon: iconArtifact }).bindPopup('<h5>The Constitution of the United States</h5><p>A historical document of great value. In the lobby of this building. You need to access the area in between teh building from teh west first, then rapell up and use the window to get into the building. Then head downstairs. This is behind the lobby desk.</p>'),
         L.marker([-11.149776977672495, 0.8569335937500001], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Portrait of Ginevra de\'Benci</h5><p>Painting by Leonardo da Vinci. Found in the supply room of Ellipse Fuel Depot, in the shelve behind the loot crates.</p>'),
         L.marker([-11.178401873711772, 79.22166835922202], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Judith Leyster - Self-Portrait</h5><p>Painting by Judith Leyster.</p>')
     ];
