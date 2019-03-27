@@ -6,13 +6,41 @@ meta:
 
 Several mission are available that are side missions. These can only be done once and usually are given by a person in a settlement. Talk to everyone to collect all of them.
 
+## Odea Tech Office
+
+Given by Justin Boyd at the Theater, after reaching level 1 of the Settlement.
+
+Search the Odea offices for battery packs.
+
+Rewards:
+- Blueprint: Improvised Body Armor
+- XP 1935
+
+Boss: Dash
+
+## Rooftop Gardens
+
+Given by Michael Davis at the Theater, after reaching level 1 of the Settlement.
+
+Neutralize the Hyena presence in an apartment complex.
+
+Rewards:
+- Theater Upgrade: Water Filtration
+- Blueprint: Improvised Gloves
+- XP 1935
+
 ## MLK Library Community
+
+Given by Cameron Reed at the Theater, after reaching level 1 of the Settlement.
 
 Help the MLK Library community.
 
-- Rewards: Blueprint: Improvised Kneepads, Theater Upgrade: Game Corner, 5850 XP
-- Boss: Pebbles
-- Boss loot: 1 green equipment item
+Rewards:
+- Theater Upgrade: Game Corner
+- Blueprint: Improvised Kneepads
+- 5850 XP
+
+Boss: Pebbles
 
 ## Department of Justice
 

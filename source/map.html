@@ -130,6 +130,8 @@ permalink: map.html
 
     var sideMissionMarkers = [
         //L.marker(, {title: '', icon: iconSidemission}).bindPopup('<h5></h5><p></p><p><b>Rewards:</b>  XP, Blueprint: </p>'),
+        L.marker([58.281776130924904, 92.54765791209674], {title: 'Rooftop Gardens', icon: iconSidemission}).bindPopup('<h5>Rooftop Gardens</h5><p>Neutralize the Hyena presence in an apartment complex.</p><p><b>Rewards:</b> 1935 XP, Theater Upgrade: Water Filtration, Blueprint: Improvised Gloves</p>'),
+        L.marker([58.44313381756837, 33.97198438192111], {title: 'Odea Tech Office', icon: iconSidemission}).bindPopup('<h5>Odea Tech Office</h5><p>Search the Odea offices for battery packs.</p><p><b>Rewards:</b> 1935 XP, Blueprint: Improvised Body Armor</p>'),
         L.marker([16.41851134440335, 168.0432127788663], {title: 'Judiciary Square Metro Station', icon: iconSidemission}).bindPopup('<h5>Judiciary Square Metro Station</h5><p>Marcela discovered a Black Tusk operation in the metro station and requested reinforcements.</p><p><b>Rewards:</b> 5 SHD Tech, 124650 XP, Blueprint: Defensive System: Reisistance</p>'),
         L.marker([-66.34339243671715, 223.0957026779652], {title: 'Rayburn House', icon: iconSidemission}).bindPopup('<h5>Rayburn House</h5><p>Investigate the reason for the True Sons presence. Given by Drone Crontoller after Reaching World Tier 1.</p><p><b>Rewards:</b> 5 SHD Tech, 124650 XP, Blueprint: Defensive Protocol: Resilience</p>'),
         L.marker([-34.58498328591662, -22.917479127645496], {title: 'Medical Camp Attack', icon: iconSidemission}).bindPopup('<h5>Medical Camp Attack</h5><p>Help the civilian militia fend of a Hyena attack outside the medical camp.</p><p><b>Rewards:</b> Blueprint: Loud Vent Brake .45</p>'),
@@ -497,7 +499,8 @@ permalink: map.html
         {latlng: [63.10635619630118, -246.07538114652692], info: ''},
         // General overworld (XWEP)
         //{latlng: , info: ''},
-        //{latlng: , info: 'Underground'},
+        {latlng: [-11.34217957052581, -169.52565725144473], info: 'Use rapell rope at the bottom of the stairs in the southeast corner of this building to get to the platform north east and drop into the backyard here.'},
+        {latlng: [63.464255742301596, -28.771047969052326], info: 'On roof. Climb foodtruck parked a bit east against the wall, then follow the wall west to get here.'},
         {latlng: [-57.5476708472858, 16.615699835030185], info: 'Underground in basement'},
         {latlng: [-54.59243635246321, 15.868597016616224], info: 'Underground'},
         {latlng: [-50.55183486579518, 1.279960048672706], info: 'Underground, in room behind locked fence'},
@@ -639,6 +642,9 @@ permalink: map.html
         L.marker([64.56260051925477, -261.5259023629693], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
         // General overworld (XGEAR)
         //L.marker(, {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p></p>'),
+        L.marker([-10.45972362707373, -171.55365872679758], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Use rapell rope at the bottom of the stairs in the southeast corner of this building to get to the platform north east and drop into the backyard here.</p>'),
+        L.marker([-10.988648081787964, -166.79001278944872], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Behind locked fence</p>'),
+        L.marker([63.20788799094296, -29.773111748319902], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>On roof. Climb foodtruck parked a bit east against the wall, then follow the wall west to get here.</p>'),
         L.marker([-56.72801939975912, 16.657378027730132], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground in basement</p>'),
         L.marker([-56.882600854230354, 17.44066587478158], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground in basement</p>'),
         L.marker([-55.99960975764024, 17.73680118666846], {title: 'Gear', icon: iconGear }).bindPopup('<h5>Gear crate</h5><p>Underground in basement behind locked fence</p>'),
@@ -816,6 +822,20 @@ permalink: map.html
     // XAIR
     var airdropMarkers = [
         //L.marker(, {title: 'Airdrop Crate', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p></p>'),
+        L.marker([-42.707063120992075, 126.74648849017981], {title: 'Airdrop Crate: Ressources', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the south branches of a tree</p>'),
+        L.marker([-57.30991117020275, 53.59537116219725], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>On a treebranch pointing northeast</p>'),
+        L.marker([-21.059895869674428, -180.57548232540347], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging low in a tree</p>'),
+        L.marker([-18.00381127678046, -176.29991534176762], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging low in a tree</p>'),
+        L.marker([-9.97101482478394, -168.75667929452268], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging low from a tree in a fenced off backyard. To get here, go to the southeast corner of the building, down the stairs then use the rapell roope to get on top of the scaffolding, now you can just drop into the backyard.</p>'),
+        L.marker([-9.96885060854611, -77.83134035880292], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the scaffolding here. To get to it, you need to walk up the east side of the building, about half way its length, then climb the hotdog stand against the wall there. Now you can circle back and climb to the loot spot.</p>'),
+        L.marker([58.44773280389084, -68.88190441202947], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the south side of the building. Loot will drop on an air vent. Go to the higher area just east of it and there you can climb over the ledge to get to it.</p>'),
+        L.marker([49.4166916327214, -65.80807296283602], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the southeast corner, high up on this building.</p>'),
+        L.marker([62.382221650311365, -30.313782923051722], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>High up on the northeast corner of the building here. To get ot the loot, climb the food truck parked a bit east adn then follow to the west.</p>'),
+        L.marker([42.52960583777107, 7.995868978763327], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the western side of the building, very high up.</p>'),
+        L.marker([22.447587696283993, 186.26223953716396], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>On top of the roof, hanging from a windowwasher platform. You need to go trhough a locked fence in the east here, then climb up a ladder, go trhough a door and climb a second ladder. Loot drops besides a locked Hyane Box.</p>'),
+        L.marker([-35.78217070326606, 181.06339908494667], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Inside building, above a walk way in the eastern most part, use the scaffolding to the east of it to climb up.</p>'),
+        L.marker([-60.292120840118166, 210.07169363333392], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Inside the botanical garden building, western most area, hanging from the ceiling.</p>'),
+        L.marker([-45.730726340561446, -176.2381899651208], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off a tree north of the road</p>'),
         L.marker([57.30991080804101, -43.26851594872333], {title: 'Airdrop Crate: Gear', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>Hanging off the southside of a building here in the alley, you can approach it from the south.</p>'),
         L.marker([49.76991171002831, -28.13842360087325], {title: 'Airdrop Crate: Materials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>In atree in the middle of the park, hanging low</p>'),
         L.marker([-55.553495458453696, -21.146731621186323], {title: 'Airdrop Crate: MAterials', icon: iconAirdrop }).bindPopup('<h5>Airdrop Crate</h5><p>In a tree over the path</p>'),
@@ -1263,7 +1283,8 @@ permalink: map.html
     // XSPEC
     var specialammoMarkers = [
         //L.marker(, {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
-        //L.marker([-55.264094671212355, 0.7295672194222513], {title: 'Special Ammo: High Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
+        L.marker([46.94726212303764, 65.96188155658605], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. On the roof of Grand Washington Hotel,</p>'),
+        L.marker([-55.264094671212355, 0.7295672194222513], {title: 'Special Ammo: High Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
         L.marker([62.333289944668444, -83.81689466536045], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground, lower level</p>'),
         L.marker([-52.69236617258382, 8.791224143279656], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
         L.marker([62.52651311952011, -78.02490234375001], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground, upper level</p>'),
@@ -1406,6 +1427,7 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [-10.334375001579746, -166.75045577533604], faction: 'Outcasts', info:'Behind locked fence'},
         {latlng: [34.019884568598826, -179.38476562500003], faction: 'Outcasts', info:'In the basement of the building, you have to do a side mission before this opens up.'},
         {latlng: [37.0884868125932, -181.48535136133432], faction: 'Outcasts', info:'Next to the building'},
         {latlng: [26.48237400788676, -124.60693359375001], faction: 'Outcasts', info:'Inside a blue container on top of a truck, south end is open.'},
@@ -1430,6 +1452,7 @@ permalink: map.html
     // Keys for locked boxes (XKEY)
     var markersKey = [
         //{latlng: , info:'Underground'},
+        {latlng: [-49.244858384207, 19.69630843188837], info:'Underground, in side room. You can get to it from the east by shooting a lock.'},
         {latlng: [-0.6445172097942051, -119.5056134631236], info:'Underground, bottom of stairs right at the wall next to it'},
         {latlng: [-21.68474141861156, -13.853759430348877], info:'Underground, in a room where tunnel gets wider, southeast corner.'},
         {latlng: [-23.268242285197715, -17.087401449680332], info:'Underground. Bottom level of large room, north wall, next to a door.'},
@@ -1461,7 +1484,6 @@ permalink: map.html
         {latlng: [-58.27715406080869, -35.06835937500001], info:'Underground'},
         {latlng: [-66.07511017816039, 201.95507705211642], info:'Underground, northeast corner, lowest level of the large room, north wall'},
         {latlng: [2.9326274160518326, -123.74999932944776], info:'Underground, In side room off large room'},
-        {latlng: [26.81754923006788, 117.49511707574132], info:'In staircase off the lobby, on a wall facing south.'},
         {latlng: [5.0690578267840465, -120.79832701453924], info:'Underground, against a wall, in a room besides the large one here'},
         {latlng: [58.17186117511539, 138.48486341536048], info:'Underground in big room, north east corner, north wall in the upper area'},
         {latlng: [58.286395482881034, 140.57199020927382], info:'Underground, on an east tunnel wall, just near a room entrance'},
@@ -2059,8 +2081,9 @@ permalink: map.html
         // True Sons
         L.marker([-70.03709635042001, 133.16748127341273], {title: 'Acceptable Losses', icon: iconComm }).bindPopup('<h5>Acceptable Losses</h5><p>Ridgeway meets with an advisor to formulate a plan to maintain control of DC, after losing several battles to Division agents. Inside building. True Sons Comms 1/10</p>'),
         L.marker([-20.062802132544014, 68.49243141710758], {title: 'Negotiations', icon: iconComm }).bindPopup('<h5>Negotiations</h5><p>Antwon Ridgeway refuses to negotiate. True Sons Comms 1/10</p>'),
-        // Outcasts
+        // Outcasts (12)
         //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Outcasts Comms 1/13</p>'),
+        L.marker([-9.925565912405494, -63.25492289287719], {title: 'Asymptomatic', icon: iconComm }).bindPopup('<h5>Asymptomatic</h5><p>Emeline provides her doctor with her blood to build a weapon. On an arm rest of a stone bench here. Outcasts Comms 1/13</p>'),
         L.marker([20.1302203810778, -150.8203125], {title: 'Rations', icon: iconComm }).bindPopup('<h5>Rations</h5><p>An infected civilian argues with one of Ridgeway\'s True Sons about distribution of rations. Outcasts Comms 1/13</p>'),
         L.marker([-18.145751169871602, -213.16557252962798], {title: 'Plotting', icon: iconComm }).bindPopup('<h5>Plotting</h5><p>Emeline plots with other people in quarantine to take over the island. Under bridge, accessible from the south. Outcasts Comms 1/13</p>'),
         L.marker([-54.39842930182128, -172.18659984566244], {title: 'Emeline\'s End', icon: iconComm }).bindPopup('<h5>Emeline\'s End</h5><p>An Outcast asks Emeline when it will end. On top of some containers here. Outcasts Comms 1/13</p>'),
@@ -2090,7 +2113,12 @@ permalink: map.html
         L.marker([32.01431393962964, -26.389160156250004], {title: 'Possible Subterfuge', icon: iconComm }).bindPopup('<h5>Possible Subterfuge</h5><p>Former Vice President Mendez, after being sworn in as POTUS shares his suspicions with Andrew Ellis. Government Comms 2/13</p>'),
         L.marker([36.29151546818265, -23.411550122836278], {title: '25th Amendment', icon: iconComm }).bindPopup('<h5>25th Amendment</h5><p>White House staff members learn that POTUS has died. Government Comms 1/13</p>'),
         L.marker([17.83941669124139, -28.75488325953484], {title: 'Black Friday Briefing', icon: iconComm }).bindPopup('<h5>Black Friday Briefing</h5><p>First POTUS briefing on the outbreak where he receives privileged information, hinting at the scope of the disaster. Government Comms 1/13</p>'),
-        // Campus
+        // Campus (8)
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p> Campus Comms 1/8</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p> Campus Comms 1/8</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p> Campus Comms 1/8</p>'),
+        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p> Campus Comms 1/8</p>'),
+        L.marker([13.130839082256072, -81.45156402358867], {title: 'Mystery Meat', icon: iconComm }).bindPopup('<h5>Mystery Meat</h5><p>A gardener serves sew to a reluctant civilian. On top of a tool cart on top of the scaffolding here. Campus Comms 1/8</p>'),
         L.marker([53.66412432842649, -111.785888671875], {title: 'Food Scarcity', icon: iconComm }).bindPopup('<h5>Food Scarcity</h5><p>Henry Hayes, the leader of the Campus settlement, laments the food scarcity and is reassured that they will find a way to feed the community. Campus Comms 1/8</p>'),
         L.marker([56.54731402263233, -120.85693314671518], {title: 'Building Community', icon: iconComm }).bindPopup('<h5>Building Community</h5><p>Henry Hayes, the leader of the Campus settlement, announces the community and lays out a new plan of action. Campus Comms 1/8</p>'),
         L.marker([64.14128631522323, -79.2509762942791], {title: 'Help Wanted', icon: iconComm }).bindPopup('<h5>Help Wanted</h5><p>Henry Hayes, the leader of the Campus settlement, confides in another civilian that they need help. Campus Comms 1/8</p>'),
@@ -2130,10 +2158,10 @@ permalink: map.html
         // New York
         L.marker([36.4566360115962, 116.00338735543515], {title: 'Turning Point', icon: iconComm }).bindPopup('<h5>Turning Point</h5><p>Captain Benitez considers the death of Bliss and the rise of Keener. New York Comms 1/8</p>'),
         L.marker([51.66403781658121, -69.64505069508158], {title: 'NYC Crew', icon: iconComm }).bindPopup('<h5>NYC Crew</h5><p>Captain Benitez gives a status report on the Division staff in Manhattan. Inside building, next to SHD cache. New York Comms 1/8</p>'),
-        // Division
+        // Division (10)
         //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Division Comms 1/10</p>'),
         //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Division Comms 1/10</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Division Comms 1/10</p>'),
+        L.marker([-46.449969399817874, 31.05944668397185], {title: 'Theater Recruitment', icon: iconComm }).bindPopup('<h5>Theater Recruitment</h5><p>Agent Kelso meets with the Theater Leader Odessa Sawyer and agrees to help them however she can. Division Comms 1/10</p>'),
         //L.marker(, {title: 'Sawyer\'s Separated', icon: iconComm }).bindPopup('<h5>Sawyer\'s Separated</h5><p>Agent Odessa Sawyer has to leave her husband and daughter when she is activated. In a locked in fence area. Division Comms 1/10</p>'),
         L.marker([-53.6967096513578, -102.79687553644182], {title: 'Priority Target: Keener', icon: iconComm }).bindPopup('<h5>Priority Target: Keener</h5><p>Update to all agents regarding Keener\'s status and Rogue Agents in Manhattan. At the front of the boat. Division Comms 1/10</p>'),
         L.marker([-0.4101518529065752, -43.432415173233], {title: 'Broad-Spectrum Antiviral', icon: iconComm }).bindPopup('<h5>Broad-Spectrum Antiviral</h5><p>Kelso briefs Manny on the DCD broad-spectrum antiviral. Division Comms 1/10</p>'),
@@ -2144,34 +2172,32 @@ permalink: map.html
     ];
     var comms = L.layerGroup(commMarkers);
     mapLayers.push(comms);
-/*
+
+    // XARTI
     var markersArtifacts = [
         // Founding Fathers
         //{latlng: , type: 'Founding Fathers', title: '', description: '', info: ''},
+        //{latlng: [59.658492286337086, -56.4404367725057], type: 'Founding Fathers', title: 'John Adams', description: '', info: ''},
+        {latlng: [56.32625231964513, -14.146005393404453], type: 'Founding Fathers', title: 'George Washington', description: 'Painting by Gilbert Stuart.', info: 'Upper level of this building, access through the alley and the northwest corner.'},
         {latlng: [16.04729636074405, -62.78407043640484], type: 'Founding Fathers', title: 'Thomas Jefferson', description: 'Painting by Gilbert Stuart', info: ''},
         // Artwork
         //{latlng: , type: 'Artwork', title: '', description: '', info: ''},
-        {latlng: , type: 'Artwork', title: '', description: '', info: ''},
-        // Relic
+        //{latlng: , type: 'Artwork', title: 'Bazille and Camille', description: 'Painting by Claude Monet.', info: 'Upper floors. Access this building over the scaffolding in the center on the west or the fire escape on the east.'},
+        {latlng: [-11.149776977672495, 0.8569335937500001], type: 'Artwork', title: 'Portrait of Ginevra de\'Benci', description: 'Painting by Leonardo da Vinci.', info: 'Found in the supply room of Ellipse Fuel Depot, in the shelve behind the loot crates.'},
+        {latlng: [-11.178401873711772, 79.22166835922202], type: 'Artwork', title: 'Judith Leyster - Self-Portrait', description: 'Painting by Judith Leyster.', info: 'Accessible through the inner courtyard, you can reach through the east exit of the safe house. From there climb the ladder in the south and enter the building through the windows in the east.'},
+        {latlng: [26.09623016077023, 53.98315452039243], type: 'Artwork', title: 'St George and the Dragon', description: 'Painting by Raphael.', info: 'Propped against a nutcracker statue. Access to this area is through an entrance or escalators in the northeast of the building.'},
+        // Relic (13)
         //{latlng: , type: 'Relic', title: '', description: '', info: ''},
+        {latlng: [-10.902357997680976, -167.85880802381612], type: 'Relic', title: 'Yamaki Pine', description: 'A historical document of great value.', info: 'Use rapell rope at the bottom of the stairs in the southeast corner of this building to get to the platform north east and drop into the backyard here.'},
         {latlng: [27.15045435377201, 119.7583006694913], type: 'Relic', title: 'The Constitution of the United States', description: 'A historical document of great value.', info: 'In the lobby of this building. You need to access the area in between teh building from teh west first, then rapell up and use the window to get into the building. Then head downstairs. This is behind the lobby desk.'},
         {latlng: [22.370434371139936, 171.65588378906253], type: 'Relic', title: 'Plymouth Rock Fragment', description: 'A relic from one of the museums in DC.', info: 'Underground in a side room of a metro station.'},
         {latlng: [32.52056988940947, -110.06201842068715], type: 'Relic', title: 'Greffuhle Stradivarius', description: 'A relic from one of the museums in DC.', info: 'Hanging on the wall here.'},
         {latlng: [26.050544575613806, -12.751464396715166], type: 'Relic', title: 'George Washington\'s Battle Sword and Scabbard', description: 'A relic from one of the museums in DC.', info: 'Can be found laying on the ground next to a tree and a corpse very close to where the fence makes a sharp corner.'},
-        {latlng: [41.17247942512074, 35.74218765366823], type: 'Relic', title: 'Crystal Skull', description: 'A relic from one of the museums in DC.', info: 'Laying on the sidewalk.'},
+        {latlng: [41.17247942512074, 35.74218765366823], type: 'Relic', title: 'Crystal Skull', description: 'A relic from one of the museums in DC.', info: 'Laying on the sidewalk.'}
     ];
     var artifactMarkers = markersArtifacts.map(function(data) {
-        return L.marker(data.latlng, {title: 'Artifact ' + data.type, icon: iconArtifact }).bindPopup('<h5>' + data.title + '</h5><p>' + data.description + ' ' + data.info + '</p>');
+        return L.marker(data.latlng, {title: 'Artifact ' + data.type + ': ' + data.title, icon: iconArtifact }).bindPopup('<h5>' + data.title + '</h5><p>' + data.description + ' ' + data.info + '</p>');
     });
-*/
-    var artifactMarkers = [
-        L.marker([56.32625231964513, -14.146005393404453], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>George Wahsington</h5><p>Painting by Gilbert Stuart. Upper level of this building, access through the alley and the northwest corner.</p>'),
-        //L.marker(, {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Bazille and Camille</h5><p>Painting by Claude Monet. Upper floors. Access this building over the scaffolding in the center on the west or the fire escape on the east.</p>'),
-        L.marker([59.658492286337086, -56.4404367725057], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>John Adams</h5><p></p>'),
-        L.marker([26.09623016077023, 53.98315452039243], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>St George and the Dragon</h5><p>Painting by Raphael. Propped against a nutcracker statue. Access to this area is through an entrance or escalators in the northeast of the building.</p>'),
-        L.marker([-11.149776977672495, 0.8569335937500001], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Portrait of Ginevra de\'Benci</h5><p>Painting by Leonardo da Vinci. Found in the supply room of Ellipse Fuel Depot, in the shelve behind the loot crates.</p>'),
-        L.marker([-11.178401873711772, 79.22166835922202], {title: 'Artifact Artwork', icon: iconArtifact }).bindPopup('<h5>Judith Leyster - Self-Portrait</h5><p>Painting by Judith Leyster.</p>')
-    ];
     var artifacts = L.layerGroup(artifactMarkers);
     mapLayers.push(artifacts);
 
@@ -2369,8 +2395,8 @@ permalink: map.html
         L.marker([24.800033178851, 56.147433938277835], {title: 'Hunter: Demon', icon: iconSecret }).bindPopup('<h5>Hunter: Demon</h5><p>Go to this building. You need to reach the atrium. In the northeast of this block you find escalators which you can use or a door that also leads to the atrium. Inside, there is a raised area with some greenery and two large boulders, stand between those boulders. Look west and up. There are man shaped silhouette targets in 4 windows, forming a diagonal from left top to botom right. Shoot them in that order and the Hunter spawns. He uses an assault turret and airburst seeker mines. Drops the Demon mask.</p>'),
         L.marker([43.718180920237856, -218.46676547237348], {title: 'Hunter: Revenant and Midas', icon: iconSecret }).bindPopup('<h5>Hunter: Revenant and Midas</h5><p>At this spot there is a pool. The shape of the pool has two rounded areas that overlap and create a narrow spot. Stand in that narrow spot, there is a rectangular drain there. Face north and start doing jumping jacks. Two hunters will spawn almost immediately. If they don\'t, try a bit different position. Time of day doesn\'t matter. One is using a flame turret, the other a blinding firefly and a healing seeker mine. They drop the Revenant and Midas masks.</p>'),
         L.marker([33.23409295522519, 113.89894497744083], {title: 'Hunter: Crimson', icon: iconSecret }).bindPopup('<h5>Hunter: Crimson</h5><p>Here inside the building is a counter. Stand inside it, look south and there is a screen and to the right of it something that looks like a military radio. You get an interact prompt when you are in front of it, no highlighting. Once you did, you have to run through the courtyard north and to the other building part where there is another counter with a phone on the left side of the counter. Interact with that, within a short enough time and the hunter spawns. He is using bomber drones and foam against you. Killing him wil lgive you a Crimson Mask and potentially an ivory key.</p>'),
-        L.marker([-50.21069662612368, -9.404296875000002], {title: 'Hunter: ? ?', icon: iconSecret }).bindPopup('<h5>Hunter:  ? ?</h5><p>Go to the Washington Monument controlpoint and clear it, then go into the supply room below ground. After 19:00 in game (open photomode to see it in the top right corner) the console here with a blue buton, behind the stone ornament in front of the elevator, can be interacted with. Now you have to go to three locations, in a specific order, northwest, northeast and southwest, see the grave markers. Then you have to return here and press the button again. Go back up and you will find one hunter spawning in one of two locations, the other in a very specific spot, see those other maarkers on the map.</p>'),
-        L.marker([-35.22767235493584, 108.0981443077326], {title: 'Hunter: ? ? ?', icon: iconSecret }).bindPopup('<h5>Hunter: ? ? ?</h5><p>In this spot is a small cafe. Look at the counter in the center. On the side of the counter opening in the south, there is a lever below the green espresso machine, facing west. Pull it when it\'s pitch dark outside and you\'ll meet three hunters.</p>')
+        L.marker([-50.21069662612368, -9.404296875000002], {title: 'Hunter: ? ?', icon: iconSecret }).bindPopup('<h5>Hunter:  ? ?</h5><p>Go to the Washington Monument control point and clear it, then go into the supply room below ground. After 19:00 in game (open photomode to see it in the top right corner) the console here with a blue buton, behind the stone ornament in front of the elevator, can be interacted with. Now you have to go to three locations, in a specific order, northwest, northeast and southwest, see the grave markers. Then you have to return here and press the button again. Go back up and you will find one hunter spawning in one of two locations, the other in a very specific spot, see those other maarkers on the map.</p>'),
+        L.marker([-35.22767235493584, 108.0981443077326], {title: 'Hunter: ? ? ?', icon: iconSecret }).bindPopup('<h5>Hunter: ? ? ?</h5><p>In this spot is a small cafe. Look at the counter in the center. On the side of the counter opening in the south, there is a lever below the green espresso machine, facing west. Pull it when it\'s pitch dark outside the lights go on around the tree to your east. Go there and run around the christmas tree. Latest after 2 rounds three to five hunters should spawn. Three of them will drop masks.</p>')
     ];
     var secrets = L.layerGroup(secretMarkers);
     mapLayers.push(secrets);

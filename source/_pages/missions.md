@@ -8,15 +8,37 @@ Main missions are visible on the [map](/map.html) as hexagons. They lead you thr
 
 ## Grand Washington Hotel
 
+Unlocks after going to the White House and then visiting the Theater settlement for the first time.
+
 Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.
 
 Theater Settlement Mission
+
+Minimum Level: 2
+
+Rewards:
+- 1 Skill Unlock
+- Theater Settlement Upgrade
+- 1950 XP
+
+Boss: Saint
+
+After the mission, return to the Theater and talk to Odessa and Kelso. This will unlock the Jefferson Trade Center, ViewPoint Museum and American History Museum missions.
 
 ## Jefferson Trade Center
 
 Reactivate the ISAC node beneath the center and rescue the missing Division agent.
 
 SHD Mission
+
+Minimum Level: 4
+
+Rewards:
+- 10 SHD Tech
+- Base of Operations Upgrade
+- 4950 XP
+
+Boss: Coyote
 
 ## ViewPoint Museum
 
@@ -27,3 +49,6 @@ Seize the ViewPoint building from the True Sons.
 - Loot Drop: 2 green quality equipment items
 
 Theater Settlement Mission
+
+## American History Museum
+
