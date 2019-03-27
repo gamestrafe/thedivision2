@@ -4,7 +4,7 @@ if [ -z "$1" ]; then
   echo -e "WARNING!!\nYou need to pass the WEBHOOK_URL as first argument" && exit
 fi
 
-echo -e "[Webhook]: Sending webhook to slack...\\n";
+echo -e "[Webhook]: Sending webhook to Slack...\\n";
 
 AUTHOR_NAME="$(git log -1 "$TRAVIS_COMMIT" --pretty="%aN")"
 COMMITTER_NAME="$(git log -1 "$TRAVIS_COMMIT" --pretty="%cN")"
@@ -24,7 +24,9 @@ else
 fi
 
 TIMESTAMP=$(date --utc +%FT%TZ)
-WEBHOOK_DATA='[{"type": "section","text": {"type": "mrkdwn","text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*"}},{"type": "context","elements": [{"type": "mrkdwn","text": "Deployed at '"$TIMESTAMP"'"},{"type": "mrkdwn","text": "'"$CREDITS"'"},{"type": "mrkdwn","text": "Branch: '"[$TRAVIS_BRANCH](https://github.com/$TRAVIS_REPO_SLUG/tree/$TRAVIS_BRANCH)"'"}]}]'
+# Something is wrong with this, but can't figure out what, so skipping for now
+#WEBHOOK_DATA='[{"type": "section","text": {"type": "mrkdwn","text": "*<'"$TRAVIS_BUILD_WEB_URL"'|'"$TRAVIS_REPO_SLUG"' deployed>*"}},{"type": "context","elements": [{"type": "mrkdwn","text": "Deployed at '"$TIMESTAMP"'"},{"type": "mrkdwn","text": "'"$CREDITS"'"},{"type": "mrkdwn","text": "Branch: '"<https://github.com/$TRAVIS_REPO_SLUG/tree/$TRAVIS_BRANCH|$TRAVIS_BRANCH>"'"}]}]'
+WEBHOOK_DATA='{"text":"'"$TRAVIS_REPO_SLUG"' deployed at '"$TIMESTAMP"'"}'
 
 echo -e "$WEBHOOK_DATA"
 
