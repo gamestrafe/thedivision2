@@ -29,6 +29,7 @@ All (except one) optics mods require Electronics and Steel to craft.
 - Streamlined Iron Sights, +25% Reload speed, -8% Critical hit Chance. (Requires Titanium and Steel)
 - T2 Micro Red Dot Sight: +20% Accuracy, -10% Critical Hit Chance
 - VX1 Scope: +30% Headshot Damage, -20% Reload Speed
+- Weighted Iron Sights, +25% Stability, -20% Critical Hit Damage. (Requires Titanium and Steel)
 
 ## Underbarrel mods
 
@@ -62,6 +63,7 @@ All magazine mods require Titanium and Steel to craft.
 - Mended Marksman Mag: +20% Optimal Range, -10% Reload Speed
 - Nimble Link Belt: +10% Rate of Fire, -20% Stability
 - Non-disruptive Link: +10% Critical Hit Damage, -10% Accuracy
+- Police Pistol Mag: +30% Reload Speed, -10% Damage to Elites
 - Precision 7.62 Mag: +15% Headshot Damage, -10% Damage to Elites
 - Precision Feeding .45 Mag: +20% Stability, -5% Critical Hit Damage
 - Segmented 9mm Mag: +30% Reload Speed, -5 Rounds
@@ -72,6 +74,7 @@ All magazine mods require Titanium and Steel to craft.
 - Tactical 5.56 Mag: +10% Critical Hit Damage, -15% Optimal Range
 - Tactical Small Pouch: +25% Reload speed, -15 Rounds
 - Thin 7.62 Mag: +15% Reload Speed, -8% Critical Hit Chance
+- Underbalanced Integrated Spring: +10% Damage to Elites, -20% Stability
 - Weighted 7.62 Mag: +20% Stability, -20% Optimal Range
 
 ## Muzzle Mods
