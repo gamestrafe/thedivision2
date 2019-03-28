@@ -44,11 +44,16 @@ Boss: Coyote
 
 Seize the ViewPoint building from the True Sons.
 
-- Rewards: 1 Skill Unlock, Theater Settlement Upgrade, 9750 XP
-- Boss: Staff Sergeant Carl Wade
-- Loot Drop: 2 green quality equipment items
-
 Theater Settlement Mission
+
+Minimum Level: 6
+
+Rewards:
+- 1 Skill Unlock
+- Theater Settlement Upgrade
+- 9750 XP
+
+Boss: Staff Sergeant Carl Wade
 
 ## American History Museum
 
