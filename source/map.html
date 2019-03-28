@@ -823,7 +823,9 @@ permalink: map.html
     var markersAirdrop = [
         //{latlng: , type:'', info: ''},
         //{latlng: , type:'Gear', info: ''},
+
         //{latlng: , type:'Materials', info: ''},
+        {latlng: [32.35770915087531, -64.80175942182542], type:'Gear', info: 'Hanging over a windowwasher rig, high above the street. To get it, you have to go into the alley going north south just west of here, and in the higher area climb on top of the ducts, then climb higher until you reach this platform.'},
         {latlng: [-42.707063120992075, 126.74648849017981], type: 'Ressources', info: 'Hanging off the south branches of a tree'},
         {latlng: [-57.30991117020275, 53.59537116219725], type: 'Materials', info: 'On a treebranch pointing northeast'},
         {latlng: [-21.059895869674428, -180.57548232540347], type: 'Materials', info: 'Hanging low in a tree'},
@@ -2060,6 +2062,8 @@ permalink: map.html
     var echos = L.layerGroup(echoMarkers);
     mapLayers.push(echos);
 
+    // [43.95758320989325, -77.12695173919202] Goldbar southeast of the back vault, after entering the huge door, go right and right again, search among the piles of cash there
+
     // XCOMM
     var commMarkers = [
         // JTF
@@ -2091,6 +2095,8 @@ permalink: map.html
         L.marker([-20.062802132544014, 68.49243141710758], {title: 'Negotiations', icon: iconComm }).bindPopup('<h5>Negotiations</h5><p>Antwon Ridgeway refuses to negotiate. True Sons Comms 1/10</p>'),
         // Outcasts (12)
         //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Outcasts Comms 1/13</p>'),
+        L.marker([32.99759607103679, -81.17358405143024], {title: 'Cistern', icon: iconComm }).bindPopup('<h5>Cistern</h5><p>Two Outcasts scoting for communities. On top of a post here, reachable form the top of the platform. Outcasts Comms 1/13</p>'),
+        L.marker([35.065143424630904, -67.83984359353781], {title: 'Message for Henry', icon: iconComm }).bindPopup('<h5>Message for Henry</h5><p>Outcasts deliver a message to CAmpus leader Henry Hayes. On the ground in a corner here. Outcasts Comms 1/13</p>'),
         L.marker([-9.925565912405494, -63.25492289287719], {title: 'Asymptomatic', icon: iconComm }).bindPopup('<h5>Asymptomatic</h5><p>Emeline provides her doctor with her blood to build a weapon. On an arm rest of a stone bench here. Outcasts Comms 1/13</p>'),
         L.marker([20.1302203810778, -150.8203125], {title: 'Rations', icon: iconComm }).bindPopup('<h5>Rations</h5><p>An infected civilian argues with one of Ridgeway\'s True Sons about distribution of rations. Outcasts Comms 1/13</p>'),
         L.marker([-18.145751169871602, -213.16557252962798], {title: 'Plotting', icon: iconComm }).bindPopup('<h5>Plotting</h5><p>Emeline plots with other people in quarantine to take over the island. Under bridge, accessible from the south. Outcasts Comms 1/13</p>'),
@@ -2163,7 +2169,8 @@ permalink: map.html
         L.marker([-16.654082352742563, -117.08007113085549], {title: 'Water', icon: iconComm }).bindPopup('<h5>Water</h5><p>Civilians argue over bottled water. In building, accesible over scaffolding to the east. Contaminated Areas Comms 1/15</p>'),
         L.marker([-16.988944380352148, -112.61488177067235], {title: 'Isolated', icon: iconComm }).bindPopup('<h5>Isolated</h5><p>Civilians suspected of carrying the infection are forced into an isolated area. Accessible by jumping over some scaffolding on the south eastern area. Contaminated Areas Comms 1/15</p>'),
         L.marker([-75.80229372912325, 127.61712438512212], {title: 'Faith', icon: iconComm }).bindPopup('<h5>Faith</h5><p>A woman calls her family after being separated from them. Inside building, a bit tricky to get to. Contaminated Areas Comms 1/15</p>'),
-        // New York
+        // New York (8)
+        L.marker([32.32056982141429, -65.44335924088956], {title: 'Update: Rikers', icon: iconComm }).bindPopup('<h5>Update: Rikers</h5><p>Captain Benitez gives a status report on the Rikers, after thier leader Larae Barrett is taken out. On a windowwasher rig, high above the street. To get it, you have to go into the alley going north south just west of here, and in the higher area climb on top of the ducts, then climb higher until you reach this platform. New York Comms 1/8</p>'),
         L.marker([36.4566360115962, 116.00338735543515], {title: 'Turning Point', icon: iconComm }).bindPopup('<h5>Turning Point</h5><p>Captain Benitez considers the death of Bliss and the rise of Keener. New York Comms 1/8</p>'),
         L.marker([51.66403781658121, -69.64505069508158], {title: 'NYC Crew', icon: iconComm }).bindPopup('<h5>NYC Crew</h5><p>Captain Benitez gives a status report on the Division staff in Manhattan. Inside building, next to SHD cache. New York Comms 1/8</p>'),
         // Division (10)
@@ -2185,6 +2192,7 @@ permalink: map.html
     var markersArtifacts = [
         // Founding Fathers
         //{latlng: , type: 'Founding Fathers', title: '', description: '', info: ''},
+        {latlng: [53.42262754609996, -151.19384765625003], type: 'Founding Fathers', title: 'James Madison', description: 'Painting by Gilbert Stuart.', info: 'In underground parking garage, access trhough the alley in the north or south of these buildings.'},
         //{latlng: [59.658492286337086, -56.4404367725057], type: 'Founding Fathers', title: 'John Adams', description: '', info: ''},
         {latlng: [56.32625231964513, -14.146005393404453], type: 'Founding Fathers', title: 'George Washington', description: 'Painting by Gilbert Stuart.', info: 'Upper level of this building, access through the alley and the northwest corner.'},
         {latlng: [16.04729636074405, -62.78407043640484], type: 'Founding Fathers', title: 'Thomas Jefferson', description: 'Painting by Gilbert Stuart', info: 'Inside building. The painting is on a west facing wall in about the center of the building.'},
