@@ -6,6 +6,55 @@ meta:
 
 This page contains all the patch notes that were published since the release of the game. Newest patch notes are always at the top.
 
+## Patch from 28. March 2019
+
+* Performance
+** Various improvements to reduce frame drops.
+
+* Clans
+** Changed the Clan Member UI colour to not conflict with Elite enemies.
+** Fixed an issue where players Clan XP contributions could stop registering.
+
+* VOIP
+** Changed Push-to-Talk to be the default VOIP setting.
+
+* UI
+** Changed Apparel Store purchase confirmations to a button hold action.
+** Reduced the UI flickering effect present in the menu.
+** Fixed a visual bug that would incorrectly display a grey duplicate backpack reward when opening apparel caches.
+** Fixed the menu distortion animation playing twice under certain circumstances.
+
+* Skills
+** Fixed abnormal skill behaviour when equipping a skill after having switched to a grenade.
+** Fixed instances of skills going on cool down when deploying a shield.
+** Fixed an issue where multiple Cluster Seeker Mines could be deployed in short succession.
+
+* Mods
+** Fixed an issue where donating a weapon with mods attached would remove the mods from the players inventory.
+
+* Gameplay
+** Fixed daily and weekly missions not resetting for offline players.
+** Improvements made to Co-op health scaling.
+** Fixed an issue where armour/gear scaling would not take World Tiers into account.
+** Fixed skill damage incorrectly being scaled twice for low level players joining a high level group.
+** Fixed players potentially becoming stuck on the “Meet The Division Coordinator” objective after having played in Co-op.
+** Fixed players potentially becoming stuck on the “Meet with Odessa Sawyer” objective.
+
+* Open World
+** Fixed an issue that would allow players to upgrade neutral control points.
+
+* Side Missions
+** Fixed an issue that would cause low level players to gain unintended amounts of XP by completing side missions with a high level group member.
+
+* PC
+** Fixed an issue where some Logitech headphone users experienced missing in-game audio.
+
+* UI
+** Fixed “Navigate Categories” and “Mark as Junk” being bound to the same button in some occurrences.
+
+* Xbox One
+** Fixed an issue where the HDR setting slider would not move.
+
 ## Patch from 22. March 2019
 
 * Fixed an issue where players were not being granted Clan XP
