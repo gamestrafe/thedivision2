@@ -4,9 +4,9 @@ meta:
     description: Crafting is an important aspect of The Division 2. All you need to know about crafting.
 ---
 
-Before you can start to craft, you need to find and recruit Inaya al-Khaliq to the base of operations. You can do so by finishing the Wahsington Hotel Mission and return to Odessa in The Theater. After that you can simply talk to her on the same level that the door with Odessa is, near the western ramp. Then she will be in the crafting room close to where you can upgrade your skills.
+Before you can start to craft, you need to find and recruit Inaya al-Khaliq to the base of operations. You can do so by finishing the Washington Hotel Mission and return to Odessa in The Theater. After that you can simply talk to her on the same level that the door with Odessa is, near the western ramp. Then she will be in the crafting room close to where you can upgrade your skills.
 
-Secondly you need blueprints. Those can be gained by completing certain tasks like projects.
+Secondly you need blueprints. Those can be gained by completing [side missions](/side-missions.html), certain [projects](/projects.html) and later by liberating high level (3+) control points.
 
 When you craft [weapon mods](/weapon-mods.html), they are created and stay with you forever, you can use them in as many guns as you like.
 
@@ -17,6 +17,8 @@ A total of 177 blueprints are available. 58 are weapons, 77 are mods and misc, a
 You craft items according to your level, so if you are level 7, your weapons and gear will also be level 7.
 
 After you progress through the game for a while, you will be awarded a blueprint for upgrading the work bench. Until you do, the workbench will only keep producing specialized items. You will also get upgrade blueprints once you reach the [endgame content](/end-game.html), for each worldtier.
+
+Crafting costs materials. At level below 30 you need 3 materials and 32 credits to craft mods. 
 
 ## Upgrade costs
 

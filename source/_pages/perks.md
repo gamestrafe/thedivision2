@@ -16,12 +16,6 @@ A second weapon can be equipped, for a total of 2 primary weapons and 1 secondar
 
 Cost: 1 SHD Tech
 
-## Skill Slot
-
-Another skill can be equipped, for a total of 2 skills equipped at all times.
-
-Cost: 1 SHD Tech
-
 ## Restock
 
 ### Restock 1: Armor Kits
@@ -40,7 +34,7 @@ Cost: 1 SHD Tech
 
 50% cache for a bonus item to drop when opening a Field Proficiency Cache.
 
-Cost: 2 SHD Tech
+Cost: 5 SHD Tech
 
 ## Armor Kit
 
@@ -280,13 +274,13 @@ Cost: 1 SHD Tech
 
 Deconstruction can yield extra crafting materials.
 
-Cost: 2 SHD Tech
+Cost: 3 SHD Tech
 
 ### Deconstruction 2
 
 Chance for a rare material to be awarded when deconstructiong.
 
-Cost: 3 SHD Tech
+Cost: ? SHD Tech
 
 ## Resources
 
@@ -352,4 +346,4 @@ Increases the amount of signature weapon ammo dropped.
 
 Requires Level 30
 
-Cost: 3 SHD Tech
+Cost: 5 SHD Tech

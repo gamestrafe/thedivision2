@@ -40,6 +40,8 @@ Rewards:
 
 Boss: Coyote
 
+After this mission all the SHD mission Space Administration HQ and Federal Emergency Bunker unlock. Also the SHD [side missions](/side-missions.html) unlock.
+
 ## ViewPoint Museum
 
 Seize the ViewPoint building from the True Sons.
@@ -57,3 +59,52 @@ Boss: Staff Sergeant Carl Wade
 
 ## American History Museum
 
+Extract interrogation data from the True Sons stockade.
+
+Minimum Level: 8
+
+Rewards:
+- 1 Skill Unlock
+- Theater Settlement Upgrade
+- 24557 XP
+
+Boss: Captain Briggs
+
+## Air & Space Museum
+
+Investigate True Sons activity at the Air & Space Museum.
+
+Minimum Level: 10
+
+Rewards:
+- 1 Skill Unlock
+- Theater Settlement Upgrade
+- 37175 XP
+
+Boss: Lieutenant Kelly
+
+## Space Administration HQ
+
+Reestablish the Division satellite network.
+
+Minimum Level: 12
+
+Rewards:
+- 10 SHD Tech
+- Base of Operations Upgrade
+- 52497 XP
+
+Boss: Master Sergeant Steve "Junior" Quiroz
+
+## Federal Emergency Bunker
+
+Search the bunker for the missing Division team.
+
+Minimum Level: 24
+
+Rewards:
+- 10 SHD Tech
+- Base of Operations Upgrade
+- 201213 XP
+
+Boss: The Bloodhound
