@@ -96,6 +96,8 @@ Rewards:
 
 Boss: Master Sergeant Steve "Junior" Quiroz
 
+> "You want to see your tax dollars at work? Here you go. All this hardware brought to you by red, white and blue!" - Master Sergeant Steve "Junior" Quiroz
+
 ## Federal Emergency Bunker
 
 Search the bunker for the missing Division team.
@@ -108,3 +110,75 @@ Rewards:
 - 201213 XP
 
 Boss: The Bloodhound
+
+## Jefferson Plaza
+
+Shut down the True Sons'facility at Jefferson Plaza.
+
+Level: 14
+
+Rewards:
+- 1 Skill Unlock
+- 70523 XP
+
+Boss: Captain Wilson
+
+## Bank Headquarters
+
+Unlocks after talking to Henry Hayes at the Campus.
+
+Break into the bank occupied by one of the Hyena Council members, and secure what they stole from Air Force One.
+
+Level: 16
+
+Rewards:
+- 1 Skill Unlock
+- Campus Settlement Upgrade
+- 91253 XP
+
+Bosses: Rebound, Roach
+
+## DCD Headquarters
+
+Unlocks after talking to Henry Hayes at the Campus.
+
+Assault the abandoned DCD building complex now held by the Outcasts. Destroy their lab, samples and download any research found in the facility.
+
+Level: 17
+
+Rewards:
+- 1 Skill Unlock
+- Campus Settlement Upgrade
+- 102632 XP
+
+Boss: The Blade
+
+## Potomac Event Center
+
+Unlocks after talking to Henry Hayes at the Campus.
+
+Assault the Potomac Event Center and apprehend the Outcasts' strategist.
+
+Level: 22
+
+Rewards:
+- 10 SHD Tech
+- Campus Settlement Upgrade
+- 169667 XP
+
+Boss: The Owl
+
+## Lincoln Memorial
+
+Unlocks after talking to Henry Hayes at the Campus.
+
+Help the campus settlement take the strategically valuable Lincoln Memorial from the True Sons.
+
+Level: 20
+
+Rewards:
+- 10 SHD Tech
+- Campus Settlement Upgrade
+- 140825 XP
+
+Bosses: Major Ashford, Private Trevor Hanson, Private Jeremiah Ramos, Major Keates

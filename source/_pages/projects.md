@@ -22,6 +22,8 @@ Recover SHD Tech caches in Downtown East: 4
 
 ### Outfit Hunting Party
 
+Requires Theater Level 1
+
 Steel: 5
 Chest armor: 1
 Neutralize hostile activity: 1
@@ -30,25 +32,91 @@ Rewards: Blueprint: Streamlined Iron Sights, 645 XP
 
 ### Salvager Crew
 
+Requires Theater Level 1
+
 Polycarbonate: 5
 Gloves: 1
 Disrupt Public Execution: 1
 
-Rewards: Blueprint: Vertical Grip, 645 XP
+Rewards: Blueprint: Vertical Grip, XP
 
  
 ### Water Pipeline Construction
+
+Requires Theater Level 2
 
 Ceramics: 10
 Backpacks: 1
 Disrupt Propaganda: 1
 
-Rewards: Blueprint: Reflex Sight, 3270 XP
+Rewards: Blueprint: Reflex Sight, XP
 
 ### Cold Storage Construction
+
+Requires Theater Level 2
 
 Steel: 10
 Kneepads: 3
 Neutralize veteran Hyenas: 5
 
-Rewards: Blueprint: Police M4 Replica, 3270 XP
+Rewards: Blueprint: Police M4 Replica, XP
+
+### Reclaimer Crew
+
+Requires Theater Level 3
+
+Polycarbonates: 10
+Holsters: 3
+Complete activities: ?
+
+Rewards: Blueprint: Muzzlebreak 5.56, XP
+
+### Water Keeper Liberation
+
+Requires Theater Level 3
+
+Ceramics: 10
+Masks: 3
+Neutralize veteran True Sons: ?
+
+Rewards: Blueprint: USC .45 ACP Replica, XP
+
+### Food Independence
+
+Requires Theater Level 4
+
+Steel: 10
+Chest armor: 3
+Complete activities in Federal Triangle: 3
+
+Rewards: Blueprint: Super 90 Replica, XP
+
+### Secure Salvage Route
+
+Requires Theater Level 4
+
+Polycarbonate: 10
+Gloves: 3
+Complete activities in East Mall: 2
+
+Rewards: Blueprint: Model 700 Replica, XP
+
+### Underground Pump
+
+Requires Theater Level 4
+
+Ceramics: 10
+Backpacks: 3
+Complete activities in Southwest: ?
+
+Rewards: Blueprint: SMG-9 Replica, XP
+
+## Campus
+
+### Outfit Rescue Team
+
+Carbon Fiber: 5
+Chest Armor: 2
+Aid hostage rescue: 1
+
+Rewards: Blueprint: Small RDS Scope, XP

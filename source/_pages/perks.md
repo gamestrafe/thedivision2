@@ -280,7 +280,7 @@ Cost: 3 SHD Tech
 
 Chance for a rare material to be awarded when deconstructiong.
 
-Cost: ? SHD Tech
+Cost: 5 SHD Tech
 
 ## Resources
 
