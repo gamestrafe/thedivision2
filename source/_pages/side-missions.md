@@ -10,6 +10,10 @@ SHD side missions are unlocked after completing the main mission Jefferson Trade
 
 All these missions give XP, which is tied to your level. The higher your level, the more XP you get. At level 5 you get 4275 XP, at level 10 x XP, level 20 x XP and at level 30 x XP. 
 
+Other known side missions:
+- Missing Campus Patrol
+- Garage Stash
+
 ## Odea Tech Office
 
 Given by Justin Boyd at the Theater, after reaching level 1 of the Settlement.
@@ -100,7 +104,7 @@ Given by Sofia Arroyo at the Theater, after reaching level 3 of the Settlement.
 
 Recover DC-62 research from the USDA laboratory.
 
-Level: 9 (though no enemies are encountered)wxxxxxxxxxx
+Level: 9
 
 Rewards:
 - Blueprint: CQBSS Scope (8x)

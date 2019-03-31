@@ -128,6 +128,24 @@ permalink: map.html
             ic: 'Integrated Circuit',
             mre: 'MRE',
             mor: 'Morphine'
+        },
+        // Comms types
+        c: {
+            c: 'Campus',
+            ca: 'Castle',
+            co: 'Contaminated Areas',
+            dz: 'Dark Zone',
+            dd: 'Dead Drops',
+            d: 'Division',
+            g: 'Government',
+            h: 'Hyenas',
+            j: 'JTF',
+            ny: 'New York',
+            o: 'Outcasts',
+            s: 'Shay',
+            t: 'Theater',
+            ts: 'True Sons',
+            u: 'Unknown',
         }
     };
 
@@ -167,8 +185,17 @@ permalink: map.html
     var missions = L.layerGroup(missionMarkers);
     mapLayers.push(missions);
 
+    var markersMissiongivers = [
+        //{latlng: , person: '', mission: '', info: ''},
+        //{latlng: , person: '', mission: '', info: ''},
+        {latlng: [65.96750931338266, -184.05725171219743], person: 'Stephen Shore', mission: 'Garage Stash', info: 'In an underground room in this church here. There is a door at the south side of the building that lets you get there.'}
+    ];
+
+    // XSIDEM
     var sideMissionMarkers = [
         //L.marker(, {title: '', icon: iconSidemission}).bindPopup('<h5></h5><p></p><p><b>Rewards:</b>  XP, Blueprint: </p>'),
+        L.marker([46.73986059969267, -168.22278199533267], {title: 'Garage Stash', icon: iconSidemission}).bindPopup('<h5>Garage Stash</h5><p>Facilitate access to the underground garage so the civilians can access their belongings. Given by Stephen shore in an underground location of a church northwest of here.</p><p><b>Rewards:</b>  XP, Blueprint: Force Feed .45 ACP Mag</p>'),
+        L.marker([-58.13476059803567, 42.59184108696013], {title: 'DC-62 Lab Quarantine', icon: iconSidemission}).bindPopup('<h5>DC-62 Lab Quarantine</h5><p>Recover DC-62 research from the USDA laboratory.</p><p><b>Rewards:</b>  XP, Blueprint: CQBSS Scrope (8x)</p>'),
         L.marker([58.281776130924904, 92.54765791209674], {title: 'Rooftop Gardens', icon: iconSidemission}).bindPopup('<h5>Rooftop Gardens</h5><p>Neutralize the Hyena presence in an apartment complex.</p><p><b>Rewards:</b> 1935 XP, Theater Upgrade: Water Filtration, Blueprint: Improvised Gloves</p>'),
         L.marker([58.44313381756837, 33.97198438192111], {title: 'Odea Tech Office', icon: iconSidemission}).bindPopup('<h5>Odea Tech Office</h5><p>Search the Odea offices for battery packs.</p><p><b>Rewards:</b> 1935 XP, Blueprint: Improvised Body Armor</p>'),
         L.marker([16.41851134440335, 168.0432127788663], {title: 'Judiciary Square Metro Station', icon: iconSidemission}).bindPopup('<h5>Judiciary Square Metro Station</h5><p>Marcela discovered a Black Tusk operation in the metro station and requested reinforcements.</p><p><b>Rewards:</b> 5 SHD Tech, 124650 XP, Blueprint: Defensive System: Reisistance</p>'),
@@ -317,6 +344,7 @@ permalink: map.html
 
         // Judiciary Square
         L.marker([23.277682480290775, 186.48193359375003], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>On roof, access through locked alley in the east.</p>'),
+        L.marker([54.04390911437072, 191.01270186789162], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside locked fence area.</p>'),
 
         // West End
         L.marker([67.16910236698808, -235.97534179687503], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Under bridge</p>'),
@@ -558,6 +586,9 @@ permalink: map.html
         {latlng: [63.10635619630118, -246.07538114652692], info: ''},
         // General overworld (XWEP)
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-58.73628564589823, 180.85683928475052], z: types.z.a, info: 'Upper floor inside building, on the path down from roof, before the elevators.'},
+        {latlng: [-33.970697997361626, -167.0844788764854], z: types.z.a, info: 'On top of containers. You can get there by climbing a blue container north and then cross the bridge.'},
+        {latlng: [5.941714072453832, -176.3044907031887], z: types.z.g, info: 'From Navy Hill control point, at the stairs leading north, there is a stack with green bags on top. Climb that you you can reach this area.'},
         {latlng: [-30.584962706825312, 153.16711137744105], z: types.z.g, info: ''},
         {latlng: [-58.55335348396304, 212.3567639716135], z: types.z.g, info: 'Inside building'},
         {latlng: [-67.29071190807943, 197.34073255889223], z: types.z.u, info: 'Sideroom of large room'},
@@ -717,6 +748,10 @@ permalink: map.html
         {latlng: [64.56260051925477, -261.5259023629693], z: types.z.g, info: ''},
         // General open world (XGEAR)
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [54.86649176842355, 191.58861073074044], z: types.z.g, info: 'Inside locked fence area'},
+        {latlng: [-58.89329575587951, 182.40819135484168], z: types.z.g, info: 'Inside building'},
+        {latlng: [-59.551024795125024, 41.57224990683344], z: types.z.u, info: 'Inside USDA building area, in the small open part in the middle, after you drop out of the window.'},
+        {latlng: [5.4186013569864455, -177.51544344959012], z: types.z.g, info: 'From Navy Hill control point, at the stairs leading north, there is a stack with green bags on top. Climb that you you can reach this area.'},
         {latlng: [-32.086298124757825, 156.19044279828324], z: types.z.g, info: ''},
         {latlng: [-40.309692509872065, 185.41844459077927], z: types.z.u, info: ''},
         {latlng: [-61.08804300700226, 197.99557403241687], z: types.z.g, info: ''},
@@ -951,7 +986,13 @@ permalink: map.html
     var markersAirdrop = [
         //{latlng: , type:'', info: ''},
         //{latlng: , type:'Gear', info: ''},
+
         //{latlng: , type:'Materials', info: ''},
+
+        {latlng: [-52.273536399412286, 75.634252190041], type:'Gear', info: 'Up high in a tree with a blue parachute canopy.'},
+        {latlng: [49.94415035164548, -218.5708289398874], type:'Materials', info: 'Ina  tree just east of the path here.'},
+        {latlng: [8.007012181505328, -134.75393247156643], type:'Gear', info: 'Hanging from a tree that is fenced in. To get into that area you have to climb the ladder left of it, go into the building and trhough it to cross the roof on the western side and then drop down.'},
+        {latlng: [59.63443457494951, -191.10062325891235], type:'Ressources', info: 'Up in the tree above the road. There is no parachute, just a grey wooden box, hard to see.'},
         {latlng: [32.35770915087531, -64.80175942182542], type:'Gear', info: 'Hanging over a windowwasher rig, high above the street. To get it, you have to go into the alley going north south just west of here, and in the higher area climb on top of the ducts, then climb higher until you reach this platform.'},
         {latlng: [-42.707063120992075, 126.74648849017981], type: 'Ressources', info: 'Hanging off the south branches of a tree'},
         {latlng: [-57.30991117020275, 53.59537116219725], type: 'Materials', info: 'On a treebranch pointing northeast'},
@@ -1038,6 +1079,17 @@ permalink: map.html
         {latlng: [77.26659212172264, -231.18896695020163], type: types.dz.ic, z: types.z.g, info: 'At the bottom of some stairs here'},
         // Overworld (XSMALL)
         //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-58.047655937635085, 180.42191299172478], type: types.l.rs, z: types.z.g, info: 'Inside Building'},
+        {latlng: [-58.52812515905846, 180.39094954419267], type: types.l.sb, z: types.z.g, info: 'Inside Building'},
+        {latlng: [-57.600689013897885, 181.00148485769847], type: types.l.sb, z: types.z.g, info: 'Inside building, bathroom, after coming down from the roof'},
+        {latlng: [-58.97266715450153, 171.57567081812303], type: types.l.lb, z: types.z.a, info: 'Rooftop'},
+        {latlng: [-60.09990925794161, 173.12689680772533], type: types.l.rs, z: types.z.g, info: 'Upper floor of building here'},
+        {latlng: [-59.31076795603884, 172.06620496809288], type: types.l.sb, z: types.z.g, info: 'Upper floor of building here.'},
+        {latlng: [-57.87046914796528, 179.92540694392426], type: types.l.sb, z: types.z.a, info: ''},
+        {latlng: [-59.4104299617327, 43.769389786500845], type: types.l.f, z: types.z.u, info: 'In underground lab of USDA building.'},
+        {latlng: [-59.14100786267609, 44.922541637753184], type: types.l.lb, z: types.z.u, info: 'In underground lab of USDA building.'},
+        {latlng: [-58.72259952432077, 41.66449379366289], type: types.l.sb, z: types.z.u, info: 'Inside USDA building, upper level.'},
+        {latlng: [-58.99757456548255, 41.958909061862926], type: types.l.lb, z: types.z.g, info: 'Inside USDA building'},
         {latlng: [-32.4096461227126, 149.91940215741684], type: types.l.lb, z: types.z.g, info: ''},
         {latlng: [-30.133725235003098, 155.25438797585844], type: types.l.sb, z: types.z.g, info: ''},
         {latlng: [-38.95599187229813, 178.74774788206133], type: types.l.lb, z: types.z.g, info: ''},
@@ -1584,6 +1636,8 @@ permalink: map.html
     // XSPEC
     var specialammoMarkers = [
         //L.marker(, {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
+        L.marker([-57.93118360382066, 175.43842613030452], {title: 'Special Ammo: High Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Rooftop</p>'),
+        L.marker([-59.667740581649625, 178.00928978422078], {title: 'Special Ammo: Shock', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Rooftop</p>'),
         L.marker([-67.07085795427544, 219.34416363842536], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
         L.marker([-66.132076428189, 205.5894059009455], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Undeground in tunnel</p>'),
         L.marker([-74.85870881766003, 129.73137158866018], {title: 'Special Ammo: Shock', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
@@ -1670,6 +1724,7 @@ permalink: map.html
     // XGREN
     var grenaderesupplyMarkers = [
         //L.marker(, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        L.marker([-60.392147922518845, 171.7586978077589], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Top floor of building here</p>'),
         L.marker([-45.68469270279629, 189.72071623578324], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Underground</p>'),
         L.marker([-37.07271048132944, 104.10202884284801], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
         L.marker([2.6357885741666065, -47.81214189703055], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
@@ -1700,6 +1755,7 @@ permalink: map.html
     // XARMOR
     var armorresupplyMarkers = [
         //L.marker(, {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([-58.64722609646919, 180.65952548716473], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside building</p>'),
         L.marker([47.97373758680779, -52.08398424088955], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
         L.marker([39.554888301943414, -53.79125989973546], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
         L.marker([16.58573783540079, -51.74560546875], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In tent</p>'),
@@ -1749,6 +1805,7 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [-33.97980872872456, -167.47783330016435], faction: 'Outcasts', info:'On top of containers. You can get there by climbing a blue container north and then cross the bridge.'},
         {latlng: [-10.334375001579746, -166.75045577533604], faction: 'Outcasts', info:'Behind locked fence'},
         {latlng: [34.019884568598826, -179.38476562500003], faction: 'Outcasts', info:'In the basement of the building, you have to do a side mission before this opens up.'},
         {latlng: [37.0884868125932, -181.48535136133432], faction: 'Outcasts', info:'Next to the building'},
@@ -1760,6 +1817,7 @@ permalink: map.html
         {latlng: [-54.526203414731576, -180.11423256654888], faction: 'Outcasts', info:'Behind the corner of a tent, to the south'},
         {latlng: [-54.70166907053579, -171.84364834588644], faction: 'Outcasts', info:'On top of some containers here'},
         //{latlng: , faction: 'True Sons', info:''},
+        {latlng: [-58.94094063332712, 172.03722234470567], faction: 'True Sons', info:'Inside building, upper floor, western most part'},
         {latlng: [-57.52526212515727, 146.6104275459495], faction: 'True Sons', info:'Inside Air & Space Museum. Last room where you fight the boss. Northeast corner on the floor next to a security xray machine.'},
         {latlng: [-49.52520834197442, -165.04968832415733], faction: 'True Sons', info:'In Lincoln Memorial mission. Underground, before reaching the command center. You just came up some stairs, then there is a part you can go to the right with white dividers there. You can find it in the corner with the dividers.'},
         {latlng: [-54.36775852406839, -157.16694949359353], faction: 'True Sons', info:'In Lincoln Memorial mission. After entering the building on the west side, first large hall, southeast corner.'},
@@ -1834,6 +1892,19 @@ permalink: map.html
     var markersMaterial = [
         //XMAT
         //{latlng: , type: types.mat.d, z: 'g', info: ''},
+        {latlng: [54.283185975407555, 191.58402236672478], type: types.mat.t, z: 'g', info: 'Inside locked fence area'},
+        {latlng: [-58.98625480789836, 179.6396674333624], type: types.mat.t, z: 'g', info: 'Isnide building'},
+        {latlng: [-59.02020257497656, 178.77424669997316], type: types.mat.f, z: 'g', info: 'Isnide building'},
+        {latlng: [-58.770478795364546, 180.25490113805003], type: types.mat.t, z: 'a', info: 'Inside building, upper floor, when coming down from roof. Behind a rolled gate but you can still access it.'},
+        {latlng: [-57.67596047477433, 180.22384606276813], type: types.mat.f, z: 'a', info: 'On northern most path down from roof, inside building. Al;smost hidden behind a grate'},
+        {latlng: [-58.32564480367496, 171.69430450116687], type: types.mat.d, z: 'a', info: 'Rooftop'},
+        {latlng: [-58.39250036226693, 172.56003993304384], type: types.mat.t, z: 'a', info: 'Inside building here, upper floor, back room with valves.'},
+        {latlng: [-59.87239799228177, 44.75391608308738], type: types.mat.t, z: 'u', info: 'In underground lab of USDA building'},
+        {latlng: [-59.686599446093496, 44.50332038205475], type: types.mat.f, z: 'g', info: 'Inside USDA building, before you go downstairs into the lab.'},
+        {latlng: [-59.56327124759713, 40.025378184529245], type: types.mat.t, z: 'g', info: 'Inside USDA building, upper floor'},
+        {latlng: [7.3858922070081965, -177.8908982707224], type: types.mat.f, z: 'g', info: 'From Navy Hill control point, at the stairs leading north, there is a stack with green bags on top. Climb that you you can reach this area.'},
+        {latlng: [5.858113760750104, -179.07548247942094], type: types.mat.t, z: 'g', info: 'From Navy Hill control point, at the stairs leading north, there is a stack with green bags on top. Climb that you you can reach this area.'},
+        {latlng: [5.491329332339482, -176.32622852743097], type: types.mat.d, z: 'g', info: 'From Navy Hill control point, at the stairs leading north, there is a stack with green bags on top. Climb that you you can reach this area.'},
         {latlng: [-31.402410317388384, 148.88671875000003], type: types.mat.d, z: 'g', info: ''},
         {latlng: [-30.705946995567786, 150.9610134834495], type: types.mat.t, z: 'g', info: ''},
         {latlng: [-30.28183960410324, 154.26552413560896], type: types.mat.f, z: 'g', info: ''},
@@ -2579,154 +2650,188 @@ permalink: map.html
     var echos = L.layerGroup(echoMarkers);
     mapLayers.push(echos);
 
-    // [43.95758320989325, -77.12695173919202] Goldbar southeast of the back vault, after entering the huge door, go right and right again, search among the piles of cash there
+    var markersComm = [
+        // Campus (8) Completed
+        {latlng: [57.529980478926326, -83.44309477355164], type: types.c.c, title: 'Quarantine Staff', description: '', info: 'In Toxic Alley control point, upper level on a crate.', z: types.z.g},
+        {latlng: [53.66412432842649, -111.785888671875], type: types.c.c, title: 'Food Scarcity', description: 'Henry Hayes, the leader of the Campus settlement, laments the food scarcity and is reassured that they will find a way to feed the community.', info: '', z: types.z.g},
+        {latlng: [56.54731402263233, -120.85693314671518], type: types.c.c, title: 'Building Community', description: 'Henry Hayes, the leader of the Campus settlement, announces the community and lays out a new plan of action.', info: '', z: types.z.g},
+        {latlng: [64.14128631522323, -79.2509762942791], type: types.c.c, title: 'Help Wanted', description: 'Henry Hayes, the leader of the Campus settlement, confides in another civilian that they need help.', info: '', z: types.z.g},
+        {latlng: [13.130839082256072, -81.45156402358867], type: types.c.c, title: 'Mystery Meat', description: 'A gardener serves sew to a reluctant civilian.', info: 'On top of a tool cart on top of the scaffolding here.', z: types.z.a},
+        {latlng: [65.39704190997566, -201.6870352959999], type: types.c.c, title: 'Grief Counseling', description: '', info: 'On a bench here between the buildings.', z: types.z.g},
+        {latlng: [43.16512263158296, 185.36557039337612], type: types.c.c, title: 'Leader Elected', description: '', info: 'Approach this through the alley from the east. Shoot the lock, rapell up then follow the fire escape to the top where you find the comm.', z: types.z.g},
+        {latlng: [55.10728686427206, -199.68316212118097], type: types.c.c, title: 'Garden Tour', description: '', info: 'On the roof here, accessible over a parked van just east of this position or some boxes just south.', z: types.z.a},
 
-    // XCOMM
-    var commMarkers = [
-        // Castle (4)
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Castle Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Castle Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Castle Comms 1/8</p>'),
-        L.marker([-66.17382828030442, 94.34829108517977], {title: 'Paying Tribute', icon: iconComm }).bindPopup('<h5>Paying Tribute</h5><p>Castle leaders voice their concerns with "paying tribute" to the True Sons. Castle Comms 1/8</p>'),
-        // JTF (8)
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. JTF Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. JTF Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. JTF Comms 1/8</p>'),
-        L.marker([-58.75908412012697, 75.03263002006423], {title: 'Georgetown Patrol', icon: iconComm }).bindPopup('<h5>Georgetown Patrol</h5><p>Two local police officers discuss the current state of the crisis, on their way to check on the CERA post in Georgetown. Underground in a parking garage. Ramp starts just west of the Castle Settlement. JTF Comms 1/8</p>'),
-        L.marker([-48.42345633380306, 135.84375321865085], {title: 'Line of Succession', icon: iconComm }).bindPopup('<h5>Line of Succession</h5><p>JTF soldiers in the White House react to the death of President Mendez. Inside a white container here. JTF Comms 1/8</p>'),
-        L.marker([-2.5369504197829738, -14.154052846133713], {title: 'True Sons Debrief', icon: iconComm }).bindPopup('<h5>True Sons Debrief</h5><p>Manny Ortega calls over radio, giving offsite leadership an update on the True Sons situation, in early spring. (Inside one of the containers, stairs lead up from the south) JTF Comms 1/8</p>'),
-        L.marker([36.18539982838856, -1.003418415784836], {title: 'SITREP', icon: iconComm }).bindPopup('<h5>SITREP</h5><p>Manny Ortega gives his superior officer an update on the situation in DC, in early summer. JTF Comms 2/8</p>'),
-        L.marker([-41.831371070892, -35.89610274983795], {title: 'Ortega Deployed', icon: iconComm }).bindPopup('<h5>Ortega Deployed</h5><p>Manny Ortega\'s last phone call with his mother, before being deployed. JTF Comms 2/8</p>'),
-        // Theater
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Theater Comms 1/8</p>'),
-        L.marker([59.16690925174393, 52.040051685475575], {title: 'Hyena Interrogation', icon: iconComm }).bindPopup('<h5>Hyena Interrogation</h5><p>Odessa Sawyer interrogates a Hyena. Theater Comms 1/8</p>'),
-        L.marker([23.015779809926133, 68.96118164062501], {title: 'Settling Down', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>A small group of survivors decide to make the Theater their home. Theater Comms 1/8</p>'),
-        L.marker([-14.455959529838914, 126.8990796286861], {title: 'Strategy', icon: iconComm }).bindPopup('<h5>Settling Down</h5><p>Odessa Sawyer and Agent Kelso talk shop and make a plan for keeping the Theater settlement safe. Theater Comms 2/8</p>'),
-        L.marker([25.11447948917854, 62.48657265678049], {title: 'New Crew', icon: iconComm }).bindPopup('<h5>New Crew</h5><p>Two civilizans contemplate joining the Hyenas, Odessa sets them straight. (In subway station, access through escalators at northeast corner of building to the northwest.) Theater Comms 2/8</p>'),
-        L.marker([8.812723055313041, 117.94921875000001], {title: 'Firearms Training', icon: iconComm }).bindPopup('<h5>Firearms Training</h5><p>Odessa Sawyer trains civilians in how to properly handle firearms. Theater Comms 2/8</p>'),
-        L.marker([34.5035711180493, 16.461181417107586], {title: 'Peter Problems', icon: iconComm }).bindPopup('<h5>Peter Problems</h5><p>Odessa scolds her daughter to being careless and spending time with Peter. (In underground garage) Theater Comms 3/8</p>'),
-        L.marker([34.394878291864416, 38.0200194194913], {title: 'Addiction', icon: iconComm }).bindPopup('<h5>Addiction</h5><p>A concerned civilian tries to get Peter to stop taking spice. (In the alley next to a van on the ground) Theater Comms 4/8</p>'),
-        // Hyenas (10)
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Hyenas Comms 1/10</p>'),
-        L.marker([52.66441141093277, 49.653808325529106], {title: 'Heavy Load', icon: iconComm }).bindPopup('<h5>Heavy Load</h5><p>Two Hyenas deal with an abundance of things. On top of the scaffolding here. Hyenas Comms 1/10</p>'),
-        L.marker([54.630601979198104, 134.6923500887519], {title: 'Spice Instructions', icon: iconComm }).bindPopup('<h5>Spice Instructions</h5><p>Hyena member give a quick briefind on how to make the drug, spice. On top of the building. You can get there using the truck on the eastern side of the building. Hyenas Comms 1/10</p>'),
-        L.marker([23.120154855087215, 8.345017957388851], {title: 'Piñata Party', icon: iconComm }).bindPopup('<h5>Piñata Party</h5><p>Two Hyenas prepare an attack on unsuspecting civilians. Hyenas Comms 1/10</p>'),
-        L.marker([31.87133824316455, 75.45806045728065], {title: 'Missing Prisoners', icon: iconComm }).bindPopup('<h5>Missing Prisoners</h5><p>A Hyena gets rid of some prisoners. Hyenas Comms 2/10</p>'),
-        L.marker([32.50345370021894, 43.68896439671517], {title: 'Runners', icon: iconComm }).bindPopup('<h5>Runners</h5><p>Hyenas deal with victims running away. Hyenas Comms 3/10</p>'),
-        L.marker([-0.8641809689860198, 117.64892566949132], {title: 'First Council Meeting', icon: iconComm }).bindPopup('<h5>First Council Meeting</h5><p>Hyenas meet to discuss the True Sons threat and form the Council. Hyenas Comms 3/10</p>'),
-        // True Sons (10)
-        L.marker([-40.94795826741285, 103.71055428590064], {title: 'Death and Taxes', icon: iconComm }).bindPopup('<h5>Death and Taxes</h5><p>Ridgeway personally visits a small civilian community who has not been paying their taxes. Bottom of the long ramp here. True Sons Comms 1/10</p>'),
-        L.marker([-70.03709635042001, 133.16748127341273], {title: 'Acceptable Losses', icon: iconComm }).bindPopup('<h5>Acceptable Losses</h5><p>Ridgeway meets with an advisor to formulate a plan to maintain control of DC, after losing several battles to Division agents. Inside building. True Sons Comms 1/10</p>'),
-        L.marker([-20.062802132544014, 68.49243141710758], {title: 'Negotiations', icon: iconComm }).bindPopup('<h5>Negotiations</h5><p>Antwon Ridgeway refuses to negotiate. True Sons Comms 1/10</p>'),
-        // Outcasts (12)
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Outcasts Comms 1/13</p>'),
-        L.marker([32.99759607103679, -81.17358405143024], {title: 'Cistern', icon: iconComm }).bindPopup('<h5>Cistern</h5><p>Two Outcasts scoting for communities. On top of a post here, reachable form the top of the platform. Outcasts Comms 1/13</p>'),
-        L.marker([35.065143424630904, -67.83984359353781], {title: 'Message for Henry', icon: iconComm }).bindPopup('<h5>Message for Henry</h5><p>Outcasts deliver a message to CAmpus leader Henry Hayes. On the ground in a corner here. Outcasts Comms 1/13</p>'),
-        L.marker([-9.925565912405494, -63.25492289287719], {title: 'Asymptomatic', icon: iconComm }).bindPopup('<h5>Asymptomatic</h5><p>Emeline provides her doctor with her blood to build a weapon. On an arm rest of a stone bench here. Outcasts Comms 1/13</p>'),
-        L.marker([20.1302203810778, -150.8203125], {title: 'Rations', icon: iconComm }).bindPopup('<h5>Rations</h5><p>An infected civilian argues with one of Ridgeway\'s True Sons about distribution of rations. Outcasts Comms 1/13</p>'),
-        L.marker([-18.145751169871602, -213.16557252962798], {title: 'Plotting', icon: iconComm }).bindPopup('<h5>Plotting</h5><p>Emeline plots with other people in quarantine to take over the island. Under bridge, accessible from the south. Outcasts Comms 1/13</p>'),
-        L.marker([-54.39842930182128, -172.18659984566244], {title: 'Emeline\'s End', icon: iconComm }).bindPopup('<h5>Emeline\'s End</h5><p>An Outcast asks Emeline when it will end. On top of some containers here. Outcasts Comms 1/13</p>'),
-        // Shay
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Shay Montgomery . Shay Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Shay Montgomery . Shay Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Shay Montgomery . Shay Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Shay Montgomery . Shay Comms 1/8</p>'),
-        L.marker([-76.95437591328064, 116.45055004704304], {title: 'Orphans', icon: iconComm }).bindPopup('<h5>Orphans</h5><p>Shay Montgomery talks about a little boy she plans on resettling at the Theater. Shay Comms 1/8</p>'),
-        L.marker([-7.789372746999458, 171.6021560938392], {title: 'Making a Difference', icon: iconComm }).bindPopup('<h5>Making a Difference</h5><p>Shay Montgomery talks about a family she helped after escaping the camps. Shay Comms 1/8</p>'),
-        L.marker([-62.73460087706358, 36.415968711561405], {title: 'Reflective', icon: iconComm }).bindPopup('<h5>Reflective</h5><p>Shay Montgomery reflects on her life before the lockdown and how far she has come. Shay Comms 1/8</p>'),
-        L.marker([-62.58924955626794, -4.605468884110452], {title: 'Capital Station', icon: iconComm }).bindPopup('<h5>Capital Station</h5><p>Shay Montgomery talks about the events that led to Capital Station being abandoned. On top of scaffolding against outside wall of DZ. Shay Comms 1/8</p>'),
-        // Dead drop
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>Aaron Keener. Dead Drop Comms 1/8</p>'),
-        L.marker([1.0458398199115102, -103.17480549216273], {title: 'Patience', icon: iconComm }).bindPopup('<h5>Patience</h5><p>Aaron Keener sens out a broadcast to potential rogue agents. From the safe house The Archive, take the west exit and immediately turn left (south. That door you see, you can open and find the comms in that room. Dead Drop Comms 1/8</p>'),
-        L.marker([23.28341472913859, 77.73284913506359], {title: 'Recordings', icon: iconComm }).bindPopup('<h5>Recordings</h5><p>Aaron Keener takes a moment to explain why he is making these recordings. Dead Drop Comms 1/8</p>'),
-        L.marker([49.09965212357462, 12.150878906250002], {title: 'Simple Math', icon: iconComm }).bindPopup('<h5>Simple Math</h5><p>Aaron Keener talks about compartmentalizing his kills. Dead Drop Comms 2/8</p>'),
-        L.marker([15.259486817041568, 56.572265736758716], {title: 'Greener Poison', icon: iconComm }).bindPopup('<h5>Greener Poison</h5><p>Aaron Keener waxes philosophical, about his plans for the future. Dead Drop Comms 2/8</p>'),
-        L.marker([32.9364656266093, -111.24572150728261], {title: 'Warning', icon: iconComm }).bindPopup('<h5>Warning</h5><p>Aaron Keener broadcasts a warning to any who would dare to pursue him. In building, access trhoug alley in the north.Dead Drop Comms 2/8</p>'),
-        // Government (13)
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Government Comms 2/13</p>'),
-        L.marker([18.25440883656305, -45.782226361334324], {title: 'Bipartisan Support', icon: iconComm }).bindPopup('<h5>Bipartisan Support</h5><p>A large bipartisan group, from all levels of the government, put their squabbling aside and assemble to volunteer at local hospitals and emergency relief shelters. Government Comms 2/13</p>'),
-        L.marker([-66.7572393968907, 91.03708345873991], {title: 'Keener Briefing', icon: iconComm }).bindPopup('<h5>Keener Briefing</h5><p>Meeting to discuss Keener, the Rogue Agents in NYC, and activating the second wave. Upper walk way, inside locked and fenced off area. Government Comms 2/13</p>'),
-        L.marker([57.31584505464288, -18.177956257840492], {title: 'Raven Rock', icon: iconComm }).bindPopup('<h5>Raven Rock</h5><p>Politicians talking about evacuating to a secure location. Government Comms 2/13</p>'),
-        L.marker([-64.32661114598748, 62.23095729947091], {title: 'UN Briefing', icon: iconComm }).bindPopup('<h5>UN Briefing</h5><p>President Mendez meets with the UN to ascertain the effects of GReen Poison around the globe. Government Comms 2/13</p>'),
-        L.marker([26.069973904227396, -2.7832029014825825], {title: 'Aides Assemble', icon: iconComm }).bindPopup('<h5>Aides Assemble</h5><p>A group of underpaid, overcaffeinated aides work through the night on last minute amendments to a bill, despite all the horror around them. Their blinkers are on, their phones are off.. Government Comms 2/13</p>'),
-        L.marker([30.30643189123285, -30.395507700741295], {title: 'Border Control', icon: iconComm }).bindPopup('<h5>Border Control</h5><p>POTUS discusses border policies with the president of Mexico. Government Comms 2/13</p>'),
-        L.marker([32.01431393962964, -26.389160156250004], {title: 'Possible Subterfuge', icon: iconComm }).bindPopup('<h5>Possible Subterfuge</h5><p>Former Vice President Mendez, after being sworn in as POTUS shares his suspicions with Andrew Ellis. Government Comms 2/13</p>'),
-        L.marker([36.29151546818265, -23.411550122836278], {title: '25th Amendment', icon: iconComm }).bindPopup('<h5>25th Amendment</h5><p>White House staff members learn that POTUS has died. Government Comms 1/13</p>'),
-        L.marker([17.83941669124139, -28.75488325953484], {title: 'Black Friday Briefing', icon: iconComm }).bindPopup('<h5>Black Friday Briefing</h5><p>First POTUS briefing on the outbreak where he receives privileged information, hinting at the scope of the disaster. Government Comms 1/13</p>'),
-        // Campus (8)
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p> Campus Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p> Campus Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p> Campus Comms 1/8</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p> Campus Comms 1/8</p>'),
-        L.marker([13.130839082256072, -81.45156402358867], {title: 'Mystery Meat', icon: iconComm }).bindPopup('<h5>Mystery Meat</h5><p>A gardener serves sew to a reluctant civilian. On top of a tool cart on top of the scaffolding here. Campus Comms 1/8</p>'),
-        L.marker([53.66412432842649, -111.785888671875], {title: 'Food Scarcity', icon: iconComm }).bindPopup('<h5>Food Scarcity</h5><p>Henry Hayes, the leader of the Campus settlement, laments the food scarcity and is reassured that they will find a way to feed the community. Campus Comms 1/8</p>'),
-        L.marker([56.54731402263233, -120.85693314671518], {title: 'Building Community', icon: iconComm }).bindPopup('<h5>Building Community</h5><p>Henry Hayes, the leader of the Campus settlement, announces the community and lays out a new plan of action. Campus Comms 1/8</p>'),
-        L.marker([64.14128631522323, -79.2509762942791], {title: 'Help Wanted', icon: iconComm }).bindPopup('<h5>Help Wanted</h5><p>Henry Hayes, the leader of the Campus settlement, confides in another civilian that they need help. Campus Comms 1/8</p>'),
-        // Dark Zone
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Dark Zone Comms 1/10</p>'),
-        //DZ West
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Dark Zone Comms 1/10</p>'),
-        L.marker([77.97837485724507, -307.31871242152664], {title: 'Complicit', icon: iconComm }).bindPopup('<h5>Complicit</h5><p>A wealthy man laments his position. Dark Zone Comms 1/10</p>'),
-        L.marker([70.68663259150297, -307.8918805530038], {title: 'Toxic', icon: iconComm }).bindPopup('<h5>Toxic</h5><p>A worker reports the DC-62 is toxic.. Dark Zone Comms 1/10</p>'),
-        L.marker([77.62006466839729, -247.21066205199915], {title: 'The Wall', icon: iconComm }).bindPopup('<h5>The Wall</h5><p>A wealthy woman talks about how effective Victor Tranh was at getting the wall built.. Dark Zone Comms 1/10</p>'),
-        L.marker([59.71763761778773, -249.82172899426016], {title: 'Privilege', icon: iconComm }).bindPopup('<h5>Privilege</h5><p>A city worker explains why Georgetown was chosen for DC-62. Dark Zone Comms 1/10</p>'),
-        //DZ East
-        L.marker([11.207139757579501, 212.28515714406973], {title: 'DC-62', icon: iconComm }).bindPopup('<h5>DC-62</h5><p>A worker goes over the manifest and is concerned about the supplies coming into Capital Station. Dark Zone Comms 1/10</p>'),
-        L.marker([36.1733569352216, 283.53515625000006], {title: 'Evacuate', icon: iconComm }).bindPopup('<h5>Evacuate</h5><p>A doctor calls for help to organize an evacuation of Capital Station. Dark Zone Comms 1/10</p>'),
-        L.marker([51.34433866059924, 195.0146479904652], {title: 'Guard Duty', icon: iconComm }).bindPopup('<h5>Guard Duty</h5><p>Soldier reminds his squad of their mission. Dark Zone Comms 1/10</p>'),
-        // Unknown
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Unknown Comms 1/10</p>'),
-        L.marker([-67.01944121589511, 219.7793728584495], {title: 'DC Briefing', icon: iconComm }).bindPopup('<h5>DC Briefing</h5><p>?. Unknown Comms 1/10</p>'),
-        L.marker([-50.57905098793978, 2.0012099850553837], {title: 'Antiviral', icon: iconComm }).bindPopup('<h5>Antiviral</h5><p>Bardon Schaeffer and his supervisor discuss potential broadspectrum antivirals and their applications. Underground on table off large room. Unknown Comms 1/10</p>'),
-        L.marker([-1.7992300533726577, 16.00341835990548], {title: 'SHD Network', icon: iconComm }).bindPopup('<h5>SHD NEtwork</h5><p>Bardon Schaeffer\'s unit plans to take out the SHD Network. Unknown Comms 1/10</p>'),
-        L.marker([-65.98671451107464, 235.7849116623402], {title: 'Secret Service', icon: iconComm }).bindPopup('<h5>Secret Service</h5><p>Two Secret Service agents tend to President Mendez. Top floor of the Rayburn building, take the stairs in the south of this area and follow them to the second floor. Unknown Comms 1/10</p>'),
-        L.marker([-58.936406977571465, -33.38964857161045], {title: '?', icon: iconComm }).bindPopup('<h5>?</h5><p>Bardon Schaeffer gives a progress report on his unit and determines if they are ready to be deployed. On a table in the basement of a building here. Unknown Comms 1/10</p>'),
-        // Contaminated Areas
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Contaminated Areas Comms 1/15</p>'),
-        L.marker([58.80695587977277, -170.34083326793873], {title: 'Committed', icon: iconComm }).bindPopup('<h5>Committed</h5><p>A man takes care of his dying wife. Outside on the roof, next to a corpse. Contaminated Areas Comms 1/15</p>'),
-        L.marker([58.943231644864, -168.4115747442606], {title: 'Delirious', icon: iconComm }).bindPopup('<h5>Delirious</h5><p>A man takes care of his sick wife. Top level of the contaminated area. Contaminated Areas Comms 1/15</p>'),
-        L.marker([61.29130058437782, -163.52054053624815], {title: 'Fever', icon: iconComm }).bindPopup('<h5>Fever</h5><p>A man takes care of his sick wife and daughter. Inside the contaminated area, upper floor on the counter. Contaminated Areas Comms 1/15</p>'),
-        L.marker([-32.07135827257348, 83.24129001073756], {title: 'Firestarter', icon: iconComm }).bindPopup('<h5>Firestarter</h5><p>A paranoid civilian tries to set an area with infected people on fire. Just before leaving the contaminated building on a counter.. Contaminated Areas Comms 1/15</p>'),        L.marker([-34.85754268903128, 80.88630530408851], {title: 'Fear', icon: iconComm }).bindPopup('<h5>Fear</h5><p>Civilians discuss how fear breeds hatred. On a bench in the prehistoric section, west wall. Contaminated Areas Comms 1/15</p>'),
-        L.marker([-38.932077246461255, 84.15520799000379], {title: 'Signs', icon: iconComm }).bindPopup('<h5>Signs</h5><p>Civilians argue about what to do with infected people. Just inside the contimanted building here. Contaminated Areas Comms 1/15</p>'),
-        L.marker([-16.476063326249275, -121.40111025632221], {title: 'Shots Fired', icon: iconComm }).bindPopup('<h5>Shots Fired</h5><p>Unarmed civilians are shot in the streets. Just outside the building, in front of a van, after traversing trhough the contaminated building from the east.. Contaminated Areas Comms 1/15</p>'),
-        L.marker([-16.654082352742563, -117.08007113085549], {title: 'Water', icon: iconComm }).bindPopup('<h5>Water</h5><p>Civilians argue over bottled water. In building, accesible over scaffolding to the east. Contaminated Areas Comms 1/15</p>'),
-        L.marker([-16.988944380352148, -112.61488177067235], {title: 'Isolated', icon: iconComm }).bindPopup('<h5>Isolated</h5><p>Civilians suspected of carrying the infection are forced into an isolated area. Accessible by jumping over some scaffolding on the south eastern area. Contaminated Areas Comms 1/15</p>'),
-        L.marker([-75.80229372912325, 127.61712438512212], {title: 'Faith', icon: iconComm }).bindPopup('<h5>Faith</h5><p>A woman calls her family after being separated from them. Inside building, a bit tricky to get to. Contaminated Areas Comms 1/15</p>'),
-        // New York (8)
-        L.marker([-60.15900335648661, 211.30223365327927], {title: 'Update: Virus', icon: iconComm }).bindPopup('<h5>Update: Virus</h5><p>Captain Benitez gives a status report on the current state of Amhert\'s virus. Out on a table in the botanical Garden. New York Comms 1/8</p>'),
-        L.marker([32.32056982141429, -65.44335924088956], {title: 'Update: Rikers', icon: iconComm }).bindPopup('<h5>Update: Rikers</h5><p>Captain Benitez gives a status report on the Rikers, after thier leader Larae Barrett is taken out. On a windowwasher rig, high above the street. To get it, you have to go into the alley going north south just west of here, and in the higher area climb on top of the ducts, then climb higher until you reach this platform. New York Comms 1/8</p>'),
-        L.marker([36.4566360115962, 116.00338735543515], {title: 'Turning Point', icon: iconComm }).bindPopup('<h5>Turning Point</h5><p>Captain Benitez considers the death of Bliss and the rise of Keener. New York Comms 1/8</p>'),
-        L.marker([51.66403781658121, -69.64505069508158], {title: 'NYC Crew', icon: iconComm }).bindPopup('<h5>NYC Crew</h5><p>Captain Benitez gives a status report on the Division staff in Manhattan. Inside building, next to SHD cache. New York Comms 1/8</p>'),
-        // Division (10)
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Division Comms 1/10</p>'),
-        //L.marker(, {title: '', icon: iconComm }).bindPopup('<h5></h5><p>. Division Comms 1/10</p>'),
-        L.marker([-46.449969399817874, 31.05944668397185], {title: 'Theater Recruitment', icon: iconComm }).bindPopup('<h5>Theater Recruitment</h5><p>Agent Kelso meets with the Theater Leader Odessa Sawyer and agrees to help them however she can. Division Comms 1/10</p>'),
-        //L.marker(, {title: 'Sawyer\'s Separated', icon: iconComm }).bindPopup('<h5>Sawyer\'s Separated</h5><p>Agent Odessa Sawyer has to leave her husband and daughter when she is activated. In a locked in fence area. Division Comms 1/10</p>'),
-        L.marker([-53.6967096513578, -102.79687553644182], {title: 'Priority Target: Keener', icon: iconComm }).bindPopup('<h5>Priority Target: Keener</h5><p>Update to all agents regarding Keener\'s status and Rogue Agents in Manhattan. At the front of the boat. Division Comms 1/10</p>'),
-        L.marker([4.8589121470801855, -40.486758561758435], {title: 'Broad-Spectrum Antiviral', icon: iconComm }).bindPopup('<h5>Broad-Spectrum Antiviral</h5><p>Kelso briefs Manny on the DCD broad-spectrum antiviral. Division Comms 1/10</p>'),
-        L.marker([14.861634528785908, 115.09094232693316], {title: 'Odessa Recruited', icon: iconComm }).bindPopup('<h5>Odessa Recruited</h5><p>Odessa Sawyer, a former SHD agent, is recruited to be the leader of the Theater settlement. (In apartement above ground, use scaffolding on the west side of the building, ladder is in the south of scaffolding.) Division Comms 1/10</p>'),
-        L.marker([37.38761202629987, 97.28393554687501], {title: 'Sawyer\'s Reunited', icon: iconComm }).bindPopup('<h5>Sawyer\'s Reunited</h5><p>Agent Odessa Sawyer is reunited with her daughter after being discharged from active duty. Division Comms 1/10</p>'),
-        L.marker([-10.487933809236177, -33.85253883898258], {title: 'Kelso\'s Apartment', icon: iconComm }).bindPopup('<h5>Kelso\'s Apartment</h5><p>Agent Kelso watches the news reporting on the outbreak. (On the hood of a SUV) Division Comms 1/10</p>'),
-        L.marker([46.970209096734656, 26.03759757243097], {title: 'Priority Target: Amherst (Update)', icon: iconComm }).bindPopup('<h5>Priority Target: Amherst (Update)</h5><p>Message to all agents regarding Amherst, Green Poison, and Black Friday. (Upper area of bank, use stairs or truck outside, then shoot the lock on the door through the ornamental wall) Division Comms 1/10</p>')
+        // Castle (4) Completed
+        {latlng: [-58.015081487494434, 179.08148665147533], type: types.c.ca, title: 'Castle Treaty', description: 'The treaty between the True Sons and the Castle settlement is strained.', info: 'In this building, upper floor (but not the roof) you can get to in a sidemission.', z: types.z.a},
+        {latlng: [-52.65506099297392, 97.80250923023739], type: types.c.ca, title: 'Questioning Authority', description: 'Castle leaders argue about their relationship with the True Sons.', info: 'On the east side of a carrusel here on the ground.', z: types.z.g},
+        {latlng: [-66.17382828030442, 94.34829108517977], type: types.c.ca, title: 'Paying Tribute', description: 'Castle leaders voice their concerns with "paying tribute" to the True Sons.', info: '', z: types.z.g},
+        {latlng: [-71.57636587138052, 103.07369903241687], type: types.c.ca, title: 'Keeping Watch', description: 'Castle leaders track an increase in hostile activity.', info: 'Down in the lower street. There is a rapell rope just northeast of this location.', z: types.z.u},
+
+        // Contaminated Areas (15) Completed
+        {latlng: [-38.932077246461255, 84.15520799000379], type: types.c.co, title: 'Signs', description: 'Civilians argue about what to do with infected people.', info: 'Just inside the contimanted building here.', z: types.z.g},
+        {latlng: [-34.85754268903128, 80.88630530408851], type: types.c.co, title: 'Fear', description: 'Civilians discuss how fear breeds hatred.', info: 'On a bench in the prehistoric section, west wall.', z: types.z.g},
+        {latlng: [-32.07135827257348, 83.24129001073756], type: types.c.co, title: 'Firestarter', description: 'A paranoid civilian tries to set an area with infected people on fire.', info: 'Just before leaving the contaminated building on a counter.', z: types.z.g},
+        {latlng: [61.29130058437782, -163.52054053624815], type: types.c.co, title: 'Fever', description: 'A man takes care of his sick wife and daughter.', info: 'Inside the contaminated area, upper floor on the counter.', z: types.z.g},
+        {latlng: [58.943231644864, -168.4115747442606], type: types.c.co, title: 'Delirious', description: 'A man takes care of his sick wife.', info: 'Top level of the area.', z: types.z.g},
+        {latlng: [58.80695587977277, -170.34083326793873], type: types.c.co, title: 'Committed', description: 'A man takes care of his dying wife', info: 'Outside on the roof, next to a corpse.', z: types.z.a},
+        {latlng: [-58.89556583562888, 44.53857421875001], type: types.c.co, title: 'Hiding', description: 'Civilians hide from JTF under Ridgeway\'s command.', info: 'Inside USDA building just left of the entrance.', z: types.z.a},
+        {latlng: [-58.770478795364546, 43.51681426679187], type: types.c.co, title: 'Choices', description: 'Civilians discuss what they should do.', info: 'Inside USDA building, upper floor.', z: types.z.a},
+        {latlng: [-59.339913736256904, 40.39023758314106], type: types.c.co, title: 'Voluntary Patient', description: 'A civilian coluntarily leaves the group to check in to quarantine.', info: 'Inside USDA building, upper floor.', z: types.z.a},
+        {latlng: [-16.988944380352148, -112.61488177067235], type: types.c.co, title: 'Isolated', description: 'Civilians suspected of carrying the infection are forced into an isolated area.', info: 'Accessible by jumping over some scaffolding on the south eastern area.', z: types.z.g},
+        {latlng: [-16.654082352742563, -117.08007113085549], type: types.c.co, title: 'Water', description: 'Civilians argue over bottled water.', info: 'In building, accesible over scaffolding to the east.', z: types.z.g},
+        {latlng: [-16.476063326249275, -121.40111025632221], type: types.c.co, title: 'Shots Fired', description: 'Unarmed civilians are shot in the streets.', info: 'Just outside the building, in front of a van, after traversing through the contaminated building from the east.', z: types.z.g},
+        {latlng: [-75.5531774414556, 129.87172610213256], type: types.c.co, title: 'Last Call', description: '', info: 'In this area, you hear a drop sound of an item. Go into the corridor leading west, then turn right and right againg and head back east inside these rooms. You find a key. Turn south, shoot the lock in this room, then use the key on the door just on the other side of the corridor and go in. The comms is on the table in the far west. Shoot the yellow box on the west wall up in the corner here to progress.', z: types.z.g},
+        {latlng: [-75.80229372912325, 127.61712438512212], type: types.c.co, title: 'Faith', description: 'A woman calls her family after being separated from them.', info: 'Inside building. After getting through the first locked door, go left, and down the stairs. Follow the corridor and you get to a generator you have to turn on. Go back up, turn left at the top of the stairs and there is a door that now opens in the back. Open it up and vault over the broken glass to get to the room with the comm.', z: types.z.g},
+        {latlng: [-75.45858924145529, 126.22857194227474], type: types.c.co, title: 'Angels', description: 'A woman talks to her sons from her death bed.', info: 'On top of the building. After getting the Feith comms, go back down into the basement to the generator and use it again. When you get back up the stairs head right and use the now working elevator to ride to the top. It\'s near the edge of the building straight ahead', z: types.z.a},
+
+        // Dark Zone (10) Completed
+        {latlng: [51.34433866059924, 195.0146479904652], type: types.c.dz, title: 'Guard Duty', description: 'Soldier reminds his squad of their mission.', info: '', z: types.z.g},
+        {latlng: [77.62006466839729, -247.21066205199915], type: types.c.dz, title: 'The Wall', description: 'A wealthy woman talks about how effective Victor Tranh was at getting the wall built.', info: '', z: types.z.g},
+        {latlng: [77.97837485724507, -307.31871242152664], type: types.c.dz, title: 'Complicit', description: 'A wealthy man laments his position.', info: '', z: types.z.g},
+        {latlng: [70.68663259150297, -307.8918805530038], type: types.c.dz, title: 'Toxic', description: 'A worker reports the DC-62 is toxic.', info: '', z: types.z.g},
+        {latlng: [11.207139757579501, 212.28515714406973], type: types.c.dz, title: 'DC-62', description: 'A worker goes over the manifest and is concerned about the supplies coming into Capital Station.', info: '', z: types.z.g},
+        {latlng: [36.1733569352216, 283.53515625000006], type: types.c.dz, title: 'Evacuate', description: 'A doctor calls for help to organize an evacuation of Capital Station.', info: '', z: types.z.g},
+        {latlng: [-71.06692843239843, 13.049048798424618], type: types.c.dz, title: 'Shay', description: 'A civilian tells a story about a folk hero, Shay Montgomery.', info: 'Drop down from the window to get to it.', z: types.z.g},
+        {latlng: [-77.41442451014997, 45.90537673357543], type: types.c.dz, title: 'Doubts', description: 'A guard calls in to report what\'s happening at the refugee camp.', info: 'Inside building.', z: types.z.g},
+        {latlng: [-74.01712253478678, 58.79895389354523], type: types.c.dz, title: 'Contaminated', description: 'A guard calls in to report DC-62 in the water supply.', info: 'On a ledge of this small park here.', z: types.z.g},
+        {latlng: [59.71763761778773, -249.82172899426016], type: types.c.dz, title: 'Privilege', description: 'A city worker explains why Georgetown was chosen for DC-62.', info: '', z: types.z.g},
+
+        // Dead drops (8) Completed
+        {latlng: [32.9364656266093, -111.24572150728261], type: types.c.dd, title: 'Warning', description: 'Aaron Keener broadcasts a warning to any who would dare to pursue him.', info: 'In building, access through alley in the north.', z: types.z.g},
+        {latlng: [1.0458398199115102, -103.17480549216273], type: types.c.dd, title: 'Patience', description: 'Aaron Keener sens out a broadcast to potential rogue agents.', info: 'From the safe house The Archive, take the west exit and immediately turn left (south). That door you see, you can open and find the comms in that room.', z: types.z.g},
+        {latlng: [-33.94700575002192, -166.56166162330342], type: types.c.dd, title: 'Hometown', description: 'Aaron Keener talks about New York.', info: 'On top of containers. You can get there by climbing a blue container north and then cross the bridge.', z: types.z.a},
+        {latlng: [5.7865245910205605, -177.73730007502851], type: types.c.dd, title: 'Vitaly', description: 'Aaron Keener talks about working with Vitaly Tchernenko.', info: 'From Navy Hill control point, at the stairs leading north, there is a stack with green bags on top. Climb that you you can reach this area.', z: types.z.g},
+        {latlng: [52.6750493347732, -170.12107475413762], type: types.c.dd, title: 'Open Gates', description: 'Aaron Keener reflects on the end of quarantine in Manhattan', info: 'On top of the roof here. To the east is a ladder you can climb, but it\'s in a room that has a door facing south that is locked. Go up to the walk way east of that and you can shoot the lock through a chainlink fence that is bent, before the door that leads into the building here.', z: types.z.a},
+        {latlng: [49.09965212357462, 12.150878906250002], type: types.c.dd, title: 'Simple Math', description: 'Aaron Keener talks about compartmentalizing his kills.', info: 'Inside the locked fence.', z: types.z.g},
+        {latlng: [15.259486817041568, 56.572265736758716], type: types.c.dd, title: 'Greener Poison', description: 'Aaron Keener waxes philosophical, about his plans for the future.', info: 'Inside a coffee shop, behind a locked door on the lower level.', z: types.z.u},
+        {latlng: [23.28341472913859, 77.73284913506359], type: types.c.dd, title: 'Recordings', description: 'Aaron Keener takes a moment to explain why he is making these recordings.', info: 'Inside the building here.', z: types.z.g},
+
+        // Division (10) Completed
+        {latlng: [-50.52180906683866, -8.936253472856153], type: types.c.d, title: 'Kelso\'s Recruitment', description: 'Agent Kelso is recruited by SHD.', info: 'On the east side of the Washington Monument, on the upper platform on a table.', z: types.z.a},
+        {latlng: [-10.487933809236177, -33.85253883898258], type: types.c.d, title: 'Kelso\'s Apartment', description: 'Agent Kelso watches the news reporting on the outbreak.', info: 'On the hood of a SUV', z: types.z.g},
+        {latlng: [4.8589121470801855, -40.486758561758435], type: types.c.d, title: 'Broad-Spectrum Antiviral', description: 'Kelso briefs Manny on the DCD broad-spectrum antiviral.', info: '', z: types.z.g},
+        {latlng: [-46.449969399817874, 31.05944668397185], type: types.c.d, title: 'Theater Recruitment', description: 'Agent Kelso meets with the Theater Leader Odessa Sawyer and agrees to help them however she can.', info: '', z: types.z.g},
+        {latlng: [-2.6972464648474923, -174.92849512004375], type: types.c.d, title: 'Agent AWOL', description: 'Agent Clark tries to convince Agent Miller to stay on mission.', info: 'To get here you can climb over a dumpster and low roof from the east to get access to this area.', z: types.z.g},
+        {latlng: [62.40869363061154, 120.35747285272791], type: types.c.d, title: 'Sawyer\'s Separated', description: 'Agent Odessa Sawyer has to leave her husband and daughter when she is activated.', info: 'In a locked in fence area.', z: types.z.g},
+        {latlng: [37.38761202629987, 97.28393554687501], type: types.c.d, title: 'Sawyer\'s Reunited', description: 'Agent Odessa Sawyer is reunited with her daughter after being discharged from active duty.', info: '', z: types.z.g},
+        {latlng: [14.861634528785908, 115.09094232693316], type: types.c.d, title: 'Odessa Recruited', description: 'Odessa Sawyer, a former SHD agent, is recruited to be the leader of the Theater settlement.', info: 'In apartement above ground, use scaffolding on the west side of the building, ladder is in the south of scaffolding.', z: types.z.g},
+        {latlng: [-53.6967096513578, -102.79687553644182], type: types.c.d, title: 'Priority Target: Keener', description: 'Update to all agents regarding Keener\'s status and Rogue Agents in Manhattan.', info: 'At the front of the boat.', z: types.z.g},
+        {latlng: [46.970209096734656, 26.03759757243097], type: types.c.d, title: 'Priority Target: Amherst (Update)', description: 'Message to all agents regarding Amherst, Green Poison, and Black Friday.', info: 'Upper area of bank, use stairs or truck outside, then shoot the lock on the door through the ornamental wall.', z: types.z.a},
+
+        // Government (13) Completed
+        {latlng: [17.83941669124139, -28.75488325953484], type: types.c.g, title: 'Black Friday Briefing', description: 'First POTUS briefing on the outbreak where he receives privileged information, hinting at the scope of the disaster.', info: '', z: types.z.g},
+        {latlng: [32.713355353177555, -31.029634529975823], type: types.c.g, title: 'Directive 51', description: 'POTUS, VP, and Speaker of the House meet to discuss invoking Directive 51.', info: '', z: types.z.g},
+        {latlng: [30.30643189123285, -30.395507700741295], type: types.c.g, title: 'Border Control', description: 'POTUS discusses border policies with the president of Mexico.', info: '', z: types.z.g},
+        {latlng: [42.45913002903315, -220.82076278952528], type: types.c.g, title: 'DC-62 Trials', description: 'Government officials decide wheter or not to use DC-62.', info: 'On a table in a tent.', z: types.z.g},
+        {latlng: [36.29151546818265, -23.411550122836278], type: types.c.g, title: '25th Amendment', description: 'White House staff members learn that POTUS has died.', info: '', z: types.z.g},
+        {latlng: [18.25440883656305, -45.782226361334324], type: types.c.g, title: 'Bipartisan Support', description: 'A large bipartisan group, from all levels of the government, put their squabbling aside and assemble to volunteer at local hospitals and emergency relief shelters.', info: '', z: types.z.g},
+        {latlng: [26.069973904227396, -2.7832029014825825], type: types.c.g, title: 'Aides Assemble', description: 'A group of underpaid, overcaffeinated aides work through the night on last minute amendments to a bill, despite all the horror around them. Their blinkers are on, their phones are off.', info: '', z: types.z.g},
+        {latlng: [57.31584505464288, -18.177956257840492], type: types.c.g, title: 'Raven Rock', description: 'Politicians talking about evacuating to a secure location.', info: '', z: types.z.g},
+        {latlng: [-64.32661114598748, 62.23095729947091], type: types.c.g, title: 'UN Briefing', description: 'President Mendez meets with the UN to ascertain the effects of Green Poison around the globe.', info: '', z: types.z.g},
+        {latlng: [-66.7572393968907, 91.03708345873991], type: types.c.g, title: 'Keener Briefing', description: 'Meeting to discuss Keener, the Rogue Agents in NYC, and activating the second wave.', info: 'Upper walk way, inside locked and fenced off area.', z: types.z.g},
+        {latlng: [32.01431393962964, -26.389160156250004], type: types.c.g, title: 'Possible Subterfuge', description: 'Former Vice President Mendez, after being sworn in as POTUS shares his suspicions with Andrew Ellis.', info: '', z: types.z.g},
+        {latlng: [-37.69425314486994, -20.90049081907865], type: types.c.g, title: 'Essential Evacuation', description: 'Evacuation of key government staff from Washington.', info: 'On a table in an elevated area. Part of the medical camp attack side mission. East side of the wall here.', z: types.z.a},
+        {latlng: [-48.88494684672119, 205.77405152658267], type: types.c.g, title: 'Black Box', description: 'Air Force One black box tape.', info: 'Lower deck of the plane in about the center of what is left.', z: types.z.g},
+
+        // Hyenas (10) Completed
+        {latlng: [23.120154855087215, 8.345017957388851], type: types.c.h, title: 'Piñata Party', description: 'Two Hyenas prepare an attack on unsuspecting civilians.', info: '', z: types.z.g},
+        {latlng: [31.87133824316455, 75.45806045728065], type: types.c.h, title: 'Missing Prisoners', description: 'A Hyena gets rid of some prisoners.', info: '', z: types.z.g},
+        {latlng: [32.50345370021894, 43.68896439671517], type: types.c.h, title: 'Runners', description: 'Hyenas deal with victims running away.', info: '', z: types.z.g},
+        {latlng: [52.66441141093277, 49.653808325529106], type: types.c.h, title: 'Heavy Load', description: 'Two Hyenas deal with an abundance of things.', info: 'On top of the scaffolding here.', z: types.z.a},
+        {latlng: [-0.8641809689860198, 117.64892566949132], type: types.c.h, title: 'First Council Meeting', description: 'Hyenas meet to discuss the True Sons threat and form the council.', info: '', z: types.z.g},
+        {latlng: [54.630601979198104, 134.6923500887519], type: types.c.h, title: 'Spice Instructions', description: 'Hyena member give a quick briefing on how to make the drug, spice.', info: 'On top of the building. You can get there using the truck on the eastern side of the building.', z: types.z.a},
+        {latlng: [45.36141073288077, 116.84203918678499], type: types.c.h, title: 'Special Shipment', description: 'Hyenas get a delivery from their "secret admirer"', info: 'Underground in a parking garage, accessible from the west.', z: types.z.u},
+        {latlng: [49.081062364320736, 138.90252183689276], type: types.c.h, title: 'Restructuring', description: 'Hyenas Council members talk about the need for restructuring the current leadership.', info: 'Approach from the north, through the alley just northeast and then circle around to get to this locked fence area.', z: types.z.g},
+        {latlng: [54.321649759832894, 64.45010626905365], type: types.c.h, title: 'Economics', description: 'Hyenas Council members make plans to secure the future.', info: 'Go into the loading dock from the west and turn left, the comms is right there.', z: types.z.g},
+        {latlng: [52.92744989680791, -63.210962653709046], type: types.c.h, title: 'Assets', description: 'Hyenas have obtained a valuable new asset.', info: 'On this elevated position you can get to it from the north or the south. Against the east wall on a white round garbage can.', z: types.z.a},
+
+        // JTF (8) Completed
+        {latlng: [-41.831371070892, -35.89610274983795], type: types.c.j, title: 'Ortega Deployed', description: 'Manny Ortega\'s last phone call with his mother, before being deployed.', info: '', z: types.z.g},
+        {latlng: [-32.901727584410224, -54.69877549320554], type: types.c.j, title: 'New Assignment', description: 'Manny Ortega arrives at a JTF camp and gets a new assignment.', info: 'In the northeast corner of the container where the supply room door is for the Flooded Leve control point.', z: types.z.g},
+        {latlng: [-2.5369504197829738, -14.154052846133713], type: types.c.j, title: 'True Sons Debrief', description: 'Manny Ortega calls over radio, giving offsite leadership an update on the True Sons situation, in early spring.', info: 'Inside one of the containers, stairs lead up from the south.', z: types.z.g},
+        {latlng: [36.18539982838856, -1.003418415784836], type: types.c.j, title: 'SITREP', description: 'Manny Ortega gives his superior officer an update on the situation in DC, in early summer.', info: '', z: types.z.g},
+        {latlng: [-58.75908412012697, 75.03263002006423], type: types.c.j, title: 'Georgetown Patrol', description: 'Two local police officers discuss the current state of the crisis, on their way to check on the CERA post in Georgetown.', info: 'Underground in a parking garage. Ramp starts just west of the Castle Settlement.', z: types.z.g},
+        {latlng: [42.73329550201731, -176.08335813479192], type: types.c.j, title: 'Quarantine', description: 'JTF soldiers face resistance as they send infected civilians and personell to the Roosevelt Island quarantine.', info: 'Acessible from the west or a door from the east trhough the building.', z: types.z.g},
+        {latlng: [-11.372338792141125, -210.62535454850305], type: types.c.j, title: 'Roosevelt Failure', description: 'Candid conversation between senior JTF staff regarding the Roosevelt Island debacle.', info: 'Northeast of the flipped car here. Area can be accessed over the truck parked southeast.', z: types.z.g},
+        {latlng: [-48.42345633380306, 135.84375321865085], type: types.c.j, title: 'Line of Succession', description: 'JTF soldiers in the White House react to the death of President Mendez.', info: 'Inside a white container here.', z: types.z.g},
+
+        // New York (8) Completed
+        {latlng: [-46.34086036415732, -41.32176490327924], type: types.c.ny, title: 'Second Wave', description: 'Captain Benitez briefs his team about two agents, recovered from a downed helo, coming to the Base of Operations.', info: 'Inside a white container, north side of the path, above ground.', z: types.z.a},
+        {latlng: [51.66403781658121, -69.64505069508158], type: types.c.ny, title: 'NYC Crew', description: 'Captain Benitez gives a status report on the Division staff in Manhattan.', info: 'Inside building, next to SHD cache.', z: types.z.g},
+        {latlng: [-20.552565816504018, -84.71552901737529], type: types.c.ny, title: 'Update: Cleaners', description: 'Captain Benitez gives a status report on the Cleaners, after their leader Joe ferro is taken out.', info: 'Up on the balcony. Enter the building through a window in the south wall, near the eastern corner, then inside open the door and then go west. There are some double doors you can open and go to the upper level.', z: types.z.a},
+        {latlng: [-60.15900335648661, 211.30223365327927], type: types.c.ny, title: 'Update: Virus', description: 'Captain Benitez gives a status report on the current state of Amhert\'s virus.', info: 'Out on a table in the botanical Garden.', z: types.z.g},
+        {latlng: [54.59243596395277, 191.44778534258316], type: types.c.ny, title: 'Update: Keener', description: 'Captain Benitez gives a status report on Aaron Keener.', info: 'Approach it from the northwest, then you find this inside a locked fence area.', z: types.z.g},
+        {latlng: [36.4566360115962, 116.00338735543515], type: types.c.ny, title: 'Turning Point', description: 'Captain Benitez considers the death of Bliss and the rise of Keener.', info: '', z: types.z.g},
+        {latlng: [69.59435780757858, -180.13186737383322], type: types.c.ny, title: 'Update: LMB', description: 'Captain Benitez gives a status report on the LMB, after their leader Charles Bliss is taken out.', info: 'Upper floor inside this building, you can get there by using the ladders on the platform outside the northside of the building.', z: types.z.a},
+        {latlng: [32.32056982141429, -65.44335924088956], type: types.c.ny, title: 'Update: Rikers', description: 'Captain Benitez gives a status report on the Rikers, after their leader Larae Barrett is taken out.', info: 'On a window washer rig, high above the street. To get it, you have to go into the alley going north south just west of here, and in the higher area climb on top of the ducts, then climb higher until you reach this platform.', z: types.z.a},
+
+        // Outcasts (12) Completed
+        {latlng: [32.99759607103679, -81.17358405143024], type: types.c.o, title: 'Cistern', description: 'Two Outcasts scoting for communities.', info: 'On top of a post here, reachable form the top of the platform.', z: types.z.a},
+        {latlng: [35.065143424630904, -67.83984359353781], type: types.c.o, title: 'Message for Henry', description: 'Outcasts deliver a message to Campus leader Henry Hayes.', info: 'On the ground in a corner here.', z: types.z.g},
+        {latlng: [2.8991526985043135, -136.93340513200113], type: types.c.o, title: 'Keeping Survivors', description: 'Outcasts decide to keep a survivor.', info: 'Approach the building form the north. There is a spot north east here where you can climb up to a roof and then into the building. The comms is in the kitchen in the southwest.', z: types.z.a},
+        {latlng: [20.1302203810778, -150.8203125], type: types.c.o, title: 'Rations', description: 'An infected civilian argues with one of Ridgeway\'s True Sons about distribution of rations.', info: '', z: types.z.g},
+        {latlng: [-18.145751169871602, -213.16557252962798], type: types.c.o, title: 'Plotting', description: 'Emeline plots with other people in quarantine to take over the island.', info: 'Under bridge, accessible from the south.', z: types.z.g},
+        {latlng: [19.464520747581563, -85.58560165775891], type: types.c.o, title: 'True Son Captured', description: 'Emeline speaks with a member of the True Sons, her Outcasts have captured.', info: 'On the upper floor inside of this building here on the armrest of a couch. You can get to it by scaling the scaffolding to the south.', z: types.z.a},
+        {latlng: [8.898095631930344, -116.12536253591739], type: types.c.o, title: 'Complicit', description: 'Outcasts murder civilians for being "complicit" in their suffering.', info: 'On a table in the upper level of the scaffolding platform here.', z: types.z.a},
+        {latlng: [-9.925565912405494, -63.25492289287719], type: types.c.o, title: 'Asymptomatic', description: 'Emeline provides her doctor with her blood to build a weapon.', info: 'On an arm rest of a stone bench here.', z: types.z.g},
+        {latlng: [41.22824901518532, -140.77220729894384], type: types.c.o, title: 'JTF Interrogation', description: 'A young JTF soldier is being interrogated and asked why they didn\'t stop Ridgeway and the others.', info: 'Climb the truck parked west of this building to get to the roof.', z: types.z.a},
+        {latlng: [59.004364668706884, -120.40816037800093], type: types.c.o, title: 'Condemnation', description: 'Emeline explains who she belives is responsible for the Roosevelt Island quarantine.', info: 'On a park bench.', z: types.z.g},
+        {latlng: [-54.39842930182128, -172.18659984566244], type: types.c.o, title: 'Emeline\'s End', description: 'An Outcast asks Emeline when it will end.', info: 'On top of some containers here.', z: types.z.a},
+        {latlng: [-37.025360856116656, -186.70172269376016], type: types.c.o, title: 'Humanity', description: 'Emeline forces one of her Outcasts to confront his wifge\'s killer.', info: 'On the ground, west of some black crates here.', z: types.z.g},
+
+        // Shay (8) Completed
+        {latlng: [68.95996848545178, -230.08005190343368], type: types.c.s, title: 'Georgetown', description: 'Shay Montgomery talks about Victor Tranh and how Georgetown was exposed to DC-62.', info: 'On the ground next to a tree.', z: types.z.g},
+        {latlng: [57.012028896838835, -243.432874103752], type: types.c.s, title: 'Refugee Camp', description: 'Shay Montgomery talks about her experience in a CERA camp run dby True Sons', info: 'On the back of a black pickup truck.', z: types.z.g},
+        {latlng: [22.216903038623826, 186.36328436011777], type: types.c.s, title: 'Purpose', description: 'Shay Montgomery talks about why she escaped the camp.', info: 'On top of the building. Go trhough the alley in the east (locked) and climb one ladder, go trhough the door up there and climb the second ladder.', z: types.z.a},
+        {latlng: [-7.789372746999458, 171.6021560938392], type: types.c.s, title: 'Making a Difference', description: 'Shay Montgomery talks about a family she helped after escaping the camps.', info: '', z: types.z.g},
+        {latlng: [-62.73460087706358, 36.415968711561405], type: types.c.s, title: 'Reflective', description: 'Shay Montgomery reflects on her life before the lockdown and how far she has come.', info: '', z: types.z.g},
+        {latlng: [-62.58924955626794, -4.605468884110452], type: types.c.s, title: 'Capital Station', description: 'Shay Montgomery talks about the events that led to Capital Station being abandoned.', info: 'On top of scaffolding against outside wall of DZ.', z: types.z.a},
+        {latlng: [-76.95437591328064, 116.45055004704304], type: types.c.s, title: 'Orphans', description: 'Shay Montgomery talks about a little boy she plans on resettling at the Theater.', info: '', z: types.z.g},
+        {latlng: [-76.64328692753544, 142.47722616412952], type: types.c.s, title: 'Haunted', description: 'Shay Montgomery talks about going back to the CERA camp in DZ South.', info: 'Inside a building here on the second floor. You can access it trhough the eastern side of it, a bit more north. Then inside head south and you can find two stair cases here leading you up to the second floor.', z: types.z.a},
+
+        // Theater (8) Completed
+        {latlng: [59.16690925174393, 52.040051685475575], type: types.c.t, title: 'Hyena Interrogation', description: 'Odessa Sawyer interrogates a Hyena.', info: '', z: types.z.g},
+        {latlng: [23.015779809926133, 68.96118164062501], type: types.c.t, title: 'Settling Down', description: 'A small group of survivors decide to make the Theater their home.', info: '', z: types.z.g},
+        {latlng: [-14.455959529838914, 126.8990796286861], type: types.c.t, title: 'Strategy', description: 'Odessa Sawyer and Agent Kelso talk shop and make a plan for keeping the Theater settlement safe.', info: '', z: types.z.g},
+        {latlng: [25.11447948917854, 62.48657265678049], type: types.c.t, title: 'New Crew', description: 'Two civilizans contemplate joining the Hyenas, Odessa sets them straight.', info: 'In subway station, access through escalators at northeast corner of building to the northwest.', z: types.z.u},
+        {latlng: [8.812723055313041, 117.94921875000001], type: types.c.t, title: 'Firearms Training', description: 'Odessa Sawyer trains civilians in how to properly handle firearms.', info: '', z: types.z.g},
+        {latlng: [34.5035711180493, 16.461181417107586], type: types.c.t, title: 'Peter Problems', description: 'Odessa scolds her daughter to being careless and spending time with Peter.', info: 'In underground garage.', z: types.z.u},
+        {latlng: [34.394878291864416, 38.0200194194913], type: types.c.t, title: 'Addiction', description: 'A concerned civilian tries to get Peter to stop taking spice.', info: 'In the alley next to a van on the ground.', z: types.z.g},
+        {latlng: [46.55281708116363, 150.69727887216436], type: types.c.t, title: 'Sustainable Power', description: 'Two engineers make a plan to build a wind turbine to power the Theater settlement.', info: 'Inside the building, can be accessed from east or west. Comm is closer to the west exit on a table in the kitchen.', z: types.z.g},
+
+        // True Sons (10) Completed
+        {latlng: [-52.11190298523003, 163.60383839621184], type: types.c.ts, title: 'Relocation Order', description: 'Ridgeway gives orders to his men to move refugees to Roosevelt Island.', info: '', z: types.z.g},
+        {latlng: [-47.15386405340202, 85.32400293254373], type: types.c.ts, title: 'Fortifications', description: 'True Sons discuss the progress on building fortifications.', info: 'On a black container with yellow tape across it.', z: types.z.g},
+        {latlng: [-53.90433815627469, 109.23930946053771], type: types.c.ts, title: 'Close Encounter', description: 'A True Son soldier talks to Ridgeway about a close encounter with Outcasts.', info: 'On the ground next to some playground equipment.', z: types.z.g},
+        {latlng: [-20.062802132544014, 68.49243141710758], type: types.c.ts, title: 'Negotiations', description: 'Antwon Ridgeway refuses to negotiate.', info: '', z: types.z.g},
+        {latlng: [43.229195113965005, -197.34529097518697], type: types.c.ts, title: 'Roosevelt Supplies', description: 'Ridgeway orders his medic to cut their losses and stockpile supplies intended to treat the sick.', info: 'Ona  table close to some blue tents.', z: types.z.g},
+        {latlng: [-47.398349200359256, 173.9619511227538], type: types.c.ts, title: 'Ridgeway Sentencing', description: 'Ridgeway is sentenced for his crimes against civilians and refugees.', info: 'Outside a containers east side.', z: types.z.g},
+        {latlng: [-73.0431108677981, 87.45066410865049], type: types.c.ts, title: 'Weaponized DC-62', description: 'Captain Wilson and Ridgeway discuss potential applications of DC-62.', info: 'On some wooden boards that create a small bridge here.', z: types.z.a},
+        {latlng: [-52.91420218610728, 67.48686009008594], type: types.c.ts, title: 'The Castle', description: 'Ridgeway makes the call to bomb the Castle settlement.', info: 'In a small graveyard here.', z: types.z.g},
+        {latlng: [-70.03709635042001, 133.16748127341273], type: types.c.ts, title: 'Acceptable Losses', description: 'Ridgeway meets with an advisor to formulate a plan to maintain control of DC, after losing several battles to Division agents.', info: 'Inside building.', z: types.z.g},
+        {latlng: [-40.94795826741285, 103.71055428590064], type: types.c.ts, title: 'Death and Taxes', description: 'Ridgeway personally visits a small civilian community who has not been paying their taxes.', info: 'Bottom of the long ramp here.', z: types.z.g},
+
+        // Unknown (10) Completed
+        {latlng: [-67.26185315351127, 205.02033276477675], type: types.c.u, title: 'Puppeteers', description: 'Bardon Schaeffer and his supervisor discuss their roles in "the new dynasty".', info: 'On the ground in front of the playground fence.', z: types.z.g},
+        {latlng: [35.32812304000204, -102.16623488468345], type: types.c.u, title: 'Paperwork', description: 'Radio communication regarding treatment of civilians.', info: 'Just north is a door you can open in the wall to your east, which allows you to go to where this is located inside the building.', z: types.z.g},
+        {latlng: [-58.936406977571465, -33.38964857161045], type: types.c.u, title: 'Progress Report', description: 'Bardon Schaeffer gives a progress report on his unit and determines if they are ready to be deployed.', info: 'In the basement of a building here, on a table.', z: types.z.u},
+        {latlng: [-65.98671451107464, 235.7849116623402], type: types.c.u, title: 'Secret Service', description: 'Two Secret Service agents tend to President Mendez.', info: 'Top floor of the Rayburn building, take the stairs in the south of this area and follow them to the second floor.', z: types.z.a},
+        {latlng: [-1.7992300533726577, 16.00341835990548], type: types.c.u, title: 'SHD Network', description: 'Bardon Schaeffer\'s unit plans to take out the SHD Network.', info: '', z: types.z.g},
+        {latlng: [66.98166611114974, 102.37060546875001], type: types.c.u, title: 'Tactics', description: 'Bardon Schaeffer\'s unit discusses tactics for taking out the Division.', info: 'Inside a locked fence area here', z: types.z.g},
+        {latlng: [-33.89412938148811, 174.23222488887478], type: types.c.u, title: 'Taking DC', description: 'Bardon Schaeffer\'s supervisor briefs the team on their mission in DC.', info: 'Isnide the building here, upper floor, north area. You can enter it trhom the north at the eastern end, or from the west.', z: types.z.a},
+        {latlng: [-50.57905098793978, 2.0012099850553837], type: types.c.u, title: 'Antiviral', description: 'Bardon Schaeffer and his supervisor discuss potential broad-spectrum antivirals and their applications.', info: 'Underground on table off large room.', z: types.z.u},
+        {latlng: [-58.936406977571465, -33.38964857161045], type: types.c.u, title: 'DC Briefing', description: 'Bardon Schaeffer gets briefed on the hostile situation in DC.', info: 'At the corner behind a small wall.', z: types.z.g},
+        {latlng: [-51.84663539136412, -80.61330747156644], type: types.c.u, title: 'New Orders', description: 'Bardon Schaeffer gets new orders from his supervisor.', info: 'On the ground southeast of the crashed helicopter here.', z: types.z.g}
     ];
+    var commMarkers = markersComm.map(function(data) {
+        return L.marker(data.latlng, {title: 'Comms: ' + data.title, icon: iconComm }).bindPopup('<h5>' + data.title + '</h5><p>' + data.description + ' ' + data.info + ' ' + data.type + ' Comms</p>');
+    });
     var comms = L.layerGroup(commMarkers);
     mapLayers.push(comms);
 
     // XARTI
     var markersArtifacts = [
-        // Founding Fathers
-        //{latlng: , type: 'Founding Fathers', title: '', description: '', info: ''},
-        {latlng: [53.42262754609996, -151.19384765625003], type: 'Founding Fathers', title: 'James Madison', description: 'Painting by Gilbert Stuart.', info: 'In underground parking garage, access trhough the alley in the north or south of these buildings.'},
-        //{latlng: [59.658492286337086, -56.4404367725057], type: 'Founding Fathers', title: 'John Adams', description: '', info: ''},
-        {latlng: [56.32625231964513, -14.146005393404453], type: 'Founding Fathers', title: 'George Washington', description: 'Painting by Gilbert Stuart.', info: 'Upper level of this building, access through the alley and the northwest corner.'},
-        {latlng: [16.04729636074405, -62.78407043640484], type: 'Founding Fathers', title: 'Thomas Jefferson', description: 'Painting by Gilbert Stuart', info: 'Inside building. The painting is on a west facing wall in about the center of the building.'},
+
         // Artwork (13)
         //{latlng: , type: 'Artwork', title: 'Bazille and Camille', description: 'Painting by Claude Monet.', info: 'Upper floors. Access this building over the scaffolding in the center on the west or the fire escape on the east.'},
         //{latlng: , type: 'Artwork', title: '', description: '', info: ''},
@@ -2734,8 +2839,16 @@ permalink: map.html
         {latlng: [-11.149776977672495, 0.8569335937500001], type: 'Artwork', title: 'Portrait of Ginevra de\'Benci', description: 'Painting by Leonardo da Vinci.', info: 'Found in the supply room of Ellipse Fuel Depot, in the shelve behind the loot crates.'},
         {latlng: [-11.178401873711772, 79.22166835922202], type: 'Artwork', title: 'Judith Leyster - Self-Portrait', description: 'Painting by Judith Leyster.', info: 'Accessible through the inner courtyard, you can reach through the east exit of the safe house. From there climb the ladder in the south and enter the building through the windows in the east.'},
         {latlng: [26.09623016077023, 53.98315452039243], type: 'Artwork', title: 'St George and the Dragon', description: 'Painting by Raphael.', info: 'Propped against a nutcracker statue. Access to this area is through an entrance or escalators in the northeast of the building.'},
+        // Founding Fathers
+        //{latlng: , type: 'Founding Fathers', title: '', description: '', info: ''},
+        {latlng: [-58.51435671212576, 43.187192986708695], type: 'Founding Fathers', title: 'Benjamin Franklin', description: 'Painting by Joseph Siffred Duplessis.', info: 'Inside USDA building, upper floor.'},
+        {latlng: [53.42262754609996, -151.19384765625003], type: 'Founding Fathers', title: 'James Madison', description: 'Painting by Gilbert Stuart.', info: 'In underground parking garage, access trhough the alley in the north or south of these buildings.'},
+        //{latlng: [59.658492286337086, -56.4404367725057], type: 'Founding Fathers', title: 'John Adams', description: '', info: ''},
+        {latlng: [56.32625231964513, -14.146005393404453], type: 'Founding Fathers', title: 'George Washington', description: 'Painting by Gilbert Stuart.', info: 'Upper level of this building, access through the alley and the northwest corner.'},
+        {latlng: [16.04729636074405, -62.78407043640484], type: 'Founding Fathers', title: 'Thomas Jefferson', description: 'Painting by Gilbert Stuart', info: 'Inside building. The painting is on a west facing wall in about the center of the building.'},
         // Relic (13)
         //{latlng: , type: 'Relic', title: '', description: '', info: ''},
+        {latlng: [-68.09790669983556, 152.86373809491687], type: 'Relic', title: 'Lewis and Clark Pocket Compass', description: 'A relic from one of the museums in DC.', info: 'On a bed, behind a counter in this building, which can be accessed just south and north here.'},
         {latlng: [-10.902357997680976, -167.85880802381612], type: 'Relic', title: 'Yamaki Pine', description: 'A historical document of great value.', info: 'Use rapell rope at the bottom of the stairs in the southeast corner of this building to get to the platform north east and drop into the backyard here.'},
         {latlng: [27.15045435377201, 119.7583006694913], type: 'Relic', title: 'The Constitution of the United States', description: 'A historical document of great value.', info: 'In the lobby of this building. You need to access the area in between teh building from teh west first, then rapell up and use the window to get into the building. Then head downstairs. This is behind the lobby desk.'},
         {latlng: [22.370434371139936, 171.65588378906253], type: 'Relic', title: 'Plymouth Rock Fragment', description: 'A relic from one of the museums in DC.', info: 'Underground in a side room of a metro station.'},
@@ -2752,6 +2865,8 @@ permalink: map.html
     // XCOMPONENT
     var markersComponent = [
         //{latlng: , info: ''},
+        {latlng: [-60.050582957347004, 41.85134029777699], info: 'In underground lab of USDA building.'},
+        {latlng: [-58.875128017858486, 44.050775364920845], info: 'Inside USDA building'},
         {latlng: [-4.66403095440811, 134.02234615193584], info: 'Underground'},
         {latlng: [22.83692085728288, -9.112060815095903], info: ''},
         {latlng: [55.90363504617087, -50.51513671875], info: ''},
