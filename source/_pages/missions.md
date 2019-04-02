@@ -98,19 +98,6 @@ Boss: Master Sergeant Steve "Junior" Quiroz
 
 > "You want to see your tax dollars at work? Here you go. All this hardware brought to you by red, white and blue!" - Master Sergeant Steve "Junior" Quiroz
 
-## Federal Emergency Bunker
-
-Search the bunker for the missing Division team.
-
-Minimum Level: 24
-
-Rewards:
-- 10 SHD Tech
-- Base of Operations Upgrade
-- 201213 XP
-
-Boss: The Bloodhound
-
 ## Jefferson Plaza
 
 Shut down the True Sons'facility at Jefferson Plaza.
@@ -153,6 +140,21 @@ Rewards:
 
 Boss: The Blade
 
+## Lincoln Memorial
+
+Unlocks after talking to Henry Hayes at the Campus.
+
+Help the campus settlement take the strategically valuable Lincoln Memorial from the True Sons.
+
+Level: 20
+
+Rewards:
+- 10 SHD Tech
+- Campus Settlement Upgrade
+- 140825 XP
+
+Bosses: Major Ashford, Private Trevor Hanson, Private Jeremiah Ramos, Major Keates
+
 ## Potomac Event Center
 
 Unlocks after talking to Henry Hayes at the Campus.
@@ -168,17 +170,31 @@ Rewards:
 
 Boss: The Owl
 
-## Lincoln Memorial
+## Federal Emergency Bunker
 
-Unlocks after talking to Henry Hayes at the Campus.
+Search the bunker for the missing Division team.
 
-Help the campus settlement take the strategically valuable Lincoln Memorial from the True Sons.
-
-Level: 20
+Minimum Level: 24
 
 Rewards:
 - 10 SHD Tech
-- Campus Settlement Upgrade
-- 140825 XP
+- Base of Operations Upgrade
+- 201213 XP
 
-Bosses: Major Ashford, Private Trevor Hanson, Private Jeremiah Ramos, Major Keates
+Boss: The Bloodhound
+
+## District Union Arena
+
+Stronghold of the Hyena.
+
+## Roosevelt Island
+
+Stronghold of the Outcasts.
+
+## Capitol Hill
+
+Stronghold of the True Sons.
+
+## Tidal Basin
+
+Stronghold of the Black Tusk.

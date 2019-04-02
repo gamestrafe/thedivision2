@@ -23,6 +23,7 @@ There might be some way to re-roll talents, but this is not clear yet. It's also
 - Killer: Killing an enemy with a critical hit grants +50% critical hit chance for 5s. Requires 5 or more crosshairs
 - Lucky Shot: Magazine capacity is increased by 20%. Missed shots from cover have a 25% chance to return to the magazine.
 - Measured: The top half of the magazine has a +15% rate of fire and -20% weapon damage. The bottom half of the magazine has -25% rate of fire and +20% weapon damage
+- Near Sighted: Receive +35% stability at the cost of -20% critical strike range and -20% optimal range. Requires 4 batteries or less.
 - On Empty: Reloading from empty grants +30% weapon handling for 10s. Requires 4 or more shields
 - Optimist: Weapon damage is increased by +3% for every 10% ammo missing from the magazine. Requires 5 or less crosshairs.
 - Outsider: Weapon fire rate is lowered but optimal range increases as the weapon is fired. Requires 4 crosshairs or less.
@@ -36,6 +37,7 @@ There might be some way to re-roll talents, but this is not clear yet. It's also
 - Steady Handed: Landing a shot adds a stack of bonus 2% weapon handling. Max stack is 15. At max stack each shot landed has a 5% chance to consume the weapon handling bonus and refill the magazine. Requires 5 or less crosshairs.
 - Strained: +10% critical hit damage is gained for every 5% of your armor that is depleted. Requires 5 or less crosshairs
 - Unhinged: Receive +25% weapon damage at the cost of -35% weapon handling
+- Unwavering: Swapping to this weapon grants max weapon handling for 5s. Kills refersh the buff. Requires 4 or less shields.
 - Vindictive: Killing an enemy with a status effect applied grants all group members within 15m +20% critical hit chance for 10s. Requires 4 or less crosshairs
 
 * Spotted in beta, not yet spotted in reelased game*

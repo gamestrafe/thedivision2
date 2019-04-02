@@ -120,3 +120,71 @@ Chest Armor: 2
 Aid hostage rescue: 1
 
 Rewards: Blueprint: Small RDS Scope, XP
+
+### Food Aid Operation 
+
+Requires Campus Level 1
+
+Electronics: 5
+Gloves: 2
+Resupply friendly control point: 50
+
+Rewards: Blueprint: Compensator 5.56, XP
+
+### Infrastructure Repair Operation
+
+Requires Campus Level 1
+
+Titanium: 10
+Backpacks: 2
+Complete activities: 3
+
+Rewards: Blueprint: Classic M60 Replica, XP
+
+### Constitution Hall Recovery
+
+Requires Campus Level 2
+
+Resupply friendly control point in Constitution Hall: 50
+Kneepads: 3
+Neutralize Elite Outcasts: 3
+
+Rewards: Blueprint: Classic M44 Carbine Replica, XP.
+
+### Southside Security 
+
+Requires Campus Level 2
+
+Ceramics: 15
+Holsters: 3
+Complete activities in West Potomac Park: 2
+
+Rewards: Blueprint: M870 Express Replica, XP.
+
+### Outfit Triage Team
+
+Requires Campus Level 3
+
+Steel: 15
+Masks: 3
+Neutralize elite True Sons: 3
+
+Rewards: Military M9 Replica, XP
+
+### Coast Guardians
+
+Requires Campus Level 3
+
+Electronics: 10
+Chest Armor: 3
+Compelte activities in Foggy Bottom: 2
+
+Rewards: SIG 716 Replica, XP
+
+### West Side Repair Crew
+
+Requires Campus Level 4
+
+### Deep Recovery Force
+
+Requires Campus Level 4

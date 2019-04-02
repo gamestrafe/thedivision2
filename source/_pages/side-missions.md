@@ -200,3 +200,72 @@ Level 15
 Rewards:
 - Blueprint: Compensated Integrated Spring
 - XP
+
+## Agent Edwards Support
+
+Unlocks at level 15.
+
+Respond to a call for backup from a fellow Division agent.
+
+Rewards:
+- Blueprint Extended .45 ACP Mag
+- XP
+
+## Outcast Propaganda Outpost
+
+Given by Derek Chang at the Campus Settlement after upgrading to Level 1.
+
+Secure Constitution Camp and workshop tools for the Campus.
+
+Level 19
+
+Rewards:
+- Campus Upgrade: Workshop Equipment
+- Blueprint: Tactical 5.56 Mag
+- XP
+
+## Beekeeper Jeff
+
+Given by Scott Williamson at the Campus Settlement after upgrading to Level 2.
+
+Investigate the disappearance of a honey trader called Jeff.
+
+Level 16
+
+Rewards:
+- Campus Upgrade: Bee Hives
+- Blueprint: Extended Pistol Mag
+- XP
+
+## Potomac Relief Camp
+
+Given by Theresa Cruz at the Campus Settlement after upgrading to Level 3.
+
+Find out what the Outcasts are planning inside the relief camp.
+
+Level: 19
+
+Boss: The Archduke
+
+Rewards:
+- Campus Upgrade: Food Conservation
+- Blueprint: 5.56 Rifle Suppressor
+- XP
+
+
+## Missing Campus Patrol
+
+Given by Kevin Green at the Campus Settlement after upgrading to Level 3.
+
+Survivors from Constitution CAmp fled into the sewers during the Outcast attack. Search for them and offer them a place at the Campus.
+
+Level: 19
+
+Rewards:
+- Campus Upgrade: Medical Area
+- Blueprint: Extended 9mm Mag
+- XP
+
+## Historic District Attack
+
+Given by ? at the Campus Settlement after upgrading to Level 4.
