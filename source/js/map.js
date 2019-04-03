@@ -74,7 +74,6 @@ L.Control.AdvancedLayers = L.Control.extend({
         // Loop through the layers and see if it's in the array given
         for (var i = 0; i < this._layers.length; i++) {
             if (this._layers[i] && activeLayerIds.includes(this._layers[i].id) && !this._map.hasLayer(this._layers[i].layer)) {
-                console.log(this._layers[i]);
                 this._map.addLayer(this._layers[i].layer);
             }
         }
@@ -244,8 +243,6 @@ L.Control.AdvancedLayers = L.Control.extend({
         L.DomEvent.on(input, 'click', this._onInputClick, this);
 
         var name = document.createElement('span');
-        //console.log(obj);
-        //name.innerHTML = ' ' + obj.name;
         name.innerHTML = ' ' + obj.name + ' (' + obj.layer.getLayers().length + ')';
 
         label.appendChild(input);
