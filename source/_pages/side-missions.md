@@ -269,3 +269,12 @@ Rewards:
 ## Historic District Attack
 
 Given by ? at the Campus Settlement after upgrading to Level 4.
+
+
+## Columbia Plaza Broadcast
+
+Enter the courtyard and rescue the hostage.
+
+Rewards:
+- Blueprint: Low Reflex Sight
+- XP

@@ -195,6 +195,10 @@ Stronghold of the Outcasts.
 
 Stronghold of the True Sons.
 
+Requires Level 30 and completion of District Union Arena and Roosevelt Island mission.
+
 ## Tidal Basin
 
 Stronghold of the Black Tusk.
+
+Requires Gear Score of 425 and the other three invaded strongholds being completed. Unlocks World Tier 5.

@@ -33,7 +33,7 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconSpecialammo = iconSecret = iconDzcrate = iconThievesden = iconStronghold = iconHunter = iconDuckhunt = iconMissiongiver = new L.Icon.Default();
+    var iconSpecialammo = iconSecret = iconDzcrate = iconThievesden = iconStronghold = iconHunter = iconDuckhunt = iconMissiongiver = iconLink = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
@@ -207,6 +207,7 @@ permalink: map.html
     // XSIDEM
     var sideMissionMarkers = [
         //L.marker(, {title: '', icon: iconSidemission}).bindPopup('<h5></h5><p></p><p><b>Rewards:</b>  XP, Blueprint: </p>'),
+        L.marker([19.597048475928567, -173.0224539756278], {title: 'Columbia Plaza Broadcast', icon: iconSidemission}).bindPopup('<h5>Columbia Plaza Broadcast</h5><p>Enter the courtyard and rescue the hostage.</p><p><b>Rewards:</b>  XP, Blueprint: Low Reflex Sight</p>'),
         L.marker([46.73986059969267, -168.22278199533267], {title: 'Garage Stash', icon: iconSidemission}).bindPopup('<h5>Garage Stash</h5><p>Facilitate access to the underground garage so the civilians can access their belongings. Given by Stephen shore in an underground location of a church northwest of here.</p><p><b>Rewards:</b>  XP, Blueprint: Force Feed .45 ACP Mag</p>'),
         L.marker([-58.13476059803567, 42.59184108696013], {title: 'DC-62 Lab Quarantine', icon: iconSidemission}).bindPopup('<h5>DC-62 Lab Quarantine</h5><p>Recover DC-62 research from the USDA laboratory.</p><p><b>Rewards:</b>  XP, Blueprint: CQBSS Scrope (8x)</p>'),
         L.marker([58.281776130924904, 92.54765791209674], {title: 'Rooftop Gardens', icon: iconSidemission}).bindPopup('<h5>Rooftop Gardens</h5><p>Neutralize the Hyena presence in an apartment complex.</p><p><b>Rewards:</b> 1935 XP, Theater Upgrade: Water Filtration, Blueprint: Improvised Gloves</p>'),
@@ -772,7 +773,10 @@ permalink: map.html
         {latlng: [64.56260051925477, -261.5259023629693], z: types.z.g, info: ''},
         // General open world (XGEAR)
         //{latlng: , z: types.z.g, info: ''},
-        //{latlng: [-56.04749958329889, -184.55932617187503], z: types.z.g, info: ''},
+        {latlng: [27.718399759959407, -181.32146852378162], z: types.z.g, info: 'Under small roof here'},
+        {latlng: [27.839127806769838, -182.00831972726283], z: types.z.g, info: 'Under small roof here'},
+        {latlng: [35.853463319278674, -181.07669195653634], z: types.z.a, info: ''},
+        {latlng: [-56.04749958329889, -184.55932617187503], z: types.z.g, info: ''},
         {latlng: [-54.165104539805434, -178.50153520685683], z: types.z.g, info: ''},
         {latlng: [-56.73337200799012, -175.6716411210405], z: types.z.g, info: 'Inside tent'},
         {latlng: [-47.54690277528482, -164.30262002812827], z: types.z.u, info: 'Inside Lincoln Memorial. After the kill house section, before kaing the stairs up. Behind locked fence. Shoot the yellow box mounted high on the western wall, before the stairs.'},
@@ -1126,6 +1130,11 @@ permalink: map.html
         {latlng: [77.26659212172264, -231.18896695020163], type: types.dz.ic, z: types.z.g, info: 'At the bottom of some stairs here'},
         // Overworld (XSMALL)
         //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [22.740888574028364, -164.91071322646724], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [27.622222690501037, -179.31442775185047], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [36.18053185925573, -178.7388141858098], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [34.12325201075221, -178.81128301353957], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [31.58975631004421, -178.5673253036667], type: types.l.sb, z: types.z.g, info: ''},
         {latlng: [-54.72809394160591, -185.24245774805036], type: types.l.lb, z: types.z.g, info: ''},
         {latlng: [57.17970020146864, -128.0289760528981], type: types.l.lb, z: types.z.g, info: ''},
         {latlng: [55.42519415734595, -126.93066919333275], type: types.l.lb, z: types.z.g, info: ''},
@@ -1762,6 +1771,7 @@ permalink: map.html
     // XAMMO
     var resupplyMarkers = [
         //L.marker(, {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
+        L.marker([24.970547019874243, -165.74597626668717], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
         L.marker([-53.112469951567064, -163.7842114877863], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Licoln memorial, boss area.</p>'),
         L.marker([-50.678039107503395, -160.7609519352307], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Licoln memorial, boss area.</p>'),
         L.marker([-52.047066019516954, -158.07119366164108], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Licoln memorial, boss area.</p>'),
@@ -1847,6 +1857,7 @@ permalink: map.html
     // XGREN
     var grenaderesupplyMarkers = [
         //L.marker(, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        L.marker([21.35897754954818, -165.84973657614526], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
         L.marker([-47.835306676072115, -158.07806218808648], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In Lincoln Memorial, after command post, before boss fight</p>'),
         L.marker([-49.812485456094, -160.49283003253197], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.Underground In Licoln Memorial, just after entering building.</p>'),
         L.marker([14.664459207065574, -145.38435379859612], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
@@ -2047,6 +2058,8 @@ permalink: map.html
     var markersMaterial = [
         //XMAT
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [20.905785216491676, -166.40539445633448], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [30.887169886973332, -177.37199452844877], type: types.mat.t, z: types.z.g, info: ''},
         {latlng: [37.279294146772145, -110.6345025383622], type: types.mat.d, z: types.z.g, info: ''},
         {latlng: [38.03078569382294, -113.16577791151177], type: types.mat.f, z: types.z.g, info: ''},
         {latlng: [36.61732075574328, -112.31102263737394], type: types.mat.t, z: types.z.g, info: 'Just inside small garage here'},
@@ -3164,6 +3177,8 @@ permalink: map.html
     // XFOOD
     var markersFood = [
         //{latlng: , info: ''},
+        {latlng: [35.93892049634254, -179.22634666053003], info: ''},
+        {latlng: [34.69823415311436, -178.62910990599138], info: ''},
         {latlng: [-76.20387116257103, 100.51176310414576], info: 'Inside Jefferson Plaza mission, upper part of the lobby, in the northwest corner.'},
         {latlng: [-71.61729304714852, 145.12277718312103], info: 'Underground'},
         {latlng: [-19.2748506284423, -40.98613983673234], info: ''},
@@ -3377,10 +3392,30 @@ permalink: map.html
 
     //XDUCK
     var markersDuckhunt = [
-        //{latlng: , z: types.z.g, info: ''},
+        //{latlng: , z: types.z.g, image: '', info: ''},
+        {latlng: [44.42141802519607, -209.17968750000003], z: types.z.g, image: '016', info: 'In a shallow pond area, next to a blue tarped fence.'},
+        {latlng: [44.32693250869623, -216.2812770501367], z: types.z.g, image: '015', info: 'In the pool here, swimming in the eastern part near the cube shaped crate.'},
+        {latlng: [55.013053618617704, -239.37011718750003], z: types.z.g, image: '014', info: 'Inside this storage unit, with a sign annd a phone number above and a box with a blue tarp and another duck beside it.'},
+        {latlng: [39.44294399620843, -224.55189719712394], z: types.z.g, image: '013', info: 'On a park bench, beside a garbage can and a small path towards the street.'},
+        {latlng: [34.40871349475143, -226.0371973425299], z: types.z.g, image: '012', info: 'At the very edge of the pier here, past a couple tables.'},
+        {latlng: [59.360051761272295, -197.54295623112395], z: types.z.a, image: '011', info: 'On the roof of this building. There is a door that leads you up on the north facing side of the building a bit west of the marker. Once on the roof got a bit east until you see this spot.'},
+        {latlng: [25.72866413283336, 185.9062892336154], z: types.z.g, image: '010', info: 'Inside the building here, near the western exit, in the tray on the east side of the screening machine.'},
+        {latlng: [70.57320429445072, -197.80227180229704], z: types.z.g, image: '009', info: 'At the New Venice Control Point. One is swimming below, the other can be seen sitting in a pipe. Best viewed from the west facing east.'},
+        {latlng: [56.684897677441135, -174.74415500220834], z: types.z.g, image: '008', info: 'At this corner behind a white fence gate you have to hope over from the south.'},
+        {latlng: [54.399603862967496, -164.59827963718112], z: types.z.g, image: '007', info: 'On a green dumpster inside the building.'},
+        {latlng: [52.980389854466296, -186.95219985459403], z: types.z.g, image: '006', info: 'Inside The Attic Safe house, main room. Southern most corner, behind the stash, on top of a piano.'},
+        {latlng: [-14.740769961715094, -29.232400950667927], z: types.z.g, image: '005', info: 'In a puddle, just northwest of a bench.'},
+        {latlng: [-76.36847772232542, 93.89352953379095], z: types.z.g, image: '', info: 'Inside Jefferson Plaza mission, mall level, after the section with the three vats you have to destroy, in a toy store area.'},
+        {latlng: [30.596311014762023, -176.71948218718174], z: types.z.g, image: '003', info: 'On a scaffolding platform, at about shoulder height.'},
+        {latlng: [56.11371058605499, -191.36471910546476], z: types.z.g, image: '002', info: 'On the southwestern ledge of a dumpster in the middle of the road.'},
+        {latlng: [45.82266148230385, -38.92016608268023], z: types.z.g, image: '001', info: 'Sitting in a corner with some steps here, above a dufflebag.'}
     ];
     var duckhuntMarkers = markersDuckhunt.map(function(data) {
-        return L.marker(data.latlng, {title: 'Duck Hunt', icon: iconDuckhunt }).bindPopup('<h5>Duck Hunt</h5><p>' + data.info + '</p>');
+        var image = '';
+        if (data.image !== '') {
+            image = '<a href="/images/duckhunt/duckhunt-' + data.image + '.jpg" class="image-link"><img src="/images/duckhunt/duckhunt-' + data.image + '.thumb.jpg" alt="Duck Hunt ' + data.image + '"></a>';
+        }
+        return L.marker(data.latlng, {title: 'Duck Hunt', icon: iconDuckhunt }).bindPopup('<h5>Duck Hunt</h5>' + image + '<p>' + data.info + '</p>');
     });
     var duckhunt = L.layerGroup(duckhuntMarkers);
     //mapLayers.push(duckhunt);
@@ -3403,7 +3438,7 @@ permalink: map.html
     division2map.fitWorld();
 
     // Debug, to easy add a marker
-    division2map.on('click', function(e) { if (e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']').on('move', function(e) {e.target.bindPopup('[' + e.latlng.lat + ', ' + e.latlng.lng + ']');}); }} );
+    division2map.on('click', function(e) { if (e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('<input type="text" style="font-size:0.8em; width: 100%;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>').on('move', function(e) {e.target.bindPopup('<input type="text" style="font-size:0.8em; width: 100%;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>');}); }} );
 
     division2map.on('popupopen', function() {
         $('.image-link').magnificPopup(
@@ -3492,30 +3527,34 @@ permalink: map.html
 
     var urlParams = new URLSearchParams(document.location.search);
 
+    // URL marker
+    if (urlParams.has('mark')) {
+        var cords = urlParams.get('mark').split(',');
+        var markerLatlng = [parseFloat([cords[0]]), parseFloat([cords[1]])];
+        var urlMarker = L.marker(markerLatlng, {title: 'Marker from URL', icon: iconLink }).bindPopup('<h5>Marker from URL</h5><p>This marker has been added from the given URL.</p>').addTo(division2map);
+        division2map.setView(markerLatlng, 3);
+    }
+
     // Layer handling
     var activeLayerIds = [];
     if (urlParams.has('layers') && urlParams.get('layers') !== '') {
         // Layers from url
         activeLayerIds = urlParams.get('layers').split(',').map(function (val) {return parseInt(val); });
-        console.log('active ids from url');
     } else if (null !== localStorage.getItem('layers')) {
         // Layers from localstorage
         activeLayerIds = JSON.parse(localStorage.getItem('layers'));
-        console.log('active ids from localstorage');
     } else {
         // Default layers
         activeLayerIds = [6,8,9,10,11,12,17,18,19,20,21,27,28,29,30,33,34,35,36,37,39];
-        console.log('active ids from default');
     }
 
-    console.log(activeLayerIds);
     advancedLayers.showLayers(activeLayerIds);
 
     function saveActiveLayers() {
         var layerIds = advancedLayers.getActiveLayerIds();
-        console.log(layerIds);
         localStorage.setItem('layers', JSON.stringify(layerIds));
     }
 
     division2map.on('overlayadd overlayremove', saveActiveLayers);
+
 </script>
