@@ -392,18 +392,13 @@ permalink: map.html
         L.marker([11.401059893847355, 243.7963027095392], {title: 'DZ East Saferoom', icon: iconSafehouse }).bindPopup('<h5>DZ East</h5><p>Safe house in Dark Zone East</p>'),
         L.marker([-71.78216347980546, 35.274914296416654], {title: 'DZ South Saferoom', icon: iconSafehouse }).bindPopup('<h5>DZ South</h5><p>Safe house in Dark Zone South</p>'),
         L.marker([76.05426102642554, -277.2377896454289], {title: 'DZ West Saferoom', icon: iconSafehouse }).bindPopup('<h5>DZ West</h5><p>Safe house in Dark Zone West</p>'),
-        L.marker([31.67831515583315, -23.45551490534952], {title: 'Base of Operations', icon: iconWhitehouse }).bindPopup('<h5>White House</h5><p>Your base of operations is situated in the white house. You can upgrade skills here and participate in other activities.</p>')
-    ];
-    var safehouses = L.layerGroup(safehouseMarkers);
-    mapLayers.push(safehouses);
-
-    var settlementMarkers = [
+        L.marker([31.67831515583315, -23.45551490534952], {title: 'Base of Operations', icon: iconWhitehouse }).bindPopup('<h5>White House</h5><p>Your base of operations is situated in the white house. You can upgrade skills here and participate in other activities.</p>'),
         L.marker([50.29584096827134, -115.92773437500001], {title: 'Campus', icon: iconSettlement }).bindPopup('<h5>Campus</h5><p>Led by Henry Hayes.</p>'),
         L.marker([-57.60117357746861, 82.70520569537372], {title: 'Castle', icon: iconSettlement }).bindPopup('<h5>Castle</h5><p>*Details classified*</p>'),
         L.marker([24.650345994540757, 83.36059458553791], {title: 'The Theater', icon: iconSettlement }).bindPopup('<h5>The Theater</h5><p>Settlement in Downtown East</p>')
     ];
-    var settlements = L.layerGroup(settlementMarkers);
-    mapLayers.push(settlements);
+    var safehouses = L.layerGroup(safehouseMarkers);
+    mapLayers.push(safehouses);
 
     var checkpointMarkers = [
         // DZ West
@@ -3464,7 +3459,6 @@ permalink: map.html
                 {id: 7, name: "Mission Givers", layer: missiongivers},
                 {id: 8, name: "Side Missions", layer: sideMissions},
                 {id: 9, name: "Safe Houses", layer: safehouses},
-                {id: 10, name: "Settlements", layer:settlements},
                 {id: 11, name: "Control Points", layer: controlpoints},
                 {id: 12, name: "Underground", layer: underground},
                 {id: 13, name: "Special Ammo", layer: specialammo},
@@ -3546,7 +3540,7 @@ permalink: map.html
         activeLayerIds = JSON.parse(localStorage.getItem('layers'));
     } else {
         // Default layers
-        activeLayerIds = [6,8,9,10,11,12,17,18,19,20,21,27,28,29,30,33,34,35,36,37,39];
+        activeLayerIds = [6,8,9,11,12,17,18,19,20,21,27,28,29,30,33,34,35,36,37,39];
     }
 
     advancedLayers.showLayers(activeLayerIds);
