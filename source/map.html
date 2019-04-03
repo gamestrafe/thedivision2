@@ -196,6 +196,7 @@ permalink: map.html
     //XGIVER
     var markersMissiongivers = [
         //{latlng: , person: '', mission: '', info: ''},
+        {latlng: [-9.005584431217104, -173.45100228560315], person: 'Jane Applegate', mission: 'Navy Hill Transmission', info: 'Underground. Enter the building just north of here, on its eastern side. Climb down the ladder then go south and you get into the room where you will find Jane.'},
         {latlng: [54.29879920308693, 173.30458725842004], person: 'Amade Weekes', mission: 'Missing Wire Scavengers', info: 'In this building here. Entrance is to the northeast, then you can rapell up an elevator shaft to get here.'},
         {latlng: [22.557231714867275, -101.18414563182262], person: 'William Bromley', mission: 'Missing Scavengers', info: 'Easiest to find from the west. A huge rainbow flag hangs over a door leading north. There is a gear crate here and a weapons crate inside. The door leading east from the weapons crate can be opened, William is just south here near the trailer. Can also be accessed from the east trhough an alley,'},
         {latlng: [65.96750931338266, -184.05725171219743], person: 'Stephen Shore', mission: 'Garage Stash', info: 'In an underground room in this chursssch here. There is a door at the south side of the building that lets you get there.'}
@@ -209,6 +210,8 @@ permalink: map.html
     // XSIDEM
     var sideMissionMarkers = [
         //L.marker(, {title: '', icon: iconSidemission}).bindPopup('<h5></h5><p></p><p><b>Rewards:</b>  XP, Blueprint: </p>'),
+        L.marker([35.177405364226125, 176.1022298122443], {title: 'Missing Wire Scavengers', icon: iconSidemission}).bindPopup('<h5>Missing Wire Scavengers</h5><p>Find and Rescue the missing community members. Level 25.</p><p><b>Rewards:</b>  XP, Blueprint: Osprey 9 Suppressor</p>'),
+        L.marker([2.855262784366583, -164.4081882583419], {title: 'Navy Hill Transmission', icon: iconSidemission}).bindPopup('<h5>Navy Hill Transmission</h5><p>Investigate a strange radio transmission emitting from Navy Hill. Level 21. Decoded transmission: A framed guardian never bears a grudge against others, only a key in his back pocket to offer to his sisters and brothers.</p><p><b>Rewards:</b> XP, Blueprint: Nimble Link Belt, Retro Field Uniform</p>'),
         L.marker([19.597048475928567, -173.0224539756278], {title: 'Columbia Plaza Broadcast', icon: iconSidemission}).bindPopup('<h5>Columbia Plaza Broadcast</h5><p>Enter the courtyard and rescue the hostage.</p><p><b>Rewards:</b>  XP, Blueprint: Low Reflex Sight</p>'),
         L.marker([46.73986059969267, -168.22278199533267], {title: 'Garage Stash', icon: iconSidemission}).bindPopup('<h5>Garage Stash</h5><p>Facilitate access to the underground garage so the civilians can access their belongings. Given by Stephen shore in an underground location of a church northwest of here.</p><p><b>Rewards:</b>  XP, Blueprint: Force Feed .45 ACP Mag</p>'),
         L.marker([-58.13476059803567, 42.59184108696013], {title: 'DC-62 Lab Quarantine', icon: iconSidemission}).bindPopup('<h5>DC-62 Lab Quarantine</h5><p>Recover DC-62 research from the USDA laboratory.</p><p><b>Rewards:</b>  XP, Blueprint: CQBSS Scrope (8x)</p>'),
@@ -362,6 +365,7 @@ permalink: map.html
 
         // Constitution Hall
         L.marker([26.855239753467945, -63.76446947704016], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p></p>'),
+        L.marker([0.45740039772472035, -121.21878789202565], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Underground, lcoked side room off big room here. You can enter this trhough a hole in the west wall of the garage that is a bit south.</p>'),
 
         // Not assigned to area
         L.marker([6.759088770195253, 92.03430181369185], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>In underground lab of Bureau sidemission</p>'),
@@ -2055,6 +2059,8 @@ permalink: map.html
     var markersMaterial = [
         //XMAT
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-5.571958780951416, -172.78419187097865], type: types.mat.t, z: types.z.u, info: 'NEar the ladder, access trhough building from the east.'},
+        {latlng: [-7.33633657222964, -171.69439953807262], type: types.mat.f, z: types.z.u, info: 'Access through building above, east side.'},
         {latlng: [20.905785216491676, -166.40539445633448], type: types.mat.f, z: types.z.g, info: ''},
         {latlng: [30.887169886973332, -177.37199452844877], type: types.mat.t, z: types.z.g, info: ''},
         {latlng: [37.279294146772145, -110.6345025383622], type: types.mat.d, z: types.z.g, info: ''},
@@ -3173,7 +3179,8 @@ permalink: map.html
 
     // XFOOD
     var markersFood = [
-        //{latlng: , info: ''},
+        // {latlng: , info: ''},
+        {latlng: [-7.388363639908927, -173.06548110459403], info: 'Underground, access trhough building above, east side.'},
         {latlng: [35.93892049634254, -179.22634666053003], info: ''},
         {latlng: [34.69823415311436, -178.62910990599138], info: ''},
         {latlng: [-76.20387116257103, 100.51176310414576], info: 'Inside Jefferson Plaza mission, upper part of the lobby, in the northwest corner.'},
@@ -3390,6 +3397,8 @@ permalink: map.html
     //XDUCK
     var markersDuckhunt = [
         //{latlng: , z: types.z.g, image: '', info: ''},
+        {latlng: [53.23367082504655, -185.17235042697655], z: types.z.g, image: '019', info: 'Just outside the safe house The Attic.'},
+        {latlng: [-3.8632189485566344, 43.620634362583544], z: types.z.g, image: '018', info: 'Inside Jefferson Trade Center Mission. Under the stairs that lead to the ISAC node.'},
         {latlng: [-60.52215754533236, 129.05847873233338], z: types.z.g, image: '017', info: 'Inside the pool here af the entrance to the Air & Space Museum. One is the the southwest corner, two more in the northeast.'},
         {latlng: [44.42141802519607, -209.17968750000003], z: types.z.g, image: '016', info: 'In a shallow pond area, next to a blue tarped fence.'},
         {latlng: [44.32693250869623, -216.2812770501367], z: types.z.g, image: '015', info: 'In the pool here, swimming in the eastern part near the cube shaped crate.'},
