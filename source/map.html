@@ -33,7 +33,7 @@ permalink: map.html
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconSpecialammo = iconSecret = iconDzcrate = iconThievesden = iconStronghold = new L.Icon.Default();
+    var iconSpecialammo = iconSecret = iconDzcrate = iconThievesden = iconStronghold = iconHunter = iconDuckhunt = iconMissiongiver = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
@@ -121,7 +121,7 @@ permalink: map.html
             bb: 'Blue Box',
             b: 'Barrel',
             fr: 'Fridge',
-            d: 'Dresser',
+            d: 'Dresser'
         },
         // Dark Zone items
         dz: {
@@ -145,7 +145,7 @@ permalink: map.html
             s: 'Shay',
             t: 'Theater',
             ts: 'True Sons',
-            u: 'Unknown',
+            u: 'Unknown'
         }
     };
 
@@ -169,6 +169,7 @@ permalink: map.html
     //mapLayers.push(debuglayer);
 
     var missionMarkers = [
+        // Main missions
         L.marker([42.22851834925639, 71.71875536441804], {title: 'Grand Washington Hotel', icon: iconMission}).bindPopup('<h5>Grand Washington Hotel</h5><a href="/images/missions/grand-washington-hotel-exterior.png" class="image-link"><img src="/images/missions/grand-washington-hotel-exterior.thumb.jpg" alt="Grand Washington Hotel Exterior"></a><p>Rendezvous with Agent Kelso and stage a daring assault to rescue Eleanor Sawyer from the Hyenas.</p>'),
         L.marker([-7.819846429717617, 55.05981534719468], {title: 'Jefferson Trade Center', icon: iconMission}).bindPopup('<h5>Jefferson Trade Center</h5><p>Reactivate the ISAC node beneath the center and rescue the missing Division agent.</p>'),
         L.marker([-20.19347256143793, 142.14843571186069], {title: 'ViewPoint Museum', icon: iconMission}).bindPopup('<h5>ViewPoint Museum</h5><p>Seize the ViewPoint building from the True Sons.</p>'),
@@ -180,7 +181,12 @@ permalink: map.html
         L.marker([31.690310691444743, -207.74376293806085], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
         L.marker([68.38159554768568, -148.72192382812503], {title: 'Federal Emergency Bunker', icon: iconMission}).bindPopup('<h5>Federal Emergency Bunker</h5><p></p>'),
         L.marker([-61.9389554736344, 125.4264145884105], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
-        L.marker([-42.13082130188811, 42.209435198288034], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>')
+        L.marker([-42.13082130188811, 42.209435198288034], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
+        // Strongholds
+        L.marker([-47.86222348092537, 217.9101558029652], {title: 'Capitol Hill', icon: iconStronghold}).bindPopup('<h5>Capitol Hill</h5><p>Stronghold of the True Sons. Assault the Capitol Building to recover President Ellis\'s briefcase from the True Sons.</p>'),
+        L.marker([41.24920477866789, 123.31054687500001], {title: 'District Union Arena', icon: iconStronghold}).bindPopup('<h5>District Union Arena</h5><p>Stronghold of the Hyenas. Eliminate the remaining Hyena council members in the District Union Arena. </p>'),
+        L.marker([-21.23478368572658, -252.12890267372134], {title: 'Roosevelt Island', icon: iconStronghold}).bindPopup('<h5>Roosevelt Island</h5><p>Stronghold of the Outcasts. Breach the Outcast stronghold and apprehend or eliminate their leader Emeline Shaw.</p>'),
+        L.marker([-50.52188529016723, -57.454413841791975], {title: 'Tidal Bassin', icon: iconStronghold}).bindPopup('<h5>Tidal Basin</h5><p>Stronghold of the Black Tusk. Breach the Black Tusk Compound and Prevent Missile Launch.</p>')
     ];
     var missions = L.layerGroup(missionMarkers);
     mapLayers.push(missions);
@@ -192,6 +198,11 @@ permalink: map.html
         {latlng: [22.557231714867275, -101.18414563182262], person: 'William Bromley', mission: 'Missing Scavengers', info: 'Easiest to find from the west. A huge rainbow flag hangs over a door leading north. There is a gear crate here and a weapons crate inside. The door leading east from the weapons crate can be opened, William is just south here near the trailer. Can also be accessed from the east trhough an alley,'},
         {latlng: [65.96750931338266, -184.05725171219743], person: 'Stephen Shore', mission: 'Garage Stash', info: 'In an underground room in this chursssch here. There is a door at the south side of the building that lets you get there.'}
     ];
+    var missiongiverMarkers = markersMissiongivers.map(function(data) {
+        return L.marker(data.latlng, {title: 'Mission Giver: ' + data.person, icon: iconMissiongiver }).bindPopup('<h5>Mission Giver: ' + data.person + '</h5><p>Mission: ' + data.mission + '. ' + data.info + '</p>');
+    });
+    var missiongivers = L.layerGroup(missiongiverMarkers);
+    mapLayers.push(missiongivers);
 
     // XSIDEM
     var sideMissionMarkers = [
@@ -211,16 +222,6 @@ permalink: map.html
     ];
     var sideMissions = L.layerGroup(sideMissionMarkers);
     mapLayers.push(sideMissions);
-
-    // Completed
-    var strongholdMarkers = [
-        L.marker([-47.86222348092537, 217.9101558029652], {title: 'Capitol Hill', icon: iconStronghold}).bindPopup('<h5>Capitol Hill</h5><p>Stronghold of the True Sons. Assault the Capitol Building to recover President Ellis\'s briefcase from the True Sons.</p>'),
-        L.marker([41.24920477866789, 123.31054687500001], {title: 'District Union Arena', icon: iconStronghold}).bindPopup('<h5>District Union Arena</h5><p>Stronghold of the Hyenas. Eliminate the remaining Hyena council members in the District Union Arena. </p>'),
-        L.marker([-21.23478368572658, -252.12890267372134], {title: 'Roosevelt Island', icon: iconStronghold}).bindPopup('<h5>Roosevelt Island</h5><p>Stronghold of the Outcasts. Breach the Outcast stronghold and apprehend or eliminate their leader Emeline Shaw.</p>'),
-        L.marker([-50.52188529016723, -57.454413841791975], {title: 'Tidal Bassin', icon: iconStronghold}).bindPopup('<h5>Tidal Basin</h5><p>Stronghold of the Black Tusk. Breach the Black Tusk Compound and Prevent Missile Launch.</p>')
-    ];
-    var strongholds = L.layerGroup(strongholdMarkers);
-    mapLayers.push(strongholds);
 
     // Completed
     var controlpointMarkers = [
@@ -3340,33 +3341,49 @@ permalink: map.html
         L.marker([-34.125447565116126, -151.04737180230697], {title: 'Hydden Hotel: Zi BBQ Joint', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: Zi BBQ Joint</h5><p>To the east is a building and an underground access marker. Just west of that is a wall with some crates stacked against. Vault over that (There is also a plush parrot sitting there) and you found it. Sign says: "Take a sausage, NOT my gear. - M.Hydden"</p>'),
         L.marker([-39.362615985707826, -44.06250287210254], {title: 'Hydden Hotel: Poopy Town', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: Poopy Town</h5><p>In the middle of a camp here, entrance is a container above, look southwest and you\'ll see a baloon with an H also flying above there. Sign says: "Enjoy the fluffys :) - R&S Hydden"</p>'),
         L.marker([-22.16027399761364, -35.86658260555384], {title: 'Hydden Hotel: Vosberg', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: Vosberg</h5><p>entrace is facing south, a tan colored 2 high stack of containers. Sign says: "We ain\'t here right now, but feel free to grab a beer, put on sum tunes, anything you like! But do NOT touch the big weapon crate behind the bed! Love Max & Sam"</p>'),
-        L.marker([-10.073431408789888, -18.594362840839565], {title: 'Hydden Hotel: The McMilicamp', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: The McMilicamp</h5><p>Entrance is facing south below the command post here, on it\'s eastern side. Sign says "Thee is on the table, no loot in the crate! - Mx. Hydden"</p>'),
-
-        // Hunters
-        // All ghost markers
-        L.marker([-50.21069662612368, -9.404296875000002], {title: 'Hunter: Ghost', icon: iconSecret }).bindPopup('<h5>Hunter:  ? ?</h5><p>Go to the Washington Monument control point and clear it, then go into the supply room below ground. After 19:00 in game (open photomode to see it in the top right corner) press the button on the console here, behind the stone ornament in front of the elevator. Now you have to go to three locations, in a specific order, northwest, northeast and southwest, see the grave markers. Then you have to return here and press the button again. Go back up and you will find one hunter spawning in one of Ghost locations, marked on the map. One is right above the monument entrance itself.</p>'),
-        L.marker([-40.07785732533138, -48.98146967945727], {title: 'Hunter: Ghost Grave 1', icon: iconSecret }).bindPopup('<h5>Ghost Grave 1</h5><p>You need to complete the sequence at the Washington Monument first. It can be identified by the SHD watch at the top of the cross with an american flag next to it. This is the first grave. Stand in front of it, and salute, the interface will be fuzzy for a moment indicating it worked. If it does not, stand back a little and line up.</p>'),
-        L.marker([-43.63125665653225, -0.37789045388463954], {title: 'Hunter: Ghost Grave 2', icon: iconSecret }).bindPopup('<h5>Ghost Grave 2</h5><p>You need to complete the sequence at the Washington Monument first. It can be identified by the SHD watch on top of a stick here. This is the second grave. Stand in front of it, and salute, the interface will be fuzzy for a moment indicating it worked. If it does not, stand back a little and line up.</p>'),
-        L.marker([-54.43940185737093, -17.596186891828822], {title: 'Hunter: Ghost Grave 3', icon: iconSecret }).bindPopup('<h5>Ghost Grave 3</h5><p>You need to complete the sequence at the Washington Monument first. It can be identified by the SHD watch that hangs on the left part of the cross marker here. This is the third grave. Stand in front of it, and salute, the interface will be fuzzy for a moment indicating it worked. If it does not, stand back a little and line up. After this return to the monument supply room to press the button again.</p>'),
-        L.marker([-57.13145184826364, 18.85695930229699], {title: 'Hunter: Ghost Location', icon: iconSecret }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. Spawns on top of this small building,. at the northwest corner. You can get to the roof by climbing on a white crate in teh back and shoot a lock out to access the ladder.</p>'),
-        L.marker([-53.87314423915124, 28.80154130223515], {title: 'Hunter: Ghost Location', icon: iconSecret }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. Spawns on top of this small building. He is in the middle of the northern edge. There is no way to climb on top, but toi the north are some scaffolding you could use to shoot at him.</p>'),
-        L.marker([-54.18807440347909, 9.553622299175265], {title: 'Hunter: Ghost Location', icon: iconSecret }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. Spawns on top of this building. He usually looks out to the east, but if you go up the ladder at the south wall or climb the roof over the dumpsters you can catch him unaware.</p>'),
-        L.marker([-44.364630940325654, -15.178812430098231], {title: 'Hunter: Ghost Location', icon: iconSecret }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. Spawns on top of this building. He usually looks out to the east, so if you com from the south you should be able to catch him off guard. There is no way to climb up.</p>'),
-        L.marker([-32.99000311393627, -34.14563501364524], {title: 'Hunter: Ghost Location', icon: iconSecret }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. On top of the container that hangs here from a crane. He is usually on the northeast looking area and facing there too. You can see him from the southeast pretty easy.</p>'),
-        L.marker([-46.962242123532654, -45.91369442163266], {title: 'Hunter: Ghost Location', icon: iconSecret }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. On top of the tallest part of this gate structure here, the small hut that is crowned with barbed wire. HE is looking to the west, so approach from the east and you should be able to take him easy.</p>'),
-
-        // Other hunters
-        L.marker([-56.85378121857068, 42.547849416732795], {title: 'Hunter: Spectre', icon: iconSecret }).bindPopup('<h5>Hunter: Spectre</h5><p>This can be done at any time. Go to this spot, there is a white truck here that crashed into the wall. Climb on top of it, onto the highest part, then look south. Now use a single shot weapon with at least 12 bullets, then hit each window (I shot the lower part) you see ahead of you, left to right, bottom row first. The last window is halfway obstructed so aim carefully. Don\'t miss or reload or it will not work. In the upper row, skip the windows that are black (have no glass) and on the last shot, the hunter will spawn to your right near the building (southwest of you). Uses chem launcher with fire starter and artillery turret. Drops the Spectre Mask</p>'),
-        L.marker([-67.8092445060001, 211.999534505069], {title: 'Hunter: Wraith', icon: iconSecret }).bindPopup('<h5>Hunter: Wraith</h5><p>Go to this small pool in front of a memorial at night. The light on the left (south) should be on and shine at the memorial. Stand just to the right of that light, but not on the dark stones and salute. The hunter will spawn right in the middle of the pool. Uses assault drone and firefly. Drops the Wraith Mask. Quote: "Everything I touch turns to ash."</p>'),
-        L.marker([-52.382305628707854, -128.9893639899042], {title: 'Hunter: Ghoul Part 2', icon: iconSecret }).bindPopup('<h5>Hunter: Ghoul Part 2</h5><p>Go here at night. You will see the light bulb from far away hanging here from a small platform, turning on and off. Shoot that lightbulb and the hunter will spawn in right there in that spot, so don\'t stand on the platform. Drops the Ghoul Mask.</p>'),
-        L.marker([-37.78229277893652, -147.85389935661368], {title: 'Hunter: Ghoul Part 1', icon: iconSecret }).bindPopup('<h5>Hunter: Ghoul Part 1</h5><p>This is underground. Just a bit southeast is an underground access or you can also go through the building just northwest. If you take the tunnel, go north once you are down the ladder. In the room you will find an echo and besides that a table with a Laptop on it you can interact with. It will turn on a lamp above the laptop and you can see a map illuminated. That\'s the clue for the next hunter. You\'ll have to wait for night and then go there, see part 2 marker.</p>'),
-        L.marker([24.800033178851, 56.147433938277835], {title: 'Hunter: Demon', icon: iconSecret }).bindPopup('<h5>Hunter: Demon</h5><p>Go to this building. You need to reach the atrium. In the northeast of this block you find escalators which you can use or a door that also leads to the atrium. Inside, there is a raised area with some greenery and two large boulders, stand between those boulders. Look west and up. There are man shaped silhouette targets in 4 windows, forming a diagonal from left top to botom right. Shoot them in that order and the Hunter spawns. He uses an assault turret and airburst seeker mines. Drops the Demon mask.</p>'),
-        L.marker([43.718180920237856, -218.46676547237348], {title: 'Hunter: Revenant and Midas', icon: iconSecret }).bindPopup('<h5>Hunter: Revenant and Midas</h5><p>At this spot there is a pool. The shape of the pool has two rounded areas that overlap and create a narrow spot. Stand in that narrow spot, there is a rectangular drain there. Face north and start doing jumping jacks. Two hunters will spawn almost immediately. If they don\'t, try a bit different position. Time of day doesn\'t matter. One is using a flame turret, the other a blinding firefly and a healing seeker mine. They drop the Revenant and Midas masks.</p>'),
-        L.marker([33.23409295522519, 113.89894497744083], {title: 'Hunter: Crimson', icon: iconSecret }).bindPopup('<h5>Hunter: Crimson</h5><p>Here inside the building is a counter. Stand inside it, look south and there is a screen and to the right of it something that looks like a military radio. You get an interact prompt when you are in front of it, no highlighting. Once you did, you have to run through the courtyard north and to the other building part where there is another counter with a phone on the left side of the counter. Interact with that, within a short enough time and the hunter spawns. He is using bomber drones and foam against you. Killing him wil lgive you a Crimson Mask and potentially an ivory key.</p>'),
-        L.marker([-35.22767235493584, 108.0981443077326], {title: 'Hunter: ? ? ?', icon: iconSecret }).bindPopup('<h5>Hunter: ? ? ?</h5><p>In this spot is a small cafe. Look at the counter in the center. On the side of the counter opening in the south, there is a lever below the green espresso machine, facing west. Pull it when it\'s pitch dark outside the lights go on around the tree to your east. Go there and run around the christmas tree. Latest after 2 rounds three to five hunters should spawn. Three of them will drop masks.</p>')
+        L.marker([-10.073431408789888, -18.594362840839565], {title: 'Hydden Hotel: The McMilicamp', icon: iconSecret }).bindPopup('<h5>Hydden Hotel: The McMilicamp</h5><p>Entrance is facing south below the command post here, on it\'s eastern side. Sign says "Thee is on the table, no loot in the crate! - Mx. Hydden"</p>')
     ];
     var secrets = L.layerGroup(secretMarkers);
     mapLayers.push(secrets);
+
+    var hunterMarkers = [
+        // Random Hunters
+        //L.marker(, {title: '', icon: iconHunter }).bindPopup('<h5></h5><p></p>'),
+
+        // All ghost markers
+        L.marker([-50.21069662612368, -9.404296875000002], {title: 'Hunter: Ghost', icon: iconHunter }).bindPopup('<h5>Hunter:  ? ?</h5><p>Go to the Washington Monument control point and clear it, then go into the supply room below ground. After 19:00 in game (open photomode to see it in the top right corner) press the button on the console here, behind the stone ornament in front of the elevator. Now you have to go to three locations, in a specific order, northwest, northeast and southwest, see the grave markers. Then you have to return here and press the button again. Go back up and you will find one hunter spawning in one of Ghost locations, marked on the map. One is right above the monument entrance itself.</p>'),
+        L.marker([-40.07785732533138, -48.98146967945727], {title: 'Hunter: Ghost Grave 1', icon: iconHunter }).bindPopup('<h5>Ghost Grave 1</h5><p>You need to complete the sequence at the Washington Monument first. It can be identified by the SHD watch at the top of the cross with an american flag next to it. This is the first grave. Stand in front of it, and salute, the interface will be fuzzy for a moment indicating it worked. If it does not, stand back a little and line up.</p>'),
+        L.marker([-43.63125665653225, -0.37789045388463954], {title: 'Hunter: Ghost Grave 2', icon: iconHunter }).bindPopup('<h5>Ghost Grave 2</h5><p>You need to complete the sequence at the Washington Monument first. It can be identified by the SHD watch on top of a stick here. This is the second grave. Stand in front of it, and salute, the interface will be fuzzy for a moment indicating it worked. If it does not, stand back a little and line up.</p>'),
+        L.marker([-54.43940185737093, -17.596186891828822], {title: 'Hunter: Ghost Grave 3', icon: iconHunter }).bindPopup('<h5>Ghost Grave 3</h5><p>You need to complete the sequence at the Washington Monument first. It can be identified by the SHD watch that hangs on the left part of the cross marker here. This is the third grave. Stand in front of it, and salute, the interface will be fuzzy for a moment indicating it worked. If it does not, stand back a little and line up. After this return to the monument supply room to press the button again.</p>'),
+        L.marker([-57.13145184826364, 18.85695930229699], {title: 'Hunter: Ghost Location', icon: iconHunter }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. Spawns on top of this small building,. at the northwest corner. You can get to the roof by climbing on a white crate in teh back and shoot a lock out to access the ladder.</p>'),
+        L.marker([-53.87314423915124, 28.80154130223515], {title: 'Hunter: Ghost Location', icon: iconHunter }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. Spawns on top of this small building. He is in the middle of the northern edge. There is no way to climb on top, but toi the north are some scaffolding you could use to shoot at him.</p>'),
+        L.marker([-54.18807440347909, 9.553622299175265], {title: 'Hunter: Ghost Location', icon: iconHunter }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. Spawns on top of this building. He usually looks out to the east, but if you go up the ladder at the south wall or climb the roof over the dumpsters you can catch him unaware.</p>'),
+        L.marker([-44.364630940325654, -15.178812430098231], {title: 'Hunter: Ghost Location', icon: iconSecret }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. Spawns on top of this building. He usually looks out to the east, so if you com from the south you should be able to catch him off guard. There is no way to climb up.</p>'),
+        L.marker([-32.99000311393627, -34.14563501364524], {title: 'Hunter: Ghost Location', icon: iconHunter }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. On top of the container that hangs here from a crane. He is usually on the northeast looking area and facing there too. You can see him from the southeast pretty easy.</p>'),
+        L.marker([-46.962242123532654, -45.91369442163266], {title: 'Hunter: Ghost Location', icon: iconHunter }).bindPopup('<h5>Ghost Location</h5><p>You need to complete the sequence at the Washington Monument and graves first, and it has to be night. On top of the tallest part of this gate structure here, the small hut that is crowned with barbed wire. HE is looking to the west, so approach from the east and you should be able to take him easy.</p>'),
+
+        // Other hunters
+        L.marker([-56.85378121857068, 42.547849416732795], {title: 'Hunter: Spectre', icon: iconHunter }).bindPopup('<h5>Hunter: Spectre</h5><p>This can be done at any time. Go to this spot, there is a white truck here that crashed into the wall. Climb on top of it, onto the highest part, then look south. Now use a single shot weapon with at least 12 bullets, then hit each window (I shot the lower part) you see ahead of you, left to right, bottom row first. The last window is halfway obstructed so aim carefully. Don\'t miss or reload or it will not work. In the upper row, skip the windows that are black (have no glass) and on the last shot, the hunter will spawn to your right near the building (southwest of you). Uses chem launcher with fire starter and artillery turret. Drops the Spectre Mask</p>'),
+        L.marker([-67.8092445060001, 211.999534505069], {title: 'Hunter: Wraith', icon: iconHunter }).bindPopup('<h5>Hunter: Wraith</h5><p>Go to this small pool in front of a memorial at night. The light on the left (south) should be on and shine at the memorial. Stand just to the right of that light, but not on the dark stones and salute. The hunter will spawn right in the middle of the pool. Uses assault drone and firefly. Drops the Wraith Mask. Quote: "Everything I touch turns to ash."</p>'),
+        L.marker([-52.382305628707854, -128.9893639899042], {title: 'Hunter: Ghoul Part 2', icon: iconHunter }).bindPopup('<h5>Hunter: Ghoul Part 2</h5><p>Go here at night. You will see the light bulb from far away hanging here from a small platform, turning on and off. Shoot that lightbulb and the hunter will spawn in right there in that spot, so don\'t stand on the platform. Drops the Ghoul Mask.</p>'),
+        L.marker([-37.78229277893652, -147.85389935661368], {title: 'Hunter: Ghoul Part 1', icon: iconHunter }).bindPopup('<h5>Hunter: Ghoul Part 1</h5><p>This is underground. Just a bit southeast is an underground access or you can also go through the building just northwest. If you take the tunnel, go north once you are down the ladder. In the room you will find an echo and besides that a table with a Laptop on it you can interact with. It will turn on a lamp above the laptop and you can see a map illuminated. That\'s the clue for the next hunter. You\'ll have to wait for night and then go there, see part 2 marker.</p>'),
+        L.marker([24.800033178851, 56.147433938277835], {title: 'Hunter: Demon', icon: iconHunter }).bindPopup('<h5>Hunter: Demon</h5><p>Go to this building. You need to reach the atrium. In the northeast of this block you find escalators which you can use or a door that also leads to the atrium. Inside, there is a raised area with some greenery and two large boulders, stand between those boulders. Look west and up. There are man shaped silhouette targets in 4 windows, forming a diagonal from left top to botom right. Shoot them in that order and the Hunter spawns. He uses an assault turret and airburst seeker mines. Drops the Demon mask.</p>'),
+        L.marker([43.718180920237856, -218.46676547237348], {title: 'Hunter: Revenant and Midas', icon: iconHunter }).bindPopup('<h5>Hunter: Revenant and Midas</h5><p>At this spot there is a pool. The shape of the pool has two rounded areas that overlap and create a narrow spot. Stand in that narrow spot, there is a rectangular drain there. Face north and start doing jumping jacks. Two hunters will spawn almost immediately. If they don\'t, try a bit different position. Time of day doesn\'t matter. One is using a flame turret, the other a blinding firefly and a healing seeker mine. They drop the Revenant and Midas masks.</p>'),
+        L.marker([33.23409295522519, 113.89894497744083], {title: 'Hunter: Crimson', icon: iconHunter }).bindPopup('<h5>Hunter: Crimson</h5><p>Here inside the building is a counter. Stand inside it, look south and there is a screen and to the right of it something that looks like a military radio. You get an interact prompt when you are in front of it, no highlighting. Once you did, you have to run through the courtyard north and to the other building part where there is another counter with a phone on the left side of the counter. Interact with that, within a short enough time and the hunter spawns. He is using bomber drones and foam against you. Killing him wil lgive you a Crimson Mask and potentially an ivory key.</p>'),
+        L.marker([-35.22767235493584, 108.0981443077326], {title: 'Hunter: ? ? ?', icon: iconHunter }).bindPopup('<h5>Hunter: ? ? ?</h5><p>In this spot is a small cafe. Look at the counter in the center. On the side of the counter opening in the south, there is a lever below the green espresso machine, facing west. Pull it when it\'s pitch dark outside the lights go on around the tree to your east. Go there and run around the christmas tree. Latest after 2 rounds three to five hunters should spawn. Three of them will drop masks.</p>')
+    ];
+    var hunters = L.layerGroup(hunterMarkers);
+    mapLayers.push(hunters);
+
+    //XDUCK
+    var markersDuckhunt = [
+        //{latlng: , z: types.z.g, info: ''},
+    ];
+    var duckhuntMarkers = markersDuckhunt.map(function(data) {
+        return L.marker(data.latlng, {title: 'Duck Hunt', icon: iconDuckhunt }).bindPopup('<h5>Duck Hunt</h5><p>' + data.info + '</p>');
+    });
+    var duckhunt = L.layerGroup(duckhuntMarkers);
+    //mapLayers.push(duckhunt);
 
     //-------------------------------------------------------------
 
@@ -3375,10 +3392,11 @@ permalink: map.html
         attributionControl: false,
         maxBounds: [[84, -369], [-84, 337]],
         // Layers given here are enabled by default
-        layers: mapLayers,
+        //layers: mapLayers,
         maxZoom: 9,
         minZoom: 1
     });
+
     var imageUrl = '/images/map/the-division-2-map-v7.svg',
         imageBounds = [[84, -369], [-84, 337]];
     L.imageOverlay(imageUrl, imageBounds).addTo(division2map);
@@ -3400,49 +3418,104 @@ permalink: map.html
         );
     });
 
-    // Contents of the layer control on the righthand side
-    var overlays = {
-        "General": {
-            //"Debug": debuglayer,
-            "Missions": missions,
-            "Side Missions": sideMissions,
-            "Strongholds": strongholds,
-            "Safe Houses": safehouses,
-            "Settlements": settlements,
-            "Control Points": controlpoints,
-            "Underground": underground,
-            "SHD Tech": shdtech,
-            "Special Ammo": specialammo,
-            "Ammo Resupply": resupply,
-            "Armor Resupply": armorresupply,
-            "Grenade Resupply": grenaderesupply
+    // Grouped layers with ids
+    var advancedOverlays = [
+        {
+            id: 1,
+            name: "General",
+            layers: [
+                {id: 6, name: "Missions", layer: missions},
+                {id: 7, name: "Mission Givers", layer: missiongivers},
+                {id: 8, name: "Side Missions", layer: sideMissions},
+                {id: 9, name: "Safe Houses", layer: safehouses},
+                {id: 10, name: "Settlements", layer:settlements},
+                {id: 11, name: "Control Points", layer: controlpoints},
+                {id: 12, name: "Underground", layer: underground},
+                {id: 13, name: "Special Ammo", layer: specialammo},
+                {id: 14, name: "Ammo Resupply", layer: resupply},
+                {id: 15, name: "Armor Resupply", layer: armorresupply},
+                {id: 16, name: "Grenade Resupply", layer: grenaderesupply}
+            ]
         },
-        "Loot": {
-            "Weapons": weapons,
-            "Gear": gear,
-            "Airdrops": airdrops,
-            "Small Loot": loot,
-            "Locked Boxes": lockedboxes,
-            "Keys": keys,
-            "Crafting Materials": materials,
-            "Components": components,
-            "Food": food,
-            "Water": water
+        {
+            id: 2,
+            name: "Loot",
+            layers: [
+                {id: 17, name: "Weapons", layer: weapons},
+                {id: 18, name: "Gear", layer: gear},
+                {id: 19, name: "Airdrops", layer: airdrops},
+                {id: 20, name: "Locked Boxes", layer: lockedboxes},
+                {id: 21, name: "Keys", layer: keys},
+                {id: 22, name: "Small Loot", layer: loot},
+                {id: 23, name: "Crafting Materials", layer: materials},
+                {id: 24, name: "Components", layer: components},
+                {id: 25, name: "Food", layer: food},
+                {id: 26, name: "Water", layer: water}
+
+            ]
         },
-        "Collectibles": {
-            "Echos": echos,
-            "Comms": comms,
-            "Artifacts": artifacts,
-            "Secrets": secrets
+        {
+            id: 3,
+            name: "Collectibles",
+            layers: [
+                {id: 27, name: "Echos", layer: echos},
+                {id: 28, name: "Comms", layer: comms},
+                {id: 29, name: "Artifacts", layer: artifacts},
+                {id: 30, name: "SHD Tech", layer: shdtech},
+                {id: 31, name: "Hunters", layer: hunters},
+                // {id: 32, name: "Backpack Trophies", layer: backpacktrophies},
+                {id: 33, name: "Secrets", layer: secrets}
+            ]
         },
-        "Dark Zone": {
-            "Dark Zone Checkpoints": checkpoints,
-            "Extraction Area": extractionareas,
-            "DZ Landmarks": dzlandmarks,
-            "SHD Terminals": shdterminals,
-            "Thieves Dens": thievesdens,
-            "DZ Crates": dzcrates
+        {
+            id: 4,
+            name: "Dark Zone",
+            layers: [
+                {id: 34, name: "Checkpoints", layer: checkpoints},
+                {id: 35, name: "Extraction", layer: extractionareas},
+                {id: 36, name: "Landmarks", layer: dzlandmarks},
+                {id: 37, name: "SHD Terminals", layer: shdterminals},
+                //{id: 38, name: "DZ Supplies", layer: dzsupplies},
+                {id: 39, name: "DZ Crates", layer: dzcrates}
+            ]
+        },
+        {
+            id: 5,
+            name: "Community",
+            layers: [
+                {id: 40, name: "Duck Hunt", layer: duckhunt}
+            ]
         }
-    };
-    L.control.advancedLayers(overlays).addTo(division2map);
+    ];
+    var advancedLayers = L.control.advancedLayers(advancedOverlays);
+    advancedLayers.addTo(division2map);
+
+    var urlParams = new URLSearchParams(document.location.search);
+
+    // Layer handling
+    var activeLayerIds = [];
+    if (urlParams.has('layers') && urlParams.get('layers') !== '') {
+        // Layers from url
+        activeLayerIds = urlParams.get('layers').split(',').map(function (val) {return parseInt(val); });
+        console.log('active ids from url');
+    } else if (null !== localStorage.getItem('layers')) {
+        // Layers from localstorage
+        activeLayerIds = JSON.parse(localStorage.getItem('layers'));
+        console.log('active ids from localstorage');
+    } else {
+        // Default layers
+        activeLayerIds = [6,8,9,10,11,12,17,18,19,20,21,27,28,29,30,33,34,35,36,37,39];
+        console.log('active ids from default');
+    }
+
+    console.log(activeLayerIds);
+    advancedLayers.showLayers(activeLayerIds);
+
+    function saveActiveLayers() {
+        var layerIds = advancedLayers.getActiveLayerIds();
+        console.log(layerIds);
+        localStorage.setItem('layers', JSON.stringify(layerIds));
+    }
+
+    division2map.on('overlayadd overlayremove', saveActiveLayers);
 </script>

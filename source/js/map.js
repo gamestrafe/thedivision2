@@ -20,12 +20,11 @@ L.Control.AdvancedLayers = L.Control.extend({
         this._layers = [];
         this._lastZIndex = 0;
         this._handlingClick = false;
-        this._groupList = [];
         this._domGroups = [];
 
         for (i in groupedOverlays) {
-            for (j in groupedOverlays[i]) {
-                this._addLayer(groupedOverlays[i][j], j, i, true);
+            for (j in groupedOverlays[i].layers) {
+                this._addLayer(groupedOverlays[i].layers[j], groupedOverlays[i], true);
             }
         }
     },
@@ -48,7 +47,7 @@ L.Control.AdvancedLayers = L.Control.extend({
     },
 
     addOverlay: function (layer, name, group) {
-        this._addLayer(layer, name, group, true);
+        this._addLayer(layer, group, true);
         this._update();
         return this;
     },
@@ -61,6 +60,35 @@ L.Control.AdvancedLayers = L.Control.extend({
         }
         this._update();
         return this;
+    },
+
+    showLayers: function (activeLayerIds) {
+        // Remove all first
+        this._showNone();
+
+        // Exit if the array is short
+        if (activeLayerIds.length === 0) {
+            return;
+        }
+
+        // Loop through the layers and see if it's in the array given
+        for (var i = 0; i < this._layers.length; i++) {
+            if (this._layers[i] && activeLayerIds.includes(this._layers[i].id) && !this._map.hasLayer(this._layers[i].layer)) {
+                console.log(this._layers[i]);
+                this._map.addLayer(this._layers[i].layer);
+            }
+        }
+    },
+
+    getActiveLayerIds: function() {
+        var activeLayerIds = [];
+        for (var i = 0; i < this._layers.length; i++) {
+            if (this._layers[i] && this._map.hasLayer(this._layers[i].layer)) {
+                activeLayerIds.push(this._layers[i].id);
+            }
+        }
+
+        return activeLayerIds;
     },
 
     _getLayer: function (id) {
@@ -140,26 +168,18 @@ L.Control.AdvancedLayers = L.Control.extend({
         }
     },
 
-    _addLayer: function (layer, name, group, overlay) {
-        var id = L.Util.stamp(layer);
-
+    _addLayer: function (layer, group, overlay) {
         var _layer = {
-            layer: layer,
-            name: name,
+            id: layer.id,
+            layer: layer.layer,
+            name: layer.name,
             overlay: overlay
         };
         this._layers.push(_layer);
 
-        group = group || '';
-        var groupId = this._indexOf(this._groupList, group);
-
-        if (groupId === -1) {
-            groupId = this._groupList.push(group) - 1;
-        }
-
         _layer.group = {
-            name: group,
-            id: groupId
+            name: group.name,
+            id: group.id
         };
 
         if (this.options.autoZIndex && layer.setZIndex) {
