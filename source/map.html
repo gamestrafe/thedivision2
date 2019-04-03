@@ -3436,7 +3436,7 @@ permalink: map.html
     division2map.fitWorld();
 
     // Debug, to easy add a marker
-    division2map.on('click', function(e) { if (e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('<input type="text" style="font-size:0.8em; width: 100%;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>').on('move', function(e) {e.target.bindPopup('<input type="text" style="font-size:0.8em; width: 100%;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>');}); }} );
+    division2map.on('click', function(e) { if (e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('<input type="text" style="font-size:0.8em; width: 220px;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>').on('move', function(e) {e.target.bindPopup('<input type="text" style="font-size:0.8em; width: width: 220px;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>');}); }} );
 
     division2map.on('popupopen', function() {
         $('.image-link').magnificPopup(
