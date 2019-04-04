@@ -266,15 +266,23 @@ Rewards:
 - Blueprint: Extended 9mm Mag
 - XP
 
-## Historic District Attack
-
-Given by ? at the Campus Settlement after upgrading to Level 4.
-
-
 ## Columbia Plaza Broadcast
 
 Enter the courtyard and rescue the hostage.
 
 Rewards:
 - Blueprint: Low Reflex Sight
+- XP
+
+## Historic District Attack
+
+Given by Henry Hayes after reaching level 4 for the campus and returning to talk to him.
+
+Help civilians fend off an Outcast attack inside the Historic District.
+
+Level: 23
+
+Rewards:
+- Campus Upgrade: School
+- Blueprint: Large Suppressor 7.62
 - XP
