@@ -324,6 +324,7 @@ permalink: map.html
     var shdtechMarkers = [
         //L.marker(, {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p></p>'),
 
+
         // West Potomac Park
         L.marker([-36.76008900805292, -61.28606244939321], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Ina  lcoked fence area. Climb the trailer on the east side to get into the area.</p>'),
 
@@ -366,6 +367,9 @@ permalink: map.html
         // Constitution Hall
         L.marker([26.855239753467945, -63.76446947704016], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p></p>'),
         L.marker([0.45740039772472035, -121.21878789202565], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Underground, lcoked side room off big room here. You can enter this trhough a hole in the west wall of the garage that is a bit south.</p>'),
+
+        // Foggy Bottom
+        L.marker([-10.755569450188219, -209.41259779036048], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Behind a fence you can get into by scaling the truck in the southeast.</p>'),
 
         // Not assigned to area
         L.marker([6.759088770195253, 92.03430181369185], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>In underground lab of Bureau sidemission</p>'),
@@ -599,6 +603,11 @@ permalink: map.html
         {latlng: [63.10635619630118, -246.07538114652692], info: ''},
         // General overworld (XWEP)
         //{latlng: , z: types.z.g, info: ''},
+        //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-9.397016054894245, -207.78662122786048], z: types.z.g, info: 'Behind the fence, you have to scale over the truck in the southeast.'},
+        {latlng: [-11.798692817598853, -211.37695312500003], z: types.z.g, info: 'Behind the fence, you have to scale over the truck in the southeast.'},
+        {latlng: [21.07638739039801, -212.36132651567462], z: types.z.g, info: 'In potomac event center, after defeating the boss,m in the room that opens up.'},
+        {latlng: [-3.162572468447817, -219.3222650885582], z: types.z.g, info: 'Inside potomac event center mission. Under the roof under the large JFK center sin here.'},
         {latlng: [-47.58695415530941, -163.61500461158334], z: types.z.u, info: 'Inside Lincoln Memorial. Behind locked door in command center. Shoot the yellow box against the south wall in the southwest corner.'},
         {latlng: [-55.080858992998515, -157.36167680409292], z: types.z.u, info: 'Inside Lincoln Memorial. Underground, after hearing the two True Sons argue. A sign says B-2 on a pillar. Inside a locked fence. To open it, shoot the yellow box to your west against the western wall.'},
         {latlng: [-55.34291901053008, -158.12184883455237], z: types.z.u, info: 'Inside Lincoln Memorial. Underground, after hearing the two True Sons argue. A sign says B-2 on a pillar. Inside a locked fence. To open it, shoot the yellow box to your west against the western wall.'},
@@ -774,6 +783,12 @@ permalink: map.html
         {latlng: [64.56260051925477, -261.5259023629693], z: types.z.g, info: ''},
         // General open world (XGEAR)
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-11.303616391797908, -213.59619140625], z: types.z.g, info: ''},
+        {latlng: [-3.984820817420308, -188.5693359375], z: types.z.g, info: ''},
+        {latlng: [27.76954211926403, -202.07373060286048], z: types.z.g, info: 'At the bottom of the ramp in front of a murial'},
+        {latlng: [29.37490423317754, -206.01562500000003], z: types.z.g, info: 'In the corner approaching from the southeast.'},
+        {latlng: [11.351256025353129, -215.39355441927913], z: types.z.g, info: 'Inside Potomac Event Center mission. After the theater,  you go right, then right again. Instead of taking the door to your left with the sign "Main Entrance" over it, go straight to find this crate.'},
+        {latlng: [3.539574920345484, -224.75390732288366], z: types.z.g, info: 'Inside Potomac Event Center Mission. On the inside north wall of a mostly open white container here.'},
         {latlng: [27.718399759959407, -181.32146852378162], z: types.z.g, info: 'Under small roof here'},
         {latlng: [27.839127806769838, -182.00831972726283], z: types.z.g, info: 'Under small roof here'},
         {latlng: [35.853463319278674, -181.07669195653634], z: types.z.a, info: ''},
@@ -1131,6 +1146,8 @@ permalink: map.html
         {latlng: [77.26659212172264, -231.18896695020163], type: types.dz.ic, z: types.z.g, info: 'At the bottom of some stairs here'},
         // Overworld (XSMALL)
         //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [32.86123069928672, -193.51757839322093], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [31.094447833681244, -197.15185560286048], type: types.l.lb, z: types.z.g, info: ''},
         {latlng: [22.740888574028364, -164.91071322646724], type: types.l.sb, z: types.z.g, info: ''},
         {latlng: [27.622222690501037, -179.31442775185047], type: types.l.sb, z: types.z.g, info: ''},
         {latlng: [36.18053185925573, -178.7388141858098], type: types.l.lb, z: types.z.g, info: ''},
@@ -1718,6 +1735,10 @@ permalink: map.html
     // XSPECIAL
     var specialammoMarkers = [
         //L.marker(, {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
+        //L.marker([34.54997260284074, -198.54931667447093], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
+        L.marker([10.730228595494241, -211.78125053644183], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside the Potomac event center, just after entering the building, before getting to the stage.</p>'),
+        L.marker([3.3059206181690937, -233.06835964322093], {title: 'Special Ammo: High velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside potomac event center. Front left (north west) of the large boat you have to disable.</p>'),
+        L.marker([4.136190915770285, -228.38378906250003], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside Potomac event center mission. On the dock with the 3 boats you need to disable.</p>'),
         L.marker([37.07973943880372, -112.78127199188248], {title: 'Special Ammo: HHigh Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside building</p>'),
         L.marker([-53.91342186117723, -163.81271876747547], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Insidie Licoln Memorial, boss area.</p>'),
         L.marker([-50.32301139242993, -159.85101061817738], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Insidie Licoln Memorial, boss area.</p>'),
@@ -1772,6 +1793,13 @@ permalink: map.html
     // XAMMO
     var resupplyMarkers = [
         //L.marker(, {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
+        L.marker([22.512665145786084, -217.71386772394183], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Potomac Event Cente rmission, just outside the concert hall.</p>'),
+        L.marker([14.757839890629828, -217.56445392966273], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Potomac event center. In the long corridor where you meet Kelso.</p>'),
+        L.marker([8.771403421575133, -218.46972763538363], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In potomac event center mission. Just outside after the samll theater..</p>'),
+        L.marker([8.737836645468443, -212.1416012942791], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In potomac event center mission. Behind the stage after just entering the building.</p>'),
+        L.marker([1.169284687376602, -215.12109428644183], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In potomac event center mission, before entering the open area of the contruction site.</p>'),
+        L.marker([0.008813021863667688, -233.15624892711642], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Potomac Event Center mission, on large boat you have to disable.</p>'),
+        L.marker([28.566621113594223, -221.83593750000003], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Potomac Event Center Mission. Up on the walkway before you dscend the stairs.</p>'),
         L.marker([24.970547019874243, -165.74597626668717], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
         L.marker([-53.112469951567064, -163.7842114877863], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Licoln memorial, boss area.</p>'),
         L.marker([-50.678039107503395, -160.7609519352307], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Licoln memorial, boss area.</p>'),
@@ -1858,6 +1886,10 @@ permalink: map.html
     // XGREN
     var grenaderesupplyMarkers = [
         //L.marker(, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
+        //L.marker([24.311229201484412, -218.48730415105825], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Potomac event center. Just before concert hall</p>'),
+        L.marker([7.075354321757448, -212.95898437500003], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Potomac event center. Behind the stage in a small side room.</p>'),
+        L.marker([-1.5901716228329013, -214.58496093750003], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Potomac event center, just after hopping over a fence into the contruction site area.</p>'),
+        L.marker([4.678960438552931, -227.30273544788366], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Potomac event center mission at the docks where you have to destroy the three boats.</p>'),
         L.marker([21.35897754954818, -165.84973657614526], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
         L.marker([-47.835306676072115, -158.07806218808648], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In Lincoln Memorial, after command post, before boss fight</p>'),
         L.marker([-49.812485456094, -160.49283003253197], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.Underground In Licoln Memorial, just after entering building.</p>'),
@@ -1903,6 +1935,9 @@ permalink: map.html
     // XARMOR
     var armorresupplyMarkers = [
         //L.marker(, {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([-14.289123711142581, -213.22265859693292], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
+        L.marker([-1.037123272077163, -220.40331870317462], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside Potomac event center mission, near the exit of the 3 boats area.</p>'),
+        L.marker([22.83346617035479, -225.87011799216273], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside Potomac Event Center mission. Along the shore, you have to climb down a small ladder to get there.</p>'),
         L.marker([37.36326537159924, -112.84502787656089], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside building</p>'),
         L.marker([-53.589893567295405, -161.45517352585895], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Isnide licoln memorial, boss area</p>'),
         L.marker([-51.51962033022781, -163.8983996079744], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Isnide licoln memorial, boss area</p>'),
@@ -1967,6 +2002,8 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [34.644131948444695, -196.5190427005291], faction: 'Outcasts', info:'On the steps of this building'},
+        {latlng: [5.772779167842011, -213.4335932135582], faction: 'Outcasts', info:'Inside Potomac Event Center mission. After surviving the ambush in the construction site, before you enter the building, go left and you run into this box.'},
         {latlng: [5.677226173399822, -58.737457597192225], faction: 'Outcasts', info:'Inside DCD  HEadquarters mission. GRound floor of building, after activating the terminal.'},
         {latlng: [34.58256966324078, -148.50004368383594], faction: 'Outcasts', info:'On roof in the corner here. Access to the roof over the alley to the west.'},
         {latlng: [12.417263936114399, -282.48046875000006], faction: 'Outcasts', info:'Underground on Roosevelt Island mission, after defeating the guards. In a corner to your right when you get into the larger room underground.'},
@@ -2059,6 +2096,17 @@ permalink: map.html
     var markersMaterial = [
         //XMAT
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-14.289123711142581, -213.22265859693292], type: types.mat.d, z: types.z.g, info: 'Behind a fence you can scale over by using the truck southeast.'},
+        {latlng: [-10.40103131923153, -210.9726557135582], type: types.mat.d, z: types.z.g, info: 'Behind a fence you can scale over by using the truck southeast.'},
+        {latlng: [38.09304730471908, -193.09130966663363], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [35.99920777122924, -197.4067378789187], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [34.04637513922958, -197.47705433517694], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [33.37641235124679, -199.75341796875003], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [32.66539320937793, -195.03808580338958], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [28.16892916564585, -201.64306707680228], type: types.mat.d, z: types.z.g, info: 'Near the bottom of the ramp.'},
+        {latlng: [27.590051446332314, -205.29492348432547], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [25.474785029988922, -205.90136557817462], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [30.344605567033827, -206.22656330466273], type: types.mat.d, z: types.z.g, info: 'Inside the little guard hut here'},
         {latlng: [-5.571958780951416, -172.78419187097865], type: types.mat.t, z: types.z.u, info: 'NEar the ladder, access trhough building from the east.'},
         {latlng: [-7.33633657222964, -171.69439953807262], type: types.mat.f, z: types.z.u, info: 'Access through building above, east side.'},
         {latlng: [20.905785216491676, -166.40539445633448], type: types.mat.f, z: types.z.g, info: ''},
@@ -2980,7 +3028,7 @@ permalink: map.html
         {latlng: [36.18539982838856, -1.003418415784836], type: types.c.j, title: 'SITREP', description: 'Manny Ortega gives his superior officer an update on the situation in DC, in early summer.', info: '', z: types.z.g},
         {latlng: [-58.75908412012697, 75.03263002006423], type: types.c.j, title: 'Georgetown Patrol', description: 'Two local police officers discuss the current state of the crisis, on their way to check on the CERA post in Georgetown.', info: 'Underground in a parking garage. Ramp starts just west of the Castle Settlement.', z: types.z.g},
         {latlng: [42.73329550201731, -176.08335813479192], type: types.c.j, title: 'Quarantine', description: 'JTF soldiers face resistance as they send infected civilians and personell to the Roosevelt Island quarantine.', info: 'Acessible from the west or a door from the east trhough the building.', z: types.z.g},
-        {latlng: [-11.372338792141125, -210.62535454850305], type: types.c.j, title: 'Roosevelt Failure', description: 'Candid conversation between senior JTF staff regarding the Roosevelt Island debacle.', info: 'Northeast of the flipped car here. Area can be accessed over the truck parked southeast.', z: types.z.g},
+        {latlng: [-11.764013348826898, -210.34423828125003], type: types.c.j, title: 'Roosevelt Failure', description: 'Candid conversation between senior JTF staff regarding the Roosevelt Island debacle.', info: 'Northeast of the flipped car here. Area can be accessed over the truck parked southeast.', z: types.z.g},
         {latlng: [-48.42345633380306, 135.84375321865085], type: types.c.j, title: 'Line of Succession', description: 'JTF soldiers in the White House react to the death of President Mendez.', info: 'Inside a white container here.', z: types.z.g},
 
         // New York (8) Completed
@@ -3106,6 +3154,7 @@ permalink: map.html
     // XCOMPONENT
     var markersComponent = [
         //{latlng: , info: ''},
+        {latlng: [32.302081074694215, -197.63525370508432], info: ''},
         {latlng: [-54.12897820312169, -182.5048510122137], info: ''},
         {latlng: [-48.14987966316484, -163.27448375481197], info: 'Inside Lincoln Memorial. Behind locked door in command center. Shoot the yellow box against the south wall in the southwest corner.'},
         {latlng: [-47.72449794326306, -163.91191338806613], info: 'Inside Lincoln Memorial. After the kill house section, before kaing the stairs up. Behind locked fence. Shoot the yellow box mounted high on the western wall, before the stairs.'},
@@ -3445,9 +3494,6 @@ permalink: map.html
     L.imageOverlay(imageUrl, imageBounds).addTo(division2map);
     division2map.fitWorld();
 
-    // Debug, to easy add a marker
-    division2map.on('click', function(e) { if (e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('<input type="text" style="font-size:0.8em; width: 220px;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>').on('move', function(e) {e.target.bindPopup('<input type="text" style="font-size:0.8em; width: width: 220px;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>');}); }} );
-
     division2map.on('popupopen', function() {
         $('.image-link').magnificPopup(
             {
@@ -3564,4 +3610,6 @@ permalink: map.html
 
     division2map.on('overlayadd overlayremove', saveActiveLayers);
 
+    // Debug, to easy add a marker
+    division2map.on('click', function(e) { if (e.originalEvent.ctrlKey || e.originalEvent.shiftKey) { var marker = L.marker(e.latlng, {draggable: true}).addTo(division2map).bindPopup('<input type="text" style="font-size:0.8em; width: 220px;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>').on('move', function(e) {e.target.bindPopup('<input type="text" style="font-size:0.8em; width: 220px;" value="[' + e.latlng.lat + ', ' + e.latlng.lng + ']"><br/><a href="/map.html?mark=' + e.latlng.lat + ',' + e.latlng.lng + '">Link to Marker</a>');}); }} );
 </script>

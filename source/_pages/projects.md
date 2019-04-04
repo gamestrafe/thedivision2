@@ -169,7 +169,7 @@ Steel: 15
 Masks: 3
 Neutralize elite True Sons: 3
 
-Rewards: Military M9 Replica, XP
+Rewards: Blueprint:  Military M9 Replica, XP
 
 ### Coast Guardians
 
@@ -179,12 +179,24 @@ Electronics: 10
 Chest Armor: 3
 Compelte activities in Foggy Bottom: 2
 
-Rewards: SIG 716 Replica, XP
+Rewards: Blueprint: SIG 716 Replica, XP
 
 ### West Side Repair Crew
 
 Requires Campus Level 4
 
+Titanium: 10
+GloveS: 3
+Complete activities in West End: 2
+
+Rewards: Blueprint: FAMAS 2010 Replica, XP
+
 ### Deep Recovery Force
 
 Requires Campus Level 4
+
+Carbon Fiber: 10
+Backpacks: 3
+Neutralize Elite outcasts: 2
+
+Rewards: Blueprint: Black Market T821 Replica, XP
