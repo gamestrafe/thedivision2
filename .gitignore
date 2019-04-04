@@ -17,3 +17,6 @@
 
 # Composer
 /vendor
+
+# nodejs (Used for webpack)
+/node_modules

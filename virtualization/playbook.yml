@@ -7,5 +7,6 @@
   roles:
     - { role: base }
     - { role: git }
+    - { role: nodejs }
     - { role: php }
     - { role: composer }

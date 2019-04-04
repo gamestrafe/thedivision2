@@ -15,6 +15,9 @@ forwarded_ports: {
 
 php_version: "7.3"
 
+# Using nodejs and yarn to run webpack for asset management
+nodejs_with_yarn: true
+
 # Backingstore used by LXC. Defaults to dir. Uncomment and change this
 # value to suit your needs.
 # Note: only used with vagrant-lxc provider.
