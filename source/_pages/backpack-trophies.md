@@ -28,6 +28,10 @@ Uncertain on how to get it.
 
 Found in the Bank Headquarters mission, in the bank vault in a corner. See the map for details on that.
 
+## Hunters Axe
+
+After completing all the encounters with the [Hunters](/hunters.html) and collecting 8 ivory keys, you get it from the crate near the barber station in the base of operations.
+
 ## Lincoln Bust
 
 Found inside the Lincoln Memorial Mission. In the small museum, the first room where you find enemies after entering the building, on the back left corner from the entrance (southeast) is a giftshop/cafe corner. There are two low dressers/shelves towards one wall, close to the soda vending machine, and when you stand in between those, you can find it.
@@ -54,7 +58,7 @@ For completing the Bank Headquarters mission and then returning to the Base of O
 
 ## Spray Painted Bobble Head
 
-Uncertain of when you actually get it. Completing the District Union Arena might be what awards this.
+Random drop from the named bosses in District Union Arena stronghold.
 
 ## Supply Crate
 
@@ -66,4 +70,9 @@ Found in the DCD Headquarters mission. In the underground morgue with the 3 bloo
 
 ## Tommy the Teddy Bear
 
-Uncertain on how to get this one.
+A pre-order bonus, no longer available.
+
+## Unverified ones
+
+* Chess Piece: Capture and control all control points on world tier 4 or above at the same time.
+* Washington Flag: Get more than 1500 commendation score.
