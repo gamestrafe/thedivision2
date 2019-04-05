@@ -58,6 +58,8 @@
     </head>
     <body>
         {% if site.google_tag_manager_id %}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{% endif %}
+
+        {% block header %}
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="/">
@@ -124,6 +126,7 @@
                 </div>
             </nav>
         </header>
+        {% endblock %}
 
         {% block page_body %}
         <div class="mainContent container">

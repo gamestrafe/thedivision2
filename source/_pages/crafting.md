@@ -28,7 +28,7 @@ Crafting costs materials. At level below 30 you need 3 materials and 32 credits 
 * World Tier 2: 2794 Credits, 90 Steel, 80 Electronics, 15 Printer Filament (Upgrades to 300-330 Gear Score)
 * World Tier 3: 3577 Credits, 100 Ceramics, 90 Titanium, 20 Printer Filament (Upgrades to 350-385 Gear Score)
 * World Tier 4: 4672 Credits, 120 Polycarbonate, 120 Electronics, 25 Printer Filament (Upgrades to 400-440 Gear Score)
-* World Tier 5: ?
+* World Tier 5: 6192 Credits, 200 Polycarbonate, 200 Carbon Fiber, 30 Printer Filament (Upgrades to 450-490 Gear Score)
 
 ## Materials
 

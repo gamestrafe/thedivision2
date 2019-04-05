@@ -8,6 +8,30 @@ Projects are tasks to complete that will give you rewards, depending on the task
 
 Talk to the projects officer to see them and donate the required items. You can also see them in the map.
 
+## Special Projects
+
+These occur in specific situations and give some very high rewards.
+
+### Hard Wired Protoype
+
+Given after completing the Tidal Basin Stronghold for the first time. You have to find certain items which can be found on the final bosses of Grand Washington Hotel, Jefferson Trade Center, Federal Emergency Bunker, Lincoln Memorial, Air& Space Museum as well as Bank Headquarters.
+
+Hard Wired M-component: 1
+Hard Wired C-component: 1
+Hard Wired B-component: 1
+Hard Wired G-component: 1
+Hard Wired H-component: 1
+Hard Wired K-component: 1
+Hard Wired Tech: 10
+
+Rewards:
+- Blueprint: "Rhodeswoord" AR Mask
+- Blueprint: "Serpentine" Array Vest
+- Blueprint: "Abberton" Dynamo Carrier
+- Blueprint: "Molesey" ESD Gloves
+- Blueprint: "Ullswater" Proxy Rig
+- Blueprint: "Strines" Stabilizing Pads
+
 ## Liberations
 
 Each district has a liberation project, once you complete it, you get a bounty to do. The bounty is on a timer though, you have to get to the place of the bounty within a certain time. Once you are there, the timer stops.
