@@ -64,6 +64,10 @@ Random drop from the named bosses in District Union Arena stronghold.
 
 Rewarded for completing the Dark Zone East Recon mission during the Open Beta.
 
+## T-Rex
+
+Looted from the boss "Wyvern" of the Tidal Basin Stronghold.
+
 ## Tiny Skeleton
 
 Found in the DCD Headquarters mission. In the underground morgue with the 3 blood vats, go to the corner back and left from where you entered, next to the skeleton standing there to get it.
@@ -72,7 +76,10 @@ Found in the DCD Headquarters mission. In the underground morgue with the 3 bloo
 
 A pre-order bonus, no longer available.
 
+## Washington DC Flag
+
+Reaching tier 5 of commendations at a score of 1500.
+
 ## Unverified ones
 
 * Chess Piece: Capture and control all control points on world tier 4 or above at the same time.
-* Washington Flag: Get more than 1500 commendation score.

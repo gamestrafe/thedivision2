@@ -131,7 +131,7 @@ Unlocks after talking to Henry Hayes at the Campus.
 
 Assault the abandoned DCD building complex now held by the Outcasts. Destroy their lab, samples and download any research found in the facility.
 
-Level: 17
+Level: 18
 
 Rewards:
 - 1 Skill Unlock

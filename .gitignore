@@ -20,3 +20,4 @@
 
 # nodejs (Used for webpack)
 /node_modules
+/yarn-error.log

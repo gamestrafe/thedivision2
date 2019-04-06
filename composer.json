@@ -11,26 +11,17 @@
     ],
     "require": {
       "php": ">7.2",
-      "sculpin/sculpin": "dev-master",
-      "kriswallsmith/assetic": "1.4.0"
-    },
-    "config": {
-        "component-dir": "source/components",
-        "components": []
+      "sculpin/sculpin": "dev-master"
     },
     "scripts": {
-        "post-install-cmd": [
-            "ComponentManager\\ComponentManager::postComposerInstall"
-        ],
-        "post-update-cmd": [
-            "ComponentManager\\ComponentManager::postComposerInstall"
-        ],
-        "watch": [
+        "sculpin-watch": [
             "./vendor/bin/sculpin generate --watch --server"
+        ],
+        "yarn-watch": [
+            "yarn encore dev --watch"
         ]
     },
     "autoload": {
-        "classmap": ["./component-manager.php"],
         "psr-4": {"App\\": "src/"}
     }
 }

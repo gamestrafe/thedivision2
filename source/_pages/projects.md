@@ -12,16 +12,16 @@ Talk to the projects officer to see them and donate the required items. You can 
 
 These occur in specific situations and give some very high rewards.
 
-### Hard Wired Protoype
+### Hard Wired Prototype
 
-Given after completing the Tidal Basin Stronghold for the first time. You have to find certain items which can be found on the final bosses of Grand Washington Hotel, Jefferson Trade Center, Federal Emergency Bunker, Lincoln Memorial, Air& Space Museum as well as Bank Headquarters.
+Given after completing the Tidal Basin Stronghold for the first time. You have to find certain items which can be found on the final bosses of Grand Washington Hotel, Jefferson Trade Center, Federal Emergency Bunker, Lincoln Memorial, Air & Space Museum as well as Bank Headquarters. There is a chance they drop it, but doesn't mean they drop it every time, you may have to do it multiple times.
 
-Hard Wired M-component: 1
-Hard Wired C-component: 1
-Hard Wired B-component: 1
-Hard Wired G-component: 1
-Hard Wired H-component: 1
-Hard Wired K-component: 1
+Hard Wired M-component: 1 (Final boss of Grand Washington Hotel)
+Hard Wired C-component: 1 (Final boss in ?)
+Hard Wired B-component: 1 (Final boss of Federal Emergency Bunker)
+Hard Wired G-component: 1 (Final boss in ?)
+Hard Wired H-component: 1 (Final boss of Air & Space Museum)
+Hard Wired K-component: 1 (Final boss of Bank HQ)
 Hard Wired Tech: 10
 
 Rewards:

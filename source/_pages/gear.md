@@ -121,6 +121,8 @@ The most powerful buffs, you can get from gear sets. These are never branded and
 
 No detailed info yet on this set.
 
+You can get blueprints for it by completing the ["Hard Wired Prototype" project](/projects.html).
+
 ### Ongoing Directive
 
 Pieces:
