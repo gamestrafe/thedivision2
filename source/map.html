@@ -18,7 +18,7 @@ permalink: map.html
     }
     #thedivision2map {
         width: 100%;
-        height: calc(100vh - 82px);
+        height: 100%;
         background-color: #736963;
     }
 
@@ -26,14 +26,13 @@ permalink: map.html
         filter: drop-shadow(3px 3px 4px #333);
     }
 </style>
-
 <div id="thedivision2map"></div>
 
 
 <script>
     // Icons
     // Temporary using the default for all, but already configuring the different needed ones below
-    var iconSpecialammo = iconSecret = iconDzcrate = iconThievesden = iconStronghold = iconHunter = iconMissiongiver = iconLink = new L.Icon.Default();
+    var iconSpecialammo = iconSecret = iconDzcrate = iconStronghold = iconHunter = iconMissiongiver = iconLink = iconBackpacktrophy = new L.Icon.Default();
 
     // Icon base classes
     // Round is for really round ones and other "general location" markers
@@ -89,7 +88,6 @@ permalink: map.html
 
     // iconDzcrate = new DropIcon({html:''});
     // iconStronghold = new DropIcon({html:''});
-    // iconThievesden = new DropIcon({html:''});
     iconShdterminal = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><polygon style="fill:#FFFFFF;" points="79.5,24.3 70.2,24.3 70.2,14.6 65.6,14.6 65.6,24.3 56.3,24.3 56.3,28.9 65.6,28.9 65.6,37.8 70.2,37.8 70.2,28.9 79.5,28.9 "/><path style="fill:#FFFFFF;" d="M67.5,45.7l-3.4-3.6l-1.2-2.4l0.1-5.4l-5.5,0.1L53.5,31l0.3-9.2l1.5-1.2l6.7-0.1l0.1-3.8l-5.2-2.8l-6.3-2.2l-7.1-0.5L36.2,12L32,13.9l-3.1,1.8l-3.8,3.1l3,13.3l1.2,5.2l-0.5,3l-3.3,3h-4.1V46l1.3,4l1.7,3.8l3.5,5.6l4.5,2.3l4.3,1.1l2,2.3l1.5,4.5h12.9l1.2-4.5l2.8-1.6l5.5-1.2l2.6-2l6.1-11.7v-3.6L67.5,45.7z M38.3,56.1l-3.7,0.5l-4.5-2.1l-2.6-1.4l-3.3-6.3l13.9,2.5l5.7,0.7l-1.8,3.9L38.3,56.1z M50.6,63.2h-8.2L41,60.1l5.3-4.8l5.6,4.6L50.6,63.2z M64.9,53.5l-2.6,1.4L57.8,57l-3.7-0.5l-3.6-2.1l-1.8-3.9l5.7-0.7l13.9-2.5L64.9,53.5z"/></svg>'});
 
     iconDuckhunt = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M48.4,7.8l-5.8,2.5l-3.7,6.2L38.1,22l2,5.2l3.1,3.5l3.8,2.3l-9.3,5.6l-5.7,2.1l-4.6-4.4l-1.9,0.1L24.5,38l-1.6,6.3l1.4,6.7c0,0,2.6,7.3,2.6,7.4c0,0.2,5.8,6.5,5.8,6.5s32.9-1.7,32.8-1.5s5-6.2,5-6.2l1.9-8.4l-1.7-6.4l-4.5-5.2l-5.1-4.7l1-2.3l2-2.3l1.9-1l5.8-2.3l-0.3-0.8l-2.4-0.6l-2-2l4.1-5.1l1.1-3.3l-0.4-0.9L69,12.5l-4.3,1.4l-2.1-0.9l-1.9-2.1l-6.5-3.5L48.4,7.8z"/></svg>'});
@@ -102,6 +100,13 @@ permalink: map.html
             u: 'Underground',
             g: 'Ground Level', // Default
             a: 'Above ground level'
+        },
+        // Special ammunition types
+        ammo: {
+            h: 'High Velocity',
+            i: 'Incendiary',
+            e: 'Explosive',
+            s: 'Shock'
         },
         // Materials
         mat: {
@@ -210,6 +215,7 @@ permalink: map.html
     // XSIDEM
     var sideMissionMarkers = [
         //L.marker(, {title: '', icon: iconSidemission}).bindPopup('<h5></h5><p></p><p><b>Rewards:</b>  XP, Blueprint: </p>'),
+        L.marker([39.26628442213066, -57.84959004841594], {title: 'Worksite Community', icon: iconSidemission}).bindPopup('<h5>Worksite Community</h5><p>Respond to a distress call at an old deconstruction site.</p><p><b>Rewards:</b> XP, Blueprint: Compensated Integrated Spring</p>'),
         L.marker([35.177405364226125, 176.1022298122443], {title: 'Missing Wire Scavengers', icon: iconSidemission}).bindPopup('<h5>Missing Wire Scavengers</h5><p>Find and Rescue the missing community members. Level 25.</p><p><b>Rewards:</b>  XP, Blueprint: Osprey 9 Suppressor</p>'),
         L.marker([2.855262784366583, -164.4081882583419], {title: 'Navy Hill Transmission', icon: iconSidemission}).bindPopup('<h5>Navy Hill Transmission</h5><p>Investigate a strange radio transmission emitting from Navy Hill. Level 21. Decoded transmission: A framed guardian never bears a grudge against others, only a key in his back pocket to offer to his sisters and brothers.</p><p><b>Rewards:</b> XP, Blueprint: Nimble Link Belt, Retro Field Uniform</p>'),
         L.marker([19.597048475928567, -173.0224539756278], {title: 'Columbia Plaza Broadcast', icon: iconSidemission}).bindPopup('<h5>Columbia Plaza Broadcast</h5><p>Enter the courtyard and rescue the hostage.</p><p><b>Rewards:</b>  XP, Blueprint: Low Reflex Sight</p>'),
@@ -326,7 +332,9 @@ permalink: map.html
 
 
         // West Potomac Park
-        L.marker([-36.76008900805292, -61.28606244939321], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Ina  lcoked fence area. Climb the trailer on the east side to get into the area.</p>'),
+        L.marker([-36.76008900805292, -61.28606244939321], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>In a lcoked fence area. Climb the trailer on the east side to get into the area.</p>'),
+        L.marker([-52.55507952773557, -127.08546232661644], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Under ground in locked area of the large room down here.</p>'),
+        L.marker([-55.49391614255175, -65.53565419454205], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>In a locked fence area, you can shoot the lock southeast or use the walkway north and drop down from above.</p>'),
 
         // Federal Triangle
         L.marker([-30.319780318892175, 156.58595061078316], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Beside a car on the ground</p>'),
@@ -356,6 +364,7 @@ permalink: map.html
         L.marker([57.36998956588136, -64.49000564896416], {title: 'SHD Tech (Unmarked)', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building. Door is in the alley to the north and is locked from outside.</p>'),
         L.marker([51.54861245864871, -69.53979563990065], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building. Access through the alley and over fence.</p>'),
         L.marker([33.26701541121317, -110.8263223087226], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building.</p>'),
+        L.marker([37.48174628960792, -56.64092059342142], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside building, only accessible during side mission Worksite Community and bounties. Upper part of the construction, go north from where you rescued the hostage.</p>'),
 
         // Judiciary Square
         L.marker([23.277682480290775, 186.48193359375003], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>On roof, access through locked alley in the east.</p>'),
@@ -529,17 +538,6 @@ permalink: map.html
     var shdterminals = L.layerGroup(shdterminalMarkers);
     mapLayers.push(shdterminals);
 
-    var thievesdenMarkers = [
-        // DZ East
-        //L.marker(, {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>'),
-        L.marker([41.672911819602085, 199.07226562500003], {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>'),
-        L.marker([14.136575651477944, 236.16210937500003], {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>'),
-        L.marker([-12.747516274952714, 246.90673828125003], {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>'),
-        L.marker([23.0999442125314, 216.47460937500003], {title: 'Thieves Den', icon: iconThievesden}).bindPopup('<h5>Thieves Den</h5><p>After triangulation, you will find one of these spots unlocked for you to enter.</p>')
-    ];
-    var thievesdens = L.layerGroup(thievesdenMarkers);
-    mapLayers.push(thievesdens);
-
     var dzcrateMarkers = [
         // DZ East
         //L.marker(, {title: 'Locked DZ Crate', icon: iconDzcrate }).bindPopup('<h5>Locked DZ Crate</h5><p>Needs DZ Keys to unlock, or picking the lock as rogue action.</p>'),
@@ -603,7 +601,10 @@ permalink: map.html
         {latlng: [63.10635619630118, -246.07538114652692], info: ''},
         // General overworld (XWEP)
         //{latlng: , z: types.z.g, info: ''},
-        //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-56.07211156015169, -64.34028782979529], z: types.z.g, info: 'Inside locked fence.'},
+        {latlng: [37.85750715625203, -56.82570292033408], z: types.z.a, info: 'Only accessible during side mission Worksite Community and bounties. Upper most eastern level.'},
+        {latlng: [-37.41871908557966, 43.69084883846981], z: types.z.u, info: 'Inside American History Museum Mission. Second underground level, after the elevator shaft, behind the locked door you need the storage key for, which drops randomly in the mission.'},
+        {latlng: [-35.91761263585396, 38.28519490316815], z: types.z.u, info: 'Inside American History Museum Mission. On the small car behind the locomotive after coming down the escalators.'},
         {latlng: [-9.397016054894245, -207.78662122786048], z: types.z.g, info: 'Behind the fence, you have to scale over the truck in the southeast.'},
         {latlng: [-11.798692817598853, -211.37695312500003], z: types.z.g, info: 'Behind the fence, you have to scale over the truck in the southeast.'},
         {latlng: [21.07638739039801, -212.36132651567462], z: types.z.g, info: 'In potomac event center, after defeating the boss,m in the room that opens up.'},
@@ -783,7 +784,11 @@ permalink: map.html
         {latlng: [64.56260051925477, -261.5259023629693], z: types.z.g, info: ''},
         // General open world (XGEAR)
         //{latlng: , z: types.z.g, info: ''},
-        {latlng: [-11.303616391797908, -213.59619140625], z: types.z.g, info: ''},
+        {latlng: [38.38975949564763, -63.6592142256627], z: types.z.a, info: 'Inside building, only accessible during side mission Worksite Community and bounties. Upper floor, northeast corner of lab.'},
+        {latlng: [35.485892537711415, -64.82811533670798], z: types.z.g, info: 'Inside building, aceesible during bounties and one side mission.'},
+        {latlng: [-34.27143677550937, 41.15040373286638], z: types.z.u, info: 'Inside American History Museum Mission. After the vietnam exhibit, before jumping down the elevator, keep going west, then in the workshop area you get into, go to the northwest corner.'},
+        {latlng: [-36.095363642566184, 37.39749270151942], z: types.z.g, info: ''},
+        {latlng: [-11.303616391797908, -213.59619140625], z: types.z.g, info: 'Inside American History Museum Mission. Behind a statue, just after you unlocked the door in the office with the huge flag display.'},
         {latlng: [-3.984820817420308, -188.5693359375], z: types.z.g, info: ''},
         {latlng: [27.76954211926403, -202.07373060286048], z: types.z.g, info: 'At the bottom of the ramp in front of a murial'},
         {latlng: [29.37490423317754, -206.01562500000003], z: types.z.g, info: 'In the corner approaching from the southeast.'},
@@ -1146,6 +1151,9 @@ permalink: map.html
         {latlng: [77.26659212172264, -231.18896695020163], type: types.dz.ic, z: types.z.g, info: 'At the bottom of some stairs here'},
         // Overworld (XSMALL)
         //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [36.79516577083548, -55.85892192734378], type: types.l.sb, z: types.z.a, info: 'Inside building, only accessible during side mission Worksite Community and bounties. Upper level of east side construction area.'},
+        {latlng: [37.652470425927056, -56.394980878081874], type: types.l.lb, z: types.z.a, info: 'Inside building, only accessible during side mission Worksite Community and bounties. Lower level of east side construction area.'},
+        {latlng: [33.19265432759205, -63.15382792033408], type: types.l.lb, z: types.z.g, info: 'Inside building, only accessible during side mission Worksite Community and bounties.'},
         {latlng: [32.86123069928672, -193.51757839322093], type: types.l.sb, z: types.z.g, info: ''},
         {latlng: [31.094447833681244, -197.15185560286048], type: types.l.lb, z: types.z.g, info: ''},
         {latlng: [22.740888574028364, -164.91071322646724], type: types.l.sb, z: types.z.g, info: ''},
@@ -1725,258 +1733,289 @@ permalink: map.html
     // XTROPHIES
     var markersBackpacktrophies = [
         // {latlng: , title: '', info: ''},
+        // {latlng: , title: 'Plush Hippo', info: 'Requires Theater Settlement level 3. On the highest platform in a golden locked box on the floor. Close to where the door for Odessa is, above the BBQ area.'},
         {latlng: [46.52032102152531, -114.25557861373615], title: 'Plush Flower', info: 'Requires Campus settlement level 3. This pot is on the second level above ground. Go towhere the musician stage is and there is another stairs south that leads higher. In that dead end you find a golden crate on the ground that contains this trophy.'},
-        {latlng: [-53.65244643199797, -158.5284854056709], title: 'Lincoln Bust', info: 'In Licoln Memorial Mission. This is in the small museum area, where you encounter enemies first after entering the building. Go to the southeeastern most part here and you se a sort of cafeteria. Inside this are, is a vending machine for LIX and just northwest are two low countertops/shleves. Stand between them, and you get the prompt.'},
-        {latlng: [-6.7868896530545895, -69.55245584148068], title: '', info: 'Inside DCD HEadquarters mission. Inside the Underground morgue lab with the blood vats. Go to the southeastern most corner, there you see a skeleton standing. Get close enough and you get the search propmt.'},
-        {latlng: [43.95486345939899, -76.89995994506008], title: 'Gold Bar', info: 'At the bottom level of the Bank Headquarters mission. Just after you go trhough the heavy fortified door, go directly right and then right again and you stand in front of some iyellowish illuminated cash and lock boxes. Stand close to the south wall here and you get a "Search" prompt to get it.'}
+        {latlng: [-53.65244643199797, -158.5284854056709], title: 'Lincoln Bust', info: 'In Lincoln Memorial Mission. This is in the small museum area, where you encounter enemies first after entering the building. Go to the south eastern most part here and you se a sort of cafeteria. Inside this are, is a vending machine for LIX and just northwest are two low countertops/shelves. Stand between them, and you get the prompt.'},
+        {latlng: [-6.7868896530545895, -69.55245584148068], title: '', info: 'Inside DCD Headquarters Mission. Inside the Underground morgue lab with the blood vats. Go to the southeastern most corner, there you see a skeleton standing. Get close enough and you get the search prompt.'},
+        {latlng: [43.95486345939899, -76.89995994506008], title: 'Gold Bar', info: 'Inside Bank Headquarters Mission. At the bottom level. Just after you go through the heavy fortified door, go directly right and then right again and you stand in front of some yellowish illuminated cash and lock boxes. Stand close to the south wall here and you get a "Search" prompt to get it.'}
     ];
+    var backpacktrophyMarkers = markersBackpacktrophies.map(function(data) {
+        return L.marker(data.latlng, {title: 'Backpack Trophy: ' + data.title, icon: iconBackpacktrophy }).bindPopup('<h5>' + data.title + '</h5><p>' + data.info + '</p>');
+    });
+    var backpacktrophies = L.layerGroup(backpacktrophyMarkers);
+    mapLayers.push(backpacktrophies);
 
-    // Special ammo like shock, exploding or fire ammo
     // XSPECIAL
-    var specialammoMarkers = [
-        //L.marker(, {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
-        //L.marker([34.54997260284074, -198.54931667447093], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
-        L.marker([10.730228595494241, -211.78125053644183], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside the Potomac event center, just after entering the building, before getting to the stage.</p>'),
-        L.marker([3.3059206181690937, -233.06835964322093], {title: 'Special Ammo: High velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside potomac event center. Front left (north west) of the large boat you have to disable.</p>'),
-        L.marker([4.136190915770285, -228.38378906250003], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside Potomac event center mission. On the dock with the 3 boats you need to disable.</p>'),
-        L.marker([37.07973943880372, -112.78127199188248], {title: 'Special Ammo: HHigh Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside building</p>'),
-        L.marker([-53.91342186117723, -163.81271876747547], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Insidie Licoln Memorial, boss area.</p>'),
-        L.marker([-50.32301139242993, -159.85101061817738], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Insidie Licoln Memorial, boss area.</p>'),
-        L.marker([-52.068689737416555, -157.75934703606197], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Insidie Licoln Memorial, boss area.</p>'),
-        L.marker([-50.21902073630415, -157.4341145023312], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In Lincoln Memorial Mission. In the small museum section..</p>'),
-        L.marker([15.868390134947665, -146.43926423599774], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
-        L.marker([2.9298606546670323, -68.76156741762593], {title: 'Special Ammo: Incendiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside DCD HEadquarters mission, on the ground next to a tree here.</p>'),
-        L.marker([2.0123633813751542, -64.27017853268156], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside DCD HEadquarters mission. On bench in front of the tree here.</p>'),
-        L.marker([5.699046012122934, -54.12300898297439], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. On top of the scaffolding here inside the DCD Headquarters mission.</p>'),
-        L.marker([45.65398379921971, -81.81702135575202], {title: 'Special Ammo: Shock', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In Bank Headquarters Mission. In boss fight atrium area, in teh watter down to your right.</p>'),
-        L.marker([50.193780939413635, -77.26462990737313], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In Bank headquarters mission, in server room, below the control room.</p>'),
-        L.marker([39.123243765526595, -82.37941143609444], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In Bank Headquarters Mission. Bottom level, after rapelling down from 5th floor.</p>'),
-        L.marker([-76.52091703014645, 108.47887679708518], {title: 'Special Ammo: Shock', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In jefferson Plaza mission, mall level, eastern wall.</p>'),
-        L.marker([-77.05025573869254, 101.02603116912385], {title: 'Special Ammo: Shock', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside Jefferson Plaza, hotel lobby west side.</p>'),
-        L.marker([-76.7565144996107, 91.88971199208241], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside JEfferson Plaza mission. After second train section.</p>'),
-        L.marker([-57.93118360382066, 175.43842613030452], {title: 'Special Ammo: High Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Rooftop</p>'),
-        L.marker([-59.667740581649625, 178.00928978422078], {title: 'Special Ammo: Shock', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Rooftop</p>'),
-        L.marker([-67.07085795427544, 219.34416363842536], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
-        L.marker([-66.132076428189, 205.5894059009455], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Undeground in tunnel</p>'),
-        L.marker([-74.85870881766003, 129.73137158866018], {title: 'Special Ammo: Shock', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
-        L.marker([-6.978773977411978, 130.80100649876601], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground in large room, north elevated platform</p>'),
-        L.marker([46.94726212303764, 65.96188155658605], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. On the roof of Grand Washington Hotel,</p>'),
-        L.marker([-55.264094671212355, 0.7295672194222513], {title: 'Special Ammo: High Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
-        L.marker([62.333289944668444, -83.81689466536045], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground, lower level</p>'),
-        L.marker([-52.69236617258382, 8.791224143279656], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
-        L.marker([62.52651311952011, -78.02490234375001], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground, upper level</p>'),
-        L.marker([64.66903906071602, -82.11621053516865], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground, upper level</p>'),
-        L.marker([61.86443733761866, -84.12451118230821], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
-        L.marker([61.86443733761866, -84.12451118230821], {title: 'Special Ammo: Incindiary', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground</p>'),
-        L.marker([22.629222364728207, 186.22265651822093], {title: 'Special Ammo: High Velocity', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In room after first ladder</p>'),
-        L.marker([53.969012350740314, -129.71191361546516], {title: 'Special Ammo: Explosive', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside building</p>'),
-        L.marker([13.539200668930816, -71.15478537976743], {title: 'Special Ammo (Shock)', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
-        L.marker([-65.59321574578482, 226.0949702560902], {title: 'Special Ammo (Explosive)', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground Parking Garage</p>'),
-        L.marker([-64.78189904597053, 228.88549827039245], {title: 'Special Ammo (Explosive)', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground Parking Garage</p>'),
-        L.marker([-64.898667576572, 233.58398482203486], {title: 'Special Ammo (Explosive)', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Underground Parking Garage</p>'),
-        L.marker([-67.041759349799, 236.06323242187503], {title: 'Special Ammo (Shock)', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
-        L.marker([-65.52509180546092, 236.25640880316502], {title: 'Special Ammo (Shock)', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. </p>'),
-        L.marker([-18.722496322289704, 114.94628861546518], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In NAtional Archives entrance, just after lobby.</p>'),
-        L.marker([8.385437830742903, 93.2904052734375], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. Before the elevators down.</p>'),
-        L.marker([-15.446510448082533, 152.4169919639826], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. On roof level.</p>'),
-        L.marker([-8.863293967961718, 148.0224610492587], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum. At far back, in an area with stairs leading up.</p>'),
-        L.marker([-8.68160414519652, 154.26269575953486], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. In ViewPoint Museum behind REception counter.</p>'),
-        L.marker([44.07969327425713, 99.23950195312501], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside library, level above ground floor, under a desk.</p>'),
-        L.marker([44.72600630800573, 94.77539017796518], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. On roof of MLK library.</p>'),
-        L.marker([-3.367796250732865, 28.791503794491295], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. Inside Jefferson Trade Center, in an elevator that is open, after the garage section.</p>'),
-        L.marker([27.323055106114907, 51.06811568140984], {title: 'Special Ammo', icon: iconSpecialammo }).bindPopup('<h5>Special Ammo</h5><p>Gives you one random special ammo type. On the inside of the building, accessible through escalators and door in the northeast corner.</p>')
+    var markersSpecialammo = [
+        //{latlng: , type: types.ammo.e, info: ''},
+        {latlng: [35.22370051498378, -64.82046753069103], type: types.ammo.e, info: 'Inside building, accessible during sidemission and bounties.'},
+        {latlng: [-31.267267133614283, 45.85269443802264], type: types.ammo.s, info: 'Inside American History Museum Mission. Boss area, under platform to the east.'},
+        {latlng: [-33.585397913339435, 48.5419797500647], type: types.ammo.i, info: 'Inside American History Museum Mission. At the end of the vietnam Exhibit just a bit west of the minigun.'},
+        {latlng: [-33.151934175350284, 38.99705098591594], type: types.ammo.s, info: 'Inside American History Museum Mission. In fenced area after opening the door in the office.'},
+        {latlng: [34.54997260284074, -198.54931667447093], type: types.ammo.e, info: ''},
+        {latlng: [10.730228595494241, -211.78125053644183], type: types.ammo.i, info: 'Inside the Potomac event center, just after entering the building, before getting to the stage.'},
+        {latlng: [3.3059206181690937, -233.06835964322093], type: types.ammo.h, info: 'Inside potomac event center. Front left (north west) of the large boat you have to disable.'},
+        {latlng: [4.136190915770285, -228.38378906250003], type: types.ammo.i, info: 'Inside Potomac event center mission. On the dock with the 3 boats you need to disable.'},
+        {latlng: [37.07973943880372, -112.78127199188248], type: types.ammo.h, info: 'Inside building'},
+        {latlng: [-53.91342186117723, -163.81271876747547], type: types.ammo.i, info: 'Inside Licoln Memorial, boss area.'},
+        {latlng: [-50.32301139242993, -159.85101061817738], type: types.ammo.i, info: 'Inside Licoln Memorial, boss area.'},
+        {latlng: [-52.068689737416555, -157.75934703606197], type: types.ammo.i, info: 'Inside Licoln Memorial, boss area.'},
+        {latlng: [-50.21902073630415, -157.4341145023312], type: types.ammo.e, info: 'In Lincoln Memorial Mission. In the small museum section..'},
+        {latlng: [15.868390134947665, -146.43926423599774], type: types.ammo.e, info: ''},
+        {latlng: [2.9298606546670323, -68.76156741762593], type: types.ammo.i, info: 'Inside DCD HEadquarters mission, on the ground next to a tree here.'},
+        {latlng: [2.0123633813751542, -64.27017853268156], type: types.ammo.e, info: 'Inside DCD HEadquarters mission. On bench in front of the tree here.'},
+        {latlng: [5.699046012122934, -54.12300898297439], type: types.ammo.e, info: 'On top of the scaffolding here inside the DCD Headquarters mission.'},
+        {latlng: [45.65398379921971, -81.81702135575202], type: types.ammo.s, info: 'In Bank Headquarters Mission. In boss fight atrium area, in teh watter down to your right.'},
+        {latlng: [50.193780939413635, -77.26462990737313], type: types.ammo.e, info: 'In Bank headquarters mission, in server room, below the control room.'},
+        {latlng: [39.123243765526595, -82.37941143609444], type: types.ammo.i, info: 'In Bank Headquarters Mission. Bottom level, after rapelling down from 5th floor.'},
+        {latlng: [-76.52091703014645, 108.47887679708518], type: types.ammo.s, info: 'In jefferson Plaza mission, mall level, eastern wall.'},
+        {latlng: [-77.05025573869254, 101.02603116912385], type: types.ammo.s, info: 'Inside Jefferson Plaza, hotel lobby west side.'},
+        {latlng: [-76.7565144996107, 91.88971199208241], type: types.ammo.e, info: 'Inside JEfferson Plaza mission. After second train section.'},
+        {latlng: [-57.93118360382066, 175.43842613030452], type: types.ammo.h, info: 'Rooftop'},
+        {latlng: [-59.667740581649625, 178.00928978422078], type: types.ammo.s, info: 'Rooftop'},
+        {latlng: [-67.07085795427544, 219.34416363842536], type: types.ammo.e, info: ''},
+        {latlng: [-66.132076428189, 205.5894059009455], type: types.ammo.e, info: 'Undeground in tunnel'},
+        {latlng: [-74.85870881766003, 129.73137158866018], type: types.ammo.s, info: 'Underground'},
+        {latlng: [-6.978773977411978, 130.80100649876601], type: types.ammo.i, info: 'Underground in large room, north elevated platform'},
+        {latlng: [46.94726212303764, 65.96188155658605], type: types.ammo.i, info: 'On the roof of Grand Washington Hotel,'},
+        {latlng: [-55.264094671212355, 0.7295672194222513], type: types.ammo.h, info: 'Underground'},
+        {latlng: [62.333289944668444, -83.81689466536045], type: types.ammo.e, info: 'Underground, lower level'},
+        {latlng: [-52.69236617258382, 8.791224143279656], type: types.ammo.i, info: 'Underground'},
+        {latlng: [62.52651311952011, -78.02490234375001], type: types.ammo.i, info: 'Underground, upper level'},
+        {latlng: [64.66903906071602, -82.11621053516865], type: types.ammo.i, info: 'Underground, upper level'},
+        {latlng: [61.86443733761866, -84.12451118230821], type: types.ammo.i, info: 'Underground'},
+        {latlng: [61.86443733761866, -84.12451118230821], type: types.ammo.i, info: 'Underground'},
+        {latlng: [22.629222364728207, 186.22265651822093], type: types.ammo.h, info: 'In room after first ladder'},
+        {latlng: [53.969012350740314, -129.71191361546516], type: types.ammo.e, info: 'Inside building'},
+        {latlng: [13.539200668930816, -71.15478537976743], type: types.ammo.s, info: ''},
+        {latlng: [-65.59321574578482, 226.0949702560902], type: types.ammo.e, info: 'Underground Parking Garage'},
+        {latlng: [-64.78189904597053, 228.88549827039245], type: types.ammo.e, info: 'Underground Parking Garage'},
+        {latlng: [-64.898667576572, 233.58398482203486], type: types.ammo.e, info: 'Underground Parking Garage'},
+        {latlng: [-67.041759349799, 236.06323242187503], type: types.ammo.s, info: ''},
+        {latlng: [-18.722496322289704, 114.94628861546518], type: types.ammo.s, info: 'In National Archives entrance, just after lobby.'},
+        {latlng: [44.07969327425713, 99.23950195312501], type: types.ammo.i, info: 'Inside library, level above ground floor, under a desk.'},
+        {latlng: [44.72600630800573, 94.77539017796518], type: types.ammo.i, info: 'On roof of MLK library.'},
+        {latlng: [-65.52509180546092, 236.25640880316502], type: types.ammo.s, info: ''}
+
+        /*
+        // No type assigned, need to check these
+        {latlng: [-3.367796250732865, 28.791503794491295], type: types.ammo.x, info: 'Inside Jefferson Trade Center Mission. In an elevator that is open, after the garage section.'},
+        {latlng: [8.385437830742903, 93.2904052734375], type: types.ammo.x, info: 'Inside ViewPoint Museum Mission. Before the elevators down.'},
+        {latlng: [-15.446510448082533, 152.4169919639826], type: types.ammo.x, info: 'Inside ViewPoint Museum Mission. On roof.'},
+        {latlng: [-8.863293967961718, 148.0224610492587], type: types.ammo.x, info: 'Inside ViewPoint Museum Mission. At far back, in an area with stairs leading up.'},
+        {latlng: [-8.68160414519652, 154.26269575953486], type: types.ammo.x, info: 'Inside ViewPoint Museum Mission. Behind Reception counter.'},
+        {latlng: [27.323055106114907, 51.06811568140984], type: types.ammo.x, info: 'On the inside of the building, accessible through escalators and door in the northeast corner.'}
+        */
     ];
+    var specialammoMarkers = markersSpecialammo.map(function(data) {
+        return L.marker(data.latlng, {title: 'Special Ammo: ' + data.type, icon: iconSpecialammo }).bindPopup('<h5>Special Ammo: ' + data.type + '</h5><p>Gives you 30 special bullets of the type ' + data.type + ' for the weapon you are currently holding. ' + data.info + '</p>');
+    });
     var specialammo = L.layerGroup(specialammoMarkers);
     //mapLayers.push(specialammo);
 
-    // Ammo resupply box, fills up all normal ammo
     // XAMMO
-    var resupplyMarkers = [
-        //L.marker(, {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
-        L.marker([22.512665145786084, -217.71386772394183], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Potomac Event Cente rmission, just outside the concert hall.</p>'),
-        L.marker([14.757839890629828, -217.56445392966273], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Potomac event center. In the long corridor where you meet Kelso.</p>'),
-        L.marker([8.771403421575133, -218.46972763538363], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In potomac event center mission. Just outside after the samll theater..</p>'),
-        L.marker([8.737836645468443, -212.1416012942791], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In potomac event center mission. Behind the stage after just entering the building.</p>'),
-        L.marker([1.169284687376602, -215.12109428644183], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In potomac event center mission, before entering the open area of the contruction site.</p>'),
-        L.marker([0.008813021863667688, -233.15624892711642], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Potomac Event Center mission, on large boat you have to disable.</p>'),
-        L.marker([28.566621113594223, -221.83593750000003], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Potomac Event Center Mission. Up on the walkway before you dscend the stairs.</p>'),
-        L.marker([24.970547019874243, -165.74597626668717], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
-        L.marker([-53.112469951567064, -163.7842114877863], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Licoln memorial, boss area.</p>'),
-        L.marker([-50.678039107503395, -160.7609519352307], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Licoln memorial, boss area.</p>'),
-        L.marker([-52.047066019516954, -158.07119366164108], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Licoln memorial, boss area.</p>'),
-        L.marker([-48.29198982956576, -158.40307312600538], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Lincoln Memorial, after command post, before boss fight</p>'),
-        L.marker([-48.737342576735315, -164.43906633634828], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Lincoln Memorial mission, After kill house</p>'),
-        L.marker([-54.152130220924874, -160.83329356181517], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Lincoln Memorial mission, after museum level.</p>'),
-        L.marker([-49.45385760686203, -160.9452549911667], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Underground In Licoln Memorial, just after entering building.</p>'),
-        L.marker([-55.80125425686246, -164.00854909180117], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In licoln Memorial Mission, outside.</p>'),
-        L.marker([-5.43671166240386, -64.65687766587388], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside DCD Headquarters mission, before exiting into the courtyard.</p>'),
-        L.marker([-8.92846424844072, -68.04492796673932], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside DCD Headquarters mission, after morgue.</p>'),
-        L.marker([0.40431417001181547, -70.90132591420729], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In DCD HEadquarters mission, after dropping down the elevator in the morgue, underground.</p>'),
-        L.marker([8.157129579276521, -71.35192436876383], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside DCD Headquarters mission.</p>'),
-        L.marker([5.601278649391454, -69.27670103157416], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In DCD HEadquarters Mission. After the basement, before the lab. Upper level.</p>'),
-        L.marker([7.948161222661455, -62.038602578837136], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside DCD headquarters mission, underground before basement attack.</p>'),
-        L.marker([2.486365841283584, -60.69725209993163], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside DCD HEadquarters mission.</p>'),
-        L.marker([57.97082674053477, -83.25863746993593], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
-        L.marker([42.78250144385165, -81.25587585285022], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headquarters Mission, after the extration, just before the boss fight.</p>'),
-        L.marker([44.54350521320822, -87.16099907975301], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headquarters Mission, after the auditorium.</p>'),
-        L.marker([48.32119478549313, -88.70795088149976], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headwuarters mission. Before the auditorium.</p>'),
-        L.marker([50.59160653970552, -77.28220073848117], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headquarters mission. In control room of the server room.</p>'),
-        L.marker([39.157325790829745, -78.79407242166485], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headquarters Mission, bottom level before attacking the vault entrance.</p>'),
-        L.marker([44.06232809526843, -80.55175781250001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headquarters Mission, after rapelling down from 5th floor.</p>'),
-        L.marker([42.7599182826008, -87.14380890582966], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headquarters Mission, outside 5th floor office space.</p>'),
-        L.marker([46.365123921534796, -88.45298531398068], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headquarters Mission, after lobby.</p>'),
-        L.marker([47.84855569784485, -78.0907567579176], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Bank Headquarters Mission.</p>'),
-        L.marker([-75.9842000057889, 88.08413730818371], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside JEfferson Plaza mission, boss area, northwest corner.</p>'),
-        L.marker([-75.3556202614638, 92.30719246083241], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside jefferson plazaa mission, before boss fight.</p>'),
-        L.marker([-76.30827658454713, 96.56545484120903], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Plaza Mission, after taking out the 3 vats.</p>'),
-        L.marker([-76.80876401216733, 96.57432003514596], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Plaza Mission, after taking out the 3 vats.</p>'),
-        L.marker([-76.7886919093123, 104.8667184191867], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Plaza Mission. On mall level after the lab.</p>'),
-        L.marker([-76.00972007667923, 104.06114135322346], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Plaza Mission. On mall level before the lab.</p>'),
-        L.marker([-77.48794445346694, 103.01683591008319], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Plaza Mission.</p>'),
-        L.marker([-78.22451306101968, 97.73437500000001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Plaza mission</p>'),
-        L.marker([-75.41549388316248, 90.65064849027569], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Plaza mission.</p>'),
-        L.marker([-75.52354589439652, 97.89961463637447], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Plaza mission.</p>'),
-        L.marker([34.05265942137599, -154.69190115483218], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. On roof</p>'),
-        L.marker([3.723938663015105, -48.256351334923345], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
-        L.marker([-8.104913370970564, -50.84341873973579], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
-        L.marker([57.44499333817839, -41.85791015625001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Ground floor of building of The Vault Control point</p>'),
-        L.marker([57.12189004665276, -42.37207017838955], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Top level of bank in The Vault Control point</p>'),
-        L.marker([43.60426186809618, -39.01245117187501], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
-        L.marker([-57.40591055745361, 19.57319999689186], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In building</p>'),
-        L.marker([61.14323525084058, -222.09081977605825], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Underground</p>'),
-        L.marker([-64.83024534914233, 234.01245094835764], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
-        L.marker([-28.80612521794869, -22.866211049258716], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>'),
-        L.marker([-18.77104983817173, 111.37207075953484], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. National Archives entrance.</p>'),
-        L.marker([-16.68515595260793, 154.80468772351742], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. After using teh elevator.</p>'),
-        L.marker([-11.72382906048309, 149.32617187500003], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. BEfore prime time exhibit.</p>'),
-        L.marker([-12.7759725383432, 155.04638694226745], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. After the room with all the sparking.</p>'),
-        L.marker([-17.73449078609149, 158.04931640625003], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. After first exhibit room.</p>'),
-        L.marker([-14.973052985357002, 161.6784665733576], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In ViewPoint Museum. Underground.</p>'),
-        L.marker([-0.5273363048115043, 115.93505864962935], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside the building.</p>'),
-        L.marker([41.327284935114825, 93.31054698675874], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Just outside elevators.</p>'),
-        L.marker([-19.804580781192215, 90.64819335937501], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. After garage portion of the sidemission.</p>'),
-        L.marker([-17.518219370702997, 93.27392578125001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In the parkoing garage below.</p>'),
-        L.marker([26.058442824820553, 20.875854548066858], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Empire Autunum Hotel, before taking the rapell rope up the elevator shaft.</p>'),
-        L.marker([25.390387658095644, 14.809570312500002], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Just outside the Empire Autunum Hotel when you do that sidemission.</p>'),
-        L.marker([-7.776294852835753, 39.895018637180335], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. After the large open room where you meet Coyote for the first time.</p>'),
-        L.marker([-9.731739550567564, 29.318847209215164], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. After the locked gate from the cafeteria.</p>'),
-        L.marker([-2.9137506328485427, 29.58984419703484], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. After the garage, before the cafeteria.</p>'),
-        L.marker([-4.536251173749258, 42.50244095921517], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. Inside the ISAC node room, next to the door.</p>'),
-        L.marker([6.781157569335222, 37.95410111546517], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. Just before you jump down the elevator shaft.</p>'),
-        L.marker([-5.251342910010795, 37.382812723517425], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside Jefferson Trade Center. After the first indoor area where you go right at the end of it.</p>'),
-        L.marker([-15.100401890905589, 1.9143676757812502], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In building of resupply room.</p>'),
-        L.marker([-18.49351010473945, -18.369140625000004], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Inside tent.</p>'),
-        L.marker([24.383821401388612, 42.30102550238371], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In the construction site corner.</p>'),
-        L.marker([51.26766441430681, 25.896606333553795], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. Just inside the building at Fall Cranes ccontrol point.</p>'),
-        L.marker([48.04041485950625, 66.79687500000001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. On the roof of Grand Washington Hotel, the room with the elevator that unlocks after the bossfight.</p>'),
-        L.marker([50.27296998553086, 67.03857421875001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. On the roof of Grand Washington Hotel, inside boss fight area.</p>'),
-        L.marker([49.77654964223246, 64.13085948675872], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission, after you rode the elevator up.</p>'),
-        L.marker([43.665326182809906, 63.72070312500001], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission, after you cleared the conference center.</p>'),
-        L.marker([44.06648553425571, 69.33837935328484], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel mission, Before the conference center.</p>'),
-        L.marker([41.563435980035365, 63.80126964300871], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission. </p>'),
-        L.marker([41.563435980035365, 63.80126964300871], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission. </p>'),
-        L.marker([41.563435980035365, 63.80126964300871], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. In Grand Washington Hotel Mission. Just after you cleared the Workshop on the bottom level.</p>'),
-        L.marker([44.394986637412735, 70.10742165148258], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition. At entrance to Grand Washington Hotel Mission, just inside the first door.</p>'),
-        L.marker([0.051315673307338196, -23.635254018008716], {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills your normal ammunition.</p>')
+    var markersAmmo = [
+        //{latlng: , info: ''},
+        {latlng: [37.79133126684476, -63.30315912821123], info: 'Inside building, only accessible during side mission Worksite Community and bounties. Upper floor, northeast corner of lab.'},
+        {latlng: [34.867942245503805, -63.843712017262945], info: 'Inside building, accessible during side mission and bounties.'},
+        {latlng: [38.99346610602268, -56.838863742925646], info: ''},
+        {latlng: [-33.92250858252386, 40.64941406250001], info: 'Inside American History Museum Mission. After interrogation area, before the boss fight.'},
+        {latlng: [-34.1765572803588, 48.928818666993514], info: 'Inside American History Museum Mission. Second underground level after holding area.'},
+        {latlng: [-39.1234683415066, 50.08035156373928], info: 'Inside American History Museum Mission. Second underground level, after elevator, before entering holding area.'},
+        {latlng: [-38.30721621923785, 44.024486583399735], info: 'Inside American History Museum Mission. At entrance to the Vietnam exhibit.'},
+        {latlng: [-36.059553366238696, 35.87699732645473], info: 'Inside American History Museum Mission. After the first cells, before going down escalators.'},
+        {latlng: [22.512665145786084, -217.71386772394183], info: 'In Potomac Event Cente rmission, just outside the concert hall.'},
+        {latlng: [14.757839890629828, -217.56445392966273], info: 'Inside Potomac Event Center Mission. In the long corridor where you meet Kelso.'},
+        {latlng: [8.771403421575133, -218.46972763538363], info: 'Inside Potomac Event Center Mission. Just outside after the samll theater..'},
+        {latlng: [8.737836645468443, -212.1416012942791], info: 'Inside Potomac Event Center Mission. Behind the stage after just entering the building.'},
+        {latlng: [1.169284687376602, -215.12109428644183], info: 'Inside Potomac Event Center Mission. Before entering the open area of the contruction site.'},
+        {latlng: [0.008813021863667688, -233.15624892711642], info: 'Inside Potomac Event Center Mission. On large boat you have to disable.'},
+        {latlng: [28.566621113594223, -221.83593750000003], info: 'Inside Potomac Event Center Mission. Up on the walkway before you dscend the stairs.'},
+        {latlng: [24.970547019874243, -165.74597626668717], info: ''},
+        {latlng: [-53.112469951567064, -163.7842114877863], info: 'In Lincoln Memorial Mission. Boss area.'},
+        {latlng: [-50.678039107503395, -160.7609519352307], info: 'In Lincoln Memorial Mission. Boss area.'},
+        {latlng: [-52.047066019516954, -158.07119366164108], info: 'In Lincoln Memorial Mission. Boss area.'},
+        {latlng: [-48.29198982956576, -158.40307312600538], info: 'In Lincoln Memorial Mission. After command post, before boss fight'},
+        {latlng: [-48.737342576735315, -164.43906633634828], info: 'In Lincoln Memorial Mission. After kill house'},
+        {latlng: [-54.152130220924874, -160.83329356181517], info: 'In Lincoln Memorial Mission. After museum level.'},
+        {latlng: [-49.45385760686203, -160.9452549911667], info: 'In Lincoln Memorial Mission. Underground, just after entering building.'},
+        {latlng: [-55.80125425686246, -164.00854909180117], info: 'In Lincoln Memorial Mission. Outside.'},
+        {latlng: [-5.43671166240386, -64.65687766587388], info: 'Inside DCD Headquarters Mission. Before exiting into the courtyard.'},
+        {latlng: [-8.92846424844072, -68.04492796673932], info: 'Inside DCD Headquarters Mission. After morgue.'},
+        {latlng: [0.40431417001181547, -70.90132591420729], info: 'Inside DCD Headquarters Mission. After dropping down the elevator in the morgue, underground.'},
+        {latlng: [8.157129579276521, -71.35192436876383], info: 'Inside DCD Headquarters Mission.'},
+        {latlng: [5.601278649391454, -69.27670103157416], info: 'Inside DCD Headquarters Mission. After the basement, before the lab. Upper level.'},
+        {latlng: [7.948161222661455, -62.038602578837136], info: 'Inside DCD Headquarters Mission. Underground before basement attack.'},
+        {latlng: [2.486365841283584, -60.69725209993163], info: 'Inside DCD Headquarters Mission.'},
+        {latlng: [57.97082674053477, -83.25863746993593], info: ''},
+        {latlng: [42.78250144385165, -81.25587585285022], info: 'In Bank Headquarters Mission. After the extration, just before the boss fight.'},
+        {latlng: [44.54350521320822, -87.16099907975301], info: 'In Bank Headquarters Mission. After the auditorium.'},
+        {latlng: [48.32119478549313, -88.70795088149976], info: 'In Bank Headquarters Mission. Before the auditorium.'},
+        {latlng: [50.59160653970552, -77.28220073848117], info: 'In Bank Headquarters Mission. In control room of the server room.'},
+        {latlng: [39.157325790829745, -78.79407242166485], info: 'In Bank Headquarters Mission. Bottom level before attacking the vault entrance.'},
+        {latlng: [44.06232809526843, -80.55175781250001], info: 'In Bank Headquarters Mission. After rapelling down from 5th floor.'},
+        {latlng: [42.7599182826008, -87.14380890582966], info: 'In Bank Headquarters Mission. Outside 5th floor office space.'},
+        {latlng: [46.365123921534796, -88.45298531398068], info: 'In Bank Headquarters Mission. After lobby.'},
+        {latlng: [47.84855569784485, -78.0907567579176], info: 'In Bank Headquarters Mission.'},
+        {latlng: [-75.9842000057889, 88.08413730818371], info: 'Inside JEfferson Plaza mission, boss area, northwest corner.'},
+        {latlng: [-75.3556202614638, 92.30719246083241], info: 'Inside jefferson plazaa mission, before boss fight.'},
+        {latlng: [-76.30827658454713, 96.56545484120903], info: 'Inside Jefferson Plaza Mission, after taking out the 3 vats.'},
+        {latlng: [-76.80876401216733, 96.57432003514596], info: 'Inside Jefferson Plaza Mission, after taking out the 3 vats.'},
+        {latlng: [-76.7886919093123, 104.8667184191867], info: 'Inside Jefferson Plaza Mission. On mall level after the lab.'},
+        {latlng: [-76.00972007667923, 104.06114135322346], info: 'Inside Jefferson Plaza Mission. On mall level before the lab.'},
+        {latlng: [-77.48794445346694, 103.01683591008319], info: 'Inside Jefferson Plaza Mission.'},
+        {latlng: [-78.22451306101968, 97.73437500000001], info: 'Inside Jefferson Plaza mission'},
+        {latlng: [-75.41549388316248, 90.65064849027569], info: 'Inside Jefferson Plaza mission.'},
+        {latlng: [-75.52354589439652, 97.89961463637447], info: 'Inside Jefferson Plaza mission.'},
+        {latlng: [34.05265942137599, -154.69190115483218], info: 'On roof'},
+        {latlng: [3.723938663015105, -48.256351334923345], info: ''},
+        {latlng: [-8.104913370970564, -50.84341873973579], info: ''},
+        {latlng: [57.44499333817839, -41.85791015625001], info: 'Ground floor of building of The Vault Control point'},
+        {latlng: [57.12189004665276, -42.37207017838955], info: 'Top level of bank in The Vault Control point'},
+        {latlng: [43.60426186809618, -39.01245117187501], info: ''},
+        {latlng: [-57.40591055745361, 19.57319999689186], info: 'In building'},
+        {latlng: [61.14323525084058, -222.09081977605825], info: 'Underground'},
+        {latlng: [-64.83024534914233, 234.01245094835764], info: ''},
+        {latlng: [-28.80612521794869, -22.866211049258716], info: ''},
+        {latlng: [-18.77104983817173, 111.37207075953484], info: 'National Archives entrance.'},
+        {latlng: [-16.68515595260793, 154.80468772351742], info: 'In ViewPoint Museum. After using teh elevator.'},
+        {latlng: [-11.72382906048309, 149.32617187500003], info: 'In ViewPoint Museum. BEfore prime time exhibit.'},
+        {latlng: [-12.7759725383432, 155.04638694226745], info: 'In ViewPoint Museum. After the room with all the sparking.'},
+        {latlng: [-17.73449078609149, 158.04931640625003], info: 'In ViewPoint Museum. After first exhibit room.'},
+        {latlng: [-14.973052985357002, 161.6784665733576], info: 'In ViewPoint Museum. Underground.'},
+        {latlng: [-0.5273363048115043, 115.93505864962935], info: 'Inside the building.'},
+        {latlng: [41.327284935114825, 93.31054698675874], info: 'Just outside elevators.'},
+        {latlng: [-19.804580781192215, 90.64819335937501], info: 'After garage portion of the sidemission.'},
+        {latlng: [-17.518219370702997, 93.27392578125001], info: 'In the parkoing garage below.'},
+        {latlng: [26.058442824820553, 20.875854548066858], info: 'In Empire Autunum Hotel, before taking the rapell rope up the elevator shaft.'},
+        {latlng: [25.390387658095644, 14.809570312500002], info: 'Just outside the Empire Autunum Hotel when you do that sidemission.'},
+        {latlng: [-7.776294852835753, 39.895018637180335], info: 'Inside Jefferson Trade Center. After the large open room where you meet Coyote for the first time.'},
+        {latlng: [-9.731739550567564, 29.318847209215164], info: 'Inside Jefferson Trade Center. After the locked gate from the cafeteria.'},
+        {latlng: [-2.9137506328485427, 29.58984419703484], info: 'Inside Jefferson Trade Center. After the garage, before the cafeteria.'},
+        {latlng: [-4.536251173749258, 42.50244095921517], info: 'Inside Jefferson Trade Center. Inside the ISAC node room, next to the door.'},
+        {latlng: [6.781157569335222, 37.95410111546517], info: 'Inside Jefferson Trade Center. Just before you jump down the elevator shaft.'},
+        {latlng: [-5.251342910010795, 37.382812723517425], info: 'Inside Jefferson Trade Center. After the first indoor area where you go right at the end of it.'},
+        {latlng: [-15.100401890905589, 1.9143676757812502], info: 'In building of resupply room.'},
+        {latlng: [-18.49351010473945, -18.369140625000004], info: 'Inside tent.'},
+        {latlng: [24.383821401388612, 42.30102550238371], info: 'In the construction site corner.'},
+        {latlng: [51.26766441430681, 25.896606333553795], info: 'Just inside the building at Fall Cranes ccontrol point.'},
+        {latlng: [48.04041485950625, 66.79687500000001], info: 'On the roof of Grand Washington Hotel, the room with the elevator that unlocks after the bossfight.'},
+        {latlng: [50.27296998553086, 67.03857421875001], info: 'On the roof of Grand Washington Hotel, inside boss fight area.'},
+        {latlng: [49.77654964223246, 64.13085948675872], info: 'In Grand Washington Hotel Mission, after you rode the elevator up.'},
+        {latlng: [43.665326182809906, 63.72070312500001], info: 'In Grand Washington Hotel Mission, after you cleared the conference center.'},
+        {latlng: [44.06648553425571, 69.33837935328484], info: 'In Grand Washington Hotel mission, Before the conference center.'},
+        {latlng: [41.563435980035365, 63.80126964300871], info: 'In Grand Washington Hotel Mission. '},
+        {latlng: [41.563435980035365, 63.80126964300871], info: 'In Grand Washington Hotel Mission. '},
+        {latlng: [41.563435980035365, 63.80126964300871], info: 'In Grand Washington Hotel Mission. Just after you cleared the Workshop on the bottom level.'},
+        {latlng: [44.394986637412735, 70.10742165148258], info: 'At entrance to Grand Washington Hotel Mission, just inside the first door.'},
+        {latlng: [0.051315673307338196, -23.635254018008716], info: ''}
     ];
-    var resupply = L.layerGroup(resupplyMarkers);
-    //mapLayers.push(resupply);
+    var ammoMarkers = markersAmmo.map(function(data) {
+        return L.marker(data.latlng, {title: 'Ammo Resupply', icon: iconResupply }).bindPopup('<h5>Ammo Resupply</h5><p>Refills all standard ammunition. ' + data.info + '</p>');
+    });
+    var ammo = L.layerGroup(ammoMarkers);
+    //mapLayers.push(ammo);
 
-    // Resupplies grenades
     // XGREN
-    var grenaderesupplyMarkers = [
-        //L.marker(, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        //L.marker([24.311229201484412, -218.48730415105825], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Potomac event center. Just before concert hall</p>'),
-        L.marker([7.075354321757448, -212.95898437500003], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Potomac event center. Behind the stage in a small side room.</p>'),
-        L.marker([-1.5901716228329013, -214.58496093750003], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Potomac event center, just after hopping over a fence into the contruction site area.</p>'),
-        L.marker([4.678960438552931, -227.30273544788366], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Potomac event center mission at the docks where you have to destroy the three boats.</p>'),
-        L.marker([21.35897754954818, -165.84973657614526], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([-47.835306676072115, -158.07806218808648], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In Lincoln Memorial, after command post, before boss fight</p>'),
-        L.marker([-49.812485456094, -160.49283003253197], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.Underground In Licoln Memorial, just after entering building.</p>'),
-        L.marker([14.664459207065574, -145.38435379859612], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([12.243414074420034, -59.42070875983866], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([-5.873749052815776, -70.31701564065592], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside DCD  HEadquarters mission, underground, in morgue.</p>'),
-        L.marker([-5.878286164429379, -74.25028011083747], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside DCD Headquarters mission. In underground morgue.</p>'),
-        L.marker([6.463666175423402, -62.71015173921788], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside DCD Headquarters mission, on the way to the basement.</p>'),
-        L.marker([48.78370370287063, -88.28629169895603], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside bank Headquarters mission, before entering the auditorium on the left.</p>'),
-        L.marker([49.56227707198857, -89.35842359120906], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside bank headquarters mission, after escaping the server room, in a locked room, before getting into the elevator.</p>'),
-        L.marker([40.158723666756124, -78.62645793550503], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Bank Headquarters mission, just before assaulting the vault entrance.</p>'),
-        L.marker([43.03035106453166, -83.15320645049952], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Bank headwuarters mission, in front office of the CEO, 5th floor, behind the desk.</p>'),
-        L.marker([-77.41825440071796, 102.651721736003], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Jefferson Plaza mission</p>'),
-        L.marker([-76.23736589458757, 94.38547606262564], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside Jefferson Plaza mission, first large room with enemies.</p>'),
-        L.marker([-60.392147922518845, 171.7586978077589], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Top floor of building here</p>'),
-        L.marker([-45.68469270279629, 189.72071623578324], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Underground</p>'),
-        L.marker([-37.07271048132944, 104.10202884284801], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([2.6357885741666065, -47.81214189703055], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([-6.970049417296218, -51.325781283809405], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([-25.005972656239177, -41.686527116173345], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([62.31084349421463, -23.220702856779102], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([-53.58728804556891, 6.932226770262098], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Underground</p>'),
-        L.marker([-55.39408811846146, -22.381555828259522], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Underground</p>'),
-        L.marker([-24.81465966705302, -184.06054727733138], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Underground</p>'),
-        L.marker([-54.673830965931145, -60.29296875000001], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([-2.4162756547063857, 45.7104756500831], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([6.700978950502446, 85.78857377171518], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([-7.696476313948966, 163.6596675217152], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades.</p>'),
-        L.marker([8.733213600273196, 31.706542968750004], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Behind low wall</p>'),
-        L.marker([11.142519257363507, 111.76025480031969], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. On roof, access through alley in the north.</p>'),
-        L.marker([-22.024672701702464, 114.5141599327326], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In NAtional Archives, after library, before research.</p>'),
-        L.marker([-11.608599592478024, 147.1655271202326], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In ViewPoint Museum</p>'),
-        L.marker([15.054464119749472, 55.16967779025436], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. On lower level inside the KErman Coffee shop behind the counter on the left.</p>'),
-        L.marker([-3.8816018359137328, 8.497009333223106], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In the corner.</p>'),
-        L.marker([-17.25968290083734, 47.51220725476743], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In the far corner.</p>'),
-        L.marker([-7.764712534081738, 77.77221851516516], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Outside the east exit of the safehouse.</p>'),
-        L.marker([-18.555967545576507, -19.694824106991295], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. Inside tent.</p>'),
-        L.marker([47.087599503698435, 69.6826170757413], {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills your grenades. In Grand Washington Hotel Bossfight area.</p>')
+    var markersGrenade = [
+        //{latlng: , info: ''},
+        {latlng: [24.311229201484412, -218.48730415105825], info: 'Inside Potomac event center. Just before concert hall.'},
+        {latlng: [7.075354321757448, -212.95898437500003], info: 'Inside Potomac event center. Behind the stage in a small side room.'},
+        {latlng: [-1.5901716228329013, -214.58496093750003], info: 'Inside Potomac event center, just after hopping over a fence into the contruction site area.'},
+        {latlng: [4.678960438552931, -227.30273544788366], info: 'Inside Potomac event center mission at the docks where you have to destroy the three boats.'},
+        {latlng: [21.35897754954818, -165.84973657614526], info: ''},
+        {latlng: [-47.835306676072115, -158.07806218808648], info: 'In Lincoln Memorial, after command post, before boss fight'},
+        {latlng: [-49.812485456094, -160.49283003253197], info: 'Underground In Licoln Memorial, just after entering building.'},
+        {latlng: [14.664459207065574, -145.38435379859612], info: ''},
+        {latlng: [12.243414074420034, -59.42070875983866], info: ''},
+        {latlng: [-5.873749052815776, -70.31701564065592], info: 'Inside DCD  HEadquarters mission, underground, in morgue.'},
+        {latlng: [-5.878286164429379, -74.25028011083747], info: 'Inside DCD Headquarters mission. In underground morgue.'},
+        {latlng: [6.463666175423402, -62.71015173921788], info: 'Inside DCD Headquarters mission, on the way to the basement.'},
+        {latlng: [48.78370370287063, -88.28629169895603], info: 'Inside bank Headquarters mission, before entering the auditorium on the left.'},
+        {latlng: [49.56227707198857, -89.35842359120906], info: 'Inside bank headquarters mission, after escaping the server room, in a locked room, before getting into the elevator.'},
+        {latlng: [40.158723666756124, -78.62645793550503], info: 'Inside Bank Headquarters mission, just before assaulting the vault entrance.'},
+        {latlng: [43.03035106453166, -83.15320645049952], info: 'Inside Bank headwuarters mission, in front office of the CEO, 5th floor, behind the desk.'},
+        {latlng: [-77.41825440071796, 102.651721736003], info: 'Inside Jefferson Plaza mission'},
+        {latlng: [-76.23736589458757, 94.38547606262564], info: 'Inside Jefferson Plaza mission, first large room with enemies.'},
+        {latlng: [-60.392147922518845, 171.7586978077589], info: 'Top floor of building here'},
+        {latlng: [-45.68469270279629, 189.72071623578324], info: 'Underground'},
+        {latlng: [-37.07271048132944, 104.10202884284801], info: ''},
+        {latlng: [2.6357885741666065, -47.81214189703055], info: ''},
+        {latlng: [-6.970049417296218, -51.325781283809405], info: ''},
+        {latlng: [-25.005972656239177, -41.686527116173345], info: ''},
+        {latlng: [62.31084349421463, -23.220702856779102], info: ''},
+        {latlng: [-53.58728804556891, 6.932226770262098], info: 'Underground'},
+        {latlng: [-55.39408811846146, -22.381555828259522], info: 'Underground'},
+        {latlng: [-24.81465966705302, -184.06054727733138], info: 'Underground'},
+        {latlng: [-54.673830965931145, -60.29296875000001], info: ''},
+        {latlng: [-2.4162756547063857, 45.7104756500831], info: ''},
+        {latlng: [6.700978950502446, 85.78857377171518], info: ''},
+        {latlng: [-7.696476313948966, 163.6596675217152], info: ''},
+        {latlng: [8.733213600273196, 31.706542968750004], info: 'Behind low wall'},
+        {latlng: [11.142519257363507, 111.76025480031969], info: 'On roof, access through alley in the north.'},
+        {latlng: [-22.024672701702464, 114.5141599327326], info: 'In NAtional Archives, after library, before research.'},
+        {latlng: [-11.608599592478024, 147.1655271202326], info: 'In ViewPoint Museum'},
+        {latlng: [15.054464119749472, 55.16967779025436], info: 'On lower level inside the KErman Coffee shop behind the counter on the left.'},
+        {latlng: [-3.8816018359137328, 8.497009333223106], info: 'In the corner.'},
+        {latlng: [-17.25968290083734, 47.51220725476743], info: 'In the far corner.'},
+        {latlng: [-7.764712534081738, 77.77221851516516], info: 'Outside the east exit of the safehouse.'},
+        {latlng: [-18.555967545576507, -19.694824106991295], info: 'Inside tent.'},
+        {latlng: [47.087599503698435, 69.6826170757413], info: 'In Grand Washington Hotel Bossfight area.'}
     ];
-    var grenaderesupply = L.layerGroup(grenaderesupplyMarkers);
-    //mapLayers.push(grenaderesupply);
+    var grenadeMarkers = markersGrenade.map(function(data) {
+        return L.marker(data.latlng, {title: 'Grenade Resupply', icon: iconGrenaderesupply }).bindPopup('<h5>Grenade Resupply</h5><p>Refills one standard and if equipped, one specialization grenade. ' + data.info + '</p>');
+    });
+    var grenade = L.layerGroup(grenadeMarkers);
+    //mapLayers.push(grenade);
 
     // XARMOR
-    var armorresupplyMarkers = [
-        //L.marker(, {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([-14.289123711142581, -213.22265859693292], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([-1.037123272077163, -220.40331870317462], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside Potomac event center mission, near the exit of the 3 boats area.</p>'),
-        L.marker([22.83346617035479, -225.87011799216273], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside Potomac Event Center mission. Along the shore, you have to climb down a small ladder to get there.</p>'),
-        L.marker([37.36326537159924, -112.84502787656089], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside building</p>'),
-        L.marker([-53.589893567295405, -161.45517352585895], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Isnide licoln memorial, boss area</p>'),
-        L.marker([-51.51962033022781, -163.8983996079744], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Isnide licoln memorial, boss area</p>'),
-        L.marker([-48.04569165788733, -158.08787190561804], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In Lincoln Memorial, after command post, before boss fight.</p>'),
-        L.marker([-49.82948480310456, -160.83100461199578], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits.  Underground In Licoln Memorial, just after entering building.</p>'),
-        L.marker([-6.319671240729478, -62.92978290085894], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside DCD Mission, ground floor, after download data in the library</p>'),
-        L.marker([8.446196743098886, -65.79486132029704], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Upstairs in DCD Headquarters mission. In the room where you push the button for the decon process.</p>'),
-        L.marker([60.44638185995603, -78.486328125], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([49.56512754866448, -88.86631884622817], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside bank headquarters mission, after escaping the server room, in a locked room, before getting into the elevator.</p>'),
-        L.marker([44.01810107748247, -82.73990469554325], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside Bank Headquarters Mission. Bottom level, after rapelling down, behind a counter</p>'),
-        L.marker([47.362643720653665, -86.03592890158843], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside Bank Headquarters Mission.</p>'),
-        L.marker([-75.46631067511328, 92.32793391462563], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside JEfferson Plaza mission, before the boss fight</p>'),
-        L.marker([-78.01645265435391, 97.74362219174121], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside Jefferson Plaza mission</p>'),
-        L.marker([-58.64722609646919, 180.65952548716473], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside building</p>'),
-        L.marker([47.97373758680779, -52.08398424088955], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([39.554888301943414, -53.79125989973546], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([16.58573783540079, -51.74560546875], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In tent</p>'),
-        L.marker([-56.98809442230323, -31.104520906182383], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Underground</p>'),
-        L.marker([62.41683391149385, -85.3154294192791], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Underground</p>'),
-        L.marker([-53.479329491560314, -60.30029386281968], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([0.7580345254974181, 43.776842253083466], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([15.679458126914906, 42.55016676374536], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([-28.562009304768353, 187.44506824761632], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([-7.01366792756663, 122.46826082468034], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside elevator</p>'),
-        L.marker([-24.280351098131593, 94.34326216578486], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([6.388054836644247, 8.137207925319673], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. </p>'),
-        L.marker([-18.361370420496467, -6.643066629767419], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Inside tent</p>'),
-        L.marker([-3.473229183526969, -6.558837890625001], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In tent.</p>'),
-        L.marker([-3.1404060483807, -15.681152120232584], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In tent.</p>'),
-        L.marker([-15.51370115412788, 69.37133800238372], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. Down the ramp here.</p>'),
-        L.marker([-18.569842162577338, 154.68017622828486], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In ViewPoint Museum, Studio room.</p>'),
-        L.marker([-4.696879026871413, 41.98242165148258], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In Jefferson TRade Center boss area.</p>'),
-        L.marker([-14.767782366168436, 44.5019530132413], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In the corner of the building here.</p>'),
-        L.marker([47.4331570691554, 70.29418956488372], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In Grand Washington hotel, in the lobby on the eastern most side, upper area.</p>'),
-        L.marker([44.95961162839859, 69.06738236546518], {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Refills your armor kits. In Grand Washington hotel, outside the Conference center room, look north west before entering.</p>')
+    var markersArmor = [
+        //{latlng: , info: ''},
+        {latlng: [-39.767958919669205, 50.10645086078659], info: 'Inside American History Museum Mission. Second underground level, after elevator, before entering holding area.'},
+        {latlng: [-14.289123711142581, -213.22265859693292], info: ''},
+        {latlng: [-1.037123272077163, -220.40331870317462], info: 'Inside Potomac Event Center Mission. Near the exit of the 3 boats area.'},
+        {latlng: [22.83346617035479, -225.87011799216273], info: 'Inside Potomac Event Center Mission. Along the shore, you have to climb down a small ladder to get there.'},
+        {latlng: [37.36326537159924, -112.84502787656089], info: 'Inside building'},
+        {latlng: [-53.589893567295405, -161.45517352585895], info: 'Inside Lincoln Memorial Mission. Boss area'},
+        {latlng: [-51.51962033022781, -163.8983996079744], info: 'Inside Lincoln Memorial Mission. Boss area'},
+        {latlng: [-48.04569165788733, -158.08787190561804], info: 'Inside Lincoln Memorial Mission. After command post, before boss fight.'},
+        {latlng: [-49.82948480310456, -160.83100461199578], info: 'Inside Lincoln Memorial Mission. Underground, just after entering building.'},
+        {latlng: [-6.319671240729478, -62.92978290085894], info: 'Inside DCD Headquarters Mission. Ground floor, after download data in the library.'},
+        {latlng: [8.446196743098886, -65.79486132029704], info: 'Inside DCD Headquarters Mission. Upstairs, in the room where you push the button for the decon process.'},
+        {latlng: [60.44638185995603, -78.486328125], info: ''},
+        {latlng: [49.56512754866448, -88.86631884622817], info: 'Inside Bank Headquarters Mission. after escaping the server room, in a locked room, before getting into the elevator.'},
+        {latlng: [44.01810107748247, -82.73990469554325], info: 'Inside Bank Headquarters Mission. Bottom level, after rapelling down, behind a counter'},
+        {latlng: [47.362643720653665, -86.03592890158843], info: 'Inside Bank Headquarters Mission.'},
+        {latlng: [-75.46631067511328, 92.32793391462563], info: 'Inside Jefferson Plaza Mission. Before the boss fight.'},
+        {latlng: [-78.01645265435391, 97.74362219174121], info: 'Inside Jefferson Plaza Mission.'},
+        {latlng: [-58.64722609646919, 180.65952548716473], info: 'Inside building'},
+        {latlng: [47.97373758680779, -52.08398424088955], info: ''},
+        {latlng: [39.554888301943414, -53.79125989973546], info: ''},
+        {latlng: [16.58573783540079, -51.74560546875], info: 'In tent'},
+        {latlng: [-56.98809442230323, -31.104520906182383], info: 'Underground'},
+        {latlng: [62.41683391149385, -85.3154294192791], info: 'Underground'},
+        {latlng: [-53.479329491560314, -60.30029386281968], info: ''},
+        {latlng: [0.7580345254974181, 43.776842253083466], info: ''},
+        {latlng: [15.679458126914906, 42.55016676374536], info: ''},
+        {latlng: [-28.562009304768353, 187.44506824761632], info: ''},
+        {latlng: [-7.01366792756663, 122.46826082468034], info: 'Inside elevator'},
+        {latlng: [-24.280351098131593, 94.34326216578486], info: ''},
+        {latlng: [6.388054836644247, 8.137207925319673], info: ''},
+        {latlng: [-18.361370420496467, -6.643066629767419], info: 'Inside tent'},
+        {latlng: [-3.473229183526969, -6.558837890625001], info: 'In tent.'},
+        {latlng: [-3.1404060483807, -15.681152120232584], info: 'In tent.'},
+        {latlng: [-15.51370115412788, 69.37133800238372], info: 'Down the ramp here.'},
+        {latlng: [-18.569842162577338, 154.68017622828486], info: 'Inside ViewPoint Museum Mission. Studio room.'},
+        {latlng: [-4.696879026871413, 41.98242165148258], info: 'Inside Jefferson Trade Center Mission. Boss area.'},
+        {latlng: [-14.767782366168436, 44.5019530132413], info: 'In the corner of the building here.'},
+        {latlng: [47.4331570691554, 70.29418956488372], info: 'Inside Grand Washington Hotel Mission. In the lobby on the eastern most side, upper area.'},
+        {latlng: [44.95961162839859, 69.06738236546518], info: 'Inside Grand Washington Hotel Mission. Outside the Conference center room, look north west before entering.'}
     ];
-    var armorresupply = L.layerGroup(armorresupplyMarkers);
-    var armorresupply = L.layerGroup(armorresupplyMarkers);
-    //mapLayers.push(armorresupply);
+    var armorMarkers = markersArmor.map(function(data) {
+        return L.marker(data.latlng, {title: 'Armor Resupply', icon: iconArmorresupply }).bindPopup('<h5>Armor Resupply</h5><p>Gives you one armor kit. ' + data.info + '</p>');
+    });
+    var armor = L.layerGroup(armorMarkers);
+    //mapLayers.push(armor);
 
     // Boxes locked with keys you have to find. Keys and boxes are assigned to factions
     // XLOCK
@@ -2019,6 +2058,7 @@ permalink: map.html
         {latlng: [-54.526203414731576, -180.11423256654888], faction: 'Outcasts', info:'Behind the corner of a tent, to the south'},
         {latlng: [-54.70166907053579, -171.84364834588644], faction: 'Outcasts', info:'On top of some containers here'},
         //{latlng: , faction: 'True Sons', info:''},
+        {latlng: [-37.13927221285475, 48.260653784590566], faction: 'True Sons', info:'Inside American History Museum Mission. Second underground level, in the holding area. pretty center of the room, behind a counter.'},
         {latlng: [-76.56999617829746, 94.719592829753], faction: 'True Sons', info:'Inside Jefferson Plaza Mission. After the room with the trhee vats, in the center is an elevator that opens to the east, the box is inside that.'},
         {latlng: [-71.33879551363081, 97.16764597878823], faction: 'True Sons', info:'Inside the train car here. Southwestern end. You can get into the car from the north.'},
         {latlng: [-58.94094063332712, 172.03722234470567], faction: 'True Sons', info:'Inside building, upper floor, western most part'},
@@ -2096,6 +2136,23 @@ permalink: map.html
     var markersMaterial = [
         //XMAT
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-55.075960970527525, -65.57078834381468], type: types.mat.f, z: types.z.g, info: 'Inside locked fence'},
+        {latlng: [38.35548492951264, -57.35301490631468], type: types.mat.t, z: types.z.a, info: 'Inside building, only accessible during side mission Worksite Community and bounties. East side of this construction area.'},
+        {latlng: [37.40496439496779, -62.36716262512936], type: types.mat.f, z: types.z.a, info: 'Inside building, only accessible during side mission Worksite Community and bounties. Outside in construction part, lower level.'},
+        {latlng: [37.41178791622458, -63.34277066335671], type: types.mat.f, z: types.z.a, info: 'Inside building, only accessible during side mission Worksite Community and bounties. In lab upper floor'},
+        {latlng: [32.92733776049774, -64.63474352427265], type: types.mat.d, z: types.z.g, info: 'Isnide building, only accessible during side mission and bounties.'},
+        {latlng: [33.65839608380915, -56.33350853118533], type: types.mat.t, z: types.z.a, info: 'On scaffolding'},
+        {latlng: [35.38189884838631, -54.5756656080281], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [36.40352647399455, -54.703133992860955], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [38.20020992242185, -53.9165018025378], type: types.mat.t, z: types.z.a, info: 'On top of scaffolding'},
+        {latlng: [38.93865405553075, -55.74650298339445], type: types.mat.t, z: types.z.a, info: 'On top of scaffolding'},
+        {latlng: [-52.749401189072195, -139.7461572780388], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-51.00556252288084, -141.23582051716596], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-31.383707884160547, 38.51806640625001], type: types.mat.d, z: types.z.g, info: 'Inside American History Museum Mission. Boss area, in a tent on the west end.'},
+        {latlng: [-37.27941565914721, 42.61818960780177], type: types.mat.t, z: types.z.u, info: 'Inside American History Museum Mission. Second underground level, after the elevator shaft, behind the locked door you need the storage key for, which drops randomly in the mission.'},
+        {latlng: [-37.86760646278352, 31.895326891675655], type: types.mat.t, z: types.z.u, info: 'Inside American History Museum Mission. In a storage area between where you see cars and trams and the wild west exhibit.'},
+        {latlng: [-36.30018049060811, 36.79991375785569], type: types.mat.t, z: types.z.y, info: 'Inside American History Museum Mission. Downstairs in the room with the locomotive, south west end of the room.'},
+        {latlng: [-40.61148245803828, 39.62441167397607], type: types.mat.t, z: types.z.g, info: 'Inside American History Museum Mission. In the starting area, outside onm a bench.'},
         {latlng: [-14.289123711142581, -213.22265859693292], type: types.mat.d, z: types.z.g, info: 'Behind a fence you can scale over by using the truck southeast.'},
         {latlng: [-10.40103131923153, -210.9726557135582], type: types.mat.d, z: types.z.g, info: 'Behind a fence you can scale over by using the truck southeast.'},
         {latlng: [38.09304730471908, -193.09130966663363], type: types.mat.d, z: types.z.g, info: ''},
@@ -3154,6 +3211,9 @@ permalink: map.html
     // XCOMPONENT
     var markersComponent = [
         //{latlng: , info: ''},
+        {latlng: [38.24169615080519, -61.58492639933732], info: 'Inside building, only accessible during side mission Worksite Community and bounties. Outside, lower level of construction part up here.'},
+        {latlng: [37.93032695149031, -65.33343911964441], info: 'Inside building, only accessible during side mission Worksite Community and bounties. Above Lab level.'},
+        {latlng: [-53.51418452077112, -138.5859250625647], info: ''},
         {latlng: [32.302081074694215, -197.63525370508432], info: ''},
         {latlng: [-54.12897820312169, -182.5048510122137], info: ''},
         {latlng: [-48.14987966316484, -163.27448375481197], info: 'Inside Lincoln Memorial. Behind locked door in command center. Shoot the yellow box against the south wall in the southwest corner.'},
@@ -3229,7 +3289,11 @@ permalink: map.html
     // XFOOD
     var markersFood = [
         // {latlng: , info: ''},
-        {latlng: [-7.388363639908927, -173.06548110459403], info: 'Underground, access trhough building above, east side.'},
+        {latlng: [38.34172747357708, -56.72020585088906], info: 'Inside building, only accessible during side mission Worksite Community and bounties. East side of the construction area.'},
+        {latlng: [-36.53441492083394, 51.284338507597], info: 'Inside American History Museum Mission. Second underground level, holding area on the right wall.'},
+        {latlng: [-36.858496252967846, 50.633795951648736], info: 'Inside American History Museum Mission. In the Vietnam exhibit, as the room opens up, in the first hut to your right (southeastern most).'},
+        {latlng: [-37.74955298466023, 37.65216282917565], info: 'Inside American History Museum Mission. In the Wild West Exhibit, inside a blue tram in the northeast corner.'},
+        {latlng: [-7.388363639908927, -173.06548110459403], info: 'Underground, access through building above, east side.'},
         {latlng: [35.93892049634254, -179.22634666053003], info: ''},
         {latlng: [34.69823415311436, -178.62910990599138], info: ''},
         {latlng: [-76.20387116257103, 100.51176310414576], info: 'Inside Jefferson Plaza mission, upper part of the lobby, in the northwest corner.'},
@@ -3306,6 +3370,9 @@ permalink: map.html
     // XWATER
     var markersWater = [
         //{latlng: , info: ''},
+        {latlng: [38.18983335111587, -64.032733499903], info: 'Inside building, only accessible during side mission Worksite Community and bounties. Upper floor, lab, northeast corner.'},
+        {latlng: [-33.056877574397, 47.6191281875647], info: 'Inside American History Museum Mission. Second underground level. In the interrogation area.'},
+        {latlng: [-37.118076016565176, 51.24902898578659], info: 'Inside American History Museum Mission. Second underground level, holding area on the right wall.'},
         {latlng: [-55.25407706707271, -179.02873552017098], info: ''},
         {latlng: [60.16118944556942, -76.3945577443287], info: ''},
         {latlng: [-76.80826239887803, 121.148472214029], info: ''},
@@ -3488,10 +3555,12 @@ permalink: map.html
         maxZoom: 9,
         minZoom: 1
     });
+    var attribution = L.control.attribution({prefix: ''});
+    division2map.addControl(attribution);
 
     var imageUrl = '/images/map/the-division-2-map-v7.svg',
         imageBounds = [[84, -369], [-84, 337]];
-    L.imageOverlay(imageUrl, imageBounds).addTo(division2map);
+    L.imageOverlay(imageUrl, imageBounds, {attribution: '<a target="_blank" href="https://thedivision2.gamestrafe.com">The Division 2 @ GameStrafe</a>'}).addTo(division2map);
     division2map.fitWorld();
 
     division2map.on('popupopen', function() {
@@ -3520,12 +3589,11 @@ permalink: map.html
                 {id: 11, name: "Control Points", layer: controlpoints},
                 {id: 12, name: "Underground", layer: underground},
                 {id: 13, name: "Special Ammo", layer: specialammo},
-                {id: 14, name: "Ammo Resupply", layer: resupply},
-                {id: 15, name: "Armor Resupply", layer: armorresupply},
-                {id: 16, name: "Grenade Resupply", layer: grenaderesupply}
+                {id: 14, name: "Ammo Resupply", layer: ammo},
+                {id: 15, name: "Armor Resupply", layer: armor},
+                {id: 16, name: "Grenade Resupply", layer: grenade}
             ]
-        },
-        {
+        }, {
             id: 2,
             name: "Loot",
             layers: [
@@ -3541,8 +3609,7 @@ permalink: map.html
                 {id: 26, name: "Water", layer: water}
 
             ]
-        },
-        {
+        }, {
             id: 3,
             name: "Collectibles",
             layers: [
@@ -3551,11 +3618,10 @@ permalink: map.html
                 {id: 29, name: "Artifacts", layer: artifacts},
                 {id: 30, name: "SHD Tech", layer: shdtech},
                 {id: 31, name: "Hunters", layer: hunters},
-                // {id: 32, name: "Backpack Trophies", layer: backpacktrophies},
+                {id: 32, name: "Backpack Trophies", layer: backpacktrophies},
                 {id: 33, name: "Secrets", layer: secrets}
             ]
-        },
-        {
+        }, {
             id: 4,
             name: "Dark Zone",
             layers: [
@@ -3566,8 +3632,7 @@ permalink: map.html
                 //{id: 38, name: "DZ Supplies", layer: dzsupplies},
                 {id: 39, name: "DZ Crates", layer: dzcrates}
             ]
-        },
-        {
+        }, {
             id: 5,
             name: "Community",
             layers: [
@@ -3598,7 +3663,7 @@ permalink: map.html
         activeLayerIds = JSON.parse(localStorage.getItem('layers'));
     } else {
         // Default layers
-        activeLayerIds = [6,8,9,11,12,17,18,19,20,21,27,28,29,30,33,34,35,36,37,39];
+        activeLayerIds = [6,8,9,11,12,17,18,19,20,21,27,28,29,30,31,32,33,34,35,36,37,39];
     }
 
     advancedLayers.showLayers(activeLayerIds);

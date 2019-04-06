@@ -13,9 +13,12 @@
 <script src="/js/map.js"></script>
 {% endblock %}
 
-{# Used to blank the content for the map, while keeping the header intact #}
+{# Used to blank the content for the map #}
+{% block header %}
+{% endblock %}
 
 {% block page_body %}
+
 {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
 {% endblock %}
 
