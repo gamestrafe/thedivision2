@@ -286,3 +286,15 @@ Rewards:
 - Campus Upgrade: School
 - Blueprint: Large Suppressor 7.62
 - XP
+
+## Outcast Work Camp
+
+Storm the Outcast prison and free Sam Wellford and any other Campus settlement members.
+
+Level 22
+
+Rewards:
+- Campus Upgrade: Firing Range
+- Blueprint: PRO Red Dot Sight
+- XP
+

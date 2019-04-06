@@ -70,6 +70,8 @@ Rewards:
 
 Boss: Captain Briggs
 
+> Boom. Headshot. - Captain Briggs
+
 ## Air & Space Museum
 
 Investigate True Sons activity at the Air & Space Museum.

@@ -18,7 +18,7 @@ You craft items according to your level, so if you are level 7, your weapons and
 
 After you progress through the game for a while, you will be awarded a blueprint for upgrading the work bench. Until you do, the workbench will only keep producing specialized items. You will also get upgrade blueprints once you reach the [endgame content](/end-game.html), for each worldtier.
 
-Crafting costs materials. At level below 30 you need 3 materials and 32 credits to craft mods. 
+Crafting costs materials. At level below 30 you need 4 materials and 135 credits to craft mods. 
 
 ## Upgrade costs
 
