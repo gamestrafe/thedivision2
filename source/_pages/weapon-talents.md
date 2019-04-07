@@ -15,10 +15,12 @@ There might be some way to re-roll talents, but this is not clear yet. It's also
 - Boomerang: Critical hits have a 50% chance to return the bullet to the magazine. If a bullet is returend to the magazine the next shot has +20% increased damage.
 - Breadbasket: Landing body shots adds a stack of bonus +5% headshot damage to the next headshot for 10s. Max stack is 10. Requires 5 or more crosshairs
 - Close & Personal: Killing a target within 7m grants +50% weapon damage for 5s. Requires 5 or more crosshairs.
+- Compensated: Weapon damage is increased by +15% when your critical hit chance is below 20%. Requires 3 or less crosshairs.
 - Eyeless: Deal +20% weapon damage to blinded enemies
 - Fast Hands: Critical hits add a stack of 3% reload speed bonus. Max stack is 20.
 - Finisher: Swapping from this weapon within 3s of killing an enemy grants +30% critical hit chance for 15s. Requires 4 or less batteries.
 - Frenzy: Reloading from empty grants +35% weapon damage and +35% rate of fire for 7s. Requires 4 shields or less
+- Gunslinger: Swapping to your sidearm within 3s of a kill refills the sidearm's magazine and grants +20% weapon damage for the entire magazine. Requires 5 shields or less.
 - Ignited: Deal +20% weapon damage to burning enemies
 - Killer: Killing an enemy with a critical hit grants +50% critical hit chance for 5s. Requires 5 or more crosshairs
 - Lucky Shot: Magazine capacity is increased by 20%. Missed shots from cover have a 25% chance to return to the magazine.
