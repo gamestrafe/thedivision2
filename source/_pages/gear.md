@@ -119,40 +119,53 @@ The most powerful buffs, you can get from gear sets. These are never branded and
 
 ### Hard Wired
 
-No detailed info yet on this set.
-
 You can get blueprints for it by completing the ["Hard Wired Prototype" project](/projects.html).
+
+Pieces:
+* "Rhodeswood" AR Mask
+* "Abberton" Dynamo Carrier
+* "Ullswater" Proxy Rig
+* "Serpentine" Array Vest
+* "Molesey" ESD Gloves
+* "Strines" Stabilizing Pads
+
+Bonuses:
+* 2 pieces: +20% Skill Health
+* 3 pieces: +20% Increased Shock Duration 
+* 4 pieces: +20% Skill Power
+* 5 pieces: Tamper Proof: Electrify your deployed skills (hive, turrets, pulse sensor) causing enemies wandering too close to be shocked. Can occur every 10 seconds.
+* 6 pieces: Feedback Loop: Killin with a skill resets the cooldown of your other skill. Repairing a friendly agent's armor from zero, resets the cooldown of your skills. Can only occur every 15 seconds. When a skill cooldown ends (or reaches full charges), gain bonus damage and repair to all skills for 15 seconds.
 
 ### Ongoing Directive
 
 Pieces:
-- Gatherers Mask
-- Resource Harness
-- Loadout Frame
-- CQB Fist Guards
-- Special Ammo Holster
-- Knee Poleyn
+* Gatherers Mask
+* Resource Harness
+* Loadout Frame
+* CQB Fist Guards
+* Special Ammo Holster
+* Knee Poleyn
 
 Bonuses:
-- 2 pieces: +20% Weapon Handling
-- 3 Pieces: +25% Burn Damage
-- 4 pieces: +25% Bleed Damage
-- 5 pieces: Emergency Requisition: Combat resources (armor kits, ammo, grenades) within 40 meters of you are automatically collected. This occurs every 30 seconds.
-- 6 pieces: The Right Tool: Killing an enemy with a weapon grants special ammo (incendiary, explosive, shock) to one of your other weapons. 
+* 2 pieces: +20% Weapon Handling
+* 3 Pieces: +25% Burn Damage
+* 4 pieces: +25% Bleed Damage
+* 5 pieces: Emergency Requisition: Combat resources (armor kits, ammo, grenades) within 40 meters of you are automatically collected. This occurs every 30 seconds.
+* 6 pieces: The Right Tool: Killing an enemy with a weapon grants special ammo (incendiary, explosive, shock) to one of your other weapons. 
 
 ### True Patriot
 
 Pieces:
-- Heft Grade A Mask
-- Appleton Body Armor
-- Driver Excursion Pack
-- Ross Hand Protectors
-- Young Low-Friction Holster
-- Sheridan Kneelers
+* Heft Grade A Mask
+* Appleton Body Armor
+* Driver Excursion Pack
+* Ross Hand Protectors
+* Young Low-Friction Holster
+* Sheridan Kneelers
 
 Bonuses:
-- 2 pieces: +10% Damage to Armor
-- 3 Pieces: +10% Protection from Elites
-- 4 pieces: +10% Total Armor
-- 5 pieces: Red, White and Blue: When you shoot an enemy, apply a debuff to them. Debugffs are applied in order Red/White/Blue, cycling every 4 seconds. Red decreases damage dealt by the enemy. White restores armor to friendlies that shoot this enemy. Blue boosts skill cooldown reduction to friendlies that shoot this enemy.
-- 6 pieces: Full Flag: Shooting an enemy that has all three debuffs will deal 25% damage to other nearby enemies that have at least one of the debuffs.
+* 2 pieces: +10% Damage to Armor
+* 3 Pieces: +10% Protection from Elites
+* 4 pieces: +10% Total Armor
+* 5 pieces: Red, White and Blue: When you shoot an enemy, apply a debuff to them. Debugffs are applied in order Red/White/Blue, cycling every 4 seconds. Red decreases damage dealt by the enemy. White restores armor to friendlies that shoot this enemy. Blue boosts skill cooldown reduction to friendlies that shoot this enemy.
+* 6 pieces: Full Flag: Shooting an enemy that has all three debuffs will deal 25% damage to other nearby enemies that have at least one of the debuffs.

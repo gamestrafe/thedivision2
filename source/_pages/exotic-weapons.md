@@ -24,8 +24,21 @@ During the Capitol Hill stronghold mission, you come across an enemy named "Kend
 
 To get the rest you have to finish the following missions on hard:
 
-- Sight & Rail: ViewPoint Museum
-- Receiver & Paintjob: American History Museum
-- Grip & Tags, Blueprint: Space Administration HQ
+* Sight & Rail: ViewPoint Museum
+* Receiver & Paintjob: American History Museum
+* Grip & Tags, Blueprint: Space Administration HQ
 
 Once you have all of them, you also need a High-end D50 (The survivalist sidearm will not work). And now you can craft it.
+
+## Nemesis (Marksman Rifle)
+
+This has a few steps. First you need to finish Tidal Basin once. Then you can play it again later, this time you have to do it on normal or harder. In the area where you disable the first turret (before the helicopters) there is a building you have to interact with a computer with. Upstairs in that building is a dropped key you can also spot on your minimap. Grab that and keep on playing. Now in the hovercraft, once you cleared it out and the door in the control room opens to the right (getting outside again) don't take it yet. There is a door in that room on the opposite side you can open now with the key. Do so and loot the crate. You get the "Adrestia SR1", a marksman rifle that has the inscription "I am She, whom none can escape. Within me is the key to my true name."
+
+Now that you have the Adrestia SR1, deconstruct it. Yes, deconstruction. You get a "Marksman Rifle: Scope - The Tally" exotic crafting material back. Its description reads: "Klutz, Shorty, Prime - Picked up the weapon. Keep your eyes open for the upgrades we talked about."
+
+These names are the names of Black Tusk bosses, each one residing in one of the other strong holds. To get the other parts, you will have to defeat them in the invaded mode for a chance of them dropping the parts you need.
+
+* Stock - The Bridle: From Klutz at District Union Arena
+* Bolt: From Shorty at Roosevelt Island
+* Barrel - The Scourge: From Prime at Capitol Hill
+

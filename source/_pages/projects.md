@@ -16,6 +16,8 @@ These occur in specific situations and give some very high rewards.
 
 Given after completing the Tidal Basin Stronghold for the first time. You have to find certain items which can be found on the final bosses of Grand Washington Hotel, Jefferson Trade Center, Federal Emergency Bunker, Lincoln Memorial, Air & Space Museum as well as Bank Headquarters. There is a chance they drop it, but doesn't mean they drop it every time, you may have to do it multiple times.
 
+The Hard Wired Tech is another material that is dropped by Black Tusk factions members. The invaded dark zone seems to be one of the best sources for this, but you can also get it from bounties against Black Tusk and even sometimes in the over world.
+
 Hard Wired M-component: 1 (Final boss of Grand Washington Hotel)
 Hard Wired C-component: 1 (Final boss in Jefferson Trade Center)
 Hard Wired B-component: 1 (Final boss of Federal Emergency Bunker)
@@ -25,12 +27,12 @@ Hard Wired K-component: 1 (Final boss of Bank HQ)
 Hard Wired Tech: 10
 
 Rewards:
-- Blueprint: "Rhodeswood" AR Mask
-- Blueprint: "Serpentine" Array Vest
-- Blueprint: "Abberton" Dynamo Carrier
-- Blueprint: "Molesey" ESD Gloves
-- Blueprint: "Ullswater" Proxy Rig
-- Blueprint: "Strines" Stabilizing Pads
+* Blueprint: "Rhodeswood" AR Mask
+* Blueprint: "Serpentine" Array Vest
+* Blueprint: "Abberton" Dynamo Carrier
+* Blueprint: "Molesey" ESD Gloves
+* Blueprint: "Ullswater" Proxy Rig
+* Blueprint: "Strines" Stabilizing Pads
 
 ## Liberations
 
