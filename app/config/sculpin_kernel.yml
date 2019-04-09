@@ -1,3 +1,6 @@
+sculpin:
+    # Jetbrains IDE seems to create those files and they make sculpin error out at times.
+    ignore: ["**/*___jb_tmp___"]
 sculpin_content_types:
     # Not using posts
     posts:
