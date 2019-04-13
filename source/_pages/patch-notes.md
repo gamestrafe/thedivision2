@@ -6,6 +6,17 @@ meta:
 
 This page contains all the patch notes that were published since the release of the game. Newest patch notes are always at the top.
 
+## Patch from 11. April 2019
+
+* Fixed not being able to fast travel to the Castle settlement.
+* Fixed several cases of abnormal Bounty boss skill-use behaviour.
+* Fixed an issue causing the Nemesis crafting materials to be unobtainable.
+* Fixed Delta-03 error occurring at the end of Conflict matches.
+* Fixed an issue that would cause the pathfinding line to behave abnormally when in close proximity to your destination.
+* Fixed the "donating" sound playing repeatedly after having donated and abandoned a daily mission.
+* Fixed an issue related to cache countdown timers.
+* Fixed an issue where Specialization ammunition drop rate was lower than intended.
+
 ## Patch from 5. April 2019, Invasion: Battle for D.C.
 
 * New content
