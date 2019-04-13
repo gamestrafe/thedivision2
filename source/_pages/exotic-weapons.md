@@ -38,7 +38,8 @@ Now that you have the Adrestia SR1, deconstruct it. Yes, deconstruction. You get
 
 These names are the names of Black Tusk bosses, each one residing in one of the other strong holds. To get the other parts, you will have to defeat them in the invaded mode for a chance of them dropping the parts you need.
 
+* Scope - The Tally: From deconstructing Adrestia SR1 you get in Tidal Basin secret locked room.
 * Stock - The Bridle: From Klutz at District Union Arena
-* Bolt: From Shorty at Roosevelt Island
+* Bolt - The Sales: From Shorty at Roosevelt Island
 * Barrel - The Scourge: From Prime at Capitol Hill
 
