@@ -6,6 +6,18 @@ meta:
 
 This page contains all the patch notes that were published since the release of the game. Newest patch notes are always at the top.
 
+## Patch from 16. April 2019
+
+* Fixed an issue where enemy NPCs could get stuck in a T-pose when being killed out of view.
+* Fixed another issue with the Revive Hive not working properly. We are still working on instances where the skill sometimes will not resurrect players.
+* Fixed an issue where the Gila Guard brand gear could not be donated to the Campus Daily Project "Brand Request: Gila Guard".
+* Fixed an issue where the Crafting Bench upgrade blueprint would not be granted to players when moving from one World Tier to another.
+* Fixed an issue where the two piece bonus of the True Patriot gear set would not trigger correctly.
+
+## Patch from 12. April 2019
+
+* Fixed an issue that could cause the Demolitionist's tactical link buff to stack infinitely
+
 ## Patch from 11. April 2019
 
 * Fixed not being able to fast travel to the Castle settlement.
