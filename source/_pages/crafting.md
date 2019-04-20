@@ -22,9 +22,11 @@ Crafting costs materials. At level below 30 you need 4 materials and 135 credits
 
 ## Upgrade costs
 
-* Superior: ?
-* High-end: ? (Upgrades to 250 Gear Score)
-* World Tier 1: 2509 Credits, 75 Polycarbonate, 75 Titanium, 10 Printer Filament
+The bench starts at Gear Score 200 and creates Specialized (blue) gear only at that level.
+
+* Superior: 2509 Credits, 75 Receiver Components, 75 Fabric, 50 Polycarbonate (Upgrades to 240 Gear Score)
+* High-end: 2509 Credits, 75 Steel, 75 Ceramics, 25 Carbon Fiber (Upgrades to 250 Gear Score)
+* World Tier 1: 2509 Credits, 75 Polycarbonate, 75 Titanium, 10 Printer Filament (Upgrades to 250-275 Gear Score)
 * World Tier 2: 2794 Credits, 90 Steel, 80 Electronics, 15 Printer Filament (Upgrades to 300-330 Gear Score)
 * World Tier 3: 3577 Credits, 100 Ceramics, 90 Titanium, 20 Printer Filament (Upgrades to 350-385 Gear Score)
 * World Tier 4: 4672 Credits, 120 Polycarbonate, 120 Electronics, 25 Printer Filament (Upgrades to 400-440 Gear Score)
