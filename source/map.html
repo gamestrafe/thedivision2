@@ -215,6 +215,8 @@ permalink: map.html
     // XSIDEM
     var sideMissionMarkers = [
         //L.marker(, {title: '', icon: iconSidemission}).bindPopup('<h5></h5><p></p><p><b>Rewards:</b>  XP, Blueprint: </p>'),
+        L.marker([-56.99046471720848, 179.18701171875003], {title: 'Museum Water Source', icon: iconSidemission}).bindPopup('<h5>Museum Water Source</h5><p>Activate the water source on top of one of the National Mall\'s museums.</p><p><b>Rewards:</b> XP, Blueprint: Angled Grip, Theater upgrade: Aquaponics</p>'),
+        L.marker([65.8135997540377, 113.56347709894182], {title: 'Odea Retail Store', icon: iconSidemission}).bindPopup('<h5>Odea Retail Store</h5><p>Meet with Vikram Malik in the Odea retail store.</p><p><b>Rewards:</b> XP, Blueprint: Handstop, Theater Upgrade: Battery Storage</p>'),
         L.marker([39.26628442213066, -57.84959004841594], {title: 'Worksite Community', icon: iconSidemission}).bindPopup('<h5>Worksite Community</h5><p>Respond to a distress call at an old deconstruction site.</p><p><b>Rewards:</b> XP, Blueprint: Compensated Integrated Spring</p>'),
         L.marker([35.177405364226125, 176.1022298122443], {title: 'Missing Wire Scavengers', icon: iconSidemission}).bindPopup('<h5>Missing Wire Scavengers</h5><p>Find and Rescue the missing community members. Level 25.</p><p><b>Rewards:</b>  XP, Blueprint: Osprey 9 Suppressor</p>'),
         L.marker([2.855262784366583, -164.4081882583419], {title: 'Navy Hill Transmission', icon: iconSidemission}).bindPopup('<h5>Navy Hill Transmission</h5><p>Investigate a strange radio transmission emitting from Navy Hill. Level 21. Decoded transmission: A framed guardian never bears a grudge against others, only a key in his back pocket to offer to his sisters and brothers.</p><p><b>Rewards:</b> XP, Blueprint: Nimble Link Belt, Retro Field Uniform</p>'),
@@ -331,6 +333,7 @@ permalink: map.html
         //L.marker(, {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p></p>'),
 
 
+
         // West Potomac Park
         L.marker([-36.76008900805292, -61.28606244939321], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>In a lcoked fence area. Climb the trailer on the east side to get into the area.</p>'),
         L.marker([-52.55507952773557, -127.08546232661644], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Under ground in locked area of the large room down here.</p>'),
@@ -340,15 +343,19 @@ permalink: map.html
         L.marker([-30.319780318892175, 156.58595061078316], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Beside a car on the ground</p>'),
 
         // Southwest
+        L.marker([-65.67622583469849, 117.50097602605823], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Underground, in an elevator off a parking structure. Accessible from south and north middle of the building here.</p>'),
+        L.marker([-74.24299031089728, 161.60449191927913], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside a blue train waggon. Accessible from the north between the beuildings or west.</p>'),
         L.marker([-66.92489360897004, 87.40507384399137], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Underground in a side room. There are stairs leading down here just west of this position.</p>'),
         L.marker([-67.3076712409578, 219.88121067503707], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Small area with a low wall.</p>'),
         L.marker([-75.39445551486587, 111.02789558583241], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p></p>'),
 
         // East Mall
+        L.marker([-57.88927783746301, 170.0507815182209], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>At the bottom of a ramp here.</p>'),
         L.marker([-40.76390128094587, 104.16136123495845], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>At the bototm of this ramp. There is a quick way down and up near the south end of the ramp on the western side.</p>'),
         L.marker([-41.409775832009544, 61.65752882682572], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>At the bototm of this ramp.</p>'),
         L.marker([-58.82511777083641, 213.5698176633584], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Inside botanical garden</p>'),
         L.marker([-53.20998109837093, 127.97748741446232], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Underground</p>'),
+        L.marker([-47.011833767786534, 88.05761832743883], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>In a pipe underground, but easy accessible from north and south.</p>'),
 
         // Whitehouse
         L.marker([56.305561831968745, -15.4709499186372], {title: 'SHD Tech (Unmarked)', icon: iconShdtech }).bindPopup('<h5>SHD Tech (Unmarked)</h5><p>Upper floor of this building, access trhough the alley in the northwest corner</p>'),
@@ -601,6 +608,13 @@ permalink: map.html
         {latlng: [63.10635619630118, -246.07538114652692], info: ''},
         // General overworld (XWEP)
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [20.51756434713796, -103.5966794192791], z: types.z.g, info: 'Inside a Kobi\'s, that you can open. The door is in the west of the crate.'},
+        {latlng: [38.7712608265397, -117.69653353840116], z: types.z.a, info: 'On top of this small building here'},
+        {latlng: [55.44402013545344, -138.54638658463958], z: types.z.g, info: ''},
+        {latlng: [-66.03235734359289, 114.16113227605821], z: types.z.g, info: 'Underground in parking garage.'},
+        {latlng: [-73.43091235745301, 139.28027451038363], z: types.z.g, info: 'Inside corner of some walls here'},
+        {latlng: [-68.68532040601399, 162.4218736588955], z: types.z.g, info: 'At the bottom of the ramp'},
+        {latlng: [-59.91097597079679, 113.4184567630291], z: types.z.g, info: ''},
         {latlng: [45.20992427091974, 188.61097839983955], z: types.z.g, info: 'In loading dock'},
         {latlng: [44.86515537621472, 116.44633261740155], z: types.z.u, info: 'Inside locked fence area in underground parking garage, acessible from the west.'},
         {latlng: [60.47238164163381, 117.91846639446287], z: types.z.g, info: 'Inside supply room of Red Dragon control point'},
@@ -808,6 +822,19 @@ permalink: map.html
         {latlng: [64.56260051925477, -261.5259023629693], z: types.z.g, info: ''},
         // General open world (XGEAR)
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [35.180880954544705, -121.37475589290263], z: types.z.g, info: 'In a corner in front of a white van'},
+        {latlng: [34.12395384966551, -115.09716790169477], z: types.z.g, info: 'In loading dock'},
+        {latlng: [-66.42198533070878, 119.44335937500001], z: types.z.g, info: 'In loading dock'},
+        {latlng: [-74.69253082863128, 133.6904302239418], z: types.z.u, info: 'Inisde the building go down the escalators, the crate is at the bottom.'},
+        {latlng: [-73.7880535310551, 163.1865231692791], z: types.z.g, info: ''},
+        {latlng: [-61.06463932115204, 107.57812500000001], z: types.z.g, info: 'Inside corner here'},
+        {latlng: [-51.20663270848924, 86.87109488993883], z: types.z.g, info: 'Between a shovel of an excavator and a container.'},
+        {latlng: [-46.89020574901177, -134.29687500000003], z: types.z.g, info: 'Southwest side of some tents here.'},
+        {latlng: [-51.1929968347962, -177.8071285039187], z: types.z.g, info: 'Against north side of an upside down white car wreck.'},
+        {latlng: [-49.41579450866871, -164.014892578125], z: types.z.g, info: 'Against outer wall of memorial'},
+        {latlng: [-49.71589254391154, -156.15527316927913], z: types.z.g, info: 'In a tent'},
+        {latlng: [56.0990105373411, -194.9458003789187], z: types.z.g, info: 'On the roof. If you get up from the east through the alley, you are on the right level, otherwise you have to climb over a wall.'},
+        {latlng: [45.05180964671193, -196.76074258983138], z: types.z.g, info: ''},
         {latlng: [47.78641206825655, 120.64292320146085], z: types.z.u, info: 'In parking garage'},
         {latlng: [48.53024352330842, 107.62061662773402], z: types.z.a, info: 'In building accessible over roofs from west or east.'},
         {latlng: [50.03033543048985, 127.43919644429049], z: types.z.a, info: 'On roof, access over scaffolding on north side of building.'},
@@ -1116,6 +1143,9 @@ permalink: map.html
     var markersAirdrop = [
         //{latlng: , type:'', info: ''},
         //{latlng: , type:'Gear', info: ''},
+        {latlng: [-38.09632489504118, 171.9184572994709], type:'Gear', info: 'Hanging off the roof inside this recess of the building. If you look at it from teh west and see the sign of Gallery of Modern Art high up on the side, you\'ll see the crate just to the right of that, hanging off a wall that faces north.'},
+        {latlng: [-59.807238884740855, 114.04248073697092], type:'Materials', info: 'Inner yard of the museum here, easy acces from the north. The crate is hanging inside on the wall facing northwest.'},
+        {latlng: [13.462372352927343, 58.4208968281746], type:'Gear', info: 'Hanging off a wire on the inside of the building here. The drop will be on the lower level, stairs are in the southeast corner.'},
         {latlng: [9.44906182688142, 137.26318359375003], type:'Gear', info: 'Near the south exit of the Last Stop safehouse, just southeast here in the dead end, hanging from a cable between buildings. '},
         {latlng: [11.880252549291287, 108.24178565776423], type:'Gear', info: 'Hanging off the east side of a building, to get to it though you have to go into the alley between the buildings (easy access from the east) and climb the ladder there.'},
         {latlng: [-66.73816610350286, 89.98241459877441], type:'Materials', info: 'Hanging off the west side of the building. When you shoot it the material drops where you stand, but you have to be close or it might not drop at all.'},
@@ -1214,7 +1244,27 @@ permalink: map.html
         {latlng: [70.94774661463039, -241.34393296192442], type: types.dz.ic, z: types.z.g, info: ''},
         {latlng: [77.26659212172264, -231.18896695020163], type: types.dz.ic, z: types.z.g, info: 'At the bottom of some stairs here'},
         // Overworld (XSMALL)
-        //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        // {latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [35.13614139729414, -113.94799791276456], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [56.42362057999681, -122.10644558072092], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [57.272473614288295, -137.22363132052126], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [58.530403913782585, -131.6733393073082], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-74.27282834617043, 165.02344155684116], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-46.71868711508687, -133.33007812500003], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-46.16088441437021, -132.91259514167908], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-49.398095325160064, -165.53320342674854], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [58.28174655470255, -193.04296821355825], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [57.70651948716742, -193.90869140625003], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [57.84010491385836, -194.89746093750003], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [58.15911242952296, -194.69970703125003], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [58.532478053674325, -194.56347595900297], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [58.10349127020617, -196.91455051302913], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [58.334918618927915, -200.01269504427913], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [56.5770459957768, -202.95703064650303], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [57.435452786174004, -201.90234381705525], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [56.78643461602502, -198.98437500000003], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [42.81267020436996, -198.62402223050597], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [23.25738545590714, -202.03418076038363], type: types.l.sb, z: types.z.g, info: ''},
         {latlng: [53.167829300507705, 92.5225140651622], type: types.l.sb, z: types.z.a, info: 'Inside building'},
         {latlng: [56.783995666536526, 86.71942962960728], type: types.l.lb, z: types.z.a, info: 'Inside building'},
         {latlng: [56.9835291842902, 86.2714403470234], type: types.l.rs, z: types.z.a, info: 'Inside building'},
@@ -2308,6 +2358,11 @@ permalink: map.html
     // XGREN
     var markersGrenade = [
         // {latlng: , info: ''},
+        {latlng: [34.21426417320349, -119.3840333959088], info: 'In a corner at the loading dock'},
+        {latlng: [-74.72031745577597, 134.88574191927913], info: 'Inside the building at the bottom of the escalators.'},
+        {latlng: [-47.49341139978961, -134.58691433072093], info: 'On wodden platform here'},
+        {latlng: [-49.22043512855958, -163.69409174658358], info: 'Against outer wall of memorial'},
+        {latlng: [-37.66639876885223, 158.8710942864418], info: 'In a small dead end area, accessible from the east through the park where the tents are.'},
         {latlng: [53.653453802031045, 97.70027197593714], info: 'Inside building, 5th floor.'},
         {latlng: [-53.971596602608564, 253.18661098532817], info: 'In Capitol Hill Stronghold. Inside building, under scaffolding.'},
         {latlng: [-47.801347856653166, 233.10391201326223], info: 'In Capitol Hill Stronghold. Central defensive position in the field here.'},
@@ -2375,6 +2430,7 @@ permalink: map.html
     // XARMOR
     var markersArmor = [
         //{latlng: , info: ''},
+        {latlng: [-49.14711311357852, -156.22998073697093], info: 'In a tent'},
         {latlng: [3.399385898716846, 35.22216796875001], info: 'At bottom of ramp'},
         {latlng: [8.802567857270397, 134.30265486360628], info: ''},
         {latlng: [-48.554432218409794, 255.22554350421927], info: 'In Capitol Hill Stronghold. After the door leading east out of the rotunda.'},
@@ -2458,6 +2514,7 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [-49.21329634665625, -161.3276366516948], faction: 'Outcasts', info:'Against tehw outer wall of the memorial'},
         {latlng: [34.644131948444695, -196.5190427005291], faction: 'Outcasts', info:'On the steps of this building'},
         {latlng: [5.772779167842011, -213.4335932135582], faction: 'Outcasts', info:'Inside Potomac Event Center mission. After surviving the ambush in the construction site, before you enter the building, go left and you run into this box.'},
         {latlng: [5.677226173399822, -58.737457597192225], faction: 'Outcasts', info:'Inside DCD  HEadquarters mission. GRound floor of building, after activating the terminal.'},
@@ -2554,6 +2611,37 @@ permalink: map.html
     var markersMaterial = [
         //XMAT
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [36.982984700704016, -122.16137705370785], type: types.mat.t, z: types.z.a, info: 'On roof of low building'},
+        {latlng: [34.94009357165631, -119.47192389518024], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [34.12395384966551, -115.09716790169477], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [34.29837997380234, -114.19628933072092], type: types.mat.d, z: types.z.g, info: 'A bit hidden behind a wall here'},
+        {latlng: [35.41412156219461, -114.30175781250001], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [37.91659876607623, -117.44824245572093], type: types.mat.f, z: types.z.a, info: 'On roof'},
+        {latlng: [38.76951492841708, -118.38647481054069], type: types.mat.t, z: types.z.a, info: 'On roof'},
+        {latlng: [55.93194209214304, -123.05126979947092], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [56.44884833900326, -121.07372897677125], type: types.mat.f, z: types.z.g, info: 'Inside building'},
+        {latlng: [59.18263633910043, -136.18652343750003], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [58.61288307160903, -137.66308444552126], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [55.89274136144717, -138.21240261197093], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [52.136236618859925, -137.4433596432209], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [52.77095138588944, -137.36425794661048], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-74.32873011916445, 161.51660263538363], type: types.mat.d, z: types.z.g, info: 'Inside a blue railway waggon'},
+        {latlng: [-51.03308909207809, -137.54443332552913], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-51.35256396372114, -134.96923841536048], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-52.305394099098386, -132.91259514167908], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-51.60981635248806, -132.11718723177913], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-49.38237278700955, -167.82275397330525], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-49.11534097354376, -161.14965833723548], type: types.mat.d, z: types.z.g, info: 'Clsoe to the wall behind a crate.'},
+        {latlng: [57.14820171138799, -195.94775363802913], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [58.58772989215551, -196.71679660677913], type: types.mat.t, z: types.z.g, info: 'HArd to see, as it\'s halfway sunk into the wall in the corner here.'},
+        {latlng: [56.01314860320258, -202.71533209830523], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [57.16960530351295, -202.36376959830525], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [56.78406413120095, -200.60595676302913], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [56.808046723690495, -197.68359348177913], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [56.539841710776365, -196.43994100391865], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [41.557949854363365, -197.50341810286048], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [36.73230388551897, -194.64697144925597], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [30.469446174833397, -205.6223139166832], type: types.mat.f, z: types.z.g, info: ''},
         {latlng: [59.38247767081345, 86.62501847473243], type: types.mat.t, z: types.z.g, info: ''},
         {latlng: [53.51940356981758, 86.5525801438048], type: types.mat.f, z: types.z.a, info: 'Inside building, upper floors'},
         {latlng: [53.998715745829294, 97.92993494334338], type: types.mat.f, z: types.z.g, info: 'Inside building, only accessible during rooftop gardens side mission and bounties.'},
@@ -3879,6 +3967,8 @@ permalink: map.html
     // XCOMPONENT
     var markersComponent = [
         //{latlng: , info: ''},
+        {latlng: [34.07450891722569, -118.15356452018024], info: ''},
+        {latlng: [56.01670556103931, -137.26757663302126], info: ''},
         {latlng: [54.96500012130833, 70.76852189148927], info: ''},
         {latlng: [54.54657798261402, 71.18592929632607], info: ''},
         {latlng: [54.326775249597894, 70.56739284614777], info: ''},
@@ -3965,6 +4055,14 @@ permalink: map.html
     // XFOOD
     var markersFood = [
         // {latlng: , info: ''},
+        {latlng: [19.82865429161503, -104.7172848880291], info: 'Inside the Koby\'s restaurant, door can be opened.'},
+        {latlng: [37.759699934710774, -123.20507822558285], info: ''},
+        {latlng: [37.30380720349612, -116.11450195312501], info: ''},
+        {latlng: [-46.319624224120155, -132.4379888176918], info: ''},
+        {latlng: [55.655259717085876, -194.41845662891865], info: 'On roof, need to climb a wall to reach this higher portion.'},
+        {latlng: [55.20146250874184, -194.51513685286048], info: 'On roof'},
+        {latlng: [56.0581646610476, -196.1630854010582], info: 'On roof'},
+        {latlng: [55.25892223663351, -199.6611325442791], info: 'On roof'},
         {latlng: [55.224049582459436, 93.32225935495774], info: ''},
         {latlng: [56.15778819063682, 93.33981273518306], info: ''},
         {latlng: [56.30434864830834, 96.39404296875001], info: ''},
@@ -4058,6 +4156,9 @@ permalink: map.html
     // XWATER
     var markersWater = [
         //{latlng: , info: ''},
+        {latlng: [38.041157609915835, -117.11206041276456], info: ''},
+        {latlng: [-45.767496601987546, -133.8618166744709], info: ''},
+        {latlng: [44.00923650166339, -196.64648316800597], info: ''},
         {latlng: [61.00507574751817, 86.74362717571985], info: ''},
         {latlng: [61.42826064821461, 87.42481064411272], info: ''},
         {latlng: [62.37814739204269, 88.19817993821435], info: ''},
@@ -4158,12 +4259,17 @@ permalink: map.html
     var secretMarkers = [
         //L.marker(, {title: '', icon: iconSecret }).bindPopup('<h5></h5><p></p>'),
 
+
         // Unmarked recordings
         L.marker([-8.251721821374755, -264.67083729501763], {title: 'Unmarked Recording: Johnny\'s Spot', icon: iconSecret }).bindPopup('<h5>Unmarked Recording: Johnny\'s Spot</h5><p>A recording that is not part of the comms. It only shows a prompt to play when you get really close. Johnny talks about how he is in this spot fishing a lot and how he wont make it.</p><p>Inside Roosevelt Island Stronghold. After the final fight, you leave the area and there is a hole in the fence to your right. Go through that and you find a small outcropping with two loot crates. The recording is here on a green bench in the northern direction.</p>'),
+        L.marker([6.708253968671543, 95.23388698697092], {title: 'Unmarked Recording: Interrogation of Vikram', icon: iconSecret }).bindPopup('<h5>Unmarked Recording: Interrogation of Vikram</h5><p>A recording that is not part of the comms. It only shows a prompt to play when you get really close. Johnny talks about how he is in this spot fishing a lot and how he wont make it.</p><p>Inside the Bureau Headquarters side mission. In the basement after turning on the power, you can pass trhough a door in the southeast corner. The door for office 101 opens and on the table is some machine that gives you the prompt.</p>'),
         // The one in odea store is no longer there...
 
         // Mission secrets
         L.marker([15.851445875307663, -25.966958317730477], {title: 'Gatehouse Facility Biology Lab Key', icon: iconSecret }).bindPopup('<h5>Gatehouse Facility Biology Lab Key</h5><p>When you enter the facility after the tunnel, go right to a locker area. There is a black dufflebag on a bench, get close and you see a prompt to search it, which will give you the key. Go into the lab and then you can use the key to gain access to the Biology lab to your left.</p>'),
+
+        // Space Administration HQ
+        L.marker([-74.4798506996376, 189.42187607288366], {title: 'Printer', icon: iconSecret }).bindPopup('<h5>Printer</h5><p>This printer is on the third floor, to be sure, the one where you see a big 3 to the left of the door before you enter the proper of it. Just as you enter, on your right is an open office space. On the north wall are two doors and the printer is between them, closer to the left one. Get close and use the prompt. It will print out something and have a 4 digit number on it in the middle row. Note that down.</p>'),
 
         // Bank Headquarters
         L.marker([44.22630834233229, -83.57505629679048], {title: 'Bank Vault Keycard', icon: iconSecret }).bindPopup('<h5>Bank Vault Keycard</h5><p>In the CEO office, go to wood paneling on a north wall with the hyenas logo on it. Stand at the right most corner next to that open shelve and you get a prompt to get the key.</p>'),
