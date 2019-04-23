@@ -186,7 +186,7 @@ permalink: map.html
         L.marker([49.57693516648854, -76.08784350191729], {title: 'Bank Headquarters', icon: iconMission}).bindPopup('<h5>Bank Headquarters</h5><p>Break into the bank occupied by one of the Hyena Council members, and secure what they stole from Air Force One.</p>'),
         L.marker([-52.16045455774705, -151.6406743028355], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
         L.marker([31.690310691444743, -207.74376293806085], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
-        L.marker([68.38159554768568, -148.72192382812503], {title: 'Federal Emergency Bunker', icon: iconMission}).bindPopup('<h5>Federal Emergency Bunker</h5><p></p>'),
+        L.marker([68.38159554768568, -148.72192382812503], {title: 'Federal Emergency Bunker', icon: iconMission}).bindPopup('<h5>Federal Emergency Bunker</h5><p>Search the bunker for the missing Division team.</p>'),
         L.marker([-61.9389554736344, 125.4264145884105], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
         L.marker([-42.13082130188811, 42.209435198288034], {title: 'Unknown Mission', icon: iconMission}).bindPopup('<h5>Unknown Mission</h5><p>More data will be added when it\'s available.</p>'),
         // Strongholds
@@ -276,8 +276,14 @@ permalink: map.html
     // Completed
     var markersUnderground = [
         // Unofficial
+
+        // Lead to the car tunnel underneath
         //{latlng: [43.79169073805526, -195.08862297981977]},
         //{latlng: [48.522409763548836, -190.53369093686342]},
+
+        // Exit from federal emergency bunker
+        //{latlng: [71.98714282145725, -183.515625]},
+
         // Official on map
         {latlng: [-20.869077732018464, -24.279785156250004]},
         {latlng: [-20.999051467816, -9.807128123939039]},
@@ -615,6 +621,10 @@ permalink: map.html
         // General overworld (XWEP)
         //{latlng: , z: types.z.g, info: ''},
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [21.75133742091185, -99.50537122786046], z: types.z.g, info: ''},
+        {latlng: [25.300331185086797, -102.99462877213955], z: types.z.g, info: 'Inside building'},
+        //Unsure if its weapon. {latlng: [76.28120605071335, -170.1298825442791], z: types.z.g, info: 'Inside Federal Emergency Bunker mission. Inside secret room after cafeteria. Where you have to shoot the sprinkler to open the door, there is a second sprinkler in the corridor to the east where the burning blocakde is. Shoot the sprinkler of the door leading south and you find the crate inside.'},
+        {latlng: [76.20387116257103, -169.23339843750003], z: types.z.u, info: 'Inside Federal Emergency Bunker mission. In part after contacting Maya again, upstairs, northwest corner.'},
         {latlng: [-8.88073504727191, -63.65917995572091], z: types.z.g, info: 'Close to the building, betwen a row of bushes and the building.'},
         {latlng: [-10.19404683989029, -76.78124919533731], z: types.z.a, info: 'On scaffolding, get up there by using the food stand to the north on the east side of the bui,ding.'},
         {latlng: [-14.885408159616162, -70.25976575911045], z: types.z.a, info: 'On top of some black boxes'},
@@ -624,7 +634,6 @@ permalink: map.html
         {latlng: [24.334973202729163, -88.44873033463956], z: types.z.g, info: 'In northern inner courtyard, southwest corner on ground level.'},
         {latlng: [20.454075571824667, -137.13793918490413], z: types.z.g, info: ''},
         {latlng: [27.648493319020098, -118.37988227605821], z: types.z.g, info: 'Inside building, in locked room, accessible from the west'},
-        {latlng: [20.51756434713796, -103.5966794192791], z: types.z.g, info: 'Inside a Kobi\'s, that you can open. The door is in the west of the crate.'},
         {latlng: [38.7712608265397, -117.69653353840116], z: types.z.a, info: 'On top of this small building here'},
         {latlng: [55.44402013545344, -138.54638658463958], z: types.z.g, info: ''},
         {latlng: [-66.03235734359289, 114.16113227605821], z: types.z.g, info: 'Underground in parking garage.'},
@@ -839,7 +848,14 @@ permalink: map.html
         // General open world (XGEAR)
         //{latlng: , z: types.z.g, info: ''},
         //{latlng: , z: types.z.g, info: ''},
-        //{latlng: , z: types.z.g, info: ''},
+        {latlng: [27.46538808276109, -99.76464897394182], z: types.z.g, info: ''},
+        {latlng: [20.51756434713796, -103.5966794192791], z: types.z.g, info: 'Inside a Kobi\'s, that you can open. The door is in the west of the crate.'},
+        {latlng: [24.156778233303413, -102.69360378384592], z: types.z.g, info: 'In the corner behidn the door'},
+        {latlng: [28.578733457952428, -101.99267551302913], z: types.z.g, info: 'In this alcove, behind the white van'},
+        {latlng: [29.063851619498706, -103.60107455402614], z: types.z.g, info: ''},
+        {latlng: [20.879342345438776, -111.30029384046796], z: types.z.g, info: ''},
+        {latlng: [77.6459473420892, -171.298828125], z: types.z.g, info: 'Inside Federal Emergency Bunker mission. Generator room you have to jump down into. The crate is on the upper walk way in the south.'},
+        {latlng: [71.66366293141732, -158.7392583489418], z: types.z.u, info: 'Inside Federal Emergency Bunker mission. First room after the entrnace tunnel, hop over some machinery in the southwest corner.'},
         {latlng: [-18.44598837515547, -99.14941392838955], z: types.z.g, info: 'Inside supply room of The Nest'},
         {latlng: [-19.186703852214098, -99.18896444141865], z: types.z.g, info: 'Inside supply room of The Nest'},
         {latlng: [-14.115428549351588, -81.22412189841272], z: types.z.g, info: 'Northeast corner of the pool'},
@@ -1286,6 +1302,19 @@ permalink: map.html
         // Overworld (XSMALL)
         // {latlng: , type: types.l.lb, z: types.z.g, info: ''},
         // {latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [25.173127842529098, -95.41406236588956], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [19.078730393171746, -93.93310479819776], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [17.572816714617094, -95.30859321355821], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [18.233525521248186, -102.24975585937501], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [16.762467717941604, -96.24902397394182], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [17.94110978326795, -105.56542988866569], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [22.998851594142923, -106.07080064713955], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [24.862515713355542, -104.90624986588956], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [24.423145086244126, -105.17871066927913], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [29.35919676437269, -103.12646538019182], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [29.46638350585368, -105.9038083255291], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [24.770775026728362, -108.97558607161046], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [26.478439680280104, -108.83056674152614], type: types.l.sb, z: types.z.g, info: ''},
         {latlng: [-15.178261125024504, -103.2407226227224], type: types.l.rs, z: types.z.g, info: ''},
         {latlng: [-11.604895219082415, -99.55810546875001], type: types.l.sb, z: types.z.g, info: ''},
         {latlng: [-16.669884977526795, -99.29003912955524], type: types.l.sb, z: types.z.a, info: 'On balcony of control point the nest'},
@@ -2225,6 +2254,10 @@ permalink: map.html
     var markersSpecialammo = [
         //{latlng: , type: types.ammo.e, info: ''},
         //{latlng: , type: types.ammo.e, info: ''},
+        {latlng: [22.516616171592315, -98.92968736588956], type: types.ammo.e, info: ''},
+        {latlng: [73.74382478795998, -181.38867214322093], type: types.ammo.h, info: 'Inside Federal Emergency Bunker mission. Inside boss fight area, northwest corner of the room.'},
+        {latlng: [78.08741500590821, -167.66894638538363], type: types.ammo.e, info: 'Inside Federal Emergency Bunker mission. After Generator room, before climbing up a ladder.'},
+        {latlng: [74.62976057957098, -164.44335803389552], type: types.ammo.i, info: 'Inside Federal Emergency Bunker mission. After first elevator, in the larger room on the western side.'},
         {latlng: [-13.63587139885367, -83.46533417701723], type: types.ammo.h, info: ''},
         {latlng: [8.511494667247723, -89.69677727669479], type: types.ammo.s, info: 'Behgind a wooden partition, access from east.'},
         {latlng: [-25.524606988990563, -63.89648437500001], type: types.ammo.i, info: 'On small platform'},
@@ -2317,6 +2350,12 @@ permalink: map.html
     var markersAmmo = [
         //{latlng: , info: ''},
         //{latlng: , info: ''},
+        {latlng: [23.24942218811992, -94.99218709766865], info: ''},
+        {latlng: [74.05579735555479, -175.5087918788195], info: 'Inside Federal Emergency Bunker mission. In tunnel after cistern, before bossfight'},
+        {latlng: [77.76944456383127, -167.25585937500003], info: 'Inside Federal Emergency Bunker mission. Before the cafeteria.'},
+        {latlng: [76.55161236075602, -168.09960991144183], info: 'Inside Federal Emergency Bunker mission. In side room where the fire blocks your way and you have to jump down.'},
+        {latlng: [75.17230006752742, -167.31738254427913], info: 'Inside Federal Emergency Bunker mission. After the loading bay and opening the first reinforced doors.'},
+        {latlng: [72.77057418574793, -161.35400377213955], info: 'Inside Federal Emergency Bunker mission. After first elevator, right outside the door.'},
         {latlng: [-17.794581595217398, -99.2021481692791], info: 'Inside control point the nest'},
         {latlng: [-16.712083589819713, -69.27099622786045], info: ''},
         {latlng: [-20.8875688037073, -64.23046901822092], info: 'Inside building, after getting in from the roof'},
@@ -2468,6 +2507,8 @@ permalink: map.html
     // XGREN
     var markersGrenade = [
         // {latlng: , info: ''},
+        {latlng: [75.16104988598912, -166.67578205466273], info: 'Inside Federal Emergency Bunker mission. After the loading bay and opening the first reinforced doors.'},
+        {latlng: [72.69622484210223, -161.58251926302913], info: 'Inside Federal Emergency Bunker mission. After first elevator, right outside the door.'},
         {latlng: [8.924137282656432, -88.8134765625], info: 'Behind wooden partition, accessible from east'},
         {latlng: [-21.195131189548274, -62.54736341536046], info: 'On Roof'},
         {latlng: [-22.38663114766924, -55.639160424470916], info: ''},
@@ -2544,6 +2585,9 @@ permalink: map.html
     var markersArmor = [
         //{latlng: , info: ''},
         //{latlng: , info: ''},
+        {latlng: [73.84195033353157, -175.51757812500003], info: 'Inside Federal Emergency Bunker mission. In tunnel after cistern, before bossfight'},
+        {latlng: [76.42635454391082, -171.77343830466273], info: 'Inside Federal Emergency Bunker. After Cafeteria, in side room before the door that you have to shoot the sprinkler.'},
+        {latlng: [76.58427854510875, -166.41210883855823], info: 'Inside Federal Emergency Bunker, as you go down stairs again from the part after restablishing contact with MAya.'},
         {latlng: [-20.295184831706678, -64.81933593750001], info: 'Inside building, upper floor'},
         {latlng: [-20.86724763590849, -58.22753906250001], info: 'On scaffolding, first level'},
         {latlng: [18.25021997706561, -135.18896481022242], info: ''},
@@ -2631,6 +2675,7 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', info:''},
+        {latlng: [75.29550453665925, -170.64843803644183], faction: 'Outcasts', info:'Inside Federal Emergency Bunker Mission. After the burning archive room, just on the left before you go down a ladder.'},
         {latlng: [-49.21329634665625, -161.3276366516948], faction: 'Outcasts', info:'Against tehw outer wall of the memorial'},
         {latlng: [34.644131948444695, -196.5190427005291], faction: 'Outcasts', info:'On the steps of this building'},
         {latlng: [5.772779167842011, -213.4335932135582], faction: 'Outcasts', info:'Inside Potomac Event Center mission. After surviving the ambush in the construction site, before you enter the building, go left and you run into this box.'},
@@ -2729,6 +2774,23 @@ permalink: map.html
         //XMAT
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [29.50463732084826, -97.15429700911046], type: types.mat.d, z: types.z.g, info: 'Covered in greenery'},
+        {latlng: [23.249420339819356, -98.90331991016865], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [23.43905745102832, -101.40820305794479], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [25.712816749306974, -101.07421875], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [26.35643588339485, -100.03271497786046], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [19.973348786110613, -94.95703138411046], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [17.476432516995494, -104.80737291276456], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [21.13779419335695, -105.87744120508432], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [26.34068357890779, -104.74804714322092], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [29.075375179558346, -104.35693278908731], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [23.293828527238603, -108.62402290105821], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [73.32029174537826, -183.85839924216273], type: types.mat.d, z: types.z.u, info: 'Inside Federal Emergency Bunker Mission. After the bossfight, you exit trhough a door. In that tunnel is a rail car, the bag is behind the car on the western side.'},
+        {latlng: [74.25973687021242, -176.8271512538195], type: types.mat.f, z: types.z.u, info: 'Inside Federal Emergency Bunker Mission. In tunnel after the cistern room, before boss fight, northwest corner.'},
+        {latlng: [77.38182614784655, -169.91894558072093], type: types.mat.d, z: types.z.u, info: 'Inside Federal Emergency Bunker Mission. After cafeteria, to your right under the stairs.'},
+        {latlng: [76.00547035565367, -164.01269584894186], type: types.mat.d, z: types.z.u, info: 'Inside Federal Emergency Bunker Mission. After you have restablished connection to MAya and gone upstairs. Southeast corner.'},
+        {latlng: [72.377088829231, -161.72753892838958], type: types.mat.t, z: types.z.u, info: 'Inside Federal Emergency Bunker Mission. After the first elevator, turn left as you exit.'},
+        {latlng: [71.24718123620083, -159.28417861461642], type: types.mat.t, z: types.z.u, info: 'Inside Federal Emergency Bunker Mission. In first tunnel.'},
         {latlng: [-12.129554867777808, -94.28906276822092], type: types.mat.f, z: types.z.g, info: ''},
         {latlng: [-12.171433492092149, -94.68017578125001], type: types.mat.f, z: types.z.g, info: ''},
         {latlng: [-16.556088134788666, -102.919921875], type: types.mat.t, z: types.z.g, info: ''},
@@ -4139,6 +4201,10 @@ permalink: map.html
     // XCOMPONENT
     var markersComponent = [
         //{latlng: , info: ''},
+        //{latlng: , info: ''},
+        {latlng: [26.25795047144846, -100.64794935286046], info: ''},
+        {latlng: [25.859223554761407, -99.31640625000001], info: ''},
+        {latlng: [25.3241665257384, -103.70654337108137], info: ''},
         {latlng: [-14.403559934636663, -84.05859589576723], info: ''},
         {latlng: [-14.409173238470109, -72.83496066927911], info: ''},
         {latlng: [-0.08361344578866255, -77.03613281250001], info: ''},
@@ -4232,6 +4298,9 @@ permalink: map.html
     // XFOOD
     var markersFood = [
         // {latlng: , info: ''},
+        // {latlng: , info: ''},
+        {latlng: [26.84759795893301, -101.92675787955524], info: ''},
+        {latlng: [18.166729773094534, -96.14355381578207], info: ''},
         {latlng: [-12.897489183755892, -86.15039102733137], info: ''},
         {latlng: [-15.012863669501474, -83.20605441927911], info: ''},
         {latlng: [8.415852254844891, -81.73828125000001], info: ''},
@@ -4339,6 +4408,12 @@ permalink: map.html
     // XWATER
     var markersWater = [
         //{latlng: , info: ''},
+        //{latlng: , info: ''},
+        {latlng: [24.902381710839244, -101.91796895116569], info: ''},
+        {latlng: [27.262441294030236, -101.71581991016865], info: ''},
+        {latlng: [24.499145898711355, -103.8120116852224], info: ''},
+        {latlng: [18.945778070091986, -112.09570258855821], info: 'In corner of building, very overgrown'},
+        {latlng: [74.84492867694821, -173.2851554453373], info: 'Inside Federal Emergency Bunker mission. After the bruningg archive room, you go down a ladder and entern a cistern room, the barrel is just to the right as the room opens up.'},
         {latlng: [-18.233597892841836, -78.20068359375001], info: ''},
         {latlng: [-9.258322929861677, -62.978027611970916], info: ''},
         {latlng: [-9.279926688746439, -64.14697319269182], info: ''},
