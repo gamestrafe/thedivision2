@@ -6,6 +6,21 @@ meta:
 
 This page contains all the patch notes that were published since the release of the game. Newest patch notes are always at the top.
 
+## Patch from 25. April 2019
+
+* We're applying a fix that should decrease the boot and loading times for the PC client, which appeared after the April 16th patch.
+
+## Patch from 18. April 2019
+
+* Fixed an issue where players were able to receive unlimited Snitch heroic bounties.
+* Fixed another issue where players were stuck after being revived while having a DoT state active.
+* Fixed other issues relating to players being stuck after revival.
+* Lowered NPC damage and health above normal difficulty.
+* Increased variety of NPCs spawned at higher difficulty levels.
+* Difficulty has been significantly decreased in Hard, moderately reduced in Challenge, and barely reduced in Heroic.
+* Fixed an issue related to Elite NPC aggressiveness in Heroic / Alert Level 4.
+* Reduced the damage output of Named bosses.
+
 ## Patch from 16. April 2019
 
 * Fixed an issue where enemy NPCs could get stuck in a T-pose when being killed out of view.
