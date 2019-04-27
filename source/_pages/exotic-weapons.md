@@ -46,6 +46,7 @@ These names are the names of Black Tusk bosses, each one residing in one of the 
 Lastly you need the blueprint. For that you need to play the Grand Washington Hotel mission in an invaded mode, then kill the first boss in the Lobby, after the drug kitchen. He will drop "Puck's Nemesis Blueprint", allowing you to craft it. You can pick up the upgrade blueprint in the vendor in the base of operations once it's crafted.
 
 The weapon comes with three talents:
+
 * Counter-Sniper: Shots fired deal 0-100% weapon damage based on how long the trigger is held before releasing. The time to reach max weapon damage is reduced whenever a shot does not kill an enemy it hits.
 * Nemesis: Aiming at an enemy marks them as your nemesis for 15s, letting you see them through walls. Your shot gain +5% damage to your nemesis for each second they are marked, to a max of 50%.
 * Preparation: While holstered, gain +25% headshot damage when scoped with your current weapon.
