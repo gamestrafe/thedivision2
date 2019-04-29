@@ -5067,7 +5067,17 @@ permalink: map.html
     var imageUrl = '/images/map/the-division-2-map-v8.svg',
         imageBounds = [[84, -369], [-84, 337]];
     L.imageOverlay(imageUrl, imageBounds, {attribution: '<a target="_blank" href="https://thedivision2.gamestrafe.com">The Division 2 @ GameStrafe</a>'}).addTo(division2map);
-    division2map.fitWorld();
+
+    var hasHash = true;
+    if ('' === location.hash) {
+        hasHash = false;
+    }
+
+    var hash = new L.Hash(division2map);
+
+    if (false === hasHash) {
+        division2map.fitWorld();
+    }
 
     division2map.on('popupopen', function() {
         $('.image-link').magnificPopup(

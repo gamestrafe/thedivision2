@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-rm -rf /vagrant/output_dev/
+scripts_dir=`dirname $0`
 
-until /vagrant/vendor/bin/sculpin generate --watch --server; do
+rm -rf $scripts_dir/../output_dev/
+
+until $scripts_dir/../vendor/bin/sculpin generate --watch --server; do
   echo Generation interrupted, cleaning directory and restarting generation...
-  rm -rf /vagrant/output_dev/
+  rm -rf $scripts_dir/../output_dev/
 done

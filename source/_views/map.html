@@ -10,18 +10,14 @@
 
 {% block head_scripts %}
 <script src="/leaflet/leaflet.js"></script>
-<script src="/js/map.js"></script>
+<script src="/leaflet/leaflet-hash.js"></script>
+<script src="/leaflet/map.js"></script>
 {% endblock %}
 
 {# Used to blank the content for the map #}
-{% block header %}
-{% endblock %}
+{% block header %}{% endblock %}
 
-{% block page_body %}
-
-{% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
-{% endblock %}
+{% block page_body %}{% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}{% endblock %}
 
 {# Blanking the scripts, magnific is used inside the map to handle it on popup creation #}
-{% block scripts %}
-{% endblock %}
+{% block scripts %}{% endblock %}
