@@ -59,6 +59,7 @@ Starting at Specialized gear, it can also have talents. Higher quality gear can 
 - Opportunistic: Destroying an enemy's weakpoint or breaking an enemy's armor adds +10% damage from all sources to the enemy for 20s. Requires using Marksman or Shotgun weapons only
 - Patience: After being in cover for 3s, armor repairs by 5% every 1s. Requires 7 or more shields.
 - Payload: Destroying an enemy's asset grants +50% explosive damage for 15s. Requires 4 shields or less
+- Reassigned: Killing a status effected enemy adds 3 rounds of a random special ammo into your sidearm. Can occur once every 45s.
 - Safeguard: Killing a target grants a 150% bonus to repairing and healing effects for 20s. Requires 5 or less crosshairs.
 - Skilled: Skill kills have a 25% chance to reset skill cooldowns.
 - Spotter: +10% weapon damage to pulsed enemies. Requires 5 batteries or more.
