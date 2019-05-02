@@ -6,9 +6,17 @@ meta:
 
 This page contains all the patch notes that were published since the release of the game. Newest patch notes are always at the top.
 
+## Patch from 2. May 2019
+
+* Fixed an issue where players could not interact with Henry Hayes.
+
+## Patch from 30. April 2019
+
+* We've released a small patch for the PC client that should improve the long loading times some players have been experiencing.
+
 ## Patch from 25. April 2019
 
-* We're applying a fix that should decrease the boot and loading times for the PC client, which appeared after the April 16th patch.
+* Fixed an issue affecting slow loading times on PC.
 
 ## Patch from 18. April 2019
 
