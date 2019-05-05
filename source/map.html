@@ -28,6 +28,9 @@ permalink: map.html
 </style>
 <div id="thedivision2map"></div>
 
+<!--
+<script src="/leaflet/clock.js"></script>
+-->
 
 <script>
     // Icons
@@ -76,7 +79,7 @@ permalink: map.html
 
     iconShdtech = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#ff7e00;" d="M83.1,35.2c0-0.5,0-1-0.1-1.5c0,0,0-0.1,0-0.1c0-0.5-0.1-1-0.1-1.4c0,0,0-0.1,0-0.1c-0.1-0.5-0.1-0.9-0.2-1.4c0,0,0,0,0-0.1C82,27.2,80.9,24,79.3,21c0,0,0-0.1-0.1-0.1c-0.2-0.4-0.4-0.7-0.6-1.1c0-0.1-0.1-0.2-0.1-0.2c-0.2-0.3-0.4-0.7-0.6-1c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.4-0.6-0.6-0.9c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.4-0.6-0.7-0.9c-0.1-0.1-0.1-0.2-0.2-0.3c-0.2-0.3-0.5-0.6-0.7-0.9c-0.1-0.1-0.1-0.1-0.2-0.2c-0.3-0.3-0.5-0.6-0.8-0.9c0,0,0,0,0,0C68.3,7.3,59.6,3.2,50,3.2c-9.5,0-18,4-24,10.4l0,0c-0.3,0.3-0.6,0.7-1,1.1c0,0,0,0,0,0c-0.3,0.4-0.6,0.7-0.9,1.1c0,0,0,0,0,0c-1.7,2.2-3.2,4.6-4.4,7.2c0,0.1-0.1,0.2-0.1,0.2c-0.1,0.3-0.3,0.7-0.4,1c-0.1,0.1-0.1,0.3-0.2,0.4c-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.2-0.1,0.4-0.2,0.5c-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.2-0.1,0.4-0.2,0.6c-0.1,0.3-0.2,0.6-0.2,0.8c-0.1,0.2-0.1,0.5-0.2,0.7c-0.1,0.3-0.1,0.5-0.2,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.3-0.1,0.5-0.1,0.8c0,0.3-0.1,0.6-0.1,0.9c0,0.2-0.1,0.5-0.1,0.7C17,33.5,17,34,17,34.6c0,0.6,0,1.2,0,1.7c0,2,0.2,4,0.5,6c0,0,0,0,0,0c2.3,12.3,11.4,22.3,23.2,25.8l4.2-9.4c0-0.8,0.2-1.5,0.9-1.9l4.1-9.2l5.3,12.3c0.2-0.4,0.3-0.8,0.5-1.3c0.5,1.1,0.6,2.4,0.5,3.7l2.6,6C70.2,65,79.1,56,82.1,44.6c0,0,0,0,0,0c0.1-0.5,0.3-1.1,0.4-1.6c0,0,0-0.1,0-0.1c0.3-1.6,0.5-3.3,0.6-5c0,0,0,0,0,0c0-0.5,0-1,0-1.6C83.1,35.9,83.1,35.5,83.1,35.2z M22.4,37.6c0-0.3,0-0.6,0-0.8c0.6,0.3,1,0.7,1.4,1C23.4,37.9,23,37.8,22.4,37.6z M39.7,58.4c-2-0.8-0.8-4.6-2.7-5.3c1.1,1-2.2,2.4-0.6,6c0.1,0.5,0.3,1.1,0.6,1.8c-6-3.1-10.6-8.4-13-14.8c3,0.5,6,0.5,8.6,0.1c1-0.1,3.7-1,4,0.4c-0.5,0.6-4.3,1.3-4,4.4c0.4-1.4,6.2-0.5,8.6-1.3c0.1,0.9,0.4,1.4,0.4,2.5C41.8,53.9,41.8,57.3,39.7,58.4z M54.7,34.5c0,0-1.5-3.9-1.1-5c-1.2-1.2,0.5-2.9,2.2-1.3c-0.9-2-3.5-5.2-5.5-5.9c-1.3,0.1-2.9-0.8-4.2-1.5c-1.1-0.2-2.6,0.4-2.8,1.6c0.3-0.3,1.2-0.2,1.6,0.3c4.7,1.1,0.4,11.2,0.3,11.2c-2.8-3.1-8.8-9.2-15.6-16.3C34.8,12.1,42,8.7,50,8.7c8.2,0,15.5,3.5,20.6,9.2C63.6,25.1,57.6,31.3,54.7,34.5z M61.6,61.4c0.2-1.2,0.7-2.7,1.3-3.9c1.1-1.8-1.6-2.4-1.6-4.7c-1.2,2-0.1,4.6-2.2,4.7c-2.5,0-1.9-6.6-1.3-7.9c1,1.7,9,0.3,9.5,1.9c0.3-3.1-3.5-3.8-4-4.4c0.3-1.4,3-0.5,4-0.4c2.5,0.4,5.4,0.4,8.3,0C73,53.2,68,58.5,61.6,61.4z M77.6,38.2c-0.6,0.2-1,0.3-1.3,0.2c0.3-0.4,0.8-0.7,1.3-1C77.6,37.6,77.6,37.9,77.6,38.2z"/></svg>'});
     // All keys are underground, so all have an arrow down
-    iconKey = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M61.9,9c-9.3,0-16.8,7.5-16.8,16.8c0,1.4,0.2,2.7,0.5,3.9l0,0l-4.5,3.4l2.3,2.4L24,52.7v3.5l20.7-18.8l1,1.1L24,58.6v2.1l11.6-2.4v-4.9l4.7,0.2L40.2,50h1.3l0-1.4l4.6,0v-4.5l3.8-1.4l2.7,2.3l3.4-3.6l0,0c1.8,0.7,3.8,1.1,5.8,1.1c9.3,0,16.8-7.5,16.8-16.8C78.7,16.5,71.2,9,61.9,9z M61.9,39.8c-7.7,0-14-6.3-14-14s6.3-14,14-14s14,6.3,14,14S69.7,39.8,61.9,39.8z"/><path style="fill:#FFFFFF;" d="M61.9,13.7c-6.7,0-12.1,5.4-12.1,12.1c0,6.7,5.4,12.1,12.1,12.1c6.7,0,12.1-5.4,12.1-12.1C74,19.1,68.6,13.7,61.9,13.7z M65,27.2c-2.4,0-4.4-2-4.4-4.4s2-4.4,4.4-4.4c2.4,0,4.4,2,4.4,4.4S67.5,27.2,65,27.2z"/><polygon style="fill:#E7E514;" points="97.2,4.6 81.7,20.1 66.2,4.6"/></svg>'});
+    iconKey = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M61.9,9c-9.3,0-16.8,7.5-16.8,16.8c0,1.4,0.2,2.7,0.5,3.9l0,0l-4.5,3.4l2.3,2.4L24,52.7v3.5l20.7-18.8l1,1.1L24,58.6v2.1l11.6-2.4v-4.9l4.7,0.2L40.2,50h1.3l0-1.4l4.6,0v-4.5l3.8-1.4l2.7,2.3l3.4-3.6l0,0c1.8,0.7,3.8,1.1,5.8,1.1c9.3,0,16.8-7.5,16.8-16.8C78.7,16.5,71.2,9,61.9,9z M61.9,39.8c-7.7,0-14-6.3-14-14s6.3-14,14-14s14,6.3,14,14S69.7,39.8,61.9,39.8z"/><path style="fill:#FFFFFF;" d="M61.9,13.7c-6.7,0-12.1,5.4-12.1,12.1c0,6.7,5.4,12.1,12.1,12.1c6.7,0,12.1-5.4,12.1-12.1C74,19.1,68.6,13.7,61.9,13.7z M65,27.2c-2.4,0-4.4-2-4.4-4.4s2-4.4,4.4-4.4c2.4,0,4.4,2,4.4,4.4S67.5,27.2,65,27.2z"/></svg>'});
     iconLockedbox = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M27.2,28.7v34.2l1.2,1.2h43.3l1.2-1.2V28.7H27.2z M56.7,52.7l-2.2,2.2h-9.1l-2.2-2.1v-14l2.2-2.1h9.1l2.2,2.2V52.7z"/><polygon style="fill:#FFFFFF;" points="31.8,25.1 39.7,25.1 39.7,16.1 40.9,15 59,15 60.2,16.2 60.2,25.1 69.4,25.1 69.4,11.5 65.3,7.6 36.4,7.6 31.8,11.7 "/></svg>'});
     iconAirdrop = new DropIcon({html:'<svg class="icon" version="1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100"><path d="M50,0C30.1,0,14,17.1,14,36c0,26.6,35.3,63.6,36,64c0.7,0.3,36-37.3,36-64C86,16.1,69.9,0,50,0z"/><path style="fill:#FFFFFF;" d="M78.8,33.5C78.8,18.4,65.9,6.2,50,6.2c-15.9,0-28.8,12.2-28.8,27.2l20.2,17.2l-5.6,2.6l-4.2,2.4l0.1,16l3.3,3.2h30l2.8-2.8V55.4l-3.9-2.5l-5.4-2L78.8,34c0-0.1,0-0.1,0-0.2l0,0h0C78.8,33.7,78.8,33.6,78.8,33.5z M24.9,32.9l0.5-3.3l2-3.2l3.4-0.9l3.1,0.9l2.8,3.3l7.3,18.5L24.9,32.9z M42.1,34l1.8-2.8l6.1-1.8l6.4,1.5l2.5,1.9l-8.6,20L42.1,34z M75.2,33.4L55.8,49.3l8.5-20.6l2.3-2.2l3.5-1.1l4.1,2.6l1.4,3.8L75.2,33.4z"/></svg>'});
 
@@ -296,6 +299,8 @@ permalink: map.html
         //{latlng: [71.98714282145725, -183.515625]},
 
         // Official on map
+        {latlng: [12.678926332856335, -125.8643526095643]},
+        {latlng: [10.859201743387619, -154.83688038615355]},
         {latlng: [-20.869077732018464, -24.279785156250004]},
         {latlng: [-20.999051467816, -9.807128123939039]},
         {latlng: [-23.404782752464353, 125.05076720572885]},
@@ -639,6 +644,14 @@ permalink: map.html
         //{latlng: , z: types.z.g, info: ''},
         //XWEP
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-41.96765920367817, 85.48242860745759], z: types.z.a, info: 'On this walk way, in the corner, access over the stairs southwest'},
+        {latlng: [-45.51558428850718, 197.99872984658327], z: types.z.g, info: 'In the shovel of the orange construction equipment here'},
+        {latlng: [14.974503884117922, -101.29390658681034], z: types.z.g, info: 'Inside this small building, accessible when you rescue a hostage here.'},
+        {latlng: [7.2120798351476045, -124.01367962013795], z: types.z.u, info: 'Off big room, northwest corner, upper area.'},
+        {latlng: [1.1271253404990516, -119.15460103810095], z: types.z.u, info: 'Lower level of big underground room'},
+        {latlng: [-7.719704342453175, -117.20924450989797], z: types.z.g, info: 'Behind locked fence, accessible on ground level from south.'},
+        {latlng: [-4.14043408290768, -112.16152276050533], z: types.z.a, info: 'On roof'},
+        {latlng: [-18.7336640209701, -119.17970299027587], z: types.z.g, info: 'Inside contaminated building'},
         {latlng: [-22.510527145715187, -82.5007315803178], z: types.z.a, info: 'Inside building. Access to building in the southeast corner, south wall, then go to the upper floor by using a buton next to the door in the west wall.'},
         {latlng: [-17.886750381276645, -105.13482421987469], z: types.z.g, info: 'Accessible from the south'},
         {latlng: [19.94030417116262, -129.12452047656828], z: types.z.g, info: 'Get on the roof of the building two buildings west, there you can get on a brigde to the western building, and through that to another bridge to the building south, which allows you to rappel down.'},
@@ -934,6 +947,25 @@ permalink: map.html
         //{latlng: , z: types.z.g, info: ''},
         //XGEAR
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [9.56175112761377, -120.4242047745271], z: types.z.u, info: 'In locked sideroom underground'},
+        {latlng: [0.6086313996854923, -121.80322905349058], z: types.z.u, info: 'Inside locked room, upper level'},
+        {latlng: [-0.4174767746707514, -123.8490550912975], z: types.z.u, info: 'Side room, lower level'},
+        {latlng: [4.7581931353484554, -123.09080482222414], z: types.z.u, info: 'On some pipes in the big room'},
+        {latlng: [-1.1468949852742145, -122.68653219531826], z: types.z.g, info: ''},
+        {latlng: [1.867345112921926, -119.7641540942265], z: types.z.a, info: 'On roof of small building'},
+        {latlng: [-4.854531790711739, -110.38182987547647], z: types.z.g, info: ''},
+        {latlng: [-7.589043147534157, -115.58355451750155], z: types.z.g, info: 'Behind locked fence, accessible on ground level from south.'},
+        {latlng: [15.834532515685163, -159.48596074431748], z: types.z.u, info: 'Under bridge'},
+        {latlng: [12.477338360719742, -157.33741363326914], z: types.z.g, info: 'Inside this small locked fence shed.'},
+        {latlng: [13.842347140026602, -145.13391635093578], z: types.z.g, info: 'On the ledge, above the tunnel'},
+        {latlng: [-8.68963906812765, -121.38268184533545], z: types.z.g, info: ''},
+        {latlng: [-5.156598738411155, -120.04097218518417], z: types.z.g, info: ''},
+        {latlng: [-5.6072396781615135, -115.54540409422647], z: types.z.g, info: ''},
+        {latlng: [-15.752077138326655, -121.21874696898824], z: types.z.g, info: 'In this courtyard you can get to by going through the contaminated building to the east'},
+        {latlng: [-18.687878686034182, -117.43506802200235], z: types.z.g, info: 'Inside contaminated building'},
+        {latlng: [-16.884455125563683, -115.63332637021229], z: types.z.a, info: 'Inside contaminated building, upper floor'},
+        {latlng: [-30.531983293032024, -104.10642848135602], z: types.z.g, info: ''},
+        {latlng: [-21.072196921200153, -116.12653774744017], z: types.z.g, info: ''},
         {latlng: [-21.356920323103623, -83.44357518515838], z: types.z.a, info: 'Accessible through a window in the south wall, eastern end of the wall. Use firealarm in the western wall to go upstairs.'},
         {latlng: [-22.41712207598508, -85.82954648773843], z: types.z.g, info: 'Inside building, accessible through a window in the south wall, eastern end of the wall.'},
         {latlng: [-22.30739321819648, -81.6525969836603], z: types.z.g, info: 'Inside building, accessible through a window in the south wall, eastern end of the wall.'},
@@ -1563,6 +1595,67 @@ permalink: map.html
         //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
         //XSMALL
         //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [14.832239751607517, -100.74467798379618], type: types.l.lb, z: types.z.g, info: 'Inside this small building, accessible when you rescue a hostage here.'},
+        {latlng: [11.65869267308947, -127.85844120571024], type: types.l.lb, z: types.z.u, info: ''},
+        {latlng: [10.513737747075986, -120.10565741115212], type: types.l.lb, z: types.z.u, info: 'In locked sideroom'},
+        {latlng: [5.961382989013291, -119.83665274848474], type: types.l.lb, z: types.z.u, info: ''},
+        {latlng: [5.703447982149503, -124.09059166215087], type: types.l.lb, z: types.z.u, info: ''},
+        {latlng: [-8.88507095955666, -119.33254798478708], type: types.l.sb, z: types.z.u, info: 'In tunnel'},
+        {latlng: [1.4456457602987522, -120.79242456967008], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [3.2019457273770655, -122.1987526914835], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-5.659718554577286, -107.2488185242187], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-6.830442491601543, -111.39252559214886], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-9.25393615681445, -113.5458775556347], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-8.554948026680757, -118.85449555372881], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-9.812998715085683, -114.93898033402587], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-8.993600464280018, -125.9647939129436], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-7.0223943347393565, -125.99675798231102], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [6.103412690758421, -123.1314363889477], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [12.82893998578671, -125.5458052461893], type: types.l.sb, z: types.z.u, info: 'In tunnel'},
+        {latlng: [16.23154929421935, -144.34068073826634], type: types.l.lb, z: types.z.u, info: 'In tunnel'},
+        {latlng: [15.419792109462364, -150.12595097353775], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [15.114549635166794, -161.59496397769664], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [11.14821902982761, -147.74584254404343], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [2.9562058322881732, -124.59953259405474], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [2.758697901166017, -126.9282236642442], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [0.2548821059440866, -125.99579438307221], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-3.4037578795775887, -118.74170207863865], type: types.l.lb, z: types.z.u, info: 'On the ramp into the parking garage'},
+        {latlng: [-4.455950571647079, -124.1068110217835], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-5.357896968935792, -122.99418103380408], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-7.519337971753754, -120.73974609375001], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-5.554754747378652, -116.5738456331387], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-3.201945057871628, -115.40278000005289], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-3.0527538215744703, -113.89305697799767], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-4.1754986014790765, -111.53318763472414], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-2.4689619796634865, -111.06750336847816], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-6.516181133736678, -117.70319774428242], type: types.l.sb, z: types.z.i, info: 'In parking garage'},
+        {latlng: [-14.781256318785164, -127.75341342223238], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-16.70985956146307, -121.37235452436897], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-16.009912026272684, -118.75341931664738], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-18.87510275035649, -118.47218009279707], type: types.l.sb, z: types.z.g, info: 'Inside building'},
+        {latlng: [-17.99127390728239, -117.11422683194826], type: types.l.g, z: types.z.a, info: 'Isnide building'},
+        {latlng: [-18.024706824109305, -115.3388860440047], type: types.l.sb, z: types.z.a, info: 'Inside building'},
+        {latlng: [-17.031575238742068, -113.79208209814348], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-33.87041248876372, -111.29779869208876], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-34.15818158428633, -106.09717739700237], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-30.441093993360646, -104.75988920496071], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-28.655887206532455, -100.46332031137534], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-29.017748018496047, -98.77586880756361], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-23.22923167332571, -113.86664062387534], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-25.403582853182357, -114.0526847020375], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-26.395806355470693, -119.86533068288402], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-25.582083161843293, -115.04127996768399], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-28.130127737874016, -118.03269598724533], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-21.66151207393993, -117.11425781250001], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-22.9664842753189, -121.28920191248285], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-24.635032450187026, -118.01585314400897], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-23.32208001137844, -124.91455078125], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-17.55186630372473, -126.07481243216934], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-18.18760655249461, -125.7714379041724], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-10.906671797700366, -122.80504798647408], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-12.443013971840157, -119.5312035291724], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-10.30194770064169, -111.44718682338024], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-12.736800512460297, -108.67016130149885], type: types.l.lb, z: types.z.g, info: ''},
         {latlng: [-20.48465660094947, -83.16347319322522], type: types.l.lb, z: types.z.a, info: 'On balcony'},
         {latlng: [-21.722762257629462, -82.59089439765054], type: types.l.rs, z: types.z.a, info: 'Inside building'},
         {latlng: [-22.29926149974121, -84.49634529820284], type: types.l.lb, z: types.z.g, info: 'Inside building'},
@@ -3332,11 +3425,18 @@ permalink: map.html
     var backpacktrophies = L.layerGroup(backpacktrophyMarkers);
     mapLayers.push(backpacktrophies);
 
-
     var markersSpecialammo = [
         //{latlng: , type: types.ammo.e, z: types.z.g, info: ''},
         // XSPECIAL
         //{latlng: , type: types.ammo.e, z: types.z.g, info: ''},
+        {latlng: [-0.9337965488500171, -119.59716796875001], type: types.ammo.i, z: types.z.u, info: 'Upper level outside big underground room'},
+        {latlng: [-8.233237111274553, -103.38231259635697], type: types.ammo.i, z: types.z.g, info: ''},
+        {latlng: [5.85210135274876, -123.41703057680111], type: types.ammo.e, z: types.z.g, info: ''},
+        {latlng: [10.422985750388454, -139.27028606807468], type: types.ammo.s, z: types.z.g, info: ''},
+        {latlng: [11.187022617366194, -131.13284348055174], type: types.ammo.e, z: types.z.g, info: ''},
+        {latlng: [-8.363693315256553, -113.42613550098436], type: types.ammo.s, z: types.z.u, info: 'In parking garage'},
+        {latlng: [-34.39059313536814, -111.83200902726654], type: types.ammo.h, z: types.z.a, info: 'On container'},
+        {latlng: [-13.073056362128858, -115.48944302069025], type: types.ammo.s, z: types.z.g, info: ''},
         {latlng: [-27.807984756239158, -84.15525794722416], type: types.ammo.h, z: types.z.g, info: ''},
         {latlng: [-22.5572048836762, -78.65328259949068], type: types.ammo.e, z: types.z.g, info: 'In a corner between a container and a tree'},
         {latlng: [-26.08441457758637, -99.6789473329871], type: types.ammo.i, z: types.z.g, info: ''},
@@ -3466,6 +3566,7 @@ permalink: map.html
     // XAMMO
     var markersAmmo = [
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-24.826624956562156, -125.41993736527587], z: types.z.g, info: ''},
         {latlng: [-25.863177023065294, -94.28013199965652], z: types.z.g, info: ''},
         {latlng: [-2.7455307188019398, -89.29246161224533], z: types.z.u, info: 'In building'},
         {latlng: [27.14127929158311, -134.40673828125003], z: types.z.a, info: 'On roof'},
@@ -3654,6 +3755,11 @@ permalink: map.html
     var markersGrenade = [
         //XGREN
         // {latlng: , z: types.z.g, info: ''},
+        {latlng: [-10.734019846049346, -125.13997541875075], z: types.z.g, info: ''},
+        {latlng: [10.422985750388454, -143.62010523691916], z: types.z.g, info: ''},
+        {latlng: [4.254386348843064, -130.28902545742474], z: types.z.g, info: ''},
+        {latlng: [0.9711445003540589, -127.09862338424767], z: types.z.g, info: ''},
+        {latlng: [-3.5879838596761653, -114.49076239462], z: types.z.g, info: ''},
         {latlng: [-27.792424774522335, -94.26541891931679], z: types.z.g, info: ''},
         {latlng: [6.620957270326323, -111.27389816692708], z: types.z.g, info: ''},
         {latlng: [13.36931201512351, -87.92024717079326], z: types.z.a, info: 'On scaffolding in locked fence area'},
@@ -3753,6 +3859,7 @@ permalink: map.html
     var markersArmor = [
         //XARMOR
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-25.03384820781455, -118.50729862978773], z: types.z.g, info: ''},
         {latlng: [-24.974108177719977, -101.54001144817708], z: types.z.g, info: ''},
         {latlng: [-9.592083330873136, -90.72512863680176], z: types.z.g, info: ''},
         {latlng: [-5.760290717550883, -96.00294854400468], z: types.z.g, info: ''},
@@ -3888,7 +3995,7 @@ permalink: map.html
         {latlng: [37.0884868125932, -181.48535136133432], faction: 'Outcasts', info:'Next to the building'},
         {latlng: [26.48237400788676, -124.60693359375001], faction: 'Outcasts', info:'Inside a blue container on top of a truck, south end is open.'},
         {latlng: [-19.078731026890768, -70.37404609165547], faction: 'Outcasts', info:'On a small wall next to a red statue.'},
-        {latlng: [-0.7316696333171644, -121.69116217643024], faction: 'Outcasts', info:'Underground, off the large room, through a locked door in the upper level.'},
+        {latlng: [-0.7316696333171644, -121.69116217643024], faction: 'Outcasts', z: types.z.u, info:'Underground, off the large room, through a locked door in the upper level.'},
         {latlng: [12.959590902781429, -280.6105955690146], faction: 'Outcasts', info:'Inside Roosevelt Island stronghold. Underground in the tunnel, after defeating the guards. In a corner to your right when you get into the larger room underground.'},
         {latlng: [11.389640359155097, -299.8959962278605], faction: 'Outcasts', info:'Inside Roosevelt Island stronghold. When you walk along the western shore, after climbing the wind, there is a spot where you can go through the wall to the east, there are some loose wooden boards you can just walk through.'},
         {latlng: [-18.75657803501746, -118.00526629624032], faction: 'Outcasts', info:'Inside the building between some shelves, just west of where the contaminated area ends'},
@@ -3972,6 +4079,64 @@ permalink: map.html
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
         //XX
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [11.182713264323196, -126.82624158124143], type: types.mat.f, z: types.z.u, info: ''},
+        {latlng: [7.59993011543621, -124.57630489024228], type: types.mat.d, z: types.z.u, info: ''},
+        {latlng: [8.607092614341772, -121.25901855440634], type: types.mat.t, z: types.z.u, info: ''},
+        {latlng: [10.239249140917776, -119.01926656975596], type: types.mat.f, z: types.z.u, info: 'In locked sideroom'},
+        {latlng: [9.33416799133642, -120.13861058667366], type: types.mat.t, z: types.z.u, info: 'In locked sideroom'},
+        {latlng: [7.606463692416506, -117.94173255378746], type: types.mat.t, z: types.z.u, info: ''},
+        {latlng: [5.838987847115049, -117.9822164600647], type: types.mat.d, z: types.z.u, info: ''},
+        {latlng: [3.682276744934014, -122.1482105327653], type: types.mat.f, z: types.z.u, info: ''},
+        {latlng: [1.252341676699629, -119.42242843980223], type: types.mat.d, z: types.z.u, info: 'Big room, upper level'},
+        {latlng: [3.71078200434872, -119.31383048295346], type: types.mat.t, z: types.z.u, info: ''},
+        {latlng: [0.786597162793021, -117.84745840907948], type: types.mat.f, z: types.z.u, info: ''},
+        {latlng: [-1.9244428778714007, -117.3779219423621], type: types.mat.f, z: types.z.u, info: ''},
+        {latlng: [-2.3262651164385266, -120.7353407863503], type: types.mat.t, z: types.z.u, info: ''},
+        {latlng: [-3.5792120747885754, -122.22144303884288], type: types.mat.d, z: types.z.u, info: ''},
+        {latlng: [-7.192461442351452, -121.50220804177474], type: types.mat.f, z: types.z.u, info: ''},
+        {latlng: [-0.6613618972411772, -122.99109269756146], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-1.072202101051898, -118.7824306271949], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [3.188783166097893, -121.68231007309123], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-9.56608352071284, -111.8452505313987], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-8.798225459016345, -114.7807287128376], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [16.484549537255266, -147.56389951641773], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [14.136572400250664, -153.86195212197313], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [16.615137799987075, -160.78282933770467], type: types.mat.d, z: types.z.u, info: 'Under bridge'},
+        {latlng: [12.906052961305743, -155.88747391032095], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [11.837243841673548, -141.47316944977823], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [11.28615813841224, -138.3475971534713], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [10.258707870988614, -131.93273201667165], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [8.08533582612812, -139.02113550623287], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [8.289771968565313, -128.81753906081303], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [9.41871628118294, -133.44427700740832], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [8.381082511231728, -131.7174185067093], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [3.7283238376754793, -129.51552263009248], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [2.1967272417616712, -129.93309604049767], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-3.4476246666468526, -121.70748787557805], type: types.mat.d, z: types.z.g, info: 'Hidden in the garbage in front of the dark truck here'},
+        {latlng: [-5.637852598770853, -120.65183997847414], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-2.850873432410561, -111.11886718225152], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-2.148421879219238, -110.65752272494986], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-7.88514794763655, -111.80044550858796], type: types.mat.t, z: types.z.u, info: 'In parking garage'},
+        {latlng: [-7.144499514993179, -112.28375874957067], type: types.mat.t, z: types.z.u, info: 'In parking garage'},
+        {latlng: [-8.163641608480436, -118.96875405072132], type: types.mat.f, z: types.z.u, info: 'In garage'},
+        {latlng: [-8.46802541923368, -114.62687364826002], type: types.mat.f, z: types.z.u, info: 'In garage'},
+        {latlng: [-6.891526417000318, -117.21091325190588], type: types.mat.f, z: types.z.u, info: 'In garage'},
+        {latlng: [-18.725341144781602, -115.85302061129241], type: types.mat.d, z: types.z.g, info: 'Inside building'},
+        {latlng: [-15.525674301986944, -117.05704202661832], type: types.mat.f, z: types.z.a, info: 'Inside building'},
+        {latlng: [-15.986678401524589, -112.41201643334482], type: types.mat.t, z: types.z.a, info: 'On scaffolding'},
+        {latlng: [-17.94946986456844, -113.61177969889178], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-18.066484421913934, -109.92255303478635], type: types.mat.t, z: types.z.a, info: 'On scaffolding'},
+        {latlng: [-33.54139466898275, -111.48489089557295], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-22.853143703187104, -117.87445918589889], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-24.88244971197146, -114.54786974857062], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-27.063039450083767, -113.51071120694826], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-20.220965150298447, -119.33781653984946], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-20.747895147322332, -115.14549905468175], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-25.03384820781455, -117.5448686717148], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-14.528287453657686, -124.29892527678433], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-12.71322345591312, -124.93602000353425], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-13.158654846928346, -116.78466796875001], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-13.244222139619257, -112.9190953300094], type: types.mat.t, z: types.z.g, info: ''},
         {latlng: [-25.84735994267423, -88.47070935463206], type: types.mat.t, z: types.z.g, info: ''},
         {latlng: [-28.273422465120287, -74.00830414747881], type: types.mat.f, z: types.z.g, info: ''},
         {latlng: [-27.679636596769633, -72.26745588122132], type: types.mat.d, z: types.z.a, info: 'On platform'},
@@ -6204,6 +6369,19 @@ permalink: map.html
     var markersComponent = [
         // XCOMPONENT
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [10.368958499166258, -120.42332570137152], z: types.z.u, info: 'In locked sideroom'},
+        {latlng: [-6.254145115119918, -126.9008856387076], z: types.z.g, info: ''},
+        {latlng: [8.246283416428325, -129.80613432645947], z: types.z.g, info: ''},
+        {latlng: [-8.167993177231883, -120.6914035542053], z: types.z.g, info: ''},
+        {latlng: [-6.84353313394062, -120.87597992872882], z: types.z.g, info: ''},
+        {latlng: [-4.653080586616258, -115.00788792601871], z: types.z.u, info: 'In parking garage'},
+        {latlng: [-6.018198464057756, -116.20020137452354], z: types.z.u, info: 'In parking garage'},
+        {latlng: [-8.398472919778325, -112.8646928904648], z: types.z.u, info: 'In parking garage'},
+        {latlng: [-7.240416308045778, -111.92878838887937], z: types.z.u, info: 'In parking garage'},
+        {latlng: [-4.850154746656815, -112.08603969644136], z: types.z.u, info: 'In parking garage'},
+        {latlng: [-17.679612063711332, -118.43952173534261], z: types.z.g, info: ''},
+        {latlng: [-15.063636793821672, -113.39648100877123], z: types.z.a, info: 'On roof'},
+        {latlng: [-15.864127223546253, -122.87095433751718], z: types.z.g, info: ''},
         {latlng: [-19.907251694953377, -85.94980838847724], z: types.z.g, info: ''},
         {latlng: [-28.516969440401045, -105.20726932860147], z: types.z.g, info: ''},
         {latlng: [-29.330467461503886, -108.76244982397766], z: types.z.g, info: ''},
@@ -6367,6 +6545,13 @@ permalink: map.html
     var markersFood = [
         //XFOOD
         // {latlng: , z: types.z.g, info: ''},
+        {latlng: [-0.722880910093898, -122.70067770167806], z: types.z.g, info: ''},
+        {latlng: [-7.94173295685305, -105.02926589444826], z: types.z.g, info: ''},
+        {latlng: [-8.824281734071072, -114.28857961033948], z: types.z.g, info: ''},
+        {latlng: [-10.01212955790814, -120.01023504974533], z: types.z.g, info: ''},
+        {latlng: [2.714803716061042, -128.9267982213041], z: types.z.g, info: ''},
+        {latlng: [-8.86336203355168, -122.95898437500001], z: types.z.g, info: ''},
+        {latlng: [-30.202113679097216, -104.32617187500001], z: types.z.g, info: ''},
         {latlng: [-18.206393135293276, -85.157274381225], z: types.z.g, info: ''},
         {latlng: [-21.877812199401706, -80.94726562500001], z: types.z.g, info: ''},
         {latlng: [-23.636473916295632, -106.23863979550346], z: types.z.g, info: ''},
@@ -6544,6 +6729,15 @@ permalink: map.html
     var markersWater = [
         // XWATER
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-7.453981942547124, -107.33199690321948], z: types.z.g, info: ''},
+        {latlng: [-8.424558065974914, -109.71822130994593], z: types.z.g, info: ''},
+        {latlng: [-4.9683743283767665, -127.68835432575055], z: types.z.g, info: ''},
+        {latlng: [13.239942888371825, -137.446877022549], z: types.z.g, info: ''},
+        {latlng: [-15.760536148501288, -120.91990958334443], z: types.z.g, info: ''},
+        {latlng: [-23.523697906932956, -110.44980417834816], z: types.z.g, info: ''},
+        {latlng: [-22.857192538327613, -111.04296133773605], z: types.z.g, info: ''},
+        {latlng: [-23.366461792135436, -121.73289803220294], z: types.z.g, info: ''},
+        {latlng: [-22.865291700364434, -121.68464001874143], z: types.z.g, info: ''},
         {latlng: [-19.163848797105057, -82.59184544854908], z: types.z.g, info: ''},
         {latlng: [-19.65086480236131, -89.87691305141297], z: types.z.g, info: ''},
         {latlng: [-22.04898549392099, -89.73196154328997], z: types.z.g, info: ''},
@@ -6974,6 +7168,10 @@ permalink: map.html
     }
 
     division2map.on('overlayadd overlayremove', saveActiveLayers);
+
+    // Experimental, Division 2 clock
+    // var clock = new L.Control.Division2Clock();
+    // clock.addTo(division2map);
 
     // Debug, to easy add a marker
     division2map.on('click', function (e) {

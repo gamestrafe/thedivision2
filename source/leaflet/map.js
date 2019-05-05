@@ -10,7 +10,6 @@ L.Control.AdvancedLayers = L.Control.extend({
         autoZIndex: true,
         groupCheckboxes: true
         //exclusiveGroups: [],
-
     },
 
     initialize: function (groupedOverlays, options) {
