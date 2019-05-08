@@ -424,6 +424,7 @@ permalink: map.html
         L.marker([0.45740039772472035, -121.21878789202565], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Underground, lcoked side room off big room here. You can enter this trhough a hole in the west wall of the garage that is a bit south.</p>'),
 
         // Foggy Bottom
+        L.marker([-0.4460416569658379, -177.98730455338958], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>To get here, climb over the central part on the eastern building.</p>'),
         L.marker([-10.755569450188219, -209.41259779036048], {title: 'SHD Tech', icon: iconShdtech }).bindPopup('<h5>SHD Tech</h5><p>Behind a fence you can get into by scaling the truck in the southeast.</p>'),
 
         // Not assigned to area
@@ -642,8 +643,11 @@ permalink: map.html
         {latlng: [63.10635619630118, -246.07538114652692], info: ''},
         // General overworld
         //{latlng: , z: types.z.g, info: ''},
-        //XWEP
+        //     XWEP
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-1.4566314138594976, -174.38378892838958], z: types.z.g, info: ''},
+        {latlng: [-18.737826575350265, -169.13012735545638], z: types.z.g, info: 'Inside building, door in the western wall.'},
+        {latlng: [7.323240701973127, -157.81201198697093], z: types.z.g, info: 'Inside the fence area. Access over the containersd ot the east.'},
         {latlng: [-41.96765920367817, 85.48242860745759], z: types.z.a, info: 'On this walk way, in the corner, access over the stairs southwest'},
         {latlng: [-45.51558428850718, 197.99872984658327], z: types.z.g, info: 'In the shovel of the orange construction equipment here'},
         {latlng: [14.974503884117922, -101.29390658681034], z: types.z.g, info: 'Inside this small building, accessible when you rescue a hostage here.'},
@@ -947,6 +951,22 @@ permalink: map.html
         //{latlng: , z: types.z.g, info: ''},
         //XGEAR
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-29.600207022708876, -29.258789196610454], z: types.z.a, info: 'On roof, you can climb up on the north side here'},
+        {latlng: [-29.470210325268777, -39.41894531250001], z: types.z.a, info: 'On top of the roof of this small building'},
+        {latlng: [-23.41889728311754, -174.92431724444032], z: types.z.g, info: ''},
+        {latlng: [-4.694689838276806, -173.83227537386122], z: types.z.g, info: ''},
+        {latlng: [-3.37524399759782, -175.80322265625], z: types.z.g, info: ''},
+        {latlng: [-2.65334921725874, -172.43920885026458], z: types.z.g, info: ''},
+        {latlng: [-13.688688747043662, -172.8017580136657], z: types.z.g, info: ''},
+        {latlng: [-18.52545044873296, -168.87744113802913], z: types.z.g, info: 'Inside building, door in the western wall.'},
+        {latlng: [-21.12549763660628, -156.79687500000003], z: types.z.g, info: ''},
+        {latlng: [-4.0220834516009765, -167.72168062627318], z: types.z.g, info: ''},
+        {latlng: [7.887323901149566, -152.727538459003], z: types.z.a, info: 'On scaffolding'},
+        {latlng: [2.00788953878515, -156.884765625], z: types.z.g, info: 'On the east side of the tall wall structure here'},
+        {latlng: [-17.736129992281906, -144.33398410677913], z: types.z.a, info: 'Northwest corner on the roof'},
+        {latlng: [-23.905926927314724, -138.97705078125003], z: types.z.g, info: ''},
+        {latlng: [-14.281418358836971, -141.53466783463958], z: types.z.g, info: ''},
+        {latlng: [-38.14146771098384, -73.6686890431418], z: types.z.g, info: ''},
         {latlng: [9.56175112761377, -120.4242047745271], z: types.z.u, info: 'In locked sideroom underground'},
         {latlng: [0.6086313996854923, -121.80322905349058], z: types.z.u, info: 'Inside locked room, upper level'},
         {latlng: [-0.4174767746707514, -123.8490550912975], z: types.z.u, info: 'Side room, lower level'},
@@ -1480,10 +1500,12 @@ permalink: map.html
 
 
     // Crates that have been airdropped and now hang above somewhere. Shoot them to get to the loot
-    // XAIR
     var markersAirdrop = [
         //{latlng: , type:'', info: ''},
+        //     XAIR
         //{latlng: , type:'', info: ''},
+        {latlng: [-24.37912293288843, -168.96533243358138], type:'Materials', info: 'Hanging off a tree on the west side.'},
+        {latlng: [-30.1755241978974, -32.32615975095293], type:'Materials', info: 'Hanging in the tree, southeast from the canopy of the parachute where the straps lead.'},
         {latlng: [-23.443088931121775, -76.66259765625], type:'Materials', info: 'Hanging from the southwest of a tree. It\'s a bit hard to see in the foliage.'},
         {latlng: [14.166404354723207, -94.69154465566018], type:'Materials', info: 'Hanging from south side of a tree, very low, below the branches.'},
         {latlng: [64.92912906883674, -199.24183661524452], type:'Materials', info: 'Hanging from this tree, on its north side'},
@@ -1593,8 +1615,67 @@ permalink: map.html
         {latlng: [77.26659212172264, -231.18896695020163], type: types.dz.ic, z: types.z.g, info: 'At the bottom of some stairs here'},
         // Overworld
         //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
-        //XSMALL
+        //     XSMALL
         //{latlng: , type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-29.002375575405285, -30.238769799470905], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-27.68352808378776, -43.87060560286046], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-23.61634258907147, -178.35205078125], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-4.377084602110467, -178.47949217073622], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-3.2238868586214986, -182.27636799216273], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-4.477856485570586, -185.83593763411048], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-7.349391640629064, -183.34863267838958], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-8.29412381103433, -176.85791082680228], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-11.514475593664901, -173.11376966536045], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-15.496032414238622, -175.3505861386657], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-19.46866400646848, -169.69043008983138], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-20.48054011837146, -170.09033203125003], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-24.27901736955956, -163.5468752682209], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-24.198873856849083, -156.2343741953373], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-24.37912415441217, -154.4721682369709], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-22.175196319589304, -156.02783203125003], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-20.977853291947405, -158.96777316927913], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-13.530655179752056, -162.70751953125003], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-16.606716293097023, -163.29638779163363], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-10.87646697033625, -162.4614255130291], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-8.537565350804018, -167.68652357161048], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-7.732765062729807, -170.33203125], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-3.162455530237848, -161.01562500000003], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [18.300294352838637, -161.78466796875003], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [10.431632170325155, -157.01220676302913], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [9.132471668938056, -157.06933680921796], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [7.763245811914323, -158.1064447760582], type: types.l.sb, z: types.z.a, info: 'On roof'},
+        {latlng: [4.342029102259074, -158.30419868230823], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [1.0897788406662963, -156.76611274480823], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-6.568572626021289, -157.8999019414187], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-12.704650508287893, -153.8481442630291], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-12.777518193023768, -148.97021491080525], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-15.88948946150012, -148.9350588619709], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-13.513564911380879, -129.96826171875003], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-23.314010178764136, -145.7709946855903], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-17.42612647307398, -145.83691265434027], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-22.557206122182183, -141.21826171875003], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-18.646245142670608, -142.80468709766865], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-25.224821389985188, -146.99706964194777], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-25.780107118422233, -142.66406223177913], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-25.60190226111574, -137.17529296875003], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-25.52658051633022, -133.5805669426918], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-25.52261464762328, -130.6582023203373], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-20.48465644391185, -133.85742120444775], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-20.538163639414027, -137.42578178644183], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-15.050905707724771, -141.63574218750003], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-13.842345837870836, -141.95654310286048], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-15.606107700738455, -141.09960950911048], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-12.683214911818654, -144.71191406250003], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-15.144248870935591, -140.77441412955525], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-13.205721187988942, -133.68164062500003], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-12.473050925097164, -131.56347602605823], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-10.621737595211037, -132.9257820546627], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-11.187024590799703, -142.8706057369709], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-9.436057392514217, -142.2377935051918], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-9.42738661503235, -149.77441459894183], type: types.l.lb, z: types.z.g, info: ''},
+        {latlng: [-8.898096956894667, -151.21582031250003], type: types.l.rs, z: types.z.g, info: ''},
+        {latlng: [-9.761032607500931, -158.0361330136657], type: types.l.sb, z: types.z.g, info: ''},
+        {latlng: [-10.025112910894103, -153.4482416510582], type: types.l.lb, z: types.z.g, info: ''},
         {latlng: [14.832239751607517, -100.74467798379618], type: types.l.lb, z: types.z.g, info: 'Inside this small building, accessible when you rescue a hostage here.'},
         {latlng: [11.65869267308947, -127.85844120571024], type: types.l.lb, z: types.z.u, info: ''},
         {latlng: [10.513737747075986, -120.10565741115212], type: types.l.lb, z: types.z.u, info: 'In locked sideroom'},
@@ -3429,6 +3510,13 @@ permalink: map.html
         //{latlng: , type: types.ammo.e, z: types.z.g, info: ''},
         // XSPECIAL
         //{latlng: , type: types.ammo.e, z: types.z.g, info: ''},
+        {latlng: [-22.865292627155778, -180.02636611461642], type: types.ammo.h, z: types.z.g, info: ''},
+        {latlng: [-21.21155584286075, -185.97216837108138], type: types.ammo.e, z: types.z.a, info: 'On top of containers here'},
+        {latlng: [-1.2743089918452106, -165.67382812500003], type: types.ammo.s, z: types.z.g, info: ''},
+        {latlng: [15.580710739162123, -161.29248026758432], type: types.ammo.s, z: types.z.g, info: 'On bridge'},
+        {latlng: [16.989552498136817, -154.74902316927913], type: types.ammo.h, z: types.z.a, info: 'On platform'},
+        {latlng: [14.51552573310203, -157.93066352605823], type: types.ammo.i, z: types.z.g, info: 'On bridge'},
+        {latlng: [-9.089079445442806, -142.98486381769183], type: types.ammo.s, z: types.z.g, info: 'North of low wall here'},
         {latlng: [-0.9337965488500171, -119.59716796875001], type: types.ammo.i, z: types.z.u, info: 'Upper level outside big underground room'},
         {latlng: [-8.233237111274553, -103.38231259635697], type: types.ammo.i, z: types.z.g, info: ''},
         {latlng: [5.85210135274876, -123.41703057680111], type: types.ammo.e, z: types.z.g, info: ''},
@@ -3753,8 +3841,11 @@ permalink: map.html
     //mapLayers.push(ammo);
 
     var markersGrenade = [
-        //XGREN
+        //     XGREN
         // {latlng: , z: types.z.g, info: ''},
+        {latlng: [-22.179266926109374, -184.5878918655217], z: types.z.g, info: ''},
+        {latlng: [-1.0282685298999596, -180.62841877341273], z: types.z.g, info: ''},
+        {latlng: [-7.475768373662444, -163.89404296875003], z: types.z.g, info: ''},
         {latlng: [-10.734019846049346, -125.13997541875075], z: types.z.g, info: ''},
         {latlng: [10.422985750388454, -143.62010523691916], z: types.z.g, info: ''},
         {latlng: [4.254386348843064, -130.28902545742474], z: types.z.g, info: ''},
@@ -3857,8 +3948,12 @@ permalink: map.html
     //mapLayers.push(grenade);
 
     var markersArmor = [
-        //XARMOR
+        //   XARMOR
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-2.6357885741666065, -185.59863321483138], z: types.z.g, info: ''},
+        {latlng: [-4.429662346247171, -187.45751939713958], z: types.z.g, info: ''},
+        {latlng: [-20.21684179178722, -172.11181640625], z: types.z.g, info: ''},
+        {latlng: [-6.337137394988534, -171.48339897394183], z: types.z.g, info: ''},
         {latlng: [-25.03384820781455, -118.50729862978773], z: types.z.g, info: ''},
         {latlng: [-24.974108177719977, -101.54001144817708], z: types.z.g, info: ''},
         {latlng: [-9.592083330873136, -90.72512863680176], z: types.z.g, info: ''},
@@ -3976,6 +4071,7 @@ permalink: map.html
         {latlng: [26.68345993311305, -1.1059570871293547], faction: 'Hyenas', info: 'Under the stairs of the big building, behind a locked fenced area you can access from the trench around the building.'},
         {latlng: [1.5454073338820984, 95.25146350264552], faction: 'Hyenas', z: types.z.a, info: 'In the corner here above ground, accessible through the inner courtyard of the FBI building. You can take the stairs and walk around or climb the scaffolding. Opens up during and after the Bureau Headquarters side mission.'},
         //{latlng: , faction: 'Outcasts', z: types.z.g, info:''},
+        {latlng: [8.385431015567708, -157.84716770052913], faction: 'Outcasts', z: types.z.g, info:'On the inside of the fence, access over the containsers to the east.'},
         {latlng: [13.132979019087484, -87.9081923488503], faction: 'Outcasts', z: types.z.a, info:'On scaffolding, behind locked fence'},
         {latlng: [51.795027225829145, -167.958984375], faction: 'Outcasts', z: types.z.a, info:'On roof'},
         {latlng: [63.2336275255703, -178.24217284776674], faction: 'Outcasts', info:'Behind locked fence'},
@@ -4077,8 +4173,71 @@ permalink: map.html
     var markersMaterial = [
         //XMATX
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
-        //XX
+        //       XX
         //{latlng: , type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-28.636604084440336, -39.08935546875001], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-29.76056229018652, -40.381347388029106], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-21.08450008351734, -186.84667982161048], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-17.07358950148055, -188.92968820407992], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-14.791875897913084, -188.12109321355825], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-6.3436886052898505, -173.73559623956683], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-4.994638848021079, -174.70239311456683], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-5.307578197502449, -175.75927734375], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-2.7345569512697794, -178.9497069641948], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-3.4125312637495444, -170.8637697994709], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-3.065917420764294, -188.4814453125], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-4.21056088474022, -183.99902343750003], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-4.438424969293192, -183.31347629427913], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-11.652238374314946, -171.98437526822093], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-11.807136081217285, -173.89599636197093], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-15.61457308668388, -170.51220729947093], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-17.872113366575636, -169.38281290233138], type: types.mat.t, z: types.z.g, info: 'Inside building'},
+        {latlng: [-21.53075892624171, -166.7592778801918], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-21.53484700204879, -168.5566405579448], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-24.658998592049034, -159.86425727605823], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-21.493963563064455, -163.51171888411048], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-19.406504961745306, -155.4169924557209], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-20.50112440962836, -153.5053713619709], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-19.11195231476455, -162.3867179453373], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-17.157588023945447, -163.0986325442791], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-14.719636055242887, -165.15527263283732], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-1.124927317571042, -168.22265625000003], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-5.506639674354886, -162.39990234375], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [11.551074729818566, -156.33544921875], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [13.880745842025615, -165.63427627086642], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [7.8024326667785155, -155.57519584894183], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [13.786869998122949, -164.02148544788363], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [18.287778546605523, -167.91943553835156], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [12.047917672605507, -156.84961024671796], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [7.95914152468953, -158.29980455338955], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [5.060303213242406, -156.43652290105823], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [5.738429259045285, -157.33740314841273], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-0.44823748109039413, -156.40136718750003], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-5.587557712510892, -110.17748996615413], type: types.mat.f, z: types.z.a, info: 'On top of small building here'},
+        {latlng: [-17.84910721765732, -156.8232421204448], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-13.23566780473595, -156.5595702454448], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-14.953276348210307, -148.82958970963958], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-13.385344540583503, -152.71435540169477], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-21.926741400611306, -143.85498080402616], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-18.16255526442324, -144.80859361588958], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-22.816694126899844, -138.91992174088958], type: types.mat.t, z: types.z.g, info: 'Inside white container'},
+        {latlng: [-22.004174972902003, -128.50927948951724], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-25.435337245651368, -146.4301757141948], type: types.mat.f, z: types.z.a, info: 'On platform'},
+        {latlng: [-26.843677401113002, -141.41162149608138], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-26.49810577152671, -136.20849609375003], type: types.mat.t, z: types.z.a, info: 'On platform'},
+        {latlng: [-19.77910934705329, -133.74316379427913], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-19.787380181986222, -138.27392578125003], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-17.88674974313523, -140.61181627213958], type: types.mat.t, z: types.z.a, info: 'On scaffolding'},
+        {latlng: [-19.26136791774443, -140.67773424088958], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-16.374958237065925, -140.69970689713958], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-13.641716033352678, -144.64599609375003], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-13.068776734357694, -138.01025390625003], type: types.mat.d, z: types.z.g, info: ''},
+        {latlng: [-12.490213662533307, -134.47265625000003], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-14.328259677742766, -131.1635747551918], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-13.402443963432464, -128.1049807369709], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-9.570417842262605, -137.55322225391868], type: types.mat.t, z: types.z.g, info: ''},
+        {latlng: [-9.436057392514217, -139.44726616144183], type: types.mat.f, z: types.z.g, info: ''},
+        {latlng: [-8.8894150252407, -146.81249946355823], type: types.mat.f, z: types.z.g, info: ''},
         {latlng: [11.182713264323196, -126.82624158124143], type: types.mat.f, z: types.z.u, info: ''},
         {latlng: [7.59993011543621, -124.57630489024228], type: types.mat.d, z: types.z.u, info: ''},
         {latlng: [8.607092614341772, -121.25901855440634], type: types.mat.t, z: types.z.u, info: ''},
@@ -6367,8 +6526,18 @@ permalink: map.html
     mapLayers.push(artifacts);
 
     var markersComponent = [
-        // XCOMPONENT
+        //    XCOMPONENT
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-3.3050503438610943, -174.6364748105407], z: types.z.g, info: ''},
+        {latlng: [-14.870469041106189, -172.1052245423198], z: types.z.g, info: ''},
+        {latlng: [-18.05186707354763, -168.9082033932209], z: types.z.g, info: 'Inside building'},
+        {latlng: [-22.089710922071987, -164.81250040233135], z: types.z.g, info: ''},
+        {latlng: [-0.3955040009957262, -165.62548801302913], z: types.z.g, info: ''},
+        {latlng: [-2.1967272417616583, -168.09082031250003], z: types.z.g, info: ''},
+        {latlng: [-19.795650587399994, -134.25292968750003], z: types.z.g, info: ''},
+        {latlng: [-19.84939395842278, -140.14160156250003], z: types.z.g, info: ''},
+        {latlng: [-14.000168675504101, -132.00292915105823], z: types.z.g, info: ''},
+        {latlng: [-8.828625151366229, -147.52441406250003], z: types.z.g, info: ''},
         {latlng: [10.368958499166258, -120.42332570137152], z: types.z.u, info: 'In locked sideroom'},
         {latlng: [-6.254145115119918, -126.9008856387076], z: types.z.g, info: ''},
         {latlng: [8.246283416428325, -129.80613432645947], z: types.z.g, info: ''},
@@ -6543,8 +6712,17 @@ permalink: map.html
     mapLayers.push(components);
 
     var markersFood = [
-        //XFOOD
+        //     XFOOD
         // {latlng: , z: types.z.g, info: ''},
+        {latlng: [-24.46315168036989, -155.06982475519183], z: types.z.g, info: ''},
+        {latlng: [-16.678295025317464, -162.72509738802913], z: types.z.g, info: ''},
+        {latlng: [-2.785033837062931, -158.40966884046796], z: types.z.g, info: ''},
+        {latlng: [-23.05143058493852, -141.1567368730903], z: types.z.g, info: ''},
+        {latlng: [-19.344319620902095, -144.60644390434027], z: types.z.g, info: ''},
+        {latlng: [-22.881489502682797, -143.30566406250003], z: types.z.g, info: ''},
+        {latlng: [-23.596207400611124, -144.47900377213958], z: types.z.g, info: ''},
+        {latlng: [-25.391674806890236, -140.40087863802913], z: types.z.g, info: ''},
+        {latlng: [-14.570824768626494, -130.29785223305228], z: types.z.g, info: ''},
         {latlng: [-0.722880910093898, -122.70067770167806], z: types.z.g, info: ''},
         {latlng: [-7.94173295685305, -105.02926589444826], z: types.z.g, info: ''},
         {latlng: [-8.824281734071072, -114.28857961033948], z: types.z.g, info: ''},
@@ -6727,8 +6905,14 @@ permalink: map.html
     mapLayers.push(food);
 
     var markersWater = [
-        // XWATER
+        //   XWATER
         //{latlng: , z: types.z.g, info: ''},
+        {latlng: [-23.32611505182184, -175.17919868230825], z: types.z.g, info: ''},
+        {latlng: [-20.060058242502574, -186.83349609375], z: types.z.g, info: ''},
+        {latlng: [-14.553812254171936, -188.89453265815973], z: types.z.g, info: ''},
+        {latlng: [-0.2724597765250711, -179.47704970836642], z: types.z.g, info: ''},
+        {latlng: [-21.498051426104777, -165.61669908463958], z: types.z.g, info: ''},
+        {latlng: [52.930099114261225, 53.83300781250001], z: types.z.g, info: ''},
         {latlng: [-7.453981942547124, -107.33199690321948], z: types.z.g, info: ''},
         {latlng: [-8.424558065974914, -109.71822130994593], z: types.z.g, info: ''},
         {latlng: [-4.9683743283767665, -127.68835432575055], z: types.z.g, info: ''},
