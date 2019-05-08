@@ -25,6 +25,7 @@ There might be some way to re-roll talents, but this is not clear yet. It's also
 - Killer: Killing an enemy with a critical hit grants +50% critical hit chance for 5s. Requires 5 or more crosshairs
 - Lucky Shot: Magazine capacity is increased by 20%. Missed shots from cover have a 25% chance to return to the magazine.
 - Measured: The top half of the magazine has a +15% rate of fire and -20% weapon damage. The bottom half of the magazine has -25% rate of fire and +20% weapon damage
+- Naked: Headshot damage is increased by +%50 while your armor is depleted. Requires a scope with 8x magnification or higher.
 - Near Sighted: Receive +35% stability at the cost of -20% critical strike range and -20% optimal range. Requires 4 batteries or less.
 - On Empty: Reloading from empty grants +30% weapon handling for 10s. Requires 4 or more shields
 - Optimist: Weapon damage is increased by +3% for every 10% ammo missing from the magazine. Requires 5 or less crosshairs.
