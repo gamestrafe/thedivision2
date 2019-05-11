@@ -50,3 +50,10 @@ The weapon comes with three talents:
 * Counter-Sniper: Shots fired deal 0-100% weapon damage based on how long the trigger is held before releasing. The time to reach max weapon damage is reduced whenever a shot does not kill an enemy it hits.
 * Nemesis: Aiming at an enemy marks them as your nemesis for 15s, letting you see them through walls. Your shot gain +5% damage to your nemesis for each second they are marked, to a max of 50%.
 * Preparation: While holstered, gain +25% headshot damage when scoped with your current weapon.
+
+To get all parts you need to go through the invaded cycle, which is a different one each week. Below you see the list of the strong holds where you get the parts and which missions are invaded at the same time. Once it's through the cycle, it starts at the top again.
+
+* Stronghold: Capitol Hill
+** Invaded missions: Jefferson Plaza, Air & Space Museum, Space Administration HQ
+* Stronghold: Roosevelt Island
+* Stronghold: District Union Arena

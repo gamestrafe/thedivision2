@@ -18,15 +18,16 @@ Given after completing the Tidal Basin Stronghold for the first time. You have t
 
 The Hard Wired Tech is another material that is dropped by Black Tusk factions members. The invaded dark zone seems to be one of the best sources for this, but you can also get it from bounties against Black Tusk and even sometimes in the over world.
 
-Hard Wired M-component: 1 (Final boss of Grand Washington Hotel)
-Hard Wired C-component: 1 (Final boss in Jefferson Trade Center)
-Hard Wired B-component: 1 (Final boss of Federal Emergency Bunker)
-Hard Wired G-component: 1 (Final boss in Lincoln Memorial)
-Hard Wired H-component: 1 (Final boss of Air & Space Museum)
-Hard Wired K-component: 1 (Final boss of Bank HQ)
-Hard Wired Tech: 10
+* Hard Wired M-component: 1 (Final boss of Grand Washington Hotel)
+* Hard Wired C-component: 1 (Final boss in Jefferson Trade Center)
+* Hard Wired B-component: 1 (Final boss of Federal Emergency Bunker)
+* Hard Wired G-component: 1 (Final boss in Lincoln Memorial)
+* Hard Wired H-component: 1 (Final boss of Air & Space Museum)
+* Hard Wired K-component: 1 (Final boss of Bank HQ)
+* Hard Wired Tech: 10
 
 Rewards:
+
 * Blueprint: "Rhodeswood" AR Mask
 * Blueprint: "Serpentine" Array Vest
 * Blueprint: "Abberton" Dynamo Carrier
