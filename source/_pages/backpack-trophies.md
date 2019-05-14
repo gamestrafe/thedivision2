@@ -18,15 +18,27 @@ Special token for participating in the beta.
 
 Awarded for finding all 15 comms for Contaminated Areas and with that explore all the contaminated areas.
 
+## Donut
+
+Inside the classified assignment mission Nelson Theatre Hostages. In the locked area on ground floor level in the first big room. You need to enable two generators, one almost above that room on the upper level, the other to the west where the game points you at to continue after the initial fight. 
+
 ## DZ South
 
 Uncertain on how to get it.
 
 > Earned for breaking your pledge of duty and going your own way.
 
+## Film Reel
+
+After completing the side mission Navy Hill Transmission, you get a new marker. This leads you to a locked basement (shoot the lock) with some loot. The box with the trophy is on the eastern wall.
+
 ## Gold Bar
 
 Found in the Bank Headquarters mission, in the bank vault in a corner. See the map for details on that.
+
+## Hotdog
+
+Inside the classified assignment mission Bonds Bank Armory. In the large room after blasting through the entrance door. It's in a locked office on the upper floor, southwest corner. To get in, you will have to clear the room, then go through the security door and shoot a yellow box outside the security office (upper left once you are through the door). Go back and you can loot it from a box on a table here.
 
 ## Hunters Axe
 
