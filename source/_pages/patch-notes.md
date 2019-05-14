@@ -6,6 +6,431 @@ meta:
 
 This page contains all the patch notes that were published since the release of the game. Newest patch notes are always at the top.
 
+## Patch from 14. May 2019: Operation Dark Hours (Title Update 3)
+
+*New Feature: Operation Dark Hours*
+
+Operation Dark Hours is our first 8-player raid coming to Tom Clancy’s The Division 2. Teamwork, collaboration, and adaptation will be necessary to defeat the Black Tusk. More information and exact opening times will be revealed soon. 
+
+*New Feature: Classified Assignments: The Fall of DC*
+
+Classified Assignments are exclusive missions for owners of the Year 1 Pass. Discover and complete these missions to hear stories behind the fall of DC as well as unlocking exclusive Backpack Trophies. Title Update 3 includes the first two Classified Assignments.
+
+*New Apparel Event: Dark Hours*
+
+Starting together with the raid release, our second Apparel event will introduce new outfits, masks, emotes and weapon skins! 
+
+*ACHIEVEMENTS & TROPHIES*
+
+* Added Operation Dark Hours Achievement / Trophy.
+
+*COMMENDATIONS*
+
+* Added new Commendations for Operation Dark Hours.
+* Removed the following Commendations
+** 28 Days Distinction - Record 672 hours (28 days) of time in-game.
+** Distinguished Service Ribbon – For 30 consecutive days, on each day play for at least 1h and complete 1 mission.
+** Supreme Response Distinction - For 7 consecutive days, on each day complete 4 main missions and rescue 5 civilians.
+** Year One Merit - Play on 14 days per month, on a total of 12 months.
+** Division Service Merit - For a total of 100 days, on each day play for at least 1hour and deliver 20 resources to control points.
+** *Developer comment:* We removed these Commendations as we felt that they were not delivering a great experience for players. Often times you could miss out on your daily login or lose your streak with no error of your own. We’re adding different Commendations that still let you show off your dedication towards the game, without the login requirements. For those players that have already earned the above-mentioned Commendations they will remain visible as completed.
+** Added a new vanity patch reward for all players as compensation for any lost time due to the above changes.
+* Added five new Commendations
+** Full Deck Distinction – Acquire all Snitch Cards.
+** Distinguished Service Distinction – Complete 30 hours of service.
+** Supreme Response Distinction – Complete all main missions and Strongholds on Hard difficulty (or above).
+** Control Point Takeover Merit – Take over 50 Heroic Control Points.
+** Invasion Service Merit – Complete 10 Invaded Strongholds.
+* Changed Peacock Award to specifically use the 'Jumping Jacks' emote.
+* Changed Mission Discovery Merit Commendations to track when a player collects loot from loot boxes, not opening the loot boxes. This will ensure that all players that are in a group can earn this Commendation when playing the respective missions.
+
+*CRAFTING*
+
+* Increased the base cap for Receiver Components and Protective Fabric crafting materials by 200, meaning that their caps now start at 350 and end at 600 with all material capacity perks.
+* Inaya al-Khaliq in the Base of Operation is now a Crafting Vendor, she can be found next to the Crafting Bench in the White House.
+** Added Specialized and Superior Skill Mod Blueprints to her stock.
+** Added an extra weekly Blueprint to her stock.
+** Moved crafting Blueprints from the Base of Operations vendor to her stock.
+** Note: While Inaya will have a variety of Blueprints available, there are still other sources in the game like Settlements and Control Points.
+* All exotic items upgraded through crafting will get the maximum Gear Score of the current crafting bench tier.
+
+*GEAR*
+
+* Bonus Armor granted on blue attributes gear significantly increased.
+* Armor percent can now be found as Defense Attribute rolls.
+* Health percent can now be found as Defense Attribute rolls.
+* Gear sets
+** Hard Wired
+*** Now grants Skill Damage instead of Shock Duration.
+** Ongoing Directive
+*** Now grants special ammunition into any weapon, including the weapon currently equipped.
+*** Now grants special ammunition on any kill, not just weapon kills.
+** True Patriot
+*** Decreased debuff cycle from 4 seconds to 2 seconds.
+*** Increased damage dealt to nearby targets when Full Flag is active to 50%.
+
+*ICONS*
+
+* The Confidential Gear Set intel item now has a project icon to better reflect its use.
+
+*LOOT*
+* Loot containers will now reset at a preset time of day. 
+** Control Point reward container will now also reset with this daily timer.
+* Improved quality and quantity of Drone Helicopter loot.
+* Slightly reduced the quality of items from Clan Caches.
+* Cabinet loot containers now have a chance to contain Dark Zone keys.
+* Increased ammunition drop chance from enemy NPCs to limit situations where players would run out of ammunition during prolonged fights on higher difficulty activities.
+* Dark Zone contaminated loot does not drop below player's average Gear Score and will guarantee Gear Score 500 when the player has reached 500 Gear Score.
+* Heroic difficulty Mission bosses, Stronghold bosses, Bounty bosses and Heroic Control Points reward containers will guarantee Gear Score 500 when the player has reached 500 Gear Score.
+* Loot now skews more towards the top end of its allowed Gear Score, resulting in fewer items below a player’s average Gear Score, and items that do drop below it will be closer to that average more often.
+* Increased the rewards for daily Hard and Challenge mission Projects and they will guarantee Gear Score 500 when the player has reached 500 Gear Score.
+
+*MISSIONS*
+
+* New feature: Post Mission Activity Summary. After completing missions, players may opt to look at an activity summary showcasing their performance in that activity and allowing an expanded look at a variety of detailed statistics.
+* Bank Headquarters
+** Reduced difficulty for solo players.
+* Roosevelt Island
+** Reduced difficulty for solo players.
+
+*MODS*
+
+* Hive users can now find +healing on the Experimental Blend mods.
+* Hive users can now find +radius on the Network Firewall mods.
+* New mods: Auxiliary Skill Battery
+** Auxiliary Skill Batteries fit in Skill mod slots and grant Skill Power.
+
+*NPC*
+
+* Updated RC Blade to fix various issues.
+* Elite Medic’s Pulse Grenade has been changed.
+** No longer applies disrupt.
+** Reduced Impact radius.
+** The grenade impact radius should now be easier to see.
+* Decreased damage of Veteran, Elite and Named NPCs.
+* Greatly decreased melee damage of all Tank NPCs.
+* Moderately decreased melee damage of all non-Tank NPCs.
+* Decreased Thrower NPC’s accuracy with grenades. They are no longer professional baseball pitchers or cricket fielders.
+* Slightly decreased damage of Elite/Named War Hound.
+* Civilian Control Point Officers now wear pants.
+* Civilian Control Point Officers now wear protective body armor. Safety first.
+* Civilians with fully upgraded Settlements now wear combat harnesses and have slightly more health.
+* Upgrading a Settlement now slightly increased Civilians’ damage.
+* NPCs will now be slightly less defensive while in cover and being aimed at by a player.
+* Decreased likelihood of NPCs using ladders in combat.
+* Decreased likelihood of NPCs using special navigation out of combat.
+* Civilian NPCs will now stay further away from players in cover, lessening the chance of them taking a player’s preferred cover location. We get it, you’re very protective of your favorite cover spot.
+* Civilian Hostages are now more protective of their lives.
+* Fixed issue with many explosives causing extreme amounts of threat, confusing NPCs.
+* Fixed various sliding issues with NPCs following recovery from a Status Effect.
+* Enemy NPCs should no longer be able to stagger players with a melee attack if the player has a Ballistic Shield equipped.
+* Drone Helicopter
+** Increased health.
+** Increased damage.
+** Improved movement.
+* Decreased Outcast Suicide vest explosion radius.
+* Lowered NPC damage and health above normal difficulty.
+* Increased variety of NPCs at higher difficulty levels.
+
+*OPEN WORLD*
+
+* Implemented various UI and audio improvements to Living World activities.
+* Control Points
+** Control Point difficulty is now more clearly communicated, using regular difficulty names in addition to Alert Level.
+** Approaching enemy patrols and convoys are now signaled more clearly during Control Point Takeover.
+** The Civilian Officer will now revive downed players during Control Point takeover and judge you silently.
+** Players can now select the civilian takeover icon on the map as a respawn option during Control Point takeover. The option is disabled after the enemy leader joins the fight.
+** Players can now fast travel to civilian convoys and takeover squads from the map.
+* Black Tusk now send War Hound Convoys carrying gear and weapons to Tidal Basin when the mission is available.
+
+*RECALIBRATION*
+
+* Recalibration has been changed to allow for the majority of stats to be moved as they are, from one item to another, while making it less likely to reach the cap of the stat moved. To achieve this goal, we’re expressing the recalibrated power as a separate number called Recalibration Score, next to the Gear Score. As such, recalibration will no longer increase the gear score of the item. All existing recalibrated items will have their recalibrated additional gear score converted to the new format.
+* Adjusted cost and ability to be recalibrated for
+** Terminate
+** Knee Cap
+** Calculated
+
+*REWARDS*
+
+* XP from Bounties has been increased.
+* All Settlement Weekly Projects now award blueprints.
+* New daily Project: SHD Requisition. 
+** Requires crafting ingredients and rewards high quality gear and blueprints.
+* Increased the quality of Weekly Project equipment rewards.
+
+*SKILLS*
+
+* Assault Drone
+** PvE: The Drone will now more actively look for a new target once it loses its current target.
+* Defender Drone
+** Will now drain more quickly once a shot has been deflected.
+* Reinforcer Chem Launcher
+** Reinforcer gas clouds do not stack anymore.
+* Reviver Hive
+** Fixed further occurrences of players not being revived.
+** Revive time slightly increased.
+* Riot Foam Chem Launcher
+** Increased base duration of Riot Foam when used against a NPC.
+* Scanner Pulse
+** Reduced cooldown from 120 seconds to 90 seconds.
+
+*GEAR TALENTS*
+
+* Berserk
+** Increased required max armor depleted from 10% to 20%.
+** Now requires 7 Offense Attributes.
+* Blacksmith
+** Increased Armor repair from 25% to 50%.
+** Can now occur every 15 seconds, was 10 seconds.
+** Now requires 7 Defense Attributes.
+* Bloodlust
+** PvE
+*** Increased granted Weapon Damage from 25% to 35%.
+*** Decreased duration from 10 seconds to 5 seconds.
+** PvP
+*** Decreased granted Weapon Damage from 25% to 20%.
+*** Decreased duration from 10 seconds to 5 seconds.
+*** Now requires 9 Offense Attributes.
+* Bloodsucker
+** PvE
+*** Depleting an enemy’s armor adds a stack of +25% bonus armor for 10s. Max stack is 6. (was 20%, 20s, 5)
+** PvP
+*** Depleting an enemy’s armor adds a stack of 20% bonus armor for 5s. Max stack is 5.
+*** Now requires 11 Offense Attributes and an Assault Rifle, SMG or LMG equipped.
+* Critical
+** Reduced Critical Hit Damage bonus from 8% to 5%.
+* Clutch
+** Increased Health gained per Critical Hit from 15% to 20%.
+** Reduced Armor gained per Critical Hit from 2% to 1%.
+** Now requires 4 or less Defense Attributes.
+* Entrench
+** Increased Armor repair for Headshots from cover from 5% to 10%
+* Hard Hitting
+** Reduced Damage to Elites from 15% to 10%.
+* Knee Cap
+** Increased chance to apply bleed when Shooting an Enemy in the legs from 10% to 15%.
+* Patience
+** After being in cover for 5s, armor repairs by 5% every 1s. (was 3s).
+** Now requires 6 Defense Attributes
+* Safeguard
+** Reduced Duration from 20 to 5 seconds.
+** Can only occur once every 20 seconds.
+** This was already the case but is now reflected in the tooltip.
+** Now requires 4 or less Offense Attributes.
+* Spotter
+** Increased Weapon Damage to Pulsed enemies from 10% to 20%.
+** Now requires 5 Utility Attributes.
+* Surgical
+** Reduced Critical Hit Chance bonus from 8% to 5%.
+* Unbreakable
+** PvE
+*** Increased amount of Max Armor repaired when armor is depleted from 25% to 70%.
+*** Increased timeframe for Armor Kits not being consumed when effect triggers from 5 seconds to 7 seconds.
+** PvP
+*** Increased Max Armor repaired when armor is depleted from 15% to 25%.
+*** Increased timeframe for Armor Kits not being consumed when effect triggers from 5 seconds to 7 seconds.
+*** Now requires 11 Defense Attributes and no other Talents affecting Armor Kits.
+* Unstoppable Force
+** PvE
+*** Killing an enemy now grants 2% Weapon Damage for every 25.000 Max armor.
+** PvP
+*** Killing an enemy now grants 1% Weapon Damage for every 25.000 Max armor.
+*** Now requires 7 or more Defense Attributes.
+*** Developer comment: Due to the increase in available armor on gear made we decided to also increase the Max armor requirements for Unstoppable Force.
+
+*WEAPON TALENTS*
+
+* Frenzy
+** PvE
+*** For every 10 bullets in a magazine capacity, gain +2% rate of fire and +2% weapon damage for 5s when reloading from empty.
+** PvP
+*** For every 10 bullets in a magazine capacity, gain +1.5% rate of fire and +1.5% weapon damage for 5s when reloading from empty.
+* Killer
+** Now grants 30% critical damage for 5s instead of 50% critical hit chance.
+** Developer comment: We think critical damage feels more appropriate as you already need a relatively high critical hit chance to activate the talent regularly.
+* Measured
+** Now grants 20% rate of fire and -15% weapon damage in the top half of the magazine.
+** Now grants -20% rate of fire and +30% weapon damage in the bottom half of the magazine
+** Developer comment: Measured should now be a net damage bonus and the increased rate of fire should better support other talents and effects activating.
+* Preservation
+** PvE:
+*** Killing an enemy repairs 10% armor over 5s. Headshots improves the repair to 20%. (was 5%, 3s, 10%)
+** PvP
+*** Killing an enemy repairs 5% armor over 3s. Headshots improves the repair to 15%.
+*** Now requires 7 Defense Attributes.
+* Reformation
+** Increased Headshot kill skill repair and healing to 50% from 25%.
+** Reduced duration from 25 seconds to 20 seconds.
+** Now requires 9 Utility Attributes.
+* Spike
+** Increased skill damage from 25% to 35%.
+** Increased duration from 10 seconds to 20 seconds.
+** Now requires 5 Utility Attributes.
+* Strained
+** Increased missing Armor requirement from 5% to 10%.
+* Unhinged
+** Reduced Damage Bonus from 25% to 20%.
+** Reduced Handling negative from 35% to 25%.
+
+*VENDORS*
+
+* Vendors will now verify the players' highest achieved World Tier and offer items of that Gear Score, instead of offering items of the highest World Tier available in the group.
+
+*WEAPONS*
+
+* New feature: Exotic Mod Bonuses. All exotic mod slots now have unique bonuses.
+* SOCOM MK20 SSR 
+** Now has a skin slot from Specialized quality and up.
+* Nemesis
+** Mod slots
+*** Optic: +35% Headshot Damage
+*** Magazine: +10% Reload Speed
+*** Muzzle: +15% Critical Hit Damage
+*** Rail: +15% Damage to Elites
+* Chatterbox
+** Damage increased.
+** Mod slots
+*** Optic: +5% Critical Hit Chance
+*** Magazine: +10% Reload Speed
+*** Muzzle: +10% Critical Hit Chance
+*** Rail: +15% Handling
+* Sweet Dreams / Lullaby
+** Damage increased.
+** Mod slots
+*** Optic: +15% Accuracy
+*** Magazine: +15% Reload Speed
+*** Rail: +25% Optimal Range
+* Merciless / Ruthless
+** Damage increased.
+** Mod slots
+*** Optics: +10% Accuracy
+*** Magazine: +15% Reload Speed
+*** Muzzle: +20% Stability
+*** Rail: +20% Handling
+* Pestilence
+** Damage increased.
+** Mod slots
+*** Magazine: +10% Rate of Fire
+*** Muzzle: +20% Stability
+*** Rail: +15% Handling
+* Liberty
+** Damage increased.
+** Mod slots:
+*** Optic: +10% Critical Hit Chance
+*** Magazine: + 15% Damage to Elite
+*** Muzzle: + 15% Stability
+*** Rail: + 15% Rate of Fire
+* TAC-50
+** Now has 2 zoom states.
+
+*CONFLICT*
+
+* Armor boost
+** Boost provided reduced by 50%.
+* Armor value on nameplates
+** Improved visuals to better reflect how much armor an enemy has.
+* Balance
+* All players are now scaled to Max World Tier Gear Score.
+* Primary stats are set to high-end values.
+* Normalized talent overrides are applied.
+* Budget distribution of un-normalized items is preserved.
+* No additional bonus is applied.
+* Unlocked mods and talents from un-normalized builds are active.
+* Items above Gear Score 500 will be scaled to 500.
+* No bonus stats will be applied to these items.
+* Recalibration bonuses are not applied.
+* PvP specific overrides
+** Weapon and Skill global damage modifiers.
+** Targeted weapon and skill damage modifiers.
+*** Assault Rifles now have a 1.25 PvP damage scaler applied.
+** Skill behavior overrides.
+* Damage boost
+** Boost provided reduced by 50%.
+* The Conflict NPC was moved to a more prominent spot, next to the helipad outside the Base of Operations.
+* Respawn
+** Respawning players are now much more likely to respawn with their teammates.
+* Skills
+** Skill cooldowns no longer reset when a player is killed.
+
+*PVP*
+
+* Damage modifier reduced to increase time to kill.
+* Skill modifier increased to let Skills have more impact in PvP.
+
+*DARK ZONE*
+
+* Contaminated loot
+** Bosses now guarantee a contaminated loot drop.
+** Higher challenge landmarks can drop multiple contaminated items.
+** Basic, Veteran and Elite NPCs have their drop rate lowered, but now have a very high chance to drop contaminated loot.
+* DZ bag size
+** Default bag size increased to 6.
+** Tier 1 perk Bag Space now increases bag size to 8.
+** Tier 4 perk Bounceback now reduces Dark Zone XP lost on death.
+** Tier 10 perk increases bag size to 10.
+* DZ Brackets
+** Reduced bracketing to:
+** Level 1 – 30.
+** Players in World Tiers.
+* NPC AI
+** Reduced damage output.
+** Increased Time to Kill.
+* Landmarks
+** Added a short cooldown to landmarks.
+* Rogue
+** Removed cooldown.
+** There is still a 5 second toggle cooldown.
+* Thieves Den
+** Now allows players to switch weapons.
+* Occupied Dark Zone 
+** Damage modifiers
+** Added a separate PvP damage modifier.
+* XP
+** Reduced DZXP loss to 35% of the XP in your current Dark Zone rank when being killed.
+
+*GENERAL*
+
+* Text Chat improvements
+** Players can toggle displaying personal and group loot drops.
+** Text chat will now lose focus after sending a message.
+** Group tab will be populated with all raid members when queueing for a raid.
+** Improved feedback when attempting invalid actions in text chat.
+
+*SETTINGS*
+
+* Added a Neutral Lighting setting to all platforms.
+
+*PC*
+
+* Settings
+** Added "Anti-aliasing" graphics setting with new Ultra alternative for sharper image when in motion.
+* UI
+** Character sheet
+*** Will now properly update and display Accuracy, Stability, Recoil, Weapon Swap and Reload Speed from +Weapon Handling bonuses.
+** Social menu
+*** When downed, agents now have the possibility to open the Social menu via hotkey.
+*** Players will now be able to matchmake during Heroic difficulty missions.
+*** Players are now immune to Vote Kicks during boss encounters and for a short time after the end of boss encounters and missions. Going AFK removes this immunity.
+
+*BUG FIXES*
+
+* Fixed an issue where NPCs in the Bounty screen had broken animations. Put your hands down, please.
+* Fixed an issue that could prevent players from completing the Side Mission Medical Camp Attack.
+* Fixed an issue where armor values on AI in the Dark Zone scaled incorrectly.
+* Fixed an issue where the Sniper Turret would aim at targets out of line of sight in PvP.
+* Fixed an issue where Scanner Pulse and Remote Pulse were not properly affected by Skill Duration.
+* Fixed various issues where Skill bonuses were not applied properly.
+* Fixed an issue where bounties rewarded from Projects in Settlements were rewarding the wrong amount of XP and Credits.
+* Fixed an issue where Clan Cashes would scale incorrectly when opened in another player’s lower level session.
+* Fixed a bug where NPCs from a Resource Convoy could spawn out of thin air on top of the player.
+* Fixed a bug where the Control Point supply room would remain locked when capturing a Control Point too quickly.
+* Fixed several bugs with matchmaking that prevented correct matching of players based on their region, language, gear score and other criteria.
+* Fixed an issue with ‘A Friend in Need’ Achievement/Trophy which would cause it to not unlock in certain conditions.
+* Fixed an issue where a player would be unable to complete the ‘Big Game Hunter’ Achievement/Trophy.
+* Fixed an issue on the Ubisoft Club Weekly Challenges screen on PC that resulted in a low frame rate when on that screen.
+* Fixed an issue causing Korean language glyph compositions not displaying properly in the in-game chat.
+
 ## Patch from 2. May 2019
 
 * Fixed an issue where players could not interact with Henry Hayes.
